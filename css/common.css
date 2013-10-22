@@ -1,0 +1,383 @@
+body{
+	background:#ebeef3;
+}
+.clear{
+	clear:both;
+}
+
+.header{
+	width:1000px;
+	margin:0 auto;
+	height:60px;
+	background-color:#224888;
+	color:#97afcd;
+}
+.header .logo{
+	display:inline-block;
+	float:left;
+	background:url(imgs/logo.png) no-repeat;
+	width:235px;
+	height:60px;
+}
+.header .header-nav li{
+	position:relative;
+	float:left;
+	padding:0 15px;
+	font-size:18px;
+	line-height:60px;
+	height:60px;
+	cursor:pointer;
+}
+/*.header .header-nav li.selected{*/
+.header .header-nav li:hover{	
+	line-height:60px;
+	height:59px;
+	background-color:#1e417b;
+	color:#fff;
+	border-bottom:1px solid #102860;
+	transition:.25s linear;
+}
+.header .header-nav li.show:hover{	
+	background:#fff;
+	color:#1c3e7b;
+	border:1px solid #d3d6da;
+	border-bottom:none;
+}
+.header .header-nav li i{
+	display:inline-block;
+	margin-left:5px;
+	background:url(imgs/arrow-down1.png) no-repeat;
+	width:10px;
+	height:5px;
+}
+.header .header-nav li.selected i{
+	background:url(imgs/arrow-down.png) no-repeat;
+}
+.header .header-nav li.show .menu{
+	display:block;
+}
+.header .menu{
+	display:none;
+	width:100%;
+	left:-1px;
+	margin-top:-1px;
+	position:absolute;
+	padding:8px 0;
+	background-color:#fff;
+	border:1px solid #c3c5cb;
+	border-top:none;
+	z-index:10;
+}
+.header .menu li{
+	white-space:nowrap;  
+	line-height:32px;
+	height:32px;
+	color:#666666;
+	float:none;
+	transition:.25s linear;
+}
+.header .menu li a{
+	font-size:16px;
+}
+.header .menu li:hover{
+	height:32px;
+	font-weight:bold;
+	line-height:32px;
+	background-color:#ebeef3;
+	color:#000;
+	border-bottom:none;
+}
+
+.header .group{
+	width:200px;
+}
+
+.header .userinfo{
+	position:relative;
+	float:right;
+	font-size:18px;
+	line-height:60px;
+	padding:0 10px;
+	margin-right:20px;
+}
+.header .userinfo i{
+	display:inline-block;
+	margin-left:5px;
+	width:10px;
+	height:5px;
+	background:url(imgs/arrow-down1.png) no-repeat;
+}
+.header .userinfo .user-more-info{
+	line-height:2em;
+	display:none;
+	position:absolute;
+	padding:10px;
+	width:200px;
+	background-color:#fff;
+	border:1px solid #c3c5cb;
+	border-top:none;
+	right:-2px;
+	z-index:15;
+}
+.header .show{
+	background:#fff;
+	color:#1c3e7b;
+	border:1px solid #d3d6da;
+	border-bottom:none;
+	transition:.25s linear;
+}
+
+.header .show .user-more-info{
+	display:block;
+}
+.header .user-head{
+	float:left;
+	padding-right:5px;
+}
+.header .user-zone{
+	padding-top:10px;
+	line-height:1.5em;
+	float:left;
+}
+.header .user-zone div{
+	position:relative;
+	text-align:right;
+	background:#ebeef3;
+}
+.header .user-zone .prog{
+	position:absolute;
+	top:0;
+	left:0;
+	width:40px;
+	height:18px;
+	background:#496fba;
+}
+
+.header .userinfo .user-more-info ul{
+	clear:both;
+	padding:10px;
+}
+.header .userinfo .user-more-info li{
+	float:left;
+	font-size:14px;
+	width:50%;
+}
+.header .userinfo .user-more-info li span{
+	color:#f00;
+}
+.container{
+	position:relative;
+	width:990px;
+	margin:20px auto;
+	border:1px solid #d3d6da;
+}
+
+/*侧边栏*/
+.aside{
+	position:absolute;
+	right:0;
+	top:0;
+	width:230px;
+	border-left:1px solid #d3d6da;
+	background:#f6f7f9;
+}
+.aside h3{
+	font-weight:200;
+	font-size:16px;
+	text-align:center;
+	background-color:#ebeef3;
+	line-height:60px;
+	height:60px;
+}
+.aside ul{
+	line-height:2em;
+	padding:10px 0 0 64px;
+}
+.aside li{
+	font-size:16px;
+}
+.aside ul p{
+	text-indent:1em;
+	font-size:14px;
+}
+/*侧边栏*/
+
+/*主要内容*/
+.main-section{
+	background:#fff;
+	width:750px;
+	padding:0 5px;
+}
+/*工具条*/
+.tool-zone{
+	padding:10px 0;
+	height:38px;
+}
+.tool-zone button{
+	width:120px;
+	height:38px;
+	color:#666666;
+	margin-right:5px;
+	border:1px solid #b2b2b2;
+	background-color:#f9f9f9;
+}
+.tool-zone button.upload{
+	background-color:#4269ba;
+	color:#fff;
+	border:1px solid #0b162e;
+}
+.tool-zone .upload-input{
+	width:120px;
+	height:38px;
+	position: absolute;
+	opacity: 0;
+	filter:alpha(opacity=0);
+	left:0;
+}
+.search-zone{
+	float:right;
+	height:38px;
+	width:215px;
+	border:1px solid #dddddd;
+}
+.search-zone input{
+	width:180px;
+	text-indent:1em;
+	font-size:14px;
+	line-height:36px;
+	height:36px;
+	border:none;
+}
+.search-zone button{
+	background:url(imgs/search-btn.png) no-repeat;
+	margin:12px 10px 0 0;
+	float:right;
+	width:17px;
+	height:16px;
+	border:none;
+}
+
+.section-tit{
+	position:relative;
+	height:32px;
+	font-size:14px;
+	line-height:32px;
+	padding-left:10px;
+	background:url(imgs/title-bg2.png) no-repeat #ebeef4;
+	color:#6a6a6a;
+}
+.section-tit ul{
+	position: absolute;
+	top: 0;
+	right:0;
+}
+.section-tit ul li{
+	padding-right:10px;
+	cursor:pointer;
+	float:left;
+}
+.section-tit ul i{
+	vertical-align:middle;
+	display:inline-block;
+	margin-right:5px;
+}
+.section-tit .all-file i{
+	width:16px;
+	height:15px;
+	margin-top:-2px;
+	background:url(imgs/new.png) no-repeat;
+}
+
+.section-tit .col-file i{
+	width:16px;
+	height:17px;
+	vertical-align:middle;
+	margin-top:-2px;
+	background:url(imgs/star3.png) no-repeat;
+}
+.section-tit .vod-file i{
+	width:16px;
+	height:17px;
+	vertical-align:middle;
+	margin-top:-2px;
+	background:url(imgs/video.png) no-repeat;
+}
+.section-tit .pic-file i{
+	width:16px;
+	height:17px;
+	vertical-align:middle;
+	margin-top:-2px;
+	background:url(imgs/pic.png) no-repeat;
+}
+.section-tit .music-file i{
+	width:16px;
+	height:17px;
+	vertical-align:middle;
+	margin-top:-2px;
+	background:url(imgs/music.png) no-repeat;
+}
+.section-tit .doc-file i{
+	width:16px;
+	height:17px;
+	vertical-align:middle;
+	margin-top:-2px;
+	background:url(imgs/doc.png) no-repeat;
+}
+.section-tit .app-file i{
+	width:16px;
+	height:17px;
+	vertical-align:middle;
+	margin-top:-2px;
+	background:url(imgs/app.png) no-repeat;
+}
+
+.section-tit .zip-file i{
+	width:16px;
+	height:17px;
+	vertical-align:middle;
+	margin-top:-2px;
+	background:url(imgs/zip.png) no-repeat;
+}
+
+
+
+.section-tit ul .file-type i.ar{
+	width:10px;
+	height:5px;
+	margin-left:5px;
+	background:url(imgs/arrow-down1.png) no-repeat;
+}
+.section-tit ul .icon-type i{
+	margin-top:-1px;
+	width:13px;
+	height:11px;
+	background:url(imgs/list-type.png) no-repeat;
+	transition:.25s linear;
+}
+.section-tit ul .list-type i{
+	margin-top:-1px;
+	width:13px;
+	height:11px;
+	background:url(imgs/icon-type.png) no-repeat;
+	transition:.25s linear;
+}
+
+.section-tit ul.file-types{
+	display:none;
+	position: absolute;
+	padding:0 10px;
+	right:50px;
+	border:1px solid #d7d7d7;
+	background:#fff;
+	top:30px;
+	z-index:20;
+}
+.section-tit ul.file-types li{
+	float:none
+}
+/*主要内容*/
+
+
+.hide{
+	display:none;
+}

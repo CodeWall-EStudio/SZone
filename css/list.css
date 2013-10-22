@@ -1,0 +1,248 @@
+.dis-list-type li{
+	position:relative;
+	clear:both;
+	height:60px;
+	border-bottom:1px solid #eee;
+	transition:.25s linear;
+}
+.dis-list-type li.tit{
+	background:#fbfbfb;
+	height:28px;
+	line-height:28px;
+	font-weight:bold;
+}
+.dis-list-type li.selected{
+	background:url(imgs/sz.png) left center no-repeat #ffffdd;
+}
+.dis-list-type li.tit .td1{
+	padding-top:0;
+}
+.dis-list-type .td1,.dis-list-type .td2,.dis-list-type .td3{
+	float:left;
+	width:38px;
+}
+.dis-list-type .td2{
+	width:450px;
+}
+.dis-list-type .td3{
+	width:130px;
+	line-height:60px;
+}
+.dis-list-type .td4{
+	float:left;
+	line-height:60px;
+}
+.dis-list-type li.tit .td3,.dis-list-type li.tit .td4{
+	line-height:28px;
+}
+.dis-list-type .td1{
+	text-indent:16px;
+	padding-top:20px;
+}
+.dis-list-type .td2 b{
+	color:#ff6633;
+}
+.dis-list-type .td2 i{
+	display:inline-block;
+	width:11px;
+	height:5px;
+	vertical-align:middle;
+	background:url(imgs/arrow-up.png) no-repeat;
+}
+.dis-list-type .td2 img{
+	float:left;
+	width:32px;
+	height:32px;
+	margin-top:14px;
+}
+.dis-list-type .td2 i.fold{
+	float:left;
+	width:32px;
+	height:32px;
+	margin-top:14px;
+	background:url(imgs/file1.png) no-repeat;
+}
+.dis-list-type .td2 i.gife{
+	float:left;
+	width:32px;
+	height:32px;
+	margin-top:14px;
+	background:url(imgs/gife.png) no-repeat;
+}
+.dis-list-type dl{
+	float:left;
+	padding-top:12px;
+	padding-left:5px;
+}
+.dis-list-type dt{
+	font-weight:bold;
+	line-height:2em;
+}
+.dis-list-type dd{
+	color:#c5c5c5;
+}
+.dis-list-type .td2 dd span{
+	cursor:pointer;
+}
+.dis-list-type .td2 dd i{
+	width:12px;
+	height:12px;
+	margin:0 5px 0 15px;	
+}
+.dis-ico-type .td2 i{
+	width:12px;
+	height:12px;
+	margin:6px 0 0 6px;	
+}
+.dis-list-type .td2 i.share,.dis-ico-type .td2 i.share{
+	margin-left:0;
+	background:url(imgs/share.png) no-repeat;
+}
+.dis-list-type .td2 i.down,.dis-ico-type .td2 i.down{
+	background:url(imgs/down.png) no-repeat;
+}
+.dis-list-type .td2 i.more,.dis-ico-type .td2 i.more{
+	background:url(imgs/point.png) no-repeat;
+}
+.dis-ico-type .td2 i.down,.dis-ico-type .td2 i.more{
+	margin-left:3px;
+}
+.dis-list-type .td4 i{
+	cursor:pointer;
+	display:inline-block;
+	position:absolute;
+	top:20px;
+	right:10px;
+	width:16px;
+	height:15px;
+	background:url(imgs/star.png) no-repeat;
+}
+
+
+.dis-list-type li:hover,.dis-ico-type li:hover{
+	background:#ebebeb;
+	transition:.25s linear;
+}
+
+
+.dis-ico-type li.tit{
+	background:#fbfbfb;
+	width:100%;
+	height:28px;
+	line-height:28px;
+	clear:both;
+	float:none;
+	font-weight:bold;
+}
+.dis-ico-type li.tit .td1,.dis-ico-type li.tit .td2,.dis-ico-type li.tit .td3{
+	float:left;
+	width:38px;
+}
+.dis-ico-type li.tit .td2{
+	width:450px;
+}
+.dis-ico-type li.tit .td3{
+	width:130px;
+	line-height:60px;
+}
+.dis-ico-type{
+	/*overflow:hidden;*/
+}
+.dis-ico-type li{
+	position:relative;
+	float:left;
+	width:120px;
+	height:170px;
+	transition:.25s linear;
+}
+.dis-ico-type li .td1{
+	position:absolute;
+	display:none;
+	top:0;
+	left:0;
+}
+.dis-ico-type li.tit .td1{
+	position:static;
+	display:block;
+}
+.dis-ico-type li .td2{
+	width:100%;
+}
+.dis-ico-type i{
+	display:inline-block;
+}
+.dis-ico-type .td2 i.fold{
+	margin:19px 0 0 10px;
+	width:100px;
+	height:100px;
+	background:url(imgs/file.png) 0 2px no-repeat;
+}
+.dis-ico-type .td2 img{
+	margin:19px 0 0 10px;
+	width:100px;
+	height:90px;	
+}
+.dis-ico-type .td2 i.gife{
+	width:95px;
+	height:100px;
+	margin:19px 0 0 10px;
+	background:url(imgs/gife1.png) no-repeat;
+}
+.dis-ico-type .td2 dl{
+	text-align:center;
+}
+.dis-ico-type .td2 dt{
+	padding:4px 10px;
+}
+.dis-ico-type .td2 dd{
+	padding:0 10px;
+	display:none;
+}
+.dis-ico-type .td2 dd span{
+	width:30px;
+	height:24px;
+	float:left;
+	background:url(imgs/pat-bg.png) no-repeat;
+	color:#fff;
+	margin-right:3px;
+	font-size:0;
+	line-height:0;
+}
+.dis-ico-type .td3{
+	display:none;
+}
+.dis-ico-type .td4{
+	padding-top:6px;
+	text-align:center;
+}
+.dis-ico-type .td4 i{
+	position:absolute;
+	width:29px;
+	height:28px;
+	top:19px;
+	right:10px;
+	background:url(imgs/star2.png) no-repeat;
+	display:none;
+}
+.dis-ico-type li.selected{
+	border:2px solid #4682d9;
+	background:url(imgs/pat.png) left top no-repeat;
+}
+.dis-ico-type li.selected .td1{
+	display:block;
+}
+.dis-ico-type li.selected .td2 dd{
+	display:block;
+}
+.dis-ico-type li.selected .td4 span{
+	display:none;
+}
+.dis-ico-type li.selected .td4 i{
+	display:block;
+}
+.dis-ico-type li.last,.dis-list-type li.last{
+	float:none;
+	clear:both;
+	height:0;
+	line-height:0;
+}
