@@ -24,6 +24,10 @@
 			$('#progTips span').text(num+'%');
 		}
 
+		function dialog(id){
+
+		}
+
 		return {
 			prog : prog
 		}

@@ -1,5 +1,8 @@
-@import "base.css";
+@import "jquery.ui.min.css";
 
+/*
+@import "base.css";
+*/
 @import "common.css";
 
 @import "icon.css";
@@ -7,3 +10,5 @@
 @import "tips.css";
 
 @import "list.css";
+
+@import "upload.css";
