@@ -97,6 +97,11 @@ $("#fileList .file").draggable({
 	revert: true
 });
 
+$("#fileList .file").click(function(){
+	$('#reviewFile').modal('show');
+});
+
+
 $("#fileList .fold").droppable({
   accept: "#fileList .file",
   drop: function( event, ui ) {
