@@ -1,6 +1,9 @@
 body{
 	background:#ebeef3;
 }
+li{
+	list-style-type:none;
+}
 .clear{
 	clear:both;
 }
@@ -56,8 +59,10 @@ body{
 .header .header-nav li.show .menu{
 	display:block;
 }
+.header .header-nav a,.userinfo a{
+	color:#fff;
+}
 .header .menu{
-	display:none;
 	width:100%;
 	left:-1px;
 	margin-top:-1px;
@@ -109,15 +114,18 @@ body{
 }
 .header .userinfo .user-more-info{
 	line-height:2em;
-	display:none;
 	position:absolute;
 	padding:10px;
-	width:200px;
+	width:210px;
 	background-color:#fff;
 	border:1px solid #c3c5cb;
 	border-top:none;
-	right:-2px;
+	left:auto;
+	right:-20px;
 	z-index:15;
+}
+.header .userinfo .user-more-info a{
+	color:#428bca;
 }
 .header .show{
 	background:#fff;
@@ -169,6 +177,7 @@ body{
 	position:relative;
 	width:990px;
 	margin:20px auto;
+	padding:0;
 	border:1px solid #d3d6da;
 }
 
@@ -177,7 +186,7 @@ body{
 	position:absolute;
 	right:0;
 	top:0;
-	width:230px;
+	width:180px;
 	border-left:1px solid #d3d6da;
 	background:#f6f7f9;
 }
@@ -185,18 +194,26 @@ body{
 	font-weight:200;
 	font-size:16px;
 	text-align:center;
-	background-color:#ebeef3;
 	line-height:60px;
 	height:60px;
+	color:#085394;
+	-webkit-margin-before:0;
+	-webkit-margin-after:0;
+}
+.aside h3.selected{
+	background-color:#ebeef3;
 }
 .aside ul{
+	border-top:1px solid #d3d6da;
 	line-height:2em;
-	padding:10px 0 0 64px;
+	padding:10px 0 0 18px;
 }
 .aside li{
 	font-size:16px;
 }
 .aside ul p{
+	margin:0;
+	padding:0;
 	text-indent:1em;
 	font-size:14px;
 }
@@ -205,26 +222,32 @@ body{
 /*主要内容*/
 .main-section{
 	background:#fff;
-	width:750px;
+	width:810px;
 	padding:0 5px;
 }
 /*工具条*/
 .tool-zone{
 	padding:10px 0;
+	height:58px;
+}
+.tool-zone .btn-zone{
+	float:left;
 	height:38px;
+	width:400px;
 }
 .tool-zone button{
 	width:120px;
-	height:38px;
+	/*
 	color:#666666;
 	margin-right:5px;
 	border:1px solid #b2b2b2;
 	background-color:#f9f9f9;
+	*/
 }
 .tool-zone button.upload{
-	background-color:#4269ba;
-	color:#fff;
-	border:1px solid #0b162e;
+	/*background-color:#4269ba;*/
+	/*color:#fff;*/
+	/*border:1px solid #0b162e;*/
 }
 .tool-zone .upload-input{
 	width:120px;
@@ -263,24 +286,35 @@ body{
 	font-size:14px;
 	line-height:32px;
 	padding-left:10px;
-	background:url(imgs/title-bg2.png) no-repeat #ebeef4;
+	background:#ebeef4;
 	color:#6a6a6a;
 }
-.section-tit ul{
+.section-tit ul.act-zone{
 	position: absolute;
 	top: 0;
 	right:0;
 }
-.section-tit ul li{
+.section-tit ul.act-zone li{
 	padding-right:10px;
 	cursor:pointer;
 	float:left;
 }
-.section-tit ul i{
+.section-tit ul.act-zone i{
 	vertical-align:middle;
 	display:inline-block;
 	margin-right:5px;
 }
+
+.section-tit ul.act-zone ul{
+	position: absolute;
+	top:30px;
+	right:0;
+}
+.section-tit ul.act-zone ul li{
+	text-indent:1em;
+	clear:both;
+}
+
 .section-tit .all-file i{
 	width:16px;
 	height:15px;

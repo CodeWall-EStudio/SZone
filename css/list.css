@@ -1,7 +1,7 @@
 .dis-list-type li{
 	position:relative;
 	clear:both;
-	height:60px;
+	height:70px;
 	border-bottom:1px solid #eee;
 	transition:.25s linear;
 }
@@ -73,6 +73,7 @@
 	float:left;
 	padding-top:12px;
 	padding-left:5px;
+	margin:0;
 }
 .dis-list-type dt{
 	font-weight:bold;
@@ -120,7 +121,7 @@
 
 
 .dis-list-type li:hover,.dis-ico-type li:hover{
-	background:#ebebeb;
+	background:#e4e3e3;
 	transition:.25s linear;
 }
 
@@ -151,8 +152,10 @@
 .dis-ico-type li{
 	position:relative;
 	float:left;
-	width:120px;
-	height:170px;
+	width:130px;
+	height:180px;
+	margin:0 5px;
+	padding-bottom:5px;
 	transition:.25s linear;
 }
 .dis-ico-type li .td1{
@@ -172,24 +175,25 @@
 	display:inline-block;
 }
 .dis-ico-type .td2 i.fold{
-	margin:19px 0 0 10px;
+	margin:19px 0 0 15px;
 	width:100px;
 	height:100px;
 	background:url(imgs/file.png) 0 2px no-repeat;
 }
 .dis-ico-type .td2 img{
-	margin:19px 0 0 10px;
+	margin:19px 0 0 15px;
 	width:100px;
 	height:90px;	
 }
 .dis-ico-type .td2 i.gife{
 	width:95px;
 	height:100px;
-	margin:19px 0 0 10px;
+	margin:19px 0 0 15px;
 	background:url(imgs/gife1.png) no-repeat;
 }
 .dis-ico-type .td2 dl{
 	text-align:center;
+	margin:0;
 }
 .dis-ico-type .td2 dt{
 	padding:4px 10px;
@@ -198,6 +202,7 @@
 	padding:0 10px;
 	display:none;
 }
+/*
 .dis-ico-type .td2 dd span{
 	width:30px;
 	height:24px;
@@ -208,11 +213,13 @@
 	font-size:0;
 	line-height:0;
 }
+*/
 .dis-ico-type .td3{
 	display:none;
 }
 .dis-ico-type .td4{
-	padding-top:6px;
+	font-size:10px;
+	color:#a599b2;
 	text-align:center;
 }
 .dis-ico-type .td4 i{
@@ -224,20 +231,24 @@
 	background:url(imgs/star2.png) no-repeat;
 	display:none;
 }
-.dis-ico-type li.selected{
+.dis-ico-type li.tit:hover{
+	background:#fbfbfb;
+	border:none;
+}
+.dis-ico-type li:hover{
 	border:2px solid #4682d9;
 	background:url(imgs/pat.png) left top no-repeat;
 }
-.dis-ico-type li.selected .td1{
+.dis-ico-type li:hover .td1{
 	display:block;
 }
-.dis-ico-type li.selected .td2 dd{
+.dis-ico-type li:hover .td2 dd{
 	display:block;
 }
-.dis-ico-type li.selected .td4 span{
+.dis-ico-type li:hover .td4 span{
 	display:none;
 }
-.dis-ico-type li.selected .td4 i{
+.dis-ico-type li:hover .td4 i{
 	display:block;
 }
 .dis-ico-type li.last,.dis-list-type li.last{

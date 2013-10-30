@@ -1,3 +1,4 @@
+/*
 $('#header').delegate('.userinfo','click',function(e){
 	var target = $(e.target);
 	target.toggleClass('show');
@@ -10,7 +11,7 @@ $('#header').delegate('.header-nav > li','click',function(e){
 $('#header').delegate('.menu','mouseleave ',function(e){
 	//$(e.target).hide();
 });
-
+*/
 $('#changeType').bind('click',function(e){
 	var dom = $(this);
 	if(dom.attr('class') == 'list-type'){
