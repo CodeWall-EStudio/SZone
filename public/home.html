@@ -60,7 +60,7 @@
 	</div>
 	<div class="container">
 		<div class="main-section">
-			<div class="tool-zone">
+			<div class="tool-zone fade-in">
 				<div class="btn-zone">
 					<input type="file" class="upload-input" id="uploadFile" />
 					<button class="upload btn btn-primary">上传</button>
@@ -71,6 +71,30 @@
 					<input type="text" value="搜索文件" />
 					<button></button>
 				</div>
+			</div>
+			<div class="file-act-zone fade-in hide">
+				<ul class="nav nav-pills">
+					<li>
+						<a data-toggle="dropdown">协同<span class="caret"></span></a>
+						<ul class="dropdown-menu menu" role="menu" aria-labelledby="dLabel">
+							<li><a>发送给别人</a></li>
+							<li><a>发送到小组</a></li>
+							<li><a>提交到部门</a></li>
+							<li><a>推优到学校</a></li>					
+						</ul>						
+					</li>
+					<li>
+						<a data-toggle="dropdown">收藏<span class="caret"></span></a>
+						<ul class="dropdown-menu menu" role="menu" aria-labelledby="dLabel">
+							<li><a>到收藏夹</a></li>
+							<li><a>到小组收藏夹</a></li>
+						</ul>							
+					</li>
+					<li><a data-toggle="modal" data-target="#renameFile">重命名</a></li>
+					<li><a>移动</a></li>
+					<li><a>删除</a></li>
+					<li><a data-toggle="modal" data-target="#commentFile">评论</a></li>
+				</ul>
 			</div>
 
 			<div class="section-tit">
@@ -119,7 +143,7 @@
 						<div class="td3">大小</div>
 						<div class="td4">时间</div>
 					</li>
-					<li>
+					<li class="fold">
 						<div class="td1"><input type="checkbox" /></div>
 						<div class="td2">
 							<i class="fold"></i>
@@ -134,7 +158,7 @@
 						<div class="td3"> 34.5kb</div>
 						<div class="td4"><span>2013-10-13 15:33</span> <i></i></div>
 					</li>
-					<li>
+					<li class="fold">
 						<div class="td1"><input type="checkbox" /></div>
 						<div class="td2">
 							<i class="fold"></i>
@@ -149,7 +173,7 @@
 						<div class="td3"> 34.5kb</div>
 						<div class="td4"><span>2013-10-13 15:33</span> <i></i></div>
 					</li>					
-					<li>
+					<li class="fold">
 						<div class="td1"><input type="checkbox" /></div>
 						<div class="td2">
 							<i class="gife"></i>
@@ -164,7 +188,7 @@
 						<div class="td3"> 34.5kb</div>
 						<div class="td4"><span>2013-10-13 15:33</span> <i></i></div>
 					</li>	
-					<li>
+					<li class="fold">
 						<div class="td1"><input type="checkbox" /></div>
 						<div class="td2">
 							<i class="fold"></i>
@@ -180,11 +204,11 @@
 						<div class="td4"><span>2013-10-13</span> <i></i></div>
 					</li>
 
-					<li class="tit">
+					<li class="tit file-list">
 						<div class="td1"><input type="checkbox" /></div>
 						<div class="td2"><span>文件(<b>4</b>个)</span>  </div>
 					</li>	
-					<li>
+					<li class="file">
 						<div class="td1"><input type="checkbox" /></div>
 						<div class="td2">
 							<img src="css/imgs/file.png" />
@@ -199,6 +223,21 @@
 						<div class="td3"> 34.5kb</div>
 						<div class="td4"><span>2013-10-13</span> <i></i></div>
 					</li>
+					<li class="file">
+						<div class="td1"><input type="checkbox" /></div>
+						<div class="td2">
+							<img src="css/imgs/file.png" />
+							<dl>
+								<dt>接收礼包</dt>
+								<dd>
+									<span class="glyphicon glyphicon-share">分享</span>
+									<span class="glyphicon glyphicon-save">下载</span>
+								</dd>
+							</dl>
+						</div>
+						<div class="td3"> 34.5kb</div>
+						<div class="td4"><span>2013-10-13</span> <i></i></div>
+					</li>					
 					<li class="last"></li>
 				</ul>
 			</div>
@@ -231,6 +270,41 @@
 	</div>
 	<div class="footer"></div>
 
+	<div id="renameFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">重命名文件</h4>
+				</div>
+				<div class="modal-body">
+					<input type="text" style="width:80%" />
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="commentFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">评论文件</h4>
+				</div>
+				<div class="modal-body">
+					<textarea style="width:90%;height:50px;" ></textarea>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div id="newFold" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -974,6 +1048,7 @@
 
 	<script src="js/lib/jq.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/lib/jquery.ui.min.js"></script>
 	<script src="js/common.js"></script>
 	<script src="js/tips.js"></script>
 	<script src="js/main.js"></script>

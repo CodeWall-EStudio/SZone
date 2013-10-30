@@ -235,6 +235,8 @@
 	background:#fbfbfb;
 	border:none;
 }
+
+
 .dis-ico-type li:hover{
 	border:2px solid #4682d9;
 	background:url(imgs/pat.png) left top no-repeat;
@@ -256,4 +258,23 @@
 	clear:both;
 	height:0;
 	line-height:0;
+}
+.drog-light{
+	background:##e6e6e6;
+}
+.dis-ico-type li.ui-draggable-dragging:hover{
+	border:none;
+	background:transparent;
+}
+.dis-ico-type li.ui-draggable-dragging:hover .td1{
+	display:none;
+}
+.dis-ico-type li.ui-draggable-dragging:hover .td2 dd{
+	display:none;
+}
+.dis-ico-type li.ui-draggable-dragging:hover .td4 span{
+	display:block;
+}
+.dis-ico-type li.ui-draggable-dragging:hover .td4 i{	
+	display:none;
 }

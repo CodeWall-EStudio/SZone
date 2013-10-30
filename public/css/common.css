@@ -7,7 +7,9 @@ li{
 .clear{
 	clear:both;
 }
-
+a{
+	cursor:pointer;
+}
 .header{
 	width:1000px;
 	margin:0 auto;
@@ -229,6 +231,10 @@ li{
 .tool-zone{
 	padding:10px 0;
 	height:58px;
+}
+.file-act-zone{
+	padding:10px 0;
+	height:58px;	
 }
 .tool-zone .btn-zone{
 	float:left;
