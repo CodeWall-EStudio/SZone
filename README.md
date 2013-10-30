@@ -1,4 +1,4 @@
-szone
+SZone
 =====
 
-file zone for share
+A File Zone for Share
