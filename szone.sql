@@ -201,12 +201,16 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(40) NOT NULL COMMENT '用户名',
+  `nick` varchar(60) DEFAULT NULL COMMENT '昵称',
   `auth` tinyint(2) unsigned zerofill NOT NULL COMMENT '权限 0x0 普通 0x1 小组管理员 0x2 部门管理员 0x4 管理员 0x8 系统管理员',
-  `size` int(8) unsigned zerofill NOT NULL COMMENT '用户总空间',
-  `used` int(8) unsigned zerofill NOT NULL COMMENT '用户已用空间',
+  `size` int(8) unsigned zerofill NOT NULL DEFAULT '00000000' COMMENT '用户总空间',
+  `used` int(8) unsigned zerofill NOT NULL DEFAULT '00000000' COMMENT '用户已用空间',
   `pwd` varchar(60) DEFAULT NULL COMMENT '登录管理后台的密码',
+  `access` varchar(64) NOT NULL COMMENT 'access token',
+  `openid` varchar(64) DEFAULT NULL COMMENT 'openid',
+  `update-time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 /*Data for the table `user` */
 

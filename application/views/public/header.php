@@ -1,14 +1,10 @@
 	<div id="header" class="header">
 		<i class="logo"></i>
 		<ul class="header-nav">
-			<li class="selected">我的工作室<i></i>
-				<ul class="menu my">
-					<li><a>个人文件</a></li>
-					<li><a>备课成功</a></li>
-				</ul>
-			</li>
-			<li>小组空间<i></i>
-				<ul class="menu group">
+			<li class="selected"><a>我的工作室</a></li>
+			<li>
+				<a data-toggle="dropdown">小组空间<b class="caret"></b></a>
+				<ul class="dropdown-menu menu" role="menu" aria-labelledby="dLabel">
 					<li>上次进入的组</li>
 					<li>教研组 <a>展开</a></li>
 					<li>行政组 <a>展开</a></li>
@@ -16,8 +12,9 @@
 					<li>归档的小组</li>
 				</ul>
 			</li>
-			<li>部门空间<i></i>
-				<ul class="menu dep">
+			<li>
+				<a data-toggle="dropdown">部门空间<b class="caret"></b></a>
+				<ul class="dropdown-menu menu" role="menu" aria-labelledby="dLabel">
 					<li>教育处</li>
 					<li>教学处</li>
 					<li>电教处</li>
@@ -26,11 +23,16 @@
 					<li>食堂</li>					
 				</ul>				
 			</li>
-			<li>学校空间</li>
+			<li><a>学校空间</a></li>
 		</ul>
 		<div class="userinfo">
-			张三<i></i>
-			<div class="user-more-info">
+			<?php
+				if(!$name){
+			?>
+			<a href="/login/connect">登录</a>
+			<?}else{?>
+			<a data-toggle="dropdown" id="username"><?=$name?><b class="caret"></b></a>
+			<div class="dropdown-menu user-more-info" role="menu" aria-labelledby="username">
 				<div class="user-head">
 					<img src="css/imgs/file1.png" width="50" height="50">
 				</div>
@@ -48,5 +50,6 @@
 					<li><a>退出登录</a></li>
 				</ul>
 			</div>
+			<?}?>
 		</div>
-	</div>	
+	</div>

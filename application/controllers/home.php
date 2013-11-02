@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Home extends SZone_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -17,9 +17,15 @@ class Home extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
-		$this->load->view('home');
+
+
+	public function index(){
+		//var_dump($this->user);
+		$user = $this->user;
+		$data = array(
+			'userinfo' => $user
+		);
+		$this->load->view('home',$data);	
 	}
 }
 

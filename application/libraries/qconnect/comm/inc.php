@@ -1,0 +1,1 @@
+{"appid":"100548719","appkey":"9e47324ac7fed9f8364d4982ccf3037e","callback":"http://szone.codewalle.com/login/callback","errorReport":true,"storageType":"file","host":"localhost","user":"root","password":"root","database":"test","scope":null}
