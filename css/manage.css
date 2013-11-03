@@ -1,0 +1,18 @@
+.from{
+	background:#fff;
+}
+
+.from-h2{
+	margin:0;
+	padding:20px;
+}
+.addfrom{
+	padding:30px;
+}
+.addfrom li{
+	position:relative;
+	padding:15px 0;
+}
+.manage-list{
+	margin-left:60px;
+}

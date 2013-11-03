@@ -50,6 +50,9 @@
 					<li><a>退出登录</a></li>
 				</ul>
 			</div>
+			<?php if($auth>0){?>
+			<a href="/manage/">管理</a>
+			<?php }?>
 			<?}?>
 		</div>
 	</div>

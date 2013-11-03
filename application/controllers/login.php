@@ -27,6 +27,11 @@ class Login extends CI_Controller{
 			$qc = new QC();		
 			$accessToken = $qc->qq_callback();
 			$openid = $qc->get_openid();
+
+			$_SESSION['access_token'] = $accessToken;
+			$_SESSION['openid'] = $openid;		
+
+			var_dump($_SESSION);
 		}else{
 			$qc = new QC($accessToken,$openid);	
 		}
@@ -43,7 +48,7 @@ class Login extends CI_Controller{
 		$result = $this->db->query('SELECT * FROM user WHERE name="'.$name.'"');
 		//已经在数据库中了.
         if ($result->num_rows() > 0){
-        	echo $result->num_rows();
+        		
         	 $row = $result->row(); 
         	 $auth = (int) $row->auth;
         	 $size = (int) $row->size;
@@ -72,6 +77,8 @@ class Login extends CI_Controller{
 			'nick' => $nick,
 			'userid' => $userid
 		);	
+
+		//print_r($array);
 		$this->session->set_userdata($array);
 		redirect('/');
 /*

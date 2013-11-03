@@ -15,6 +15,8 @@
 	        $name = $this->session->userdata('name');
 	        $nick = $this->session->userdata('nick');
 	        $auth = $this->session->userdata('auth');
+	        $userid = $this->session->userdata('userid');
+
 
 	        $redirect = $this->uri->uri_string();
 
@@ -27,10 +29,10 @@
 	        	return;
 	        }
 
-
 	        $this->user['name'] = $name;
 	        $this->user['nick'] = $nick;
 	        $this->user['auth'] = $auth;
+	        $this->user['userid'] = $userid;
         }	    
 	    
 	}

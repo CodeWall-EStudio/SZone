@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home extends SZone_Controller {
+class Query extends SZone_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -24,8 +24,32 @@ class Home extends SZone_Controller {
 		$data = array(
 			'userinfo' => $this->user
 		);
+	}
 
-		$this->load->view('home',$data);	
+	public function smartuser(){
+		$key = trim($this->input->get('key'));
+
+		//log_message('debug', 'smart user '.$key);
+		 log_message('debug', 'Some variable was correctly set');
+
+		$sql = 'SELECT id,name FROM user where name like "'.$key.'%" limit 0,10';
+		$query = $this->db->query($sql);
+
+		$list = array(
+			'ret' => 0,
+			'list' => array()
+		);
+		foreach ($query->result() as $row){
+			array_push($list['list'],array(
+				'id' => $row->id,
+				'name' => $row->name
+			));
+			//$grouplist[$row->id] = $row->name;
+		}
+
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($list));		
 	}
 }
 

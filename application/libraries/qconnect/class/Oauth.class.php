@@ -34,7 +34,6 @@ class Oauth{
 
         //-------生成唯一随机串防CSRF攻击
         $state = md5(uniqid(rand(), TRUE));
-        $_SESSION['state'] = $state;
         $this->recorder->write('state',$state);
 
         //-------构造请求参数列表
@@ -87,7 +86,7 @@ class Oauth{
         $params = array();
         parse_str($response, $params);
 
-        $_SESSION['access_token'] = $params["access_token"];
+       
         $this->recorder->write("access_token", $params["access_token"]);
         return $params["access_token"];
 
@@ -117,7 +116,7 @@ class Oauth{
         }
 
         //------记录openid
-        $_SESSION['openid'] = $user->openid;
+        
         $this->recorder->write("openid", $user->openid);
         return $user->openid;
 

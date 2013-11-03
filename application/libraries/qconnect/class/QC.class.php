@@ -29,12 +29,23 @@ class QC extends Oauth{
         if($access_token === "" || $openid === ""){
             $ask = $this->recorder->read("access_token");
             $opd = $this->recorder->read("openid");
+            print_r($_SESSION);
             if(!$ask){
-                $ask = $_SESSION['QC_userData']['access_token'];
+                if(isset($_SESSION['QC_userData']['access_token'])){
+                    $ask = $_SESSION['QC_userData']['access_token'];
+                }else{
+                    $ask = $_SESSION['access_token'];
+                }
             }
             if(!$opd){
-                $opd = $_SESSION['QC_userData']['openid'];
-            }            
+                if(isset($_SESSION['QC_userData']['access_token'])){
+                    $opd = $_SESSION['QC_userData']['openid'];
+                }else{
+                    $opd = $_SESSION['openid'];
+                }                
+            }   
+            echo $ask;
+            echo $opd;         
             $this->keysArr = array(
                 "oauth_consumer_key" => (int)$this->recorder->readInc("appid"),
                 "access_token" => $ask,//$this->recorder->read("access_token"),
