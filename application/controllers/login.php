@@ -89,6 +89,21 @@ class Login extends CI_Controller{
 */
 	}
 
+	public function loginout(){
+
+		$array = array(
+			'accessToken' => '',
+			'openid' => '',
+			'auth' => '',
+			'name' => '',
+			'nick' => '',
+			'userid' => ''
+		);	
+
+		$this->session->unset_userdata($array);
+		redirect('/');
+	}
+
 	public function getUser(){
 	}	
 

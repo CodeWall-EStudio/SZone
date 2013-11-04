@@ -47,7 +47,7 @@
 					<li><a>通知</a> <span>1</span></li>
 					<li><a>统计</a></li>
 					<li><a>个人设置</a></li>
-					<li><a>退出登录</a></li>
+					<li><a href="/login/loginout">退出登录</a></li>
 				</ul>
 			</div>
 			<?php if($auth>0){?>

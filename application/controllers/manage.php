@@ -118,6 +118,35 @@ class Manage extends SZone_Controller {
 		}else{
 			$this->data['data']['ret'] = 1;
 
+			$manage = $this->input->post('manage');
+
+			$manage = preg_replace('/;$/e','',$manage);
+			$ul = explode(';',$manage);
+			foreach($ul as $key => $item){
+				$ul[$key] = ' name="'.$item.'" ';
+			}
+			$where = implode('or',$ul);
+
+			$sql = 'SELECT id FROM `user` where '.$where;
+			$query = $this->db->query($sql);
+
+			$idlist = array();
+			$idqlist = array();
+			foreach ($query->result() as $row){
+				array_push($idlist,(int) $row->id);
+				array_push($idqlist,'userid='.(int) $row->id);
+			}
+
+
+			//echo $sql;
+
+			// $query = $this->db->query($sql);
+			// foreach ($query->result() as $row){
+			// 	echo $row->id;
+			// }
+
+			//return;
+
 			$data = array(
 				'name' => $this->input->post('groupname'),
 				'parent' => $this->input->post('parent'),
@@ -127,6 +156,35 @@ class Manage extends SZone_Controller {
 
 			$str = $this->db->insert_string('groups', $data); 
 			$query = $this->db->query($str);
+			//取分组id
+			$id = $this->db->insert_id();
+			//echo $id;
+
+			$where = implode(' or ',$idqlist);
+			$sql = 'SELECT id,userid FROM `group-user` where groupid='.$id.' and ('.$where.')';
+
+			$query = $this->db->query($sql);
+			$guid = array();
+			$insertid = array();
+			foreach ($query->result() as $row){
+				if(in_array((int) $row->userid,$idlist)){
+					array_push($guid,(int) $row->userid);
+					array_push($insertid,(int) $row->id);
+
+					$data = array('auth' => 1);
+					$where = 'id='.(int) $row->id;
+					$str = $this->db->update_string('group-user',$data,$where);
+
+					$query = $this->db->query($str);
+				};
+			}
+
+			$idlist = array_diff_assoc($idlist, $guid);
+			foreach($idlist as $item){
+				$data = array('groupid' => $id,'userid'=>$item,'auth' => 1);
+				$str = $this->db->insert_string('group-user',$data);
+				$query = $this->db->query($str);				
+			}
 
 			$num = $this->db->affected_rows();
 			if(!$num){
@@ -141,7 +199,7 @@ class Manage extends SZone_Controller {
 		$sql = 'SELECT id FROM groups where name="'.$str.'"';
 		$query = $this->db->query($sql);
 		if ($query->num_rows() > 0){
-			$this->form_validation->set_message('checkgroupname', '小组名: %s 已经存在了.请换个名字');
+			$this->form_validation->set_message('checkgroupname', '小组名: '.$str.' 已经存在了.请换个名字');
 			return FALSE;			
 		}else{
 			return true;
