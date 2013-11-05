@@ -2,8 +2,8 @@
 	<div class="tool-zone fade-in">
 		<button class="btn btn-danger">删除所选</button>
 		<!--class="btn btn-default" data-toggle="modal" data-target="#newGroup"-->
-		<a href="/manage/addgroup?act=group">
-			<button class="btn btn-default">增加小组</button>
+		<a href="/manage/addgroup?act=dep">
+			<button class="btn btn-default">增加部门</button>
 		</a>
 	</div>
 	<div>

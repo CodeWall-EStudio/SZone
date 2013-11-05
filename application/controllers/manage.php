@@ -63,8 +63,19 @@ class Manage extends SZone_Controller {
 	//小组设置
 	public function dep(){
 		$this->data['index'] = 'dep';
-		$this->data['data'] = array();
 
+		$sql = 'SELECT a.id,a.name,b.name AS uname,b.id AS uid FROM groups AS a,user AS b WHERE a.create = b.id AND type=2';
+		$query = $this->db->query($sql);
+		$group = array();
+		foreach ($query->result() as $row){
+			$group[$row->id] = array(
+				'id' => $row->id,
+				'name' => $row->name,
+				'uname' => $row->uname,
+				'uid' => $row->uid
+			);
+		}
+		$this->data['data'] = $group;
 		$this->load->view('manage',$this->data);
 	}	
 
@@ -204,6 +215,156 @@ class Manage extends SZone_Controller {
 		}else{
 			return true;
 		}
+	}
+
+	public function editgroup(){
+		$this->load->library('form_validation');
+		$this->load->helper('form');	
+		
+		$this->data['index'] = 'editgroup';	
+		$id = $this->input->get('id');
+		if($this->user['auth'] & 0x8){
+
+			$grouplist = array(
+				0 => '一级分组'
+			);
+
+			$sql = 'SELECT * FROM groups WHERE type = 1 and parent =0';
+			$query = $this->db->query($sql);
+			foreach ($query->result() as $row){
+				$grouplist[$row->id] = $row->name;
+			}
+			$this->data['data']['group'] = $grouplist;
+
+			$this->form_validation->set_rules('groupname', 'groupname', 'required|min_length[2]|max_length[40]|callback_checkgroupname');
+
+			if ($this->form_validation->run() == FALSE && $this->input->post('groupname')){
+				$this->data['data']['ret'] = 0;
+			}else{
+				if(!$this->input->post('groupname')){
+					$sql = 'SELECT g.*,u.name as uname,u.id as uid FROM groups g,`user` u,`group-user` gu WHERE  gu.userid = u.id AND gu.auth = 1 AND gu.groupid = g.id AND g.id = '.$id;
+
+					$query = $this->db->query($sql);
+					$ulist = array();
+
+					foreach ($query->result() as $row){
+						$gid= $row->id;
+						$gname = $row->name;
+						$gparent = $row->parent;
+						$type = $row->type;
+						array_push($ulist,$row->uname);
+						// array(
+						// 	'name' => $row->uname,
+						// 	'uid' => $row->uid
+						// ));
+					};
+					$this->data['data']['manage'] = implode(';',$ulist);
+					$this->data['data']['gname'] = $gname;
+					$this->data['data']['gid'] = $gid;
+					$this->data['data']['parent'] = $gparent;
+					$this->data['data']['type'] = $type;
+
+					$this->data['data']['ret'] = 0;
+				}else{
+
+
+					$manage = $this->input->post('manage');
+					$manage = preg_replace('/;$/e','',$manage);
+
+					$ul = explode(';',$manage);
+					foreach($ul as $key => $item){
+						$ul[$key] = ' name="'.$item.'" ';
+					}
+					$where = implode('or',$ul);
+
+					$sql = 'SELECT id FROM `user` where '.$where;
+					$query = $this->db->query($sql);
+
+					$idlist = array();
+					$wlist = array();
+					foreach ($query->result() as $row){
+						array_push($idlist,(int) $row->id);
+						array_push($wlist,'gu.userid='.(int) $row->id);
+					}				
+
+					$where = implode(' or ',$wlist);
+					$sql = 'SELECT gu.id,gu.userid FROM `group-user` gu where groupid='.$id.' and ('.$where.')';
+
+					$query = $this->db->query($sql);
+					$guid = array();
+					$insertid = array();
+					foreach ($query->result() as $row){
+						if(in_array((int) $row->userid,$idlist)){
+							array_push($guid,(int) $row->userid);
+							array_push($insertid,(int) $row->id);
+
+							$data = array('auth' => 1);
+							$where = 'id='.(int) $row->id;
+							$str = $this->db->update_string('group-user',$data,$where);
+
+							$query = $this->db->query($str);
+						};
+					}
+
+					$idlist = array_diff_assoc($idlist, $guid);
+					foreach($idlist as $item){
+						$data = array('groupid' => $id,'userid'=>$item,'auth' => 1);
+						$str = $this->db->insert_string('group-user',$data);
+						$query = $this->db->query($str);				
+					}
+
+					//UPDATE `groups` g,`group-user` gu SET g.name = '食堂5', g.parent = '0' , gu.auth = 1 WHERE gu.groupid = g.id AND g.id = 10 AND (gu.userid = 3 OR gu.userid = 4);
+					$data = array(
+						'name' => $this->input->post('groupname'),
+						'parent' => $this->input->post('parent')
+					);
+					$where = 'id = '.$id;					
+					$str = $this->db->update_string('groups', $data, $where); 
+					$query = $this->db->query($str);
+					$num = $this->db->affected_rows();
+					if(!$num){
+						$this->data['data']['ret'] = 1;
+					}
+				}
+			}
+			//print_r($this->data['data']);
+			$this->load->view('manage',$this->data);
+		}else{
+			$this->data['data'] = array(
+				'ret' => 0,
+				'msg' => '对不起,出错了.!'
+			);
+		}
+		//$this->load->view('manage',$this->data);
+		
+	}
+
+	public function delgroup(){
+		$id = $this->input->get('id');
+		$this->data['index'] = 'ret';
+		if($this->user['auth'] & 0x8){
+			$sql = 'DELETE g,gu FROM `groups` g,`group-user` gu WHERE gu.groupid = g.id AND g.id ='.$id;
+
+			$query = $this->db->query($sql);
+			if($this->db->affected_rows()>0){
+				$this->data['data'] = array(
+					'ret' => 0,
+					'msg' => '删除记录成功!'
+				);	
+			}else{
+				$this->data['data'] = array(
+					'ret' => 2,
+					'msg' => '删除记录失败!'
+				);				
+			}
+		}else{
+			$this->data['data'] = array(
+				'ret' => 1,
+				'msg' => '权限不够!'
+			);
+		}
+
+		$this->load->view('manage',$this->data);
 	}
 }
 

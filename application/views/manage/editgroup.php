@@ -1,6 +1,13 @@
+<?
+	if($type == 1){
+		$titname = '小组';
+	}else if($type == 2){
+		$titname = '部门';
+	}
+?>
 <div class="main-section">
 	<div class="from">
-	<h2 class="from-h2">添加分组</h2>
+	<h2 class="from-h2"><?=$titname?>修改</h2>
 	<?if($ret):?>
 		<div>
 			添加分组成功,<a href="/manage/">返回管理页</a>
@@ -8,29 +15,20 @@
 	<?else:?>
 		<?php echo validation_errors(); ?>
 
-		<?php echo form_open('manage/addgroup?act='.$act); ?>
-		<?
-			if($act == 'group'){
-				$gname = '小组';
-			}else{
-				$gname = '部门';
-			}
-		?>
+		<?php echo form_open('manage/editgroup?id='.$gid); ?>
 			<ul class="addfrom">
-				<?if($act=='group'):?>
 				<li>
 					<label>小组层次:</label>
 					<?=form_dropdown('parent', $group, '0') ?>
 				</li>
-				<?endif?>
 				<li>
-					<label><?=$gname?>名称:</label>
-					<input type="text" name="groupname" value="<?=set_value('groupname')?>" />
-					<input type="hidden" name="type" value"<?=$act?>" />
+					<label><?=$titname?>名称:</label>
+					<input type="text" name="groupname" value="<?=$gname?>" />
+					<input type="hidden" name="gid" value"<?=$gid?>" />
 				</li>
 				<li>
 					<label>管 理 员:</label>
-					<input type="text" name="manage" id="manageName" value="<?=set_value('manage')?>" />
+					<input type="text" name="manage" id="manageName" value="<?=$manage?>" />
 					<ul class="dropdown-menu manage-list" id="unameList"  role="menu" aria-labelledby="dLabel">
 						
 					</ul>					

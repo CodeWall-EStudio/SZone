@@ -22,7 +22,11 @@
 			<?elseif($index=='space'):?>
 				<?php  $this->load->view('manage/space.php',$data); ?>
 			<?elseif($index=='addgroup'):?>
-				<?php  $this->load->view('manage/addgroup.php',$data); ?>				
+				<?php  $this->load->view('manage/addgroup.php',$data); ?>	
+			<?elseif($index=='editgroup'):?>
+				<?php  $this->load->view('manage/editgroup.php',$data); ?>								
+			<?elseif($index=='ret'):?>
+				<?php  $this->load->view('manage/retmsg.php',$data); ?>				
 			<?endif;?>
 		</div>
 		<div class="aside">
