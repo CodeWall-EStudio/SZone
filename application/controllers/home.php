@@ -22,8 +22,27 @@ class Home extends SZone_Controller {
 	public function index(){
 		//var_dump($this->user);
 		$data = array(
-			'userinfo' => $this->user
+			'nav' => array(
+				'userinfo' => $this->user,
+				'group' => $this->grouplist,
+				'dep' => $this->deplist
+			)
 		);
+
+
+		$sql = 'select id,name,createtime from `folds-user` where `user-id` = '.(int) $this->user['userid'];
+		$query = $this->db->query($sql);
+
+		$fold = array();
+		foreach($query->result() as $row){
+			array_push($fold,array(
+				'id' => $row->id,
+				'name' => $row->name,
+				'time' => $row->createtime
+			));
+		}
+
+		$data['fold'] = $fold;
 
 		$this->load->view('home',$data);	
 	}

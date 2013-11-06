@@ -10,7 +10,8 @@
   <meta property="qc:admins" content="124110632765637457144563757" />
 </head>
 <body>
-	<?php  $this->load->view('public/header.php',$userinfo); ?>
+	<?php  $this->load->view('public/header.php',$nav); ?>
+
 	<div class="container">
 		<div class="main-section">
 			<div class="tool-zone fade-in">
@@ -92,11 +93,28 @@
 				<ulclass="cl">
 					<li class="tit">
 						<div class="td1"><input type="checkbox" /></div>
-						<div class="td2"><span>文件夹(<b>4</b>个)</span>  名称 <i></i></div>
-						<div class="td3">大小</div>
+						<div class="td2"><span>文件夹(<b><?=count($fold)?></b>个)</span>  名称 <i></i></div>
+						<div class="td3"></div>
 						<div class="td4">时间</div>
 					</li>
-					<li class="fold">
+					<?foreach($fold as $item):?>
+						<li class="fold">
+							<div class="td1"><input type="checkbox" /></div>
+							<div class="td2">
+								<i class="fold"></i>
+								<dl>
+									<dt><?=$item['name']?></dt>
+									<dd>
+										<span class="glyphicon glyphicon-share">分享</span>
+										<span class="glyphicon glyphicon-save">下载</span>
+									</dd>
+								</dl>
+							</div>
+							<div class="td3"> </div>
+							<div class="td4"><span><?=$item['time']?></span> <i></i></div>
+						</li>
+					<?endforeach?>
+<!-- 					<li class="fold">
 						<div class="td1"><input type="checkbox" /></div>
 						<div class="td2">
 							<i class="fold"></i>
@@ -155,7 +173,7 @@
 						</div>
 						<div class="td3"> 34.5kb</div>
 						<div class="td4"><span>2013-10-13</span> <i></i></div>
-					</li>
+					</li> -->
 
 					<li class="tit file-list">
 						<div class="td1"><input type="checkbox" /></div>
@@ -421,13 +439,17 @@
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title">新建文件夹</h4>
 				</div>
-				<div class="modal-body">
-					<input type="text" style="width:80%" />
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-					<button type="button" class="btn btn-primary">确定</button>
-				</div>
+				<form class="new-fold" id="newFold" method="get">
+					<div class="modal-body">
+						
+							<label>文件夹名称：</label><input id="foldname" name="foldname" type="text" style="width:80%" />
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<input type="button" class="btn btn-primary btn-new-fold" value="确定" />
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -1157,9 +1179,10 @@
 	<script src="/js/lib/jq.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
+	<script src="/js/lib/jq.validate.js"></script>
 	<script src="/js/common.js"></script>
-	<script src="/js/tips.js"></script>
 	<script src="/js/main.js"></script>
+	<script src="/js/home.js"></script>
 	<div id="alertTips" class="alert-tips"></div>
 	<!--
 	<div id="progTips" class="prog-tips">

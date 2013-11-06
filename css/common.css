@@ -64,6 +64,9 @@ a{
 .header .header-nav a,.userinfo a{
 	color:#fff;
 }
+.header .menu a{
+	color:#428bca;
+}
 .header .menu{
 	width:100%;
 	left:-1px;

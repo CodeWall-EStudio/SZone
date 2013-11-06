@@ -27,8 +27,12 @@ class Manage extends SZone_Controller {
 		}
 
 		$this->data = array(
-			'userinfo' => $this->user
-		);	
+			'nav' => array(
+				'userinfo' => $this->user,
+				'group' => $this->grouplist,
+				'dep' => $this->deplist
+			)
+		);
 	}
 
 	//默认用户
@@ -36,6 +40,22 @@ class Manage extends SZone_Controller {
 		//var_dump($this->user);
 		$this->data['index'] = 'index';
 		$this->data['data'] = array();
+
+		$sql = 'select * from user';
+
+		$query = $this->db->query($sql);
+		$ulist = array();
+		foreach($query->result() as $row){
+			array_push($ulist,array(
+				'id' => $row->id,
+				'name' => $row->name,
+				'nick' => $row->nick,
+				'auth' => $row->auth,
+				'size' => $row->size,
+				'used' => $row->used,
+			));
+		}
+		$this->data['data']['ulist'] = $ulist;
 
 		$this->load->view('manage',$this->data);
 	}
@@ -221,7 +241,7 @@ class Manage extends SZone_Controller {
 		$this->load->library('form_validation');
 		$this->load->helper('form');	
 		
-		$this->data['index'] = 'editgroup';	
+		//$this->data['index'] = 'editgroup';	
 		$id = $this->input->get('id');
 		if($this->user['auth'] & 0x8){
 
@@ -234,12 +254,35 @@ class Manage extends SZone_Controller {
 			foreach ($query->result() as $row){
 				$grouplist[$row->id] = $row->name;
 			}
-			$this->data['data']['group'] = $grouplist;
+			$this->data['group'] = $grouplist;
 
-			$this->form_validation->set_rules('groupname', 'groupname', 'required|min_length[2]|max_length[40]|callback_checkgroupname');
+			$this->form_validation->set_rules('groupname', 'groupname', 'required|min_length[2]|max_length[40]');
 
 			if ($this->form_validation->run() == FALSE && $this->input->post('groupname')){
-				$this->data['data']['ret'] = 0;
+
+					$sql = 'SELECT g.*,u.name as uname,u.id as uid FROM groups g,`user` u,`group-user` gu WHERE  gu.userid = u.id AND gu.auth = 1 AND gu.groupid = g.id AND g.id = '.$id;
+
+					$query = $this->db->query($sql);
+					$ulist = array();
+
+					foreach ($query->result() as $row){
+						$gid= $row->id;
+						$gname = $row->name;
+						$gparent = $row->parent;
+						$type = $row->type;
+						array_push($ulist,$row->uname);
+					};
+
+					$this->data['manage'] = implode(';',$ulist);
+					$this->data['gname'] = $gname;
+					$this->data['gid'] = $gid;
+					$this->data['parent'] = $gparent;
+					$this->data['type'] = $type;
+
+					$this->data['data']['ret'] = 0;
+
+					$this->load->view('manage/editgroup',$this->data);
+
 			}else{
 				if(!$this->input->post('groupname')){
 					$sql = 'SELECT g.*,u.name as uname,u.id as uid FROM groups g,`user` u,`group-user` gu WHERE  gu.userid = u.id AND gu.auth = 1 AND gu.groupid = g.id AND g.id = '.$id;
@@ -253,20 +296,18 @@ class Manage extends SZone_Controller {
 						$gparent = $row->parent;
 						$type = $row->type;
 						array_push($ulist,$row->uname);
-						// array(
-						// 	'name' => $row->uname,
-						// 	'uid' => $row->uid
-						// ));
 					};
-					$this->data['data']['manage'] = implode(';',$ulist);
-					$this->data['data']['gname'] = $gname;
-					$this->data['data']['gid'] = $gid;
-					$this->data['data']['parent'] = $gparent;
-					$this->data['data']['type'] = $type;
+
+					$this->data['manage'] = implode(';',$ulist);
+					$this->data['gname'] = $gname;
+					$this->data['gid'] = $gid;
+					$this->data['parent'] = $gparent;
+					$this->data['type'] = $type;
 
 					$this->data['data']['ret'] = 0;
-				}else{
 
+					$this->load->view('manage/editgroup',$this->data);
+				}else{
 
 					$manage = $this->input->post('manage');
 					$manage = preg_replace('/;$/e','',$manage);
@@ -298,19 +339,23 @@ class Manage extends SZone_Controller {
 							array_push($guid,(int) $row->userid);
 							array_push($insertid,(int) $row->id);
 
-							$data = array('auth' => 1);
-							$where = 'id='.(int) $row->id;
-							$str = $this->db->update_string('group-user',$data,$where);
+							// $data = array('auth' => 1);
+							// $where = 'id='.(int) $row->id;
+							// $str = $this->db->update_string('group-user',$data,$where);
 
-							$query = $this->db->query($str);
+						$sql = 'UPDATE `group-user` gu,`user` u SET gu.auth = 1,u.auth = 1 WHERE gu.userid = u.id AND u.id = '.(int) $row->userid.' AND gu.groupid = '.$id;
+						
+							$query = $this->db->query($sql);
 						};
 					}
 
 					$idlist = array_diff_assoc($idlist, $guid);
 					foreach($idlist as $item){
 						$data = array('groupid' => $id,'userid'=>$item,'auth' => 1);
+
+
 						$str = $this->db->insert_string('group-user',$data);
-						$query = $this->db->query($str);				
+						//$query = $this->db->query($sql);				
 					}
 
 					//UPDATE `groups` g,`group-user` gu SET g.name = '食堂5', g.parent = '0' , gu.auth = 1 WHERE gu.groupid = g.id AND g.id = 10 AND (gu.userid = 3 OR gu.userid = 4);
@@ -323,19 +368,20 @@ class Manage extends SZone_Controller {
 					$query = $this->db->query($str);
 					$num = $this->db->affected_rows();
 					if(!$num){
-						$this->data['data']['ret'] = 1;
+						$this->data['ret'] = 1;
 					}
+					$this->data['ret'] =0;
+					$this->data['msg'] = '修改成功!';
+					$this->load->view('manage/retmsg',$this->data);						
 				}
-			}
-			//print_r($this->data['data']);
-			$this->load->view('manage',$this->data);
+				
+			}		
 		}else{
-			$this->data['data'] = array(
-				'ret' => 0,
-				'msg' => '对不起,出错了.!'
-			);
+			$this->data['ret'] =1;
+			$this->data['msg'] = '对不起,出错了!';			
+			$this->load->view('manage/retmsg',$this->data);
 		}
-		//$this->load->view('manage',$this->data);
+		//
 		
 	}
 

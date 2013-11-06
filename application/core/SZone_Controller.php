@@ -2,13 +2,16 @@
 
 	class SZone_Controller extends CI_Controller {
 
-		protected $user = array();  
+		protected $user = array();
+		protected $grouplist = array();
+		protected $deplist = array();  
 		protected $controller_name;  
         protected $action_name; 		
 
 	    public function __construct(){
 	        parent::__construct();
 	        $this->set_user();
+	        $this->set_group();
 	    }
 
        	protected function set_user(){
@@ -33,7 +36,27 @@
 	        $this->user['nick'] = $nick;
 	        $this->user['auth'] = $auth;
 	        $this->user['userid'] = $userid;
-        }	    
+        }	
+
+        protected function set_group(){
+			$sql = 'select * from groups';
+			$query = $this->db->query($sql);
+
+			foreach($query->result() as $row){
+				if($row->type == 1){
+					array_push($this->grouplist,array(
+						'id' => $row->id,
+						'name' => $row->name,
+						'parent' => $row->parent
+					));
+				}elseif($row->type == 2){
+					array_push($this->deplist,array(
+						'id' => $row->id,
+						'name' => $row->name
+					));
+				}
+			}
+        }    
 	    
 	}
 ?>
