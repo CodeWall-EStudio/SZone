@@ -42,7 +42,7 @@
 			<a data-toggle="dropdown" id="username"><?=$userinfo['name']?><b class="caret"></b></a>
 			<div class="dropdown-menu user-more-info" role="menu" aria-labelledby="username">
 				<div class="user-head">
-					<img src="css/imgs/file1.png" width="50" height="50">
+					<img src="/css/imgs/file1.png" width="50" height="50">
 				</div>
 				<div class="user-zone">
 					个人空间已用:　30%

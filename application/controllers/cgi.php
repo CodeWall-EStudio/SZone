@@ -56,6 +56,73 @@ class Cgi extends SZone_Controller {
 		    ->set_content_type('application/json')
 		    ->set_output(json_encode($list));		
 	}
+
+	public function upload(){
+
+
+		$dirname = FILE_UPLOAD_PATH.$this->user['name'];
+		if (!file_exists($dirname)){
+			mkdir($dirname,0700);
+		}
+		
+		$nowdir = $this->getDir();
+
+		$config['upload_path'] = $nowdir;
+		$config['allowed_types'] = 'gif|jpg|png';
+		$this->load->library('upload', $config);
+
+		$field_name = "file";
+		if ( ! $this->upload->do_upload($field_name)){
+			$list = array(
+				'jsonrpc' => '2.0',
+				'error' => array(
+					'code' => 100,
+					'message' => '上传失败'
+				),
+				'id' => $id
+			);
+			$this->output
+			    ->set_content_type('application/json')
+			    ->set_output(json_encode($list));			
+		}else{
+			$filetype = $_FILES['file']['type'];
+			$md5 =  md5_file($_FILES['file']['tmp_name']);
+			$filedata = $this->upload->data();
+			print_r($filedata);
+			$data = array(
+				'path' => $filedata['full_path'],
+				'size' => $filedata['file_size'],
+				'md5' => $md5,
+				'type' => $filedata['is_image']
+			);
+			//print_r($data);
+			//echo 'ok';
+		}
+
+		//@set_time_limit(5 * 60);
+	}
+
+	protected function getDir(){
+		$nowdir = FILE_UPLOAD_PATH.$this->user['name'];
+		$map = directory_map($nowdir);
+		if(count($map) == 0){
+			$nowdir .= '/'.$this->user['name'].count($map);
+			mkdir($nowdir,0700);
+			return $nowdir;
+			//return $nowdir.'\\'.count($map);
+		}else{
+			$nowdir .= '/'.$this->user['name'].(count($map)-1);
+			$map = directory_map($nowdir,1);
+			if(count($map)<DIR_FILE_NUM){
+				return $nowdir;	
+			}else{
+				$nowdir .= '/'.$this->user['name'].count($map);
+				mkdir($nowdir,0700);
+				return $nowdir;	
+			}
+			
+		}
+	}
 }
 
 /* End of file welcome.php */

@@ -16,8 +16,8 @@
 		<div class="main-section">
 			<div class="tool-zone fade-in">
 				<div class="btn-zone">
-					<input type="file" class="upload-input" id="uploadFile" />
-					<button class="upload btn btn-primary">上传</button>
+<!-- 					<input type="file" class="upload-input" id="uploadFile" /> -->
+					<button class="upload btn btn-primary" data-toggle="modal" data-target="#uploadFile">上传</button>
 					<button class="btn btn-default" data-toggle="modal" data-target="#newFold">新建文件夹</button>
 				</div>
 
@@ -114,67 +114,6 @@
 							<div class="td4"><span><?=$item['time']?></span> <i></i></div>
 						</li>
 					<?endforeach?>
-<!-- 					<li class="fold">
-						<div class="td1"><input type="checkbox" /></div>
-						<div class="td2">
-							<i class="fold"></i>
-							<dl>
-								<dt>接收礼包</dt>
-								<dd>
-									<span class="glyphicon glyphicon-share">分享</span>
-									<span class="glyphicon glyphicon-save">下载</span>
-								</dd>
-							</dl>
-						</div>
-						<div class="td3"> 34.5kb</div>
-						<div class="td4"><span>2013-10-13 15:33</span> <i></i></div>
-					</li>
-					<li class="fold">
-						<div class="td1"><input type="checkbox" /></div>
-						<div class="td2">
-							<i class="fold"></i>
-							<dl>
-								<dt>接收礼包</dt>
-								<dd>
-									<span class="glyphicon glyphicon-share">分享</span>
-									<span class="glyphicon glyphicon-save">下载</span>
-								</dd>
-							</dl>
-						</div>
-						<div class="td3"> 34.5kb</div>
-						<div class="td4"><span>2013-10-13 15:33</span> <i></i></div>
-					</li>					
-					<li class="fold">
-						<div class="td1"><input type="checkbox" /></div>
-						<div class="td2">
-							<i class="gife"></i>
-							<dl>
-								<dt>接收礼包</dt>
-								<dd>
-									<span class="glyphicon glyphicon-share">分享</span>
-									<span class="glyphicon glyphicon-save">下载</span>
-								</dd>
-							</dl>
-						</div>
-						<div class="td3"> 34.5kb</div>
-						<div class="td4"><span>2013-10-13 15:33</span> <i></i></div>
-					</li>	
-					<li class="fold">
-						<div class="td1"><input type="checkbox" /></div>
-						<div class="td2">
-							<i class="fold"></i>
-							<dl>
-								<dt>接收礼包</dt>
-								<dd>
-									<span class="glyphicon glyphicon-share">分享</span>
-									<span class="glyphicon glyphicon-save">下载</span>
-								</dd>
-							</dl>
-						</div>
-						<div class="td3"> 34.5kb</div>
-						<div class="td4"><span>2013-10-13</span> <i></i></div>
-					</li> -->
-
 					<li class="tit file-list">
 						<div class="td1"><input type="checkbox" /></div>
 						<div class="td2"><span>文件(<b>4</b>个)</span>  </div>
@@ -182,7 +121,7 @@
 					<li class="file">
 						<div class="td1"><input type="checkbox" /></div>
 						<div class="td2">
-							<img src="css/imgs/file.png" />
+							<img src="/css/imgs/file.png" />
 							<dl>
 								<dt>接收礼包</dt>
 								<dd>
@@ -197,7 +136,7 @@
 					<li class="file">
 						<div class="td1"><input type="checkbox" /></div>
 						<div class="td2">
-							<img src="css/imgs/file.png" />
+							<img src="/css/imgs/file.png" />
 							<dl>
 								<dt>接收礼包</dt>
 								<dd>
@@ -240,6 +179,29 @@
 		<div class="clear"></div>
 	</div>
 	<div class="footer"></div>
+
+	<div id="uploadFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">上传文件</h4>
+				</div>
+				<div class="modal-body">
+					<div id="uploadContainer">
+						<button type="button" class="btn btn-default" id="btnUpload">选择文件</button>
+						<button type="button" class="btn btn-primary" id="btnStartUload">上传</button>
+					</div>
+
+					<div id="file_uploadList"></div>
+				</div>
+<!-- 				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary">确定</button>
+				</div> -->
+			</div>
+		</div>
+	</div>
 
 	<div id="sendToOther" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -1180,8 +1142,10 @@
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
 	<script src="/js/lib/jq.validate.js"></script>
+	<script src="/js/lib/plupload.full.min.js"></script>
+<!-- 	// <script type="text/javascript" src="/js/lib/moxie.js"></script>
+	// <script type="text/javascript" src="/js/lib/plupload.dev.js"></script>	 -->
 	<script src="/js/common.js"></script>
-	<script src="/js/main.js"></script>
 	<script src="/js/home.js"></script>
 	<div id="alertTips" class="alert-tips"></div>
 	<!--
