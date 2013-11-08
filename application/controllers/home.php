@@ -30,7 +30,7 @@ class Home extends SZone_Controller {
 		);
 
 
-		$sql = 'select id,name,createtime from `folds-user` where `user-id` = '.(int) $this->user['userid'];
+		$sql = 'select id,name,createtime from userfolds where uid = '.(int) $this->user['userid'];
 		$query = $this->db->query($sql);
 
 		$fold = array();

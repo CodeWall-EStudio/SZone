@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013-11-04 13:46:54
+-- 生成日期: 2013-11-08 12:39:48
 -- 服务器版本: 5.6.14
 -- PHP 版本: 5.3.27
 
@@ -13,8 +13,6 @@ SET time_zone = "+00:00";
 --
 -- 数据库: `szone`
 --
-CREATE DATABASE IF NOT EXISTS `szone` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `szone`;
 
 -- --------------------------------------------------------
 
@@ -22,7 +20,6 @@ USE `szone`;
 -- 表的结构 `board`
 --
 
-DROP TABLE IF EXISTS `board`;
 CREATE TABLE IF NOT EXISTS `board` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `parent-id` int(8) unsigned zerofill NOT NULL COMMENT '父消息id',
@@ -38,78 +35,9 @@ CREATE TABLE IF NOT EXISTS `board` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `collection-group`
---
-
-DROP TABLE IF EXISTS `collection-group`;
-CREATE TABLE IF NOT EXISTS `collection-group` (
-  `id` int(8) NOT NULL AUTO_INCREMENT,
-  `group-id` int(8) NOT NULL COMMENT '小组id',
-  `file-id` int(8) NOT NULL COMMENT '文件id',
-  `remark` varchar(120) DEFAULT NULL COMMENT '备注',
-  `time` int(12) NOT NULL COMMENT '收藏时间',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `collection-user`
---
-
-DROP TABLE IF EXISTS `collection-user`;
-CREATE TABLE IF NOT EXISTS `collection-user` (
-  `id` int(8) NOT NULL AUTO_INCREMENT,
-  `user-id` int(8) NOT NULL COMMENT '用户id或小组id',
-  `file-id` int(8) NOT NULL COMMENT '文件id',
-  `remark` varchar(120) DEFAULT NULL COMMENT '备注',
-  `time` int(12) NOT NULL COMMENT '收藏时间',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `file-group`
---
-
-DROP TABLE IF EXISTS `file-group`;
-CREATE TABLE IF NOT EXISTS `file-group` (
-  `id` int(8) NOT NULL AUTO_INCREMENT,
-  `file-id` int(8) NOT NULL COMMENT '文件id',
-  `group-id` int(8) NOT NULL COMMENT '小组id',
-  `createtime` int(12) NOT NULL COMMENT '创建时间',
-  `name` varchar(80) NOT NULL COMMENT '文件名',
-  `content` varchar(255) DEFAULT NULL COMMENT '文件说明',
-  `del` int(2) unsigned zerofill DEFAULT NULL COMMENT '是否被逻辑删除',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `file-user`
---
-
-DROP TABLE IF EXISTS `file-user`;
-CREATE TABLE IF NOT EXISTS `file-user` (
-  `id` int(8) NOT NULL AUTO_INCREMENT,
-  `file-id` int(8) NOT NULL COMMENT '文件id',
-  `name` varchar(80) NOT NULL COMMENT '文件名',
-  `user-id` int(8) NOT NULL COMMENT '用户id',
-  `createtime` int(12) NOT NULL COMMENT '创建时间',
-  `content` varchar(255) DEFAULT NULL COMMENT '文件说明',
-  `del` int(2) unsigned zerofill DEFAULT NULL COMMENT '是否被逻辑删除',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- 表的结构 `files`
 --
 
-DROP TABLE IF EXISTS `files`;
 CREATE TABLE IF NOT EXISTS `files` (
   `id` int(8) NOT NULL AUTO_INCREMENT COMMENT '文件id',
   `path` varchar(120) NOT NULL COMMENT '文件存放路径',
@@ -120,19 +48,50 @@ CREATE TABLE IF NOT EXISTS `files` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `md5` (`md5`),
   UNIQUE KEY `path` (`path`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `folds-group`
+-- 表的结构 `groupcollection`
 --
 
-DROP TABLE IF EXISTS `folds-group`;
-CREATE TABLE IF NOT EXISTS `folds-group` (
+CREATE TABLE IF NOT EXISTS `groupcollection` (
+  `id` int(8) NOT NULL AUTO_INCREMENT,
+  `gid` int(8) NOT NULL COMMENT '小组id',
+  `fid` int(8) NOT NULL COMMENT '文件id',
+  `remark` varchar(120) DEFAULT NULL COMMENT '备注',
+  `time` int(12) NOT NULL COMMENT '收藏时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `groupfile`
+--
+
+CREATE TABLE IF NOT EXISTS `groupfile` (
+  `id` int(8) NOT NULL AUTO_INCREMENT,
+  `fid` int(8) NOT NULL COMMENT '文件id',
+  `gid` int(8) NOT NULL COMMENT '小组id',
+  `createtime` int(12) NOT NULL COMMENT '创建时间',
+  `name` varchar(80) NOT NULL COMMENT '文件名',
+  `content` varchar(255) DEFAULT NULL COMMENT '文件说明',
+  `del` int(2) unsigned zerofill DEFAULT NULL COMMENT '是否被逻辑删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `groupfolds`
+--
+
+CREATE TABLE IF NOT EXISTS `groupfolds` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(120) NOT NULL COMMENT '文件夹名称',
-  `group-id` int(8) NOT NULL COMMENT '分组id',
+  `gid` int(8) NOT NULL COMMENT '分组id',
   `createtime` int(12) NOT NULL COMMENT '创建时间的时间戳',
   `updatetime` timestamp(6) NULL DEFAULT NULL COMMENT '更新时间',
   `type` int(2) unsigned zerofill NOT NULL COMMENT '预留扩展 是否隐藏的类型?',
@@ -142,42 +101,9 @@ CREATE TABLE IF NOT EXISTS `folds-group` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `folds-user`
---
-
-DROP TABLE IF EXISTS `folds-user`;
-CREATE TABLE IF NOT EXISTS `folds-user` (
-  `id` int(8) NOT NULL AUTO_INCREMENT,
-  `name` varchar(120) NOT NULL COMMENT '文件夹名称',
-  `user-id` int(8) NOT NULL COMMENT '用户id',
-  `createtime` int(12) NOT NULL COMMENT '创建时间的时间戳',
-  `updatetime` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
-  `type` int(2) unsigned zerofill NOT NULL COMMENT '预留扩展 是否隐藏的类型?',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- 表的结构 `group-user`
---
-
-DROP TABLE IF EXISTS `group-user`;
-CREATE TABLE IF NOT EXISTS `group-user` (
-  `id` int(8) NOT NULL AUTO_INCREMENT,
-  `groupid` int(8) NOT NULL,
-  `userid` int(8) NOT NULL,
-  `auth` int(8) unsigned zerofill NOT NULL COMMENT '0 普通成员 1 管理员',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- 表的结构 `groups`
 --
 
-DROP TABLE IF EXISTS `groups`;
 CREATE TABLE IF NOT EXISTS `groups` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(40) NOT NULL COMMENT '分组名',
@@ -186,7 +112,21 @@ CREATE TABLE IF NOT EXISTS `groups` (
   `create` int(8) DEFAULT NULL COMMENT '创建人id',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `groupuser`
+--
+
+CREATE TABLE IF NOT EXISTS `groupuser` (
+  `id` int(8) NOT NULL AUTO_INCREMENT,
+  `gid` int(8) NOT NULL,
+  `uid` int(8) NOT NULL,
+  `auth` int(8) unsigned zerofill NOT NULL COMMENT '0 普通成员 1 管理员',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
 
 -- --------------------------------------------------------
 
@@ -194,7 +134,6 @@ CREATE TABLE IF NOT EXISTS `groups` (
 -- 表的结构 `message`
 --
 
-DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `from` int(8) NOT NULL,
@@ -212,7 +151,6 @@ CREATE TABLE IF NOT EXISTS `message` (
 -- 表的结构 `user`
 --
 
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(40) NOT NULL COMMENT '用户名',
@@ -224,7 +162,55 @@ CREATE TABLE IF NOT EXISTS `user` (
   `access` varchar(64) NOT NULL COMMENT 'access token',
   `openid` varchar(64) DEFAULT NULL COMMENT 'openid',
   `update-time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `lastgroup` int(8) DEFAULT NULL COMMENT '最后一次访问的小组名',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `usercollection`
+--
+
+CREATE TABLE IF NOT EXISTS `usercollection` (
+  `id` int(8) NOT NULL AUTO_INCREMENT,
+  `uid` int(8) NOT NULL COMMENT '用户id或小组id',
+  `fid` int(8) NOT NULL COMMENT '文件id',
+  `remark` varchar(120) DEFAULT NULL COMMENT '备注',
+  `time` int(12) NOT NULL COMMENT '收藏时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `userfile`
+--
+
+CREATE TABLE IF NOT EXISTS `userfile` (
+  `id` int(8) NOT NULL AUTO_INCREMENT,
+  `fid` int(8) NOT NULL COMMENT '文件id',
+  `name` varchar(80) NOT NULL COMMENT '文件名',
+  `uid` int(8) NOT NULL COMMENT '用户id',
+  `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `content` varchar(255) DEFAULT NULL COMMENT '文件说明',
+  `del` int(2) unsigned zerofill DEFAULT NULL COMMENT '是否被逻辑删除',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `userfolds`
+--
+
+CREATE TABLE IF NOT EXISTS `userfolds` (
+  `id` int(8) NOT NULL AUTO_INCREMENT,
+  `name` varchar(120) NOT NULL COMMENT '文件夹名称',
+  `uid` int(8) NOT NULL COMMENT '用户id',
+  `createtime` int(12) NOT NULL COMMENT '创建时间的时间戳',
+  `updatetime` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+  `type` int(2) unsigned zerofill NOT NULL COMMENT '预留扩展 是否隐藏的类型?',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;

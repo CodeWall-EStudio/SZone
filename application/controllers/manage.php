@@ -165,7 +165,7 @@ class Manage extends SZone_Controller {
 			$idqlist = array();
 			foreach ($query->result() as $row){
 				array_push($idlist,(int) $row->id);
-				array_push($idqlist,'userid='.(int) $row->id);
+				array_push($idqlist,'uid='.(int) $row->id);
 			}
 
 
@@ -182,7 +182,7 @@ class Manage extends SZone_Controller {
 				'name' => $this->input->post('groupname'),
 				'parent' => $this->input->post('parent'),
 				'type' => $type,
-				'create' => $this->user['userid']
+				'create' => $this->user['uid']
 			);
 
 			$str = $this->db->insert_string('groups', $data); 
@@ -192,19 +192,19 @@ class Manage extends SZone_Controller {
 			//echo $id;
 
 			$where = implode(' or ',$idqlist);
-			$sql = 'SELECT id,userid FROM `group-user` where groupid='.$id.' and ('.$where.')';
+			$sql = 'SELECT id,uid FROM groupuser where gid='.$id.' and ('.$where.')';
 
 			$query = $this->db->query($sql);
 			$guid = array();
 			$insertid = array();
 			foreach ($query->result() as $row){
-				if(in_array((int) $row->userid,$idlist)){
-					array_push($guid,(int) $row->userid);
+				if(in_array((int) $row->uid,$idlist)){
+					array_push($guid,(int) $row->uid);
 					array_push($insertid,(int) $row->id);
 
 					$data = array('auth' => 1);
 					$where = 'id='.(int) $row->id;
-					$str = $this->db->update_string('group-user',$data,$where);
+					$str = $this->db->update_string('groupuser',$data,$where);
 
 					$query = $this->db->query($str);
 				};
@@ -212,8 +212,8 @@ class Manage extends SZone_Controller {
 
 			$idlist = array_diff_assoc($idlist, $guid);
 			foreach($idlist as $item){
-				$data = array('groupid' => $id,'userid'=>$item,'auth' => 1);
-				$str = $this->db->insert_string('group-user',$data);
+				$data = array('gid' => $id,'uid'=>$item,'auth' => 1);
+				$str = $this->db->insert_string('groupuser',$data);
 				$query = $this->db->query($str);				
 			}
 
@@ -260,7 +260,7 @@ class Manage extends SZone_Controller {
 
 			if ($this->form_validation->run() == FALSE && $this->input->post('groupname')){
 
-					$sql = 'SELECT g.*,u.name as uname,u.id as uid FROM groups g,`user` u,`group-user` gu WHERE  gu.userid = u.id AND gu.auth = 1 AND gu.groupid = g.id AND g.id = '.$id;
+					$sql = 'SELECT g.*,u.name as uname,u.id as uid FROM groups g,`user` u,groupuser gu WHERE  gu.uid = u.id AND gu.auth = 1 AND gu.gid = g.id AND g.id = '.$id;
 
 					$query = $this->db->query($sql);
 					$ulist = array();
@@ -285,7 +285,7 @@ class Manage extends SZone_Controller {
 
 			}else{
 				if(!$this->input->post('groupname')){
-					$sql = 'SELECT g.*,u.name as uname,u.id as uid FROM groups g,`user` u,`group-user` gu WHERE  gu.userid = u.id AND gu.auth = 1 AND gu.groupid = g.id AND g.id = '.$id;
+					$sql = 'SELECT g.*,u.name as uname,u.id as uid FROM groups g,`user` u,groupuser gu WHERE  gu.uid = u.id AND gu.auth = 1 AND gu.gid = g.id AND g.id = '.$id;
 
 					$query = $this->db->query($sql);
 					$ulist = array();
@@ -325,25 +325,25 @@ class Manage extends SZone_Controller {
 					$wlist = array();
 					foreach ($query->result() as $row){
 						array_push($idlist,(int) $row->id);
-						array_push($wlist,'gu.userid='.(int) $row->id);
+						array_push($wlist,'gu.uid='.(int) $row->id);
 					}				
 
 					$where = implode(' or ',$wlist);
-					$sql = 'SELECT gu.id,gu.userid FROM `group-user` gu where groupid='.$id.' and ('.$where.')';
+					$sql = 'SELECT gu.id,gu.uid FROM groupuser gu where gid='.$id.' and ('.$where.')';
 
 					$query = $this->db->query($sql);
 					$guid = array();
 					$insertid = array();
 					foreach ($query->result() as $row){
-						if(in_array((int) $row->userid,$idlist)){
-							array_push($guid,(int) $row->userid);
+						if(in_array((int) $row->uid,$idlist)){
+							array_push($guid,(int) $row->uid);
 							array_push($insertid,(int) $row->id);
 
 							// $data = array('auth' => 1);
 							// $where = 'id='.(int) $row->id;
-							// $str = $this->db->update_string('group-user',$data,$where);
+							// $str = $this->db->update_string('groupuser',$data,$where);
 
-						$sql = 'UPDATE `group-user` gu,`user` u SET gu.auth = 1,u.auth = 1 WHERE gu.userid = u.id AND u.id = '.(int) $row->userid.' AND gu.groupid = '.$id;
+						$sql = 'UPDATE groupuser gu,`user` u SET gu.auth = 1,u.auth = 1 WHERE gu.uid = u.id AND u.id = '.(int) $row->uid.' AND gu.gid = '.$id;
 						
 							$query = $this->db->query($sql);
 						};
@@ -351,14 +351,14 @@ class Manage extends SZone_Controller {
 
 					$idlist = array_diff_assoc($idlist, $guid);
 					foreach($idlist as $item){
-						$data = array('groupid' => $id,'userid'=>$item,'auth' => 1);
+						$data = array('gid' => $id,'uid'=>$item,'auth' => 1);
 
 
-						$str = $this->db->insert_string('group-user',$data);
+						$str = $this->db->insert_string('groupuser',$data);
 						//$query = $this->db->query($sql);				
 					}
 
-					//UPDATE `groups` g,`group-user` gu SET g.name = '食堂5', g.parent = '0' , gu.auth = 1 WHERE gu.groupid = g.id AND g.id = 10 AND (gu.userid = 3 OR gu.userid = 4);
+					//UPDATE `groups` g,groupuser gu SET g.name = '食堂5', g.parent = '0' , gu.auth = 1 WHERE gu.gid = g.id AND g.id = 10 AND (gu.uid = 3 OR gu.uid = 4);
 					$data = array(
 						'name' => $this->input->post('groupname'),
 						'parent' => $this->input->post('parent')
@@ -389,7 +389,7 @@ class Manage extends SZone_Controller {
 		$id = $this->input->get('id');
 		$this->data['index'] = 'ret';
 		if($this->user['auth'] & 0x8){
-			$sql = 'DELETE g,gu FROM `groups` g,`group-user` gu WHERE gu.groupid = g.id AND g.id ='.$id;
+			$sql = 'DELETE g,gu FROM `groups` g,groupuser gu WHERE gu.gid = g.id AND g.id ='.$id;
 
 			$query = $this->db->query($sql);
 			if($this->db->affected_rows()>0){

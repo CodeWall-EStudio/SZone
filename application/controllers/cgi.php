@@ -22,17 +22,17 @@ class Cgi extends SZone_Controller {
 	public function addfold(){
 		$name = $this->input->post('name');
 
-		$sql = 'select id from `folds-user` where `user-id` = '.(int) $this->user['userid'].' and name ="'.$name.'"';
+		$sql = 'select id from userfolds where uid = '.(int) $this->user['userid'].' and name ="'.$name.'"';
 		$query = $this->db->query($sql);
 		if($query->num_rows() == 0){
 
 			$data = array(
 				'name' => $name,
-				'user-id' => $this->user['userid'],
+				'uid' => $this->user['userid'],
 				'createtime' => time(),
 				'type' => 0
 			);
-			$str = $this->db->insert_string('folds-user',$data);
+			$str = $this->db->insert_string('userfolds',$data);
 			$query = $this->db->query($str);
 			if($this->db->insert_id()){
 				$list = array(
@@ -88,13 +88,75 @@ class Cgi extends SZone_Controller {
 			$filetype = $_FILES['file']['type'];
 			$md5 =  md5_file($_FILES['file']['tmp_name']);
 			$filedata = $this->upload->data();
-			print_r($filedata);
+
+			//判断是否存在相同的文件
+			$sql = 'select id from files where md5="'.$md5.'"';
+			$query = $this->db->query($sql);
+
+			if ($query->num_rows() > 0){
+				$row = $query->row();
+				$fid = $row->id;
+			}else{
+				$data = array(
+					'path' => $filedata['full_path'],
+					'size' => $filedata['file_size'],
+					'md5' => $md5,
+					'type' => $filedata['is_image'],
+					'del' => 0
+				);
+				$sql = $this->db->insert_string('files',$data);
+				//把文件写入数据库
+				$query = $this->db->query($sql);
+
+				$fid = $this->db->insert_id();
+			}
+
+			$sql = 'select id from userfile where fid='.$fid.' and uid='.(int) $this->user['userid'];
+			$query = $this->db->query($sql);
+			if ($query->num_rows() > 0){
+				$row = $query->row();
+				$list = array(
+					'jsonrpc' => '2.0',
+					'error' => array(
+						'code' => 101,
+						'message' => '上传失败,已经有重名文件'
+					),
+					'id' => $row->id
+				);
+				$this->output
+				    ->set_content_type('application/json')
+				    ->set_output(json_encode($list));				
+				return false;
+			}
+
 			$data = array(
-				'path' => $filedata['full_path'],
-				'size' => $filedata['file_size'],
-				'md5' => $md5,
-				'type' => $filedata['is_image']
+				'fid' => (int) $fid,
+				'name' => $filedata['raw_name'],
+				'uid' => (int) $this->user['userid'],
+				'del' => 0
 			);
+			$sql = $this->db->insert_string('userfile',$data);
+			$query = $this->db->query($sql);
+			if($this->db->affected_rows() > 0){
+				$list = array(
+					'jsonrpc' => '2.0',
+					'error' => array(
+						'code' => 0,
+						'message' => '上传成功!'
+					)
+				);
+			}else{
+				$list = array(
+					'jsonrpc' => '2.0',
+					'error' => array(
+						'code' => 102,
+						'message' => '上传失败!'
+					)
+				);
+			}
+			$this->output
+			    ->set_content_type('application/json')
+			    ->set_output(json_encode($list));							
 			//print_r($data);
 			//echo 'ok';
 		}
