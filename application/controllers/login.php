@@ -19,30 +19,17 @@ class Login extends CI_Controller{
 	}
 
 	public function callback(){
-		require_once('/application/libraries/qconnect/qqConnectAPI.php');
-		$openid = $this->session->userdata('openid');
-		$accessToken = $this->session->userdata('accessToken');
+		$this->load->library('qconnect');
 
-		if(!$openid && !$accessToken){
-			$qc = new QC();		
-			$accessToken = $qc->qq_callback();
-			$openid = $qc->get_openid();
-
-			$_SESSION['access_token'] = $accessToken;
-			$_SESSION['openid'] = $openid;		
-
-			var_dump($_SESSION);
-		}else{
-			$qc = new QC($accessToken,$openid);	
-		}
-		//$qcnew = new QC($accessToken,$openid);	
-		$ret = $qc->get_user_info();
-		//var_dump($ret);
+		$this->qconnect->get_access();
+		$this->qconnect->get_openid();
+		$ret = $this->qconnect->get_info();
 
 		//return;
 		//$name = $ret['data']['name'];
 		//$nick = $ret['data']['nick'];
-		$name = $ret['nickname'];
+		//$name = $ret['nickname'];
+		$name = $ret->nickname;
 		$nick = $name;
 
 		$result = $this->db->query('SELECT * FROM user WHERE name="'.$name.'"');
@@ -60,8 +47,8 @@ class Login extends CI_Controller{
         		'name' => $name,
         		'nick' => $nick,
         		'auth' => 0,
-        		'access' => $accessToken,
-        		'openid' => $openid
+        		'access' => $this->session->userdata('access_token'),
+        		'openid' => $this->session->userdata('openid')
         	);
         	$str = $this->db->insert_string('user',$data);
         	$this->db->query($str);
@@ -70,8 +57,8 @@ class Login extends CI_Controller{
 
 
 		$array = array(
-			'accessToken' => $accessToken,
-			'openid' => $openid,
+			// 'accessToken' => $accessToken,
+			// 'openid' => $openid,
 			'auth' => $auth,
 			'name' => $name,
 			'nick' => $nick,
@@ -108,6 +95,11 @@ class Login extends CI_Controller{
 	}	
 
 	public function connect(){
+		$this->load->library('qconnect');
+
+		$this->qconnect->qq_login();
+
+		return;
 		require_once('/application/libraries/qconnect/qqConnectAPI.php');
 
 		$qc = new QC();
