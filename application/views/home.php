@@ -118,36 +118,27 @@
 						<div class="td1"><input type="checkbox" /></div>
 						<div class="td2"><span>文件(<b>4</b>个)</span>  </div>
 					</li>	
-					<li class="file">
-						<div class="td1"><input type="checkbox" /></div>
-						<div class="td2">
-							<img src="/css/imgs/file.png" />
-							<dl>
-								<dt>接收礼包</dt>
-								<dd>
-									<span class="glyphicon glyphicon-share">分享</span>
-									<span class="glyphicon glyphicon-save">下载</span>
-								</dd>
-							</dl>
-						</div>
-						<div class="td3"> 34.5kb</div>
-						<div class="td4"><span>2013-10-13</span> <i></i></div>
-					</li>
-					<li class="file">
-						<div class="td1"><input type="checkbox" /></div>
-						<div class="td2">
-							<img src="/css/imgs/file.png" />
-							<dl>
-								<dt>接收礼包</dt>
-								<dd>
-									<span class="glyphicon glyphicon-share">分享</span>
-									<span class="glyphicon glyphicon-save">下载</span>
-								</dd>
-							</dl>
-						</div>
-						<div class="td3"> 34.5kb</div>
-						<div class="td4"><span>2013-10-13</span> <i></i></div>
-					</li>					
+					<?foreach($file as $item):?>
+						<li class="fold">
+							<div class="td1"><input type="checkbox" /></div>
+							<div class="td2">
+								<?if($item['type'] == 1):?>
+									<img src="<?=$item['path']?>" />
+								<?else:?>
+									<i class="fold"></i>
+								<?endif?>
+								<dl>
+									<dt><?=$item['name']?></dt>
+									<dd>
+										<span class="glyphicon glyphicon-share">分享</span>
+										<span class="glyphicon glyphicon-save">下载</span>
+									</dd>
+								</dl>
+							</div>
+							<div class="td3"> </div>
+							<div class="td4"><span><?=$item['time']?></span> <i></i></div>
+						</li>
+					<?endforeach?>										
 					<li class="last"></li>
 				</ul>
 			</div>

@@ -42,7 +42,25 @@ class Home extends SZone_Controller {
 			));
 		}
 
+		$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.uid='.(int) $this->user['userid'];
+		$query = $this->db->query($sql);
+		$file = array();
+		foreach($query->result() as $row){
+			if((int) $row->del == 0){
+				array_push($file,array(
+					'id' => $row->id,
+					'name' => $row->name,
+					'time' => $row->createtime,
+					'content' => $row->content,
+					'path' => $row->path,
+					'size' => $row->size,
+					'type' => $row->type
+				));
+			}
+		}
+
 		$data['fold'] = $fold;
+		$data['file'] = $file;
 
 		$this->load->view('home',$data);	
 	}

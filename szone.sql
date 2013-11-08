@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013-11-08 12:39:48
+-- 生成日期: 2013-11-08 12:54:59
 -- 服务器版本: 5.6.14
 -- PHP 版本: 5.3.27
 
@@ -191,6 +191,7 @@ CREATE TABLE IF NOT EXISTS `usercollection` (
 CREATE TABLE IF NOT EXISTS `userfile` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `fid` int(8) NOT NULL COMMENT '文件id',
+  `fdid` int(8) NOT NULL DEFAULT '0' COMMENT '文件夹id',
   `name` varchar(80) NOT NULL COMMENT '文件名',
   `uid` int(8) NOT NULL COMMENT '用户id',
   `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
