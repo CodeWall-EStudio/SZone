@@ -12,6 +12,7 @@
 	        parent::__construct();
 	        $this->set_user();
 	        $this->set_group();
+	        date_default_timezone_set('PRC');
 	    }
 
        	protected function set_user(){

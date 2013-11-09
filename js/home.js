@@ -24,6 +24,9 @@
 	});
 	*/
 
+	var EditMark = '/cgi/editmark', //修改备注
+		AddColl = '/cgi/addcoll';   //添加收藏
+
 	var uploader = new plupload.Uploader({
 		runtimes : 'html5,flash,silverlight,html4',
 		browse_button : 'btnUpload', // you can pass in id...
@@ -74,6 +77,21 @@
 
 	uploader.init();
 
+	var editMark = function(id,mark,type,target){
+		var data = {
+			id : id,
+			info : mark,
+			t : type
+		}
+
+		$.post(EditMark,data,function(d){
+			if(d.ret == 0){
+				target.parent('span').prev('span').text(d.info);
+			}else{
+				console.log(d.msg);
+			}
+		});
+	}
 
 
 	function init(){
@@ -91,6 +109,33 @@
 		  drop: function( event, ui ) {
 		    deleteFile( ui.draggable );
 		  }
+		});
+
+
+		$('#fileList').bind('click',function(e){
+			var target = $(e.target),
+				cmd = target.attr('cmd');
+			switch(cmd){
+				case 'edit':
+					target.hide();
+					target.next('span').removeClass('hide');
+					break;
+				case 'editComp':
+					var mark = target.prev('input').val(),
+						id = target.attr('data-id'),
+						type = target.attr('data-type');
+						console.log(id,type);
+						editMark(id,mark,type,target);
+						target.parent('span').prev('span').show();
+						target.parent('span').addClass('hide');						
+					break;
+				case 'editClose':
+					var mark = target.attr('data-value');
+					target.prev('input').val(mark);
+					target.parent('span').prev('span').show();
+					target.parent('span').addClass('hide');
+					break;
+			}
 		});
 
 		$("#fileList input").click(function(e){

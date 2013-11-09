@@ -21,6 +21,7 @@ class Home extends SZone_Controller {
 
 	public function index(){
 		//var_dump($this->user);
+		$type = (int) $this->input->get('type');
 		$data = array(
 			'nav' => array(
 				'userinfo' => $this->user,
@@ -30,7 +31,7 @@ class Home extends SZone_Controller {
 		);
 
 
-		$sql = 'select id,name,createtime from userfolds where uid = '.(int) $this->user['userid'];
+		$sql = 'select id,name,mark,createtime from userfolds where uid = '.(int) $this->user['userid'];
 		$query = $this->db->query($sql);
 
 		$fold = array();
@@ -38,7 +39,8 @@ class Home extends SZone_Controller {
 			array_push($fold,array(
 				'id' => $row->id,
 				'name' => $row->name,
-				'time' => $row->createtime
+				'mark' => $row->mark,
+				'time' => date('Y-m-d',$row->createtime)
 			));
 		}
 
@@ -50,7 +52,7 @@ class Home extends SZone_Controller {
 				array_push($file,array(
 					'id' => $row->id,
 					'name' => $row->name,
-					'time' => $row->createtime,
+					'time' => substr($row->createtime,0,10),
 					'content' => $row->content,
 					'path' => $row->path,
 					'size' => $row->size,
@@ -61,6 +63,7 @@ class Home extends SZone_Controller {
 
 		$data['fold'] = $fold;
 		$data['file'] = $file;
+		$data['type'] = $type;
 
 		$this->load->view('home',$data);	
 	}

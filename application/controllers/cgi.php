@@ -164,6 +164,57 @@ class Cgi extends SZone_Controller {
 		//@set_time_limit(5 * 60);
 	}
 
+	//修改备注
+	public function editmark(){
+		$t = $this->input->post('t');
+		$fid = $this->input->post('id');
+		$info = $this->input->post('info');
+
+		if($t == 'fold'){
+			$tname = 'userfolds';
+			$fname = 'mark';
+		}else{
+			$tname = 'userfile';
+			$fname = 'content';
+		};
+
+		$data = array(
+			$fname => $info
+		);
+
+		$sql = 'select id from '.$tname.' where id='.$fid.' and uid='.(int) $this->user['userid'];
+		$query = $this->db->query($sql);
+		if($query->num_rows() == 0){
+			$ret = array(
+				'ret' => 101,
+				'msg' => '没有查到文件!'
+			);
+		}else{
+			$str = $this->db->update_string($tname,$data,'id='.$fid.' and uid='.(int) $this->user['userid']);
+			$query = $this->db->query($sql);
+			if($this->db->affected_rows()>0){
+				$ret = array(
+					'ret' => 0,
+					'info' => $info,
+					'msg' => '修改成功!'
+				);
+			}else{
+				$ret = array(
+					'ret' => 102,
+					'msg' => '修改失败!'
+				);
+			}
+		}
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));
+	}
+
+	//收藏文件
+	public function addcoll(){
+
+	}
+
 	protected function getDir(){
 		$nowdir = FILE_UPLOAD_PATH.$this->user['name'];
 		$map = directory_map($nowdir);
