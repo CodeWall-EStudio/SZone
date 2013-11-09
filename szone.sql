@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013-11-08 12:54:59
+-- 生成日期: 2013-11-09 16:37:34
 -- 服务器版本: 5.6.14
 -- PHP 版本: 5.3.27
 
@@ -95,6 +95,7 @@ CREATE TABLE IF NOT EXISTS `groupfolds` (
   `createtime` int(12) NOT NULL COMMENT '创建时间的时间戳',
   `updatetime` timestamp(6) NULL DEFAULT NULL COMMENT '更新时间',
   `type` int(2) unsigned zerofill NOT NULL COMMENT '预留扩展 是否隐藏的类型?',
+  `pid` int(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=1 ;
 
@@ -112,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `groups` (
   `create` int(8) DEFAULT NULL COMMENT '创建人id',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 -- --------------------------------------------------------
 
@@ -126,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `groupuser` (
   `uid` int(8) NOT NULL,
   `auth` int(8) unsigned zerofill NOT NULL COMMENT '0 普通成员 1 管理员',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
 
 -- --------------------------------------------------------
 
@@ -180,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `usercollection` (
   `remark` varchar(120) DEFAULT NULL COMMENT '备注',
   `time` int(12) NOT NULL COMMENT '收藏时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -208,8 +209,10 @@ CREATE TABLE IF NOT EXISTS `userfile` (
 
 CREATE TABLE IF NOT EXISTS `userfolds` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
+  `pid` int(8) NOT NULL DEFAULT '0',
   `name` varchar(120) NOT NULL COMMENT '文件夹名称',
   `uid` int(8) NOT NULL COMMENT '用户id',
+  `mark` varchar(120) NOT NULL COMMENT '备注',
   `createtime` int(12) NOT NULL COMMENT '创建时间的时间戳',
   `updatetime` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
   `type` int(2) unsigned zerofill NOT NULL COMMENT '预留扩展 是否隐藏的类型?',
