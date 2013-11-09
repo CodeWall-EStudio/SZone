@@ -112,7 +112,7 @@ class Manage extends SZone_Controller {
 		$this->load->library('form_validation');
 		$this->load->helper('form');		
 
-		$auth = $this->data['userinfo']['auth'];
+		$auth = $this->user['auth'];
 
 		$act = $this->input->get('act');
 		if($act == ''){
@@ -182,7 +182,7 @@ class Manage extends SZone_Controller {
 				'name' => $this->input->post('groupname'),
 				'parent' => $this->input->post('parent'),
 				'type' => $type,
-				'create' => $this->user['uid']
+				'create' => $this->user['userid']
 			);
 
 			$str = $this->db->insert_string('groups', $data); 

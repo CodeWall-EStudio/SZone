@@ -95,7 +95,7 @@
 						<div class="td4">时间</div>
 					</li>
 					<?foreach($fold as $item):?>
-						<li class="fold">
+						<li class="fold" data-id="<?=$item['id']?>">
 							<div class="td1"><input type="checkbox" /></div>
 							<div class="td2">
 								<i class="fold"></i>
@@ -122,7 +122,7 @@
 						<div class="td2"><span>文件(<b>4</b>个)</span>  </div>
 					</li>	
 					<?foreach($file as $item):?>
-						<li class="fold">
+						<li class="file" data-id="<?=$item['id']?>">
 							<div class="td1"><input type="checkbox" /></div>
 							<div class="td2">
 								<?if($item['type'] == 1):?>
@@ -146,7 +146,7 @@
 								</dl>
 							</div>
 							<div class="td3"> </div>
-							<div class="td4"><span><?=$item['time']?></span> <i></i></div>
+							<div class="td4"><span><?=$item['time']?></span> <i cmd="coll" <?if(in_array($item['id'],$coll)):?>class="s"<?endif?> data-type="file" data-id="<?=$item['id']?>"></i></div>
 						</li>
 					<?endforeach?>										
 					<li class="last"></li>

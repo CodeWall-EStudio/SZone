@@ -210,9 +210,60 @@ class Cgi extends SZone_Controller {
 		    ->set_output(json_encode($ret));
 	}
 
+	//移动文件
+	public function movefile(){
+		$tid = $this->input->post('tid');
+		$fid = $this->input->post('fid');
+
+		$data = array(
+			'fdid' => $tid
+		);
+		$sql = $this->db->update_string('userfile',$data,'id ='.$fid);
+		$query = $this->db->query($sql);
+
+		if($this->db->affected_rows()>0){
+			$ret = array(
+				'ret' => 0,
+				'msg' => '更新成功!'
+			);
+		}else{
+			$ret = array(
+				'ret' => 100,
+				'msg' => '更新失败!'
+			);
+		}
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));
+	}
+
 	//收藏文件
 	public function addcoll(){
+		$id = $this->input->post('id');
 
+		$data = array(
+			'uid' => $this->user['userid'],
+			'fid' => $id,
+			'time' => time()
+		);
+
+		$sql = $this->db->insert_string('usercollection',$data);
+		$query = $this->db->query($sql);
+		if($this->db->affected_rows()>0){
+			$ret = array(
+				'ret' => 0,
+				'id' => $this->db->insert_id(),
+				'msg' => '收藏成功!'
+			);
+		}else{
+			$ret = array(
+				'ret' => 100,
+				'msg' => '插入失败!'
+			);
+		}
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));
 	}
 
 	protected function getDir(){

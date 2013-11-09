@@ -25,7 +25,7 @@ a{
 	width:235px;
 	height:60px;
 }
-.header .header-nav li{
+.header .header-nav li.nav{
 	position:relative;
 	float:left;
 	padding:0 15px;
@@ -34,14 +34,14 @@ a{
 	height:60px;
 	cursor:pointer;
 }
-.header .header-nav li .caret{
+.header .header-nav li.nev .caret{
 	border-top: 4px solid #b4c9de;
 	border-right: 4px solid transparent;
 	border-bottom: 0 dotted;
 	border-left: 4px solid transparent;
 }
 /*.header .header-nav li.selected{*/
-.header .header-nav li:hover{	
+.header .header-nav li.nav:hover{	
 	line-height:60px;
 	height:59px;
 	background-color:#1e417b;
@@ -49,7 +49,7 @@ a{
 	border-bottom:1px solid #102860;
 	transition:.25s linear;
 }
-.header .header-nav li.open{
+.header .header-nav li.nav.open{
 	border:1px solid #c3c5cb;
 	height:59px;
 	padding:0 14px;
@@ -71,6 +71,12 @@ a{
 	color:#1c3e7b;
 	border:1px solid #d3d6da;
 	border-bottom:none;
+}
+.header .userinfo{
+	line-height:60px;
+	font-size:18px;
+	position:relative;
+	float:right;
 }
 .header .header-nav li i{
 	display:inline-block;
@@ -103,23 +109,40 @@ a{
 	z-index:10;
 }
 .header .menu li{
+	position:relative;
 	white-space:nowrap;  
-	line-height:32px;
-	height:32px;
+	line-height:22px;
+	height:auto;
 	color:#666666;
 	float:none;
-	transition:.25s linear;
+/*	transition:.25s linear;*/
+}
+.header .menu li span{
+	
+	position:absolute;
+	top:0;
+	
+	right:6px;
 }
 .header .menu li a{
+	color:#666;
 	font-size:16px;
 }
+.header .menu li li a{
+	font-size:12px;
+}
+.header .menu li span a{
+	font-size:12px;
+	color:#ff7040;
+	display:inline-block;
+}
 .header .menu li:hover{
-	height:32px;
+/*	height:auto;
 	font-weight:bold;
 	line-height:32px;
 	background-color:#ebeef3;
 	color:#000;
-	border-bottom:none;
+	border-bottom:none;*/
 }
 
 .header .group{

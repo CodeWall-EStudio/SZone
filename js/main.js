@@ -86,35 +86,5 @@ function uploadCanceled(evt) {
     //alert("The upload has been canceled by the user or the browser dropped the connection.");
 }        
 
-function deleteFile(item){
-	item.remove();
-	if($("#fileList .file").length == 0){
-		$('#fileList .file-list').hide(200);
-	}
-}
-
-$("#fileList .file").draggable({ 
-	revert: true
-});
-
-$("#fileList .file").click(function(){
-	$('#reviewFile').modal('show');
-});
 
 
-$("#fileList .fold").droppable({
-  accept: "#fileList .file",
-  drop: function( event, ui ) {
-    deleteFile( ui.draggable );
-  }
-});
-
-$("#fileList input").click(function(e){
-	if($(e.target).is(":checked")){
-		$('.tool-zone').addClass('hide');
-		$('.file-act-zone').removeClass('hide');
-	}else{
-		$('.tool-zone').removeClass('hide');
-		$('.file-act-zone').addClass('hide');	
-	}
-})

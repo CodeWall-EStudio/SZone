@@ -25,6 +25,7 @@
 	*/
 
 	var EditMark = '/cgi/editmark', //修改备注
+		MoveFile = '/cgi/movefile', //移动文件到文件夹
 		AddColl = '/cgi/addcoll';   //添加收藏
 
 	var uploader = new plupload.Uploader({
@@ -93,8 +94,31 @@
 		});
 	}
 
+	collFile = function(id,target){
+		var data = {
+			id : id
+		}
+		$.post(AddColl,data,function(d){
+			console.log(d);
+			if(d.ret == 0){
+				target.addClass('s');
+			}
+		});
+	}
 
-	function init(){
+	deleteFile = function(item){
+		item.remove();
+		if($("#fileList .file").length == 0){
+			$('#fileList .file-list').hide(200);
+		}
+	}
+
+ 	recycleImage = function(item ) {
+
+    }	
+
+	function bind(){
+
 		$("#fileList .file").draggable({ 
 			revert: true
 		});
@@ -106,16 +130,45 @@
 
 		$("#fileList .fold").droppable({
 		  accept: "#fileList .file",
-		  drop: function( event, ui ) {
-		    deleteFile( ui.draggable );
+		  drop: function( e, ui ) {
+
+		  	var data = {
+		  		'tid' : $(e.target).attr('data-id'),
+		  		'fid' : $(ui.draggable).attr('data-id')
+		  	}
+		  	$.post(MoveFile,data,function(d){
+		  		console.log(d);
+		  		if(d.ret == 0){
+		  			deleteFile( ui.draggable );		
+		  		}
+		  	});
+		    //
+		    //recycleImage( ui.draggable );
 		  }
 		});
+
+		$("#fileList input").click(function(e){
+			if($(e.target).is(":checked")){
+				$('.tool-zone').addClass('hide');
+				$('.file-act-zone').removeClass('hide');
+			}else{
+				$('.tool-zone').removeClass('hide');
+				$('.file-act-zone').addClass('hide');	
+			}
+		})
 
 
 		$('#fileList').bind('click',function(e){
 			var target = $(e.target),
 				cmd = target.attr('cmd');
 			switch(cmd){
+				case 'coll':
+					var id = target.attr('data-id'),
+						type = target.attr('data-type');
+						if(type == 'file'){
+							collFile(id,target);
+						}
+					break;
 				case 'edit':
 					target.hide();
 					target.next('span').removeClass('hide');
@@ -171,7 +224,13 @@
 		 			console.log(typeof d,d,d[0]);
 		 		});
 		 	}
-		 });
+		 });		
+
+	}
+
+
+	function init(){
+		bind();
 	}
 
 

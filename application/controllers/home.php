@@ -44,9 +44,10 @@ class Home extends SZone_Controller {
 			));
 		}
 
-		$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.uid='.(int) $this->user['userid'];
+		$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = 0 and a.uid='.(int) $this->user['userid'];
 		$query = $this->db->query($sql);
 		$file = array();
+		$idlist = array();
 		foreach($query->result() as $row){
 			if((int) $row->del == 0){
 				array_push($file,array(
@@ -61,9 +62,17 @@ class Home extends SZone_Controller {
 			}
 		}
 
+		$sql = 'select fid from usercollection where uid='.(int) $this->user['userid'];
+		$query = $this->db->query($sql);
+
+		foreach($query->result() as $row){
+			array_push($idlist,$row->fid);
+		}
+
 		$data['fold'] = $fold;
 		$data['file'] = $file;
 		$data['type'] = $type;
+		$data['coll'] = $idlist;
 
 		$this->load->view('home',$data);	
 	}

@@ -40,23 +40,58 @@
         }	
 
         protected function set_group(){
+        	$sql = 'select gid from groupuser where uid='.(int) $this->user['userid'].' and auth>0';
+        	$query = $this->db->query($sql);
+        	$gidlist = array();
+
+        	foreach($query->result() as $row){
+        		array_push($gidlist,$row->gid);
+        	}
 			$sql = 'select * from groups';
 			$query = $this->db->query($sql);
 
+			//gid列表
+			$flist = array();
+			$glist = array();
+			$idlist = array();
 			foreach($query->result() as $row){
 				if($row->type == 1){
-					array_push($this->grouplist,array(
-						'id' => $row->id,
-						'name' => $row->name,
-						'parent' => $row->parent
-					));
+					if($row->parent == 0){
+						$flist[$row->id] = array(
+							'id' => $row->id,
+							'name' => $row->name,
+							'parent' => $row->parent,
+							'auth' => in_array($row->id,$gidlist),
+							'list' => array()
+						);
+					}else{
+						$glist[$row->id] = array(
+							'id' => $row->id,
+							'name' => $row->name,
+							'parent' => $row->parent,
+							'auth' => in_array($row->id,$gidlist)
+						);						
+						// array_push($glist,array(
+						// 	'id' => $row->id,
+						// 	'name' => $row->name,
+						// 	'parent' => $row->parent,
+						// 	'auth' => in_array($row->id,$gidlist)
+						// ));
+					}
 				}elseif($row->type == 2){
 					array_push($this->deplist,array(
 						'id' => $row->id,
 						'name' => $row->name
 					));
 				}
+				//array_push($idlist,'gid="'.$row->id.'"');
+			};
+
+			foreach($glist as $k => $r){
+				array_push($flist[$r['parent']]['list'],$r);
+
 			}
+			$this->grouplist = $flist;
         }    
 	    
 	}
