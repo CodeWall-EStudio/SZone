@@ -72,6 +72,9 @@ body {
 	overflow-y:auto;
 	height:200px;
 }
+.share-target a.selected,.share-select a.selected{
+	background:#b8bec5;
+}
 .share-target a,.share-select a{
 	display:block;
 	padding:4px;
@@ -81,4 +84,12 @@ body {
 }
 .share-target a:hover,.share-select a:hover,.share-select a.select{
 	background:#b4c9de;
+}
+.share-act-zone input{
+	color:#9c9c9c;
+}
+.share-select ul.second{
+	border:none;
+	height:auto;
+	padding-left:12px;
 }

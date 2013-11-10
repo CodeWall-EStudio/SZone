@@ -1,32 +1,30 @@
 ;(function(){
-	/*
-	$("#newFold").validate({
-		rules:{
-			foldname : {
-				required : true,
-				maxlength : 120,
-				minlength : 2
-			} 
-		},
-		messages:{
-			foldname : {
-				require : '请输入文件夹名称',
-				maxlength : '文件名称最长120个字',
-				minlength : '文件名称至少需要2个字'
-			}
-		},
-		submitHandler : function(form) {
-			console.log(form);
-	    // do other things for a valid form
-	    	console.log(1234);
-	    	return false;
-		}
-	});
-	*/
-
+	var iframeEl = $('#shareIframe');
 	var EditMark = '/cgi/editmark', //修改备注
 		MoveFile = '/cgi/movefile', //移动文件到文件夹
 		AddColl = '/cgi/addcoll';   //添加收藏
+    $("#newFolds").validate({
+            rules:{
+                    foldname : {
+                            required : true,
+                            maxlength : 120,
+                            minlength : 2
+                    } 
+            },
+            messages:{
+                    foldname : {
+                            require : '请输入文件夹名称',
+                            maxlength : '文件名称最长120个字',
+                            minlength : '文件名称至少需要2个字'
+                    }
+            },
+            submitHandler : function(form) {
+                    console.log(form);
+        // do other things for a valid form
+                console.log(1234);
+                return false;
+            }
+    });
 
 	var uploader = new plupload.Uploader({
 		runtimes : 'html5,flash,silverlight,html4',
@@ -52,6 +50,11 @@
 				$('#file_uploadList').html('');
 				//document.getElementById('file_uploadList').innerHTML = '';
 				$('#btnStartUload').bind('click',function(){
+					//uploader.settings.url = '';
+					var fid = $('#uploadFile .foldid').val();
+					if(fid){
+						uploader.settings.url = '/cgi/upload?fid='+fid;
+					}
 					uploader.start();
 				});
 			},
@@ -68,6 +71,7 @@
 			},
 			FileUploaded: function(e,file){
 				console.log(e,file);
+				//window.location.reload();
 			},
 			Error: function(up, err) {
 				console.log(up,err);
@@ -77,6 +81,38 @@
 	});
 
 	uploader.init();
+
+	var showShare = function(id,cmd){
+		var il = [],
+			nl = [];
+		if(!id){
+			$('#fileList .fclick:checked').each(function(){
+				il.push($(this).val());
+			});
+		}else if(typeof id == 'string'){
+			il.push(id);
+			nl.push(name);
+		}else{
+			il = id;
+			nl = name;
+		}
+		var id = il.join(',');
+		switch(cmd){
+			case 'toother':
+				$('#shareWin h4').text('共享 发送给别人');
+				console.log('/share/other?id='+id);
+				iframeEl.attr('src','/share/other?id='+id);
+				break;
+			case 'togroup':
+				$('#shareWin h4').text('共享 到小组空间');
+				iframeEl.attr('src','/share/group?id='+id);
+				break;
+			case 'todep':
+				$('#shareWin h4').text('共享 到部门空间');
+				iframeEl.attr('src','/share/dep?id='+id);
+				break;
+		}
+	}
 
 	var editMark = function(id,mark,type,target){
 		var data = {
@@ -94,7 +130,7 @@
 		});
 	}
 
-	collFile = function(id,target){
+	var collFile = function(id,target){
 		var data = {
 			id : id
 		}
@@ -106,24 +142,49 @@
 		});
 	}
 
-	deleteFile = function(item){
+	var deleteFile = function(item){
 		item.remove();
 		if($("#fileList .file").length == 0){
 			$('#fileList .file-list').hide(200);
 		}
 	}
 
- 	recycleImage = function(item ) {
+ 	var recycleImage = function(item ) {
 
     }	
 
 	function bind(){
+		$("#selectAllFile").bind('click',function(){
+			if($(this)[0].checked){
+				$('#fileList .fclick:not(:checked)').each(function(){
+					$(this).click();
+				});
+			}else{
+				console.log(1222);
+				$('#fileList .fclick:checked').each(function(){
+					$(this).attr('checked',false);
+				});
+			}
+		});
+
+		$('.file-act-zone a').bind('click',function(e){
+			var target = $(e.target),
+				cmd = target.attr('cmd');
+			console.log(cmd);
+			switch(cmd){
+				case 'toother':
+				case 'togroup':
+				case 'todep':
+					showShare(null,cmd);
+					break;
+			}
+		})
 
 		$("#fileList .file").draggable({ 
 			revert: true
 		});
 
-		$("#fileList .file").click(function(){
+		$("#fileList .file .file-name").click(function(){
 			$('#reviewFile').modal('show');
 		});
 
@@ -142,9 +203,11 @@
 		  			deleteFile( ui.draggable );		
 		  		}
 		  	});
-		    //
-		    //recycleImage( ui.draggable );
 		  }
+		});
+
+		$('#actDropDown a').click(function(e){
+
 		});
 
 		$("#fileList input").click(function(e){
@@ -162,6 +225,13 @@
 			var target = $(e.target),
 				cmd = target.attr('cmd');
 			switch(cmd){
+				case 'toother':
+				case 'togroup':
+				case 'todep':
+					var id = target.attr('data-id');
+					var name = target.attr('data-name');
+					showShare(id,cmd);
+					break;
 				case 'coll':
 					var id = target.attr('data-id'),
 						type = target.attr('data-type');
@@ -218,10 +288,18 @@
 
 		 $('.btn-new-fold').click(function(){
 		 	var value = $('#foldname').val();
+		 	var pid = $('#newFolds .parentid').val();
+		 	console.log(pid);
 		 	if(value != ''){
 		 		//console.log(value);
-		 		$.post('/cgi/addfold',{name: value},function(d){
-		 			console.log(typeof d,d,d[0]);
+		 		$.post('/cgi/addfold',{name: value,pid: pid},function(d){
+		 			if(d.ret==0){
+		 				$("#newFold .close").click();
+		 				window.location.reload();
+		 			}else{
+		 				alert(d.msg);
+		 			}
+		 			$("#newFold .close").click();
 		 		});
 		 	}
 		 });		
@@ -233,7 +311,12 @@
 		bind();
 	}
 
-
-
 	init();
 })();
+
+function hideShare(){
+	$('#shareWin').modal('hide');
+}
+function sharealert(msg){
+	alert(msg);
+}

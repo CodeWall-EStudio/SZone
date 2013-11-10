@@ -21,14 +21,17 @@ class Cgi extends SZone_Controller {
 
 	public function addfold(){
 		$name = $this->input->post('name');
+		$pid = (int) $this->input->post('pid');
 
 		$sql = 'select id from userfolds where uid = '.(int) $this->user['userid'].' and name ="'.$name.'"';
 		$query = $this->db->query($sql);
 		if($query->num_rows() == 0){
 
 			$data = array(
+				'pid' => $pid,
 				'name' => $name,
 				'uid' => $this->user['userid'],
+				'mark' => '',
 				'createtime' => time(),
 				'type' => 0
 			);
@@ -59,7 +62,6 @@ class Cgi extends SZone_Controller {
 
 	public function upload(){
 
-
 		$dirname = FILE_UPLOAD_PATH.$this->user['name'];
 		if (!file_exists($dirname)){
 			mkdir($dirname,0700);
@@ -70,6 +72,8 @@ class Cgi extends SZone_Controller {
 		$config['upload_path'] = $nowdir;
 		$config['allowed_types'] = 'gif|jpg|png';
 		$this->load->library('upload', $config);
+		$fdid = (int) $this->input->get('fid');
+
 
 		$field_name = "file";
 		if ( ! $this->upload->do_upload($field_name)){
@@ -133,7 +137,8 @@ class Cgi extends SZone_Controller {
 				'fid' => (int) $fid,
 				'name' => $filedata['raw_name'],
 				'uid' => (int) $this->user['userid'],
-				'del' => 0
+				'del' => 0,
+				'fdid' => $fdid
 			);
 			$sql = $this->db->insert_string('userfile',$data);
 			$query = $this->db->query($sql);
@@ -264,6 +269,214 @@ class Cgi extends SZone_Controller {
 		$this->output
 		    ->set_content_type('application/json')
 		    ->set_output(json_encode($ret));
+	}
+
+	public function getgroup(){
+		$key = $this->input->post('key');
+		$type = (Int) $this->input->post('type');
+
+		$sql = 'select id,name,parent from groups where name like "%'.$key.'%" and type='.$type;
+		$query = $this->db->query($sql);
+		$glist = array();
+		$gi = array();
+		foreach($query->result() as $row){
+			if($row->parent == 0){
+				$gi[$row->id] = array(
+					'id' => $row->id,
+					'name' => $row->name,
+					'pid' => $row->parent
+				);
+			}
+			array_push($glist,array(
+				'id' => $row->id,
+				'name' => $row->name,
+				'pid' => $row->parent
+			));
+		}
+		if($type ==1 ){
+			foreach($glist as $row){
+				if($row['pid']){
+					if(!isset($gi[$row['pid']]['list'])){
+						$gi[$row['pid']]['list'] = array();
+					}
+					array_push($gi[$row['pid']]['list'],$row);
+				}
+			}
+			$glist = $gi;			
+		}
+		$ret = array(
+			'ret' => 0,
+			'list' => $glist
+		);
+			$this->output
+			    ->set_content_type('application/json')
+			    ->set_output(json_encode($ret));		
+	}
+
+	//取用户列表
+	public function getuser(){
+		$key = $this->input->post('key');
+
+		$sql = 'select id,name,nick from user where name like "%'.$key.'%" and id != '.$this->user['userid'];
+		$query = $this->db->query($sql);
+		$list = array();
+		foreach($query->result() as $row){
+			array_push($list,array(
+				'id' => $row->id,
+				'name' => $row->name,
+				'nick' => $row->nick
+			));
+		}
+		if(count($list) > 0){
+			$ret = array(
+				'ret' => 0,
+				'list' => $list
+			);
+		}
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));
+	}
+
+	public function addgroupshare(){
+		$id = $this->input->post('id');  //分组id
+		$fid = $this->input->post('flist'); //文件id
+		$type = $this->input->post('type'); //类型 0 用户到用户 1 到小组 2到部门
+		$isuser = $this->input->post('isuser'); //用户发起还是在小组发起
+		$content = $this->input->post('content');
+		
+
+		$cache = array();
+
+		//取id
+		$kl = array();
+		foreach($id as $k){
+			
+			$cache[$k] = array();
+		}
+		foreach($fid as $k){
+			array_push($kl,' id='.$k);			
+		}
+		$str = implode(' or ',$kl);
+		$sql = 'select id,name from userfile where '.$str;
+		$query = $this->db->query($sql);
+		$nl = array();
+		foreach($query->result() as $row){
+			$nl[$row->id] = $row->name;
+		};
+
+		$sql = 'select fid,gid from groupfile where uid='.$this->user['userid'];
+		$query = $this->db->query($sql);
+
+		foreach($query->result() as $row){
+			if(isset($cache[$row->gid])){
+				array_push($cache[$row->gid],$row->fid);
+			}
+		}	
+		$key = array();
+		$time = time();		
+		foreach($id as $k){
+			foreach($fid as $i){
+				if(!in_array($i,$cache[$k])){
+	array_push($key,'('.$i.','.$k.','.$time.',"'.$nl[$i].'",'.'"'.$content.'",'.$this->user['userid'].')');	
+				}
+			}
+		}
+		if(count($key)>0){
+			$sql = 'insert into groupfile (fid,gid,createtime,fname,content,uid) value '.implode(',',$key);
+			$query = $this->db->query($sql);
+			if($this->db->affected_rows()>0){
+				$ret = array(
+					'ret' => 0,
+					'msg' => '添加成功!'
+				);
+			}else{
+				$ret = array(
+					'ret' => 101,
+					'msg' => '添加失败!'
+				);
+			}
+		}else{
+			$ret = array(
+				'ret' => 100,
+				'msg' => '不能重复添加'
+			);
+		}
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));
+	}
+
+	public function addshare(){
+		//date_default_timezone_set('PRC');
+		$id = $this->input->post('id');  //用户id
+		$fid = $this->input->post('flist'); //文件id
+		$type = $this->input->post('type'); //类型 0 用户到用户 1 到小组 2到部门
+		$isuser = $this->input->post('isuser'); //用户发起还是在小组发起
+		$content = $this->input->post('content');
+
+		$cache = array();
+
+		foreach($id as $k){
+			$cache[$k] = array();
+		}
+
+		$sql = 'select fid,tuid from message where fuid='.$this->user['userid'];
+		$query = $this->db->query($sql);
+
+		foreach($query->result() as $row){
+			if(isset($cache[$row->tuid])){
+				array_push($cache[$row->tuid],$row->fid);
+			}
+		}
+
+		$tablename = 'message';
+		$key = array();
+		$time = time();
+		foreach($id as $k){
+			foreach($fid as $i){
+				if(!in_array($i,$cache[$k])){
+					array_push($key,'('.$this->user['userid'].','.$k.',"'.$content.'",'.$i.')');	
+				}
+			}
+		}
+		if(count($key)>0){
+			$sql = 'insert into message (fuid,tuid,content,fid) value '.implode(',',$key);
+			$query = $this->db->query($sql);
+
+			if($this->db->affected_rows()>0){
+				$ret = array(
+					'ret' => 0,
+					'msg' => '添加成功!'
+				);
+			}else{
+				$ret = array(
+					'ret' => 101,
+					'msg' => '添加失败!'
+				);
+			}
+		}else{
+			$ret = array(
+				'ret' => 100,
+				'msg' => '不能重复添加'
+			);
+		}
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));
+	}
+
+	public function test(){
+		$a = array(
+			'1' => array(),
+			'2' => array()
+ 		);
+
+ 		if(isset($a[3])){
+ 			echo 1;
+ 		}else{
+ 			echo 2;
+ 		}
 	}
 
 	protected function getDir(){

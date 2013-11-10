@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013-11-09 16:37:34
+-- 生成日期: 2013-11-10 16:18:19
 -- 服务器版本: 5.6.14
 -- PHP 版本: 5.3.27
 
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `files` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `md5` (`md5`),
   UNIQUE KEY `path` (`path`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 -- --------------------------------------------------------
 
@@ -76,11 +76,12 @@ CREATE TABLE IF NOT EXISTS `groupfile` (
   `fid` int(8) NOT NULL COMMENT '文件id',
   `gid` int(8) NOT NULL COMMENT '小组id',
   `createtime` int(12) NOT NULL COMMENT '创建时间',
-  `name` varchar(80) NOT NULL COMMENT '文件名',
+  `fname` varchar(80) NOT NULL COMMENT '文件名',
   `content` varchar(255) DEFAULT NULL COMMENT '文件说明',
   `del` int(2) unsigned zerofill DEFAULT NULL COMMENT '是否被逻辑删除',
+  `uid` int(8) NOT NULL COMMENT '来源用户id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=15 ;
 
 -- --------------------------------------------------------
 
@@ -137,14 +138,14 @@ CREATE TABLE IF NOT EXISTS `groupuser` (
 
 CREATE TABLE IF NOT EXISTS `message` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
-  `from` int(8) NOT NULL,
-  `to` int(8) NOT NULL,
+  `fuid` int(8) NOT NULL,
+  `tuid` int(8) NOT NULL,
   `content` text NOT NULL,
-  `file-id` int(8) DEFAULT NULL,
+  `fid` int(8) DEFAULT NULL,
   `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '发送时间',
-  `parentid` int(8) unsigned zerofill NOT NULL,
+  `pid` int(8) unsigned zerofill DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 -- --------------------------------------------------------
 
@@ -181,7 +182,7 @@ CREATE TABLE IF NOT EXISTS `usercollection` (
   `remark` varchar(120) DEFAULT NULL COMMENT '备注',
   `time` int(12) NOT NULL COMMENT '收藏时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=39 ;
 
 -- --------------------------------------------------------
 
@@ -199,7 +200,7 @@ CREATE TABLE IF NOT EXISTS `userfile` (
   `content` varchar(255) DEFAULT NULL COMMENT '文件说明',
   `del` int(2) unsigned zerofill DEFAULT NULL COMMENT '是否被逻辑删除',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 -- --------------------------------------------------------
 
@@ -217,4 +218,4 @@ CREATE TABLE IF NOT EXISTS `userfolds` (
   `updatetime` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
   `type` int(2) unsigned zerofill NOT NULL COMMENT '预留扩展 是否隐藏的类型?',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;

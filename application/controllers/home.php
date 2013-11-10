@@ -22,6 +22,10 @@ class Home extends SZone_Controller {
 	public function index(){
 		//var_dump($this->user);
 		$type = (int) $this->input->get('type');
+		$fid = (int) $this->input->get('fid');
+		$fname = '';
+		$pid = 0;
+		$foldnum = 0;
 		$data = array(
 			'nav' => array(
 				'userinfo' => $this->user,
@@ -31,20 +35,52 @@ class Home extends SZone_Controller {
 		);
 
 
-		$sql = 'select id,name,mark,createtime from userfolds where uid = '.(int) $this->user['userid'];
+		$sql = 'select id,name,mark,createtime,pid from userfolds where uid = '.(int) $this->user['userid'];
 		$query = $this->db->query($sql);
 
 		$fold = array();
+		$foldlist = array();
 		foreach($query->result() as $row){
+			if($row->id == $fid){
+				$fname = $row->name;
+				$pid = $row->pid;
+			}
+			if($row->pid > 0 && $row->pid == $fid){
+				$foldnum++;
+			}
+			if($row->pid == 0){
+				$foldlist[$row->id] = array(
+					'id' => $row->id,
+					'name' => $row->name,
+					'mark' => $row->mark,
+					'pid' => $row->pid,
+					'time' => date('Y-m-d',$row->createtime)
+				);
+			}
 			array_push($fold,array(
 				'id' => $row->id,
 				'name' => $row->name,
 				'mark' => $row->mark,
+				'pid' => $row->pid,
 				'time' => date('Y-m-d',$row->createtime)
 			));
 		}
 
-		$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = 0 and a.uid='.(int) $this->user['userid'];
+		foreach($fold as $row){
+			if($row['pid']){
+				if(!isset($foldlist[$row['pid']]['list'])){
+					$foldlist[$row['pid']]['list'] = array();
+				}
+				array_push($foldlist[$row['pid']]['list'],$row);
+			}
+		}
+
+		if($fid){
+			$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = '.$fid.' and a.uid='.(int) $this->user['userid'];
+		}else{
+			$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = 0 and a.uid='.(int) $this->user['userid'];			
+		}
+		//echo $sql;
 		$query = $this->db->query($sql);
 		$file = array();
 		$idlist = array();
@@ -70,12 +106,17 @@ class Home extends SZone_Controller {
 		}
 
 		$data['fold'] = $fold;
+		$data['flist'] = $foldlist;
+		$data['fname'] = $fname;
+		$data['fid'] = $fid;
 		$data['file'] = $file;
 		$data['type'] = $type;
+		$data['pid'] = $pid;
 		$data['coll'] = $idlist;
+		$data['foldnum'] = $foldnum;
 
 		$this->load->view('home',$data);	
-	}
+	}	
 }
 
 /* End of file welcome.php */

@@ -11,7 +11,6 @@
 </head>
 <body>
 	<?php  $this->load->view('public/header.php',$nav); ?>
-
 	<div class="container">
 		<div class="main-section">
 			<div class="tool-zone fade-in">
@@ -30,11 +29,11 @@
 				<ul class="nav nav-pills">
 					<li>
 						<a data-toggle="dropdown">共享<span class="caret"></span></a>
-						<ul class="dropdown-menu menu" role="menu" aria-labelledby="dLabel">
-							<li><a data-toggle="modal" data-target="#sendToOther">发送给别人</a></li>
-							<li><a data-toggle="modal" data-target="#sendToGroup">发送到小组</a></li>
-							<li><a data-toggle="modal" data-target="#sendToDep">提交到部门</a></li>
-							<li><a>推优到学校</a></li>					
+						<ul id="actDropDown" class="dropdown-menu menu" role="menu" aria-labelledby="dLabel">
+							<li><a data-toggle="modal" cmd="toother" data-target="#shareWin">发送给别人</a></li>
+							<li><a data-toggle="modal" cmd="togroup" data-target="#shareWin">发送到小组</a></li>
+							<li><a data-toggle="modal" cmd="todep"  data-target="#shareWin">提交到部门</a></li>
+	<!-- 						<li><a>推优到学校</a></li> -->					
 						</ul>						
 					</li>
 					<li><a>下载</a></li>
@@ -50,22 +49,26 @@
 				<div class="dropdown">
 					<a data-toggle="dropdown" class="section-tit-a-first section-tit-a-border">树</a>
 					<ul class="dropdown-menu section-tit-menu" role="menu" aria-labelledby="dLabel" id="myFileList">
-						<li>
-							<a class="glyphicon glyphicon-plus"> 工作文件</a>
-						</li>
-						<li>
-							<a class="glyphicon glyphicon-minus"> 教学素材</a>
-							<ul>
-								<li><a class="glyphicon glyphicon-minus"> 图片</a></li>
-								<li><a class="glyphicon glyphicon-minus"> 音乐</a></li>
-							</ul>
-						</li>
-						<li><a class="glyphicon glyphicon-minus"> 游戏</a></li>
-						<li><a class="glyphicon glyphicon-minus"> 其他</a></li>
+						<?foreach($flist as $item):?>
+							<li>
+								<a class="glyphicon glyphicon-plus" href="/home?fid=<?=$item['id']?>"> <?=$item['name']?></a>
+								<?if(isset($item['list'])):?>
+								<ul>
+									<?foreach($item['list'] as $row):?>
+									<li><a class="glyphicon glyphicon-minus" href="/home?fid=<?=$row['id']?>"> <?=$row['name']?></a></li>
+									<?endforeach?>
+								</ul>								
+								<?endif?>
+							</li>						
+						<?endforeach?>
 					</ul>					
-					<a class="section-tit-a-first">个人文件</a>
-					<a class="section-tit-a-second hide">文件夹名称</a>
-					<a class="section-tit-a-end">返回上级</a>
+					<a class="section-tit-a-first" href="/home">个人文件</a>
+					<?if($fid):?>
+						<a class="section-tit-a-second"><?=$fname?></a>
+						<a class="section-tit-a-can" href="/home?fid=<?=$pid?>">返回上级</a>
+					<?else:?>
+						<a class="section-tit-a-end">返回上级</a>
+					<?endif?>
 				</div>
 				<ul class="act-zone">
 					<li class="all-file file-type dropdown" id="changeFileType">
@@ -88,19 +91,22 @@
 			<!--dis-list-type -->
 			<div id="fileList" class="dis-list-type">
 				<ulclass="cl">
+					<?if($foldnum):?>
 					<li class="tit">
 						<div class="td1"><input type="checkbox" /></div>
-						<div class="td2"><span>文件夹(<b><?=count($fold)?></b>个)</span>  名称 <i></i></div>
+						<div class="td2"><span>文件夹(<b><?=$foldnum?></b>个)</span>  名称 <i></i></div>
 						<div class="td3"></div>
 						<div class="td4">时间</div>
 					</li>
+					<?endif?>
 					<?foreach($fold as $item):?>
+						<?if($item['pid'] == $fid):?>
 						<li class="fold" data-id="<?=$item['id']?>">
-							<div class="td1"><input type="checkbox" /></div>
+							<div class="td1"><!-- <input type="checkbox" /> --></div>
 							<div class="td2">
 								<i class="fold"></i>
 								<dl>
-									<dt><?=$item['name']?> 
+									<dt><a href="/home?fid=<?=$item['id']?>"><?=$item['name']?></a>
 										<span cmd="edit" data-id="<?=$item['id']?>"><?=$item['mark']?></span>
 										<span class="hide">
 											<input class="name-edit" type="text" value="<?=$item['mark']?>" />
@@ -109,46 +115,60 @@
 										</span>
 									</dt>
 									<dd>
-										<span>下载</span>
+									<!-- 	<span>下载</span> -->
 									</dd>
 								</dl>
 							</div>
 							<div class="td3"> </div>
 							<div class="td4"><span><?=$item['time']?></span> <i></i></div>
 						</li>
+						<?endif?>
 					<?endforeach?>
-					<li class="tit file-list">
-						<div class="td1"><input type="checkbox" /></div>
-						<div class="td2"><span>文件(<b>4</b>个)</span>  </div>
-					</li>	
-					<?foreach($file as $item):?>
-						<li class="file" data-id="<?=$item['id']?>">
-							<div class="td1"><input type="checkbox" /></div>
-							<div class="td2">
-								<?if($item['type'] == 1):?>
-									<img src="<?=$item['path']?>" />
-								<?else:?>
-									<i class="fold"></i>
-								<?endif?>
-								<dl>
-									<dt><?=$item['name']?> 
-										<span cmd="edit" data-id="<?=$item['id']?>"><?=$item['content']?></span>
-										<span class="hide">
-											<input class="name-edit" type="text" value="<?=$item['content']?>" />
-											<i class="edit-comp" cmd="editComp" data-type="file" data-id="<?=$item['id']?>"></i>
-											<i class="edit-close" data-value="<?=$item['content']?>" cmd="editClose"></i>
-										</span>
-									</dt>
-									<dd>
-										<span>分享</span>
-										<span>下载</span>
-									</dd>
-								</dl>
-							</div>
-							<div class="td3"> </div>
-							<div class="td4"><span><?=$item['time']?></span> <i cmd="coll" <?if(in_array($item['id'],$coll)):?>class="s"<?endif?> data-type="file" data-id="<?=$item['id']?>"></i></div>
-						</li>
-					<?endforeach?>										
+					<?if(count($file)>0):?>
+						<li class="tit file-list">
+							<div class="td1"><input type="checkbox" id="selectAllFile" /></div>
+							<div class="td2"><span>文件(<b><?=count($file)?></b>个)</span>  </div>
+						</li>	
+						<?foreach($file as $item):?>
+							<li class="file" data-id="<?=$item['id']?>">
+								<div class="td1"><input type="checkbox" name="file" class="fclick" value="<?=$item['id']?>" /></div>
+								<div class="td2">
+									<a class="file-name">
+									<?if($item['type'] == 1):?>
+										<img src="<?=$item['path']?>" />
+									<?else:?>
+										<i class="fold"></i>
+									<?endif?>
+									</a>
+									<dl>
+										<dt><?=$item['name']?> 
+											<span cmd="edit" data-id="<?=$item['id']?>"><?=$item['content']?></span>
+											<span class="hide">
+												<input class="name-edit" type="text" value="<?=$item['content']?>" />
+												<i class="edit-comp" cmd="editComp" data-type="file" data-id="<?=$item['id']?>"></i>
+												<i class="edit-close" data-value="<?=$item['content']?>" cmd="editClose"></i>
+											</span>
+										</dt>
+										<dd>
+											<span><a data-toggle="dropdown" href="#">共享</a>
+											<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+												<li><a data-toggle="modal" data-target="#shareWin" cmd="toother" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">发送给别人</a></li>
+												<li><a data-toggle="modal" data-target="#shareWin" cmd="togroup" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到小组空间</a></li>
+												<li><a data-toggle="modal" data-target="#shareWin" cmd="todep" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到部门空间</a></li>
+												<li><a cmd="toschool" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到学校空间</a></li>					
+											</ul>
+											</span>										
+											<span><a href="/down?fid=<?=$item['id']?>">下载</a></span>
+										</dd>
+									</dl>
+								</div>
+								<div class="td3"> </div>
+								<div class="td4"><span><?=$item['time']?></span> <i cmd="coll" <?if(in_array($item['id'],$coll)):?>class="s"<?endif?> data-type="file" data-id="<?=$item['id']?>"></i></div>
+							</li>
+						<?endforeach?>	
+					<?else:?>									
+						<li class="empty">该文件夹还没有文件哦.</li>
+					<?endif?>
 					<li class="last"></li>
 				</ul>
 			</div>
@@ -192,8 +212,8 @@
 			</div>			
 			<div>修改密码 退出登录</div>
 		</div>
-		<div class="clear"></div>
-	</div>
+		<div class="clear"></div>		
+	</div>	
 	<div class="footer"></div>
 
 	<div id="uploadFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -208,7 +228,7 @@
 						<button type="button" class="btn btn-default" id="btnUpload">选择文件</button>
 						<button type="button" class="btn btn-primary" id="btnStartUload">上传</button>
 					</div>
-
+					<input type="hidden" class="foldid" value="<?=$fid?>" />
 					<div id="file_uploadList"></div>
 				</div>
 <!-- 				<div class="modal-footer">
@@ -219,97 +239,30 @@
 		</div>
 	</div>
 
-	<div id="sendToOther" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div id="shareWin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">共享</h4>
+					<h4 class="modal-title">共享 </h4>
 				</div>
 				<div class="modal-body">
-					<div class="share-tit">发送文件(8)个：<i>xxxx,xxxx,xxx等</i></div>
-					<div class="share-msg">附言：<p> <input type="text" /></p></div>
-					<div class="share-act-zone">
-						<p><input type="text" value="搜索用户" /><i></i></p>
-						<div>
-							<button class="btn btn-default">加入名单</button>
-							<button class="btn btn-primary">发送</button>
-						</div>
-					</div>
-					<div class="share-target">
-						发送目标
-						<ul>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-						</ul>						
-					</div>
-					<div class="share-select">
-						搜索结果
-						<ul>
-							<li>username</li>
-							<li>username</li>
-						</ul>						
-					</div>	
-					<div class="clear"></div>				
+					<iframe id="shareIframe" src="/share/other" width="538" height="370" border="0" frameborder="0" scroll="false" ></iframe>				
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div id="sendToGroup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- 	<div id="sendToGroup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
+
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title">共享 到小组空间</h4>
 				</div>
 				<div class="modal-body">
-					<div class="share-tit">发送文件(8)个：<i>xxxx,xxxx,xxx等</i></div>
-					<div class="share-act-zone">
-						<p><input type="text" value="搜索部门" /><i></i></p>
-						<div>
-							<button class="btn btn-primary">共享</button>
-						</div>
-					</div>
-					<div class="share-target">
-						发送目标
-						<ul>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-						</ul>						
-					</div>
-					<div class="share-select">
-						搜索结果
-						<ul>
-							<li>username</li>
-							<li>username</li>
-						</ul>						
-					</div>	
-					<div class="clear"></div>				
+					<iframe src="/share/group" width="538" height="370" border="0" frameborder="0" scroll="false" ></iframe>								
 				</div>
 			</div>
 		</div>
@@ -323,44 +276,12 @@
 					<h4 class="modal-title">共享 到部门空间</h4>
 				</div>
 				<div class="modal-body">
-					<div class="share-tit">发送文件(8)个：<i>xxxx,xxxx,xxx等</i></div>
-					<div class="share-act-zone">
-						<p><input type="text" value="搜索部门" /><i></i></p>
-						<div>
-							<button class="btn btn-primary">共享</button>
-						</div>
-					</div>
-					<div class="share-target">
-						发送目标
-						<ul>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-							<li><a>username</a></li>
-						</ul>						
-					</div>
-					<div class="share-select">
-						搜索结果
-						<ul>
-							<li>username</li>
-							<li>username</li>
-						</ul>						
-					</div>	
-					<div class="clear"></div>				
+					<iframe src="/share/dep" width="538" height="370" border="0" frameborder="0" scroll="false" ></iframe>						
+				
 				</div>
 			</div>
 		</div>
-	</div>	
+	</div>	 -->
 
 	<div id="collectionTOGroup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -460,10 +381,11 @@
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title">新建文件夹</h4>
 				</div>
-				<form class="new-fold" id="newFold" method="get">
+				<form class="new-fold" id="newFolds" method="get">
 					<div class="modal-body">
 						
 							<label>文件夹名称：</label><input id="foldname" name="foldname" type="text" style="width:80%" />
+							<input type="hidden" class="parentid" name="parentid" value="<?=$fid?>" />
 						
 					</div>
 					<div class="modal-footer">
