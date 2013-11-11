@@ -20,7 +20,7 @@
  */
 
 $env = getenv('RUNTIME_ENVIROMENT') ? getenv('RUNTIME_ENVIROMENT') : 'development' ;
-define('ENVIROMENT',$env);	
+define('ENVIRONMENT',$env);
 define('ROOTDIR',dirname(__FILE__).'/');	
 
 /*
