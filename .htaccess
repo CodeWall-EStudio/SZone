@@ -2,7 +2,7 @@
 
 	RewriteEngine on
 	#RewriteRule !\.(js|ico|gif|jpg|png|css)$ /wp/$1
-	RewriteCond $1 !^(index\.php|css|js|images|robots\.txt)
+	RewriteCond $1 !^(index\.html|index\.php|css|js|images|robots\.txt)
 	RewriteRule ^(.*)$ /index.php/$1 [L]
 
 </IfModule>

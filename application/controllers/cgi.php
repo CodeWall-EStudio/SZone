@@ -61,7 +61,9 @@ class Cgi extends SZone_Controller {
 	}
 
 	public function upload(){
-
+		$this->config->load('filetype');
+		$ft = $this->config->item('filetype');
+		
 		$dirname = FILE_UPLOAD_PATH.$this->user['name'];
 		if (!file_exists($dirname)){
 			mkdir($dirname,0700);

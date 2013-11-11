@@ -45,13 +45,17 @@
 | the active record class
 */
 
+//echo ENVIRONMENT;
 //$active_group = 'default';
-$active_group = 'development';
+//$active_group = 'development';
+$active_group = ENVIRONMENT;
 $active_record = TRUE;
 
+
+//正式环境
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = 'bka113';
+$db['default']['username'] = 'szone';
+$db['default']['password'] = 'x5ueUquSZaEzFmAQ';
 $db['default']['database'] = 'szone';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
@@ -65,23 +69,74 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
+//开发环境1
+$db['lifeclaw']['hostname'] = 'localhost';
+$db['lifeclaw']['username'] = 'root';
+$db['lifeclaw']['password'] = 'bka113';
+$db['lifeclaw']['database'] = 'szone';
+$db['lifeclaw']['dbdriver'] = 'mysql';
+$db['lifeclaw']['dbprefix'] = '';
+$db['lifeclaw']['pconnect'] = TRUE;
+$db['lifeclaw']['db_debug'] = TRUE;
+$db['lifeclaw']['cache_on'] = FALSE;
+$db['lifeclaw']['cachedir'] = '';
+$db['lifeclaw']['char_set'] = 'utf8';
+$db['lifeclaw']['dbcollat'] = 'utf8_general_ci';
+$db['lifeclaw']['swap_pre'] = '';
+$db['lifeclaw']['autoinit'] = TRUE;
+$db['lifeclaw']['stricton'] = FALSE;
+
+//开发环境2
+$db['horde']['hostname'] = 'localhost';
+$db['horde']['username'] = 'root';
+$db['horde']['password'] = 'bka113';
+$db['horde']['database'] = 'szone';
+$db['horde']['dbdriver'] = 'mysql';
+$db['horde']['dbprefix'] = '';
+$db['horde']['pconnect'] = TRUE;
+$db['horde']['db_debug'] = TRUE;
+$db['horde']['cache_on'] = FALSE;
+$db['horde']['cachedir'] = '';
+$db['horde']['char_set'] = 'utf8';
+$db['horde']['dbcollat'] = 'utf8_general_ci';
+$db['horde']['swap_pre'] = '';
+$db['horde']['autoinit'] = TRUE;
+$db['horde']['stricton'] = FALSE;
+
+//开发环境2
+// $db['development']['hostname'] = 'localhost';
+// $db['development']['username'] = 'root';
+// $db['development']['password'] = 'bka113';
+// $db['development']['database'] = 'szone';
+// $db['development']['dbdriver'] = 'mysql';
+// $db['development']['dbprefix'] = '';
+// $db['development']['pconnect'] = TRUE;
+// $db['development']['db_debug'] = TRUE;
+// $db['development']['cache_on'] = FALSE;
+// $db['development']['cachedir'] = '';
+// $db['development']['char_set'] = 'utf8';
+// $db['development']['dbcollat'] = 'utf8_general_ci';
+// $db['development']['swap_pre'] = '';
+// $db['development']['autoinit'] = TRUE;
+// $db['development']['stricton'] = FALSE;
 
 
-$db['development']['hostname'] = 'localhost';
-$db['development']['username'] = 'root';
-$db['development']['password'] = 'bka113';
-$db['development']['database'] = 'szone';
-$db['development']['dbdriver'] = 'mysql';
-$db['development']['dbprefix'] = '';
-$db['development']['pconnect'] = TRUE;
-$db['development']['db_debug'] = TRUE;
-$db['development']['cache_on'] = FALSE;
-$db['development']['cachedir'] = '';
-$db['development']['char_set'] = 'utf8';
-$db['development']['dbcollat'] = 'utf8_general_ci';
-$db['development']['swap_pre'] = '';
-$db['development']['autoinit'] = TRUE;
-$db['development']['stricton'] = FALSE;
+//演示环境
+$db['live']['hostname'] = 'localhost';
+$db['live']['username'] = 'root';
+$db['live']['password'] = 'bka113';
+$db['live']['database'] = 'szone';
+$db['live']['dbdriver'] = 'mysql';
+$db['live']['dbprefix'] = '';
+$db['live']['pconnect'] = TRUE;
+$db['live']['db_debug'] = TRUE;
+$db['live']['cache_on'] = FALSE;
+$db['live']['cachedir'] = '';
+$db['live']['char_set'] = 'utf8';
+$db['live']['dbcollat'] = 'utf8_general_ci';
+$db['live']['swap_pre'] = '';
+$db['live']['autoinit'] = TRUE;
+$db['live']['stricton'] = FALSE;
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */

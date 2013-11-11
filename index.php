@@ -18,7 +18,36 @@
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-define('ENVIRONMENT', 'development');
+switch($_SERVER['DOCUMENT_ROOT']){
+	case 'default path':
+		define('ENVIRONMENT', 'default');
+		break;
+	case 'lifeclaw path':
+		define('ENVIRONMENT','lifeclaw');
+		break;
+	case 'E:/myworks/ezone/SZone':
+		define('ENVIRONMENT','horde');
+		break;
+	case 'live path':
+		define('ENVIRONMENT','live');
+		break;
+}
+// switch($_SERVER['SERVER_NAME']){
+// 	case 'szone.codewalle.com':
+// 		define('ENVIRONMENT', 'default');
+// 		break;
+// 	case 'lifeclaw.codewalle.com':
+// 		define('ENVIRONMENT','lifeclaw');
+// 		break;
+// 	case 'horde.codewalle.com':
+// 		define('ENVIRONMENT','horde');
+// 		break;
+// 	case 'live.codewalle.com':
+// 		define('ENVIRONMENT','development');
+// 		break;
+// }
+
+
 define('ROOTDIR',dirname(__FILE__).'/');	
 /*
  *---------------------------------------------------------------
@@ -34,16 +63,19 @@ if (defined('ENVIRONMENT'))
 	switch (ENVIRONMENT)
 	{
 		case 'development':
+		case 'lifeclaw':
+		case 'horde':
 			error_reporting(E_ALL);
 		break;
 	
 		case 'testing':
 		case 'production':
+		case 'live':
 			error_reporting(0);
 		break;
 
 		default:
-			exit('The application environment is not set correctly.');
+			//exit('The application environment is not set correctly.');
 	}
 }
 

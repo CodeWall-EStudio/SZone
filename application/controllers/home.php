@@ -20,6 +20,9 @@ class Home extends SZone_Controller {
 
 
 	public function index(){
+		// $this->config->load('filetype');
+		// $ft = $this->config->item('filetype');
+
 		//var_dump($this->user);
 		$type = (int) $this->input->get('type');
 		$fid = (int) $this->input->get('fid');

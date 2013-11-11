@@ -23,6 +23,7 @@ define('FILE_UPLOAD_PATH','E:\myworks\ezone\file\\');
 //一个目录最多多少个文件
 define('DIR_FILE_NUM',512);
 
+
 /*
 |--------------------------------------------------------------------------
 | File Stream Modes

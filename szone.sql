@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013-11-10 16:18:19
+-- 生成日期: 2013-11-11 14:39:55
 -- 服务器版本: 5.6.14
 -- PHP 版本: 5.3.27
 
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `groupfolds` (
   `name` varchar(120) NOT NULL COMMENT '文件夹名称',
   `gid` int(8) NOT NULL COMMENT '分组id',
   `createtime` int(12) NOT NULL COMMENT '创建时间的时间戳',
-  `updatetime` timestamp(6) NULL DEFAULT NULL COMMENT '更新时间',
+  `updatetime` timestamp NULL DEFAULT NULL COMMENT '更新时间',
   `type` int(2) unsigned zerofill NOT NULL COMMENT '预留扩展 是否隐藏的类型?',
   `pid` int(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
