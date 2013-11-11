@@ -39,6 +39,10 @@
 			max_file_size : '10mb',
 			mime_types: [
 				{title : "图片", extensions : "jpg,gif,png"},
+				{title : "文档", extensions : "doc,txt"},
+				{title : "音乐", extensions : "mid,mp3"},
+				{title : "视频", extensions : "avi,mp4"},
+				{title : "应用", extensions : "exe"},
 				{title : "压缩文件", extensions : "zip"}
 				// {title : "文本", extensions : "txt"},
 				// {title : "word文档", extensions : "doc"}

@@ -63,7 +63,12 @@ class Cgi extends SZone_Controller {
 	public function upload(){
 		$this->config->load('filetype');
 		$ft = $this->config->item('filetype');
-		
+
+		$allowed = array();
+		foreach($ft as $k => $item){
+			array_push($allowed,$k);
+		}
+		//echo implode('|',$allowed);
 		$dirname = FILE_UPLOAD_PATH.$this->user['name'];
 		if (!file_exists($dirname)){
 			mkdir($dirname,0700);
@@ -72,7 +77,7 @@ class Cgi extends SZone_Controller {
 		$nowdir = $this->getDir();
 
 		$config['upload_path'] = $nowdir;
-		$config['allowed_types'] = 'gif|jpg|png';
+		$config['allowed_types'] = implode('|',$allowed);//;'gif|jpg|png';
 		$this->load->library('upload', $config);
 		$fdid = (int) $this->input->get('fid');
 
@@ -110,6 +115,8 @@ class Cgi extends SZone_Controller {
 					'type' => $filedata['is_image'],
 					'del' => 0
 				);
+				echo $filedata['file_type'].'&&'.$filedata['image_type'];
+				return;
 				$sql = $this->db->insert_string('files',$data);
 				//把文件写入数据库
 				$query = $this->db->query($sql);
