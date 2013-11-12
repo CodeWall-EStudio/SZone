@@ -119,6 +119,30 @@ class Home extends SZone_Controller {
 		$data['foldnum'] = $foldnum;
 
 		$this->load->view('home',$data);	
+	}
+
+	//移动文件
+	function movefile(){
+		$id = $this->input->get('fid');
+
+		$il = explode(',',$id);
+		$kl = array();
+		foreach($il as $k){
+			array_push($kl,' id='.$k);
+		}		
+		$str = implode(' or ',$kl);
+		$sql = 'select id,name from userfile where '.$str;		
+		$query = $this->db->query($sql);
+
+		$nl = array();
+		foreach($query->result() as $row){
+			array_push($nl,array(
+					'id' => $row->id,
+					'name' => $row->name
+				));
+		}	
+		$data = array('fl' => $nl);	
+		$this->load->view('share/movefile.php',$data);
 	}	
 }
 

@@ -60,6 +60,29 @@ class Manage extends SZone_Controller {
 		$this->load->view('manage',$this->data);
 	}
 
+	public function addprep(){
+		
+	}
+
+	public function prepare(){
+		$this->data['data'] = array();
+		$sql = $this->db->query('SELECT a.id,a.name,b.id AS bid,b.name AS bname FROM groups a,prepare b WHERE a.type=3 AND b.pid = a.id');
+		$query = $this->db->query($sql);
+
+		foreach($query->result() as $row){
+			array_push($ulist,array(
+				'id' => $row->id,
+				'name' => $row->name,
+				'nick' => $row->nick,
+				'auth' => $row->auth,
+				'size' => $row->size,
+				'used' => $row->used,
+			));
+		}
+
+		$this->load->view('manage/prepare',$this->data);
+	}
+
 	//小组设置
 	public function group(){
 		$this->data['index'] = 'group';
@@ -236,6 +259,7 @@ class Manage extends SZone_Controller {
 			return true;
 		}
 	}
+
 
 	public function editgroup(){
 		$this->load->library('form_validation');

@@ -85,7 +85,7 @@
 
 		public function get_openid(){
 			if($this->CI->session->userdata('openid')){
-				return false;
+				return $this->CI->session->userdata('openid');
 			}			
 	        //-------请求参数列表
 	        $keysArr = array(
@@ -109,6 +109,7 @@
 	        }
 	        //------记录openid
 	        $this->CI->session->set_userdata('openid',$user->openid);
+	        return $user->openid;
 		}
 
 		public function get_info(){

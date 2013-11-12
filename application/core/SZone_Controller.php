@@ -20,16 +20,17 @@
 	        $nick = $this->session->userdata('nick');
 	        $auth = $this->session->userdata('auth');
 	        $userid = $this->session->userdata('userid');
+	        $openid = $this->session->userdata('openid');
 
 
 	        $redirect = $this->uri->uri_string();
 
 	        if ( $_SERVER['QUERY_STRING']){
-				$redirect .= '?'.$_SERVER['QUERY_STRING'];
+				$redirect .= $_SERVER['QUERY_STRING'];
 	        }
 	       
-	        if(!$name){
-	        	redirect('/login/connect?redirect='.$redirect);
+	        if(!$openid){
+	        	redirect('http://szone.codewalle.com/login/connect');
 	        	return;
 	        }
 
@@ -37,6 +38,7 @@
 	        $this->user['nick'] = $nick;
 	        $this->user['auth'] = $auth;
 	        $this->user['userid'] = $userid;
+	        $this->user['openid'] = $openid;
         }	
 
         protected function set_group(){

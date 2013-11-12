@@ -22,9 +22,8 @@ class Login extends CI_Controller{
 		$this->load->library('qconnect');
 
 		$this->qconnect->get_access();
-		$this->qconnect->get_openid();
+		$openid = $this->qconnect->get_openid();
 		$ret = $this->qconnect->get_info();
-
 		//return;
 		//$name = $ret['data']['name'];
 		//$nick = $ret['data']['nick'];
@@ -32,7 +31,8 @@ class Login extends CI_Controller{
 		$name = $ret->nickname;
 		$nick = $name;
 
-		$result = $this->db->query('SELECT * FROM user WHERE name="'.$name.'"');
+		$result = $this->db->query('SELECT * FROM user WHERE openid="'.$openid.'"');
+
 		//已经在数据库中了.
         if ($result->num_rows() > 0){
         		
@@ -51,6 +51,7 @@ class Login extends CI_Controller{
         		'openid' => $this->session->userdata('openid')
         	);
         	$str = $this->db->insert_string('user',$data);
+        	echo $str;
         	$this->db->query($str);
         	$userid = $this->db->insert_id();
         }		
@@ -100,10 +101,6 @@ class Login extends CI_Controller{
 		$this->qconnect->qq_login();
 
 		return;
-		require_once('/application/libraries/qconnect/qqConnectAPI.php');
-
-		$qc = new QC();
-		$qc->qq_login();
 	}
 
 	//APP ID：100548719

@@ -30,12 +30,7 @@
 			<?endif;?>
 		</div>
 		<div class="aside">
-			<ul>
-				<li><a href="/manage/">用户管理</a></li>
-				<li><a href="/manage/group/">小组管理</a></li>
-				<li><a href="/manage/dep/">部门管理</a></li>
-				<li><a href="/manage/space/">空间设置</a></li>
-			</ul>
+			<?php  $this->load->view('manage/manageul.php'); ?>
 		</div>
 	</div>
 	<script src="/js/lib/jq.js"></script>

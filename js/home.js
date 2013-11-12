@@ -118,6 +118,18 @@
 		}
 	}
 
+	var copyFile = function(){
+		var il = [];
+		$('#fileList .fclick:checked').each(function(){
+			il.push($(this).val());
+		});
+
+		id = il.join(',');
+		$('#shareWin h4').text('复制');
+
+		iframeEl.attr('src','/home/movefile?fid='+id);		
+	};	
+
 	var editMark = function(id,mark,type,target){
 		var data = {
 			id : id,
@@ -132,7 +144,9 @@
 				console.log(d.msg);
 			}
 		});
-	}
+	};
+
+
 
 	var collFile = function(id,target){
 		var data = {
@@ -174,13 +188,17 @@
 		$('.file-act-zone a').bind('click',function(e){
 			var target = $(e.target),
 				cmd = target.attr('cmd');
-			console.log(cmd);
 			switch(cmd){
 				case 'toother':
 				case 'togroup':
 				case 'todep':
 					showShare(null,cmd);
 					break;
+				case 'copyFile':
+					copyFile();
+					break;
+				case 'delFile':
+					break;					
 			}
 		})
 
@@ -306,8 +324,7 @@
 		 			$("#newFold .close").click();
 		 		});
 		 	}
-		 });		
-
+		 });
 	}
 
 

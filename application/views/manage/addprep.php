@@ -10,24 +10,27 @@
   <meta property="qc:admins" content="124110632765637457144563757" />
 </head>
 <body>
-	<?php  $this->load->view('public/header.php',$userinfo); ?>
+	<?php  $this->load->view('public/header.php',$nav); ?>
 	<div class="container">
-
 		<div class="main-section">
-			
-			<div <?if($ret==0):?>class="success"<?else:?>class="fail"<?endif?>>
-				<?=$msg?> <a href="/manage">返回管理首页</a>
-			</div>
+			<div class="from">
+				<h2 class="from-h2">添加备课</h2>
+				<?php echo validation_errors(); ?>
 
+				<?php echo form_open('manage/addprep?act='.$act); ?>
+					<ul class="addfrom">
+						<li></li>
+					</ul>
+				</form>
+			</div>
 		</div>
 		<div class="aside">
 			<?php  $this->load->view('manage/manageul.php'); ?>
 		</div>
 	</div>
-
 	<script src="/js/lib/jq.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
 	<script src="/js/manage.js"></script>
 </body>
-</html>	
+</html>

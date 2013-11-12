@@ -39,8 +39,8 @@
 					<li><a>下载</a></li>
 					<li><a>收藏</a></li>
 					<li><a data-toggle="modal" data-target="#renameFile">重命名</a></li>
-					<li><a>移动</a></li>
-					<li><a>删除</a></li>
+					<li><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制</a></li>
+					<li><a cmd="delFile">删除</a></li>
 					<li><a data-toggle="modal" data-target="#commentFile">评论</a></li>
 				</ul>
 			</div>
@@ -231,10 +231,6 @@
 					<input type="hidden" class="foldid" value="<?=$fid?>" />
 					<div id="file_uploadList"></div>
 				</div>
-<!-- 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-					<button type="button" class="btn btn-primary">确定</button>
-				</div> -->
 			</div>
 		</div>
 	</div>
@@ -252,36 +248,6 @@
 			</div>
 		</div>
 	</div>
-
-<!-- 	<div id="sendToGroup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">共享 到小组空间</h4>
-				</div>
-				<div class="modal-body">
-					<iframe src="/share/group" width="538" height="370" border="0" frameborder="0" scroll="false" ></iframe>								
-				</div>
-			</div>
-		</div>
-	</div>	
-
-	<div id="sendToDep" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">共享 到部门空间</h4>
-				</div>
-				<div class="modal-body">
-					<iframe src="/share/dep" width="538" height="370" border="0" frameborder="0" scroll="false" ></iframe>						
-				
-				</div>
-			</div>
-		</div>
-	</div>	 -->
 
 	<div id="collectionTOGroup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
