@@ -5,6 +5,7 @@
 		protected $user = array();
 		protected $grouplist = array();
 		protected $deplist = array();  
+		protected $prelist = array();
 		protected $controller_name;  
         protected $action_name; 		
 
@@ -85,7 +86,13 @@
 						'id' => $row->id,
 						'name' => $row->name
 					));
-				}
+				}elseif($row->type == 3){
+					$this->prelist[$row->id] = $row->name;
+					// array_push($this->prelist,array(
+					// 	'id' => $row->id,
+					// 	'name' => $row->name
+					// ));
+				};
 				//array_push($idlist,'gid="'.$row->id.'"');
 			};
 

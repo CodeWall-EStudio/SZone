@@ -20,8 +20,26 @@
 					<button class="btn btn-default">增加备课目录</button>
 				</a>
 			</div>
-
-
+			<?if(count($data) > 0):?>
+			<table width="100%" class="table table-striped table-hover">
+				<tr>
+					<th width="30"><input type="checkbox"></th>
+					<th width="150">分组名称</th>
+					<th width="150">创建者</th>
+					<th align="right">全部删除</th>
+				</tr>			
+				<?foreach($data as $key => $item):?>
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td><?=$item['name'];?></td>
+					<td><?=$item['uname'];?></td>
+					<td align="right"><a href="/manage/editgroup?id=<?=$item['id']?>">修改</a> <a href="/manage/delgroup?id=<?=$item['id']?>">删除</a></td>
+				</tr>
+				<?endforeach?>			
+			</table>
+			<?else:?>
+				<div class="manage-empty">还未添加备课分组</div>
+			<?endif?>
 		</div>
 		<div class="aside">
 			<?php  $this->load->view('manage/manageul.php'); ?>

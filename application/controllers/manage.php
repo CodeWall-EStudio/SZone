@@ -60,24 +60,296 @@ class Manage extends SZone_Controller {
 		$this->load->view('manage',$this->data);
 	}
 
-	public function addprep(){
-		
+	public function addprepare(){
+		$this->load->library('form_validation');
+		$type = (int) $this->input->post('type');
+		$name = $this->input->post('name');
+
+		$this->form_validation->set_rules('name', 'name', 'required|min_length[2]|max_length[40]|callback_checkgroupname');
+
+		switch($type){
+			case 0:
+				if ($this->form_validation->run() == FALSE){
+					$data = array(
+						'ret' => 100
+					);
+				}else{
+					$data = array(
+						'name' => $name,
+						'parent' => 0,
+						'type' => 3,
+						'create' => $this->user['userid']
+					);
+					$str = $this->db->insert_string('groups', $data); 
+					//echo $str;
+					$query = $this->db->query($str);
+					if($this->db->affected_rows()>0){
+						$data = array(
+							'ret' => 0
+						);						
+					}else{
+						$data = array(
+							'ret' => 100
+						);
+					};					
+				}
+				break;
+			case 1:
+				$gid = (int) $this->input->post('gid');
+				$sql = 'select * from prepare where gid='.$gid.' and name="'.$name.'"';
+				$query = $this->db->query($sql);
+				if(!$this->db->affected_rows()){
+					$data = array(
+						'gid' => $gid,
+						'name' => $name,
+						'pid' => 0
+					);
+					$str = $this->db->insert_string('prepare',$data);
+					$query = $this->db->query($str);
+					if($this->db->affected_rows()){
+						$data = array(
+							'ret' => 0
+						);						
+					}else{
+						$data = array(
+							'ret' => 100
+						);						
+					}				
+				}else{
+					$data = array(
+						'ret' => 100
+					);
+				}			
+				break;
+			case 2:
+				$gid = (int) $this->input->post('gid');
+				$grid = (int) $this->input->post('grid');
+				$sql = 'select * from prepare where gid='.$gid.' and pid='.$grid.' and name="'.$name.'"';
+				$query = $this->db->query($sql);
+				if(!$this->db->affected_rows()){
+					$data = array(
+						'gid' => $gid,
+						'name' => $name,
+						'pid' => $grid
+					);
+					$str = $this->db->insert_string('prepare',$data);
+					$query = $this->db->query($str);
+					if($this->db->affected_rows()){
+						$data = array(
+							'ret' => 0
+						);						
+					}else{
+						$data = array(
+							'ret' => 100
+						);						
+					}				
+				}else{
+					$data = array(
+						'ret' => 100
+					);
+				}				
+				break;
+		}
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($data));			
 	}
+
+	public function addprep(){
+		$this->load->library('form_validation');
+		$this->load->helper('form');	
+
+		$plist = array();
+
+		$this->data['prelist'] = $this->prelist;
+
+		$sql = 'select * from prepare';
+		$query = $this->db->query($sql);
+		$gradelist = array();
+		foreach($query->result() as $row){
+			if($row->pid == 0){
+				$gradelist[$row->id] = array(
+					'id' => $row->id,
+					'name' => $row->name,
+					'pid' => $row->pid,
+					'sid' => $row->sid,
+					'gid' => $row->gid
+				);
+			}else{
+				if(!isset($gradelist[$row->pid]['list'])){
+					$gradelist[$row->pid]['list'] = array();
+				}
+				if($row->sid == 0){
+					$gradelist[$row->pid]['list'][$row->id] = array(
+						'id' => $row->id,
+						'name' => $row->name,
+						'pid' => $row->pid,
+						'sid' => $row->sid,
+						'gid' => $row->gid						
+					);
+				}
+			}
+		}
+		$this->data['grade'] = $gradelist;
+
+		$gname = $this->input->post('groupname');
+		$grname = $this->input->post('gradename');
+		$gid = (int) $this->input->post('groupid');
+		$grid = (int) $this->input->post('grid');
+		$unid = (int) $this->input->post('unid');
+		$uname = $this->input->post('unitname');
+		$lname = $this->input->post('lessonname');
+
+		if($gname){//添加学年名
+
+			if($this->input->post('groupname')){ //添加学年名称
+				$this->form_validation->set_rules('groupname', 'groupname', 'required|min_length[2]|max_length[40]|callback_checkgroupname');
+				if ($this->form_validation->run() == FALSE){
+					$this->data['data']['ret'] = 0;
+				}else{
+					$data = array(
+						'name' => $this->input->post('groupname'),
+						'parent' => 0,
+						'type' => 3,
+						'create' => $this->user['userid']
+					);
+
+					$str = $this->db->insert_string('groups', $data); 
+					//echo $str;
+					$query = $this->db->query($str);
+					if($this->db->affected_rows()>0){
+						$this->data['ret'] = 0;
+						$this->data['msg'] = '添加成功!';
+					}else{
+						$this->data['ret'] = 1;
+						$this->data['msg'] = '添加失败!';
+					};
+					
+					$this->load->view('manage/retmsg',$this->data);
+					return;
+				}				
+			}
+		}else if($this->input->post('gradename')){
+			$this->form_validation->set_rules('groupid','groupid','required');
+			$this->form_validation->set_rules('gradename', 'gradename', 'required|min_length[2]|max_length[40]');
+			if ($this->form_validation->run() == FALSE){
+				$this->data['data']['ret'] = 0;
+			}else{
+				$sql = 'select * from prepare where gid='.$gid.' and name="'.$grname.'"';
+				$query = $this->db->query($sql);
+				if(!$this->db->affected_rows()){
+					$data = array(
+						'gid' => $gid,
+						'name' => $grname,
+						'pid' => 0
+					);
+					$str = $this->db->insert_string('prepare',$data);
+					$query = $this->db->query($str);
+					if($this->db->affected_rows()>0){
+						$this->data['ret'] = 0;
+						$this->data['msg'] = '添加成功!';
+					}else{
+						$this->data['ret'] = 1;
+						$this->data['msg'] = '添加失败!';
+					};
+					$this->load->view('manage/retmsg',$this->data);
+					return;					
+				}else{
+					$this->data['data']['ret'] = 0;
+				}
+			}				
+		}else if($uname){
+			$this->form_validation->set_rules('groupid','groupid','required');
+			$this->form_validation->set_rules('grid','grid','required');
+			$this->form_validation->set_rules('unitname','unitname','required|min_length[2]|max_length[40]');
+			if ($this->form_validation->run() == FALSE){
+				$this->data['data']['ret'] = 0;
+			}else{
+				$sql = 'select * from prepare where gid='.$gid.' and pid='.$grid.' and name="'.$uname.'"';
+				$query = $this->db->query($sql);
+
+				if($this->db->affected_rows() > 0){
+					$this->data['data']['ret'] = 0;
+				}else{
+					$data = array(
+						'gid' => $gid,
+						'name' => $uname,
+						'pid' => $grid
+					);
+					$str = $this->db->insert_string('prepare',$data);
+					$query = $this->db->query($str);
+					if($this->db->affected_rows()>0){
+						$this->data['ret'] = 0;
+						$this->data['msg'] = '添加成功!';
+					}else{
+						$this->data['ret'] = 1;
+						$this->data['msg'] = '添加失败!';
+					};
+					$this->load->view('manage/retmsg',$this->data);
+				};
+				//
+				return;	
+			}			
+
+		}else if($lname){
+			$this->form_validation->set_rules('groupid','groupid','required');
+			$this->form_validation->set_rules('grid','grid','required');
+			$this->form_validation->set_rules('unid','unid','required');
+			$this->form_validation->set_rules('lessonname','lessonname','required|min_length[2]|max_length[40]');
+			if ($this->form_validation->run() == FALSE){
+				$this->data['data']['ret'] = 0;
+			}else{
+				$sql = 'select * from prepare where gid='.$gid.' and pid='.$grid.' and sid='.$unid.' and name="'.$lname.'"';
+				$query = $this->db->query($sql);
+
+
+				if($this->db->affected_rows() > 0){
+						$this->data['ret'] = 1;
+						$this->data['msg'] = '添加失败!记录重名了';
+				}else{				
+					$data = array(
+						'gid' => $gid,
+						'name' => $lname,
+						'pid' => $grid,
+						'sid' => $unid
+					);	
+					$str = $this->db->insert_string('prepare',$data);
+					$query = $this->db->query($str);
+					if($this->db->affected_rows()>0){
+						$this->data['ret'] = 0;
+						$this->data['msg'] = '添加成功!';
+					}else{
+						$this->data['ret'] = 1;
+						$this->data['msg'] = '添加失败!';
+					};
+
+				}
+					$this->load->view('manage/retmsg',$this->data);
+					return;				
+			}			
+		}
+
+		$this->load->view('manage/addprep',$this->data);	
+	}
+
 
 	public function prepare(){
 		$this->data['data'] = array();
-		$sql = $this->db->query('SELECT a.id,a.name,b.id AS bid,b.name AS bname FROM groups a,prepare b WHERE a.type=3 AND b.pid = a.id');
+		$sql = 'SELECT a.id,a.name,b.id AS bid,b.name AS bname FROM groups a,prepare b WHERE a.type=3 AND b.pid = a.id';
 		$query = $this->db->query($sql);
 
-		foreach($query->result() as $row){
-			array_push($ulist,array(
-				'id' => $row->id,
-				'name' => $row->name,
-				'nick' => $row->nick,
-				'auth' => $row->auth,
-				'size' => $row->size,
-				'used' => $row->used,
-			));
+		$ulist = array();
+		if($query->num_rows() > 0){
+				foreach($query->result() as $row){
+					array_push($ulist,array(
+						'id' => $row->id,
+						'name' => $row->name,
+						'nick' => $row->nick,
+						'auth' => $row->auth,
+						'size' => $row->size,
+						'used' => $row->used,
+					));
+				}
 		}
 
 		$this->load->view('manage/prepare',$this->data);
@@ -127,7 +399,7 @@ class Manage extends SZone_Controller {
 		$this->data['index'] = 'space';
 		$this->data['data'] = array();
 
-		$this->load->view('manage',$this->data);
+		$this->load->view('manage/addprep',$this->data);
 	}
 
 
