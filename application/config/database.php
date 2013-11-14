@@ -52,21 +52,21 @@ $active_group = ENVIRONMENT;
 $active_record = TRUE;
 
 //演示环境
-$db['live']['hostname'] = 'localhost';
-$db['live']['username'] = 'szone';
-$db['live']['password'] = 'x5ueUquSZaEzFmAQ';
-$db['live']['database'] = 'szone';
-$db['live']['dbdriver'] = 'mysql';
-$db['live']['dbprefix'] = '';
-$db['live']['pconnect'] = TRUE;
-$db['live']['db_debug'] = TRUE;
-$db['live']['cache_on'] = FALSE;
-$db['live']['cachedir'] = '';
-$db['live']['char_set'] = 'utf8';
-$db['live']['dbcollat'] = 'utf8_general_ci';
-$db['live']['swap_pre'] = '';
-$db['live']['autoinit'] = TRUE;
-$db['live']['stricton'] = FALSE;
+$db['testing']['hostname'] = 'localhost';
+$db['testing']['username'] = 'szone';
+$db['testing']['password'] = 'x5ueUquSZaEzFmAQ';
+$db['testing']['database'] = 'szone';
+$db['testing']['dbdriver'] = 'mysql';
+$db['testing']['dbprefix'] = '';
+$db['testing']['pconnect'] = TRUE;
+$db['testing']['db_debug'] = TRUE;
+$db['testing']['cache_on'] = FALSE;
+$db['testing']['cachedir'] = '';
+$db['testing']['char_set'] = 'utf8';
+$db['testing']['dbcollat'] = 'utf8_general_ci';
+$db['testing']['swap_pre'] = '';
+$db['testing']['autoinit'] = TRUE;
+$db['testing']['stricton'] = FALSE;
 
 //正式环境
 $db['production']['hostname'] = 'localhost';
@@ -86,21 +86,21 @@ $db['production']['autoinit'] = TRUE;
 $db['production']['stricton'] = FALSE;
 
 //开发环境1
-$db['code']['hostname'] = 'localhost';
-$db['code']['username'] = 'root';
-$db['code']['password'] = 'bka113';
-$db['code']['database'] = 'szone';
-$db['code']['dbdriver'] = 'mysql';
-$db['code']['dbprefix'] = '';
-$db['code']['pconnect'] = TRUE;
-$db['code']['db_debug'] = TRUE;
-$db['code']['cache_on'] = FALSE;
-$db['code']['cachedir'] = '';
-$db['code']['char_set'] = 'utf8';
-$db['code']['dbcollat'] = 'utf8_general_ci';
-$db['code']['swap_pre'] = '';
-$db['code']['autoinit'] = TRUE;
-$db['code']['stricton'] = FALSE;
+$db['codewalle']['hostname'] = 'localhost';
+$db['codewalle']['username'] = 'szone';
+$db['codewalle']['password'] = 't8ecnVj6RAVMcCF8';
+$db['codewalle']['database'] = 'szone';
+$db['codewalle']['dbdriver'] = 'mysql';
+$db['codewalle']['dbprefix'] = '';
+$db['codewalle']['pconnect'] = TRUE;
+$db['codewalle']['db_debug'] = TRUE;
+$db['codewalle']['cache_on'] = FALSE;
+$db['codewalle']['cachedir'] = '';
+$db['codewalle']['char_set'] = 'utf8';
+$db['codewalle']['dbcollat'] = 'utf8_general_ci';
+$db['codewalle']['swap_pre'] = '';
+$db['codewalle']['autoinit'] = TRUE;
+$db['codewalle']['stricton'] = FALSE;
 
 //开发环境2
 $db['horde']['hostname'] = 'localhost';

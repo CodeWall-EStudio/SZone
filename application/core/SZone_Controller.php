@@ -31,8 +31,8 @@
 	        }
 	       
 	        if(!$openid){
-	        	redirect('http://szone.codewalle.com/login/connect');
-	        	return;
+                //redirect('http://szone.codewalle.com/login/connect');
+	        	//return;
 	        }
 
 	        $this->user['name'] = $name;
