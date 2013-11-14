@@ -62,16 +62,24 @@ class Cgi extends SZone_Controller {
 
 	public function upload(){
 		$this->config->load('filetype');
+		$this->config->load('fileupload');
 		$ft = $this->config->item('filetype');
+
+		$path = $this->config->item('upload-path');
+		$foldname = $this->config->item('folds');
+		$uploadpath = $path.$foldname;
+		if(!is_dir($uploadpath)){
+			mkdir($uploadpath,DIR_WRITE_MODE);
+		}
 
 		$allowed = array();
 		foreach($ft as $k => $item){
 			array_push($allowed,$k);
 		}
 		//echo implode('|',$allowed);
-		$dirname = FILE_UPLOAD_PATH.$this->user['name'];
+		$dirname = $uploadpath.$this->user['name'];
 		if (!file_exists($dirname)){
-			mkdir($dirname,0700);
+			mkdir($dirname,DIR_WRITE_MODE);
 		}
 		
 		$nowdir = $this->getDir();
@@ -177,6 +185,37 @@ class Cgi extends SZone_Controller {
 
 		//@set_time_limit(5 * 60);
 	}
+
+	protected function getDir(){
+		$this->config->load('fileupload');
+		$ft = $this->config->item('filetype');
+
+		$path = $this->config->item('upload-path');
+		$foldname = $this->config->item('folds');
+		$uploadpath = $path.$foldname;
+
+		$filenum = $this->config->item("dir-file-num");
+
+		$nowdir = $uploadpath.$this->user['name'];
+		$map = directory_map($nowdir);
+		if(count($map) == 0){
+			$nowdir .= '/'.$this->user['name'].count($map);
+			mkdir($nowdir,DIR_WRITE_MODE);
+			return $nowdir;
+			//return $nowdir.'\\'.count($map);
+		}else{
+			$nowdir .= '/'.$this->user['name'].(count($map)-1);
+			$map = directory_map($nowdir,1);
+			if(count($map)<$filenum){
+				return $nowdir;	
+			}else{
+				$nowdir .= '/'.$this->user['name'].count($map);
+				mkdir($nowdir,DIR_WRITE_MODE);
+				return $nowdir;	
+			}
+			
+		}
+	}	
 
 	//修改备注
 	public function editmark(){
@@ -488,27 +527,7 @@ class Cgi extends SZone_Controller {
  		}
 	}
 
-	protected function getDir(){
-		$nowdir = FILE_UPLOAD_PATH.$this->user['name'];
-		$map = directory_map($nowdir);
-		if(count($map) == 0){
-			$nowdir .= '/'.$this->user['name'].count($map);
-			mkdir($nowdir,0700);
-			return $nowdir;
-			//return $nowdir.'\\'.count($map);
-		}else{
-			$nowdir .= '/'.$this->user['name'].(count($map)-1);
-			$map = directory_map($nowdir,1);
-			if(count($map)<DIR_FILE_NUM){
-				return $nowdir;	
-			}else{
-				$nowdir .= '/'.$this->user['name'].count($map);
-				mkdir($nowdir,0700);
-				return $nowdir;	
-			}
-			
-		}
-	}
+
 }
 
 /* End of file welcome.php */
