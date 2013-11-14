@@ -19,6 +19,7 @@
  *
  */
 define('ENVIRONMENT',getenv('RUNTIME_ENVIROMENT'));
+define('ROOTPATH', rtrim(dirname(dirname(__FILE__)), '/') . '/');
 
 /*
  *---------------------------------------------------------------
@@ -53,7 +54,7 @@ if (defined('ENVIRONMENT'))
  * as this file.
  *
  */
-$system_path = 'system';
+$system_path = ROOTPATH . 'system';
 
 /*
  *---------------------------------------------------------------
@@ -69,7 +70,7 @@ $system_path = 'system';
  * NO TRAILING SLASH!
  *
  */
-$application_folder = 'application';
+$application_folder = ROOTPATH . 'application';
 
 /*
  * --------------------------------------------------------------------
