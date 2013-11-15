@@ -61,6 +61,18 @@ class Cgi extends SZone_Controller {
 	}
 
 	public function upload(){
+
+		$sql = 'select size,used from user where id='.(int) $this->user['userid'];
+		$query = $this->db->query($sql);
+		$size = 0;
+		$used = 0;
+		if ($query->num_rows() > 0){
+		   $row = $query->row(); 
+
+		   $size = $row->size;
+		   $used = $row->used;
+		}
+
 		$this->config->load('filetype');
 		$this->config->load('fileupload');
 		$ft = $this->config->item('filetype');
@@ -86,6 +98,7 @@ class Cgi extends SZone_Controller {
 
 		$config['upload_path'] = $nowdir;
 		$config['allowed_types'] = implode('|',$allowed);//;'gif|jpg|png';
+		$config['overwrite'] = true;
 		$this->load->library('upload', $config);
 		$fdid = (int) $this->input->get('fid');
 
@@ -109,28 +122,43 @@ class Cgi extends SZone_Controller {
 			$filedata = $this->upload->data();
 
 			//判断是否存在相同的文件
-			$sql = 'select id from files where md5="'.$md5.'"';
+			$sql = 'select id,size from files where md5="'.$md5.'"';
 			$query = $this->db->query($sql);
 
 			if ($query->num_rows() > 0){
 				$row = $query->row();
 				$fid = $row->id;
+				$used += $row->size;
 			}else{
 				$data = array(
 					'path' => $filedata['full_path'],
 					'size' => $filedata['file_size'],
 					'md5' => $md5,
 					'type' => $filedata['is_image'],
+					'mimes' => $filedata['file_type'],
 					'del' => 0
 				);
-				echo $filedata['file_type'].'&&'.$filedata['image_type'];
-				return;
+				//echo $filedata['file_type'].'&&'.$filedata['image_type'];
+
+				if($size < $used + $filedata['file_size']){
+					$ret = array(
+						'ret' => 103,
+						'msg' => '空间已经用完!'
+					);
+
+					$this->output
+					    ->set_content_type('application/json')
+					    ->set_output(json_encode($ret));						
+					return;
+				}
+
 				$sql = $this->db->insert_string('files',$data);
 				//把文件写入数据库
 				$query = $this->db->query($sql);
-
 				$fid = $this->db->insert_id();
+				$used += $filedata['file_size'];
 			}
+			
 
 			$sql = 'select id from userfile where fid='.$fid.' and uid='.(int) $this->user['userid'];
 			$query = $this->db->query($sql);
@@ -159,14 +187,31 @@ class Cgi extends SZone_Controller {
 			);
 			$sql = $this->db->insert_string('userfile',$data);
 			$query = $this->db->query($sql);
+
 			if($this->db->affected_rows() > 0){
-				$list = array(
-					'jsonrpc' => '2.0',
-					'error' => array(
-						'code' => 0,
-						'message' => '上传成功!'
-					)
+				$data = array(
+					'used' => $used
 				);
+				$sql = $this->db->update_string('user',$data,' id='.(int) $this->user['userid']);
+				$query = $this->db->query($sql);
+				if($this->db->affected_rows() > 0){
+					$list = array(
+						'jsonrpc' => '2.0',
+						'error' => array(
+							'code' => 0,
+							'message' => '上传成功!'
+						)
+					);
+				}else{
+					$list = array(
+						'jsonrpc' => '2.0',
+						'error' => array(
+							'code' => 102,
+							'message' => '上传失败!'
+						)
+					);
+				}
+							
 			}else{
 				$list = array(
 					'jsonrpc' => '2.0',
@@ -525,6 +570,26 @@ class Cgi extends SZone_Controller {
  		}else{
  			echo 2;
  		}
+	}
+
+	public function getfile(){
+		$id = $this->input->get('fid');
+		$sql = 'select path from files where id='.(int) $id;
+		$query = $this->db->query($sql);
+
+		if ($query->num_rows() > 0)
+		{
+		   $row = $query->row(); 
+		   $path = $row->path;
+		   $mime = get_mime_by_extension($path);
+
+			$this->output
+			    ->set_content_type($mime) // 你也可以用".jpeg"，它在查找 config/mimes.php 文件之前会移除句号
+			    ->set_output(file_get_contents($path));		   
+		}else{
+
+		}
+
 	}
 
 

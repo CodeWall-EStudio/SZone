@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+
+	RewriteEngine on
+	#RewriteRule !\.(js|ico|gif|jpg|png|css)$ /wp/$1
+	RewriteCond $1 !^(index\.html|index\.php|css|js|images|robots\.txt)
+	RewriteRule ^(.*)$ /index.php/$1 [L]
+
+</IfModule>

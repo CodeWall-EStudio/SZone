@@ -303,6 +303,14 @@ class CI_Upload {
 			}
 		}
 
+		if ( file_exists($this->upload_path.$this->file_name)){
+			if(md5_file($this->upload_path.$this->file_name) == md5_file($_FILES['file']['tmp_name'])){
+				$this->set_image_properties($this->upload_path.$this->file_name);
+				return TRUE;
+			};				
+		}
+
+
 		/*
 		 * Move the file to the final destination
 		 * To deal with different server configurations

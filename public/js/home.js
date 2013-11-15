@@ -171,14 +171,37 @@
 
     }	
 
+    //显示或者隐藏重命名和评论
+    var checkAct = function(){
+    	var l = $('#fileList .fclick:checked').length;
+    	if(l==0){
+			$('.tool-zone').addClass('hide');
+			$('.file-act-zone').removeClass('hide');
+    	}else{
+			$('.tool-zone').removeClass('hide');
+			$('.file-act-zone').removeClass('hide');
+    		if(l>1){
+	    		$('#renameAct').addClass('hide');
+	    		$('#remarkAct').addClass('hide');
+    		}else{
+	    		$('#renameAct').removeClass('hide');
+	    		$('#remarkAct').removeClass('hide');
+    		}
+    	}
+
+    }
+
 	function bind(){
+		$('#uploadFile').bind('hide.bs.modal',function(){
+			$('#file_uploadList').html('');
+		});
+
 		$("#selectAllFile").bind('click',function(){
 			if($(this)[0].checked){
 				$('#fileList .fclick:not(:checked)').each(function(){
 					$(this).click();
 				});
 			}else{
-				console.log(1222);
 				$('#fileList .fclick:checked').each(function(){
 					$(this).attr('checked',false);
 				});
@@ -233,13 +256,14 @@
 		});
 
 		$("#fileList input").click(function(e){
-			if($(e.target).is(":checked")){
-				$('.tool-zone').addClass('hide');
-				$('.file-act-zone').removeClass('hide');
-			}else{
-				$('.tool-zone').removeClass('hide');
-				$('.file-act-zone').addClass('hide');	
-			}
+			// if($(e.target).is(":checked")){
+			// 	$('.tool-zone').addClass('hide');
+			// 	$('.file-act-zone').removeClass('hide');
+			// }else{
+			// 	$('.tool-zone').removeClass('hide');
+			// 	$('.file-act-zone').addClass('hide');	
+			// }
+			checkAct();
 		})
 
 
@@ -282,16 +306,6 @@
 					break;
 			}
 		});
-
-		$("#fileList input").click(function(e){
-			if($(e.target).is(":checked")){
-				$('.tool-zone').addClass('hide');
-				$('.file-act-zone').removeClass('hide');
-			}else{
-				$('.tool-zone').removeClass('hide');
-				$('.file-act-zone').addClass('hide');	
-			}
-		})
 
 		$('#changeType').bind('click',function(e){
 			var dom = $(this);

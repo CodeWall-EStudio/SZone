@@ -38,10 +38,10 @@
 					</li>
 					<li><a>下载</a></li>
 					<li><a>收藏</a></li>
-					<li><a data-toggle="modal" data-target="#renameFile">重命名</a></li>
+					<li id="renameAct"><a data-toggle="modal" data-target="#renameFile">重命名</a></li>
 					<li><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制</a></li>
 					<li><a cmd="delFile">删除</a></li>
-					<li><a data-toggle="modal" data-target="#commentFile">评论</a></li>
+					<li id="remarkAct"><a data-toggle="modal" data-target="#commentFile">评论</a></li>
 				</ul>
 			</div>
 
@@ -135,7 +135,7 @@
 								<div class="td2">
 									<a class="file-name">
 									<?if($item['type'] == 1):?>
-										<img src="<?=$item['path']?>" />
+										<img src="/cgi/getfile?fid=<?=$item['id']?>" />
 									<?else:?>
 										<i class="fold"></i>
 									<?endif?>
@@ -206,9 +206,14 @@
 			</ul>
 		</div>
 		<div class="userinfo">
-			<div>个人空间已用 30%</div>
+			<?
+				$used = $nav['userinfo']['used'];
+				$size = $nav['userinfo']['size'];
+				$pre = $nav['userinfo']['pre'];
+			?>
+			<div>个人空间已用 <?=$pre?></div>
 			<div class="user-zone"> 
-				<div class="prog"></div>3.15G/30G
+				<div class="prog" style="width:<?=$pre?>%"></div><?=$used?>/<?=$size?>
 			</div>			
 			<div>修改密码 退出登录</div>
 		</div>
