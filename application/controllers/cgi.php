@@ -345,15 +345,40 @@ class Cgi extends SZone_Controller {
 	//收藏文件
 	public function addcoll(){
 		$id = $this->input->post('id');
-
-		$data = array(
-			'uid' => $this->user['userid'],
-			'fid' => $id,
-			'time' => time()
-		);
-
-		$sql = $this->db->insert_string('usercollection',$data);
+		$idlist = explode(',',$id);
+		$w = array();
+		foreach($idlist as $k){
+			array_push($w,'fid='.(int) $k);
+		};
+		$wh = implode(' or ',$w);
+		//echo $wh;
+		$sql = 'select fid from usercollection where '.$wh .' and uid='.(int) $this->user['userid'];
 		$query = $this->db->query($sql);
+
+		//有已经收藏过的文件
+		$dlist = array();
+		if($this->db->affected_rows()>0){
+			$fidlist = array();
+
+			foreach($query->result() as $row){
+				array_push($fidlist,$row->fid);
+			}
+
+			foreach($idlist as $k){
+				if(!in_array($k,$fidlist)){
+					array_push($dlist,'('.(int) $this->user['userid'].','.(int) $k.','.time().')');
+				}				
+			}
+		}else{		
+			foreach($idlist as $k){
+				array_push($dlist,'('.(int) $this->user['userid'].','.(int) $k.','.time().')');
+			}
+		}
+
+		$sql = 'insert into usercollection (uid,fid,time) value '.implode(',',$dlist);
+
+		$query = $this->db->query($sql);
+			
 		if($this->db->affected_rows()>0){
 			$ret = array(
 				'ret' => 0,
@@ -364,6 +389,37 @@ class Cgi extends SZone_Controller {
 			$ret = array(
 				'ret' => 100,
 				'msg' => '插入失败!'
+			);
+		}			
+
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));
+		return;
+	}
+
+	//取消搜藏文件
+	public function uncoll(){
+		$id = $this->input->post('id');
+		$idlist = explode(',',$id);
+		$w = array();
+		foreach($idlist as $k){
+			array_push($w,'fid='.(int) $k);
+		};
+
+		$wh = implode(' or ',$w);
+		$sql = 'delete from usercollection where uid='.(int) $this->user['userid'].' and '.$wh;
+		$query = $this->db->query($sql);
+
+		if($this->db->affected_rows()>0){
+			$ret = array(
+				'ret' => 0,
+				'msg' => '更新成功!'
+			);
+		}else{
+			$ret = array(
+				'ret' => 100,
+				'msg' => '更新失败!'
 			);
 		}
 		$this->output
