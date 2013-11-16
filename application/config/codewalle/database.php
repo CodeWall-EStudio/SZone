@@ -48,22 +48,22 @@
 $active_group = ENVIRONMENT;
 $active_record = TRUE;
 
-//正式环境
-$db['production']['hostname'] = 'localhost';
-$db['production']['username'] = 'szone';
-$db['production']['password'] = 'x5ueUquSZaEzFmAQ';
-$db['production']['database'] = 'szone';
-$db['production']['dbdriver'] = 'mysql';
-$db['production']['dbprefix'] = '';
-$db['production']['pconnect'] = TRUE;
-$db['production']['db_debug'] = TRUE;
-$db['production']['cache_on'] = FALSE;
-$db['production']['cachedir'] = '';
-$db['production']['char_set'] = 'utf8';
-$db['production']['dbcollat'] = 'utf8_general_ci';
-$db['production']['swap_pre'] = '';
-$db['production']['autoinit'] = TRUE;
-$db['production']['stricton'] = FALSE;
+//开发环境 codewalle
+$db['codewalle']['hostname'] = 'localhost';
+$db['codewalle']['username'] = 'szone';
+$db['codewalle']['password'] = 't8ecnVj6RAVMcCF8';
+$db['codewalle']['database'] = 'szone';
+$db['codewalle']['dbdriver'] = 'mysql';
+$db['codewalle']['dbprefix'] = '';
+$db['codewalle']['pconnect'] = TRUE;
+$db['codewalle']['db_debug'] = TRUE;
+$db['codewalle']['cache_on'] = FALSE;
+$db['codewalle']['cachedir'] = '';
+$db['codewalle']['char_set'] = 'utf8';
+$db['codewalle']['dbcollat'] = 'utf8_general_ci';
+$db['codewalle']['swap_pre'] = '';
+$db['codewalle']['autoinit'] = TRUE;
+$db['codewalle']['stricton'] = FALSE;
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */

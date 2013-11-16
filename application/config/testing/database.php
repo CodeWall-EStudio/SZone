@@ -48,22 +48,22 @@
 $active_group = ENVIRONMENT;
 $active_record = TRUE;
 
-//正式环境
-$db['production']['hostname'] = 'localhost';
-$db['production']['username'] = 'szone';
-$db['production']['password'] = 'x5ueUquSZaEzFmAQ';
-$db['production']['database'] = 'szone';
-$db['production']['dbdriver'] = 'mysql';
-$db['production']['dbprefix'] = '';
-$db['production']['pconnect'] = TRUE;
-$db['production']['db_debug'] = TRUE;
-$db['production']['cache_on'] = FALSE;
-$db['production']['cachedir'] = '';
-$db['production']['char_set'] = 'utf8';
-$db['production']['dbcollat'] = 'utf8_general_ci';
-$db['production']['swap_pre'] = '';
-$db['production']['autoinit'] = TRUE;
-$db['production']['stricton'] = FALSE;
+//演示环境
+$db['testing']['hostname'] = 'localhost';
+$db['testing']['username'] = 'szone';
+$db['testing']['password'] = 'x5ueUquSZaEzFmAQ';
+$db['testing']['database'] = 'szone';
+$db['testing']['dbdriver'] = 'mysql';
+$db['testing']['dbprefix'] = '';
+$db['testing']['pconnect'] = TRUE;
+$db['testing']['db_debug'] = TRUE;
+$db['testing']['cache_on'] = FALSE;
+$db['testing']['cachedir'] = '';
+$db['testing']['char_set'] = 'utf8';
+$db['testing']['dbcollat'] = 'utf8_general_ci';
+$db['testing']['swap_pre'] = '';
+$db['testing']['autoinit'] = TRUE;
+$db['testing']['stricton'] = FALSE;
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */
