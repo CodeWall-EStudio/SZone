@@ -93,3 +93,20 @@ body {
 	height:auto;
 	padding-left:12px;
 }
+.move-target{
+	height:260px;
+	overflow-y:auto;
+}
+
+.perplist,.perplist ul {
+	list-style-type:none;
+}
+.perplist .second .second{
+
+}
+.perplist a{
+	cursor:pointer;
+}
+.perplist a.selected{
+	background:#b8bec5;
+}

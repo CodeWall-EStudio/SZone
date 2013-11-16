@@ -20,8 +20,9 @@ class Home extends SZone_Controller {
 
 
 	public function index(){
-		// $this->config->load('filetype');
-		// $ft = $this->config->item('filetype');
+		$this->config->load('szone');
+		$pagenum = $this->config->item('pagenum');
+
 
 		//var_dump($this->user);
 		$type = (int) $this->input->get('type');
@@ -108,7 +109,7 @@ class Home extends SZone_Controller {
 		foreach($query->result() as $row){
 			array_push($idlist,$row->fid);
 		}
-		
+
 		$data['fold'] = $fold;
 		$data['flist'] = $foldlist;
 		$data['fname'] = $fname;
@@ -143,6 +144,74 @@ class Home extends SZone_Controller {
 				));
 		}	
 		$data = array('fl' => $nl);	
+
+		$sql = 'select id,name from groups where type=3';
+		$query = $this->db->query($sql);
+		$plist = array();
+		foreach($query->result() as $row){
+			$plist[$row->id] = array(
+				'id' => $row->id,
+				'name' => $row->name,
+				'list' => array()
+			);
+		}
+
+		$sql = 'select id,name,pid,sid,gid from prepare';
+		$query = $this->db->query($sql);
+
+		$gradelist = array();
+		// echo json_encode($query->result());
+		foreach($query->result() as $row){
+			if($row->pid == 0){
+				$plist[$row->gid]['list'][$row->id] = array(
+				//$gradelist[$row->id] = array(
+					'id' => $row->id,
+					'name' => $row->name,
+					'pid' => $row->pid,
+					'sid' => $row->sid,
+					'gid' => $row->gid
+				);
+					//echo $row->id.json_encode($plist[$row->gid]['list']);
+					//echo '<hr>';				
+			}else{
+
+				if($row->sid == 0){
+					if(!isset($plist[$row->gid]['list'][$row->pid]['list'])){
+						$plist[$row->gid]['list'][$row->pid]['list'] = array();
+					}
+
+					$plist[$row->gid]['list'][$row->pid]['list'][$row->id] = array(
+						'id' => $row->id,
+						'name' => $row->name,
+						'pid' => $row->pid,
+						'sid' => $row->sid,
+						'gid' => $row->gid						
+					);
+					//echo $row->id.json_encode($plist[$row->gid]['list']);
+					//echo '<hr>';
+				}else{
+
+					if(!isset($plist[$row->gid]['list'][$row->pid]['list'][$row->sid]['list'])){
+						$plist[$row->gid]['list'][$row->pid]['list'][$row->sid]['list'] = array();
+					}
+					if($row->sid == 13){
+						//var_dump($plist[$row->gid]['list'][$row->pid]['list'][$row->sid]);
+						//echo json_encode($plist[$row->gid]['list'][$row->pid]['list'][$row->sid]);
+					}
+
+					$plist[$row->gid]['list'][$row->pid]['list'][$row->sid]['list'][$row->id] = array(
+							'id' => $row->id,
+							'name' => $row->name,
+							'pid' => $row->pid,
+							'sid' => $row->sid,
+							'gid' => $row->gid						
+						);				
+				}
+			}
+		}
+		//echo json_encode($plist);
+		$data['plist'] = $plist;
+
 		$this->load->view('share/movefile.php',$data);
 	}	
 }

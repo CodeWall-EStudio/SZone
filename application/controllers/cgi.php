@@ -740,6 +740,68 @@ class Cgi extends SZone_Controller {
 		//print_r($idlist);
 	}
 
+	public function add_prep(){
+		$fid = $this->input->post('fid');
+		$pid = $this->input->post('pid');
+		$fl = explode(',',$fid);
+		//$pl = explode(',',$pid);
+		$fw = array();
+		$kv = array();
+
+		foreach($fl as $k){
+			array_push($kv,'('.(int) $pid.','.(int) $k.','.(int) $this->user['userid'].')');
+			array_push($fw,'fid='.$k);
+		}
+			
+		$wh = implode(' or ',$fw);
+		$sql = 'select fid from preparefile where uid='.(int) $this->user['userid'].' and pid='.(int) $pid.' and ('.$wh.')';
+		$query = $this->db->query($sql);
+
+		if ($this->db->affected_rows() > 0){
+			$fkl = array();
+			$nfl = array();
+			$kv = array();
+			foreach($query->result() as $row){
+				array_push($fkl,$row->fid);
+			}
+			foreach($fl as $k){
+				if(!in_array($k,$fkl)){
+					array_push($nfl,$k);
+				}
+			}
+			if(count($nfl) > 0){
+				foreach($nfl as $k){
+					array_push($kv,'('.(int) $pid.','.(int) $k.','.(int) $this->user['userid'].')');
+				}
+			}
+
+		}
+		if(count($kv)>0){
+			$sql = 'insert into preparefile (pid,fid,uid) value '.implode(',',$kv);
+			$query = $this->db->query($sql);
+			if ($this->db->affected_rows() > 0){
+				$ret = array(
+					'ret' => 0,
+					'msg' => '复制成功!'
+				);
+			}else{
+				$ret = array(
+					'ret' => 100,
+					'msg' => '复制失败!'
+				);
+			}		
+		}else{
+			$ret = array(
+				'ret' => 101,
+				'msg' => '复制失败!没有符合条件的记录.'
+			);
+		}
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));			
+
+	}
+
 
 }
 

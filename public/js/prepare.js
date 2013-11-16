@@ -40,11 +40,13 @@
 		if(grEl){
 			var html = [];
 			var nowGroup = groupEl.val();
+			var cr = 0;
 			for(var i in grlist){
 				var item = grlist[i];
 				glist[item.gid].list[item.id] = item;
 				html.push('<option value="'+item.id+'">'+item.name+'</option>');
-				if(item.list){
+				if(item.list && !cr){
+					cr = 1;
 					createUn(item.list);
 				}
 			}
@@ -56,6 +58,7 @@
 		groupEl.change(function(){
 			var id = $(this).val();
 			var list = glist[id].list;
+			console.log(list);
 			if($.isEmptyObject(list)){
 				createUn([]);
 			}else{
@@ -66,6 +69,7 @@
 		grEl.change(function(){
 			var id = $(this).val();
 			var list = grlist[id].list;
+			console.log(id,list);
 			if($.isEmptyObject(list)){
 				createUn([]);
 			}else{

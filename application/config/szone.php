@@ -33,6 +33,9 @@ $config['filetype']['exe'] = 5;   //应用
 $config['filetype']['zip'] = 6;   //压缩包
 $config['filetype']['rar'] = 6;   //压缩包
 
+//分页数
+$config['pagenum'] = 10;
+
 
 $mime = array (
     //applications
