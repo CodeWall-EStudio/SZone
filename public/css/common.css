@@ -179,6 +179,9 @@ a{
 	right:-20px;
 	z-index:15;
 }
+.userinfo a{
+	color:#515151;
+}
 .userinfo .user-more-info a{
 	color:#428bca;
 }

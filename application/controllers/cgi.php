@@ -73,9 +73,9 @@ class Cgi extends SZone_Controller {
 		   $used = $row->used;
 		}
 
-		$this->config->load('filetype');
-		$this->config->load('fileupload');
+		$this->config->load('szone');
 		$ft = $this->config->item('filetype');
+		$allowkey = $this->config->item('filetypekey');
 
 		$path = $this->config->item('upload-path');
 		$foldname = $this->config->item('folds');
@@ -85,6 +85,7 @@ class Cgi extends SZone_Controller {
 		}
 
 		$allowed = array();
+		
 		foreach($ft as $k => $item){
 			array_push($allowed,$k);
 		}
@@ -111,7 +112,6 @@ class Cgi extends SZone_Controller {
 					'code' => 100,
 					'message' => '上传失败'
 				),
-				'id' => $id
 			);
 			$this->output
 			    ->set_content_type('application/json')
@@ -134,10 +134,17 @@ class Cgi extends SZone_Controller {
 					'path' => $filedata['full_path'],
 					'size' => $filedata['file_size'],
 					'md5' => $md5,
-					'type' => $filedata['is_image'],
+					//'type' => $filedata['is_image'],
 					'mimes' => $filedata['file_type'],
 					'del' => 0
 				);
+				if($filedata['is_image']){
+					$data['type'] = 1;
+				}else{
+					$type =  substr($filedata['file_ext'],1);
+					$data['type'] = $ft[$type];					
+				}
+
 				//echo $filedata['file_type'].'&&'.$filedata['image_type'];
 
 				if($size < $used + $filedata['file_size']){
@@ -232,7 +239,7 @@ class Cgi extends SZone_Controller {
 	}
 
 	protected function getDir(){
-		$this->config->load('fileupload');
+		$this->config->load('szone');
 		$ft = $this->config->item('filetype');
 
 		$path = $this->config->item('upload-path');
@@ -590,6 +597,91 @@ class Cgi extends SZone_Controller {
 
 		}
 
+	}
+	//重命名文件
+	public function renamefile(){
+		$fid = $this->input->post('fid');
+		$fname = $this->input->post('fname');
+
+		$data = array(
+			'fid' => $fid,
+			'name' => $fname
+		);
+		$str = $this->db->update_string('userfile',$data,'fid='.(int) $fid.' and uid ='.(int) $this->user['userid']);
+		$query = $this->db->query($str);
+
+		if ($this->db->affected_rows() > 0){
+			$ret = array(
+				'ret' => 0,
+				'msg' => '更新成功!'
+			);
+		}else{
+			$ret = array(
+				'ret' => 100,
+				'msg' => '更新失败!'
+			);
+		}		
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));		
+
+	}
+
+	//添加文件评论 貌似作废了.
+	public function add_file_comment(){
+		$fid = $this->input->post('fid');
+		$comment = $this->input->post('comment');
+
+		$data = array(
+			'content' => $comment
+		);
+
+		$str = $this->db->update_string('userfile',$data,' fid='.(int) $fid.' and uid='.(int) $this->user['userid']);
+		$query = $this->db->query($str);
+		if ($this->db->affected_rows() > 0){
+			$ret = array(
+				'ret' => 0,
+				'msg' => '更新成功!'
+			);
+		}else{
+			$ret = array(
+				'ret' => 100,
+				'msg' => '更新失败!'
+			);
+		}		
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));	
+	}
+
+	//删除文件
+	public function del_file(){
+		$type = $this->input->get('type');
+		$id = $this->input->post('id');
+
+		$idlist = explode(',',$id);
+		$kl = array();
+		foreach($idlist as $k){
+			array_push($kl,'id='.(int) $k);
+		};
+		$where = implode(' or ',$kl);
+		$sql = 'update userfile set del=1 where uid='.(int) $this->user['userid'].' and '.$where;
+		$query = $this->db->query($sql);
+		if ($this->db->affected_rows() > 0){
+			$ret = array(
+				'ret' => 0,
+				'msg' => '删除成功!'
+			);
+		}else{
+			$ret = array(
+				'ret' => 100,
+				'msg' => '删除失败!'
+			);
+		}		
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));	
+		//print_r($idlist);
 	}
 
 

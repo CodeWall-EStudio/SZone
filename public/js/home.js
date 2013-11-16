@@ -18,13 +18,89 @@
                             minlength : '文件名称至少需要2个字'
                     }
             },
-            submitHandler : function(form) {
-                    console.log(form);
-        // do other things for a valid form
-                console.log(1234);
-                return false;
+            submitHandler : function(form) { 
+			 	var value = $('#foldname').val();
+			 	var pid = $('#newFolds .parentid').val();
+			 	if(value != ''){
+			 		//console.log(value);
+			 		$.post('/cgi/addfold',{name: value,pid: pid},function(d){
+			 			if(d.ret==0){
+			 				$("#newFold .close").click();
+			 				window.location.reload();
+			 			}else{
+			 				alert(d.msg);
+			 			}
+			 			$("#newFold .close").click();
+			 		});
+			 	}            	
+                //return false;
             }
     });
+
+    $("#reName").validate({
+        rules:{
+            fname : {
+                    required : true,
+                    maxlength : 120,
+                    minlength : 2
+            } 
+        },
+        messages:{
+            fname : {
+                    require : '请输入文件名称',
+                    maxlength : '文件名称最长120个字',
+                    minlength : '文件名称至少需要2个字'
+            }
+        },
+        submitHandler : function(form) {
+        	var data = {
+        		fname : $('#reName .foldname').val(),
+        		fid : $('#reName .fid').val()
+        	}
+        	$.post('/cgi/renamefile',data,function(d){
+	 			if(d.ret==0){
+	 				$("#renameFile .close").click();
+	 				window.location.reload();
+	 			}else{
+	 				alert(d.msg);
+	 			}
+	 			$("#renameFile .close").click();
+        	});
+            return false;
+        }
+    });   
+    $("#remarkFile").validate({
+        rules:{
+            comment : {
+                    required : true,
+                    maxlength : 255,
+                    minlength : 2
+            } 
+        },
+        messages:{
+            fname : {
+                    require : '请填写评论内容',
+                    maxlength : '评论最多255个字',
+                    minlength : '评论最少需要2个字'
+            }
+        },
+        submitHandler : function(form) {
+        	var data = {
+        		comment : $('#remarkFile .text-content').val(),
+        		fid : $('#remarkFile .fid').val()
+        	}
+        	$.post('/cgi/add_file_comment',data,function(d){
+	 			if(d.ret==0){
+	 				$("#remarkFile .close").click();
+	 				window.location.reload();
+	 			}else{
+	 				alert(d.msg);
+	 			}
+	 			$("#remarkFile .close").click();
+        	});
+            return false;
+        }
+    });   
 
 	var uploader = new plupload.Uploader({
 		runtimes : 'html5,flash,silverlight,html4',
@@ -196,6 +272,46 @@
 			$('#file_uploadList').html('');
 		});
 
+		$("#delFile").bind('show.bs.modal',function(){
+			var id = []
+			$('#fileList .fclick:checked').each(function(e){
+				var item = files[$(this).val()];
+				id.push(item.id);
+				$('#delFile .filelist').append('<li>'+item.name+'</li>');
+			});
+			$('#delFile .fid').val(id.join(','));
+		});
+
+		$("#delFile").bind('hide.bs.modal',function(){
+			$('#delFile .filelist').html('');
+			$('#delFile .fid').val('');
+		});
+
+		$("#delFile .btn-del").bind('click',function(){
+			var id = $('#delFile .fid').val();
+			$.post('/cgi/del_file?type=0',{id: id},function(d){
+	 			if(d.ret==0){
+	 				$("#delFile .close").click();
+	 				window.location.reload();
+	 			}else{
+	 				alert(d.msg);
+	 			}
+	 			$("#delFile .close").click();
+			});
+		});
+
+		$('#renameFile').bind('show.bs.modal',function(){
+			var item = files[$('#fileList .fclick:checked').val()];
+			$('#renameFile .foldname').val(item.name);
+			$('#renameFile .fid').val(item.id);
+		});
+
+		$('#commentFile').bind('show.bs.modal',function(){
+			var item = files[$('#fileList .fclick:checked').val()];
+			$('#commentFile .fname').text(item.name);
+			$('#commentFile .fid').val(item.id);
+		});		
+
 		$("#selectAllFile").bind('click',function(){
 			if($(this)[0].checked){
 				$('#fileList .fclick:not(:checked)').each(function(){
@@ -219,9 +335,7 @@
 					break;
 				case 'copyFile':
 					copyFile();
-					break;
-				case 'delFile':
-					break;					
+					break;							
 			}
 		})
 
@@ -321,24 +435,6 @@
 				//dom.html('<i></i>图标')	
 			}
 		})
-
-		 $('.btn-new-fold').click(function(){
-		 	var value = $('#foldname').val();
-		 	var pid = $('#newFolds .parentid').val();
-		 	console.log(pid);
-		 	if(value != ''){
-		 		//console.log(value);
-		 		$.post('/cgi/addfold',{name: value,pid: pid},function(d){
-		 			if(d.ret==0){
-		 				$("#newFold .close").click();
-		 				window.location.reload();
-		 			}else{
-		 				alert(d.msg);
-		 			}
-		 			$("#newFold .close").click();
-		 		});
-		 	}
-		 });
 	}
 
 

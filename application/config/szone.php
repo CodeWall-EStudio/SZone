@@ -1,4 +1,10 @@
 <?
+	//文件上传相关配置
+	$config['upload-path'] = dirname(dirname(__FILE__)).'/../../file/';
+	$config['upload-folds'] = 'file';
+	$config['dir-file-num'] = 512;
+
+	//上传类型
 	$config['filetype']['jpg'] = 1;   //图片
 	$config['filetype']['gif'] = 1;
 	$config['filetype']['png'] = 1;
@@ -11,6 +17,8 @@
 	$config['filetype']['mp4'] = 4;
 	$config['filetype']['exe'] = 5;   //应用
 	$config['filetype']['zip'] = 6;   //压缩包
+    $config['filetype']['rar'] = 6;   //压缩包
+
 
 $mime = array (
         //applications
@@ -77,5 +85,4 @@ $mime = array (
         'wm'    => 'video/x-ms-wmv',
         'flv'   => 'video/x-flv',
         'mkv'   => 'video/x-matroska'
-        );
-
+        );	

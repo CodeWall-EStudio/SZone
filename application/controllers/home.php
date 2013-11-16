@@ -37,7 +37,6 @@ class Home extends SZone_Controller {
 			)
 		);
 
-
 		$sql = 'select id,name,mark,createtime,pid from userfolds where uid = '.(int) $this->user['userid'];
 		$query = $this->db->query($sql);
 
@@ -60,13 +59,13 @@ class Home extends SZone_Controller {
 					'time' => date('Y-m-d',$row->createtime)
 				);
 			}
-			array_push($fold,array(
+			$fold[$row->id] = array(
 				'id' => $row->id,
 				'name' => $row->name,
 				'mark' => $row->mark,
 				'pid' => $row->pid,
 				'time' => date('Y-m-d',$row->createtime)
-			));
+			);
 		}
 
 		foreach($fold as $row){
@@ -74,7 +73,7 @@ class Home extends SZone_Controller {
 				if(!isset($foldlist[$row['pid']]['list'])){
 					$foldlist[$row['pid']]['list'] = array();
 				}
-				array_push($foldlist[$row['pid']]['list'],$row);
+				$foldlist[$row['pid']]['list'][$row['id']] = $row;
 			}
 		}
 
@@ -83,13 +82,15 @@ class Home extends SZone_Controller {
 		}else{
 			$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = 0 and a.uid='.(int) $this->user['userid'];			
 		}
-		//echo $sql;
+		if($type){
+			$sql .= ' and b.type='.$type;
+		}
 		$query = $this->db->query($sql);
 		$file = array();
 		$idlist = array();
 		foreach($query->result() as $row){
 			if((int) $row->del == 0){
-				array_push($file,array(
+				$file[$row->id] = array(
 					'id' => $row->id,
 					'name' => $row->name,
 					'time' => substr($row->createtime,0,10),
@@ -97,7 +98,7 @@ class Home extends SZone_Controller {
 					'path' => $row->path,
 					'size' => $row->size,
 					'type' => $row->type
-				));
+				);
 			}
 		}
 
@@ -107,7 +108,7 @@ class Home extends SZone_Controller {
 		foreach($query->result() as $row){
 			array_push($idlist,$row->fid);
 		}
-
+		
 		$data['fold'] = $fold;
 		$data['flist'] = $foldlist;
 		$data['fname'] = $fname;

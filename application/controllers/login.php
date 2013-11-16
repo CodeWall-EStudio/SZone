@@ -18,6 +18,11 @@ class Login extends CI_Controller{
 
 	}
 
+	public function layout(){
+		$this->session->sess_destroy();
+		redirect('/');
+	}
+
 	public function callback(){
 		$this->load->library('qconnect');
 

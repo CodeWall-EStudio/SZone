@@ -37,11 +37,11 @@
 						</ul>						
 					</li>
 					<li><a>下载</a></li>
-					<li><a>收藏</a></li>
-					<li id="renameAct"><a data-toggle="modal" data-target="#renameFile">重命名</a></li>
+					<li><a cmd="coll">收藏</a></li>
+					<li id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
 					<li><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制</a></li>
-					<li><a cmd="delFile">删除</a></li>
-					<li id="remarkAct"><a data-toggle="modal" data-target="#commentFile">评论</a></li>
+					<li><a cmd="delFile" data-toggle="modal" data-target="#delFile">删除</a></li>
+					<!-- <li id="remarkAct"><a cmd="remark" data-toggle="modal" data-target="#commentFile">评论</a></li> -->
 				</ul>
 			</div>
 
@@ -72,16 +72,42 @@
 				</div>
 				<ul class="act-zone">
 					<li class="all-file file-type dropdown" id="changeFileType">
-						<a role="button" data-toggle="dropdown" href="#">全部类型<b class="caret"></b></a>
+						<a role="button" data-toggle="dropdown" href="#">
+							<?
+								switch($type){
+									case 0:
+										echo '全部类型';
+										break;
+									case 1:
+										echo '图片';
+										break;
+									case 2:
+										echo '文档';
+										break;
+									case 3:
+										echo '音乐';
+										break;
+									case 4:
+										echo '视频';
+										break;
+									case 5:
+										echo '应用';
+										break;
+									case 6:
+										echo '压缩包';
+										break;
+								}
+							?>
+						<b class="caret"></b></a>
 						<ul class="dropdown-menu section-tit-menu1" role="menu" aria-labelledby="dLabel">
-							<li><a data-type="0">全部</a></li>
+							<li><a data-type="0" href="/?type=0">全部</a></li>
 							<li><a data-type="2">收藏</a></li>
-							<li><a data-type="3">视频</a></li>
-							<li><a data-type="1">图片</a></li>
-							<li><a data-type="4">音乐</a></li>
-							<li><a data-type="5">文档</a></li>
-							<li><a data-type="6">应用</a></li>
-							<li><a data-type="7">压缩包</a></li>
+							<li><a data-type="3" href="/?type=4">视频</a></li>
+							<li><a data-type="1" href="/?type=1">图片</a></li>
+							<li><a data-type="4" href="/?type=3">音乐</a></li>
+							<li><a data-type="5" href="/?type=2">文档</a></li>
+							<li><a data-type="6" href="/?type=5">应用</a></li>
+							<li><a data-type="7" href="/?type=6">压缩包</a></li>
 						</ul>						
 					</li>
 					<!--<li class="list-type" id="changeType"><i></i><span>图标</span></li>-->
@@ -131,7 +157,7 @@
 						</li>	
 						<?foreach($file as $item):?>
 							<li class="file" data-id="<?=$item['id']?>">
-								<div class="td1"><input type="checkbox" name="file" class="fclick" value="<?=$item['id']?>" /></div>
+								<div class="td1"><input type="checkbox" name="file" class="fclick" value="<?=$item['id']?>" data-type="file" /></div>
 								<div class="td2">
 									<a class="file-name">
 									<?if($item['type'] == 1):?>
@@ -205,21 +231,44 @@
 				</li>
 			</ul>
 		</div>
+		<?if($nav['userinfo']['userid']):?>
 		<div class="userinfo">
 			<?
 				$used = $nav['userinfo']['used'];
 				$size = $nav['userinfo']['size'];
 				$pre = $nav['userinfo']['pre'];
 			?>
-			<div>个人空间已用 <?=$pre?></div>
+			<div>个人空间已用 <?=$pre?>%</div>
 			<div class="user-zone"> 
 				<div class="prog" style="width:<?=$pre?>%"></div><?=$used?>/<?=$size?>
 			</div>			
-			<div>修改密码 退出登录</div>
+			<div>修改密码 <a href="/login/layout">退出登录</a></div>
 		</div>
+		<?endif?>
 		<div class="clear"></div>		
 	</div>	
 	<div class="footer"></div>
+
+
+	<div id="delFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">删除文件</h4>
+				</div>
+				<div class="modal-body">
+					将要删除文件:
+					<ul class="filelist"></ul>
+					<input class="fid" type="hidden" value="" />
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary btn-del">确定删除</button>
+				</div>				
+			</div>
+		</div>
+	</div>
 
 	<div id="uploadFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -290,7 +339,7 @@
 				</div>
 				<div class="modal-body">
 					<div class="file-review">
-						<img src="http://i2.hoopchina.com.cn/blogfile/201310/30/138306711783216.jpg" />
+						<img  />
 					</div>
 					<div class="file-reivew-act">
 						<span class="glyphicon glyphicon-repeat rotate"></span>
@@ -316,13 +365,16 @@
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title">重命名文件</h4>
 				</div>
+				<form class="new-fold" id="reName" method="post">
 				<div class="modal-body">
-					<input type="text" style="width:80%" />
+					<label>文件名称：</label><input class="foldname" name="fname" type="text" style="width:80%" />
+					<input type="hidden" class="fid" />
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-					<button type="button" class="btn btn-primary">确定</button>
+					<button type="submit" class="btn btn-primary" id="renameFileBtn">确定</button>
 				</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -334,13 +386,17 @@
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title">评论文件</h4>
 				</div>
-				<div class="modal-body">
-					<textarea style="width:90%;height:50px;" ></textarea>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-					<button type="button" class="btn btn-primary">确定</button>
-				</div>
+				<form class="new-fold" id="remarkFile" method="post">
+					<div class="modal-body">
+						<label>文件名称：</label><span class="fname"></span>
+						<textarea class="text-content" name="comment" style="width:90%;height:50px;" ></textarea>
+						<input type="hidden" name="fid" class="fid"  />
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-primary">确定</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -361,7 +417,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-						<input type="button" class="btn btn-primary btn-new-fold" value="确定" />
+						<input type="submit" class="btn btn-primary btn-new-fold" value="确定" />
 					</div>
 				</form>
 			</div>
@@ -1097,6 +1153,16 @@
 	<script src="/js/lib/plupload.full.min.js"></script>
 <!-- 	// <script type="text/javascript" src="/js/lib/moxie.js"></script>
 	// <script type="text/javascript" src="/js/lib/plupload.dev.js"></script>	 -->
+
+	<script>
+		var folds = '<?=json_encode($fold);?>',
+			files = '<?=json_encode($file);?>';
+		folds = $.parseJSON(folds);
+		files = $.parseJSON(files);
+		console.log(folds);
+		console.log(files);
+	</script>
+
 	<script src="/js/common.js"></script>
 	<script src="/js/home.js"></script>
 	<div id="alertTips" class="alert-tips"></div>
