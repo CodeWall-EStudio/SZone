@@ -2,6 +2,7 @@
 	var iframeEl = $('#shareIframe');
 	var EditMark = '/cgi/editmark', //修改备注
 		MoveFile = '/cgi/movefile', //移动文件到文件夹
+		UnColl = '/cgi/uncoll',
 		AddColl = '/cgi/addcoll';   //添加收藏
     $("#newFolds").validate({
             rules:{
@@ -112,7 +113,7 @@
 		silverlight_xap_url : '/js/lib/Moxie.xap',
 		
 		filters : {
-			max_file_size : '10mb',
+			max_file_size : '500mb',
 			mime_types: [
 				{title : "图片", extensions : "jpg,gif,png"},
 				{title : "文档", extensions : "doc,txt"},
@@ -222,7 +223,23 @@
 		});
 	};
 
-
+	var collFiles = function(){
+		var il = [];
+		$('#fileList .fclick:checked').each(function(){
+			//if($(this).parents('li.file').find('i.s').length == 0){
+				il.push($(this).val());
+			//}
+		});	
+		id = il.join(',');
+		$.post(AddColl,{id:id},function(d){
+			if(d.ret == 0){
+				//target.parent('span').prev('span').text(d.info);
+				window.location.reload();
+			}else{
+				console.log(d.msg);
+			}
+		});		
+	}
 
 	var collFile = function(id,target){
 		var data = {
@@ -234,6 +251,18 @@
 				target.addClass('s');
 			}
 		});
+	}
+
+	var uncollFile = function(id,target){
+		var data = {
+			id : id
+		}
+		$.post(UnColl,data,function(d){
+			console.log(d);
+			if(d.ret == 0){
+				target.removeClass('s');
+			}
+		});		
 	}
 
 	var deleteFile = function(item){
@@ -380,6 +409,7 @@
 			checkAct();
 		})
 
+		$('#collFiles').bind('click',collFiles);
 
 		$('#fileList').bind('click',function(e){
 			var target = $(e.target),
@@ -398,6 +428,13 @@
 						if(type == 'file'){
 							collFile(id,target);
 						}
+					break;
+				case 'uncoll':
+					var id = target.attr('data-id'),
+						type = target.attr('data-type');
+						if(type == 'file'){
+							uncollFile(id,target);
+						}				
 					break;
 				case 'edit':
 					target.hide();

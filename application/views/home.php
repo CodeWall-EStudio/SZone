@@ -37,7 +37,7 @@
 						</ul>						
 					</li>
 					<li><a>下载</a></li>
-					<li><a cmd="coll">收藏</a></li>
+					<li><a cmd="coll" id="collFiles">收藏</a></li>
 					<li id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
 					<li><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制</a></li>
 					<li><a cmd="delFile" data-toggle="modal" data-target="#delFile">删除</a></li>
@@ -189,7 +189,7 @@
 									</dl>
 								</div>
 								<div class="td3"> </div>
-								<div class="td4"><span><?=$item['time']?></span> <i cmd="coll" <?if(in_array($item['id'],$coll)):?>class="s"<?endif?> data-type="file" data-id="<?=$item['id']?>"></i></div>
+								<div class="td4"><span><?=$item['time']?></span> <i <?if(in_array($item['id'],$coll)):?>class="s" cmd="uncoll" title="取消收藏"<?else:?>cmd="coll" title="收藏"<?endif?> data-type="file" data-id="<?=$item['id']?>"></i></div>
 							</li>
 						<?endforeach?>	
 					<?else:?>									
