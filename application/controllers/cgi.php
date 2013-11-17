@@ -23,14 +23,14 @@ class Cgi extends SZone_Controller {
 		$name = $this->input->post('name');
 		$pid = (int) $this->input->post('pid');
 
-		$sql = 'select id from userfolds where uid = '.(int) $this->user['userid'].' and name ="'.$name.'"';
+		$sql = 'select id from userfolds where uid = '.(int) $this->user['uid'].' and name ="'.$name.'"';
 		$query = $this->db->query($sql);
 		if($query->num_rows() == 0){
 
 			$data = array(
 				'pid' => $pid,
 				'name' => $name,
-				'uid' => $this->user['userid'],
+				'uid' => $this->user['uid'],
 				'mark' => '',
 				'createtime' => time(),
 				'type' => 0
@@ -62,7 +62,7 @@ class Cgi extends SZone_Controller {
 
 	public function upload(){
 
-		$sql = 'select size,used from user where id='.(int) $this->user['userid'];
+		$sql = 'select size,used from user where id='.(int) $this->user['uid'];
 		$query = $this->db->query($sql);
 		$size = 0;
 		$used = 0;
@@ -167,7 +167,7 @@ class Cgi extends SZone_Controller {
 			}
 			
 
-			$sql = 'select id from userfile where fid='.$fid.' and uid='.(int) $this->user['userid'];
+			$sql = 'select id from userfile where fid='.$fid.' and uid='.(int) $this->user['uid'];
 			$query = $this->db->query($sql);
 			if ($query->num_rows() > 0){
 				$row = $query->row();
@@ -188,7 +188,7 @@ class Cgi extends SZone_Controller {
 			$data = array(
 				'fid' => (int) $fid,
 				'name' => $filedata['raw_name'],
-				'uid' => (int) $this->user['userid'],
+				'uid' => (int) $this->user['uid'],
 				'del' => 0,
 				'fdid' => $fdid
 			);
@@ -199,7 +199,7 @@ class Cgi extends SZone_Controller {
 				$data = array(
 					'used' => $used
 				);
-				$sql = $this->db->update_string('user',$data,' id='.(int) $this->user['userid']);
+				$sql = $this->db->update_string('user',$data,' id='.(int) $this->user['uid']);
 				$query = $this->db->query($sql);
 				if($this->db->affected_rows() > 0){
 					$list = array(
@@ -287,7 +287,7 @@ class Cgi extends SZone_Controller {
 			$fname => $info
 		);
 
-		$sql = 'select id from '.$tname.' where id='.$fid.' and uid='.(int) $this->user['userid'];
+		$sql = 'select id from '.$tname.' where id='.$fid.' and uid='.(int) $this->user['uid'];
 		$query = $this->db->query($sql);
 		if($query->num_rows() == 0){
 			$ret = array(
@@ -295,7 +295,7 @@ class Cgi extends SZone_Controller {
 				'msg' => '没有查到文件!'
 			);
 		}else{
-			$str = $this->db->update_string($tname,$data,'id='.$fid.' and uid='.(int) $this->user['userid']);
+			$str = $this->db->update_string($tname,$data,'id='.$fid.' and uid='.(int) $this->user['uid']);
 			$query = $this->db->query($sql);
 			if($this->db->affected_rows()>0){
 				$ret = array(
@@ -352,7 +352,7 @@ class Cgi extends SZone_Controller {
 		};
 		$wh = implode(' or ',$w);
 		//echo $wh;
-		$sql = 'select fid from usercollection where '.$wh .' and uid='.(int) $this->user['userid'];
+		$sql = 'select fid from usercollection where '.$wh .' and uid='.(int) $this->user['uid'];
 		$query = $this->db->query($sql);
 
 		//有已经收藏过的文件
@@ -366,12 +366,12 @@ class Cgi extends SZone_Controller {
 
 			foreach($idlist as $k){
 				if(!in_array($k,$fidlist)){
-					array_push($dlist,'('.(int) $this->user['userid'].','.(int) $k.','.time().')');
+					array_push($dlist,'('.(int) $this->user['uid'].','.(int) $k.','.time().')');
 				}				
 			}
 		}else{		
 			foreach($idlist as $k){
-				array_push($dlist,'('.(int) $this->user['userid'].','.(int) $k.','.time().')');
+				array_push($dlist,'('.(int) $this->user['uid'].','.(int) $k.','.time().')');
 			}
 		}
 
@@ -408,7 +408,7 @@ class Cgi extends SZone_Controller {
 		};
 
 		$wh = implode(' or ',$w);
-		$sql = 'delete from usercollection where uid='.(int) $this->user['userid'].' and '.$wh;
+		$sql = 'delete from usercollection where uid='.(int) $this->user['uid'].' and '.$wh;
 		$query = $this->db->query($sql);
 
 		if($this->db->affected_rows()>0){
@@ -472,8 +472,8 @@ class Cgi extends SZone_Controller {
 	//取用户列表
 	public function getuser(){
 		$key = $this->input->post('key');
-
-		$sql = 'select id,name,nick from user where name like "%'.$key.'%" and id != '.$this->user['userid'];
+		//echo json_encode($this->user);
+		$sql = 'select id,name,nick from user where name like "%'.$key.'%" and id != '.$this->user['uid'];
 		$query = $this->db->query($sql);
 		$list = array();
 		foreach($query->result() as $row){
@@ -521,7 +521,7 @@ class Cgi extends SZone_Controller {
 			$nl[$row->id] = $row->name;
 		};
 
-		$sql = 'select fid,gid from groupfile where uid='.$this->user['userid'];
+		$sql = 'select fid,gid from groupfile where uid='.$this->user['uid'];
 		$query = $this->db->query($sql);
 
 		foreach($query->result() as $row){
@@ -534,7 +534,7 @@ class Cgi extends SZone_Controller {
 		foreach($id as $k){
 			foreach($fid as $i){
 				if(!in_array($i,$cache[$k])){
-	array_push($key,'('.$i.','.$k.','.$time.',"'.$nl[$i].'",'.'"'.$content.'",'.$this->user['userid'].')');	
+	array_push($key,'('.$i.','.$k.','.$time.',"'.$nl[$i].'",'.'"'.$content.'",'.$this->user['uid'].')');	
 				}
 			}
 		}
@@ -577,7 +577,7 @@ class Cgi extends SZone_Controller {
 			$cache[$k] = array();
 		}
 
-		$sql = 'select fid,tuid from message where fuid='.$this->user['userid'];
+		$sql = 'select fid,tuid from message where fuid='.$this->user['uid'];
 		$query = $this->db->query($sql);
 
 		foreach($query->result() as $row){
@@ -592,7 +592,7 @@ class Cgi extends SZone_Controller {
 		foreach($id as $k){
 			foreach($fid as $i){
 				if(!in_array($i,$cache[$k])){
-					array_push($key,'('.$this->user['userid'].','.$k.',"'.$content.'",'.$i.')');	
+					array_push($key,'('.$this->user['uid'].','.$k.',"'.$content.'",'.$i.')');	
 				}
 			}
 		}
@@ -663,7 +663,7 @@ class Cgi extends SZone_Controller {
 			'fid' => $fid,
 			'name' => $fname
 		);
-		$str = $this->db->update_string('userfile',$data,'fid='.(int) $fid.' and uid ='.(int) $this->user['userid']);
+		$str = $this->db->update_string('userfile',$data,'fid='.(int) $fid.' and uid ='.(int) $this->user['uid']);
 		$query = $this->db->query($str);
 
 		if ($this->db->affected_rows() > 0){
@@ -692,7 +692,7 @@ class Cgi extends SZone_Controller {
 			'content' => $comment
 		);
 
-		$str = $this->db->update_string('userfile',$data,' fid='.(int) $fid.' and uid='.(int) $this->user['userid']);
+		$str = $this->db->update_string('userfile',$data,' fid='.(int) $fid.' and uid='.(int) $this->user['uid']);
 		$query = $this->db->query($str);
 		if ($this->db->affected_rows() > 0){
 			$ret = array(
@@ -721,7 +721,7 @@ class Cgi extends SZone_Controller {
 			array_push($kl,'id='.(int) $k);
 		};
 		$where = implode(' or ',$kl);
-		$sql = 'update userfile set del=1 where uid='.(int) $this->user['userid'].' and '.$where;
+		$sql = 'update userfile set del=1 where uid='.(int) $this->user['uid'].' and '.$where;
 		$query = $this->db->query($sql);
 		if ($this->db->affected_rows() > 0){
 			$ret = array(
@@ -749,12 +749,12 @@ class Cgi extends SZone_Controller {
 		$kv = array();
 
 		foreach($fl as $k){
-			array_push($kv,'('.(int) $pid.','.(int) $k.','.(int) $this->user['userid'].')');
+			array_push($kv,'('.(int) $pid.','.(int) $k.','.(int) $this->user['uid'].')');
 			array_push($fw,'fid='.$k);
 		}
 			
 		$wh = implode(' or ',$fw);
-		$sql = 'select fid from preparefile where uid='.(int) $this->user['userid'].' and pid='.(int) $pid.' and ('.$wh.')';
+		$sql = 'select fid from preparefile where uid='.(int) $this->user['uid'].' and pid='.(int) $pid.' and ('.$wh.')';
 		$query = $this->db->query($sql);
 
 		if ($this->db->affected_rows() > 0){
@@ -771,7 +771,7 @@ class Cgi extends SZone_Controller {
 			}
 			if(count($nfl) > 0){
 				foreach($nfl as $k){
-					array_push($kv,'('.(int) $pid.','.(int) $k.','.(int) $this->user['userid'].')');
+					array_push($kv,'('.(int) $pid.','.(int) $k.','.(int) $this->user['uid'].')');
 				}
 			}
 

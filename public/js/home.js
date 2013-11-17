@@ -472,6 +472,22 @@
 				//dom.html('<i></i>图标')	
 			}
 		})
+
+		$('#shareHis').bind('click',function(e){
+			var target = $(e.target),
+				cmd = target.attr('cmd');
+			switch(cmd){
+				case 'send':
+					$("#mailIframe").attr('src','/home/sendmail?m=0');
+					break;
+				case 'get':
+					$("#mailIframe").attr('src','/home/sendmail?m=1');
+					break;	
+				case 'share':
+					$("#mailIframe").attr('src','/home/groupmail');
+					break;	
+			}
+		});
 	}
 
 

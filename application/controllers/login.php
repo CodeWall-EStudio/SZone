@@ -45,7 +45,7 @@ class Login extends CI_Controller{
         	 $auth = (int) $row->auth;
         	 $size = (int) $row->size;
         	 $used = (int) $row->used;
-        	 $userid = (int) $row->id;
+        	 $uid = (int) $row->id;
         }else{
         	$auth = 0;
         	$data = array(
@@ -58,7 +58,7 @@ class Login extends CI_Controller{
         	$str = $this->db->insert_string('user',$data);
         	echo $str;
         	$this->db->query($str);
-        	$userid = $this->db->insert_id();
+        	$uid = $this->db->insert_id();
         }		
 
 
@@ -68,7 +68,7 @@ class Login extends CI_Controller{
 			'auth' => $auth,
 			'name' => $name,
 			'nick' => $nick,
-			'userid' => $userid
+			'uid' => $uid
 		);	
 
 		//print_r($array);
@@ -90,7 +90,7 @@ class Login extends CI_Controller{
 			'auth' => '',
 			'name' => '',
 			'nick' => '',
-			'userid' => ''
+			'uid' => ''
 		);	
 
 		$this->session->unset_userdata($array);

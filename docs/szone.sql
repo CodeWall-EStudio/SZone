@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013-11-16 17:12:52
+-- 生成日期: 2013-11-17 16:00:39
 -- 服务器版本: 5.6.14
 -- PHP 版本: 5.3.27
 
@@ -13,6 +13,8 @@ SET time_zone = "+00:00";
 --
 -- 数据库: `szone`
 --
+CREATE DATABASE IF NOT EXISTS `szone` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `szone`;
 
 -- --------------------------------------------------------
 
@@ -80,6 +82,7 @@ CREATE TABLE IF NOT EXISTS `groupfile` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `fid` int(8) NOT NULL COMMENT '文件id',
   `gid` int(8) NOT NULL COMMENT '小组id',
+  `fdid` int(8) NOT NULL DEFAULT '0' COMMENT '小组文件夹名称',
   `createtime` int(12) NOT NULL COMMENT '创建时间',
   `fname` varchar(80) NOT NULL COMMENT '文件名',
   `content` varchar(255) DEFAULT NULL COMMENT '文件说明',
@@ -154,7 +157,7 @@ CREATE TABLE IF NOT EXISTS `message` (
   `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '发送时间',
   `pid` int(8) unsigned zerofill DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 -- --------------------------------------------------------
 

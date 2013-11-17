@@ -78,6 +78,9 @@ a{
 	position:relative;
 	float:right;
 }
+.header .userinfo a{
+	color:#fff;
+}
 .header .header-nav li i{
 	display:inline-block;
 	margin-left:5px;
