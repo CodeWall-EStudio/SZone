@@ -350,6 +350,46 @@ class Home extends SZone_Controller {
 
 		$this->load->view('home/gmail.php',$data);
 	}	
+
+	function prepare(){
+// SELECT a.id,
+// 	a.content,
+// 	a.createtime,
+// 	a.fid,
+// 	b.name AS uname,
+// 	c.name AS fname,
+// 	d.path
+//  FROM message a 
+// LEFT JOIN `user` b ON a.tuid = b.`id`
+// LEFT JOIN `userfile` c ON c.fid = a.fid
+// LEFT JOIN `files` d ON d.id = a.fid
+// WHERE a.fuid = 2;		
+		$pid = $this->input->get('pid');
+		$sql = 'SELECT a.id,a.pid,a.fid,b.name,b.createtime,b.content,c.size,c.path,c.type FROM preparefile a LEFT JOIN userfile b ON b.fid = a.fid LEFT JOIN files c ON c.id = a.fid WHERE a.uid ='.(int) $this->user['uid'];
+		$query = $this->db->query($sql);
+
+		$plist = array();
+		foreach($query->result() as $row){
+			$plist[$row->id] = array(
+				'id' => $row->id,
+				'fid' => $row->fid,
+				'name' => $row->name,
+				'ctime' => $row->createtime,
+				'content' => $row->content,
+				'size' => $row->size,
+				'path' => $row->path,
+				'type' => $row->type
+			);
+		}
+
+		$data['type'] = 0;
+		$data['fid'] = 0;
+		$data['plist']  = $plist;
+		$data['nav']['userinfo'] = $this->user;
+		// echo json_encode($plist);
+
+		$this->load->view('home/prep.php',$data);
+	}
 }
 
 /* End of file welcome.php */
