@@ -628,11 +628,7 @@ class Cgi extends SZone_Controller {
 			'2' => array()
  		);
 
- 		if(isset($a[3])){
- 			echo 1;
- 		}else{
- 			echo 2;
- 		}
+		phpinfo();
 	}
 
 	public function getfile(){

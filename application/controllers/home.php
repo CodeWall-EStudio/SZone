@@ -22,6 +22,7 @@ class Home extends SZone_Controller {
 	public function index(){
 		$this->config->load('szone');
 		$pagenum = $this->config->item('pagenum');
+		$page = (int) $this->input->get('page');
 
 		// echo json_encode($this->user);
 		//var_dump($this->user);
@@ -38,7 +39,13 @@ class Home extends SZone_Controller {
 			)
 		);
 
+		$key = $this->input->post('key');
+
 		$sql = 'select id,name,mark,createtime,pid from userfolds where uid = '.(int) $this->user['uid'];
+		if($key){
+			$sql .= ' and name like "%'.$key.'%"';
+		}
+
 		$query = $this->db->query($sql);
 
 		$fold = array();
@@ -86,6 +93,11 @@ class Home extends SZone_Controller {
 		if($type){
 			$sql .= ' and b.type='.$type;
 		}
+		if($key){
+			$sql .= ' and a.name like "%'.$key.'%"';
+		}	
+		//$sql .= ' limit '.$page.','.($page+$pagenum);	
+		//echo $sql;
 		$query = $this->db->query($sql);
 		$file = array();
 		$idlist = array();
@@ -119,6 +131,7 @@ class Home extends SZone_Controller {
 		$data['pid'] = $pid;
 		$data['coll'] = $idlist;
 		$data['foldnum'] = $foldnum;
+
 
 		$this->load->view('home',$data);	
 	}
@@ -352,6 +365,7 @@ class Home extends SZone_Controller {
 	}	
 
 	function prepare(){
+		$this->load->helper('util');
 // SELECT a.id,
 // 	a.content,
 // 	a.createtime,
@@ -364,8 +378,21 @@ class Home extends SZone_Controller {
 // LEFT JOIN `userfile` c ON c.fid = a.fid
 // LEFT JOIN `files` d ON d.id = a.fid
 // WHERE a.fuid = 2;		
-		$pid = $this->input->get('pid');
+		$pid = (int) $this->input->get('pid');
+		$type = (int) $this->input->get('type');
+		$key = $this->input->post('key');
 		$sql = 'SELECT a.id,a.pid,a.fid,b.name,b.createtime,b.content,c.size,c.path,c.type FROM preparefile a LEFT JOIN userfile b ON b.fid = a.fid LEFT JOIN files c ON c.id = a.fid WHERE a.uid ='.(int) $this->user['uid'];
+		//类型选择
+		if($type){
+			$sql .= ' and c.type='.$type;
+		}
+		if($pid){
+			$sql .= ' and a.pid='.$pid;
+		}
+		if($key){
+			$sql .= ' and b.name like "%'.$key.'%"';
+		}
+
 		$query = $this->db->query($sql);
 
 		$plist = array();
@@ -376,19 +403,143 @@ class Home extends SZone_Controller {
 				'name' => $row->name,
 				'ctime' => $row->createtime,
 				'content' => $row->content,
-				'size' => $row->size,
+				'size' => get_file_size($row->size),
 				'path' => $row->path,
 				'type' => $row->type
 			);
+		}
+		$prelist = $this->prelist;
+
+		$gradelist = array();
+		foreach($prelist as $k => $row){
+			$gradelist[$k] = array(
+					'id' => $k,
+					'name' => $row
+				);
+		}
+
+		$sql = 'select id,name,pid,sid,gid from prepare';
+		$query = $this->db->query($sql);
+	
+		foreach($query->result() as $row){
+			if($row->pid == 0){
+				if(!isset($gradelist[$row->gid]['list'])){
+					$gradelist[$row->gid]['list'] = array();
+				}
+
+				$gradelist[$row->gid]['list'][$row->id] = array(
+					'id' => $row->id,
+					'name' => $row->name,
+					'pid' => $row->pid,
+					'sid' => $row->sid,
+					'gid' => $row->gid
+				);
+
+			}else{
+				if($row->sid == 0){
+					if(!isset($gradelist[$row->gid]['list'][$row->pid]['list'])){
+						$gradelist[$row->gid]['list'][$row->pid]['list'] = array();
+					}					
+					$gradelist[$row->gid]['list'][$row->pid]['list'][$row->id] = array(
+						'id' => $row->id,
+						'name' => $row->name,
+						'pid' => $row->pid,
+						'sid' => $row->sid,
+						'gid' => $row->gid						
+					);
+				}else{
+					if(!isset($gradelist[$row->gid]['list'][$row->pid]['list'][$row->sid]['list'])){
+						$gradelist[$row->gid]['list'][$row->pid]['list'][$row->sid]['list'] = array();
+					}
+					$gradelist[$row->gid]['list'][$row->pid]['list'][$row->sid]['list'][$row->id] = array(
+						'id' => $row->id,
+						'name' => $row->name,
+						'pid' => $row->pid,
+						'sid' => $row->sid,
+						'gid' => $row->gid						
+					);						
+										
+				}
+			}
 		}
 
 		$data['type'] = 0;
 		$data['fid'] = 0;
 		$data['plist']  = $plist;
+		$data['glist'] = $gradelist;
 		$data['nav']['userinfo'] = $this->user;
 		// echo json_encode($plist);
 
 		$this->load->view('home/prep.php',$data);
+	}
+
+	public function coll(){
+		$this->load->helper('util');
+
+		$page = $this->input->get('page');
+		$type = $this->input->get('type');
+		$key = $this->input->post('key');
+
+		$sql = 'SELECT a.id,a.fid,a.remark,a.time,b.name,c.size,c.path,c.type FROM usercollection a LEFT JOIN userfile b ON a.fid = b.fid LEFT JOIN files c ON a.fid = c.id WHERE a.uid ='.$this->user['uid'];
+
+		if($type){
+			$sql .= ' and c.type='.$type;
+		}
+		if($key){
+			$sql .= ' and b.name like "%'.$key.'%"';
+		}
+
+		$query = $this->db->query($sql);
+
+		$flist = array();
+		foreach($query->result() as $row){
+			$flist[$row->id] = array(
+				'id' => $row->id,
+				'fid' => $row->fid,
+				'name' => $row->name,
+				'remark' => $row->remark,
+				'time' => $row->time,
+				'size' => get_file_size($row->size),
+				'path' => $row->path,
+				'type' => $row->type
+ 			);
+		}
+
+		$data['flist'] = $flist;
+		$data['type'] = $type;
+		$data['key'] = $key;
+		$this->load->view('home/coll.php',$data);
+	}
+
+	public function recy(){
+		$this->load->helper('util');
+
+		$page = $this->input->get('page');
+		$type = $this->input->get('type');
+		$key = $this->input->post('key');
+
+		$sql = 'select a.id,a.fid,a.name,a.createtime,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.del = 1 and a.uid='.(int) $this->user['uid'];
+		if($type){
+			$sql .= ' and b.type='.$type;
+		}
+		$query = $this->db->query($sql);
+		$dlist = array();
+		foreach($query->result() as $row){
+			$dlist[$row->id] = array(
+				'id' => $row->id,
+				'fid' => $row->fid,
+				'name' => $row->name,
+				'time' => $row->createtime,
+				'size' => get_file_size($row->size),
+				'path' => $row->path,
+				'type' => $row->type
+ 			);
+		}
+
+		$data['dlist'] = $dlist;
+		$data['type'] = $type;
+		$data['key'] = $key;
+		$this->load->view('home/recy.php',$data);
 	}
 }
 

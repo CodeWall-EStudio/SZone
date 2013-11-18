@@ -224,13 +224,15 @@ a{
 
 /*侧边栏*/
 .aside{
-	position:absolute;
+/*	position:absolute;
 	right:0;
-	top:0;
-	width:180px;
+	top:0;*/
+	float:right;
+	width:178px;
 	border-left:1px solid #d3d6da;
 	background:#f6f7f9;
 	height:100%;
+	padding-bottom:80px;
 }
 .aside h3{
 	font-weight:200;
@@ -263,6 +265,7 @@ a{
 
 /*主要内容*/
 .main-section{
+	float:left;
 	background:#fff;
 	width:810px;
 	min-height:600px;
@@ -519,4 +522,13 @@ a{
 
 .share-zone{
 	background:#fff;
+}
+.aside .my-prep-list{
+	margin-top:0;
+}
+.aside .my-prep-list ul{
+	margin-top:0;
+}
+.aside .my-prep-list li{
+	font-size:12px;
 }

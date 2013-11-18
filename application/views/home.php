@@ -16,13 +16,15 @@
 			<div class="tool-zone fade-in">
 				<div class="btn-zone">
 <!-- 					<input type="file" class="upload-input" id="uploadFile" /> -->
-					<button class="upload btn btn-primary" data-toggle="modal" data-target="#uploadFile">上传</button>
-					<button class="btn btn-default" data-toggle="modal" data-target="#newFold">新建文件夹</button>
+					<button class="upload btn btn-primary" data-toggle="modal" data-target="#uploadFile" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>上传</button>
+					<button class="btn btn-default" data-toggle="modal" data-target="#newFold" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>新建文件夹</button>
 				</div>
 
 				<div class="search-zone">
-					<input type="text" value="搜索文件" />
-					<button></button>
+					<form action="/" method="post" accept-charset="utf-8">
+					<input type="text" name="key" value="搜索文件" />
+					<button type="submit"></button>
+					</form>
 				</div>
 			</div>
 			<div class="file-act-zone fade-in hide">
@@ -122,7 +124,7 @@
 						<div class="td1"><input type="checkbox" /></div>
 						<div class="td2"><span>文件夹(<b><?=$foldnum?></b>个)</span>  名称 <i></i></div>
 						<div class="td3"></div>
-						<div class="td4">时间</div>
+						<div class="td6">时间</div>
 					</li>
 					<?endif?>
 					<?foreach($fold as $item):?>
@@ -145,8 +147,10 @@
 									</dd>
 								</dl>
 							</div>
-							<div class="td3"> </div>
-							<div class="td4"><span><?=$item['time']?></span> <i></i></div>
+							<div class="td3">&nbsp;</div>
+							<div class="td4">&nbsp;</div>
+							<div class="td5">&nbsp;</div>							
+							<div class="td6"><span><?=$item['time']?></span> <i></i></div>
 						</li>
 						<?endif?>
 					<?endforeach?>
@@ -188,8 +192,10 @@
 										</dd>
 									</dl>
 								</div>
-								<div class="td3"> </div>
-								<div class="td4"><span><?=$item['time']?></span> <i <?if(in_array($item['id'],$coll)):?>class="s" cmd="uncoll" title="取消收藏"<?else:?>cmd="coll" title="收藏"<?endif?> data-type="file" data-id="<?=$item['id']?>"></i></div>
+								<div class="td3">&nbsp;</div>
+								<div class="td4">&nbsp;</div>
+								<div class="td5">&nbsp;</div>
+								<div class="td6"><span><?=$item['time']?></span> <i <?if(in_array($item['id'],$coll)):?>class="s" cmd="uncoll" title="取消收藏"<?else:?>cmd="coll" title="收藏"<?endif?> data-type="file" data-id="<?=$item['id']?>"></i></div>
 							</li>
 						<?endforeach?>	
 					<?else:?>									
@@ -221,27 +227,16 @@
 						<a cmd="share" data-toggle="modal" data-target="#mailbox">我的贡献</a>
 					</p>
 				</li>
-				<li>
-					<a data-toggle="modal" data-target="#collection">收藏夹</a>
+				<li >
+					<a id="myColl" data-toggle="modal" data-target="#mailbox">收藏夹</a>
 				</li>				
 				<li>
-					<a data-toggle="modal" data-target="#recycleBox">回收站</a>
+					<a id="myRecy" data-toggle="modal" data-target="#mailbox">回收站</a>
 				</li>
 			</ul>
 		</div>
 		<?if($nav['userinfo']['uid']):?>
-		<div class="userinfo">
-			<?
-				$used = $nav['userinfo']['used'];
-				$size = $nav['userinfo']['size'];
-				$pre = $nav['userinfo']['pre'];
-			?>
-			<div>个人空间已用 <?=$pre?>%</div>
-			<div class="user-zone"> 
-				<div class="prog" style="width:<?=$pre?>%"></div><?=$used?>/<?=$size?>
-			</div>			
-			<div>修改密码 <a href="/login/layout">退出登录</a></div>
-		</div>
+			<?  $this->load->view('public/userinfo.php',$nav['userinfo']); ?>
 		<?endif?>
 		<div class="clear"></div>		
 	</div>	

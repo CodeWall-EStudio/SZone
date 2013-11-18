@@ -5,7 +5,7 @@
 				<a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">我的工作室<b class="caret"></b></a>
 				<ul class="dropdown-menu menu" role="menu" aria-labelledby="dLabel">
 					<li><a href="/home?type=0">个人文件</a></li>
-					<li><a href="/home?type=1">我的备课</a></li>
+					<li><a href="/home/prepare">我的备课</a></li>
 				</ul>				
 			</li>
 			<li class="nav">

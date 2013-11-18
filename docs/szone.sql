@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013-11-17 16:00:39
+-- 生成日期: 2013-11-18 12:19:58
 -- 服务器版本: 5.6.14
 -- PHP 版本: 5.3.27
 
@@ -13,8 +13,6 @@ SET time_zone = "+00:00";
 --
 -- 数据库: `szone`
 --
-CREATE DATABASE IF NOT EXISTS `szone` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `szone`;
 
 -- --------------------------------------------------------
 
@@ -22,7 +20,6 @@ USE `szone`;
 -- 表的结构 `board`
 --
 
-DROP TABLE IF EXISTS `board`;
 CREATE TABLE IF NOT EXISTS `board` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `pid` int(8) unsigned zerofill NOT NULL COMMENT '父消息id',
@@ -41,7 +38,6 @@ CREATE TABLE IF NOT EXISTS `board` (
 -- 表的结构 `files`
 --
 
-DROP TABLE IF EXISTS `files`;
 CREATE TABLE IF NOT EXISTS `files` (
   `id` int(8) NOT NULL AUTO_INCREMENT COMMENT '文件id',
   `path` varchar(120) NOT NULL COMMENT '文件存放路径',
@@ -61,7 +57,6 @@ CREATE TABLE IF NOT EXISTS `files` (
 -- 表的结构 `groupcollection`
 --
 
-DROP TABLE IF EXISTS `groupcollection`;
 CREATE TABLE IF NOT EXISTS `groupcollection` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `gid` int(8) NOT NULL COMMENT '小组id',
@@ -77,7 +72,6 @@ CREATE TABLE IF NOT EXISTS `groupcollection` (
 -- 表的结构 `groupfile`
 --
 
-DROP TABLE IF EXISTS `groupfile`;
 CREATE TABLE IF NOT EXISTS `groupfile` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `fid` int(8) NOT NULL COMMENT '文件id',
@@ -88,6 +82,7 @@ CREATE TABLE IF NOT EXISTS `groupfile` (
   `content` varchar(255) DEFAULT NULL COMMENT '文件说明',
   `del` int(2) unsigned zerofill DEFAULT NULL COMMENT '是否被逻辑删除',
   `uid` int(8) NOT NULL COMMENT '来源用户id',
+  `status` tinyint(2) NOT NULL DEFAULT '0' COMMENT '备用',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=16 ;
 
@@ -97,13 +92,13 @@ CREATE TABLE IF NOT EXISTS `groupfile` (
 -- 表的结构 `groupfolds`
 --
 
-DROP TABLE IF EXISTS `groupfolds`;
 CREATE TABLE IF NOT EXISTS `groupfolds` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(120) NOT NULL COMMENT '文件夹名称',
   `gid` int(8) NOT NULL COMMENT '分组id',
   `createtime` int(12) NOT NULL COMMENT '创建时间的时间戳',
-  `updatetime` timestamp NULL DEFAULT NULL COMMENT '更新时间',
+  `updatetime` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `closetime` int(12) NOT NULL DEFAULT '0' COMMENT '关闭上传时间',
   `type` int(2) unsigned zerofill NOT NULL COMMENT '预留扩展 是否隐藏的类型?',
   `pid` int(8) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
@@ -115,10 +110,10 @@ CREATE TABLE IF NOT EXISTS `groupfolds` (
 -- 表的结构 `groups`
 --
 
-DROP TABLE IF EXISTS `groups`;
 CREATE TABLE IF NOT EXISTS `groups` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(40) NOT NULL COMMENT '分组名',
+  `content` varchar(255) NOT NULL COMMENT '公告',
   `type` int(2) NOT NULL COMMENT '类型 0 系统 1 小组 2 部门 3 备课',
   `parent` int(8) NOT NULL COMMENT '父id 只对小组有效?',
   `create` int(8) DEFAULT NULL COMMENT '创建人id',
@@ -132,7 +127,6 @@ CREATE TABLE IF NOT EXISTS `groups` (
 -- 表的结构 `groupuser`
 --
 
-DROP TABLE IF EXISTS `groupuser`;
 CREATE TABLE IF NOT EXISTS `groupuser` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `gid` int(8) NOT NULL,
@@ -147,7 +141,6 @@ CREATE TABLE IF NOT EXISTS `groupuser` (
 -- 表的结构 `message`
 --
 
-DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `fuid` int(8) NOT NULL,
@@ -156,6 +149,7 @@ CREATE TABLE IF NOT EXISTS `message` (
   `fid` int(8) DEFAULT NULL,
   `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '发送时间',
   `pid` int(8) unsigned zerofill DEFAULT NULL,
+  `looked` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否已经看过',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
@@ -165,7 +159,6 @@ CREATE TABLE IF NOT EXISTS `message` (
 -- 表的结构 `prepare`
 --
 
-DROP TABLE IF EXISTS `prepare`;
 CREATE TABLE IF NOT EXISTS `prepare` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(120) NOT NULL COMMENT '备课目录名称',
@@ -181,7 +174,6 @@ CREATE TABLE IF NOT EXISTS `prepare` (
 -- 表的结构 `preparefile`
 --
 
-DROP TABLE IF EXISTS `preparefile`;
 CREATE TABLE IF NOT EXISTS `preparefile` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `pid` int(8) NOT NULL COMMENT '备课目录id',
@@ -198,7 +190,6 @@ CREATE TABLE IF NOT EXISTS `preparefile` (
 -- 表的结构 `prepareuser`
 --
 
-DROP TABLE IF EXISTS `prepareuser`;
 CREATE TABLE IF NOT EXISTS `prepareuser` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `pid` int(8) NOT NULL COMMENT '备课目录id',
@@ -212,7 +203,6 @@ CREATE TABLE IF NOT EXISTS `prepareuser` (
 -- 表的结构 `user`
 --
 
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(40) NOT NULL COMMENT '用户名',
@@ -235,7 +225,6 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- 表的结构 `usercollection`
 --
 
-DROP TABLE IF EXISTS `usercollection`;
 CREATE TABLE IF NOT EXISTS `usercollection` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `uid` int(8) NOT NULL COMMENT '用户id或小组id',
@@ -251,7 +240,6 @@ CREATE TABLE IF NOT EXISTS `usercollection` (
 -- 表的结构 `userfile`
 --
 
-DROP TABLE IF EXISTS `userfile`;
 CREATE TABLE IF NOT EXISTS `userfile` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `fid` int(8) NOT NULL COMMENT '文件id',
@@ -270,7 +258,6 @@ CREATE TABLE IF NOT EXISTS `userfile` (
 -- 表的结构 `userfolds`
 --
 
-DROP TABLE IF EXISTS `userfolds`;
 CREATE TABLE IF NOT EXISTS `userfolds` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `pid` int(8) NOT NULL DEFAULT '0',

@@ -473,17 +473,30 @@
 			}
 		})
 
+		$('#myColl').bind('click',function(){
+			$("#mailbox h4").text('收藏夹');
+			$("#mailIframe").attr('src','/home/coll');
+		});
+
+		$('#myRecy').bind('click',function(){
+			$("#mailbox h4").text('回收站');
+			$("#mailIframe").attr('src','/home/recy');
+		});		
+
 		$('#shareHis').bind('click',function(e){
 			var target = $(e.target),
 				cmd = target.attr('cmd');
 			switch(cmd){
 				case 'send':
+					$("#mailbox h4").text('发件箱');
 					$("#mailIframe").attr('src','/home/sendmail?m=0');
 					break;
 				case 'get':
+					$("#mailbox h4").text('收件箱');
 					$("#mailIframe").attr('src','/home/sendmail?m=1');
 					break;	
 				case 'share':
+					$("#mailbox h4").text('我的共享');	
 					$("#mailIframe").attr('src','/home/groupmail');
 					break;	
 			}

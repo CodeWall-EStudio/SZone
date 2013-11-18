@@ -52,6 +52,7 @@ class Login extends CI_Controller{
         		'name' => $name,
         		'nick' => $nick,
         		'auth' => 0,
+        		'size' => '3000000',
         		'access' => $this->session->userdata('access_token'),
         		'openid' => $this->session->userdata('openid')
         	);

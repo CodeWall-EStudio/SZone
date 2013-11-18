@@ -16,13 +16,15 @@
 			<div class="tool-zone fade-in">
 				<div class="btn-zone">
 <!-- 					<input type="file" class="upload-input" id="uploadFile" /> -->
-					<button class="upload btn btn-primary" data-toggle="modal" data-target="#uploadFile">上传</button>
-					<button class="btn btn-default" data-toggle="modal" data-target="#newFold">新建文件夹</button>
+					<button class="upload btn btn-primary" data-toggle="modal" data-target="#uploadFile" disabled="disabled">上传</button>
+
 				</div>
 
 				<div class="search-zone">
-					<input type="text" value="搜索文件" />
-					<button></button>
+					<form action="/home/prepare" method="post" accept-charset="utf-8">
+					<input type="text" name="key" value="搜索文件" />
+					<button type="submit"></button>
+					</form>
 				</div>
 			</div>
 			<div class="file-act-zone fade-in hide">
@@ -62,7 +64,7 @@
 							</li>						
 						<?endforeach?>
 					</ul>					
-					<a class="section-tit-a-first" href="/home">个人文件</a>
+					<a class="section-tit-a-first" href="/home">我的备课</a>
 					<?if($fid):?>
 						<a class="section-tit-a-second"><?=$fname?></a>
 						<a class="section-tit-a-can" href="/home?fid=<?=$pid?>">返回上级</a>
@@ -100,14 +102,14 @@
 							?>
 						<b class="caret"></b></a>
 						<ul class="dropdown-menu section-tit-menu1" role="menu" aria-labelledby="dLabel">
-							<li><a data-type="0" href="/?type=0">全部</a></li>
+							<li><a data-type="0" href="/home/prepare?type=0">全部</a></li>
 							<li><a data-type="2">收藏</a></li>
-							<li><a data-type="3" href="/?type=4">视频</a></li>
-							<li><a data-type="1" href="/?type=1">图片</a></li>
-							<li><a data-type="4" href="/?type=3">音乐</a></li>
-							<li><a data-type="5" href="/?type=2">文档</a></li>
-							<li><a data-type="6" href="/?type=5">应用</a></li>
-							<li><a data-type="7" href="/?type=6">压缩包</a></li>
+							<li><a data-type="3" href="/home/prepare?type=4">视频</a></li>
+							<li><a data-type="1" href="/home/prepare?type=1">图片</a></li>
+							<li><a data-type="4" href="/home/prepare?type=3">音乐</a></li>
+							<li><a data-type="5" href="/home/prepare?type=2">文档</a></li>
+							<li><a data-type="6" href="/home/prepare?type=5">应用</a></li>
+							<li><a data-type="7" href="/home/prepare?type=6">压缩包</a></li>
 						</ul>						
 					</li>
 					<!--<li class="list-type" id="changeType"><i></i><span>图标</span></li>-->
@@ -122,6 +124,10 @@
 						<li class="tit file-list">
 							<div class="td1"><input type="checkbox" id="selectAllFile" /></div>
 							<div class="td2"><span>文件(<b><?=count($plist)?></b>个)</span>  </div>
+							<div class="td3">评论</div>
+							<div class="td4">类型</div>
+							<div class="td5">大小</div>
+							<div class="td6">时间</div>
 						</li>	
 						<?foreach($plist as $item):?>
 							<li class="file" data-id="<?=$item['id']?>">
@@ -129,7 +135,7 @@
 								<div class="td2">
 									<a class="file-name">
 									<?if($item['type'] == 1):?>
-										<img src="/cgi/getfile?fid=<?=$item['id']?>" />
+										<img src="/cgi/getfile?fid=<?=$item['fid']?>" />
 									<?else:?>
 										<i class="fold"></i>
 									<?endif?>
@@ -144,12 +150,16 @@
 											</span>
 										</dt>
 										<dd>								
-											<span><a href="/down?fid=<?=$item['id']?>">下载</a></span>
+											<span><a href="/cgi/downfile?fid=<?=$item['fid']?>">下载</a></span>
 										</dd>
 									</dl>
 								</div>
-								<div class="td3"> </div>
-								<div class="td4"><span><?=$item['ctime']?></span></div>
+								<div class="td3"><?=$item['content']?>&nbsp;</div>
+								<div class="td4">
+									<?=get_file_type($item['type'])?>
+								</div>
+								<div class="td5"><?=$item['size']?></div>
+								<div class="td6"><?=$item['ctime']?></div>
 							</li>
 						<?endforeach?>	
 					<?else:?>									
@@ -161,23 +171,41 @@
 		</div>
 		<div class="aside">
 			<h3 class="selected">我的备课</h3>
-			<ul>
-				<li></li>
+			<ul class="my-prep-list">
+				<?foreach($glist as $k => $row):?>
+					<li>
+						<?=$row['name']?>
+						<?if(isset($row['list'])):?>
+							<ul>
+							<?foreach($row['list'] as $r):?>
+								<li>
+									<?=$r['name']?>
+									<?if(isset($r['list'])):?>
+									<ul>
+									<?foreach($r['list'] as $k):?>
+										<li>
+											<?=$k['name']?>
+											<?if(isset($k['list'])):?>
+											<ul>
+											<?foreach($k['list'] as $m):?>
+												<li><a href="/home/prepare?pid=<?=$m['id']?>"> <?=$m['name']?></a></li>
+											<?endforeach?>	
+											</ul>										
+											<?endif?>
+										</li>
+									<?endforeach?>
+									</ul>
+									<?endif?>
+								</li>
+							<?endforeach?>
+							</ul>
+						<?endif?>
+					</li>
+				<?endforeach?>
 			</ul>
 		</div>
 		<?if($nav['userinfo']['uid']):?>
-		<div class="userinfo">
-			<?
-				$used = $nav['userinfo']['used'];
-				$size = $nav['userinfo']['size'];
-				$pre = $nav['userinfo']['pre'];
-			?>
-			<div>个人空间已用 <?=$pre?>%</div>
-			<div class="user-zone"> 
-				<div class="prog" style="width:<?=$pre?>%"></div><?=$used?>/<?=$size?>
-			</div>			
-			<div>修改密码 <a href="/login/layout">退出登录</a></div>
-		</div>
+			<?  $this->load->view('public/userinfo.php',$nav['userinfo']); ?>
 		<?endif?>
 		<div class="clear"></div>		
 	</div>	
