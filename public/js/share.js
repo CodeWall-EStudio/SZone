@@ -15,7 +15,7 @@
 		postBtn = $("#post");
 	var search = function(e){
 		var val = sinput.val();
-		var type = sinput.attr('data-type');
+		var type = parseInt(sinput.attr('data-type'));
 		var url = SEARCHUSER
 		if(type){
 			var data = {
@@ -28,7 +28,6 @@
 				'key' : val
 			}
 		}
-
 		$.post(url,data,function(d){
 			if(d.ret == 0){
 				var list = d.list;
@@ -142,7 +141,7 @@
 	}
 
 	var post = function(){
-		var type = sinput.attr('data-type');
+		var type = parseInt(sinput.attr('data-type'));
 		var ilist = [];
 		selectResult.find('a').each(function(){
 			var id = $(this).attr("data-id");
@@ -157,6 +156,7 @@
 			isuser : $('#isuser').val()
 		}
 		var url = ADDSHARE;
+		console.log(type);
 		if(type){
 			var fname = $("#fnames").val().split(',');
 			url = ADDSHAREGROUP;

@@ -23,14 +23,14 @@ class Cgi extends SZone_Controller {
 		$name = $this->input->post('name');
 		$pid = (int) $this->input->post('pid');
 
-		$sql = 'select id from userfolds where uid = '.(int) $this->user['userid'].' and name ="'.$name.'"';
+		$sql = 'select id from userfolds where uid = '.(int) $this->user['uid'].' and name ="'.$name.'"';
 		$query = $this->db->query($sql);
 		if($query->num_rows() == 0){
 
 			$data = array(
 				'pid' => $pid,
 				'name' => $name,
-				'uid' => $this->user['userid'],
+				'uid' => $this->user['uid'],
 				'mark' => '',
 				'createtime' => time(),
 				'type' => 0
@@ -61,9 +61,21 @@ class Cgi extends SZone_Controller {
 	}
 
 	public function upload(){
-		$this->config->load('filetype');
-		$this->config->load('fileupload');
+
+		$sql = 'select size,used from user where id='.(int) $this->user['uid'];
+		$query = $this->db->query($sql);
+		$size = 0;
+		$used = 0;
+		if ($query->num_rows() > 0){
+		   $row = $query->row(); 
+
+		   $size = $row->size;
+		   $used = $row->used;
+		}
+
+		$this->config->load('szone');
 		$ft = $this->config->item('filetype');
+		$allowkey = $this->config->item('filetypekey');
 
 		$path = $this->config->item('upload-path');
 		$foldname = $this->config->item('folds');
@@ -73,6 +85,7 @@ class Cgi extends SZone_Controller {
 		}
 
 		$allowed = array();
+		
 		foreach($ft as $k => $item){
 			array_push($allowed,$k);
 		}
@@ -86,6 +99,7 @@ class Cgi extends SZone_Controller {
 
 		$config['upload_path'] = $nowdir;
 		$config['allowed_types'] = implode('|',$allowed);//;'gif|jpg|png';
+		$config['overwrite'] = true;
 		$this->load->library('upload', $config);
 		$fdid = (int) $this->input->get('fid');
 
@@ -98,7 +112,6 @@ class Cgi extends SZone_Controller {
 					'code' => 100,
 					'message' => '上传失败'
 				),
-				'id' => $id
 			);
 			$this->output
 			    ->set_content_type('application/json')
@@ -109,30 +122,52 @@ class Cgi extends SZone_Controller {
 			$filedata = $this->upload->data();
 
 			//判断是否存在相同的文件
-			$sql = 'select id from files where md5="'.$md5.'"';
+			$sql = 'select id,size from files where md5="'.$md5.'"';
 			$query = $this->db->query($sql);
 
 			if ($query->num_rows() > 0){
 				$row = $query->row();
 				$fid = $row->id;
+				$used += $row->size;
 			}else{
 				$data = array(
 					'path' => $filedata['full_path'],
 					'size' => $filedata['file_size'],
 					'md5' => $md5,
-					'type' => $filedata['is_image'],
+					//'type' => $filedata['is_image'],
+					'mimes' => $filedata['file_type'],
 					'del' => 0
 				);
-				echo $filedata['file_type'].'&&'.$filedata['image_type'];
-				return;
+				if($filedata['is_image']){
+					$data['type'] = 1;
+				}else{
+					$type =  substr($filedata['file_ext'],1);
+					$data['type'] = $ft[$type];					
+				}
+
+				//echo $filedata['file_type'].'&&'.$filedata['image_type'];
+
+				if($size < $used + $filedata['file_size']){
+					$ret = array(
+						'ret' => 103,
+						'msg' => '空间已经用完!'
+					);
+
+					$this->output
+					    ->set_content_type('application/json')
+					    ->set_output(json_encode($ret));						
+					return;
+				}
+
 				$sql = $this->db->insert_string('files',$data);
 				//把文件写入数据库
 				$query = $this->db->query($sql);
-
 				$fid = $this->db->insert_id();
+				$used += $filedata['file_size'];
 			}
+			
 
-			$sql = 'select id from userfile where fid='.$fid.' and uid='.(int) $this->user['userid'];
+			$sql = 'select id from userfile where fid='.$fid.' and uid='.(int) $this->user['uid'];
 			$query = $this->db->query($sql);
 			if ($query->num_rows() > 0){
 				$row = $query->row();
@@ -153,20 +188,37 @@ class Cgi extends SZone_Controller {
 			$data = array(
 				'fid' => (int) $fid,
 				'name' => $filedata['raw_name'],
-				'uid' => (int) $this->user['userid'],
+				'uid' => (int) $this->user['uid'],
 				'del' => 0,
 				'fdid' => $fdid
 			);
 			$sql = $this->db->insert_string('userfile',$data);
 			$query = $this->db->query($sql);
+
 			if($this->db->affected_rows() > 0){
-				$list = array(
-					'jsonrpc' => '2.0',
-					'error' => array(
-						'code' => 0,
-						'message' => '上传成功!'
-					)
+				$data = array(
+					'used' => $used
 				);
+				$sql = $this->db->update_string('user',$data,' id='.(int) $this->user['uid']);
+				$query = $this->db->query($sql);
+				if($this->db->affected_rows() > 0){
+					$list = array(
+						'jsonrpc' => '2.0',
+						'error' => array(
+							'code' => 0,
+							'message' => '上传成功!'
+						)
+					);
+				}else{
+					$list = array(
+						'jsonrpc' => '2.0',
+						'error' => array(
+							'code' => 102,
+							'message' => '上传失败!'
+						)
+					);
+				}
+							
 			}else{
 				$list = array(
 					'jsonrpc' => '2.0',
@@ -187,7 +239,7 @@ class Cgi extends SZone_Controller {
 	}
 
 	protected function getDir(){
-		$this->config->load('fileupload');
+		$this->config->load('szone');
 		$ft = $this->config->item('filetype');
 
 		$path = $this->config->item('upload-path');
@@ -235,7 +287,7 @@ class Cgi extends SZone_Controller {
 			$fname => $info
 		);
 
-		$sql = 'select id from '.$tname.' where id='.$fid.' and uid='.(int) $this->user['userid'];
+		$sql = 'select id from '.$tname.' where id='.$fid.' and uid='.(int) $this->user['uid'];
 		$query = $this->db->query($sql);
 		if($query->num_rows() == 0){
 			$ret = array(
@@ -243,7 +295,7 @@ class Cgi extends SZone_Controller {
 				'msg' => '没有查到文件!'
 			);
 		}else{
-			$str = $this->db->update_string($tname,$data,'id='.$fid.' and uid='.(int) $this->user['userid']);
+			$str = $this->db->update_string($tname,$data,'id='.$fid.' and uid='.(int) $this->user['uid']);
 			$query = $this->db->query($sql);
 			if($this->db->affected_rows()>0){
 				$ret = array(
@@ -293,15 +345,40 @@ class Cgi extends SZone_Controller {
 	//收藏文件
 	public function addcoll(){
 		$id = $this->input->post('id');
-
-		$data = array(
-			'uid' => $this->user['userid'],
-			'fid' => $id,
-			'time' => time()
-		);
-
-		$sql = $this->db->insert_string('usercollection',$data);
+		$idlist = explode(',',$id);
+		$w = array();
+		foreach($idlist as $k){
+			array_push($w,'fid='.(int) $k);
+		};
+		$wh = implode(' or ',$w);
+		//echo $wh;
+		$sql = 'select fid from usercollection where '.$wh .' and uid='.(int) $this->user['uid'];
 		$query = $this->db->query($sql);
+
+		//有已经收藏过的文件
+		$dlist = array();
+		if($this->db->affected_rows()>0){
+			$fidlist = array();
+
+			foreach($query->result() as $row){
+				array_push($fidlist,$row->fid);
+			}
+
+			foreach($idlist as $k){
+				if(!in_array($k,$fidlist)){
+					array_push($dlist,'('.(int) $this->user['uid'].','.(int) $k.','.time().')');
+				}				
+			}
+		}else{		
+			foreach($idlist as $k){
+				array_push($dlist,'('.(int) $this->user['uid'].','.(int) $k.','.time().')');
+			}
+		}
+
+		$sql = 'insert into usercollection (uid,fid,time) value '.implode(',',$dlist);
+
+		$query = $this->db->query($sql);
+			
 		if($this->db->affected_rows()>0){
 			$ret = array(
 				'ret' => 0,
@@ -312,6 +389,37 @@ class Cgi extends SZone_Controller {
 			$ret = array(
 				'ret' => 100,
 				'msg' => '插入失败!'
+			);
+		}			
+
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));
+		return;
+	}
+
+	//取消搜藏文件
+	public function uncoll(){
+		$id = $this->input->post('id');
+		$idlist = explode(',',$id);
+		$w = array();
+		foreach($idlist as $k){
+			array_push($w,'fid='.(int) $k);
+		};
+
+		$wh = implode(' or ',$w);
+		$sql = 'delete from usercollection where uid='.(int) $this->user['uid'].' and '.$wh;
+		$query = $this->db->query($sql);
+
+		if($this->db->affected_rows()>0){
+			$ret = array(
+				'ret' => 0,
+				'msg' => '更新成功!'
+			);
+		}else{
+			$ret = array(
+				'ret' => 100,
+				'msg' => '更新失败!'
 			);
 		}
 		$this->output
@@ -364,8 +472,8 @@ class Cgi extends SZone_Controller {
 	//取用户列表
 	public function getuser(){
 		$key = $this->input->post('key');
-
-		$sql = 'select id,name,nick from user where name like "%'.$key.'%" and id != '.$this->user['userid'];
+		//echo json_encode($this->user);
+		$sql = 'select id,name,nick from user where name like "%'.$key.'%" and id != '.$this->user['uid'];
 		$query = $this->db->query($sql);
 		$list = array();
 		foreach($query->result() as $row){
@@ -413,7 +521,7 @@ class Cgi extends SZone_Controller {
 			$nl[$row->id] = $row->name;
 		};
 
-		$sql = 'select fid,gid from groupfile where uid='.$this->user['userid'];
+		$sql = 'select fid,gid from groupfile where uid='.$this->user['uid'];
 		$query = $this->db->query($sql);
 
 		foreach($query->result() as $row){
@@ -426,7 +534,7 @@ class Cgi extends SZone_Controller {
 		foreach($id as $k){
 			foreach($fid as $i){
 				if(!in_array($i,$cache[$k])){
-	array_push($key,'('.$i.','.$k.','.$time.',"'.$nl[$i].'",'.'"'.$content.'",'.$this->user['userid'].')');	
+	array_push($key,'('.$i.','.$k.','.$time.',"'.$nl[$i].'",'.'"'.$content.'",'.$this->user['uid'].')');	
 				}
 			}
 		}
@@ -469,7 +577,7 @@ class Cgi extends SZone_Controller {
 			$cache[$k] = array();
 		}
 
-		$sql = 'select fid,tuid from message where fuid='.$this->user['userid'];
+		$sql = 'select fid,tuid from message where fuid='.$this->user['uid'];
 		$query = $this->db->query($sql);
 
 		foreach($query->result() as $row){
@@ -484,7 +592,7 @@ class Cgi extends SZone_Controller {
 		foreach($id as $k){
 			foreach($fid as $i){
 				if(!in_array($i,$cache[$k])){
-					array_push($key,'('.$this->user['userid'].','.$k.',"'.$content.'",'.$i.')');	
+					array_push($key,'('.$this->user['uid'].','.$k.',"'.$content.'",'.$i.')');	
 				}
 			}
 		}
@@ -525,6 +633,173 @@ class Cgi extends SZone_Controller {
  		}else{
  			echo 2;
  		}
+	}
+
+	public function getfile(){
+		$id = $this->input->get('fid');
+		$sql = 'select path from files where id='.(int) $id;
+		$query = $this->db->query($sql);
+
+		if ($query->num_rows() > 0)
+		{
+		   $row = $query->row(); 
+		   $path = $row->path;
+		   $mime = get_mime_by_extension($path);
+
+			$this->output
+			    ->set_content_type($mime) // 你也可以用".jpeg"，它在查找 config/mimes.php 文件之前会移除句号
+			    ->set_output(file_get_contents($path));		   
+		}else{
+
+		}
+
+	}
+	//重命名文件
+	public function renamefile(){
+		$fid = $this->input->post('fid');
+		$fname = $this->input->post('fname');
+
+		$data = array(
+			'fid' => $fid,
+			'name' => $fname
+		);
+		$str = $this->db->update_string('userfile',$data,'fid='.(int) $fid.' and uid ='.(int) $this->user['uid']);
+		$query = $this->db->query($str);
+
+		if ($this->db->affected_rows() > 0){
+			$ret = array(
+				'ret' => 0,
+				'msg' => '更新成功!'
+			);
+		}else{
+			$ret = array(
+				'ret' => 100,
+				'msg' => '更新失败!'
+			);
+		}		
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));		
+
+	}
+
+	//添加文件评论 貌似作废了.
+	public function add_file_comment(){
+		$fid = $this->input->post('fid');
+		$comment = $this->input->post('comment');
+
+		$data = array(
+			'content' => $comment
+		);
+
+		$str = $this->db->update_string('userfile',$data,' fid='.(int) $fid.' and uid='.(int) $this->user['uid']);
+		$query = $this->db->query($str);
+		if ($this->db->affected_rows() > 0){
+			$ret = array(
+				'ret' => 0,
+				'msg' => '更新成功!'
+			);
+		}else{
+			$ret = array(
+				'ret' => 100,
+				'msg' => '更新失败!'
+			);
+		}		
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));	
+	}
+
+	//删除文件
+	public function del_file(){
+		$type = $this->input->get('type');
+		$id = $this->input->post('id');
+
+		$idlist = explode(',',$id);
+		$kl = array();
+		foreach($idlist as $k){
+			array_push($kl,'id='.(int) $k);
+		};
+		$where = implode(' or ',$kl);
+		$sql = 'update userfile set del=1 where uid='.(int) $this->user['uid'].' and '.$where;
+		$query = $this->db->query($sql);
+		if ($this->db->affected_rows() > 0){
+			$ret = array(
+				'ret' => 0,
+				'msg' => '删除成功!'
+			);
+		}else{
+			$ret = array(
+				'ret' => 100,
+				'msg' => '删除失败!'
+			);
+		}		
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));	
+		//print_r($idlist);
+	}
+
+	public function add_prep(){
+		$fid = $this->input->post('fid');
+		$pid = $this->input->post('pid');
+		$fl = explode(',',$fid);
+		//$pl = explode(',',$pid);
+		$fw = array();
+		$kv = array();
+
+		foreach($fl as $k){
+			array_push($kv,'('.(int) $pid.','.(int) $k.','.(int) $this->user['uid'].')');
+			array_push($fw,'fid='.$k);
+		}
+			
+		$wh = implode(' or ',$fw);
+		$sql = 'select fid from preparefile where uid='.(int) $this->user['uid'].' and pid='.(int) $pid.' and ('.$wh.')';
+		$query = $this->db->query($sql);
+
+		if ($this->db->affected_rows() > 0){
+			$fkl = array();
+			$nfl = array();
+			$kv = array();
+			foreach($query->result() as $row){
+				array_push($fkl,$row->fid);
+			}
+			foreach($fl as $k){
+				if(!in_array($k,$fkl)){
+					array_push($nfl,$k);
+				}
+			}
+			if(count($nfl) > 0){
+				foreach($nfl as $k){
+					array_push($kv,'('.(int) $pid.','.(int) $k.','.(int) $this->user['uid'].')');
+				}
+			}
+
+		}
+		if(count($kv)>0){
+			$sql = 'insert into preparefile (pid,fid,uid) value '.implode(',',$kv);
+			$query = $this->db->query($sql);
+			if ($this->db->affected_rows() > 0){
+				$ret = array(
+					'ret' => 0,
+					'msg' => '复制成功!'
+				);
+			}else{
+				$ret = array(
+					'ret' => 100,
+					'msg' => '复制失败!'
+				);
+			}		
+		}else{
+			$ret = array(
+				'ret' => 101,
+				'msg' => '复制失败!没有符合条件的记录.'
+			);
+		}
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));			
+
 	}
 
 

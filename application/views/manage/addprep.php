@@ -22,7 +22,7 @@
 				<h2 class="from-h2">添加备课</h2>
 				<?php echo validation_errors(); ?>
 
-				<form action="http://szone.codewalle.com/index.php/manage/addprep" method="post" accept-charset="utf-8">
+				<form action="http://szone.codewalle.com/manage/addprep" method="post" accept-charset="utf-8">
 					<table width="100%" class="table table-striped table-hover">
 						<?if(count($prelist)>0):?>
 							<tr>

@@ -19,9 +19,9 @@ define('DIR_READ_MODE', 0755);
 define('DIR_WRITE_MODE', 0777);
 
 /*自定义配置*/
-define('FILE_UPLOAD_PATH','E:\myworks\ezone\file\\');
-//一个目录最多多少个文件
-define('DIR_FILE_NUM',512);
+// define('FILE_UPLOAD_PATH','E:\myworks\ezone\file\\');
+// //一个目录最多多少个文件
+// define('DIR_FILE_NUM',512);
 
 
 /*

@@ -2,6 +2,7 @@
 	var iframeEl = $('#shareIframe');
 	var EditMark = '/cgi/editmark', //修改备注
 		MoveFile = '/cgi/movefile', //移动文件到文件夹
+		UnColl = '/cgi/uncoll',
 		AddColl = '/cgi/addcoll';   //添加收藏
     $("#newFolds").validate({
             rules:{
@@ -18,13 +19,89 @@
                             minlength : '文件名称至少需要2个字'
                     }
             },
-            submitHandler : function(form) {
-                    console.log(form);
-        // do other things for a valid form
-                console.log(1234);
-                return false;
+            submitHandler : function(form) { 
+			 	var value = $('#foldname').val();
+			 	var pid = $('#newFolds .parentid').val();
+			 	if(value != ''){
+			 		//console.log(value);
+			 		$.post('/cgi/addfold',{name: value,pid: pid},function(d){
+			 			if(d.ret==0){
+			 				$("#newFold .close").click();
+			 				window.location.reload();
+			 			}else{
+			 				alert(d.msg);
+			 			}
+			 			$("#newFold .close").click();
+			 		});
+			 	}            	
+                //return false;
             }
     });
+
+    $("#reName").validate({
+        rules:{
+            fname : {
+                    required : true,
+                    maxlength : 120,
+                    minlength : 2
+            } 
+        },
+        messages:{
+            fname : {
+                    require : '请输入文件名称',
+                    maxlength : '文件名称最长120个字',
+                    minlength : '文件名称至少需要2个字'
+            }
+        },
+        submitHandler : function(form) {
+        	var data = {
+        		fname : $('#reName .foldname').val(),
+        		fid : $('#reName .fid').val()
+        	}
+        	$.post('/cgi/renamefile',data,function(d){
+	 			if(d.ret==0){
+	 				$("#renameFile .close").click();
+	 				window.location.reload();
+	 			}else{
+	 				alert(d.msg);
+	 			}
+	 			$("#renameFile .close").click();
+        	});
+            return false;
+        }
+    });   
+    $("#remarkFile").validate({
+        rules:{
+            comment : {
+                    required : true,
+                    maxlength : 255,
+                    minlength : 2
+            } 
+        },
+        messages:{
+            fname : {
+                    require : '请填写评论内容',
+                    maxlength : '评论最多255个字',
+                    minlength : '评论最少需要2个字'
+            }
+        },
+        submitHandler : function(form) {
+        	var data = {
+        		comment : $('#remarkFile .text-content').val(),
+        		fid : $('#remarkFile .fid').val()
+        	}
+        	$.post('/cgi/add_file_comment',data,function(d){
+	 			if(d.ret==0){
+	 				$("#remarkFile .close").click();
+	 				window.location.reload();
+	 			}else{
+	 				alert(d.msg);
+	 			}
+	 			$("#remarkFile .close").click();
+        	});
+            return false;
+        }
+    });   
 
 	var uploader = new plupload.Uploader({
 		runtimes : 'html5,flash,silverlight,html4',
@@ -36,7 +113,7 @@
 		silverlight_xap_url : '/js/lib/Moxie.xap',
 		
 		filters : {
-			max_file_size : '10mb',
+			max_file_size : '500mb',
 			mime_types: [
 				{title : "图片", extensions : "jpg,gif,png"},
 				{title : "文档", extensions : "doc,txt"},
@@ -146,7 +223,23 @@
 		});
 	};
 
-
+	var collFiles = function(){
+		var il = [];
+		$('#fileList .fclick:checked').each(function(){
+			//if($(this).parents('li.file').find('i.s').length == 0){
+				il.push($(this).val());
+			//}
+		});	
+		id = il.join(',');
+		$.post(AddColl,{id:id},function(d){
+			if(d.ret == 0){
+				//target.parent('span').prev('span').text(d.info);
+				window.location.reload();
+			}else{
+				console.log(d.msg);
+			}
+		});		
+	}
 
 	var collFile = function(id,target){
 		var data = {
@@ -160,6 +253,18 @@
 		});
 	}
 
+	var uncollFile = function(id,target){
+		var data = {
+			id : id
+		}
+		$.post(UnColl,data,function(d){
+			console.log(d);
+			if(d.ret == 0){
+				target.removeClass('s');
+			}
+		});		
+	}
+
 	var deleteFile = function(item){
 		item.remove();
 		if($("#fileList .file").length == 0){
@@ -171,14 +276,77 @@
 
     }	
 
+    //显示或者隐藏重命名和评论
+    var checkAct = function(){
+    	var l = $('#fileList .fclick:checked').length;
+    	if(l==0){
+			$('.tool-zone').addClass('hide');
+			$('.file-act-zone').removeClass('hide');
+    	}else{
+			$('.tool-zone').removeClass('hide');
+			$('.file-act-zone').removeClass('hide');
+    		if(l>1){
+	    		$('#renameAct').addClass('hide');
+	    		$('#remarkAct').addClass('hide');
+    		}else{
+	    		$('#renameAct').removeClass('hide');
+	    		$('#remarkAct').removeClass('hide');
+    		}
+    	}
+
+    }
+
 	function bind(){
+		$('#uploadFile').bind('hide.bs.modal',function(){
+			$('#file_uploadList').html('');
+		});
+
+		$("#delFile").bind('show.bs.modal',function(){
+			var id = []
+			$('#fileList .fclick:checked').each(function(e){
+				var item = files[$(this).val()];
+				id.push(item.id);
+				$('#delFile .filelist').append('<li>'+item.name+'</li>');
+			});
+			$('#delFile .fid').val(id.join(','));
+		});
+
+		$("#delFile").bind('hide.bs.modal',function(){
+			$('#delFile .filelist').html('');
+			$('#delFile .fid').val('');
+		});
+
+		$("#delFile .btn-del").bind('click',function(){
+			var id = $('#delFile .fid').val();
+			$.post('/cgi/del_file?type=0',{id: id},function(d){
+	 			if(d.ret==0){
+	 				$("#delFile .close").click();
+	 				window.location.reload();
+	 			}else{
+	 				alert(d.msg);
+	 			}
+	 			$("#delFile .close").click();
+			});
+		});
+
+		$('#renameFile').bind('show.bs.modal',function(){
+			var item = files[$('#fileList .fclick:checked').val()];
+			$('#renameFile .foldname').val(item.name);
+			$('#renameFile .fid').val(item.id);
+		});
+
+		$('#commentFile').bind('show.bs.modal',function(){
+			var item = files[$('#fileList .fclick:checked').val()];
+			$('#commentFile .fname').text(item.name);
+			$('#commentFile .fid').val(item.id);
+		});		
+
 		$("#selectAllFile").bind('click',function(){
 			if($(this)[0].checked){
 				$('#fileList .fclick:not(:checked)').each(function(){
 					$(this).click();
 				});
 			}else{
-				console.log(1222);
 				$('#fileList .fclick:checked').each(function(){
 					$(this).attr('checked',false);
 				});
@@ -196,9 +364,7 @@
 					break;
 				case 'copyFile':
 					copyFile();
-					break;
-				case 'delFile':
-					break;					
+					break;							
 			}
 		})
 
@@ -233,15 +399,17 @@
 		});
 
 		$("#fileList input").click(function(e){
-			if($(e.target).is(":checked")){
-				$('.tool-zone').addClass('hide');
-				$('.file-act-zone').removeClass('hide');
-			}else{
-				$('.tool-zone').removeClass('hide');
-				$('.file-act-zone').addClass('hide');	
-			}
+			// if($(e.target).is(":checked")){
+			// 	$('.tool-zone').addClass('hide');
+			// 	$('.file-act-zone').removeClass('hide');
+			// }else{
+			// 	$('.tool-zone').removeClass('hide');
+			// 	$('.file-act-zone').addClass('hide');	
+			// }
+			checkAct();
 		})
 
+		$('#collFiles').bind('click',collFiles);
 
 		$('#fileList').bind('click',function(e){
 			var target = $(e.target),
@@ -260,6 +428,13 @@
 						if(type == 'file'){
 							collFile(id,target);
 						}
+					break;
+				case 'uncoll':
+					var id = target.attr('data-id'),
+						type = target.attr('data-type');
+						if(type == 'file'){
+							uncollFile(id,target);
+						}				
 					break;
 				case 'edit':
 					target.hide();
@@ -283,16 +458,6 @@
 			}
 		});
 
-		$("#fileList input").click(function(e){
-			if($(e.target).is(":checked")){
-				$('.tool-zone').addClass('hide');
-				$('.file-act-zone').removeClass('hide');
-			}else{
-				$('.tool-zone').removeClass('hide');
-				$('.file-act-zone').addClass('hide');	
-			}
-		})
-
 		$('#changeType').bind('click',function(e){
 			var dom = $(this);
 			if(dom.attr('class') == 'list-type'){
@@ -308,23 +473,21 @@
 			}
 		})
 
-		 $('.btn-new-fold').click(function(){
-		 	var value = $('#foldname').val();
-		 	var pid = $('#newFolds .parentid').val();
-		 	console.log(pid);
-		 	if(value != ''){
-		 		//console.log(value);
-		 		$.post('/cgi/addfold',{name: value,pid: pid},function(d){
-		 			if(d.ret==0){
-		 				$("#newFold .close").click();
-		 				window.location.reload();
-		 			}else{
-		 				alert(d.msg);
-		 			}
-		 			$("#newFold .close").click();
-		 		});
-		 	}
-		 });
+		$('#shareHis').bind('click',function(e){
+			var target = $(e.target),
+				cmd = target.attr('cmd');
+			switch(cmd){
+				case 'send':
+					$("#mailIframe").attr('src','/home/sendmail?m=0');
+					break;
+				case 'get':
+					$("#mailIframe").attr('src','/home/sendmail?m=1');
+					break;	
+				case 'share':
+					$("#mailIframe").attr('src','/home/groupmail');
+					break;	
+			}
+		});
 	}
 
 

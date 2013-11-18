@@ -69,6 +69,12 @@
 	overflow-y:auto;
 }
 
+.collection-mail-body{
+	height:600px;
+	padding:0;
+	overflow-y:auto;
+}
+
 .collection-act{
 	float:right;
 }

@@ -20,7 +20,7 @@
 	        $name = $this->session->userdata('name');
 	        $nick = $this->session->userdata('nick');
 	        $auth = $this->session->userdata('auth');
-	        $userid = $this->session->userdata('userid');
+	        $uid = $this->session->userdata('uid');
 	        $openid = $this->session->userdata('openid');
 
 
@@ -30,20 +30,39 @@
 				$redirect .= $_SERVER['QUERY_STRING'];
 	        }
 	       
-	        if(!$openid){
-                //redirect('http://szone.codewalle.com/login/connect');
-	        	//return;
-	        }
+	        $sql = 'select size,used from user where id='.(int) $uid;
+	        $query = $this->db->query($sql);
+	        $size = 0;
+	        $used = 0;
+	        $pre = 0;
+			if ($query->num_rows() > 0){
+			   $row = $query->row(); 	
+			   $size = (int) $row->size/1000000;
+			   $used = (float) $row->used;
+			   $pre = round((float) $row->used/(int) $row->size*100,2);
+			}   
+
+			if($used > 1000000){
+				$used = round($used/1000000,2);
+				$used .='GB';
+			}elseif($used>1000){
+				$used = round($used/1000,2);
+				$used .='MB';
+			}			
+			$size .='GB';
 
 	        $this->user['name'] = $name;
 	        $this->user['nick'] = $nick;
 	        $this->user['auth'] = $auth;
-	        $this->user['userid'] = $userid;
+	        $this->user['uid'] = $uid;
 	        $this->user['openid'] = $openid;
+	        $this->user['size'] = $size;
+	        $this->user['used'] = $used;
+	        $this->user['pre'] = $pre;
         }	
 
         protected function set_group(){
-        	$sql = 'select gid from groupuser where uid='.(int) $this->user['userid'].' and auth>0';
+        	$sql = 'select gid from groupuser where uid='.(int) $this->user['uid'].' and auth>0';
         	$query = $this->db->query($sql);
         	$gidlist = array();
 

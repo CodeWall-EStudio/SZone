@@ -116,46 +116,14 @@
 			</div>
 			<!--dis-list-type -->
 			<div id="fileList" class="dis-list-type">
-				<ulclass="cl">
-					<?if($foldnum):?>
-					<li class="tit">
-						<div class="td1"><input type="checkbox" /></div>
-						<div class="td2"><span>文件夹(<b><?=$foldnum?></b>个)</span>  名称 <i></i></div>
-						<div class="td3"></div>
-						<div class="td4">时间</div>
-					</li>
-					<?endif?>
-					<?foreach($fold as $item):?>
-						<?if($item['pid'] == $fid):?>
-						<li class="fold" data-id="<?=$item['id']?>">
-							<div class="td1"><!-- <input type="checkbox" /> --></div>
-							<div class="td2">
-								<i class="fold"></i>
-								<dl>
-									<dt><a href="/home?fid=<?=$item['id']?>"><?=$item['name']?></a>
-										<span cmd="edit" data-id="<?=$item['id']?>"><?=$item['mark']?></span>
-										<span class="hide">
-											<input class="name-edit" type="text" value="<?=$item['mark']?>" />
-											<i class="edit-comp" cmd="editComp" data-type="fold" data-id="<?=$item['id']?>"></i>
-											<i class="edit-close" data-value="<?=$item['mark']?>" cmd="editClose"></i>
-										</span>
-									</dt>
-									<dd>
-									<!-- 	<span>下载</span> -->
-									</dd>
-								</dl>
-							</div>
-							<div class="td3"> </div>
-							<div class="td4"><span><?=$item['time']?></span> <i></i></div>
-						</li>
-						<?endif?>
-					<?endforeach?>
-					<?if(count($file)>0):?>
+				<ul class="cl">
+
+					<?if(count($plist)>0):?>
 						<li class="tit file-list">
 							<div class="td1"><input type="checkbox" id="selectAllFile" /></div>
-							<div class="td2"><span>文件(<b><?=count($file)?></b>个)</span>  </div>
+							<div class="td2"><span>文件(<b><?=count($plist)?></b>个)</span>  </div>
 						</li>	
-						<?foreach($file as $item):?>
+						<?foreach($plist as $item):?>
 							<li class="file" data-id="<?=$item['id']?>">
 								<div class="td1"><input type="checkbox" name="file" class="fclick" value="<?=$item['id']?>" data-type="file" /></div>
 								<div class="td2">
@@ -175,21 +143,13 @@
 												<i class="edit-close" data-value="<?=$item['content']?>" cmd="editClose"></i>
 											</span>
 										</dt>
-										<dd>
-											<span><a data-toggle="dropdown" href="#">共享</a>
-											<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-												<li><a data-toggle="modal" data-target="#shareWin" cmd="toother" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">发送给别人</a></li>
-												<li><a data-toggle="modal" data-target="#shareWin" cmd="togroup" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到小组空间</a></li>
-												<li><a data-toggle="modal" data-target="#shareWin" cmd="todep" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到部门空间</a></li>
-												<li><a cmd="toschool" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到学校空间</a></li>					
-											</ul>
-											</span>										
+										<dd>								
 											<span><a href="/down?fid=<?=$item['id']?>">下载</a></span>
 										</dd>
 									</dl>
 								</div>
 								<div class="td3"> </div>
-								<div class="td4"><span><?=$item['time']?></span> <i <?if(in_array($item['id'],$coll)):?>class="s" cmd="uncoll" title="取消收藏"<?else:?>cmd="coll" title="收藏"<?endif?> data-type="file" data-id="<?=$item['id']?>"></i></div>
+								<div class="td4"><span><?=$item['ctime']?></span></div>
 							</li>
 						<?endforeach?>	
 					<?else:?>									
@@ -200,33 +160,9 @@
 			</div>
 		</div>
 		<div class="aside">
-			<?if($type==1):?>
-				<h3>备课成果</h3>
-			<?else:?>
-				<h3 class="selected">个人文件</h3>
-			<?endif?>
+			<h3 class="selected">我的备课</h3>
 			<ul>
-				<li>
-					<a>通知</a>
-				</li>
-				<li id="shareHis">
-					共享历史
-					<p>
-						<a cmd="get" data-toggle="modal" data-target="#mailbox">收件箱</a> 
-					</p>
-					<P>
-						<a cmd="send" data-toggle="modal" data-target="#mailbox">发件箱</a>
-					</p>						
-					<p>					
-						<a cmd="share" data-toggle="modal" data-target="#mailbox">我的贡献</a>
-					</p>
-				</li>
-				<li>
-					<a data-toggle="modal" data-target="#collection">收藏夹</a>
-				</li>				
-				<li>
-					<a data-toggle="modal" data-target="#recycleBox">回收站</a>
-				</li>
+				<li></li>
 			</ul>
 		</div>
 		<?if($nav['userinfo']['uid']):?>
@@ -287,47 +223,7 @@
 		</div>
 	</div>
 
-	<div id="shareWin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">共享 </h4>
-				</div>
-				<div class="modal-body">
-					<iframe id="shareIframe" src="/share/other" width="538" height="370" border="0" frameborder="0" scroll="false" ></iframe>				
-				</div>
-			</div>
-		</div>
-	</div>
 
-	<div id="collectionTOGroup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">收藏</h4>
-				</div>
-				<div class="modal-body">
-					<ul class="form-horizontal">
-						<li class="form-group">
-							<label class="col-sm-2 control-label">小组</label>
-							<div class="col-sm-10">
-								<select class="form-control">
-									<option>group name</option>
-								</select>
-							</div>
-						</li>
-						<li class="clear"></li>
-					</ul>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-					<button type="button" class="btn btn-primary">确定</button>
-				</div>
-			</div>
-		</div>
-	</div>		
 
 	<div id="reviewFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -422,226 +318,7 @@
 		</div>
 	</div>
 
-	<div id="collection" class="modal fade collection" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">收藏夹</h4>
-				</div>
-				<div class="modal-body collection-body">
-					<div class="collection-tit">
-						<div class="search-zone">
-							<input type="text" value="搜索文件" />
-							<button></button>
-						</div>
-						<div class="collection-act">
-							<a>查看作者</a>
-							<a>查看全部类型</a>
-						</div>
-					</div>
-					<div class="">
-						<ul class="dis-list-type">
-							<li class="tit">
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">名称</div>
-								<div class="td3">作者</div>
-								<div class="td4">位置</div>
-								<div class="td5">大小</div>
-								<div class="td6">时间</div>
-							</li>							
-							<li>
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">
-									<i class="fold"></i>
-									<dl>
-										<dt>接收礼包</dt>
-										<dd>
-											<span class="glyphicon glyphicon-share">分享</span>
-											<span class="glyphicon glyphicon-save">下载</span>
-										</dd>
-									</dl>
-								</div>
-								<div class="td3"></div>
-								<div class="td4"></div>
-								<div class="td5"> 34.5kb</div>
-								<div class="td6"><span>2013-10-13 15:33</span> <i></i></div>
-							</li>
-							<li>
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">
-									<i class="fold"></i>
-									<dl>
-										<dt>接收礼包</dt>
-										<dd>
-											<span class="glyphicon glyphicon-share">分享</span>
-											<span class="glyphicon glyphicon-save">下载</span>
-										</dd>
-									</dl>
-								</div>
-								<div class="td3"></div>
-								<div class="td4"></div>
-								<div class="td5"> 34.5kb</div>
-								<div class="td6"><span>2013-10-13 15:33</span> <i></i></div>
-							</li>
-							<li>
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">
-									<i class="fold"></i>
-									<dl>
-										<dt>接收礼包</dt>
-										<dd>
-											<span class="glyphicon glyphicon-share">分享</span>
-											<span class="glyphicon glyphicon-save">下载</span>
-										</dd>
-									</dl>
-								</div>
-								<div class="td3"></div>
-								<div class="td4"></div>
-								<div class="td5"> 34.5kb</div>
-								<div class="td6"><span>2013-10-13 15:33</span> <i></i></div>
-							</li>
-							<li>
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">
-									<i class="fold"></i>
-									<dl>
-										<dt>接收礼包</dt>
-										<dd>
-											<span class="glyphicon glyphicon-share">分享</span>
-											<span class="glyphicon glyphicon-save">下载</span>
-										</dd>
-									</dl>
-								</div>
-								<div class="td3"></div>
-								<div class="td4"></div>
-								<div class="td5"> 34.5kb</div>
-								<div class="td6"><span>2013-10-13 15:33</span> <i></i></div>
-							</li>															
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
-
-	<div id="mailbox" class="modal fade collection" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">收件箱 (2个新文件)</h4>
-				</div>
-				<div class="modal-body collection-mail-body">
-					<iframe id="mailIframe"  width="750" height="570" border="0" frameborder="0" scroll="false" ></iframe>			
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="recycleBox" class="modal fade collection" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">回收站</h4>
-				</div>
-				<div class="modal-body collection-body">
-					<div class="collection-tit">
-						<div class="search-zone">
-							<input type="text" value="搜索文件" />
-							<button></button>
-						</div>
-						<div class="collection-act">
-							<a>查看作者</a>
-							<a>查看全部类型</a>
-						</div>
-					</div>
-					<div class="">
-						<ul class="dis-list-type">
-							<li class="tit">
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">名称</div>
-								<div class="td3">作者</div>
-								<div class="td4">位置</div>
-								<div class="td5">大小</div>
-								<div class="td6">时间</div>
-							</li>							
-							<li>
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">
-									<i class="fold"></i>
-									<dl>
-										<dt>接收礼包</dt>
-										<dd>
-											<span class="glyphicon glyphicon-retweet">恢复</span>
-											<span class="glyphicon glyphicon-trash">彻底删除</span>
-										</dd>
-									</dl>
-								</div>
-								<div class="td3"></div>
-								<div class="td4"></div>
-								<div class="td5"> 34.5kb</div>
-								<div class="td6"><span>2013-10-13 15:33</span> <i></i></div>
-							</li>
-							<li>
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">
-									<i class="fold"></i>
-									<dl>
-										<dt>接收礼包</dt>
-										<dd>
-											<span class="glyphicon glyphicon-retweet">恢复</span>
-											<span class="glyphicon glyphicon-trash">彻底删除</span>
-										</dd>
-									</dl>
-								</div>
-								<div class="td3"></div>
-								<div class="td4"></div>
-								<div class="td5"> 34.5kb</div>
-								<div class="td6"><span>2013-10-13 15:33</span> <i></i></div>
-							</li>
-							<li>
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">
-									<i class="fold"></i>
-									<dl>
-										<dt>接收礼包</dt>
-										<dd>
-											<span class="glyphicon glyphicon-retweet">恢复</span>
-											<span class="glyphicon glyphicon-trash">彻底删除</span>
-										</dd>
-									</dl>
-								</div>
-								<div class="td3"></div>
-								<div class="td4"></div>
-								<div class="td5"> 34.5kb</div>
-								<div class="td6"><span>2013-10-13 15:33</span> <i></i></div>
-							</li>
-							<li>
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">
-									<i class="fold"></i>
-									<dl>
-										<dt>接收礼包</dt>
-										<dd>
-											<span class="glyphicon glyphicon-retweet">恢复</span>
-											<span class="glyphicon glyphicon-trash">彻底删除</span>
-										</dd>
-									</dl>
-								</div>
-								<div class="td3"></div>
-								<div class="td4"></div>
-								<div class="td5"> 34.5kb</div>
-								<div class="td6"><span>2013-10-13 15:33</span> <i></i></div>
-							</li>															
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>	
 
 	<script src="/js/lib/jq.js"></script>
 	<script src="/js/bootstrap.min.js"></script>

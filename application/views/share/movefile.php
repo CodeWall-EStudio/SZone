@@ -5,11 +5,12 @@
   <meta name="author" content="Tencent" />
   <title>教师工作室</title>
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="/css/scroll.css" />
   <link rel="stylesheet" type="text/css" href="/css/share.css" />
 
 </head>
 <body class="share-zone">
-	<??>
+	<i class="glyphicon glyphicon-chevron-down"></i>
 	<? $idlist = array();?>
 	<div>
 		<div class="share-tit">
@@ -34,18 +35,25 @@
 			<p>选择目标路径：</p>
 			<div>
 				<button class="btn btn-primary" id="post" disabled="disabled">复制</button>
+				<input type="hidden" id="flist" value="<?=implode(',',$idlist)?>" />
 			</div>
 		</div>
 		<div class="move-target">
-			<ul>
+			我的备课
+			<ul id="prepList" class="perplist">
 				<li></li>
-			</ul>>
+			</ul>
 		</div>
 		<div class="clear"></div>
 	</div>
 	<script src="/js/lib/jq.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
-	<script src="/js/share.js" ></script>	
+	<script>
+		var pstr = '<?=json_encode($plist)?>';
+		var plist = $.parseJSON(pstr);
+		console.log(plist);
+	</script>
+	<script src="/js/moveprep.js" ></script>	
 </body>
 </html>

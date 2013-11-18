@@ -48,22 +48,22 @@
 $active_group = ENVIRONMENT;
 $active_record = TRUE;
 
-//开发环境 codewalle
-$db['codewalle']['hostname'] = 'localhost';
-$db['codewalle']['username'] = 'szone';
-$db['codewalle']['password'] = 't8ecnVj6RAVMcCF8';
-$db['codewalle']['database'] = 'szone';
-$db['codewalle']['dbdriver'] = 'mysql';
-$db['codewalle']['dbprefix'] = '';
-$db['codewalle']['pconnect'] = TRUE;
-$db['codewalle']['db_debug'] = TRUE;
-$db['codewalle']['cache_on'] = FALSE;
-$db['codewalle']['cachedir'] = '';
-$db['codewalle']['char_set'] = 'utf8';
-$db['codewalle']['dbcollat'] = 'utf8_general_ci';
-$db['codewalle']['swap_pre'] = '';
-$db['codewalle']['autoinit'] = TRUE;
-$db['codewalle']['stricton'] = FALSE;
+//开发环境 - horde
+$db['horde']['hostname'] = 'localhost';
+$db['horde']['username'] = 'root';
+$db['horde']['password'] = 'bka113';
+$db['horde']['database'] = 'szone';
+$db['horde']['dbdriver'] = 'mysql';
+$db['horde']['dbprefix'] = '';
+$db['horde']['pconnect'] = TRUE;
+$db['horde']['db_debug'] = TRUE;
+$db['horde']['cache_on'] = FALSE;
+$db['horde']['cachedir'] = '';
+$db['horde']['char_set'] = 'utf8';
+$db['horde']['dbcollat'] = 'utf8_general_ci';
+$db['horde']['swap_pre'] = '';
+$db['horde']['autoinit'] = TRUE;
+$db['horde']['stricton'] = FALSE;
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */

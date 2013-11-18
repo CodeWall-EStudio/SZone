@@ -78,6 +78,9 @@ a{
 	position:relative;
 	float:right;
 }
+.header .userinfo a{
+	color:#fff;
+}
 .header .header-nav li i{
 	display:inline-block;
 	margin-left:5px;
@@ -178,6 +181,9 @@ a{
 	left:auto;
 	right:-20px;
 	z-index:15;
+}
+.userinfo a{
+	color:#515151;
 }
 .userinfo .user-more-info a{
 	color:#428bca;

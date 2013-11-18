@@ -45,28 +45,8 @@
 | the active record class
 */
 
-//echo ENVIRONMENT;
-//$active_group = 'default';
-//$active_group = 'development';
 $active_group = ENVIRONMENT;
 $active_record = TRUE;
-
-//演示环境
-$db['testing']['hostname'] = 'localhost';
-$db['testing']['username'] = 'szone';
-$db['testing']['password'] = 'x5ueUquSZaEzFmAQ';
-$db['testing']['database'] = 'szone';
-$db['testing']['dbdriver'] = 'mysql';
-$db['testing']['dbprefix'] = '';
-$db['testing']['pconnect'] = TRUE;
-$db['testing']['db_debug'] = TRUE;
-$db['testing']['cache_on'] = FALSE;
-$db['testing']['cachedir'] = '';
-$db['testing']['char_set'] = 'utf8';
-$db['testing']['dbcollat'] = 'utf8_general_ci';
-$db['testing']['swap_pre'] = '';
-$db['testing']['autoinit'] = TRUE;
-$db['testing']['stricton'] = FALSE;
 
 //正式环境
 $db['production']['hostname'] = 'localhost';
@@ -84,57 +64,6 @@ $db['production']['dbcollat'] = 'utf8_general_ci';
 $db['production']['swap_pre'] = '';
 $db['production']['autoinit'] = TRUE;
 $db['production']['stricton'] = FALSE;
-
-//开发环境1
-$db['codewalle']['hostname'] = 'localhost';
-$db['codewalle']['username'] = 'szone';
-$db['codewalle']['password'] = 't8ecnVj6RAVMcCF8';
-$db['codewalle']['database'] = 'szone';
-$db['codewalle']['dbdriver'] = 'mysql';
-$db['codewalle']['dbprefix'] = '';
-$db['codewalle']['pconnect'] = TRUE;
-$db['codewalle']['db_debug'] = TRUE;
-$db['codewalle']['cache_on'] = FALSE;
-$db['codewalle']['cachedir'] = '';
-$db['codewalle']['char_set'] = 'utf8';
-$db['codewalle']['dbcollat'] = 'utf8_general_ci';
-$db['codewalle']['swap_pre'] = '';
-$db['codewalle']['autoinit'] = TRUE;
-$db['codewalle']['stricton'] = FALSE;
-
-//开发环境2
-$db['horde']['hostname'] = 'localhost';
-$db['horde']['username'] = 'root';
-$db['horde']['password'] = 'bka113';
-$db['horde']['database'] = 'szone';
-$db['horde']['dbdriver'] = 'mysql';
-$db['horde']['dbprefix'] = '';
-$db['horde']['pconnect'] = TRUE;
-$db['horde']['db_debug'] = TRUE;
-$db['horde']['cache_on'] = FALSE;
-$db['horde']['cachedir'] = '';
-$db['horde']['char_set'] = 'utf8';
-$db['horde']['dbcollat'] = 'utf8_general_ci';
-$db['horde']['swap_pre'] = '';
-$db['horde']['autoinit'] = TRUE;
-$db['horde']['stricton'] = FALSE;
-
-//开发环境2
-// $db['development']['hostname'] = 'localhost';
-// $db['development']['username'] = 'root';
-// $db['development']['password'] = 'bka113';
-// $db['development']['database'] = 'szone';
-// $db['development']['dbdriver'] = 'mysql';
-// $db['development']['dbprefix'] = '';
-// $db['development']['pconnect'] = TRUE;
-// $db['development']['db_debug'] = TRUE;
-// $db['development']['cache_on'] = FALSE;
-// $db['development']['cachedir'] = '';
-// $db['development']['char_set'] = 'utf8';
-// $db['development']['dbcollat'] = 'utf8_general_ci';
-// $db['development']['swap_pre'] = '';
-// $db['development']['autoinit'] = TRUE;
-// $db['development']['stricton'] = FALSE;
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */
