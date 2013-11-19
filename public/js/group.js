@@ -1,5 +1,73 @@
 ;(function(){
-	console.log(nowGroupId);
+
+    $("#newFolds").validate({
+            rules:{
+                    foldname : {
+                            required : true,
+                            maxlength : 120,
+                            minlength : 2
+                    } 
+            },
+            messages:{
+                    foldname : {
+                            require : '请输入文件夹名称',
+                            maxlength : '文件名称最长120个字',
+                            minlength : '文件名称至少需要2个字'
+                    }
+            },
+            submitHandler : function(form) { 
+			 	var value = $('#foldname').val();
+			 	var pid = $('#newFolds .parentid').val();
+			 	var gid = $('#newFolds .groupid').val();
+			 	if(value != ''){
+			 		//console.log(value);
+			 		$.post('/cgi/addfold',{name: value,pid: pid,gid:gid},function(d){
+			 			if(d.ret==0){
+			 				$("#newFold .close").click();
+			 				window.location.reload();
+			 			}else{
+			 				alert(d.msg);
+			 			}
+			 			$("#newFold .close").click();
+			 		});
+			 	}            	
+                //return false;
+            }
+    });
+
+    $("#reName").validate({
+        rules:{
+            fname : {
+                    required : true,
+                    maxlength : 120,
+                    minlength : 2
+            } 
+        },
+        messages:{
+            fname : {
+                    require : '请输入文件名称',
+                    maxlength : '文件名称最长120个字',
+                    minlength : '文件名称至少需要2个字'
+            }
+        },
+        submitHandler : function(form) {
+        	var data = {
+        		fname : $('#reName .foldname').val(),
+        		fid : $('#reName .fid').val()
+        	}
+        	$.post('/cgi/renamefile',data,function(d){
+	 			if(d.ret==0){
+	 				$("#renameFile .close").click();
+	 				window.location.reload();
+	 			}else{
+	 				alert(d.msg);
+	 			}
+	 			$("#renameFile .close").click();
+        	});
+            return false;
+        }
+    });
+
 	var uploader = new plupload.Uploader({
 		runtimes : 'html5,flash,silverlight,html4',
 		browse_button : 'btnUpload', // you can pass in id...

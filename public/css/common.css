@@ -568,3 +568,6 @@ a{
 .head-second{
 	padding-left:20px;
 }
+.modal #foldname{
+	border:1px solid #ddd;
+}

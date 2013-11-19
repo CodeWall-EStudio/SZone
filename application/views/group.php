@@ -50,19 +50,19 @@
 			<div class="section-tit">
 				<div class="dropdown">
 					<a data-toggle="dropdown" class="section-tit-a-first section-tit-a-border">树</a>
-					<?if(count($glist)>0):?>
+					<?if(count($fold)>0):?>
 					<ul class="dropdown-menu section-tit-menu" role="menu" aria-labelledby="dLabel" id="myFileList">
-						<?foreach($glist['list'] as $row):?>
+						<?foreach($fold as $row):?>
 							<li>
-								<a class="glyphicon glyphicon-plus" href="/group?id=<?=$row['id']?>"> <?=$row['name']?></a>
+								<a class="glyphicon glyphicon-plus" href="/group?gid=<?=$gid?>&fid=<?=$row['id']?>"> <?=$row['name']?></a>
 							</li>						
 						<?endforeach?>
 					</ul>				
 					<?endif?>	
 					<a class="section-tit-a-first" href="/group?id=<?=$gid?>">小组文件</a>
 					<?if($fid):?>
-						<a class="section-tit-a-second"><?=$fname?></a>
-						<a class="section-tit-a-can" href="/home?fid=<?=$pid?>">返回上级</a>
+						<a class="section-tit-a-second"><?=$fold[$fid]['name']?></a>
+						<a class="section-tit-a-can" href="/group?gid=<?=$gid?>&fid=<?=$fid?>">返回上级</a>
 					<?else:?>
 						<a class="section-tit-a-end">返回上级</a>
 					<?endif?>
@@ -117,7 +117,7 @@
 					<?if(count($fold)>0):?>
 					<li class="tit">
 						<div class="td1"><input type="checkbox" /></div>
-						<div class="td2"><span>文件夹(<b><?=$foldnum?></b>个)</span>  名称 <i></i></div>
+						<div class="td2"><span>文件夹(<b><?=count($fold)?></b>个)</span>  名称 <i></i></div>
 						<div class="td3"></div>
 						<div class="td6">时间</div>
 					</li>
@@ -129,7 +129,7 @@
 							<div class="td2">
 								<i class="fold"></i>
 								<dl>
-									<dt><a href="/home?fid=<?=$item['id']?>"><?=$item['name']?></a>
+									<dt><a href="/group?id=<?=$gid?>&fid=<?=$item['id']?>"><?=$item['name']?></a>
 										<span cmd="edit" data-id="<?=$item['id']?>"><?=$item['mark']?></span>
 										<span class="hide">
 											<input class="name-edit" type="text" value="<?=$item['mark']?>" />
@@ -353,6 +353,28 @@
 		</div>
 	</div>
 
+	<div id="renameFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">重命名文件</h4>
+				</div>
+				<form class="new-fold" id="reName" method="post">
+				<div class="modal-body">
+					<label>文件名称：</label><input class="foldname" name="fname" type="text" style="width:80%" />
+					<input type="hidden" class="fid" />
+					<input type="hidden" class="parentid" name="groupid" value="<?=$gid?>" />					
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="submit" class="btn btn-primary" id="renameFileBtn">确定</button>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
 	<div id="newFold" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -365,6 +387,7 @@
 						
 							<label>文件夹名称：</label><input id="foldname" name="foldname" type="text" style="width:80%" />
 							<input type="hidden" class="parentid" name="parentid" value="<?=$fid?>" />
+							<input type="hidden" class="groupid" name="groupid" value="<?=$gid?>" />
 						
 					</div>
 					<div class="modal-footer">

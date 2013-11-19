@@ -22,12 +22,16 @@ class Group extends SZone_Controller {
 
 
 		$key = $this->input->post('key');
-
-		$sql = 'select id,name,mark,createtime,pid from groupfolds where gid = '.$gid;
+		if(!$fid){
+			$sql = 'select id,name,mark,createtime,pid from groupfolds where gid = '.$gid.' or pid='.$gid;
+		}else{
+			$sql = 'select id,name,mark,createtime,pid from groupfolds where gid = '.$gid.' or pid='.$fid;
+		}
 		$query = $this->db->query($sql);
 		$fold = array();
+
 		if($this->db->affected_rows()>0){
-			foreach($query->reuslt() as $row){
+			foreach($query->result() as $row){
 				$fold[$row->id] = array(
 						'id' => $row->id,
 						'name' => $row->name,
@@ -39,7 +43,8 @@ class Group extends SZone_Controller {
 		}
 
 		$file = array();
-		$sql = 'SELECT a.id,a.fid,a.fname,a.content,a.createtime,b.size,b.path,b.type FROM groupfile a,files b WHERE a.fid = b.id AND a.del !=1 and gid='.$gid;
+		$sql = 'SELECT a.id,a.uid,a.fgid,a.fid,a.fname,a.content,a.createtime,a.status,b.size,b.path,b.type,c.name as uname,d.name AS gname FROM groupfile a LEFT JOIN files b ON b.id = a.fid LEFT JOIN `USER` c ON c.id = a.uid LEFT JOIN groups d ON d.id = a.fgid WHERE a.fid = b.id AND a.del !=1 and gid='.$gid;
+		//$sql = 'SELECT a.id,a.fid,a.fname,a.content,a.createtime,a.status,b.size,b.path,b.type FROM groupfile a,files b WHERE a.fid = b.id AND a.del !=1 and gid='.$gid;
 
 		$query = $this->db->query($sql);
 		if($this->db->affected_rows()>0){
@@ -52,9 +57,19 @@ class Group extends SZone_Controller {
 						'time' => $row->createtime,
 						'size' => get_file_size($row->size),
 						'type' => $row->type,
+						'uname' => $row->uname,
+						'gname' => $row->gname,
+						'status' => $row->status,
 						'path' => $row->path
 				);
 			}
+		}
+
+		$sql = 'select fid from groupcollection where gid='.$gid;
+		$query = $this->db->query($sql);
+		$idlist = array();
+		foreach($query->result() as $row){
+			array_push($idlist,$row->fid);
 		}
 
 		$data['fold'] = $fold;
@@ -62,7 +77,7 @@ class Group extends SZone_Controller {
 		$data['gid'] = $gid;
 		$data['fid'] = $fid;
 		$data['type'] = $type;
-		$data['coll'] = array();
+		$data['coll'] = $idlist;
 		if(isset($this->grouplist[$gid])){
 			$data['glist'] = $this->grouplist[$gid];
 		}

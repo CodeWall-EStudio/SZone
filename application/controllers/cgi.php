@@ -22,20 +22,41 @@ class Cgi extends SZone_Controller {
 	public function addfold(){
 		$name = $this->input->post('name');
 		$pid = (int) $this->input->post('pid');
+		$gid = (int) $this->input->post('gid');
 
-		$sql = 'select id from userfolds where uid = '.(int) $this->user['uid'].' and name ="'.$name.'"';
+		$tablename = 'userfolds';
+		if($gid){
+			$tablename = 'groupfolds';
+		};
+
+		$sql = 'select id from '.$tablename.' where name ="'.$name.'"';
+		if($gid){
+			$sql .= ' and gid = '.(int) $this->user['uid'];
+		}else{
+			$sql .= ' and uid = '.(int) $this->user['uid'];
+		}
 		$query = $this->db->query($sql);
 		if($query->num_rows() == 0){
-
-			$data = array(
-				'pid' => $pid,
-				'name' => $name,
-				'uid' => $this->user['uid'],
-				'mark' => '',
-				'createtime' => time(),
-				'type' => 0
-			);
-			$str = $this->db->insert_string('userfolds',$data);
+			if($gid){
+				$data = array(
+					'pid' => $pid,
+					'name' => $name,
+					'gid' => $gid,
+					'mark' => '',
+					'createtime' => time(),
+					'type' => 0
+				);
+			}else{
+				$data = array(
+					'pid' => $pid,
+					'name' => $name,
+					'uid' => $this->user['uid'],
+					'mark' => '',
+					'createtime' => time(),
+					'type' => 0
+				);
+			}
+			$str = $this->db->insert_string($tablename,$data);
 			$query = $this->db->query($str);
 			if($this->db->insert_id()){
 				$list = array(
@@ -188,7 +209,8 @@ class Cgi extends SZone_Controller {
 				'fname' => $filedata['raw_name'],
 				'createtime' => time(),
 				'del' => 0,
-				'uid' => (int) $this->user['uid']
+				'uid' => (int) $this->user['uid'],
+				'status' => 0
 			);	
 
 			$sql = $this->db->insert_string('groupfile',$gd);
