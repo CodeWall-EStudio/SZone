@@ -83,6 +83,7 @@
 							'id' => $row->id,
 							'name' => $row->name,
 							'parent' => $row->parent,
+							'content' => $row->content,
 							'auth' => in_array($row->id,$gidlist),
 							'list' => array()
 						);
@@ -91,8 +92,17 @@
 							'id' => $row->id,
 							'name' => $row->name,
 							'parent' => $row->parent,
+							'content' => $row->content,
 							'auth' => in_array($row->id,$gidlist)
-						);						
+						);	
+						$flist[$row->id] = array(
+							'type' => 1,
+							'id' => $row->id,
+							'name' => $row->name,
+							'parent' => $row->parent,
+							'content' => $row->content,
+							'auth' => in_array($row->id,$gidlist)
+						);
 						// array_push($glist,array(
 						// 	'id' => $row->id,
 						// 	'name' => $row->name,

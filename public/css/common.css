@@ -532,3 +532,39 @@ a{
 .aside .my-prep-list li{
 	font-size:12px;
 }
+.group-desc{
+	padding:20px;
+	background:#f6f7f9;
+}
+.group-desc h6{
+	font-size:16px;
+}
+.group-desc h6 a{
+	font-size:14px;
+}
+.group-desc p{
+	padding:10px 0;
+}
+.group-board{
+	padding:20px;
+	background:#ebeef3;
+}
+.group-board h4{
+	font-size:16px;
+}
+.group-board-act{
+	padding:10px 0;
+}
+.aside ul.group-board-list{
+	border-top:none;
+	margin:0;
+	padding:0;
+}
+.group-board-list li{
+	margin:0;
+	padding:0;
+	font-size:14px;
+}
+.head-second{
+	padding-left:20px;
+}

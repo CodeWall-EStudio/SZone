@@ -12,13 +12,14 @@
 				<a data-toggle="dropdown">小组空间<b class="caret"></b></a>
 				<ul class="dropdown-menu menu" role="menu" aria-labelledby="dLabel">
 					<? foreach($group as $item):?>
+						<?if(!isset($item['type'])):?>
 						<li>
 							<a href="/group?id=<?=$item['id']?>"><?=$item['name']?></a>
 							<?if($item['auth']):?>
 								<span><a href="/manage/group?id=<?=$item['id']?>">管理</a></span>
 							<?endif?>
 							<?if(count($item['list'])>0):?>
-								<ul>
+								<ul class="head-second">
 								<?foreach($item['list'] as $row):?>
 									<li>
 										<a href="/group?id=<?=$row['id']?>"><?=$row['name']?></a>
@@ -30,6 +31,7 @@
 								</ul>
 							<?endif?>
 						</li>
+						<?endif?>
 					<? endforeach?>
 				</ul>
 			</li>

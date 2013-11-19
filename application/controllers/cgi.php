@@ -60,6 +60,221 @@ class Cgi extends SZone_Controller {
 		    ->set_output(json_encode($list));		
 	}
 
+	public function gupload(){
+		$gid = (int) $this->input->get('gid');
+		if(!$gid){
+			$list = array(
+				'jsonrpc' => '2.0',
+				'error' => array(
+					'code' => 104,
+					'message' => '未指定分组'
+				),
+			);
+			$this->output
+			    ->set_content_type('application/json')
+			    ->set_output(json_encode($list));			
+		}
+
+		$sql = 'select size,used from user where id='.(int) $this->user['uid'];
+		$query = $this->db->query($sql);
+		$size = 0;
+		$used = 0;
+		if ($query->num_rows() > 0){
+		   $row = $query->row(); 
+
+		   $size = $row->size;
+		   $used = $row->used;
+		}
+
+		$this->config->load('szone');
+		$ft = $this->config->item('filetype');
+		$allowkey = $this->config->item('filetypekey');
+
+		$path = $this->config->item('upload-path');
+		$foldname = $this->config->item('folds');
+		$uploadpath = $path.$foldname;
+		if(!is_dir($uploadpath)){
+			mkdir($uploadpath,DIR_WRITE_MODE);
+		}
+
+		$allowed = array();
+		
+		foreach($ft as $k => $item){
+			array_push($allowed,$k);
+		}
+		//echo implode('|',$allowed);
+		$dirname = $uploadpath.$this->user['name'];
+		if (!file_exists($dirname)){
+			mkdir($dirname,DIR_WRITE_MODE);
+		}
+		
+		$nowdir = $this->getDir();
+
+		$config['upload_path'] = $nowdir;
+		$config['allowed_types'] = implode('|',$allowed);//;'gif|jpg|png';
+		$config['overwrite'] = true;
+		$this->load->library('upload', $config);
+		$fdid = (int) $this->input->get('fid');
+
+
+		$field_name = "file";
+
+		if ( ! $this->upload->do_upload($field_name)){
+			$list = array(
+				'jsonrpc' => '2.0',
+				'error' => array(
+					'code' => 100,
+					'message' => '上传失败'
+				),
+			);
+			$this->output
+			    ->set_content_type('application/json')
+			    ->set_output(json_encode($list));			
+		}else{
+			$filetype = $_FILES['file']['type'];
+			$md5 =  md5_file($_FILES['file']['tmp_name']);
+			$filedata = $this->upload->data();
+
+			//判断是否存在相同的文件
+			$sql = 'select id,size from files where md5="'.$md5.'"';
+			$query = $this->db->query($sql);
+
+			//有同名
+			if ($query->num_rows() > 0){
+				$row = $query->row();
+				$fid = $row->id;
+				$used += $row->size;
+			}else{
+				$data = array(
+					'path' => $filedata['full_path'],
+					'size' => $filedata['file_size'],
+					'md5' => $md5,
+					//'type' => $filedata['is_image'],
+					'mimes' => $filedata['file_type'],
+					'del' => 0
+				);
+				if($filedata['is_image']){
+					$data['type'] = 1;
+				}else{
+					$type =  substr($filedata['file_ext'],1);
+					$data['type'] = $ft[$type];					
+				}
+
+				//echo $filedata['file_type'].'&&'.$filedata['image_type'];
+
+				if($size < $used + $filedata['file_size']){
+					$ret = array(
+						'ret' => 103,
+						'msg' => '空间已经用完!'
+					);
+
+					$this->output
+					    ->set_content_type('application/json')
+					    ->set_output(json_encode($ret));						
+					return;
+				}
+
+				$sql = $this->db->insert_string('files',$data);
+				//把文件写入数据库
+				$query = $this->db->query($sql);
+				$fid = $this->db->insert_id();
+				$used += $filedata['file_size'];
+			}
+
+
+			$gd = array(
+				'fid' => $fid,
+				'gid' => $gid,
+				'fname' => $filedata['raw_name'],
+				'createtime' => time(),
+				'del' => 0,
+				'uid' => (int) $this->user['uid']
+			);	
+
+			$sql = $this->db->insert_string('groupfile',$gd);
+			$query = $this->db->query($sql);
+			if($this->db->affected_rows() == 0){
+				$list = array(
+					'jsonrpc' => '2.0',
+					'error' => array(
+						'code' => 102,
+						'message' => '上传失败!'
+					)
+				);
+				$this->output
+				    ->set_content_type('application/json')
+				    ->set_output(json_encode($list));					
+				 return;
+			}
+
+
+			$sql = 'select id from userfile where fid='.$fid.' and uid='.(int) $this->user['uid'];
+			$query = $this->db->query($sql);
+			if ($query->num_rows() > 0){
+				$row = $query->row();
+				$list = array(
+					'jsonrpc' => '2.0',
+					'error' => array(
+						'code' => 101,
+						'message' => '上传失败,已经有重名文件'
+					),
+					'id' => $row->id
+				);
+				$this->output
+				    ->set_content_type('application/json')
+				    ->set_output(json_encode($list));				
+				return false;
+			}
+
+			$data = array(
+				'fid' => (int) $fid,
+				'name' => $filedata['raw_name'],
+				'uid' => (int) $this->user['uid'],
+				'del' => 0,
+				'fdid' => $fdid
+			);
+			$sql = $this->db->insert_string('userfile',$data);
+			$query = $this->db->query($sql);
+
+			if($this->db->affected_rows() > 0){
+				$data = array(
+					'used' => $used
+				);
+				$sql = $this->db->update_string('user',$data,' id='.(int) $this->user['uid']);
+				$query = $this->db->query($sql);
+				if($this->db->affected_rows() > 0){
+					$list = array(
+						'jsonrpc' => '2.0',
+						'error' => array(
+							'code' => 0,
+							'message' => '上传成功!'
+						)
+					);
+				}else{
+					$list = array(
+						'jsonrpc' => '2.0',
+						'error' => array(
+							'code' => 102,
+							'message' => '上传失败!'
+						)
+					);
+				}
+							
+			}else{
+				$list = array(
+					'jsonrpc' => '2.0',
+					'error' => array(
+						'code' => 102,
+						'message' => '上传失败!'
+					)
+				);
+			}
+			$this->output
+			    ->set_content_type('application/json')
+			    ->set_output(json_encode($list));							
+		}
+	}
+
 	public function upload(){
 
 		$sql = 'select size,used from user where id='.(int) $this->user['uid'];
@@ -231,11 +446,7 @@ class Cgi extends SZone_Controller {
 			$this->output
 			    ->set_content_type('application/json')
 			    ->set_output(json_encode($list));							
-			//print_r($data);
-			//echo 'ok';
 		}
-
-		//@set_time_limit(5 * 60);
 	}
 
 	protected function getDir(){
