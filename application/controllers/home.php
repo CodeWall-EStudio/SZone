@@ -109,7 +109,7 @@ class Home extends SZone_Controller {
 					'time' => substr($row->createtime,0,10),
 					'content' => $row->content,
 					'path' => $row->path,
-					'size' => $row->size,
+					'size' => get_file_size($row->size),
 					'type' => $row->type
 				);
 			}
@@ -467,8 +467,15 @@ class Home extends SZone_Controller {
 		$data['fid'] = 0;
 		$data['plist']  = $plist;
 		$data['glist'] = $gradelist;
-		$data['nav']['userinfo'] = $this->user;
+		//$data['nav']['userinfo'] = $this->user;
 		// echo json_encode($plist);
+		$data = array(
+			'nav' => array(
+				'userinfo' => $this->user,
+				'group' => $this->grouplist,
+				'dep' => $this->deplist
+			)
+		);		
 
 		$this->load->view('home/prep.php',$data);
 	}

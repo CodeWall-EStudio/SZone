@@ -276,7 +276,7 @@
 		<div class="clear"></div>		
 	</div>	
 	<div class="footer"></div>
-
+</div>
 
 	<div id="delFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">

@@ -705,8 +705,15 @@ class Cgi extends SZone_Controller {
 	//取用户列表
 	public function getuser(){
 		$key = $this->input->post('key');
+		$gid = (int) $this->input->post('gid');
+
 		//echo json_encode($this->user);
-		$sql = 'select id,name,nick from user where name like "%'.$key.'%" and id != '.$this->user['uid'];
+		if($gid){
+			$sql = 'select a.id,a.name,a.nick from user a left join groupuser b on b.gid='.$gid.' where a.id != b.uid group by a.id';
+		}else{
+			$sql = 'select id,name,nick from user where name like "%'.$key.'%" and id != '.$this->user['uid'];
+		}
+
 		$query = $this->db->query($sql);
 		$list = array();
 		foreach($query->result() as $row){
@@ -1099,6 +1106,89 @@ class Cgi extends SZone_Controller {
 		$this->output
 		    ->set_content_type('application/json')
 		    ->set_output(json_encode($ret));	
+	}
+
+	public function group_edit_name(){
+		$gid = (int) $this->input->post('gid');
+		$name = $this->input->post('d');
+
+		$sql = 'select auth from groupuser where uid='.(int) $this->user['uid'].' and gid='.$gid;
+		$query = $this->db->query($sql);
+		if($this->db->affected_rows()>0 || $this->user['auth'] > 10){
+			$data = array(
+				'name' => $name
+			);
+			$str = $this->db->update_string('groups',$data,'id='.$gid);
+			$query = $this->db->query($str);
+			if($this->db->affected_rows()>0 ){
+				$ret = array(
+					'ret' => 0,
+					'msg' => '修改成功'
+				);				
+			}else{
+				$ret = array(
+					'ret' => 100,
+					'msg' => '修改失败!'
+				);				
+			}
+		}else{
+			$ret = array(
+				'ret' => 190,
+				'msg' => '修改失败,你不是管理员'
+			);
+		}
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));		
+	}
+
+	public function group_edit(){
+		$gid = (int) $this->input->post('gid');
+		$n = $this->input->post('n');		
+		$desc = $this->input->post('d');
+		$nl = $this->input->post('ul');
+		$il = explode(',',$nl);
+
+		$sql = 'select auth from groupuser where uid='.(int) $this->user['uid'].' and gid='.$gid;
+		$query = $this->db->query($sql);
+		if($this->db->affected_rows()>0 || $this->user['auth'] > 10){
+			$data = array(
+				'name' => $n,
+				'content' => $desc
+			);
+			$str = $this->db->update_string('groups',$data,'id='.$gid);
+			$query = $this->db->query($str);
+
+			$ky = array();
+			foreach($il as $k){
+				echo $k;
+				array_push($ky,'('.$gid.','.$k.',0)');
+			}
+
+			$sql = 'insert into groupuser (gid,uid,auth) value '.implode(',',$ky);
+
+			$query = $this->db->query($sql);
+
+			if($this->db->affected_rows()>0 ){
+				$ret = array(
+					'ret' => 0,
+					'msg' => '修改成功'
+				);				
+			}else{
+				$ret = array(
+					'ret' => 100,
+					'msg' => '修改失败!'
+				);				
+			}
+		}else{
+			$ret = array(
+				'ret' => 190,
+				'msg' => '修改失败,你不是管理员'
+			);
+		}
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));		
 	}
 
 }

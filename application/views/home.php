@@ -158,6 +158,9 @@
 						<li class="tit file-list">
 							<div class="td1"><input type="checkbox" id="selectAllFile" /></div>
 							<div class="td2"><span>文件(<b><?=count($file)?></b>个)</span>  </div>
+							<div class="td_type">类型</div>
+							<div class="td_size">大小</div>
+							<div class="td_time">时间</div>								
 						</li>	
 						<?foreach($file as $item):?>
 							<li class="file" data-id="<?=$item['id']?>">
@@ -192,9 +195,34 @@
 										</dd>
 									</dl>
 								</div>
-								<div class="td3">&nbsp;</div>
-								<div class="td4">&nbsp;</div>
-								<div class="td5">&nbsp;</div>
+								<div class="td_type">
+								<?
+									switch($item['type']){
+										case 0:
+											echo '全部类型';
+											break;
+										case 1:
+											echo '图片';
+											break;
+										case 2:
+											echo '文档';
+											break;
+										case 3:
+											echo '音乐';
+											break;
+										case 4:
+											echo '视频';
+											break;
+										case 5:
+											echo '应用';
+											break;
+										case 6:
+											echo '压缩包';
+											break;
+									}
+								?>
+								</div>
+								<div class="td_size"><?=$item['size']?></div>	
 								<div class="td6"><span><?=$item['time']?></span> <i <?if(in_array($item['id'],$coll)):?>class="s" cmd="uncoll" title="取消收藏"<?else:?>cmd="coll" title="收藏"<?endif?> data-type="file" data-id="<?=$item['id']?>"></i></div>
 							</li>
 						<?endforeach?>	
@@ -241,7 +269,7 @@
 		<div class="clear"></div>		
 	</div>	
 	<div class="footer"></div>
-
+</div>
 
 	<div id="delFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">

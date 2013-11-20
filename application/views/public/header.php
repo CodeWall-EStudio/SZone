@@ -24,7 +24,7 @@
 									<li>
 										<a href="/group?id=<?=$row['id']?>"><?=$row['name']?></a>
 										<?if($row['auth']):?>
-											<span><a href="/manage/group?id=<?=$row['id']?>">管理</a></span>
+											<span><a data-toggle="modal" data-id="<?=$row['id']?>" cmd="manage" data-target="#manageWin">管理</a></span>
 										<?endif?>										
 									</li>
 								<?endforeach?>

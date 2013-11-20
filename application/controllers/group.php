@@ -43,7 +43,7 @@ class Group extends SZone_Controller {
 		}
 
 		$file = array();
-		$sql = 'SELECT a.id,a.uid,a.fgid,a.fid,a.fname,a.content,a.createtime,a.status,b.size,b.path,b.type,c.name as uname,d.name AS gname FROM groupfile a LEFT JOIN files b ON b.id = a.fid LEFT JOIN `USER` c ON c.id = a.uid LEFT JOIN groups d ON d.id = a.fgid WHERE a.fid = b.id AND a.del !=1 and gid='.$gid;
+		$sql = 'SELECT a.id,a.uid,a.fgid,a.fid,a.fname,a.content,a.createtime,a.status,b.size,b.path,b.type,c.name as uname,d.name AS gname FROM groupfile a LEFT JOIN files b ON b.id = a.fid LEFT JOIN user c ON c.id = a.uid LEFT JOIN groups d ON d.id = a.fgid WHERE a.fid = b.id AND a.del !=1 and gid='.$gid;
 		//echo $sql;
 		//$sql = 'SELECT a.id,a.fid,a.fname,a.content,a.createtime,a.status,b.size,b.path,b.type FROM groupfile a,files b WHERE a.fid = b.id AND a.del !=1 and gid='.$gid;
 
@@ -100,6 +100,35 @@ class Group extends SZone_Controller {
 			$data['ginfo'] = $this->depinfolist[$gid];
 		}
 
-		$this->load->view('group.php',$data);
+		$this->load->view('group',$data);
+	}
+
+	public function manage(){
+		$gid = (int) $this->input->get('id');
+
+		$sql = 'select id,name,content from groups where id='.$gid;
+		$query = $this->db->query($sql);
+
+		$ginfo = array();
+		if($this->db->affected_rows() > 0){
+			$ginfo = $query->row();
+		}
+
+		$ulist = array();
+		$sql = 'select a.uid,b.name,b.auth from groupuser a,user b where a.uid = b.id and a.gid='.$gid;
+		$query = $this->db->query($sql);
+
+		foreach($query->result() as $row){
+			$ulist[$row->uid] = array(
+				'uid' => $row->uid,
+				'name' => $row->name,
+				'auth' => $row->auth
+			);
+		}
+
+		$data['ulist'] = $ulist;
+		$data['ginfo'] = $ginfo;
+
+		$this->load->view('group/manage',$data);
 	}
 }

@@ -50,7 +50,10 @@ body {
 	text-indent:6px;
 	padding-right:22px;
 }
-.share-act-zone i{
+.search-area{
+	position:relative;
+}
+.share-act-zone i, .search-area i{
 	display:block;
 	position:absolute;
 	cursor:pointer;
@@ -60,6 +63,10 @@ body {
 	width: 17px;
 	height: 16px;
 	border: none;
+}
+.search-area i{
+	top:0;
+	left:0;
 }
 .share-target,.share-select{
 	width:50%;
@@ -109,4 +116,8 @@ body {
 }
 .perplist a.selected{
 	background:#b8bec5;
+}
+
+.right{
+	float:right;
 }
