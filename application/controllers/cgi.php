@@ -481,20 +481,20 @@ class Cgi extends SZone_Controller {
 
 		$filenum = $this->config->item("dir-file-num");
 
-		$nowdir = $uploadpath.$this->user['name'];
+		$nowdir = $uploadpath;
 		$map = directory_map($nowdir);
 		if(count($map) == 0){
-			$nowdir .= '/'.$this->user['name'].count($map);
+			$nowdir .= '/'.count($map);
 			mkdir($nowdir,DIR_WRITE_MODE);
 			return $nowdir;
 			//return $nowdir.'\\'.count($map);
 		}else{
-			$nowdir .= '/'.$this->user['name'].(count($map)-1);
+			$nowdir .= '/'.(count($map)-1);
 			$map = directory_map($nowdir,1);
 			if(count($map)<$filenum){
 				return $nowdir;	
 			}else{
-				$nowdir .= '/'.$this->user['name'].count($map);
+				$nowdir .= '/'.count($map);
 				mkdir($nowdir,DIR_WRITE_MODE);
 				return $nowdir;	
 			}

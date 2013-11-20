@@ -156,7 +156,7 @@
 			},
 			Error: function(up, err) {
 				console.log(up,err);
-				document.getElementById('console').innerHTML += "\nError #" + err.code + ": " + err.message;
+				//document.getElementById('console').innerHTML += "\nError #" + err.code + ": " + err.message;
 			}
 		}
 	});
