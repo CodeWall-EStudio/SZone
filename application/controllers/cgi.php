@@ -435,7 +435,7 @@ class Cgi extends SZone_Controller {
             mkdir($dirname,DIR_WRITE_MODE);
         }
 
-        $dirname = $$dirname.'/'.substr($md5,2,2);
+        $dirname = $dirname.'/'.substr($md5,2,2);
         if (!is_dir($dirname)){
             mkdir($dirname,DIR_WRITE_MODE);
         }
