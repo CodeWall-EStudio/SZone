@@ -127,4 +127,38 @@
 	});
 
 	uploader.init();
+
+	$("#groupDesc a").bind('click',function(){
+		$("#groupDesc").hide();
+		$("#groupEdit").removeClass('hide');
+	})
+
+	$('#groupEdit .save').bind('click',function(){
+		var c = $('#groupEdit textarea').val();
+		$.post('/cgi/group_edit_desc',{d:c,gid:ginfo.id},function(d){
+			if(d.ret == 0){
+				$("#groupDesc p").text(c);
+				$("#groupDesc").show();
+				$("#groupEdit").addClass('hide');
+			}else{
+				alert(d.msg);
+			}
+		});
+	});
+	$('#groupEdit .sec').bind('click',function(){
+		$("#groupDesc").show();
+		$("#groupEdit").addClass('hide');
+	});	
+
+	$("#postWin .btn-post").bind('click',function(){
+		var c = $("#postWin textarea").val(); 
+		$.post('/cgi/add_board',{d:c,gid:ginfo.id,type:1,pid:0},function(d){
+			if(d.ret == 0){
+				//$('#postWin').modal('hide');
+				window.location.reload();
+			}else{
+				alert(d.msg);
+			}
+		});
+	});
 })()

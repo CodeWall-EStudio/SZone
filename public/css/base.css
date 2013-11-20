@@ -68,8 +68,7 @@ li{
   list-style-type: none;
 }
 input[type='text'] ,textarea ,fieldset{
-  border: none;
-  outline: none;
+    outline: none;
 }
 
 /*.conner_round_group{

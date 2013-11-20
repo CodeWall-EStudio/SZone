@@ -1031,6 +1031,75 @@ class Cgi extends SZone_Controller {
 
 	}
 
+	public function group_edit_desc(){
+		$gid = (int) $this->input->post('gid');
+		$desc = $this->input->post('d');
+
+		$sql = 'select auth from groupuser where uid='.(int) $this->user['uid'].' and gid='.$gid;
+		$query = $this->db->query($sql);
+		if($this->db->affected_rows()>0 || $this->user['auth'] > 10){
+			$data = array(
+				'content' => $desc
+			);
+			$str = $this->db->update_string('groups',$data,'id='.$gid);
+			$query = $this->db->query($str);
+			if($this->db->affected_rows()>0 ){
+				$ret = array(
+					'ret' => 0,
+					'msg' => '修改成功'
+				);				
+			}else{
+				$ret = array(
+					'ret' => 100,
+					'msg' => '修改失败!'
+				);				
+			}
+		}else{
+			$ret = array(
+				'ret' => 190,
+				'msg' => '修改失败,你不是管理员'
+			);
+		}
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));			
+	}
+
+	public function add_board(){
+		$gid = (int) $this->input->post('gid');
+		$desc = $this->input->post('d');		
+		$type = (int) $this->input->post('type');
+		$pid = (int) $this->input->post('pid');
+		$tid = (int) $this->input->post('tid');
+
+		$data = array(
+			'content' => $desc,
+			'uid' => (int) $this->user['uid'],
+			'ctime' => time(),
+			'status' => 0,
+			'ttype' => $type,
+			'pid' => $pid,
+			'gid' => $gid,
+			'tid' => $tid
+		);
+
+		$sql = $this->db->insert_string('board',$data);
+		$query = $this->db->query($sql);
+		if($this->db->affected_rows()>0 ){
+			$ret = array(
+				'ret' => 0,
+				'msg' => '修改成功'
+			);				
+		}else{
+			$ret = array(
+				'ret' => 100,
+				'msg' => '修改失败!'
+			);				
+		}
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));	
+	}
 
 }
 
