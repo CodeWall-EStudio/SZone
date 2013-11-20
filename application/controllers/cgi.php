@@ -83,6 +83,23 @@ class Cgi extends SZone_Controller {
 
     public function gupload(){
         $field_name = "file";
+
+        $fdid = (int) $this->input->get('fid');
+        $this->config->load('szone');
+        $ft = $this->config->item('filetype');
+        $md5 =  md5_file($_FILES['file']['tmp_name']);
+        $nowdir = $this->getDir($md5);
+
+        $allowed = array();
+        foreach($ft as $k => $item){
+            array_push($allowed,$k);
+        }
+
+        $config['upload_path'] = $nowdir;
+        $config['allowed_types'] = implode('|',$allowed);//;'gif|jpg|png';
+        $config['overwrite'] = true;
+        $this->load->library('upload', $config);
+
         if ( ! $this->upload->do_upload($field_name)){
             $list = array(
                 'jsonrpc' => '2.0',
@@ -105,23 +122,6 @@ class Cgi extends SZone_Controller {
                 $size = $row->size;
                 $used = $row->used;
             }
-
-            $fdid = (int) $this->input->get('fid');
-            $this->config->load('szone');
-            $ft = $this->config->item('filetype');
-            $md5 =  md5_file($_FILES['file']['tmp_name']);
-            $nowdir = $this->getDir($md5);
-
-            $allowed = array();
-            foreach($ft as $k => $item){
-                array_push($allowed,$k);
-            }
-
-            $config['upload_path'] = $nowdir;
-            $config['allowed_types'] = implode('|',$allowed);//;'gif|jpg|png';
-            $config['overwrite'] = true;
-            $this->load->library('upload', $config);
-
             $filedata = $this->upload->data();
 
             //判断是否存在相同的文件
@@ -267,6 +267,22 @@ class Cgi extends SZone_Controller {
 	public function upload(){
 
 		$field_name = "file";
+
+        $fdid = (int) $this->input->get('fid');
+        $this->config->load('szone');
+        $ft = $this->config->item('filetype');
+        $md5 =  md5_file($_FILES['file']['tmp_name']);
+        $nowdir = $this->getDir($md5);
+
+        $allowed = array();
+        foreach($ft as $k => $item){
+            array_push($allowed,$k);
+        }
+
+        $config['upload_path'] = $nowdir;
+        $config['allowed_types'] = implode('|',$allowed);//;'gif|jpg|png';
+        $config['overwrite'] = true;
+        $this->load->library('upload', $config);
 		if ( ! $this->upload->do_upload($field_name)){
 			$list = array(
 				'jsonrpc' => '2.0',
@@ -289,22 +305,6 @@ class Cgi extends SZone_Controller {
                 $size = $row->size;
                 $used = $row->used;
             }
-
-            $fdid = (int) $this->input->get('fid');
-            $this->config->load('szone');
-            $ft = $this->config->item('filetype');
-            $md5 =  md5_file($_FILES['file']['tmp_name']);
-            $nowdir = $this->getDir($md5);
-
-            $allowed = array();
-            foreach($ft as $k => $item){
-                array_push($allowed,$k);
-            }
-
-            $config['upload_path'] = $nowdir;
-            $config['allowed_types'] = implode('|',$allowed);//;'gif|jpg|png';
-            $config['overwrite'] = true;
-            $this->load->library('upload', $config);
 
             $filedata = $this->upload->data();
 
