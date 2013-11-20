@@ -54,14 +54,14 @@
 					?>
 				<b class="caret"></b></a>
 				<ul class="dropdown-menu section-tit-menu1" role="menu" aria-labelledby="dLabel">
-					<li><a data-type="0" href="/home/sendmail?m=<?=$m?>&uid=<?=$row['id']?>&type=0">全部</a></li>
+					<li><a data-type="0" href="/home/sendmail?m=<?=$m?>&uid=<?=$uid?>&type=0">全部</a></li>
 					<li><a data-type="2">收藏</a></li>
-					<li><a data-type="3" href="/home/sendmail?m=<?=$m?>&uid=<?=$row['id']?>&type=4">视频</a></li>
-					<li><a data-type="1" href="/home/sendmail?m=<?=$m?>&uid=<?=$row['id']?>&type=1">图片</a></li>
-					<li><a data-type="4" href="/home/sendmail?m=<?=$m?>&uid=<?=$row['id']?>&type=3">音乐</a></li>
-					<li><a data-type="5" href="/home/sendmail?m=<?=$m?>&uid=<?=$row['id']?>&type=2">文档</a></li>
-					<li><a data-type="6" href="/home/sendmail?m=<?=$m?>&uid=<?=$row['id']?>&type=5">应用</a></li>
-					<li><a data-type="7" href="/home/sendmail?m=<?=$m?>&uid=<?=$row['id']?>&type=6">压缩包</a></li>
+					<li><a data-type="3" href="/home/sendmail?m=<?=$m?>&uid=<?=$uid?>&type=4">视频</a></li>
+					<li><a data-type="1" href="/home/sendmail?m=<?=$m?>&uid=<?=$uid?>&type=1">图片</a></li>
+					<li><a data-type="4" href="/home/sendmail?m=<?=$m?>&uid=<?=$uid?>&type=3">音乐</a></li>
+					<li><a data-type="5" href="/home/sendmail?m=<?=$m?>&uid=<?=$uid?>&type=2">文档</a></li>
+					<li><a data-type="6" href="/home/sendmail?m=<?=$m?>&uid=<?=$uid?>&type=5">应用</a></li>
+					<li><a data-type="7" href="/home/sendmail?m=<?=$m?>&uid=<?=$uid?>&type=6">压缩包</a></li>
 				</ul>
 			</div>
 		</div>

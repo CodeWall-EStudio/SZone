@@ -96,6 +96,8 @@ class Group extends SZone_Controller {
 		$data['coll'] = $idlist;
 		if(isset($this->grouplist[$gid])){
 			$data['ginfo'] = $this->grouplist[$gid];
+		}elseif(isset($this->depinfolist[$gid])){
+			$data['ginfo'] = $this->depinfolist[$gid];
 		}
 
 		$this->load->view('group.php',$data);

@@ -453,14 +453,42 @@ class Cgi extends SZone_Controller {
 		}else{
             $dirname .= '/'.(count($map)-1);
 			$map = directory_map($dirname,1);
-			if(count($map)<$filenum){
-				return $dirname;
+			if($this->db->affected_rows() > 0){
+				$data = array(
+					'used' => $used
+				);
+				$sql = $this->db->update_string('user',$data,' id='.(int) $this->user['uid']);
+				$query = $this->db->query($sql);
+				if($this->db->affected_rows() > 0){
+					$list = array(
+						'jsonrpc' => '2.0',
+						'error' => array(
+							'code' => 0,
+							'message' => '上传成功!'
+						)
+					);
+				}else{
+					$list = array(
+						'jsonrpc' => '2.0',
+						'error' => array(
+							'code' => 102,
+							'message' => '上传失败!'
+						)
+					);
+				}
+							
 			}else{
-                $dirname .= '/'.count($map);
-				mkdir($dirname,DIR_WRITE_MODE);
-				return $dirname;
+				$list = array(
+					'jsonrpc' => '2.0',
+					'error' => array(
+						'code' => 102,
+						'message' => '上传失败!'
+					)
+				);
 			}
-
+			$this->output
+			    ->set_content_type('application/json')
+			    ->set_output(json_encode($list));							
 		}*/
 	}	
 

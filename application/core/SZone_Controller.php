@@ -5,6 +5,7 @@
 		protected $user = array();
 		protected $grouplist = array();
 		protected $deplist = array();  
+		protected $depinfolist = array();
 		protected $prelist = array();
 		protected $controller_name;  
         protected $action_name; 		
@@ -115,6 +116,13 @@
 						'id' => $row->id,
 						'name' => $row->name
 					));
+					$this->depinfolist[$row->id] = array(
+						'id' => $row->id,
+						'name' => $row->name,
+						'parent' => $row->parent,
+						'content' => $row->content,
+						'auth' => in_array($row->id,$gidlist)					
+					);
 				}elseif($row->type == 3){
 					$this->prelist[$row->id] = $row->name;
 					// array_push($this->prelist,array(
