@@ -42,8 +42,18 @@
 	float:left;
 	line-height:60px;
 }
-.dis-list-type li.tit .td3,.dis-list-type li.tit .td4,.dis-list-type li.tit .td5,.dis-list-type li.tit .td6{
+.dis-list-type li.tit .td3,.dis-list-type li.tit .td4,.dis-list-type li.tit .td5,.dis-list-type li.tit .td6,.dis-list-type li.tit .td_uname,.dis-list-type li.tit .td_source,.dis-list-type li.tit .td_type,.dis-list-type li.tit .td_size,.dis-list-type li.tit .td_time,.dis-list-type li.tit .td_source,.dis-list-type li.tit .td_mark{
 	line-height:28px;
+}
+.dis-list-type .td_source,.dis-list-type .td_mark,.dis-list-type .td_size,.dis-list-type .td_type,.dis-list-type .td_uname{
+	width:60px;
+	line-height:60px;
+	float:left;
+}
+.dis-list-type .td_time{
+	width:90px;
+	line-height:60px;	
+	float:right;
 }
 .dis-list-type .td1{
 	text-indent:16px;

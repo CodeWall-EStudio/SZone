@@ -118,8 +118,12 @@
 					<li class="tit">
 						<div class="td1"><input type="checkbox" /></div>
 						<div class="td2"><span>文件夹(<b><?=count($fold)?></b>个)</span>  名称 <i></i></div>
-						<div class="td3"></div>
-						<div class="td6">时间</div>
+						<div class="td_mark">&nbsp;</div>
+						<div class="td_uname">&nbsp;</div>
+						<div class="td_source">&nbsp;</div>
+						<div class="td_type">&nbsp;</div>
+						<div class="td_size">&nbsp;</div>
+						<div class="td_time">时间</div>	
 					</li>
 					<?endif?>
 					<?foreach($fold as $item):?>
@@ -142,10 +146,8 @@
 									</dd>
 								</dl>
 							</div>
-							<div class="td3">&nbsp;</div>
-							<div class="td4">&nbsp;</div>
-							<div class="td5">&nbsp;</div>							
-							<div class="td6"><span><?=$item['time']?></span> <i></i></div>
+
+							<div class="td_time"><span><?=date('Y-m-d',$item['time'])?></span> <i></i></div>							
 						</li>
 						<?endif?>
 					<?endforeach?>
@@ -153,6 +155,12 @@
 						<li class="tit file-list">
 							<div class="td1"><input type="checkbox" id="selectAllFile" /></div>
 							<div class="td2"><span>文件(<b><?=count($file)?></b>个)</span>  </div>
+							<div class="td_mark">评论</div>
+							<div class="td_uname">作者</div>
+							<div class="td_source">来源</div>
+							<div class="td_type">类型</div>
+							<div class="td_size">大小</div>
+							<div class="td_time">时间</div>							
 						</li>	
 						<?foreach($file as $item):?>
 							<li class="file" data-id="<?=$item['id']?>">
@@ -187,9 +195,37 @@
 										</dd>
 									</dl>
 								</div>
-								<div class="td3">&nbsp;</div>
-								<div class="td4">&nbsp;</div>
-								<div class="td5">&nbsp;</div>
+								<div class="td_mark"><?=$item['mark']?>&nbsp;</div>
+								<div class="td_uname"><?=$item['uname']?></div>
+								<div class="td_source">来源</div>
+								<div class="td_type">
+								<?
+									switch($item['type']){
+										case 0:
+											echo '全部类型';
+											break;
+										case 1:
+											echo '图片';
+											break;
+										case 2:
+											echo '文档';
+											break;
+										case 3:
+											echo '音乐';
+											break;
+										case 4:
+											echo '视频';
+											break;
+										case 5:
+											echo '应用';
+											break;
+										case 6:
+											echo '压缩包';
+											break;
+									}
+								?>
+								</div>
+								<div class="td_size"><?=$item['size']?></div>								
 								<div class="td6"><span><?=date('Y-m-d',$item['time'])?></span> <i <?if(in_array($item['id'],$coll)):?>class="s" cmd="uncoll" title="取消收藏"<?else:?>cmd="coll" title="收藏"<?endif?> data-type="file" data-id="<?=$item['id']?>"></i></div>
 							</li>
 						<?endforeach?>	
@@ -201,25 +237,37 @@
 			</div>
 		</div>
 		<div class="aside">
-			<h3 class="selected"><?=$glist['name']?></h3>
-			<div class="group-desc">
+			<h3 class="selected"><?=$ginfo['name']?></h3>
+			<div class="group-desc" id="groupDesc">
 				<h6>小组公告: &nbsp;&nbsp;<a>编辑</a></h6> 
 				<p>
-				<?if($glist['content'] == ''):?>
+				<?if($ginfo['content'] == ''):?>
 					暂无公告
 				<?else:?>
-					<?=$glist['content']?>
+					<?=$ginfo['content']?>
 				<?endif?>
 				</p>
 			</div>
+			<div class="group-desc hide" id="groupEdit">
+				<h6>小组公告: &nbsp;&nbsp;<a class="save">保存</a>  <a class="esc">取消</a></h6> 
+				<p>
+					<textarea></textarea>
+				</p>
+			</div>			
 			<div class="group-board">
 				<h4>留言板</h4>
-				<div class="group-board-act"><a>发留言</a> <a>查看全部</a></div>
+				<div class="group-board-act"><a data-toggle="modal" cmd="toother" data-target="#postWin">发留言</a> <a>查看全部</a></div>
 				<ul class="group-board-list">
-					<li>
-						2013-01-13  张三
-						<p>留言留言</p>
-					</li>
+					<?if(count($blist)>0):?>
+						<?foreach($blist as $row):?>
+						<li>
+							<?=date('Y-m-d',$row['time'])?>  <?=$row['name']?>
+							<p><?=$row['content']?></p>
+						</li>
+						<?endforeach?>
+					<?else:?>
+					<li>暂无留言</li>
+					<?endif?>
 				</ul>
 			</div>
 		<?if($nav['userinfo']['uid']):?>
@@ -228,7 +276,7 @@
 		<div class="clear"></div>		
 	</div>	
 	<div class="footer"></div>
-
+</div>
 
 	<div id="delFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -249,6 +297,25 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="postWin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">发表留言</h4>
+				</div>
+				<div class="modal-body">
+					<textarea></textarea>
+					<input class="fid" type="hidden" value="" />
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary btn-post">发表</button>
+				</div>				
+			</div>
+		</div>
+	</div>	
 
 	<div id="uploadFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -410,9 +477,11 @@
 	<script>
 		var folds = '<?=json_encode($fold);?>',
 			files = '<?=json_encode($file);?>';
+		var ginfo = '<?=json_encode($ginfo);?>';
 		var nowGroupId = <?=$gid?>;
 		folds = $.parseJSON(folds);
 		files = $.parseJSON(files);
+		ginfo = $.parseJSON(ginfo);
 		console.log(folds);
 		console.log(files);
 	</script>
