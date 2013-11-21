@@ -19,8 +19,10 @@ class Test extends CI_Controller {
 
     public function index()
     {
-        $this->load->helper('directory');
-        directory_acquire(ROOTPATH.'file');
+        show_error('test');
+        //var_dump($this->config);
+        //$this->load->helper('directory');
+        //directory_acquire(ROOTPATH.'file');
     }
 }
 // END Controller class

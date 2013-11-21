@@ -21,11 +21,14 @@
  */
 if ( ! function_exists('directory_acquire'))
 {
-    function directory_acquire($source_dir, $limit = 0)
+    function directory_acquire($parent_dir, $md5, $limit = 0)
     {
-        if ($fp = @opendir($source_dir))
+        if(!is_dir($parent_dir)){
+            mkdir($parent_dir,DIR_WRITE_MODE);
+        }
+        if ($fp = @opendir($parent_dir))
         {
-            $filedata = directory_map($source_dir);
+            $filedata = directory_map($parent_dir);
             var_dump(count($filedata));
             return $filedata;
         }

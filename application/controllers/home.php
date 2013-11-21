@@ -20,7 +20,6 @@ class Home extends SZone_Controller {
 
 
 	public function index(){
-		$this->config->load('szone');
 		$pagenum = $this->config->item('pagenum');
 		$page = (int) $this->input->get('page');
 
