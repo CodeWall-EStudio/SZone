@@ -9,7 +9,6 @@
 
 </head>
 <body class="share-zone">
-	<??>
 	<? $idlist = array(); $flist = array();?>
 	<div>
 		<div class="share-tit">

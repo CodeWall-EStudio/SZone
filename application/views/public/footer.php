@@ -6,7 +6,7 @@
 					<h4 class="modal-title">管理小组 </h4>
 				</div>
 				<div class="modal-body">
-					<iframe id="manageIframe"  width="740" height="400" border="0" frameborder="0" scroll="false" ></iframe>				
+					<iframe id="manageIframe"  width="740" height="600" border="0" frameborder="0" scroll="false" ></iframe>				
 				</div>
 			</div>
 		</div>

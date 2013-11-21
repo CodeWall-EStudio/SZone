@@ -256,7 +256,7 @@
 			</div>			
 			<div class="group-board">
 				<h4>留言板</h4>
-				<div class="group-board-act"><a data-toggle="modal" cmd="toother" data-target="#postWin">发留言</a> <a>查看全部</a></div>
+				<div class="group-board-act"><a data-toggle="modal" cmd="toother" data-target="#postWin">发留言</a> <a data-toggle="modal" cmd="toother" data-target="#boardWin">查看全部</a></div>
 				<ul class="group-board-list">
 					<?if(count($blist)>0):?>
 						<?foreach($blist as $row):?>
@@ -316,6 +316,24 @@
 			</div>
 		</div>
 	</div>	
+
+	<div id="boardWin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">发表留言</h4>
+				</div>
+				<div class="modal-body">
+					<iframe id="shareIframe" src="/board?gid=<?=$ginfo['id']?>" width="538" height="570" border="0" frameborder="0" scroll="false" ></iframe>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary btn-post">发表</button>
+				</div>				
+			</div>
+		</div>
+	</div>		
 
 	<div id="uploadFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
