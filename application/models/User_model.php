@@ -1,12 +1,12 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
- * SZone Application Controller Class
+ * SZone Application Model Class
  *
- * This class object extends from the CodeIgniter super class CI_Controller.
+ * This class object extends from the CodeIgniter super class CI_Model.
  *
  * @package		SZone
  * @subpackage	application
- * @category	controllers
+ * @category	models
  * @author		Code Wall-E Studio
  * @link		http://codewalle.com
  */
@@ -62,7 +62,7 @@ class User_model extends CI_Model {
     }
 
 }
-// END Controller class
+// END Model class
 
-/* End of file Model.php */
+/* End of file User_model.php */
 /* Location: ./application/controllers/User_model.php */
