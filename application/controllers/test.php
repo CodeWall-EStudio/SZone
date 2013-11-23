@@ -19,10 +19,18 @@ class Test extends CI_Controller {
 
     public function index()
     {
-        show_error('test');
-        //var_dump($this->config);
-        //$this->load->helper('directory');
-        //directory_acquire(ROOTPATH.'file');
+        $err = '';
+        directory_acquire(
+            $this->config->item('upload-path'),
+            md5($this->config->item('upload-path')),
+            $this->config->item('dir-file-num'),
+            $err
+        );
+
+        $this->load->model('User_model');
+        $query = $this->User_model->get_where();
+        //var_dump($query->results());
+
     }
 }
 // END Controller class

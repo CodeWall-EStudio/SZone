@@ -375,8 +375,7 @@ $config['proxy_ips'] = '';
 $config['pagenum'] = 10;
 
 //文件上传相关配置
-$config['upload-folds'] = 'file';
-$config['upload-path'] = ROOTPATH.$config['upload-folds'].'/';
+$config['upload-path'] = ROOTPATH.'/file/';
 $config['dir-file-num'] = 1023;
 
 //上传类型

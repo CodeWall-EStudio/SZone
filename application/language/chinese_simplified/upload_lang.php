@@ -15,7 +15,9 @@ $lang['upload_destination_error'] = "A problem was encountered while attempting 
 $lang['upload_no_filepath'] = "The upload path does not appear to be valid.";
 $lang['upload_no_file_types'] = "You have not specified any allowed file types.";
 $lang['upload_bad_filename'] = "The file name you submitted already exists on the server.";
-$lang['upload_not_writable'] = "The upload destination folder does not appear to be writable.";
+$lang['upload_not_writable'] = "用于上传的目标文件夹无法写入。";
+$lang['upload_not_fixable'] = "用于上传的目标文件夹被非法修改。";
+$lang['upload_dir_exceeds_limit'] = "文件服务器目录数超过限制。";
 
 
 /* End of file upload_lang.php */

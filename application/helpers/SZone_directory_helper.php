@@ -21,16 +21,71 @@
  */
 if ( ! function_exists('directory_acquire'))
 {
-    function directory_acquire($parent_dir, $md5, $limit = 0)
+    function directory_acquire($upload_dir, $md5, $limit, &$error)
     {
-        if(!is_dir($parent_dir)){
-            mkdir($parent_dir,DIR_WRITE_MODE);
-        }
-        if ($fp = @opendir($parent_dir))
+        if(!is_dir($upload_dir))
         {
-            $filedata = directory_map($parent_dir);
-            var_dump(count($filedata));
-            return $filedata;
+            if(!mkdir($upload_dir,DIR_WRITE_MODE))
+            {
+                $error = 'upload_not_writable';
+                return FALSE;
+            };
+        }
+        /*$upload_dir .= substr($md5, 0, 2).'/';
+        if(!is_dir($upload_dir))
+        {
+            if(!mkdir($upload_dir,DIR_WRITE_MODE))
+            {
+                $error = 'upload_not_writable';
+                return FALSE;
+            };
+        }*/
+        $file_data = directory_map($upload_dir);
+        var_dump($file_data);
+        return FALSE;
+        $file_count = count($file_data);
+        if ($file_count == 0)
+        {
+            $upload_dir .= '1d/';
+            if(!mkdir($upload_dir,DIR_WRITE_MODE))
+            {
+                $error = 'upload_not_writable';
+                return FALSE;
+            };
+            return $upload_dir;
+        }
+        else
+        {
+            for ($i = 1; $i <= $file_count; $i++)
+            {
+                $tmp_dir = $upload_dir . $i . 'd/';
+                if(!is_dir($tmp_dir))
+                {
+                    $error = 'upload_not_fixable';
+                    return FALSE;
+                }
+                $tmp_count = count($file_data[$i . 'd/']);
+                if ($tmp_count < $limit)
+                {
+                    return $tmp_dir;
+                }
+            }
+
+            if ($file_count >= $limit)
+            {
+                $error = 'upload_dir_exceeds_limit';
+                return FALSE;
+            }
+
+            $file_count = $file_count + 1;
+            $upload_dir .= $file_count . 'd/';
+            if(!mkdir($upload_dir,DIR_WRITE_MODE))
+            {
+                $error = 'upload_not_writable';
+                return FALSE;
+            };
+            return $upload_dir;
+
         }
 
         return FALSE;
