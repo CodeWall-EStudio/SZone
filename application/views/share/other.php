@@ -30,7 +30,7 @@
 				<?endif?>
 			</i>
 		</div>
-		<div class="share-msg">附言：<p> <input type="text" id="content" /><input type="hidden" id="type" value="0" /><input type="hidden" id="isuser" value="<?=$isuser?>" /><input type="hidden" id="flist" value="<?=implode(',',$idlist)?>" /></p></div>
+		<div class="share-msg">附言：<p> <input type="text" id="content" /><input type="hidden" id="type" value="0" /><input type="hidden" id="gid" value="<?=$gid?>" /><input type="hidden" id="flist" value="<?=implode(',',$idlist)?>" /></p></div>
 		<div class="share-act-zone">
 			<p><input type="text" value="搜索用户" data-type="<?=$type?>" id="search" /><i></i></p>
 			<div>
@@ -54,6 +54,7 @@
 	<script src="/js/lib/jq.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
+	<script src="/js/common.js"></script>
 	<script src="/js/share.js" ></script>	
 </body>
 </html>

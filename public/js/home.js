@@ -280,10 +280,10 @@
     var checkAct = function(){
     	var l = $('#fileList .fclick:checked').length;
     	if(l==0){
-			$('.tool-zone').addClass('hide');
-			$('.file-act-zone').removeClass('hide');
-    	}else{
 			$('.tool-zone').removeClass('hide');
+			$('.file-act-zone').addClass('hide');
+    	}else{
+			$('.tool-zone').addClass('hide');
 			$('.file-act-zone').removeClass('hide');
     		if(l>1){
 	    		$('#renameAct').addClass('hide');
@@ -293,7 +293,6 @@
 	    		$('#remarkAct').removeClass('hide');
     		}
     	}
-
     }
 
 	function bind(){

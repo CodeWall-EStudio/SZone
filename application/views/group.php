@@ -235,6 +235,12 @@
 					<li class="last"></li>
 				</ul>
 			</div>
+			<div class="page-zone">
+				<?
+					$page['url'] = '/group?id='.$gid.'&type='.$type.'&fid='.$fid.'&';
+					create_page($page);
+				?>
+			</div>			
 		</div>
 		<div class="aside">
 			<h3 class="selected"><?=$ginfo['name']?></h3>
@@ -325,7 +331,7 @@
 					<h4 class="modal-title">发表留言</h4>
 				</div>
 				<div class="modal-body">
-					<iframe id="shareIframe" src="/board?gid=<?=$ginfo['id']?>" width="538" height="570" border="0" frameborder="0" scroll="false" ></iframe>
+					<iframe id="boardIframe" src="/board?gid=<?=$ginfo['id']?>" width="538" height="570" border="0" frameborder="0" scroll="false" ></iframe>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>

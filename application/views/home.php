@@ -232,6 +232,12 @@
 					<li class="last"></li>
 				</ul>
 			</div>
+			<div class="page-zone">
+				<?
+					$page['url'] = '/?type='.$type.'&fid='.$fid.'&key='.$key.'&';
+					create_page($page);
+				?>
+			</div>
 		</div>
 		<div class="aside">
 			<?if($type==1):?>

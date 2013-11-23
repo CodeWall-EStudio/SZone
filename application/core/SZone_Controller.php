@@ -6,6 +6,7 @@
 		protected $grouplist = array();
 		protected $deplist = array();  
 		protected $depinfolist = array();
+		protected $school = array();
 		protected $prelist = array();
 		protected $controller_name;  
         protected $action_name; 		
@@ -130,6 +131,8 @@
 					// 	'id' => $row->id,
 					// 	'name' => $row->name
 					// ));
+				}elseif($row->type == 0){
+					$this->school = $row;
 				};
 				//array_push($idlist,'gid="'.$row->id.'"');
 			};

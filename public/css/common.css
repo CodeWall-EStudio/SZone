@@ -581,3 +581,11 @@ a{
 	height:120px;
 	margin:0 auto;
 }
+.page-zone{
+	padding:10px;
+	text-align:center;
+}
+.page-zone a{
+	display:inline-block;
+	margin-right:12px;
+	}

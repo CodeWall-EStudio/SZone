@@ -653,36 +653,49 @@ class Cgi extends SZone_Controller {
 	public function getgroup(){
 		$key = $this->input->post('key');
 		$type = (Int) $this->input->post('type');
+		$gid = (int) $this->input->post('gid');
 
-		$sql = 'select id,name,parent from groups where name like "%'.$key.'%" and type='.$type;
+
+		$sql = 'select id,name,parent from groups where name like "%'.$key.'%" and id !='.$gid.' and type='.$type;
 		$query = $this->db->query($sql);
 		$glist = array();
 		$gi = array();
 		foreach($query->result() as $row){
-			if($row->parent == 0){
-				$gi[$row->id] = array(
+			// if($row->parent == 0){
+			// 	// $gi[$row->id] = array(
+			// 	// 	'id' => $row->id,
+			// 	// 	'name' => $row->name,
+			// 	// 	'pid' => $row->parent
+			// 	// );
+			// 	$glist[$row->id] = array(
+			// 		'id' => $row->id,
+			// 		'name' => $row->name,
+			// 		'pid' => $row->parent
+			// 	);		
+			// 	echo $row->name;		
+			// }else if($type == 1){
+				// if(!isset($glist[$row->parent]['list'])){
+				// 	$glist[$row->parent]['list'] = array();
+				// 	//echo json_encode($glist);
+				// }
+				$glist[$row->id] = array(
 					'id' => $row->id,
 					'name' => $row->name,
 					'pid' => $row->parent
 				);
-			}
-			array_push($glist,array(
-				'id' => $row->id,
-				'name' => $row->name,
-				'pid' => $row->parent
-			));
+			//}
 		}
-		if($type ==1 ){
-			foreach($glist as $row){
-				if($row['pid']){
-					if(!isset($gi[$row['pid']]['list'])){
-						$gi[$row['pid']]['list'] = array();
-					}
-					array_push($gi[$row['pid']]['list'],$row);
-				}
-			}
-			$glist = $gi;			
-		}
+		// if($type ==1 ){
+		// 	foreach($glist as $row){
+		// 		if($row['pid']){
+		// 			if(!isset($gi[$row['pid']]['list'])){
+		// 				$gi[$row['pid']]['list'] = array();
+		// 			}
+		// 			array_push($gi[$row['pid']]['list'],$row);
+		// 		}
+		// 	}
+		// 	$glist = $gi;			
+		// }
 		$ret = array(
 			'ret' => 0,
 			'list' => $glist
@@ -698,11 +711,11 @@ class Cgi extends SZone_Controller {
 		$gid = (int) $this->input->post('gid');
 
 		//echo json_encode($this->user);
-		if($gid){
-			$sql = 'select a.id,a.name,a.nick from user a left join groupuser b on b.gid='.$gid.' where a.id != b.uid group by a.id';
-		}else{
+		//if($gid){
+		//	$sql = 'select a.id,a.name,a.nick from user a left join groupuser b on b.gid='.$gid.' where a.id != b.uid group by a.id';
+		//}else{
 			$sql = 'select id,name,nick from user where name like "%'.$key.'%" and id != '.$this->user['uid'];
-		}
+		//}
 
 		$query = $this->db->query($sql);
 		$list = array();
@@ -728,7 +741,7 @@ class Cgi extends SZone_Controller {
 		$id = $this->input->post('id');  //分组id
 		$fid = $this->input->post('flist'); //文件id
 		$type = $this->input->post('type'); //类型 0 用户到用户 1 到小组 2到部门
-		$isuser = $this->input->post('isuser'); //用户发起还是在小组发起
+		$gid = $this->input->post('gid'); //用户发起还是在小组发起
 		$content = $this->input->post('content');
 		
 
@@ -736,8 +749,7 @@ class Cgi extends SZone_Controller {
 
 		//取id
 		$kl = array();
-		foreach($id as $k){
-			
+		foreach($id as $k){		
 			$cache[$k] = array();
 		}
 		foreach($fid as $k){
@@ -764,12 +776,12 @@ class Cgi extends SZone_Controller {
 		foreach($id as $k){
 			foreach($fid as $i){
 				if(!in_array($i,$cache[$k])){
-	array_push($key,'('.$i.','.$k.','.$time.',"'.$nl[$i].'",'.'"'.$content.'",'.$this->user['uid'].')');	
+	array_push($key,'('.$i.','.$k.','.$time.',"'.$nl[$i].'",'.'"'.$content.'",'.$this->user['uid'].','.$gid.')');	
 				}
 			}
 		}
 		if(count($key)>0){
-			$sql = 'insert into groupfile (fid,gid,createtime,fname,content,uid) value '.implode(',',$key);
+			$sql = 'insert into groupfile (fid,gid,createtime,fname,content,uid,fgid) value '.implode(',',$key);
 			$query = $this->db->query($sql);
 			if($this->db->affected_rows()>0){
 				$ret = array(
@@ -798,7 +810,7 @@ class Cgi extends SZone_Controller {
 		$id = $this->input->post('id');  //用户id
 		$fid = $this->input->post('flist'); //文件id
 		$type = $this->input->post('type'); //类型 0 用户到用户 1 到小组 2到部门
-		$isuser = $this->input->post('isuser'); //用户发起还是在小组发起
+		$gid = (Int) $this->input->post('gid'); //用户发起还是在小组发起
 		$content = $this->input->post('content');
 
 		$cache = array();

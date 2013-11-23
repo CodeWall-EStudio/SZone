@@ -31,7 +31,7 @@
 			</i>
 		</div>
 		<div class="share-act-zone">
-			<input type="hidden" id="type" value="1" /><input type="hidden" id="isuser" value="<?=$isuser?>" /><input type="hidden" id="flist" value="<?=implode(',',$idlist)?>" /><input type="hidden" id="fnames" value="<?=implode(',',$flist)?>" />
+			<input type="hidden" id="type" value="1" /><input type="hidden" id="gid" value="<?=$gid?>" /><input type="hidden" id="flist" value="<?=implode(',',$idlist)?>" /><input type="hidden" id="fnames" value="<?=implode(',',$flist)?>" />
 			<p><input type="text" value="搜索小组" data-type="<?=$type?>" id="search" /><i></i></p>
 			<div>
 				<button class="btn btn-default" id="joinList">加入名单</button>
@@ -54,6 +54,7 @@
 	<script src="/js/lib/jq.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
+	<script src="/js/common.js"></script>
 	<script src="/js/share.js" ></script>	
 </body>
 </html>

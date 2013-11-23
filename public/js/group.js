@@ -1,5 +1,9 @@
 ;(function(){
-
+	var iframeEl = $('#shareIframe');
+	var EditMark = '/cgi/editmark', //修改备注
+		MoveFile = '/cgi/movefile', //移动文件到文件夹
+		UnColl = '/cgi/uncoll',
+		AddColl = '/cgi/addcoll';   //添加收藏
     $("#newFolds").validate({
             rules:{
                     foldname : {
@@ -161,4 +165,172 @@
 			}
 		});
 	});
+
+	var showShare = function(id,cmd){
+		var il = [],
+			nl = [];
+		if(!id){
+			$('#fileList .fclick:checked').each(function(){
+				il.push($(this).val());
+			});
+		}else if(typeof id == 'string'){
+			il.push(id);
+			nl.push(name);
+		}else{
+			il = id;
+			nl = name;
+		}
+		var id = il.join(',');
+		switch(cmd){
+			case 'toother':
+				$('#shareWin h4').text('共享 发送给别人');
+				console.log(12345);
+				iframeEl.attr('src','/share/other?id='+id+'&gid='+ginfo.id);
+				break;
+			case 'togroup':
+				$('#shareWin h4').text('共享 到小组空间');
+				iframeEl.attr('src','/share/group?id='+id+'&gid='+ginfo.id);
+				break;
+			case 'todep':
+				$('#shareWin h4').text('共享 到部门空间');
+				iframeEl.attr('src','/share/dep?id='+id+'&gid='+ginfo.id);
+				break;
+		}
+	}	
+
+	var collFiles = function(){
+		var il = [];
+		$('#fileList .fclick:checked').each(function(){
+			//if($(this).parents('li.file').find('i.s').length == 0){
+				il.push($(this).val());
+			//}
+		});	
+		id = il.join(',');
+		$.post(AddColl,{id:id},function(d){
+			if(d.ret == 0){
+				//target.parent('span').prev('span').text(d.info);
+				window.location.reload();
+			}else{
+				console.log(d.msg);
+			}
+		});		
+	}
+
+	var collFile = function(id,target){
+		var data = {
+			id : id
+		}
+		$.post(AddColl,data,function(d){
+			console.log(d);
+			if(d.ret == 0){
+				target.addClass('s');
+			}
+		});
+	}
+
+	var uncollFile = function(id,target){
+		var data = {
+			id : id
+		}
+		$.post(UnColl,data,function(d){
+			console.log(d);
+			if(d.ret == 0){
+				target.removeClass('s');
+			}
+		});		
+	}
+
+	var deleteFile = function(item){
+		item.remove();
+		if($("#fileList .file").length == 0){
+			$('#fileList .file-list').hide(200);
+		}
+	}	
+
+
+    //显示或者隐藏重命名和评论
+    var checkAct = function(){
+    	var l = $('#fileList .fclick:checked').length;
+    	console.log(l);
+    	if(l==0){
+			$('.tool-zone').removeClass('hide');
+			$('.file-act-zone').addClass('hide');
+    	}else{
+			$('.tool-zone').addClass('hide');
+			$('.file-act-zone').removeClass('hide');
+    		if(l>1){
+	    		$('#renameAct').addClass('hide');
+	    		$('#remarkAct').addClass('hide');
+    		}else{
+	    		$('#renameAct').removeClass('hide');
+	    		$('#remarkAct').removeClass('hide');
+    		}
+    	}
+    }
+    //输入框点击事件
+	$("#fileList input").click(function(e){
+		checkAct();
+	})    
+
+	$('#fileList').bind('click',function(e){
+		var target = $(e.target),
+			cmd = target.attr('cmd');
+		switch(cmd){
+			case 'toother':
+			case 'togroup':
+			case 'todep':
+				var id = target.attr('data-id');
+				var name = target.attr('data-name');
+				showShare(id,cmd);
+				break;
+			case 'coll':
+				var id = target.attr('data-id'),
+					type = target.attr('data-type');
+					if(type == 'file'){
+						collFile(id,target);
+					}
+				break;
+			case 'uncoll':
+				var id = target.attr('data-id'),
+					type = target.attr('data-type');
+					if(type == 'file'){
+						uncollFile(id,target);
+					}				
+				break;
+			case 'edit':
+				target.hide();
+				target.next('span').removeClass('hide');
+				break;
+			case 'editComp':
+				var mark = target.prev('input').val(),
+					id = target.attr('data-id'),
+					type = target.attr('data-type');
+					console.log(id,type);
+					editMark(id,mark,type,target);
+					target.parent('span').prev('span').show();
+					target.parent('span').addClass('hide');						
+				break;
+			case 'editClose':
+				var mark = target.attr('data-value');
+				target.prev('input').val(mark);
+				target.parent('span').prev('span').show();
+				target.parent('span').addClass('hide');
+				break;
+		}
+	});	
+
+	$('.file-act-zone a').bind('click',function(e){
+		var target = $(e.target),
+			cmd = target.attr('cmd');
+		switch(cmd){
+			case 'toother':
+			case 'togroup':
+			case 'todep':
+				showShare(null,cmd);
+				break;
+			case 'copyFile':
+				copyFile();
+				break;							
+		}
+	})
 })()
