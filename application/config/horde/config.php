@@ -377,6 +377,7 @@ $config['pagenum'] = 10;
 //文件上传相关配置
 $config['upload-path'] = ROOTPATH.'../file/';
 $config['dir-file-num'] = 1023;
+$config['storage-limit'] = 3000000; //3GB;
 
 //上传类型
 $config['filetype']['jpg'] = 1;   //图片

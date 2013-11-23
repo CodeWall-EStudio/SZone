@@ -1,27 +1,40 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * SZone Application Controller Class
+ *
+ * This class object extends from the CodeIgniter super class CI_Controller.
+ *
+ * @package		SZone
+ * @subpackage	application
+ * @category	controllers
+ * @author		Code Wall-E Studio
+ * @link		http://codewalle.com
+ */
+class Login extends CI_Controller {
 
-class Login extends CI_Controller{
-	public function index(){
-		require_once('/application/libraries/qconnect/qqConnectAPI.php');
+    /*public function index(){
+		require_once(APPPATH.'libraries/qconnect/qqConnectAPI.php');
 
 		$openid = $this->session->userdata('openid');
 		$accessToken = $this->session->userdata('accessToken');
 		$name = $this->session->userdata('name');
 
 		if($openid && $accessToken){
-			$qc = new QC($accessToken,$openid);		
+			new QC($accessToken,$openid);
 		}
 		echo $openid;
 		echo $accessToken;
 		echo $name;
 
-
 	}
 
-	public function layout(){
-		$this->session->sess_destroy();
-		redirect('/');
-	}
+*/
+
+    public function connect(){
+        $this->load->library('qconnect');
+        $this->qconnect->qq_login();
+        return;
+    }
 
 	public function callback(){
 		$this->load->library('qconnect');
@@ -29,51 +42,38 @@ class Login extends CI_Controller{
 		$this->qconnect->get_access();
 		$openid = $this->qconnect->get_openid();
 		$ret = $this->qconnect->get_info();
-		//return;
-		//$name = $ret['data']['name'];
-		//$nick = $ret['data']['nick'];
-		//$name = $ret['nickname'];
-		$name = $ret->nickname;
+
+        $name = $ret->nickname;
 		$nick = $name;
 
-		$result = $this->db->query('SELECT * FROM user WHERE openid="'.$openid.'"');
+        $this->load->model('User_model');
+        $result = $this->User_model->get_by_openid($openid);
 
-		//已经在数据库中了.
-        if ($result->num_rows() > 0){
-        		
-        	 $row = $result->row(); 
-        	 $auth = (int) $row->auth;
-        	 $size = (int) $row->size;
-        	 $used = (int) $row->used;
-        	 $uid = (int) $row->id;
-        }else{
-        	$auth = 0;
-        	$data = array(
+        $data = array();
+
+        if (count($result) == 0)
+        {
+        	$user = array(
         		'name' => $name,
         		'nick' => $nick,
         		'auth' => 0,
-        		'size' => '3000000',
+        		'size' => $this->config->item('storage-limit'),
         		'access' => $this->session->userdata('access_token'),
         		'openid' => $this->session->userdata('openid')
         	);
-        	$str = $this->db->insert_string('user',$data);
-        	echo $str;
-        	$this->db->query($str);
-        	$uid = $this->db->insert_id();
-        }		
+            $data['uid'] = $this->User_model->insert_entry($user);
+            $data['auth'] = $user['auth'];
+            $data['name'] = $name;
+            $data['nick'] = $nick;
+        }
+        else
+        {
+            $data = $result[0];
+            $data['name'] = $name;
+            $data['nick'] = $nick;
+        }
 
-
-		$array = array(
-			// 'accessToken' => $accessToken,
-			// 'openid' => $openid,
-			'auth' => $auth,
-			'name' => $name,
-			'nick' => $nick,
-			'uid' => $uid
-		);	
-
-		//print_r($array);
-		$this->session->set_userdata($array);
+		$this->session->set_userdata($data);
 		redirect('/');
 /*
 　　获得access_token，在callback页面中使用$qc->qq_callback()返回access_token,
@@ -83,32 +83,16 @@ class Login extends CI_Controller{
 */
 	}
 
-	public function loginout(){
-
-		$array = array(
-			'accessToken' => '',
-			'openid' => '',
-			'auth' => '',
-			'name' => '',
-			'nick' => '',
-			'uid' => ''
-		);	
-
-		$this->session->unset_userdata($array);
-		redirect('/');
-	}
-
-	public function getUser(){
-	}	
-
-	public function connect(){
-		$this->load->library('qconnect');
-
-		$this->qconnect->qq_login();
-
-		return;
-	}
+    public function quit(){
+        $this->session->sess_destroy();
+        redirect('/');
+    }
 
 	//APP ID：100548719
 	//APP KEY：9e47324ac7fed9f8364d4982ccf3037e
 }
+
+// END Controller class
+
+/* End of file login.php */
+/* Location: ./application/controllers/login.php */
