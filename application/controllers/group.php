@@ -3,7 +3,7 @@
 class Group extends SZone_Controller {
 
 	public function index(){
-		$this->config->load('szone');
+		//$this->config->load('szone');
 		$pagenum = $this->config->item('pagenum');
 		$page = (int) $this->input->get('page');
 		$gid = (int) $this->input->get('id');

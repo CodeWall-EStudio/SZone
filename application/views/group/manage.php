@@ -9,7 +9,6 @@
 
 </head>
 <body class="share-zone">
-	<??>
 	<? $idlist = array();?>
 	<table class="table" width="90%" align="cneter">
 		<tr>
