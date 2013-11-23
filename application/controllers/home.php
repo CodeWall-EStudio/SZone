@@ -21,7 +21,7 @@ class Home extends SZone_Controller {
 
 	public function index(){
 		$pagenum = $this->config->item('pagenum');
-		$page = (int) $this->input->get('page');
+		$nowpage = (int) $this->input->get('page');
 
 		// echo json_encode($this->user);
 		//var_dump($this->user);
@@ -34,11 +34,12 @@ class Home extends SZone_Controller {
 			'nav' => array(
 				'userinfo' => $this->user,
 				'group' => $this->grouplist,
-				'dep' => $this->deplist
+				'dep' => $this->deplist,
+				'school' => $this->school
 			)
 		);
 
-		$key = $this->input->post('key');
+		$key = $this->input->get_post('key');
 
 		$sql = 'select id,name,mark,createtime,pid from userfolds where uid = '.(int) $this->user['uid'];
 		if($key){
@@ -84,34 +85,52 @@ class Home extends SZone_Controller {
 			}
 		}
 
+		$sql = 'select count(a.id) as anum from userfile a left join files b on b.id = a.fid where a.del =0 and a.uid='.(int) $this->user['uid'];
 		if($fid){
-			$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = '.$fid.' and a.uid='.(int) $this->user['uid'];
-		}else{
-			$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = 0 and a.uid='.(int) $this->user['uid'];			
+			$sql.=' and a.fdid='.$fid;
 		}
 		if($type){
 			$sql .= ' and b.type='.$type;
 		}
 		if($key){
 			$sql .= ' and a.name like "%'.$key.'%"';
-		}	
+		}
+
+		$query = $this->db->query($sql);
+		$row = $query->row();		
+		$allnum = $row->anum;
+	
+
+		if($fid){
+			$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = '.$fid.' and a.del = 0 and a.uid='.(int) $this->user['uid'];
+		}else{
+			$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = 0 and a.del = 0  and a.uid='.(int) $this->user['uid'];			
+		}
+		if($type){
+			$sql .= ' and b.type='.$type;
+		}
+		if($key){
+			$sql .= ' and a.name like "%'.$key.'%"';
+		}
+		$page = get_page_status($nowpage,$pagenum,$allnum);
+		$sql .= ' limit '.$page['start'].','.$pagenum;
+
 		//$sql .= ' limit '.$page.','.($page+$pagenum);	
 		//echo $sql;
 		$query = $this->db->query($sql);
 		$file = array();
 		$idlist = array();
+
 		foreach($query->result() as $row){
-			if((int) $row->del == 0){
-				$file[$row->id] = array(
-					'id' => $row->id,
-					'name' => $row->name,
-					'time' => substr($row->createtime,0,10),
-					'content' => $row->content,
-					'path' => $row->path,
-					'size' => get_file_size($row->size),
-					'type' => $row->type
-				);
-			}
+			$file[$row->id] = array(
+				'id' => $row->id,
+				'name' => $row->name,
+				'time' => substr($row->createtime,0,10),
+				'content' => $row->content,
+				'path' => $row->path,
+				'size' => get_file_size($row->size),
+				'type' => $row->type
+			);
 		}
 
 		$sql = 'select fid from usercollection where uid='.(int) $this->user['uid'];
@@ -130,6 +149,8 @@ class Home extends SZone_Controller {
 		$data['pid'] = $pid;
 		$data['coll'] = $idlist;
 		$data['foldnum'] = $foldnum;
+		$data['page'] = $page;
+		$data['key'] = $key;
 
 
 		$this->load->view('home',$data);	

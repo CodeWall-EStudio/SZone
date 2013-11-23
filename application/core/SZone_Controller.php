@@ -138,7 +138,9 @@ class SZone_Controller extends CI_Controller {
                 // 	'id' => $row->id,
                 // 	'name' => $row->name
                 // ));
-            };
+            }elseif($row->type == 0){
+                $this->school = $row;
+            };;
             //array_push($idlist,'gid="'.$row->id.'"');
         };
 
