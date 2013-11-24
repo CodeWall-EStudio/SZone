@@ -20,6 +20,13 @@ class Home extends SZone_Controller {
 
 
 	public function index(){
+
+        if ($this->user['uid'] == 0)
+        {
+            $this->load->view('blank');
+            return;
+        }
+
 		$pagenum = $this->config->item('pagenum');
 		$nowpage = (int) $this->input->get('page');
 
