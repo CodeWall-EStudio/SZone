@@ -45,6 +45,7 @@
 					<p class="text"><?=$finfo['text']?></p>
 				<?else:?>
 				 	其他文本
+				 	
 				<?endif?>
 			<?elseif($finfo['type']==3):?>
 				<div class="playerZone">
