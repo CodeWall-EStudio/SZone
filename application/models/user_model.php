@@ -60,7 +60,8 @@ class User_model extends CI_Model {
 
     function insert_entry($data)
     {
-        $this->db->insert_string($this->table, $data);
+        $str = $this->db->insert_string($this->table, $data);
+        $query = $this->db->query($str);
         return $this->db->insert_id();
     }
 
