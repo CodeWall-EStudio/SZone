@@ -166,11 +166,11 @@
 							<li class="file" data-id="<?=$item['id']?>">
 								<div class="td1"><input type="checkbox" name="file" class="fclick" value="<?=$item['id']?>" data-type="file" /></div>
 								<div class="td2">
-									<a class="file-name">
+									<a class="file-name" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>">
 									<?if($item['type'] == 1):?>
-										<img src="/cgi/getfile?fid=<?=$item['id']?>" />
+										<img src="/cgi/getfile?fid=<?=$item['fid']?>" data-fid="<?=$item['fid']?>"  data-id="<?=$item['id']?>"/>
 									<?else:?>
-										<i class="fold"></i>
+										<i class="fold" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>" ></i>
 									<?endif?>
 									</a>
 									<dl>
@@ -191,7 +191,7 @@
 												<li><a cmd="toschool" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到学校空间</a></li>					
 											</ul>
 											</span>										
-											<span><a href="/down?fid=<?=$item['id']?>">下载</a></span>
+											<span><a href="/cgi/getfile?fid=<?=$item['fid']?>">下载</a></span>
 										</dd>
 									</dl>
 								</div>
@@ -324,7 +324,7 @@
 					<h4 class="modal-title">共享 </h4>
 				</div>
 				<div class="modal-body">
-					<iframe id="shareIframe" src="/share/other" width="538" height="370" border="0" frameborder="0" scroll="false" ></iframe>				
+					<iframe id="shareIframe" width="538" height="370" border="0" frameborder="0" scroll="false" ></iframe>				
 				</div>
 			</div>
 		</div>
@@ -358,28 +358,15 @@
 		</div>
 	</div>		
 
-	<div id="reviewFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div id="reviewFile" class="modal fade collection" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">预览文件</h4>
 				</div>
 				<div class="modal-body">
-					<div class="file-review">
-						<img  />
-					</div>
-					<div class="file-reivew-act">
-						<span class="glyphicon glyphicon-repeat rotate"></span>
-						<span class="glyphicon glyphicon-repeat"></span>
-						<span class="glyphicon glyphicon-zoom-in"></span>
-						<span class="glyphicon glyphicon-zoom-out"></span>
-					</div>
-					  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-					    <span class="glyphicon glyphicon-chevron-left"></span>
-					  </a>
-					  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-					    <span class="glyphicon glyphicon-chevron-right"></span>
-					  </a>					
+					<iframe id="reviewIframe" width="750" height="640" border="0" frameborder="0" scroll="false" ></iframe>
 				</div>
 			</div>
 		</div>

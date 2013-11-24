@@ -6670,3 +6670,11736 @@ DEBUG - 2013-11-24 10:55:16 --> Pagination Class Initialized
 DEBUG - 2013-11-24 10:55:16 --> Controller Class Initialized
 DEBUG - 2013-11-24 10:55:16 --> Final output sent to browser
 DEBUG - 2013-11-24 10:55:16 --> Total execution time: 0.2180
+DEBUG - 2013-11-24 11:03:30 --> Config Class Initialized
+DEBUG - 2013-11-24 11:03:30 --> Hooks Class Initialized
+DEBUG - 2013-11-24 11:03:30 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 11:03:30 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 11:03:30 --> URI Class Initialized
+DEBUG - 2013-11-24 11:03:31 --> Router Class Initialized
+DEBUG - 2013-11-24 11:03:31 --> Output Class Initialized
+DEBUG - 2013-11-24 11:03:31 --> Security Class Initialized
+DEBUG - 2013-11-24 11:03:31 --> Input Class Initialized
+DEBUG - 2013-11-24 11:03:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:31 --> CRSF cookie Set
+DEBUG - 2013-11-24 11:03:31 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 11:03:31 --> Language Class Initialized
+DEBUG - 2013-11-24 11:03:31 --> Loader Class Initialized
+DEBUG - 2013-11-24 11:03:31 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 11:03:31 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 11:03:31 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 11:03:31 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 11:03:31 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 11:03:31 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 11:03:31 --> Session Class Initialized
+DEBUG - 2013-11-24 11:03:31 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 11:03:31 --> Session routines successfully run
+DEBUG - 2013-11-24 11:03:31 --> Pagination Class Initialized
+DEBUG - 2013-11-24 11:03:31 --> Controller Class Initialized
+DEBUG - 2013-11-24 11:03:31 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-11-24 11:03:31 --> Model Class Initialized
+DEBUG - 2013-11-24 11:03:31 --> Model Class Initialized
+DEBUG - 2013-11-24 11:03:31 --> Config Class Initialized
+DEBUG - 2013-11-24 11:03:31 --> Hooks Class Initialized
+DEBUG - 2013-11-24 11:03:31 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 11:03:31 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 11:03:31 --> URI Class Initialized
+DEBUG - 2013-11-24 11:03:31 --> Router Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> No URI present. Default controller set.
+DEBUG - 2013-11-24 11:03:32 --> Output Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Security Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Input Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:32 --> CRSF cookie Set
+DEBUG - 2013-11-24 11:03:32 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 11:03:32 --> Language Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Loader Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 11:03:32 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 11:03:32 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 11:03:32 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 11:03:32 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 11:03:32 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Session Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 11:03:32 --> Session routines successfully run
+DEBUG - 2013-11-24 11:03:32 --> Pagination Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Controller Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> File loaded: E:\myworks\ezone\SZone/application/views/public/header.php
+DEBUG - 2013-11-24 11:03:32 --> File loaded: E:\myworks\ezone\SZone/application/views/public/userinfo.php
+DEBUG - 2013-11-24 11:03:32 --> File loaded: E:\myworks\ezone\SZone/application/views/public/footer.php
+DEBUG - 2013-11-24 11:03:32 --> File loaded: E:\myworks\ezone\SZone/application/views/home.php
+DEBUG - 2013-11-24 11:03:32 --> Final output sent to browser
+DEBUG - 2013-11-24 11:03:32 --> Total execution time: 0.1880
+DEBUG - 2013-11-24 11:03:32 --> Config Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Hooks Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Config Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Hooks Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 11:03:32 --> URI Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Router Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Output Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 11:03:32 --> URI Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Router Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Security Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Input Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:32 --> CRSF cookie Set
+DEBUG - 2013-11-24 11:03:32 --> Config Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Hooks Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 11:03:32 --> Output Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Language Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Security Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Input Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:32 --> CRSF cookie Set
+DEBUG - 2013-11-24 11:03:32 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 11:03:32 --> Language Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 11:03:32 --> URI Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Router Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Output Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Config Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Hooks Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 11:03:32 --> URI Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Router Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Security Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Output Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Input Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Security Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:32 --> Input Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:32 --> CRSF cookie Set
+DEBUG - 2013-11-24 11:03:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:32 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 11:03:32 --> Config Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:32 --> Language Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Hooks Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:32 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 11:03:32 --> URI Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Router Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Loader Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 11:03:32 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 11:03:32 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 11:03:32 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 11:03:32 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 11:03:32 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> CRSF cookie Set
+DEBUG - 2013-11-24 11:03:32 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 11:03:32 --> Language Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Session Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 11:03:32 --> Session routines successfully run
+DEBUG - 2013-11-24 11:03:32 --> Pagination Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> Controller Class Initialized
+DEBUG - 2013-11-24 11:03:32 --> DB Transaction Failure
+ERROR - 2013-11-24 11:03:32 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+DEBUG - 2013-11-24 11:03:32 --> Language file loaded: language/chinese_simplified/db_lang.php
+DEBUG - 2013-11-24 11:03:33 --> Loader Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 11:03:33 --> Loader Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Output Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 11:03:33 --> Security Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Input Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:33 --> CRSF cookie Set
+DEBUG - 2013-11-24 11:03:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 11:03:33 --> Loader Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Language Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 11:03:33 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Loader Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 11:03:33 --> Session Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Session Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 11:03:33 --> Session routines successfully run
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 11:03:33 --> Session routines successfully run
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 11:03:33 --> Pagination Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Controller Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 11:03:33 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Session Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 11:03:33 --> Session routines successfully run
+DEBUG - 2013-11-24 11:03:33 --> Pagination Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Controller Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Pagination Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Controller Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Session Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 11:03:33 --> Session routines successfully run
+DEBUG - 2013-11-24 11:03:33 --> Pagination Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Controller Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Final output sent to browser
+DEBUG - 2013-11-24 11:03:33 --> Total execution time: 0.9771
+DEBUG - 2013-11-24 11:03:33 --> Final output sent to browser
+DEBUG - 2013-11-24 11:03:33 --> Total execution time: 1.2441
+DEBUG - 2013-11-24 11:03:33 --> Final output sent to browser
+DEBUG - 2013-11-24 11:03:33 --> Total execution time: 1.4091
+DEBUG - 2013-11-24 11:03:33 --> Config Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 11:03:33 --> URI Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Router Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Output Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Security Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> Input Class Initialized
+DEBUG - 2013-11-24 11:03:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:33 --> CRSF cookie Set
+DEBUG - 2013-11-24 11:03:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 11:03:34 --> Language Class Initialized
+DEBUG - 2013-11-24 11:03:34 --> Loader Class Initialized
+DEBUG - 2013-11-24 11:03:34 --> Final output sent to browser
+DEBUG - 2013-11-24 11:03:34 --> Total execution time: 1.4781
+DEBUG - 2013-11-24 11:03:34 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 11:03:34 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 11:03:34 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 11:03:34 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 11:03:34 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 11:03:34 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 11:03:34 --> Session Class Initialized
+DEBUG - 2013-11-24 11:03:34 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 11:03:34 --> Session routines successfully run
+DEBUG - 2013-11-24 11:03:34 --> Pagination Class Initialized
+DEBUG - 2013-11-24 11:03:34 --> Controller Class Initialized
+DEBUG - 2013-11-24 11:03:34 --> Final output sent to browser
+DEBUG - 2013-11-24 11:03:34 --> Total execution time: 0.4160
+DEBUG - 2013-11-24 11:03:47 --> Config Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Hooks Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 11:03:47 --> URI Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Router Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Output Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Security Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Input Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:47 --> CRSF cookie Set
+DEBUG - 2013-11-24 11:03:47 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 11:03:47 --> Language Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Loader Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 11:03:47 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 11:03:47 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 11:03:47 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 11:03:47 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 11:03:47 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Session Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 11:03:47 --> Session routines successfully run
+DEBUG - 2013-11-24 11:03:47 --> Pagination Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Controller Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Config Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Hooks Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 11:03:47 --> URI Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Router Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> No URI present. Default controller set.
+DEBUG - 2013-11-24 11:03:47 --> Output Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Security Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Input Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:47 --> CRSF cookie Set
+DEBUG - 2013-11-24 11:03:47 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 11:03:47 --> Language Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Loader Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 11:03:47 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 11:03:47 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 11:03:47 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 11:03:47 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 11:03:47 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Session Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 11:03:47 --> A session cookie was not found.
+DEBUG - 2013-11-24 11:03:47 --> Session routines successfully run
+DEBUG - 2013-11-24 11:03:47 --> Pagination Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Controller Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> File loaded: E:\myworks\ezone\SZone/application/views/public/header.php
+DEBUG - 2013-11-24 11:03:47 --> File loaded: E:\myworks\ezone\SZone/application/views/public/footer.php
+DEBUG - 2013-11-24 11:03:47 --> File loaded: E:\myworks\ezone\SZone/application/views/home.php
+DEBUG - 2013-11-24 11:03:47 --> Final output sent to browser
+DEBUG - 2013-11-24 11:03:47 --> Total execution time: 0.1720
+DEBUG - 2013-11-24 11:03:47 --> Config Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Hooks Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 11:03:47 --> URI Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Router Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Output Class Initialized
+DEBUG - 2013-11-24 11:03:47 --> Security Class Initialized
+DEBUG - 2013-11-24 11:03:48 --> Input Class Initialized
+DEBUG - 2013-11-24 11:03:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 11:03:48 --> CRSF cookie Set
+DEBUG - 2013-11-24 11:03:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 11:03:48 --> Language Class Initialized
+DEBUG - 2013-11-24 11:03:48 --> Loader Class Initialized
+DEBUG - 2013-11-24 11:03:48 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 11:03:48 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 11:03:48 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 11:03:48 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 11:03:48 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 11:03:48 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 11:03:48 --> Session Class Initialized
+DEBUG - 2013-11-24 11:03:48 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 11:03:48 --> Session routines successfully run
+DEBUG - 2013-11-24 11:03:48 --> Pagination Class Initialized
+DEBUG - 2013-11-24 11:03:48 --> Controller Class Initialized
+DEBUG - 2013-11-24 11:03:48 --> DB Transaction Failure
+ERROR - 2013-11-24 11:03:48 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+DEBUG - 2013-11-24 11:03:48 --> Language file loaded: language/chinese_simplified/db_lang.php
+DEBUG - 2013-11-24 15:17:55 --> Config Class Initialized
+DEBUG - 2013-11-24 15:17:55 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:17:55 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:17:55 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:17:55 --> URI Class Initialized
+DEBUG - 2013-11-24 15:17:55 --> Router Class Initialized
+DEBUG - 2013-11-24 15:17:55 --> Output Class Initialized
+DEBUG - 2013-11-24 15:17:55 --> Security Class Initialized
+DEBUG - 2013-11-24 15:17:55 --> Input Class Initialized
+DEBUG - 2013-11-24 15:17:55 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:17:55 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:17:55 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:17:55 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:17:55 --> Language Class Initialized
+DEBUG - 2013-11-24 15:17:55 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:17:55 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:17:55 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:17:55 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:17:55 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:17:55 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:17:55 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:17:55 --> Session Class Initialized
+DEBUG - 2013-11-24 15:17:55 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:17:55 --> Session routines successfully run
+DEBUG - 2013-11-24 15:17:55 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:17:55 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:17:55 --> Final output sent to browser
+DEBUG - 2013-11-24 15:17:55 --> Total execution time: 0.2960
+DEBUG - 2013-11-24 15:20:34 --> Config Class Initialized
+DEBUG - 2013-11-24 15:20:34 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:20:34 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:20:34 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:20:34 --> URI Class Initialized
+DEBUG - 2013-11-24 15:20:34 --> Router Class Initialized
+DEBUG - 2013-11-24 15:20:34 --> Output Class Initialized
+DEBUG - 2013-11-24 15:20:34 --> Security Class Initialized
+DEBUG - 2013-11-24 15:20:34 --> Input Class Initialized
+DEBUG - 2013-11-24 15:20:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:20:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:20:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:20:34 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:20:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:20:34 --> Language Class Initialized
+DEBUG - 2013-11-24 15:20:34 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:20:34 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:20:34 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:20:34 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:20:34 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:20:34 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:20:34 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:20:34 --> Session Class Initialized
+DEBUG - 2013-11-24 15:20:34 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:20:34 --> Session routines successfully run
+DEBUG - 2013-11-24 15:20:34 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:20:34 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:20:34 --> Final output sent to browser
+DEBUG - 2013-11-24 15:20:34 --> Total execution time: 0.1630
+DEBUG - 2013-11-24 15:33:33 --> Config Class Initialized
+DEBUG - 2013-11-24 15:33:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:33:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:33:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:33:33 --> URI Class Initialized
+DEBUG - 2013-11-24 15:33:33 --> Router Class Initialized
+DEBUG - 2013-11-24 15:33:33 --> Output Class Initialized
+DEBUG - 2013-11-24 15:33:33 --> Security Class Initialized
+DEBUG - 2013-11-24 15:33:33 --> Input Class Initialized
+DEBUG - 2013-11-24 15:33:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:33:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:33:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:33:33 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:33:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:33:33 --> Language Class Initialized
+DEBUG - 2013-11-24 15:33:33 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:33:33 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:33:33 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:33:33 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:33:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:33:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:33:33 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:33:33 --> Session Class Initialized
+DEBUG - 2013-11-24 15:33:33 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:33:33 --> Session routines successfully run
+DEBUG - 2013-11-24 15:33:33 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:33:33 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:33:33 --> Final output sent to browser
+DEBUG - 2013-11-24 15:33:33 --> Total execution time: 0.1230
+DEBUG - 2013-11-24 15:40:40 --> Config Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:40:40 --> URI Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> Router Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> Output Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> Security Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> Input Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:40 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:40 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:40:40 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:40:40 --> Language Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:40:40 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:40:40 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:40:40 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:40:40 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:40:40 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> Session Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:40:40 --> Session routines successfully run
+DEBUG - 2013-11-24 15:40:40 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> Config Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:40:40 --> URI Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> Router Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> No URI present. Default controller set.
+DEBUG - 2013-11-24 15:40:40 --> Output Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> Security Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> Input Class Initialized
+DEBUG - 2013-11-24 15:40:40 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:40 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:40:40 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:40:40 --> Language Class Initialized
+DEBUG - 2013-11-24 15:40:41 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:40:41 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:40:41 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:40:41 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:40:41 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:40:41 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:40:41 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:40:41 --> Session Class Initialized
+DEBUG - 2013-11-24 15:40:41 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:40:41 --> A session cookie was not found.
+DEBUG - 2013-11-24 15:40:41 --> Session routines successfully run
+DEBUG - 2013-11-24 15:40:41 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:40:41 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:40:41 --> File loaded: E:\myworks\ezone\SZone/application/views/public/blank_header.php
+ERROR - 2013-11-24 15:40:41 --> Severity: Notice  --> Undefined variable: fid E:\myworks\ezone\SZone\application\views\blank.php 146
+ERROR - 2013-11-24 15:40:41 --> Severity: Notice  --> Undefined variable: fid E:\myworks\ezone\SZone\application\views\blank.php 275
+DEBUG - 2013-11-24 15:40:41 --> File loaded: E:\myworks\ezone\SZone/application/views/public/footer.php
+DEBUG - 2013-11-24 15:40:41 --> File loaded: E:\myworks\ezone\SZone/application/views/blank.php
+DEBUG - 2013-11-24 15:40:41 --> Final output sent to browser
+DEBUG - 2013-11-24 15:40:41 --> Total execution time: 0.1810
+DEBUG - 2013-11-24 15:40:43 --> Config Class Initialized
+DEBUG - 2013-11-24 15:40:43 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:40:43 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:40:43 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:40:43 --> URI Class Initialized
+DEBUG - 2013-11-24 15:40:43 --> Router Class Initialized
+DEBUG - 2013-11-24 15:40:43 --> Output Class Initialized
+DEBUG - 2013-11-24 15:40:43 --> Security Class Initialized
+DEBUG - 2013-11-24 15:40:43 --> Input Class Initialized
+DEBUG - 2013-11-24 15:40:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:43 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:40:43 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:40:43 --> Language Class Initialized
+DEBUG - 2013-11-24 15:40:43 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:40:43 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:40:43 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:40:43 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:40:43 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:40:43 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:40:43 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:40:43 --> Session Class Initialized
+DEBUG - 2013-11-24 15:40:43 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:40:43 --> Session routines successfully run
+DEBUG - 2013-11-24 15:40:43 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:40:43 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:40:43 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-11-24 15:40:43 --> Final output sent to browser
+DEBUG - 2013-11-24 15:40:43 --> Total execution time: 0.1230
+DEBUG - 2013-11-24 15:40:45 --> Config Class Initialized
+DEBUG - 2013-11-24 15:40:45 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:40:45 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:40:45 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:40:45 --> URI Class Initialized
+DEBUG - 2013-11-24 15:40:45 --> Router Class Initialized
+DEBUG - 2013-11-24 15:40:45 --> Output Class Initialized
+DEBUG - 2013-11-24 15:40:45 --> Security Class Initialized
+DEBUG - 2013-11-24 15:40:45 --> Input Class Initialized
+DEBUG - 2013-11-24 15:40:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:45 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:40:45 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:40:45 --> Language Class Initialized
+DEBUG - 2013-11-24 15:40:45 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:40:45 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:40:45 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:40:45 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:40:45 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:40:45 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:40:45 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:40:45 --> Session Class Initialized
+DEBUG - 2013-11-24 15:40:45 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:40:45 --> Session routines successfully run
+DEBUG - 2013-11-24 15:40:45 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:40:45 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:40:45 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-11-24 15:40:47 --> Model Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Model Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Config Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:40:47 --> URI Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Router Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> No URI present. Default controller set.
+DEBUG - 2013-11-24 15:40:47 --> Output Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Security Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Input Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:47 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:40:47 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:40:47 --> Language Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:40:47 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:40:47 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:40:47 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:40:47 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:40:47 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Session Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:40:47 --> Session routines successfully run
+DEBUG - 2013-11-24 15:40:47 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> File loaded: E:\myworks\ezone\SZone/application/views/public/header.php
+DEBUG - 2013-11-24 15:40:47 --> File loaded: E:\myworks\ezone\SZone/application/views/public/userinfo.php
+DEBUG - 2013-11-24 15:40:47 --> File loaded: E:\myworks\ezone\SZone/application/views/public/footer.php
+DEBUG - 2013-11-24 15:40:47 --> File loaded: E:\myworks\ezone\SZone/application/views/home.php
+DEBUG - 2013-11-24 15:40:47 --> Final output sent to browser
+DEBUG - 2013-11-24 15:40:47 --> Total execution time: 0.1190
+DEBUG - 2013-11-24 15:40:47 --> Config Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:40:47 --> URI Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Router Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Config Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Output Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:40:47 --> Security Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Input Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:47 --> URI Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Router Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:47 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:40:47 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:40:47 --> Language Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Output Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Security Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Input Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:47 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:40:47 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:40:47 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:40:47 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:40:47 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:40:47 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:40:47 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:40:47 --> Language Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Session Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:40:47 --> Session routines successfully run
+DEBUG - 2013-11-24 15:40:47 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:40:47 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:40:47 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:40:47 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:40:47 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:40:47 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Session Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:40:47 --> Session routines successfully run
+DEBUG - 2013-11-24 15:40:47 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:40:47 --> Final output sent to browser
+DEBUG - 2013-11-24 15:40:47 --> Total execution time: 0.2480
+DEBUG - 2013-11-24 15:40:48 --> Final output sent to browser
+DEBUG - 2013-11-24 15:40:48 --> Total execution time: 0.2720
+DEBUG - 2013-11-24 15:40:48 --> Config Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:40:48 --> URI Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Router Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Output Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Security Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Input Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:48 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:40:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:40:48 --> Language Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:40:48 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Session Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:40:48 --> Session routines successfully run
+DEBUG - 2013-11-24 15:40:48 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> DB Transaction Failure
+ERROR - 2013-11-24 15:40:48 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+DEBUG - 2013-11-24 15:40:48 --> Config Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:40:48 --> URI Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Router Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Output Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Security Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Input Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:48 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:40:48 --> Config Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Config Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:40:48 --> Language Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:40:48 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:40:48 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:40:48 --> URI Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> URI Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Router Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Router Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Output Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Output Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Security Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Security Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Input Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Input Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:40:48 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:40:48 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:40:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:40:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:40:48 --> Language Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Language Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:40:48 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Session Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Session Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:40:48 --> Session routines successfully run
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:40:48 --> Session routines successfully run
+DEBUG - 2013-11-24 15:40:48 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:40:48 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Session Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:40:48 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Language file loaded: language/chinese_simplified/db_lang.php
+DEBUG - 2013-11-24 15:40:48 --> Session routines successfully run
+DEBUG - 2013-11-24 15:40:48 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:40:48 --> Final output sent to browser
+DEBUG - 2013-11-24 15:40:48 --> Total execution time: 0.2190
+DEBUG - 2013-11-24 15:40:48 --> Final output sent to browser
+DEBUG - 2013-11-24 15:40:48 --> Total execution time: 0.2730
+DEBUG - 2013-11-24 15:40:48 --> Final output sent to browser
+DEBUG - 2013-11-24 15:40:48 --> Total execution time: 0.3850
+DEBUG - 2013-11-24 15:41:07 --> Config Class Initialized
+DEBUG - 2013-11-24 15:41:07 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:41:07 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:41:07 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:41:07 --> URI Class Initialized
+DEBUG - 2013-11-24 15:41:07 --> Router Class Initialized
+DEBUG - 2013-11-24 15:41:07 --> Output Class Initialized
+DEBUG - 2013-11-24 15:41:07 --> Security Class Initialized
+DEBUG - 2013-11-24 15:41:07 --> Input Class Initialized
+DEBUG - 2013-11-24 15:41:07 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:41:07 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:41:07 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:41:07 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:41:07 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:41:07 --> Language Class Initialized
+DEBUG - 2013-11-24 15:41:19 --> Config Class Initialized
+DEBUG - 2013-11-24 15:41:19 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:41:19 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:41:19 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:41:19 --> URI Class Initialized
+DEBUG - 2013-11-24 15:41:19 --> Router Class Initialized
+DEBUG - 2013-11-24 15:41:19 --> Output Class Initialized
+DEBUG - 2013-11-24 15:41:19 --> Security Class Initialized
+DEBUG - 2013-11-24 15:41:19 --> Input Class Initialized
+DEBUG - 2013-11-24 15:41:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:41:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:41:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:41:19 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:41:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:41:19 --> Language Class Initialized
+DEBUG - 2013-11-24 15:41:19 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:41:19 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:41:19 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:41:19 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:41:19 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:41:19 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:41:19 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:41:19 --> Session Class Initialized
+DEBUG - 2013-11-24 15:41:19 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:41:19 --> Session routines successfully run
+DEBUG - 2013-11-24 15:41:19 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:41:19 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:41:19 --> Final output sent to browser
+DEBUG - 2013-11-24 15:41:19 --> Total execution time: 0.1010
+DEBUG - 2013-11-24 15:47:59 --> Config Class Initialized
+DEBUG - 2013-11-24 15:47:59 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:47:59 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:47:59 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:47:59 --> URI Class Initialized
+DEBUG - 2013-11-24 15:47:59 --> Router Class Initialized
+DEBUG - 2013-11-24 15:47:59 --> Output Class Initialized
+DEBUG - 2013-11-24 15:47:59 --> Security Class Initialized
+DEBUG - 2013-11-24 15:47:59 --> Input Class Initialized
+DEBUG - 2013-11-24 15:47:59 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:47:59 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:47:59 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:47:59 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:47:59 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:47:59 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:47:59 --> Language Class Initialized
+DEBUG - 2013-11-24 15:47:59 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:47:59 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:47:59 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:47:59 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:47:59 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:47:59 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:47:59 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:47:59 --> Session Class Initialized
+DEBUG - 2013-11-24 15:47:59 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:47:59 --> Session routines successfully run
+DEBUG - 2013-11-24 15:47:59 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:47:59 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:47:59 --> Final output sent to browser
+DEBUG - 2013-11-24 15:47:59 --> Total execution time: 0.1250
+DEBUG - 2013-11-24 15:53:08 --> Config Class Initialized
+DEBUG - 2013-11-24 15:53:08 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:53:08 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:53:08 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:53:08 --> URI Class Initialized
+DEBUG - 2013-11-24 15:53:08 --> Router Class Initialized
+DEBUG - 2013-11-24 15:53:08 --> Output Class Initialized
+DEBUG - 2013-11-24 15:53:08 --> Security Class Initialized
+DEBUG - 2013-11-24 15:53:08 --> Input Class Initialized
+DEBUG - 2013-11-24 15:53:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:53:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:53:08 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:53:08 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:53:08 --> Language Class Initialized
+DEBUG - 2013-11-24 15:53:08 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:53:08 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:53:08 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:53:08 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:53:08 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:53:08 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:53:08 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:53:08 --> Session Class Initialized
+DEBUG - 2013-11-24 15:53:08 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:53:08 --> Session routines successfully run
+DEBUG - 2013-11-24 15:53:09 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:53:09 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:53:09 --> File loaded: E:\myworks\ezone\SZone/application/views/group/newgroup.php
+DEBUG - 2013-11-24 15:53:09 --> Final output sent to browser
+DEBUG - 2013-11-24 15:53:09 --> Total execution time: 0.1640
+DEBUG - 2013-11-24 15:53:23 --> Config Class Initialized
+DEBUG - 2013-11-24 15:53:23 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:53:23 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:53:23 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:53:23 --> URI Class Initialized
+DEBUG - 2013-11-24 15:53:23 --> Router Class Initialized
+DEBUG - 2013-11-24 15:53:23 --> Output Class Initialized
+DEBUG - 2013-11-24 15:53:23 --> Security Class Initialized
+DEBUG - 2013-11-24 15:53:23 --> Input Class Initialized
+DEBUG - 2013-11-24 15:53:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:53:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:53:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:53:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:53:23 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:53:23 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:53:23 --> Language Class Initialized
+DEBUG - 2013-11-24 15:53:23 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:53:23 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:53:23 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:53:23 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:53:23 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:53:23 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:53:23 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:53:23 --> Session Class Initialized
+DEBUG - 2013-11-24 15:53:23 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:53:23 --> Session routines successfully run
+DEBUG - 2013-11-24 15:53:23 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:53:23 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:53:23 --> Final output sent to browser
+DEBUG - 2013-11-24 15:53:23 --> Total execution time: 0.1530
+DEBUG - 2013-11-24 15:56:24 --> Config Class Initialized
+DEBUG - 2013-11-24 15:56:24 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:56:24 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:56:24 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:56:24 --> URI Class Initialized
+DEBUG - 2013-11-24 15:56:24 --> Router Class Initialized
+DEBUG - 2013-11-24 15:56:24 --> Output Class Initialized
+DEBUG - 2013-11-24 15:56:24 --> Security Class Initialized
+DEBUG - 2013-11-24 15:56:24 --> Input Class Initialized
+DEBUG - 2013-11-24 15:56:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:56:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:56:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:56:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:56:24 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:56:24 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:56:24 --> Language Class Initialized
+DEBUG - 2013-11-24 15:56:31 --> Config Class Initialized
+DEBUG - 2013-11-24 15:56:31 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:56:31 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:56:31 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:56:31 --> URI Class Initialized
+DEBUG - 2013-11-24 15:56:31 --> Router Class Initialized
+DEBUG - 2013-11-24 15:56:31 --> Output Class Initialized
+DEBUG - 2013-11-24 15:56:31 --> Security Class Initialized
+DEBUG - 2013-11-24 15:56:31 --> Input Class Initialized
+DEBUG - 2013-11-24 15:56:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:56:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:56:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:56:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:56:31 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:56:31 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:56:31 --> Language Class Initialized
+DEBUG - 2013-11-24 15:56:31 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:56:31 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:56:31 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:56:31 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:56:31 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:56:31 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:56:31 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:56:31 --> Session Class Initialized
+DEBUG - 2013-11-24 15:56:31 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:56:31 --> Session routines successfully run
+DEBUG - 2013-11-24 15:56:31 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:56:31 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:56:31 --> Final output sent to browser
+DEBUG - 2013-11-24 15:56:31 --> Total execution time: 0.1340
+DEBUG - 2013-11-24 15:56:39 --> Config Class Initialized
+DEBUG - 2013-11-24 15:56:39 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:56:39 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:56:39 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:56:39 --> URI Class Initialized
+DEBUG - 2013-11-24 15:56:39 --> Router Class Initialized
+DEBUG - 2013-11-24 15:56:39 --> Output Class Initialized
+DEBUG - 2013-11-24 15:56:39 --> Security Class Initialized
+DEBUG - 2013-11-24 15:56:39 --> Input Class Initialized
+DEBUG - 2013-11-24 15:56:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:56:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:56:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:56:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:56:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:56:39 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:56:39 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:56:39 --> Language Class Initialized
+DEBUG - 2013-11-24 15:56:39 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:56:39 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:56:39 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:56:39 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:56:39 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:56:39 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:56:39 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:56:39 --> Session Class Initialized
+DEBUG - 2013-11-24 15:56:39 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:56:39 --> Session routines successfully run
+DEBUG - 2013-11-24 15:56:39 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:56:39 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:56:39 --> Final output sent to browser
+DEBUG - 2013-11-24 15:56:39 --> Total execution time: 0.1100
+DEBUG - 2013-11-24 15:56:44 --> Config Class Initialized
+DEBUG - 2013-11-24 15:56:44 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:56:44 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:56:44 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:56:44 --> URI Class Initialized
+DEBUG - 2013-11-24 15:56:44 --> Router Class Initialized
+DEBUG - 2013-11-24 15:56:44 --> Output Class Initialized
+DEBUG - 2013-11-24 15:56:44 --> Security Class Initialized
+DEBUG - 2013-11-24 15:56:44 --> Input Class Initialized
+DEBUG - 2013-11-24 15:56:44 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:56:44 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:56:44 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:56:44 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:56:44 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:56:44 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:56:44 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:56:44 --> Language Class Initialized
+DEBUG - 2013-11-24 15:56:44 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:56:44 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:56:44 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:56:44 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:56:44 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:56:44 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:56:44 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:56:44 --> Session Class Initialized
+DEBUG - 2013-11-24 15:56:44 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:56:44 --> Session routines successfully run
+DEBUG - 2013-11-24 15:56:44 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:56:44 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:56:44 --> Final output sent to browser
+DEBUG - 2013-11-24 15:56:44 --> Total execution time: 0.1060
+DEBUG - 2013-11-24 15:58:30 --> Config Class Initialized
+DEBUG - 2013-11-24 15:58:30 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:58:30 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:58:30 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:58:30 --> URI Class Initialized
+DEBUG - 2013-11-24 15:58:30 --> Router Class Initialized
+DEBUG - 2013-11-24 15:58:30 --> Output Class Initialized
+DEBUG - 2013-11-24 15:58:30 --> Security Class Initialized
+DEBUG - 2013-11-24 15:58:30 --> Input Class Initialized
+DEBUG - 2013-11-24 15:58:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:58:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:58:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:58:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:58:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:58:30 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:58:30 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:58:30 --> Language Class Initialized
+DEBUG - 2013-11-24 15:58:30 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:58:30 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:58:30 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:58:30 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:58:30 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:58:30 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:58:30 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:58:30 --> Session Class Initialized
+DEBUG - 2013-11-24 15:58:30 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:58:30 --> Session routines successfully run
+DEBUG - 2013-11-24 15:58:30 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:58:30 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:58:30 --> Final output sent to browser
+DEBUG - 2013-11-24 15:58:30 --> Total execution time: 0.1250
+DEBUG - 2013-11-24 15:59:15 --> Config Class Initialized
+DEBUG - 2013-11-24 15:59:15 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:59:15 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:59:15 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:59:15 --> URI Class Initialized
+DEBUG - 2013-11-24 15:59:15 --> Router Class Initialized
+DEBUG - 2013-11-24 15:59:15 --> Output Class Initialized
+DEBUG - 2013-11-24 15:59:15 --> Security Class Initialized
+DEBUG - 2013-11-24 15:59:15 --> Input Class Initialized
+DEBUG - 2013-11-24 15:59:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:59:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:59:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:59:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:59:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:59:15 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:59:15 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:59:15 --> Language Class Initialized
+DEBUG - 2013-11-24 15:59:15 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:59:15 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:59:15 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:59:15 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:59:15 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:59:15 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:59:16 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:59:16 --> Session Class Initialized
+DEBUG - 2013-11-24 15:59:16 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:59:16 --> Session routines successfully run
+DEBUG - 2013-11-24 15:59:16 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:59:16 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:59:16 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 15:59:16 --> Final output sent to browser
+DEBUG - 2013-11-24 15:59:16 --> Total execution time: 0.1240
+DEBUG - 2013-11-24 15:59:16 --> Config Class Initialized
+DEBUG - 2013-11-24 15:59:16 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:59:16 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:59:16 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:59:16 --> URI Class Initialized
+DEBUG - 2013-11-24 15:59:16 --> Router Class Initialized
+ERROR - 2013-11-24 15:59:16 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 15:59:16 --> Config Class Initialized
+DEBUG - 2013-11-24 15:59:16 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:59:16 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:59:16 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:59:16 --> URI Class Initialized
+DEBUG - 2013-11-24 15:59:16 --> Router Class Initialized
+ERROR - 2013-11-24 15:59:16 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 15:59:16 --> Config Class Initialized
+DEBUG - 2013-11-24 15:59:16 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:59:16 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:59:16 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:59:16 --> URI Class Initialized
+DEBUG - 2013-11-24 15:59:16 --> Router Class Initialized
+ERROR - 2013-11-24 15:59:16 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 15:59:34 --> Config Class Initialized
+DEBUG - 2013-11-24 15:59:34 --> Hooks Class Initialized
+DEBUG - 2013-11-24 15:59:34 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 15:59:34 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 15:59:34 --> URI Class Initialized
+DEBUG - 2013-11-24 15:59:34 --> Router Class Initialized
+DEBUG - 2013-11-24 15:59:34 --> Output Class Initialized
+DEBUG - 2013-11-24 15:59:34 --> Security Class Initialized
+DEBUG - 2013-11-24 15:59:34 --> Input Class Initialized
+DEBUG - 2013-11-24 15:59:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:59:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:59:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:59:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:59:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 15:59:34 --> CRSF cookie Set
+DEBUG - 2013-11-24 15:59:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 15:59:34 --> Language Class Initialized
+DEBUG - 2013-11-24 15:59:34 --> Loader Class Initialized
+DEBUG - 2013-11-24 15:59:34 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 15:59:34 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 15:59:34 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 15:59:34 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 15:59:34 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 15:59:34 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 15:59:34 --> Session Class Initialized
+DEBUG - 2013-11-24 15:59:34 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 15:59:34 --> Session routines successfully run
+DEBUG - 2013-11-24 15:59:34 --> Pagination Class Initialized
+DEBUG - 2013-11-24 15:59:34 --> Controller Class Initialized
+DEBUG - 2013-11-24 15:59:34 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 15:59:34 --> Final output sent to browser
+DEBUG - 2013-11-24 15:59:34 --> Total execution time: 0.0950
+DEBUG - 2013-11-24 16:10:19 --> Config Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:10:19 --> URI Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Router Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> No URI present. Default controller set.
+DEBUG - 2013-11-24 16:10:19 --> Output Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Security Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Input Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:19 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:10:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:10:19 --> Language Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:10:19 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:10:19 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:10:19 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:10:19 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:10:19 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Session Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:10:19 --> Session routines successfully run
+DEBUG - 2013-11-24 16:10:19 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> File loaded: E:\myworks\ezone\SZone/application/views/public/header.php
+ERROR - 2013-11-24 16:10:19 --> Severity: Notice  --> Undefined index: fid E:\myworks\ezone\SZone\application\views\home.php 171
+ERROR - 2013-11-24 16:10:19 --> Severity: Notice  --> Undefined index: fid E:\myworks\ezone\SZone\application\views\home.php 194
+ERROR - 2013-11-24 16:10:19 --> Severity: Notice  --> Undefined index: fid E:\myworks\ezone\SZone\application\views\home.php 171
+ERROR - 2013-11-24 16:10:19 --> Severity: Notice  --> Undefined index: fid E:\myworks\ezone\SZone\application\views\home.php 194
+ERROR - 2013-11-24 16:10:19 --> Severity: Notice  --> Undefined index: fid E:\myworks\ezone\SZone\application\views\home.php 171
+ERROR - 2013-11-24 16:10:19 --> Severity: Notice  --> Undefined index: fid E:\myworks\ezone\SZone\application\views\home.php 194
+ERROR - 2013-11-24 16:10:19 --> Severity: Notice  --> Undefined index: fid E:\myworks\ezone\SZone\application\views\home.php 171
+ERROR - 2013-11-24 16:10:19 --> Severity: Notice  --> Undefined index: fid E:\myworks\ezone\SZone\application\views\home.php 194
+ERROR - 2013-11-24 16:10:19 --> Severity: Notice  --> Undefined index: fid E:\myworks\ezone\SZone\application\views\home.php 194
+ERROR - 2013-11-24 16:10:19 --> Severity: Notice  --> Undefined index: fid E:\myworks\ezone\SZone\application\views\home.php 194
+ERROR - 2013-11-24 16:10:19 --> Severity: Notice  --> Undefined index: fid E:\myworks\ezone\SZone\application\views\home.php 194
+ERROR - 2013-11-24 16:10:19 --> Severity: Notice  --> Undefined index: fid E:\myworks\ezone\SZone\application\views\home.php 194
+ERROR - 2013-11-24 16:10:19 --> Severity: Notice  --> Undefined index: fid E:\myworks\ezone\SZone\application\views\home.php 194
+ERROR - 2013-11-24 16:10:19 --> Severity: Notice  --> Undefined index: fid E:\myworks\ezone\SZone\application\views\home.php 171
+ERROR - 2013-11-24 16:10:19 --> Severity: Notice  --> Undefined index: fid E:\myworks\ezone\SZone\application\views\home.php 194
+DEBUG - 2013-11-24 16:10:19 --> File loaded: E:\myworks\ezone\SZone/application/views/public/userinfo.php
+DEBUG - 2013-11-24 16:10:19 --> File loaded: E:\myworks\ezone\SZone/application/views/public/footer.php
+DEBUG - 2013-11-24 16:10:19 --> File loaded: E:\myworks\ezone\SZone/application/views/home.php
+DEBUG - 2013-11-24 16:10:19 --> Final output sent to browser
+DEBUG - 2013-11-24 16:10:19 --> Total execution time: 0.2310
+DEBUG - 2013-11-24 16:10:19 --> Config Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:10:19 --> URI Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Router Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Output Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Security Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Config Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Input Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:10:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:19 --> URI Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:19 --> Router Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:10:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:10:19 --> Output Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Language Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Security Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Input Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:19 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:10:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:10:19 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Language Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:10:19 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:10:19 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:10:19 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:10:19 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:10:19 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:10:19 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:10:19 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:10:19 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:10:19 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:10:19 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Session Class Initialized
+DEBUG - 2013-11-24 16:10:19 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:10:20 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:10:20 --> Session routines successfully run
+DEBUG - 2013-11-24 16:10:20 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:10:20 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:10:20 --> Session Class Initialized
+DEBUG - 2013-11-24 16:10:20 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:10:20 --> Session routines successfully run
+DEBUG - 2013-11-24 16:10:20 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:10:20 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:10:20 --> Final output sent to browser
+DEBUG - 2013-11-24 16:10:20 --> Total execution time: 0.1670
+DEBUG - 2013-11-24 16:10:20 --> DB Transaction Failure
+ERROR - 2013-11-24 16:10:20 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+DEBUG - 2013-11-24 16:10:20 --> Language file loaded: language/chinese_simplified/db_lang.php
+DEBUG - 2013-11-24 16:10:48 --> Config Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:10:48 --> URI Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Router Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> No URI present. Default controller set.
+DEBUG - 2013-11-24 16:10:48 --> Output Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Security Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Input Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:48 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:10:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:10:48 --> Language Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:10:48 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Session Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:10:48 --> Session routines successfully run
+DEBUG - 2013-11-24 16:10:48 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> File loaded: E:\myworks\ezone\SZone/application/views/public/header.php
+DEBUG - 2013-11-24 16:10:48 --> File loaded: E:\myworks\ezone\SZone/application/views/public/userinfo.php
+DEBUG - 2013-11-24 16:10:48 --> File loaded: E:\myworks\ezone\SZone/application/views/public/footer.php
+DEBUG - 2013-11-24 16:10:48 --> File loaded: E:\myworks\ezone\SZone/application/views/home.php
+DEBUG - 2013-11-24 16:10:48 --> Final output sent to browser
+DEBUG - 2013-11-24 16:10:48 --> Total execution time: 0.1640
+DEBUG - 2013-11-24 16:10:48 --> Config Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Config Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:10:48 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:10:48 --> URI Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> URI Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Router Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Router Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Output Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Output Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Security Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Input Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:48 --> Security Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:48 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:10:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:10:48 --> Input Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Language Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:48 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:10:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:10:48 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Language Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:10:48 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:10:48 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:10:48 --> Session Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:10:48 --> Session routines successfully run
+DEBUG - 2013-11-24 16:10:48 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Final output sent to browser
+DEBUG - 2013-11-24 16:10:48 --> Total execution time: 0.1130
+DEBUG - 2013-11-24 16:10:48 --> Session Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:10:48 --> Session routines successfully run
+DEBUG - 2013-11-24 16:10:48 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Config Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:10:48 --> URI Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Router Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Output Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Security Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Input Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:48 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:10:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:10:48 --> Language Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:10:48 --> Final output sent to browser
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:10:48 --> Total execution time: 0.2190
+DEBUG - 2013-11-24 16:10:48 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Session Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:10:48 --> Session routines successfully run
+DEBUG - 2013-11-24 16:10:48 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:10:48 --> Final output sent to browser
+DEBUG - 2013-11-24 16:10:48 --> Total execution time: 0.1550
+DEBUG - 2013-11-24 16:10:49 --> Config Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:10:49 --> URI Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Router Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Output Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Config Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Security Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:10:49 --> Input Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:49 --> URI Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:49 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:49 --> Router Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:10:49 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:10:49 --> Language Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Output Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Security Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Input Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:49 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:10:49 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:49 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:10:49 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:49 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:10:49 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:10:49 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:10:49 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:10:49 --> Language Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:10:49 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:10:49 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:10:49 --> Session Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:10:49 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:10:49 --> Session routines successfully run
+DEBUG - 2013-11-24 16:10:49 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:10:49 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:10:49 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Final output sent to browser
+DEBUG - 2013-11-24 16:10:49 --> Total execution time: 0.1420
+DEBUG - 2013-11-24 16:10:49 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Session Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:10:49 --> Session routines successfully run
+DEBUG - 2013-11-24 16:10:49 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Config Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:10:49 --> URI Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Router Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Final output sent to browser
+DEBUG - 2013-11-24 16:10:49 --> Total execution time: 0.5350
+DEBUG - 2013-11-24 16:10:49 --> Output Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Security Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Input Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:49 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:10:49 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:10:49 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:10:49 --> Language Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:10:49 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:10:49 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:10:49 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:10:49 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:10:49 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Session Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:10:49 --> Session routines successfully run
+DEBUG - 2013-11-24 16:10:49 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:10:49 --> DB Transaction Failure
+ERROR - 2013-11-24 16:10:49 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+DEBUG - 2013-11-24 16:10:49 --> Language file loaded: language/chinese_simplified/db_lang.php
+DEBUG - 2013-11-24 16:11:37 --> Config Class Initialized
+DEBUG - 2013-11-24 16:11:37 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:11:37 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:11:37 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:11:37 --> URI Class Initialized
+DEBUG - 2013-11-24 16:11:37 --> Router Class Initialized
+DEBUG - 2013-11-24 16:11:37 --> No URI present. Default controller set.
+DEBUG - 2013-11-24 16:11:37 --> Output Class Initialized
+DEBUG - 2013-11-24 16:11:37 --> Security Class Initialized
+DEBUG - 2013-11-24 16:11:37 --> Input Class Initialized
+DEBUG - 2013-11-24 16:11:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:37 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:11:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:11:37 --> Language Class Initialized
+DEBUG - 2013-11-24 16:11:37 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:11:37 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:11:37 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:11:37 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:11:37 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:11:37 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:11:37 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:11:37 --> Session Class Initialized
+DEBUG - 2013-11-24 16:11:37 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:11:37 --> Session routines successfully run
+DEBUG - 2013-11-24 16:11:37 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:11:37 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:11:37 --> File loaded: E:\myworks\ezone\SZone/application/views/public/header.php
+DEBUG - 2013-11-24 16:11:37 --> File loaded: E:\myworks\ezone\SZone/application/views/public/userinfo.php
+DEBUG - 2013-11-24 16:11:37 --> File loaded: E:\myworks\ezone\SZone/application/views/public/footer.php
+DEBUG - 2013-11-24 16:11:37 --> File loaded: E:\myworks\ezone\SZone/application/views/home.php
+DEBUG - 2013-11-24 16:11:37 --> Final output sent to browser
+DEBUG - 2013-11-24 16:11:37 --> Total execution time: 0.1190
+DEBUG - 2013-11-24 16:11:38 --> Config Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:11:38 --> URI Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Router Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Output Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Security Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Input Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Config Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Config Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:11:38 --> URI Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:11:38 --> URI Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Router Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Output Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Security Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Input Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:38 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:11:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:11:38 --> Language Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Config Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:11:38 --> URI Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Router Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:38 --> Output Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Security Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Input Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:38 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:11:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:11:38 --> Language Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Router Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:38 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:11:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:11:38 --> Output Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Language Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Security Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Input Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:38 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:11:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:11:38 --> Language Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:11:38 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:11:38 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:11:38 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:11:38 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:11:38 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:11:38 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:11:38 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:11:38 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Config Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Config Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:11:38 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:11:38 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:11:38 --> URI Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Router Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Output Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Security Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Input Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:38 --> Session Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:38 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:11:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:38 --> Session routines successfully run
+DEBUG - 2013-11-24 16:11:38 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:11:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:11:38 --> Language Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:11:38 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Session Class Initialized
+DEBUG - 2013-11-24 16:11:38 --> Final output sent to browser
+DEBUG - 2013-11-24 16:11:38 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:11:38 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:11:39 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:11:39 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:11:39 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:11:39 --> Total execution time: 0.7890
+DEBUG - 2013-11-24 16:11:39 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:11:39 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:11:39 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:11:39 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:11:40 --> Session routines successfully run
+DEBUG - 2013-11-24 16:11:40 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:11:40 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:11:40 --> URI Class Initialized
+DEBUG - 2013-11-24 16:11:40 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:11:40 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:11:40 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:11:40 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:11:40 --> Router Class Initialized
+DEBUG - 2013-11-24 16:11:40 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:11:40 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:11:40 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:11:40 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:11:40 --> Output Class Initialized
+DEBUG - 2013-11-24 16:11:40 --> Session Class Initialized
+DEBUG - 2013-11-24 16:11:40 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:11:41 --> Final output sent to browser
+DEBUG - 2013-11-24 16:11:41 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:11:41 --> Security Class Initialized
+DEBUG - 2013-11-24 16:11:41 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:11:41 --> Session Class Initialized
+DEBUG - 2013-11-24 16:11:41 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:11:41 --> Total execution time: 2.7622
+DEBUG - 2013-11-24 16:11:41 --> Input Class Initialized
+DEBUG - 2013-11-24 16:11:41 --> Session routines successfully run
+DEBUG - 2013-11-24 16:11:41 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:11:41 --> Session Class Initialized
+DEBUG - 2013-11-24 16:11:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:41 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:11:41 --> Session routines successfully run
+DEBUG - 2013-11-24 16:11:41 --> Session routines successfully run
+DEBUG - 2013-11-24 16:11:41 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:11:41 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:11:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:41 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:11:41 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:11:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:11:41 --> DB Transaction Failure
+DEBUG - 2013-11-24 16:11:41 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:11:41 --> Final output sent to browser
+DEBUG - 2013-11-24 16:11:41 --> CRSF cookie Set
+ERROR - 2013-11-24 16:11:41 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+DEBUG - 2013-11-24 16:11:41 --> Total execution time: 3.2792
+DEBUG - 2013-11-24 16:11:41 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:11:41 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:11:41 --> Language file loaded: language/chinese_simplified/db_lang.php
+DEBUG - 2013-11-24 16:11:41 --> Language Class Initialized
+DEBUG - 2013-11-24 16:11:41 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:11:41 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:11:41 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:11:41 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:11:41 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:11:41 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:11:41 --> Final output sent to browser
+DEBUG - 2013-11-24 16:11:41 --> Total execution time: 3.0422
+DEBUG - 2013-11-24 16:11:41 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:11:41 --> Session Class Initialized
+DEBUG - 2013-11-24 16:11:41 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:11:41 --> Session routines successfully run
+DEBUG - 2013-11-24 16:11:41 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:11:41 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:11:41 --> Final output sent to browser
+DEBUG - 2013-11-24 16:11:41 --> Total execution time: 3.6702
+DEBUG - 2013-11-24 16:16:24 --> Config Class Initialized
+DEBUG - 2013-11-24 16:16:24 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:16:24 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:16:24 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:16:24 --> URI Class Initialized
+DEBUG - 2013-11-24 16:16:24 --> Router Class Initialized
+DEBUG - 2013-11-24 16:16:24 --> Output Class Initialized
+DEBUG - 2013-11-24 16:16:24 --> Security Class Initialized
+DEBUG - 2013-11-24 16:16:24 --> Input Class Initialized
+DEBUG - 2013-11-24 16:16:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:16:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:16:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:16:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:16:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:16:24 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:16:24 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:16:24 --> Language Class Initialized
+DEBUG - 2013-11-24 16:16:24 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:16:24 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:16:24 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:16:24 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:16:24 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:16:24 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:16:24 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:16:24 --> Session Class Initialized
+DEBUG - 2013-11-24 16:16:24 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:16:24 --> Session routines successfully run
+DEBUG - 2013-11-24 16:16:24 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:16:24 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:16:35 --> Config Class Initialized
+DEBUG - 2013-11-24 16:16:35 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:16:35 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:16:35 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:16:35 --> URI Class Initialized
+DEBUG - 2013-11-24 16:16:35 --> Router Class Initialized
+DEBUG - 2013-11-24 16:16:35 --> Output Class Initialized
+DEBUG - 2013-11-24 16:16:35 --> Security Class Initialized
+DEBUG - 2013-11-24 16:16:35 --> Input Class Initialized
+DEBUG - 2013-11-24 16:16:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:16:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:16:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:16:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:16:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:16:35 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:16:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:16:35 --> Language Class Initialized
+DEBUG - 2013-11-24 16:16:35 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:16:35 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:16:35 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:16:35 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:16:35 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:16:35 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:16:35 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:16:35 --> Session Class Initialized
+DEBUG - 2013-11-24 16:16:35 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:16:35 --> Session routines successfully run
+DEBUG - 2013-11-24 16:16:35 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:16:35 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:22:34 --> Config Class Initialized
+DEBUG - 2013-11-24 16:22:34 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:22:34 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:22:34 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:22:34 --> URI Class Initialized
+DEBUG - 2013-11-24 16:22:34 --> Router Class Initialized
+DEBUG - 2013-11-24 16:22:34 --> Output Class Initialized
+DEBUG - 2013-11-24 16:22:34 --> Security Class Initialized
+DEBUG - 2013-11-24 16:22:34 --> Input Class Initialized
+DEBUG - 2013-11-24 16:22:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:35 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:22:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:22:35 --> Language Class Initialized
+DEBUG - 2013-11-24 16:22:35 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:22:35 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:22:35 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:22:35 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:22:35 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:22:35 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:22:35 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:22:35 --> Session Class Initialized
+DEBUG - 2013-11-24 16:22:35 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:22:35 --> Session routines successfully run
+DEBUG - 2013-11-24 16:22:35 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:22:35 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Config Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:22:37 --> URI Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Router Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> No URI present. Default controller set.
+DEBUG - 2013-11-24 16:22:37 --> Output Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Security Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Input Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:37 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:22:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:22:37 --> Language Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:22:37 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:22:37 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:22:37 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:22:37 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:22:37 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Session Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:22:37 --> Session routines successfully run
+DEBUG - 2013-11-24 16:22:37 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> File loaded: E:\myworks\ezone\SZone/application/views/public/header.php
+DEBUG - 2013-11-24 16:22:37 --> File loaded: E:\myworks\ezone\SZone/application/views/public/userinfo.php
+DEBUG - 2013-11-24 16:22:37 --> File loaded: E:\myworks\ezone\SZone/application/views/public/footer.php
+DEBUG - 2013-11-24 16:22:37 --> File loaded: E:\myworks\ezone\SZone/application/views/home.php
+DEBUG - 2013-11-24 16:22:37 --> Final output sent to browser
+DEBUG - 2013-11-24 16:22:37 --> Total execution time: 0.2610
+DEBUG - 2013-11-24 16:22:37 --> Config Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:22:37 --> URI Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Router Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Output Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Config Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:22:37 --> URI Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Config Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Security Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Router Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Output Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Security Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Input Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:37 --> Config Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:22:37 --> URI Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Router Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:22:37 --> URI Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Router Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Input Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:37 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:22:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:22:37 --> Language Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:22:37 --> Config Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:22:37 --> URI Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Router Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Output Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Security Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Output Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:22:37 --> Input Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Security Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Config Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Language Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Output Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> Input Class Initialized
+DEBUG - 2013-11-24 16:22:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:38 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Security Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:22:38 --> Input Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:22:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:22:38 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:22:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:22:38 --> Language Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:22:38 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:22:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:38 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:22:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:22:38 --> Language Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:22:38 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:22:38 --> Session Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:22:38 --> Session Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:22:38 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:22:38 --> URI Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Session routines successfully run
+DEBUG - 2013-11-24 16:22:38 --> Session routines successfully run
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:22:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:22:38 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Router Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Language Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:22:38 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Session Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Output Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Final output sent to browser
+DEBUG - 2013-11-24 16:22:38 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:22:38 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Security Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:22:38 --> Session Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Input Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:22:38 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:22:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:22:38 --> Language Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Session Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:22:38 --> Total execution time: 0.8440
+DEBUG - 2013-11-24 16:22:38 --> Final output sent to browser
+DEBUG - 2013-11-24 16:22:38 --> Total execution time: 0.9741
+DEBUG - 2013-11-24 16:22:38 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:22:38 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:22:38 --> Session Class Initialized
+DEBUG - 2013-11-24 16:22:39 --> Session routines successfully run
+DEBUG - 2013-11-24 16:22:39 --> Session routines successfully run
+DEBUG - 2013-11-24 16:22:39 --> Session routines successfully run
+DEBUG - 2013-11-24 16:22:39 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:22:39 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:22:39 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:22:39 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:22:39 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:22:39 --> Final output sent to browser
+DEBUG - 2013-11-24 16:22:39 --> Total execution time: 1.8191
+DEBUG - 2013-11-24 16:22:39 --> Final output sent to browser
+DEBUG - 2013-11-24 16:22:39 --> Total execution time: 1.8991
+DEBUG - 2013-11-24 16:22:39 --> Session routines successfully run
+DEBUG - 2013-11-24 16:22:39 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:22:39 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:22:39 --> Final output sent to browser
+DEBUG - 2013-11-24 16:22:39 --> Total execution time: 1.8531
+DEBUG - 2013-11-24 16:22:39 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:22:39 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:22:39 --> DB Transaction Failure
+ERROR - 2013-11-24 16:22:39 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+DEBUG - 2013-11-24 16:22:39 --> Language file loaded: language/chinese_simplified/db_lang.php
+DEBUG - 2013-11-24 16:26:21 --> Config Class Initialized
+DEBUG - 2013-11-24 16:26:21 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:26:21 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:26:21 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:26:21 --> URI Class Initialized
+DEBUG - 2013-11-24 16:26:21 --> Router Class Initialized
+DEBUG - 2013-11-24 16:26:21 --> Output Class Initialized
+DEBUG - 2013-11-24 16:26:21 --> Security Class Initialized
+DEBUG - 2013-11-24 16:26:21 --> Input Class Initialized
+DEBUG - 2013-11-24 16:26:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:21 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:26:21 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:26:21 --> Language Class Initialized
+DEBUG - 2013-11-24 16:26:21 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:26:21 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:26:21 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:26:21 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:26:21 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:26:21 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:26:21 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:26:21 --> Session Class Initialized
+DEBUG - 2013-11-24 16:26:21 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:26:21 --> Session routines successfully run
+DEBUG - 2013-11-24 16:26:21 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:26:21 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:26:31 --> Config Class Initialized
+DEBUG - 2013-11-24 16:26:31 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:26:31 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:26:31 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:26:31 --> URI Class Initialized
+DEBUG - 2013-11-24 16:26:31 --> Router Class Initialized
+DEBUG - 2013-11-24 16:26:31 --> Output Class Initialized
+DEBUG - 2013-11-24 16:26:31 --> Security Class Initialized
+DEBUG - 2013-11-24 16:26:31 --> Input Class Initialized
+DEBUG - 2013-11-24 16:26:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:31 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:26:31 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:26:31 --> Language Class Initialized
+DEBUG - 2013-11-24 16:26:31 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:26:31 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:26:31 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:26:31 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:26:31 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:26:31 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:26:31 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:26:31 --> Session Class Initialized
+DEBUG - 2013-11-24 16:26:31 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:26:31 --> Session routines successfully run
+DEBUG - 2013-11-24 16:26:31 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:26:31 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:26:33 --> Config Class Initialized
+DEBUG - 2013-11-24 16:26:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:26:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:26:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:26:33 --> URI Class Initialized
+DEBUG - 2013-11-24 16:26:33 --> Router Class Initialized
+DEBUG - 2013-11-24 16:26:33 --> Output Class Initialized
+DEBUG - 2013-11-24 16:26:33 --> Security Class Initialized
+DEBUG - 2013-11-24 16:26:33 --> Input Class Initialized
+DEBUG - 2013-11-24 16:26:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:33 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:26:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:26:33 --> Language Class Initialized
+DEBUG - 2013-11-24 16:26:33 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:26:33 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:26:33 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:26:33 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:26:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:26:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:26:33 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:26:33 --> Session Class Initialized
+DEBUG - 2013-11-24 16:26:33 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:26:33 --> Session routines successfully run
+DEBUG - 2013-11-24 16:26:33 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:26:33 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:26:45 --> Config Class Initialized
+DEBUG - 2013-11-24 16:26:45 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:26:45 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:26:45 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:26:45 --> URI Class Initialized
+DEBUG - 2013-11-24 16:26:45 --> Router Class Initialized
+DEBUG - 2013-11-24 16:26:45 --> Output Class Initialized
+DEBUG - 2013-11-24 16:26:45 --> Security Class Initialized
+DEBUG - 2013-11-24 16:26:45 --> Input Class Initialized
+DEBUG - 2013-11-24 16:26:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:26:45 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:26:45 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:26:45 --> Language Class Initialized
+DEBUG - 2013-11-24 16:26:45 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:26:45 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:26:45 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:26:45 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:26:45 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:26:45 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:26:45 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:26:45 --> Session Class Initialized
+DEBUG - 2013-11-24 16:26:45 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:26:45 --> Session routines successfully run
+DEBUG - 2013-11-24 16:26:45 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:26:45 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:27:45 --> Config Class Initialized
+DEBUG - 2013-11-24 16:27:45 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:27:45 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:27:45 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:27:45 --> URI Class Initialized
+DEBUG - 2013-11-24 16:27:45 --> Router Class Initialized
+DEBUG - 2013-11-24 16:27:45 --> Output Class Initialized
+DEBUG - 2013-11-24 16:27:45 --> Security Class Initialized
+DEBUG - 2013-11-24 16:27:45 --> Input Class Initialized
+DEBUG - 2013-11-24 16:27:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:27:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:27:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:27:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:27:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:27:45 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:27:45 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:27:45 --> Language Class Initialized
+DEBUG - 2013-11-24 16:27:45 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:27:45 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:27:45 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:27:45 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:27:45 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:27:45 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:27:45 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:27:45 --> Session Class Initialized
+DEBUG - 2013-11-24 16:27:45 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:27:45 --> Session routines successfully run
+DEBUG - 2013-11-24 16:27:45 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:27:45 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:28:00 --> Config Class Initialized
+DEBUG - 2013-11-24 16:28:00 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:28:00 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:28:00 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:28:00 --> URI Class Initialized
+DEBUG - 2013-11-24 16:28:00 --> Router Class Initialized
+DEBUG - 2013-11-24 16:28:00 --> Output Class Initialized
+DEBUG - 2013-11-24 16:28:00 --> Security Class Initialized
+DEBUG - 2013-11-24 16:28:00 --> Input Class Initialized
+DEBUG - 2013-11-24 16:28:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:28:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:28:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:28:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:28:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:28:00 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:28:00 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:28:00 --> Language Class Initialized
+DEBUG - 2013-11-24 16:28:00 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:28:00 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:28:00 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:28:00 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:28:00 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:28:00 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:28:00 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:28:00 --> Session Class Initialized
+DEBUG - 2013-11-24 16:28:00 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:28:00 --> Session routines successfully run
+DEBUG - 2013-11-24 16:28:00 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:28:00 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:28:01 --> Config Class Initialized
+DEBUG - 2013-11-24 16:28:01 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:28:01 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:28:01 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:28:01 --> URI Class Initialized
+DEBUG - 2013-11-24 16:28:01 --> Router Class Initialized
+DEBUG - 2013-11-24 16:28:01 --> Output Class Initialized
+DEBUG - 2013-11-24 16:28:01 --> Security Class Initialized
+DEBUG - 2013-11-24 16:28:01 --> Input Class Initialized
+DEBUG - 2013-11-24 16:28:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:28:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:28:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:28:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:28:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:28:01 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:28:01 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:28:01 --> Language Class Initialized
+DEBUG - 2013-11-24 16:28:01 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:28:01 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:28:01 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:28:01 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:28:01 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:28:01 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:28:01 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:28:01 --> Session Class Initialized
+DEBUG - 2013-11-24 16:28:01 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:28:01 --> Session routines successfully run
+DEBUG - 2013-11-24 16:28:01 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:28:01 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:28:14 --> Config Class Initialized
+DEBUG - 2013-11-24 16:28:14 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:28:14 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:28:14 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:28:14 --> URI Class Initialized
+DEBUG - 2013-11-24 16:28:14 --> Router Class Initialized
+DEBUG - 2013-11-24 16:28:14 --> Output Class Initialized
+DEBUG - 2013-11-24 16:28:14 --> Security Class Initialized
+DEBUG - 2013-11-24 16:28:14 --> Input Class Initialized
+DEBUG - 2013-11-24 16:28:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:28:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:28:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:28:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:28:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:28:14 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:28:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:28:14 --> Language Class Initialized
+DEBUG - 2013-11-24 16:28:14 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:28:14 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:28:14 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:28:14 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:28:14 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:28:14 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:28:14 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:28:14 --> Session Class Initialized
+DEBUG - 2013-11-24 16:28:14 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:28:14 --> Session routines successfully run
+DEBUG - 2013-11-24 16:28:14 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:28:14 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:30:02 --> Config Class Initialized
+DEBUG - 2013-11-24 16:30:02 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:30:02 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:30:02 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:30:02 --> URI Class Initialized
+DEBUG - 2013-11-24 16:30:02 --> Router Class Initialized
+DEBUG - 2013-11-24 16:30:02 --> Output Class Initialized
+DEBUG - 2013-11-24 16:30:02 --> Security Class Initialized
+DEBUG - 2013-11-24 16:30:02 --> Input Class Initialized
+DEBUG - 2013-11-24 16:30:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:02 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:30:02 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:30:02 --> Language Class Initialized
+DEBUG - 2013-11-24 16:30:02 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:30:02 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:30:02 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:30:02 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:30:02 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:30:02 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:30:03 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:30:03 --> Session Class Initialized
+DEBUG - 2013-11-24 16:30:03 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:30:03 --> Session routines successfully run
+DEBUG - 2013-11-24 16:30:03 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:30:03 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:30:21 --> Config Class Initialized
+DEBUG - 2013-11-24 16:30:21 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:30:21 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:30:21 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:30:21 --> URI Class Initialized
+DEBUG - 2013-11-24 16:30:21 --> Router Class Initialized
+DEBUG - 2013-11-24 16:30:21 --> Output Class Initialized
+DEBUG - 2013-11-24 16:30:21 --> Security Class Initialized
+DEBUG - 2013-11-24 16:30:21 --> Input Class Initialized
+DEBUG - 2013-11-24 16:30:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:21 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:30:21 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:30:21 --> Language Class Initialized
+DEBUG - 2013-11-24 16:30:21 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:30:21 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:30:21 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:30:21 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:30:21 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:30:21 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:30:21 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:30:21 --> Session Class Initialized
+DEBUG - 2013-11-24 16:30:21 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:30:21 --> Session routines successfully run
+DEBUG - 2013-11-24 16:30:21 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:30:21 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:30:22 --> Config Class Initialized
+DEBUG - 2013-11-24 16:30:22 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:30:22 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:30:22 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:30:22 --> URI Class Initialized
+DEBUG - 2013-11-24 16:30:22 --> Router Class Initialized
+DEBUG - 2013-11-24 16:30:22 --> Output Class Initialized
+DEBUG - 2013-11-24 16:30:22 --> Security Class Initialized
+DEBUG - 2013-11-24 16:30:22 --> Input Class Initialized
+DEBUG - 2013-11-24 16:30:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:22 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:30:22 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:30:22 --> Language Class Initialized
+DEBUG - 2013-11-24 16:30:22 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:30:22 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:30:22 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:30:22 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:30:22 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:30:22 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:30:22 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:30:22 --> Session Class Initialized
+DEBUG - 2013-11-24 16:30:22 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:30:22 --> Session routines successfully run
+DEBUG - 2013-11-24 16:30:22 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:30:22 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:30:36 --> Config Class Initialized
+DEBUG - 2013-11-24 16:30:36 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:30:36 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:30:36 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:30:36 --> URI Class Initialized
+DEBUG - 2013-11-24 16:30:36 --> Router Class Initialized
+DEBUG - 2013-11-24 16:30:36 --> Output Class Initialized
+DEBUG - 2013-11-24 16:30:36 --> Security Class Initialized
+DEBUG - 2013-11-24 16:30:36 --> Input Class Initialized
+DEBUG - 2013-11-24 16:30:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:30:36 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:30:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:30:36 --> Language Class Initialized
+DEBUG - 2013-11-24 16:30:36 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:30:36 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:30:36 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:30:36 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:30:36 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:30:36 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:30:36 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:30:36 --> Session Class Initialized
+DEBUG - 2013-11-24 16:30:36 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:30:36 --> Session routines successfully run
+DEBUG - 2013-11-24 16:30:36 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:30:36 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:31:27 --> Config Class Initialized
+DEBUG - 2013-11-24 16:31:27 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:31:27 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:31:27 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:31:27 --> URI Class Initialized
+DEBUG - 2013-11-24 16:31:27 --> Router Class Initialized
+DEBUG - 2013-11-24 16:31:27 --> Output Class Initialized
+DEBUG - 2013-11-24 16:31:27 --> Security Class Initialized
+DEBUG - 2013-11-24 16:31:27 --> Input Class Initialized
+DEBUG - 2013-11-24 16:31:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:31:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:31:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:31:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:31:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:31:27 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:31:27 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:31:27 --> Language Class Initialized
+DEBUG - 2013-11-24 16:31:27 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:31:27 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:31:27 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:31:27 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:31:27 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:31:27 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:31:28 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:31:28 --> Session Class Initialized
+DEBUG - 2013-11-24 16:31:28 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:31:28 --> Session routines successfully run
+DEBUG - 2013-11-24 16:31:28 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:31:28 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:31:28 --> Model Class Initialized
+DEBUG - 2013-11-24 16:31:28 --> Model Class Initialized
+DEBUG - 2013-11-24 16:32:01 --> Config Class Initialized
+DEBUG - 2013-11-24 16:32:01 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:32:01 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:32:01 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:32:01 --> URI Class Initialized
+DEBUG - 2013-11-24 16:32:01 --> Router Class Initialized
+DEBUG - 2013-11-24 16:32:01 --> Output Class Initialized
+DEBUG - 2013-11-24 16:32:01 --> Security Class Initialized
+DEBUG - 2013-11-24 16:32:01 --> Input Class Initialized
+DEBUG - 2013-11-24 16:32:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:32:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:32:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:32:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:32:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:32:01 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:32:01 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:32:01 --> Language Class Initialized
+DEBUG - 2013-11-24 16:32:01 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:32:01 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:32:01 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:32:01 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:32:01 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:32:01 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:32:01 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:32:01 --> Session Class Initialized
+DEBUG - 2013-11-24 16:32:01 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:32:01 --> Session routines successfully run
+DEBUG - 2013-11-24 16:32:01 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:32:01 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:32:01 --> Model Class Initialized
+DEBUG - 2013-11-24 16:32:01 --> Model Class Initialized
+DEBUG - 2013-11-24 16:32:08 --> Config Class Initialized
+DEBUG - 2013-11-24 16:32:08 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:32:08 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:32:08 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:32:08 --> URI Class Initialized
+DEBUG - 2013-11-24 16:32:08 --> Router Class Initialized
+DEBUG - 2013-11-24 16:32:08 --> Output Class Initialized
+DEBUG - 2013-11-24 16:32:08 --> Security Class Initialized
+DEBUG - 2013-11-24 16:32:08 --> Input Class Initialized
+DEBUG - 2013-11-24 16:32:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:32:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:32:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:32:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:32:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:32:08 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:32:08 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:32:08 --> Language Class Initialized
+DEBUG - 2013-11-24 16:32:08 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:32:08 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:32:08 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:32:08 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:32:08 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:32:08 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:32:08 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:32:08 --> Session Class Initialized
+DEBUG - 2013-11-24 16:32:08 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:32:08 --> Session routines successfully run
+DEBUG - 2013-11-24 16:32:08 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:32:08 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:32:08 --> Model Class Initialized
+DEBUG - 2013-11-24 16:32:08 --> Model Class Initialized
+DEBUG - 2013-11-24 16:33:11 --> Config Class Initialized
+DEBUG - 2013-11-24 16:33:11 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:33:11 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:33:11 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:33:11 --> URI Class Initialized
+DEBUG - 2013-11-24 16:33:11 --> Router Class Initialized
+DEBUG - 2013-11-24 16:33:11 --> Output Class Initialized
+DEBUG - 2013-11-24 16:33:11 --> Security Class Initialized
+DEBUG - 2013-11-24 16:33:11 --> Input Class Initialized
+DEBUG - 2013-11-24 16:33:11 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:33:11 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:33:11 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:33:11 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:33:11 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:33:11 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:33:11 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:33:11 --> Language Class Initialized
+DEBUG - 2013-11-24 16:33:11 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:33:11 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:33:11 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:33:11 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:33:11 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:33:11 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:33:11 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:33:12 --> Session Class Initialized
+DEBUG - 2013-11-24 16:33:12 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:33:12 --> Session routines successfully run
+DEBUG - 2013-11-24 16:33:12 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:33:12 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:33:12 --> Model Class Initialized
+DEBUG - 2013-11-24 16:33:12 --> Model Class Initialized
+DEBUG - 2013-11-24 16:33:19 --> Config Class Initialized
+DEBUG - 2013-11-24 16:33:19 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:33:19 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:33:19 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:33:19 --> URI Class Initialized
+DEBUG - 2013-11-24 16:33:19 --> Router Class Initialized
+DEBUG - 2013-11-24 16:33:19 --> Output Class Initialized
+DEBUG - 2013-11-24 16:33:19 --> Security Class Initialized
+DEBUG - 2013-11-24 16:33:19 --> Input Class Initialized
+DEBUG - 2013-11-24 16:33:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:33:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:33:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:33:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:33:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:33:19 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:33:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:33:19 --> Language Class Initialized
+DEBUG - 2013-11-24 16:33:19 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:33:19 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:33:19 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:33:19 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:33:19 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:33:19 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:33:19 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:33:19 --> Session Class Initialized
+DEBUG - 2013-11-24 16:33:19 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:33:19 --> Session routines successfully run
+DEBUG - 2013-11-24 16:33:19 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:33:19 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:33:19 --> Model Class Initialized
+DEBUG - 2013-11-24 16:33:19 --> Model Class Initialized
+DEBUG - 2013-11-24 16:33:25 --> Config Class Initialized
+DEBUG - 2013-11-24 16:33:25 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:33:25 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:33:25 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:33:25 --> URI Class Initialized
+DEBUG - 2013-11-24 16:33:25 --> Router Class Initialized
+DEBUG - 2013-11-24 16:33:25 --> Output Class Initialized
+DEBUG - 2013-11-24 16:33:25 --> Security Class Initialized
+DEBUG - 2013-11-24 16:33:25 --> Input Class Initialized
+DEBUG - 2013-11-24 16:33:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:33:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:33:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:33:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:33:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:33:25 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:33:25 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:33:25 --> Language Class Initialized
+DEBUG - 2013-11-24 16:33:25 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:33:25 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:33:25 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:33:25 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:33:25 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:33:25 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:33:25 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:33:25 --> Session Class Initialized
+DEBUG - 2013-11-24 16:33:25 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:33:25 --> Session routines successfully run
+DEBUG - 2013-11-24 16:33:25 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:33:25 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:33:25 --> Model Class Initialized
+DEBUG - 2013-11-24 16:33:25 --> Model Class Initialized
+DEBUG - 2013-11-24 16:34:05 --> Config Class Initialized
+DEBUG - 2013-11-24 16:34:05 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:34:05 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:34:05 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:34:05 --> URI Class Initialized
+DEBUG - 2013-11-24 16:34:05 --> Router Class Initialized
+DEBUG - 2013-11-24 16:34:05 --> Output Class Initialized
+DEBUG - 2013-11-24 16:34:05 --> Security Class Initialized
+DEBUG - 2013-11-24 16:34:05 --> Input Class Initialized
+DEBUG - 2013-11-24 16:34:05 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:05 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:05 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:05 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:05 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:05 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:34:05 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:34:05 --> Language Class Initialized
+DEBUG - 2013-11-24 16:34:05 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:34:05 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:34:05 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:34:05 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:34:05 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:34:05 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:34:05 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:34:05 --> Session Class Initialized
+DEBUG - 2013-11-24 16:34:05 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:34:05 --> Session routines successfully run
+DEBUG - 2013-11-24 16:34:05 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:34:05 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:34:05 --> Model Class Initialized
+DEBUG - 2013-11-24 16:34:05 --> Model Class Initialized
+DEBUG - 2013-11-24 16:34:07 --> Config Class Initialized
+DEBUG - 2013-11-24 16:34:07 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:34:07 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:34:07 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:34:07 --> URI Class Initialized
+DEBUG - 2013-11-24 16:34:07 --> Router Class Initialized
+DEBUG - 2013-11-24 16:34:07 --> Output Class Initialized
+DEBUG - 2013-11-24 16:34:07 --> Security Class Initialized
+DEBUG - 2013-11-24 16:34:07 --> Input Class Initialized
+DEBUG - 2013-11-24 16:34:07 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:07 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:07 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:07 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:07 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:07 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:34:07 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:34:07 --> Language Class Initialized
+DEBUG - 2013-11-24 16:34:07 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:34:07 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:34:07 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:34:07 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:34:07 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:34:07 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:34:07 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:34:07 --> Session Class Initialized
+DEBUG - 2013-11-24 16:34:07 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:34:07 --> Session routines successfully run
+DEBUG - 2013-11-24 16:34:07 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:34:07 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:34:07 --> Model Class Initialized
+DEBUG - 2013-11-24 16:34:07 --> Model Class Initialized
+DEBUG - 2013-11-24 16:34:08 --> Config Class Initialized
+DEBUG - 2013-11-24 16:34:08 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:34:08 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:34:08 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:34:08 --> URI Class Initialized
+DEBUG - 2013-11-24 16:34:08 --> Router Class Initialized
+DEBUG - 2013-11-24 16:34:08 --> Output Class Initialized
+DEBUG - 2013-11-24 16:34:08 --> Security Class Initialized
+DEBUG - 2013-11-24 16:34:08 --> Input Class Initialized
+DEBUG - 2013-11-24 16:34:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:08 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:34:08 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:34:08 --> Language Class Initialized
+DEBUG - 2013-11-24 16:34:08 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:34:08 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:34:08 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:34:08 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:34:08 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:34:08 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:34:08 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:34:08 --> Session Class Initialized
+DEBUG - 2013-11-24 16:34:08 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:34:08 --> Session routines successfully run
+DEBUG - 2013-11-24 16:34:08 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:34:08 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:34:08 --> Model Class Initialized
+DEBUG - 2013-11-24 16:34:08 --> Model Class Initialized
+DEBUG - 2013-11-24 16:34:25 --> Config Class Initialized
+DEBUG - 2013-11-24 16:34:25 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:34:25 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:34:25 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:34:25 --> URI Class Initialized
+DEBUG - 2013-11-24 16:34:25 --> Router Class Initialized
+DEBUG - 2013-11-24 16:34:25 --> Output Class Initialized
+DEBUG - 2013-11-24 16:34:25 --> Security Class Initialized
+DEBUG - 2013-11-24 16:34:25 --> Input Class Initialized
+DEBUG - 2013-11-24 16:34:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:34:25 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:34:25 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:34:25 --> Language Class Initialized
+DEBUG - 2013-11-24 16:34:25 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:34:25 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:34:25 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:34:25 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:34:25 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:34:25 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:34:25 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:34:25 --> Session Class Initialized
+DEBUG - 2013-11-24 16:34:25 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:34:25 --> Session routines successfully run
+DEBUG - 2013-11-24 16:34:25 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:34:25 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:34:25 --> Model Class Initialized
+DEBUG - 2013-11-24 16:34:25 --> Model Class Initialized
+DEBUG - 2013-11-24 16:35:03 --> Config Class Initialized
+DEBUG - 2013-11-24 16:35:03 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:35:03 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:35:03 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:35:03 --> URI Class Initialized
+DEBUG - 2013-11-24 16:35:03 --> Router Class Initialized
+DEBUG - 2013-11-24 16:35:03 --> Output Class Initialized
+DEBUG - 2013-11-24 16:35:03 --> Security Class Initialized
+DEBUG - 2013-11-24 16:35:03 --> Input Class Initialized
+DEBUG - 2013-11-24 16:35:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:35:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:35:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:35:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:35:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:35:03 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:35:03 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:35:03 --> Language Class Initialized
+DEBUG - 2013-11-24 16:35:03 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:35:03 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:35:03 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:35:03 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:35:03 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:35:03 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:35:03 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:35:03 --> Session Class Initialized
+DEBUG - 2013-11-24 16:35:03 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:35:03 --> Session routines successfully run
+DEBUG - 2013-11-24 16:35:03 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:35:03 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:35:03 --> Model Class Initialized
+DEBUG - 2013-11-24 16:35:03 --> Model Class Initialized
+DEBUG - 2013-11-24 16:35:14 --> Config Class Initialized
+DEBUG - 2013-11-24 16:35:14 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:35:14 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:35:14 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:35:14 --> URI Class Initialized
+DEBUG - 2013-11-24 16:35:14 --> Router Class Initialized
+DEBUG - 2013-11-24 16:35:14 --> Output Class Initialized
+DEBUG - 2013-11-24 16:35:14 --> Security Class Initialized
+DEBUG - 2013-11-24 16:35:14 --> Input Class Initialized
+DEBUG - 2013-11-24 16:35:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:35:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:35:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:35:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:35:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:35:14 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:35:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:35:14 --> Language Class Initialized
+DEBUG - 2013-11-24 16:35:14 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:35:14 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:35:14 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:35:14 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:35:14 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:35:14 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:35:14 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:35:14 --> Session Class Initialized
+DEBUG - 2013-11-24 16:35:14 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:35:14 --> Session routines successfully run
+DEBUG - 2013-11-24 16:35:14 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:35:14 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:35:14 --> Model Class Initialized
+DEBUG - 2013-11-24 16:35:14 --> Model Class Initialized
+DEBUG - 2013-11-24 16:37:57 --> Config Class Initialized
+DEBUG - 2013-11-24 16:37:57 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:37:57 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:37:57 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:37:57 --> URI Class Initialized
+DEBUG - 2013-11-24 16:37:57 --> Router Class Initialized
+DEBUG - 2013-11-24 16:37:57 --> Output Class Initialized
+DEBUG - 2013-11-24 16:37:57 --> Security Class Initialized
+DEBUG - 2013-11-24 16:37:57 --> Input Class Initialized
+DEBUG - 2013-11-24 16:37:57 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:37:57 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:37:57 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:37:57 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:37:57 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:37:57 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:37:57 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:37:57 --> Language Class Initialized
+DEBUG - 2013-11-24 16:37:57 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:37:57 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:37:57 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:37:57 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:37:57 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:37:57 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:37:57 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:37:57 --> Session Class Initialized
+DEBUG - 2013-11-24 16:37:57 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:37:57 --> Session routines successfully run
+DEBUG - 2013-11-24 16:37:57 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:37:57 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:37:57 --> Model Class Initialized
+DEBUG - 2013-11-24 16:37:57 --> Model Class Initialized
+DEBUG - 2013-11-24 16:37:57 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 16:37:57 --> Final output sent to browser
+DEBUG - 2013-11-24 16:37:57 --> Total execution time: 0.1420
+DEBUG - 2013-11-24 16:38:48 --> Config Class Initialized
+DEBUG - 2013-11-24 16:38:48 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:38:48 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:38:48 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:38:48 --> URI Class Initialized
+DEBUG - 2013-11-24 16:38:48 --> Router Class Initialized
+DEBUG - 2013-11-24 16:38:48 --> Output Class Initialized
+DEBUG - 2013-11-24 16:38:48 --> Security Class Initialized
+DEBUG - 2013-11-24 16:38:48 --> Input Class Initialized
+DEBUG - 2013-11-24 16:38:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:38:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:38:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:38:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:38:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:38:48 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:38:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:38:48 --> Language Class Initialized
+DEBUG - 2013-11-24 16:38:48 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:38:48 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:38:48 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:38:48 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:38:48 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:38:48 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:38:48 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:38:48 --> Session Class Initialized
+DEBUG - 2013-11-24 16:38:48 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:38:48 --> Session routines successfully run
+DEBUG - 2013-11-24 16:38:48 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:38:48 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:38:48 --> Model Class Initialized
+DEBUG - 2013-11-24 16:38:48 --> Model Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Config Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:39:40 --> URI Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Router Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Output Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Security Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Input Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:39:40 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:39:40 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:39:40 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:39:40 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:39:40 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:39:40 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:39:40 --> Language Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:39:40 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:39:40 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:39:40 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:39:40 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:39:40 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Session Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:39:40 --> Session routines successfully run
+DEBUG - 2013-11-24 16:39:40 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Model Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Model Class Initialized
+ERROR - 2013-11-24 16:39:40 --> Severity: Notice  --> Undefined variable: item E:\myworks\ezone\SZone\application\views\review.php 17
+DEBUG - 2013-11-24 16:39:40 --> Config Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:39:40 --> URI Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Router Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Output Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Security Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Input Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:39:40 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:39:40 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:39:40 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:39:40 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:39:40 --> Language Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:39:40 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:39:40 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:39:40 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:39:40 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:39:40 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Session Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:39:40 --> Session routines successfully run
+DEBUG - 2013-11-24 16:39:40 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Model Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Model Class Initialized
+DEBUG - 2013-11-24 16:39:40 --> Final output sent to browser
+DEBUG - 2013-11-24 16:39:40 --> Total execution time: 0.1570
+DEBUG - 2013-11-24 16:40:00 --> Config Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:40:00 --> URI Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Router Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Output Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Security Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Input Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:40:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:40:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:40:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:40:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:40:00 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:40:00 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:40:00 --> Language Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:40:00 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:40:00 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:40:00 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:40:00 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:40:00 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Session Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:40:00 --> Session routines successfully run
+DEBUG - 2013-11-24 16:40:00 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Model Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Model Class Initialized
+ERROR - 2013-11-24 16:40:00 --> Severity: Notice  --> Undefined variable: item E:\myworks\ezone\SZone\application\views\review.php 17
+DEBUG - 2013-11-24 16:40:00 --> Config Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:40:00 --> URI Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Router Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Output Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Security Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Input Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:40:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:40:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:40:00 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:40:00 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:40:00 --> Language Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:40:00 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:40:00 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:40:00 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:40:00 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:40:00 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Session Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:40:00 --> Session routines successfully run
+DEBUG - 2013-11-24 16:40:00 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:40:00 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:40:01 --> Model Class Initialized
+DEBUG - 2013-11-24 16:40:01 --> Model Class Initialized
+DEBUG - 2013-11-24 16:40:01 --> Final output sent to browser
+DEBUG - 2013-11-24 16:40:01 --> Total execution time: 0.3130
+DEBUG - 2013-11-24 16:40:20 --> Config Class Initialized
+DEBUG - 2013-11-24 16:40:20 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:40:20 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:40:20 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:40:20 --> URI Class Initialized
+DEBUG - 2013-11-24 16:40:20 --> Router Class Initialized
+DEBUG - 2013-11-24 16:40:20 --> Output Class Initialized
+DEBUG - 2013-11-24 16:40:20 --> Security Class Initialized
+DEBUG - 2013-11-24 16:40:20 --> Input Class Initialized
+DEBUG - 2013-11-24 16:40:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:40:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:40:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:40:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:40:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:40:20 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:40:20 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:40:20 --> Language Class Initialized
+DEBUG - 2013-11-24 16:40:20 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:40:20 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:40:20 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:40:20 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:40:20 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:40:20 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:40:20 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:40:20 --> Session Class Initialized
+DEBUG - 2013-11-24 16:40:20 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:40:20 --> Session routines successfully run
+DEBUG - 2013-11-24 16:40:20 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:40:20 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:40:20 --> Model Class Initialized
+DEBUG - 2013-11-24 16:40:20 --> Model Class Initialized
+DEBUG - 2013-11-24 16:41:04 --> Config Class Initialized
+DEBUG - 2013-11-24 16:41:04 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:41:04 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:41:04 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:41:04 --> URI Class Initialized
+DEBUG - 2013-11-24 16:41:04 --> Router Class Initialized
+DEBUG - 2013-11-24 16:41:04 --> Output Class Initialized
+DEBUG - 2013-11-24 16:41:04 --> Security Class Initialized
+DEBUG - 2013-11-24 16:41:04 --> Input Class Initialized
+DEBUG - 2013-11-24 16:41:04 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:41:04 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:41:04 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:41:04 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:41:04 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:41:04 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:41:04 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:41:04 --> Language Class Initialized
+DEBUG - 2013-11-24 16:41:04 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:41:04 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:41:04 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:41:04 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:41:04 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:41:04 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:41:04 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:41:04 --> Session Class Initialized
+DEBUG - 2013-11-24 16:41:04 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:41:04 --> Session routines successfully run
+DEBUG - 2013-11-24 16:41:04 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:41:04 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:41:04 --> Model Class Initialized
+DEBUG - 2013-11-24 16:41:04 --> Model Class Initialized
+DEBUG - 2013-11-24 16:42:20 --> Config Class Initialized
+DEBUG - 2013-11-24 16:42:20 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:42:20 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:42:20 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:42:20 --> URI Class Initialized
+DEBUG - 2013-11-24 16:42:20 --> Router Class Initialized
+DEBUG - 2013-11-24 16:42:20 --> Output Class Initialized
+DEBUG - 2013-11-24 16:42:20 --> Security Class Initialized
+DEBUG - 2013-11-24 16:42:20 --> Input Class Initialized
+DEBUG - 2013-11-24 16:42:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:42:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:42:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:42:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:42:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:42:20 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:42:20 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:42:20 --> Language Class Initialized
+DEBUG - 2013-11-24 16:42:20 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:42:20 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:42:20 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:42:20 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:42:20 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:42:20 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:42:20 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:42:20 --> Session Class Initialized
+DEBUG - 2013-11-24 16:42:20 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:42:20 --> Session routines successfully run
+DEBUG - 2013-11-24 16:42:20 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:42:20 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:42:20 --> Model Class Initialized
+DEBUG - 2013-11-24 16:42:20 --> Model Class Initialized
+DEBUG - 2013-11-24 16:42:32 --> Config Class Initialized
+DEBUG - 2013-11-24 16:42:32 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:42:32 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:42:32 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:42:33 --> URI Class Initialized
+DEBUG - 2013-11-24 16:42:33 --> Router Class Initialized
+DEBUG - 2013-11-24 16:42:33 --> Output Class Initialized
+DEBUG - 2013-11-24 16:42:33 --> Security Class Initialized
+DEBUG - 2013-11-24 16:42:33 --> Input Class Initialized
+DEBUG - 2013-11-24 16:42:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:42:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:42:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:42:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:42:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:42:33 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:42:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:42:33 --> Language Class Initialized
+DEBUG - 2013-11-24 16:42:33 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:42:33 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:42:33 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:42:33 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:42:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:42:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:42:33 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:42:33 --> Session Class Initialized
+DEBUG - 2013-11-24 16:42:33 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:42:33 --> Session routines successfully run
+DEBUG - 2013-11-24 16:42:33 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:42:33 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:42:33 --> Model Class Initialized
+DEBUG - 2013-11-24 16:42:33 --> Model Class Initialized
+DEBUG - 2013-11-24 16:42:54 --> Config Class Initialized
+DEBUG - 2013-11-24 16:42:54 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:42:54 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:42:54 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:42:54 --> URI Class Initialized
+DEBUG - 2013-11-24 16:42:54 --> Router Class Initialized
+DEBUG - 2013-11-24 16:42:54 --> Output Class Initialized
+DEBUG - 2013-11-24 16:42:54 --> Security Class Initialized
+DEBUG - 2013-11-24 16:42:54 --> Input Class Initialized
+DEBUG - 2013-11-24 16:42:54 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:42:54 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:42:54 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:42:54 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:42:54 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:42:54 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:42:54 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:42:54 --> Language Class Initialized
+DEBUG - 2013-11-24 16:42:54 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:42:54 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:42:54 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:42:54 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:42:54 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:42:54 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:42:54 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:42:54 --> Session Class Initialized
+DEBUG - 2013-11-24 16:42:54 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:42:54 --> Session routines successfully run
+DEBUG - 2013-11-24 16:42:54 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:42:54 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:42:54 --> Model Class Initialized
+DEBUG - 2013-11-24 16:42:54 --> Model Class Initialized
+DEBUG - 2013-11-24 16:42:54 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 16:42:54 --> Final output sent to browser
+DEBUG - 2013-11-24 16:42:54 --> Total execution time: 0.1200
+DEBUG - 2013-11-24 16:44:10 --> Config Class Initialized
+DEBUG - 2013-11-24 16:44:10 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:44:10 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:44:10 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:44:10 --> URI Class Initialized
+DEBUG - 2013-11-24 16:44:10 --> Router Class Initialized
+DEBUG - 2013-11-24 16:44:10 --> Output Class Initialized
+DEBUG - 2013-11-24 16:44:10 --> Security Class Initialized
+DEBUG - 2013-11-24 16:44:10 --> Input Class Initialized
+DEBUG - 2013-11-24 16:44:10 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:44:10 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:44:10 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:44:10 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:44:10 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:44:10 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:44:10 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:44:10 --> Language Class Initialized
+DEBUG - 2013-11-24 16:44:10 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:44:10 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:44:10 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:44:10 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:44:10 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:44:10 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:44:10 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:44:10 --> Session Class Initialized
+DEBUG - 2013-11-24 16:44:10 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:44:10 --> Session routines successfully run
+DEBUG - 2013-11-24 16:44:10 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:44:10 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:44:10 --> Model Class Initialized
+DEBUG - 2013-11-24 16:44:10 --> Model Class Initialized
+DEBUG - 2013-11-24 16:44:21 --> Config Class Initialized
+DEBUG - 2013-11-24 16:44:21 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:44:21 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:44:22 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:44:22 --> URI Class Initialized
+DEBUG - 2013-11-24 16:44:22 --> Router Class Initialized
+DEBUG - 2013-11-24 16:44:22 --> Output Class Initialized
+DEBUG - 2013-11-24 16:44:22 --> Security Class Initialized
+DEBUG - 2013-11-24 16:44:22 --> Input Class Initialized
+DEBUG - 2013-11-24 16:44:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:44:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:44:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:44:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:44:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:44:22 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:44:22 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:44:22 --> Language Class Initialized
+DEBUG - 2013-11-24 16:44:22 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:44:22 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:44:22 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:44:22 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:44:22 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:44:22 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:44:22 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:44:22 --> Session Class Initialized
+DEBUG - 2013-11-24 16:44:22 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:44:22 --> Session routines successfully run
+DEBUG - 2013-11-24 16:44:22 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:44:22 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:44:22 --> Model Class Initialized
+DEBUG - 2013-11-24 16:44:22 --> Model Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Config Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:44:42 --> URI Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Router Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Output Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Security Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Input Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:44:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:44:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:44:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:44:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:44:42 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:44:42 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:44:42 --> Language Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:44:42 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:44:42 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:44:42 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:44:42 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:44:42 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Session Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:44:42 --> Session routines successfully run
+DEBUG - 2013-11-24 16:44:42 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Model Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Model Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 16:44:42 --> Final output sent to browser
+DEBUG - 2013-11-24 16:44:42 --> Total execution time: 0.1520
+DEBUG - 2013-11-24 16:44:42 --> Config Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:44:42 --> URI Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Router Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Output Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Security Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Input Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:44:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:44:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:44:42 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:44:42 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:44:42 --> Language Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:44:42 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:44:42 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:44:42 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:44:42 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:44:42 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:44:42 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:44:43 --> Session Class Initialized
+DEBUG - 2013-11-24 16:44:43 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:44:43 --> Session routines successfully run
+DEBUG - 2013-11-24 16:44:43 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:44:43 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:44:43 --> Model Class Initialized
+DEBUG - 2013-11-24 16:44:43 --> Model Class Initialized
+DEBUG - 2013-11-24 16:44:43 --> Final output sent to browser
+DEBUG - 2013-11-24 16:44:43 --> Total execution time: 0.2320
+DEBUG - 2013-11-24 16:45:28 --> Config Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:45:28 --> URI Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Router Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Output Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Security Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Input Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:45:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:45:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:45:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:45:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:45:28 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:45:28 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:45:28 --> Language Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:45:28 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:45:28 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:45:28 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:45:28 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:45:28 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Session Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:45:28 --> Session routines successfully run
+DEBUG - 2013-11-24 16:45:28 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Model Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Model Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 16:45:28 --> Final output sent to browser
+DEBUG - 2013-11-24 16:45:28 --> Total execution time: 0.1420
+DEBUG - 2013-11-24 16:45:28 --> Config Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:45:28 --> URI Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Router Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Output Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Security Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Input Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:45:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:45:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:45:28 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:45:28 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:45:28 --> Language Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:45:28 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:45:28 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:45:28 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:45:28 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:45:28 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Session Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:45:28 --> Session routines successfully run
+DEBUG - 2013-11-24 16:45:28 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Model Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Model Class Initialized
+DEBUG - 2013-11-24 16:45:28 --> Final output sent to browser
+DEBUG - 2013-11-24 16:45:28 --> Total execution time: 0.2160
+DEBUG - 2013-11-24 16:56:15 --> Config Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:56:15 --> URI Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Router Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Output Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Security Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Input Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:56:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:56:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:56:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:56:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:56:15 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:56:15 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:56:15 --> Language Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:56:15 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:56:15 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:56:15 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:56:15 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:56:15 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Session Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:56:15 --> Session routines successfully run
+DEBUG - 2013-11-24 16:56:15 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Model Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Model Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 16:56:15 --> Final output sent to browser
+DEBUG - 2013-11-24 16:56:15 --> Total execution time: 0.0960
+DEBUG - 2013-11-24 16:56:15 --> Config Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:56:15 --> URI Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Router Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Output Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Security Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Input Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:56:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:56:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:56:15 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:56:15 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:56:15 --> Language Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:56:15 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:56:15 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:56:15 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:56:15 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:56:15 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Session Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:56:15 --> Session routines successfully run
+DEBUG - 2013-11-24 16:56:15 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Model Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Model Class Initialized
+DEBUG - 2013-11-24 16:56:15 --> Final output sent to browser
+DEBUG - 2013-11-24 16:56:16 --> Config Class Initialized
+DEBUG - 2013-11-24 16:56:16 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:56:16 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:56:16 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:56:16 --> URI Class Initialized
+DEBUG - 2013-11-24 16:56:16 --> Router Class Initialized
+ERROR - 2013-11-24 16:56:16 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 16:56:16 --> Total execution time: 0.3390
+DEBUG - 2013-11-24 16:56:16 --> Config Class Initialized
+DEBUG - 2013-11-24 16:56:16 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:56:16 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:56:16 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:56:16 --> URI Class Initialized
+DEBUG - 2013-11-24 16:56:16 --> Router Class Initialized
+ERROR - 2013-11-24 16:56:16 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 16:56:17 --> Config Class Initialized
+DEBUG - 2013-11-24 16:56:17 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:56:17 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:56:17 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:56:17 --> URI Class Initialized
+DEBUG - 2013-11-24 16:56:17 --> Router Class Initialized
+ERROR - 2013-11-24 16:56:17 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 16:58:48 --> Config Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:58:48 --> URI Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Router Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Output Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Security Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Input Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:58:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:58:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:58:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:58:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:58:48 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:58:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:58:48 --> Language Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:58:48 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:58:48 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:58:48 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:58:48 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:58:48 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Session Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:58:48 --> Session routines successfully run
+DEBUG - 2013-11-24 16:58:48 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Model Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Model Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 16:58:48 --> Final output sent to browser
+DEBUG - 2013-11-24 16:58:48 --> Total execution time: 0.1290
+DEBUG - 2013-11-24 16:58:48 --> Config Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:58:48 --> URI Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Router Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Output Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Security Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> Input Class Initialized
+DEBUG - 2013-11-24 16:58:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:58:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:58:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:58:48 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:58:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:58:48 --> Language Class Initialized
+DEBUG - 2013-11-24 16:58:49 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:58:49 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:58:49 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:58:49 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:58:49 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:58:49 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:58:49 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:58:49 --> Session Class Initialized
+DEBUG - 2013-11-24 16:58:49 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:58:49 --> Session routines successfully run
+DEBUG - 2013-11-24 16:58:49 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:58:49 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:58:49 --> Model Class Initialized
+DEBUG - 2013-11-24 16:58:49 --> Model Class Initialized
+DEBUG - 2013-11-24 16:58:49 --> Final output sent to browser
+DEBUG - 2013-11-24 16:58:49 --> Total execution time: 0.1960
+DEBUG - 2013-11-24 16:59:08 --> Config Class Initialized
+DEBUG - 2013-11-24 16:59:08 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:59:08 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:59:08 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:59:08 --> URI Class Initialized
+DEBUG - 2013-11-24 16:59:08 --> Router Class Initialized
+DEBUG - 2013-11-24 16:59:08 --> Output Class Initialized
+DEBUG - 2013-11-24 16:59:08 --> Security Class Initialized
+DEBUG - 2013-11-24 16:59:08 --> Input Class Initialized
+DEBUG - 2013-11-24 16:59:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:08 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:59:08 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:59:08 --> Language Class Initialized
+DEBUG - 2013-11-24 16:59:08 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:59:08 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:59:08 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:59:08 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:59:08 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:59:08 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:59:08 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:59:08 --> Session Class Initialized
+DEBUG - 2013-11-24 16:59:08 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:59:08 --> Session routines successfully run
+DEBUG - 2013-11-24 16:59:08 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:59:08 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:59:08 --> Model Class Initialized
+DEBUG - 2013-11-24 16:59:08 --> Model Class Initialized
+DEBUG - 2013-11-24 16:59:08 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 16:59:08 --> Final output sent to browser
+DEBUG - 2013-11-24 16:59:08 --> Total execution time: 0.1260
+DEBUG - 2013-11-24 16:59:09 --> Config Class Initialized
+DEBUG - 2013-11-24 16:59:09 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:59:09 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:59:09 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:59:09 --> URI Class Initialized
+DEBUG - 2013-11-24 16:59:09 --> Router Class Initialized
+DEBUG - 2013-11-24 16:59:09 --> Output Class Initialized
+DEBUG - 2013-11-24 16:59:09 --> Security Class Initialized
+DEBUG - 2013-11-24 16:59:09 --> Input Class Initialized
+DEBUG - 2013-11-24 16:59:09 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:09 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:09 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:09 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:59:09 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:59:09 --> Language Class Initialized
+DEBUG - 2013-11-24 16:59:09 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:59:09 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:59:09 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:59:09 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:59:09 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:59:09 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:59:09 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:59:09 --> Session Class Initialized
+DEBUG - 2013-11-24 16:59:09 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:59:09 --> Session routines successfully run
+DEBUG - 2013-11-24 16:59:09 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:59:09 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:59:09 --> Model Class Initialized
+DEBUG - 2013-11-24 16:59:09 --> Model Class Initialized
+DEBUG - 2013-11-24 16:59:09 --> Final output sent to browser
+DEBUG - 2013-11-24 16:59:09 --> Total execution time: 0.2460
+DEBUG - 2013-11-24 16:59:15 --> Config Class Initialized
+DEBUG - 2013-11-24 16:59:15 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:59:15 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:59:15 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:59:15 --> URI Class Initialized
+DEBUG - 2013-11-24 16:59:15 --> Router Class Initialized
+DEBUG - 2013-11-24 16:59:15 --> Output Class Initialized
+DEBUG - 2013-11-24 16:59:15 --> Security Class Initialized
+DEBUG - 2013-11-24 16:59:15 --> Input Class Initialized
+DEBUG - 2013-11-24 16:59:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:15 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:59:15 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:59:15 --> Language Class Initialized
+DEBUG - 2013-11-24 16:59:15 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:59:15 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:59:15 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:59:15 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:59:16 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:59:16 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:59:16 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:59:16 --> Session Class Initialized
+DEBUG - 2013-11-24 16:59:16 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:59:16 --> Session routines successfully run
+DEBUG - 2013-11-24 16:59:16 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:59:16 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:59:16 --> Model Class Initialized
+DEBUG - 2013-11-24 16:59:16 --> Model Class Initialized
+DEBUG - 2013-11-24 16:59:16 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 16:59:16 --> Final output sent to browser
+DEBUG - 2013-11-24 16:59:16 --> Total execution time: 0.1530
+DEBUG - 2013-11-24 16:59:53 --> Config Class Initialized
+DEBUG - 2013-11-24 16:59:53 --> Hooks Class Initialized
+DEBUG - 2013-11-24 16:59:53 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 16:59:53 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 16:59:53 --> URI Class Initialized
+DEBUG - 2013-11-24 16:59:53 --> Router Class Initialized
+DEBUG - 2013-11-24 16:59:53 --> Output Class Initialized
+DEBUG - 2013-11-24 16:59:53 --> Security Class Initialized
+DEBUG - 2013-11-24 16:59:53 --> Input Class Initialized
+DEBUG - 2013-11-24 16:59:53 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:53 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:53 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:53 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:53 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:53 --> XSS Filtering completed
+DEBUG - 2013-11-24 16:59:53 --> CRSF cookie Set
+DEBUG - 2013-11-24 16:59:53 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 16:59:53 --> Language Class Initialized
+DEBUG - 2013-11-24 16:59:53 --> Loader Class Initialized
+DEBUG - 2013-11-24 16:59:53 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 16:59:53 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 16:59:53 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 16:59:53 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 16:59:53 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 16:59:53 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 16:59:53 --> Session Class Initialized
+DEBUG - 2013-11-24 16:59:53 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 16:59:53 --> Session routines successfully run
+DEBUG - 2013-11-24 16:59:53 --> Pagination Class Initialized
+DEBUG - 2013-11-24 16:59:53 --> Controller Class Initialized
+DEBUG - 2013-11-24 16:59:53 --> Model Class Initialized
+DEBUG - 2013-11-24 16:59:53 --> Model Class Initialized
+DEBUG - 2013-11-24 16:59:53 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 16:59:53 --> Final output sent to browser
+DEBUG - 2013-11-24 16:59:53 --> Total execution time: 0.5440
+DEBUG - 2013-11-24 17:00:03 --> Config Class Initialized
+DEBUG - 2013-11-24 17:00:03 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:00:03 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:00:03 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:00:03 --> URI Class Initialized
+DEBUG - 2013-11-24 17:00:03 --> Router Class Initialized
+DEBUG - 2013-11-24 17:00:03 --> Output Class Initialized
+DEBUG - 2013-11-24 17:00:03 --> Security Class Initialized
+DEBUG - 2013-11-24 17:00:03 --> Input Class Initialized
+DEBUG - 2013-11-24 17:00:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:00:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:00:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:00:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:00:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:00:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:00:03 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:00:03 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:00:03 --> Language Class Initialized
+DEBUG - 2013-11-24 17:00:03 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:00:03 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:00:03 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:00:03 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:00:03 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:00:03 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:00:03 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:00:03 --> Session Class Initialized
+DEBUG - 2013-11-24 17:00:03 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:00:03 --> Session routines successfully run
+DEBUG - 2013-11-24 17:00:03 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:00:03 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:00:03 --> Model Class Initialized
+DEBUG - 2013-11-24 17:00:03 --> Model Class Initialized
+DEBUG - 2013-11-24 17:00:03 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:00:03 --> Final output sent to browser
+DEBUG - 2013-11-24 17:00:03 --> Total execution time: 0.1480
+DEBUG - 2013-11-24 17:00:16 --> Config Class Initialized
+DEBUG - 2013-11-24 17:00:16 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:00:16 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:00:16 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:00:16 --> URI Class Initialized
+DEBUG - 2013-11-24 17:00:16 --> Router Class Initialized
+DEBUG - 2013-11-24 17:00:16 --> Output Class Initialized
+DEBUG - 2013-11-24 17:00:16 --> Security Class Initialized
+DEBUG - 2013-11-24 17:00:16 --> Input Class Initialized
+DEBUG - 2013-11-24 17:00:16 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:00:16 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:00:16 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:00:16 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:00:16 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:00:16 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:00:16 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:00:16 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:00:16 --> Language Class Initialized
+DEBUG - 2013-11-24 17:00:16 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:00:16 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:00:16 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:00:16 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:00:16 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:00:16 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:00:16 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:00:16 --> Session Class Initialized
+DEBUG - 2013-11-24 17:00:16 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:00:16 --> Session routines successfully run
+DEBUG - 2013-11-24 17:00:16 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:00:16 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:00:16 --> Model Class Initialized
+DEBUG - 2013-11-24 17:00:16 --> Model Class Initialized
+DEBUG - 2013-11-24 17:00:16 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:00:16 --> Final output sent to browser
+DEBUG - 2013-11-24 17:00:16 --> Total execution time: 0.1890
+DEBUG - 2013-11-24 17:01:32 --> Config Class Initialized
+DEBUG - 2013-11-24 17:01:32 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:01:32 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:01:32 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:01:32 --> URI Class Initialized
+DEBUG - 2013-11-24 17:01:32 --> Router Class Initialized
+DEBUG - 2013-11-24 17:01:32 --> Output Class Initialized
+DEBUG - 2013-11-24 17:01:32 --> Security Class Initialized
+DEBUG - 2013-11-24 17:01:32 --> Input Class Initialized
+DEBUG - 2013-11-24 17:01:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:01:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:01:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:01:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:01:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:01:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:01:32 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:01:32 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:01:32 --> Language Class Initialized
+DEBUG - 2013-11-24 17:01:32 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:01:32 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:01:32 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:01:32 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:01:32 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:01:32 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:01:32 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:01:32 --> Session Class Initialized
+DEBUG - 2013-11-24 17:01:32 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:01:32 --> Session routines successfully run
+DEBUG - 2013-11-24 17:01:32 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:01:32 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:01:32 --> Model Class Initialized
+DEBUG - 2013-11-24 17:01:32 --> Model Class Initialized
+DEBUG - 2013-11-24 17:01:32 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:01:32 --> Final output sent to browser
+DEBUG - 2013-11-24 17:01:32 --> Total execution time: 0.3040
+DEBUG - 2013-11-24 17:02:29 --> Config Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:02:29 --> URI Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Router Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Output Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Security Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Input Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:02:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:02:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:02:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:02:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:02:29 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:02:29 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:02:29 --> Language Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:02:29 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:02:29 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:02:29 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:02:29 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:02:29 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Session Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:02:29 --> Session routines successfully run
+DEBUG - 2013-11-24 17:02:29 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Model Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Model Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Final output sent to browser
+DEBUG - 2013-11-24 17:02:29 --> Total execution time: 0.2390
+DEBUG - 2013-11-24 17:02:29 --> Config Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:02:29 --> URI Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Router Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Output Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Security Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Input Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:02:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:02:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:02:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:02:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:02:29 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:02:29 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:02:29 --> Language Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:02:29 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:02:29 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:02:29 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:02:29 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:02:29 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Session Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:02:29 --> Session routines successfully run
+DEBUG - 2013-11-24 17:02:29 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Model Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Model Class Initialized
+DEBUG - 2013-11-24 17:02:29 --> Final output sent to browser
+DEBUG - 2013-11-24 17:02:29 --> Total execution time: 0.2500
+DEBUG - 2013-11-24 17:02:58 --> Config Class Initialized
+DEBUG - 2013-11-24 17:02:58 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:02:58 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:02:58 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:02:58 --> URI Class Initialized
+DEBUG - 2013-11-24 17:02:58 --> Router Class Initialized
+DEBUG - 2013-11-24 17:02:58 --> Output Class Initialized
+DEBUG - 2013-11-24 17:02:58 --> Security Class Initialized
+DEBUG - 2013-11-24 17:02:58 --> Input Class Initialized
+DEBUG - 2013-11-24 17:02:58 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:02:58 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:02:58 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:02:58 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:02:58 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:02:58 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:02:58 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:02:58 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:02:58 --> Language Class Initialized
+DEBUG - 2013-11-24 17:02:58 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:02:58 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:02:58 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:02:58 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:02:58 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:02:58 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:02:58 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:02:58 --> Session Class Initialized
+DEBUG - 2013-11-24 17:02:58 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:02:58 --> Session routines successfully run
+DEBUG - 2013-11-24 17:02:58 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:02:58 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:02:58 --> Model Class Initialized
+DEBUG - 2013-11-24 17:02:58 --> Model Class Initialized
+DEBUG - 2013-11-24 17:02:58 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:02:58 --> Final output sent to browser
+DEBUG - 2013-11-24 17:02:58 --> Total execution time: 0.2200
+DEBUG - 2013-11-24 17:03:00 --> Config Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:03:00 --> URI Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Router Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Output Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Security Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Input Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:03:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:03:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:03:00 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:03:00 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:03:00 --> Language Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:03:00 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:03:00 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:03:00 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:03:00 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:03:00 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Session Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:03:00 --> Session routines successfully run
+DEBUG - 2013-11-24 17:03:00 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Model Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Model Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Final output sent to browser
+DEBUG - 2013-11-24 17:03:00 --> Total execution time: 0.1700
+DEBUG - 2013-11-24 17:03:00 --> Config Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:03:00 --> URI Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Router Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Output Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Security Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Input Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:03:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:03:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:03:00 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:03:00 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:03:00 --> Language Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:03:00 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:03:00 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:03:00 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:03:00 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:03:00 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Session Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:03:00 --> Session routines successfully run
+DEBUG - 2013-11-24 17:03:00 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Model Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Model Class Initialized
+DEBUG - 2013-11-24 17:03:00 --> Final output sent to browser
+DEBUG - 2013-11-24 17:03:00 --> Total execution time: 0.2160
+DEBUG - 2013-11-24 17:03:01 --> Config Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:03:01 --> URI Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Router Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Output Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Security Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Input Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:03:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:03:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:03:01 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:03:01 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:03:01 --> Language Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:03:01 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:03:01 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:03:01 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:03:01 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:03:01 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Session Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:03:01 --> Session routines successfully run
+DEBUG - 2013-11-24 17:03:01 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Model Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Model Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Final output sent to browser
+DEBUG - 2013-11-24 17:03:01 --> Total execution time: 0.1950
+DEBUG - 2013-11-24 17:03:01 --> Config Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:03:01 --> URI Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Router Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Output Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Security Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Input Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:03:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:03:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:03:01 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:03:01 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:03:01 --> Language Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:03:01 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:03:01 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:03:01 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:03:01 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:03:01 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Session Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:03:01 --> Session routines successfully run
+DEBUG - 2013-11-24 17:03:01 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Model Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Model Class Initialized
+DEBUG - 2013-11-24 17:03:01 --> Final output sent to browser
+DEBUG - 2013-11-24 17:03:01 --> Total execution time: 0.2250
+DEBUG - 2013-11-24 17:08:32 --> Config Class Initialized
+DEBUG - 2013-11-24 17:08:32 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:08:32 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:08:32 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:08:32 --> URI Class Initialized
+DEBUG - 2013-11-24 17:08:32 --> Router Class Initialized
+DEBUG - 2013-11-24 17:08:32 --> Output Class Initialized
+DEBUG - 2013-11-24 17:08:32 --> Security Class Initialized
+DEBUG - 2013-11-24 17:08:32 --> Input Class Initialized
+DEBUG - 2013-11-24 17:08:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:08:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:08:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:08:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:08:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:08:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:08:32 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:08:32 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:08:32 --> Language Class Initialized
+DEBUG - 2013-11-24 17:08:32 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:08:32 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:08:32 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:08:32 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:08:32 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:08:32 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:08:32 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:08:32 --> Session Class Initialized
+DEBUG - 2013-11-24 17:08:32 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:08:32 --> Session routines successfully run
+DEBUG - 2013-11-24 17:08:32 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:08:32 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:08:32 --> Model Class Initialized
+DEBUG - 2013-11-24 17:08:32 --> Model Class Initialized
+DEBUG - 2013-11-24 17:08:42 --> Config Class Initialized
+DEBUG - 2013-11-24 17:08:42 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:08:42 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:08:42 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:08:42 --> URI Class Initialized
+DEBUG - 2013-11-24 17:08:42 --> Router Class Initialized
+DEBUG - 2013-11-24 17:08:42 --> Output Class Initialized
+DEBUG - 2013-11-24 17:08:42 --> Security Class Initialized
+DEBUG - 2013-11-24 17:08:42 --> Input Class Initialized
+DEBUG - 2013-11-24 17:08:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:08:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:08:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:08:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:08:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:08:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:08:42 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:08:42 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:08:42 --> Language Class Initialized
+DEBUG - 2013-11-24 17:08:42 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:08:42 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:08:42 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:08:42 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:08:42 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:08:42 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:08:42 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:08:42 --> Session Class Initialized
+DEBUG - 2013-11-24 17:08:42 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:08:42 --> Session routines successfully run
+DEBUG - 2013-11-24 17:08:42 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:08:42 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:08:42 --> Model Class Initialized
+DEBUG - 2013-11-24 17:08:42 --> Model Class Initialized
+DEBUG - 2013-11-24 17:08:42 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:08:42 --> Final output sent to browser
+DEBUG - 2013-11-24 17:08:42 --> Total execution time: 0.2000
+DEBUG - 2013-11-24 17:08:45 --> Config Class Initialized
+DEBUG - 2013-11-24 17:08:45 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:08:45 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:08:45 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:08:45 --> URI Class Initialized
+DEBUG - 2013-11-24 17:08:45 --> Router Class Initialized
+DEBUG - 2013-11-24 17:08:45 --> Output Class Initialized
+DEBUG - 2013-11-24 17:08:45 --> Security Class Initialized
+DEBUG - 2013-11-24 17:08:45 --> Input Class Initialized
+DEBUG - 2013-11-24 17:08:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:08:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:08:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:08:45 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:08:45 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:08:45 --> Language Class Initialized
+DEBUG - 2013-11-24 17:08:45 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:08:45 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:08:45 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:08:45 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:08:45 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:08:45 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:08:45 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:08:45 --> Session Class Initialized
+DEBUG - 2013-11-24 17:08:45 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:08:45 --> Session routines successfully run
+DEBUG - 2013-11-24 17:08:45 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:08:45 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:08:45 --> Model Class Initialized
+DEBUG - 2013-11-24 17:08:45 --> Model Class Initialized
+DEBUG - 2013-11-24 17:08:45 --> Final output sent to browser
+DEBUG - 2013-11-24 17:08:45 --> Total execution time: 0.1450
+DEBUG - 2013-11-24 17:09:27 --> Config Class Initialized
+DEBUG - 2013-11-24 17:09:27 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:09:27 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:09:27 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:09:27 --> URI Class Initialized
+DEBUG - 2013-11-24 17:09:27 --> Router Class Initialized
+DEBUG - 2013-11-24 17:09:27 --> Output Class Initialized
+DEBUG - 2013-11-24 17:09:27 --> Security Class Initialized
+DEBUG - 2013-11-24 17:09:27 --> Input Class Initialized
+DEBUG - 2013-11-24 17:09:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:09:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:09:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:09:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:09:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:09:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:09:27 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:09:27 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:09:27 --> Language Class Initialized
+DEBUG - 2013-11-24 17:09:27 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:09:27 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:09:27 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:09:27 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:09:27 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:09:27 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:09:27 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:09:27 --> Session Class Initialized
+DEBUG - 2013-11-24 17:09:27 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:09:27 --> Session routines successfully run
+DEBUG - 2013-11-24 17:09:27 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:09:27 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:09:27 --> Model Class Initialized
+DEBUG - 2013-11-24 17:09:27 --> Model Class Initialized
+DEBUG - 2013-11-24 17:09:27 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:09:27 --> Final output sent to browser
+DEBUG - 2013-11-24 17:09:27 --> Total execution time: 0.2150
+DEBUG - 2013-11-24 17:10:04 --> Config Class Initialized
+DEBUG - 2013-11-24 17:10:04 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:10:04 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:10:04 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:10:04 --> URI Class Initialized
+DEBUG - 2013-11-24 17:10:04 --> Router Class Initialized
+DEBUG - 2013-11-24 17:10:04 --> Output Class Initialized
+DEBUG - 2013-11-24 17:10:04 --> Security Class Initialized
+DEBUG - 2013-11-24 17:10:04 --> Input Class Initialized
+DEBUG - 2013-11-24 17:10:04 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:10:04 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:10:04 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:10:04 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:10:04 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:10:04 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:10:04 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:10:04 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:10:05 --> Language Class Initialized
+DEBUG - 2013-11-24 17:10:05 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:10:05 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:10:05 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:10:05 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:10:05 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:10:05 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:10:05 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:10:05 --> Session Class Initialized
+DEBUG - 2013-11-24 17:10:05 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:10:05 --> Session routines successfully run
+DEBUG - 2013-11-24 17:10:05 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:10:05 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:10:05 --> Model Class Initialized
+DEBUG - 2013-11-24 17:10:05 --> Model Class Initialized
+DEBUG - 2013-11-24 17:10:05 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:10:05 --> Final output sent to browser
+DEBUG - 2013-11-24 17:10:05 --> Total execution time: 0.1400
+DEBUG - 2013-11-24 17:18:27 --> Config Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:18:27 --> URI Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> Router Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> Output Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> Security Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> Input Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:27 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:18:27 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:18:27 --> Language Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:18:27 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:18:27 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:18:27 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:18:27 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:18:27 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> Session Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:18:27 --> Session routines successfully run
+DEBUG - 2013-11-24 17:18:27 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> Model Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> Model Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:18:27 --> Final output sent to browser
+DEBUG - 2013-11-24 17:18:27 --> Total execution time: 0.1890
+DEBUG - 2013-11-24 17:18:27 --> Config Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:18:27 --> URI Class Initialized
+DEBUG - 2013-11-24 17:18:27 --> Router Class Initialized
+ERROR - 2013-11-24 17:18:28 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:18:28 --> Config Class Initialized
+DEBUG - 2013-11-24 17:18:28 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:18:28 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:18:28 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:18:28 --> URI Class Initialized
+DEBUG - 2013-11-24 17:18:28 --> Router Class Initialized
+ERROR - 2013-11-24 17:18:28 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:18:28 --> Config Class Initialized
+DEBUG - 2013-11-24 17:18:28 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:18:28 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:18:28 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:18:28 --> URI Class Initialized
+DEBUG - 2013-11-24 17:18:28 --> Router Class Initialized
+ERROR - 2013-11-24 17:18:28 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:18:31 --> Config Class Initialized
+DEBUG - 2013-11-24 17:18:31 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:18:31 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:18:31 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:18:31 --> URI Class Initialized
+DEBUG - 2013-11-24 17:18:31 --> Router Class Initialized
+DEBUG - 2013-11-24 17:18:31 --> Output Class Initialized
+DEBUG - 2013-11-24 17:18:31 --> Security Class Initialized
+DEBUG - 2013-11-24 17:18:31 --> Input Class Initialized
+DEBUG - 2013-11-24 17:18:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:31 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:18:31 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:18:31 --> Language Class Initialized
+DEBUG - 2013-11-24 17:18:31 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:18:31 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:18:31 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:18:31 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:18:31 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:18:31 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:18:31 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:18:31 --> Session Class Initialized
+DEBUG - 2013-11-24 17:18:31 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:18:31 --> Session routines successfully run
+DEBUG - 2013-11-24 17:18:31 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:18:31 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:18:31 --> Model Class Initialized
+DEBUG - 2013-11-24 17:18:31 --> Model Class Initialized
+DEBUG - 2013-11-24 17:18:31 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:18:31 --> Final output sent to browser
+DEBUG - 2013-11-24 17:18:31 --> Total execution time: 0.1830
+DEBUG - 2013-11-24 17:18:32 --> Config Class Initialized
+DEBUG - 2013-11-24 17:18:32 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:18:32 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:18:32 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:18:32 --> URI Class Initialized
+DEBUG - 2013-11-24 17:18:32 --> Router Class Initialized
+DEBUG - 2013-11-24 17:18:32 --> Output Class Initialized
+DEBUG - 2013-11-24 17:18:32 --> Security Class Initialized
+DEBUG - 2013-11-24 17:18:32 --> Input Class Initialized
+DEBUG - 2013-11-24 17:18:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:32 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:18:32 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:18:32 --> Language Class Initialized
+DEBUG - 2013-11-24 17:18:32 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:18:32 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:18:32 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:18:32 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:18:32 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:18:32 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:18:32 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:18:32 --> Session Class Initialized
+DEBUG - 2013-11-24 17:18:32 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:18:32 --> Session routines successfully run
+DEBUG - 2013-11-24 17:18:32 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:18:32 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:18:32 --> Model Class Initialized
+DEBUG - 2013-11-24 17:18:32 --> Model Class Initialized
+DEBUG - 2013-11-24 17:18:32 --> Final output sent to browser
+DEBUG - 2013-11-24 17:18:32 --> Total execution time: 0.2990
+DEBUG - 2013-11-24 17:18:33 --> Config Class Initialized
+DEBUG - 2013-11-24 17:18:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:18:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:18:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:18:33 --> URI Class Initialized
+DEBUG - 2013-11-24 17:18:33 --> Router Class Initialized
+DEBUG - 2013-11-24 17:18:33 --> Output Class Initialized
+DEBUG - 2013-11-24 17:18:33 --> Security Class Initialized
+DEBUG - 2013-11-24 17:18:33 --> Input Class Initialized
+DEBUG - 2013-11-24 17:18:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:33 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:18:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:18:33 --> Language Class Initialized
+DEBUG - 2013-11-24 17:18:33 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:18:33 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:18:33 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:18:33 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:18:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:18:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:18:33 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:18:33 --> Session Class Initialized
+DEBUG - 2013-11-24 17:18:33 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:18:33 --> Session routines successfully run
+DEBUG - 2013-11-24 17:18:33 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:18:33 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:18:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:18:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:18:33 --> Final output sent to browser
+DEBUG - 2013-11-24 17:18:33 --> Total execution time: 0.1350
+DEBUG - 2013-11-24 17:18:34 --> Config Class Initialized
+DEBUG - 2013-11-24 17:18:34 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:18:34 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:18:34 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:18:34 --> URI Class Initialized
+DEBUG - 2013-11-24 17:18:34 --> Router Class Initialized
+DEBUG - 2013-11-24 17:18:34 --> Output Class Initialized
+DEBUG - 2013-11-24 17:18:34 --> Security Class Initialized
+DEBUG - 2013-11-24 17:18:34 --> Input Class Initialized
+DEBUG - 2013-11-24 17:18:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:18:35 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:18:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:18:35 --> Language Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:18:35 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:18:35 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:18:35 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:18:35 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:18:35 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> Session Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:18:35 --> Session routines successfully run
+DEBUG - 2013-11-24 17:18:35 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> Model Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> Model Class Initialized
+ERROR - 2013-11-24 17:18:35 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 30
+ERROR - 2013-11-24 17:18:35 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 37
+ERROR - 2013-11-24 17:18:35 --> Severity: Warning  --> Attempt to assign property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 37
+ERROR - 2013-11-24 17:18:35 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:18:35 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:18:35 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:18:35 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:18:35 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:18:35 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:18:35 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:18:35 --> Final output sent to browser
+DEBUG - 2013-11-24 17:18:35 --> Total execution time: 0.1800
+DEBUG - 2013-11-24 17:18:35 --> Config Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:18:35 --> URI Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> Router Class Initialized
+ERROR - 2013-11-24 17:18:35 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:18:35 --> Config Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:18:35 --> URI Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> Router Class Initialized
+ERROR - 2013-11-24 17:18:35 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:18:35 --> Config Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:18:35 --> URI Class Initialized
+DEBUG - 2013-11-24 17:18:35 --> Router Class Initialized
+ERROR - 2013-11-24 17:18:35 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:19:02 --> Config Class Initialized
+DEBUG - 2013-11-24 17:19:02 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:19:02 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:19:02 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:19:02 --> URI Class Initialized
+DEBUG - 2013-11-24 17:19:02 --> Router Class Initialized
+DEBUG - 2013-11-24 17:19:02 --> Output Class Initialized
+DEBUG - 2013-11-24 17:19:02 --> Security Class Initialized
+DEBUG - 2013-11-24 17:19:02 --> Input Class Initialized
+DEBUG - 2013-11-24 17:19:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:02 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:19:02 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:19:02 --> Language Class Initialized
+DEBUG - 2013-11-24 17:19:02 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:19:02 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:19:02 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:19:02 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:19:02 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:19:02 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:19:02 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:19:02 --> Session Class Initialized
+DEBUG - 2013-11-24 17:19:02 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:19:02 --> Session routines successfully run
+DEBUG - 2013-11-24 17:19:02 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:19:02 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:19:02 --> Model Class Initialized
+DEBUG - 2013-11-24 17:19:02 --> Model Class Initialized
+ERROR - 2013-11-24 17:19:02 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 30
+ERROR - 2013-11-24 17:19:02 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 37
+ERROR - 2013-11-24 17:19:02 --> Severity: Warning  --> Attempt to assign property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 37
+ERROR - 2013-11-24 17:19:02 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:19:02 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:19:02 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:19:02 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:19:02 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:19:02 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:19:03 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:19:03 --> Final output sent to browser
+DEBUG - 2013-11-24 17:19:03 --> Total execution time: 0.1870
+DEBUG - 2013-11-24 17:19:05 --> Config Class Initialized
+DEBUG - 2013-11-24 17:19:05 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:19:05 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:19:05 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:19:05 --> URI Class Initialized
+DEBUG - 2013-11-24 17:19:05 --> Router Class Initialized
+DEBUG - 2013-11-24 17:19:05 --> Output Class Initialized
+DEBUG - 2013-11-24 17:19:05 --> Security Class Initialized
+DEBUG - 2013-11-24 17:19:05 --> Input Class Initialized
+DEBUG - 2013-11-24 17:19:05 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:05 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:05 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:05 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:05 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:05 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:05 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:19:05 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:19:05 --> Language Class Initialized
+DEBUG - 2013-11-24 17:19:05 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:19:05 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:19:05 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:19:05 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:19:05 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:19:05 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:19:05 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:19:05 --> Session Class Initialized
+DEBUG - 2013-11-24 17:19:05 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:19:05 --> Session routines successfully run
+DEBUG - 2013-11-24 17:19:05 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:19:05 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:19:05 --> Model Class Initialized
+DEBUG - 2013-11-24 17:19:05 --> Model Class Initialized
+ERROR - 2013-11-24 17:19:05 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 30
+ERROR - 2013-11-24 17:19:05 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 37
+ERROR - 2013-11-24 17:19:05 --> Severity: Warning  --> Attempt to assign property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 37
+ERROR - 2013-11-24 17:19:05 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:19:05 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:19:05 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:19:05 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:19:05 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:19:05 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:19:05 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:19:05 --> Final output sent to browser
+DEBUG - 2013-11-24 17:19:05 --> Total execution time: 0.1450
+DEBUG - 2013-11-24 17:19:19 --> Config Class Initialized
+DEBUG - 2013-11-24 17:19:19 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:19:19 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:19:19 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:19:19 --> URI Class Initialized
+DEBUG - 2013-11-24 17:19:19 --> Router Class Initialized
+DEBUG - 2013-11-24 17:19:19 --> Output Class Initialized
+DEBUG - 2013-11-24 17:19:19 --> Security Class Initialized
+DEBUG - 2013-11-24 17:19:19 --> Input Class Initialized
+DEBUG - 2013-11-24 17:19:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:19 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:19:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:19:19 --> Language Class Initialized
+DEBUG - 2013-11-24 17:19:19 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:19:19 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:19:19 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:19:19 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:19:19 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:19:19 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:19:19 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:19:19 --> Session Class Initialized
+DEBUG - 2013-11-24 17:19:19 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:19:19 --> Session routines successfully run
+DEBUG - 2013-11-24 17:19:19 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:19:19 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:19:19 --> Model Class Initialized
+DEBUG - 2013-11-24 17:19:19 --> Model Class Initialized
+ERROR - 2013-11-24 17:19:19 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 30
+ERROR - 2013-11-24 17:19:19 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 38
+ERROR - 2013-11-24 17:19:19 --> Severity: Warning  --> Attempt to assign property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 38
+ERROR - 2013-11-24 17:19:19 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:19:19 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:19:19 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:19:19 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:19:19 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:19:19 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:19:19 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:19:19 --> Final output sent to browser
+DEBUG - 2013-11-24 17:19:19 --> Total execution time: 0.2010
+DEBUG - 2013-11-24 17:19:21 --> Config Class Initialized
+DEBUG - 2013-11-24 17:19:21 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:19:21 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:19:21 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:19:21 --> URI Class Initialized
+DEBUG - 2013-11-24 17:19:21 --> Router Class Initialized
+DEBUG - 2013-11-24 17:19:21 --> Output Class Initialized
+DEBUG - 2013-11-24 17:19:21 --> Security Class Initialized
+DEBUG - 2013-11-24 17:19:21 --> Input Class Initialized
+DEBUG - 2013-11-24 17:19:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:21 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:19:21 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:19:21 --> Language Class Initialized
+DEBUG - 2013-11-24 17:19:21 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:19:21 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:19:21 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:19:21 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:19:21 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:19:21 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:19:21 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:19:21 --> Session Class Initialized
+DEBUG - 2013-11-24 17:19:21 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:19:21 --> Session routines successfully run
+DEBUG - 2013-11-24 17:19:21 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:19:21 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:19:21 --> Model Class Initialized
+DEBUG - 2013-11-24 17:19:21 --> Model Class Initialized
+ERROR - 2013-11-24 17:19:21 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 30
+ERROR - 2013-11-24 17:19:21 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 38
+ERROR - 2013-11-24 17:19:21 --> Severity: Warning  --> Attempt to assign property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 38
+ERROR - 2013-11-24 17:19:21 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:19:21 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:19:21 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:19:21 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:19:21 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:19:21 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:19:21 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:19:21 --> Final output sent to browser
+DEBUG - 2013-11-24 17:19:21 --> Total execution time: 0.2020
+DEBUG - 2013-11-24 17:19:33 --> Config Class Initialized
+DEBUG - 2013-11-24 17:19:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:19:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:19:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:19:33 --> URI Class Initialized
+DEBUG - 2013-11-24 17:19:33 --> Router Class Initialized
+DEBUG - 2013-11-24 17:19:33 --> Output Class Initialized
+DEBUG - 2013-11-24 17:19:33 --> Security Class Initialized
+DEBUG - 2013-11-24 17:19:33 --> Input Class Initialized
+DEBUG - 2013-11-24 17:19:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:33 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:19:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:19:33 --> Language Class Initialized
+DEBUG - 2013-11-24 17:19:33 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:19:33 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:19:33 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:19:33 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:19:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:19:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:19:33 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:19:33 --> Session Class Initialized
+DEBUG - 2013-11-24 17:19:33 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:19:33 --> Session routines successfully run
+DEBUG - 2013-11-24 17:19:33 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:19:33 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:19:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:19:33 --> Model Class Initialized
+ERROR - 2013-11-24 17:19:33 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 30
+ERROR - 2013-11-24 17:19:33 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 38
+ERROR - 2013-11-24 17:19:33 --> Severity: Warning  --> Attempt to assign property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 38
+ERROR - 2013-11-24 17:19:33 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:19:33 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:19:33 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:19:33 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:19:33 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:19:33 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:19:33 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:19:33 --> Final output sent to browser
+DEBUG - 2013-11-24 17:19:33 --> Total execution time: 0.1890
+DEBUG - 2013-11-24 17:19:46 --> Config Class Initialized
+DEBUG - 2013-11-24 17:19:46 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:19:46 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:19:46 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:19:46 --> URI Class Initialized
+DEBUG - 2013-11-24 17:19:46 --> Router Class Initialized
+DEBUG - 2013-11-24 17:19:46 --> Output Class Initialized
+DEBUG - 2013-11-24 17:19:46 --> Security Class Initialized
+DEBUG - 2013-11-24 17:19:46 --> Input Class Initialized
+DEBUG - 2013-11-24 17:19:46 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:46 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:46 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:46 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:46 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:46 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:19:46 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:19:46 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:19:46 --> Language Class Initialized
+DEBUG - 2013-11-24 17:19:46 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:19:46 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:19:46 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:19:46 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:19:46 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:19:46 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:19:46 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:19:46 --> Session Class Initialized
+DEBUG - 2013-11-24 17:19:46 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:19:46 --> Session routines successfully run
+DEBUG - 2013-11-24 17:19:46 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:19:46 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:19:46 --> Model Class Initialized
+DEBUG - 2013-11-24 17:19:46 --> Model Class Initialized
+ERROR - 2013-11-24 17:19:46 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 30
+ERROR - 2013-11-24 17:19:46 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 38
+ERROR - 2013-11-24 17:19:46 --> Severity: Warning  --> Attempt to assign property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 38
+ERROR - 2013-11-24 17:19:46 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:19:46 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:19:46 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:19:46 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:19:46 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:19:46 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:19:46 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:19:46 --> Final output sent to browser
+DEBUG - 2013-11-24 17:19:46 --> Total execution time: 0.1880
+DEBUG - 2013-11-24 17:20:08 --> Config Class Initialized
+DEBUG - 2013-11-24 17:20:08 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:20:08 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:20:08 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:20:08 --> URI Class Initialized
+DEBUG - 2013-11-24 17:20:08 --> Router Class Initialized
+DEBUG - 2013-11-24 17:20:08 --> Output Class Initialized
+DEBUG - 2013-11-24 17:20:08 --> Security Class Initialized
+DEBUG - 2013-11-24 17:20:08 --> Input Class Initialized
+DEBUG - 2013-11-24 17:20:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:08 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:08 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:20:08 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:20:08 --> Language Class Initialized
+DEBUG - 2013-11-24 17:20:08 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:20:08 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:20:08 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:20:08 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:20:08 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:20:08 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:20:08 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:20:08 --> Session Class Initialized
+DEBUG - 2013-11-24 17:20:08 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:20:08 --> Session routines successfully run
+DEBUG - 2013-11-24 17:20:08 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:20:08 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:20:08 --> Model Class Initialized
+DEBUG - 2013-11-24 17:20:08 --> Model Class Initialized
+ERROR - 2013-11-24 17:20:08 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 30
+ERROR - 2013-11-24 17:20:08 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 38
+ERROR - 2013-11-24 17:20:08 --> Severity: Warning  --> Attempt to assign property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 38
+ERROR - 2013-11-24 17:20:08 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:20:08 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:20:08 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:20:08 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:20:08 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:20:08 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:20:08 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:20:08 --> Final output sent to browser
+DEBUG - 2013-11-24 17:20:08 --> Total execution time: 0.1680
+DEBUG - 2013-11-24 17:20:09 --> Config Class Initialized
+DEBUG - 2013-11-24 17:20:09 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:20:09 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:20:09 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:20:09 --> URI Class Initialized
+DEBUG - 2013-11-24 17:20:09 --> Router Class Initialized
+DEBUG - 2013-11-24 17:20:09 --> Output Class Initialized
+DEBUG - 2013-11-24 17:20:09 --> Security Class Initialized
+DEBUG - 2013-11-24 17:20:09 --> Input Class Initialized
+DEBUG - 2013-11-24 17:20:09 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:09 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:09 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:09 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:09 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:09 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:09 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:20:09 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:20:09 --> Language Class Initialized
+DEBUG - 2013-11-24 17:20:09 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:20:09 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:20:09 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:20:09 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:20:09 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:20:09 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:20:09 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:20:09 --> Session Class Initialized
+DEBUG - 2013-11-24 17:20:09 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:20:09 --> Session routines successfully run
+DEBUG - 2013-11-24 17:20:09 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:20:09 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:20:09 --> Model Class Initialized
+DEBUG - 2013-11-24 17:20:09 --> Model Class Initialized
+ERROR - 2013-11-24 17:20:09 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 30
+ERROR - 2013-11-24 17:20:09 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 38
+ERROR - 2013-11-24 17:20:09 --> Severity: Warning  --> Attempt to assign property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 38
+ERROR - 2013-11-24 17:20:09 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:20:09 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:20:09 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:20:09 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:20:09 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:20:09 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:20:09 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:20:09 --> Final output sent to browser
+DEBUG - 2013-11-24 17:20:09 --> Total execution time: 0.1720
+DEBUG - 2013-11-24 17:20:12 --> Config Class Initialized
+DEBUG - 2013-11-24 17:20:12 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:20:12 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:20:12 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:20:12 --> URI Class Initialized
+DEBUG - 2013-11-24 17:20:12 --> Router Class Initialized
+DEBUG - 2013-11-24 17:20:12 --> Output Class Initialized
+DEBUG - 2013-11-24 17:20:12 --> Security Class Initialized
+DEBUG - 2013-11-24 17:20:12 --> Input Class Initialized
+DEBUG - 2013-11-24 17:20:12 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:12 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:12 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:12 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:20:12 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:20:12 --> Language Class Initialized
+DEBUG - 2013-11-24 17:20:12 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:20:12 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:20:12 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:20:12 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:20:12 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:20:12 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:20:12 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:20:12 --> Session Class Initialized
+DEBUG - 2013-11-24 17:20:12 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:20:12 --> Session routines successfully run
+DEBUG - 2013-11-24 17:20:12 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:20:12 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:20:12 --> Model Class Initialized
+DEBUG - 2013-11-24 17:20:12 --> Model Class Initialized
+DEBUG - 2013-11-24 17:20:12 --> Final output sent to browser
+DEBUG - 2013-11-24 17:20:12 --> Total execution time: 0.2230
+DEBUG - 2013-11-24 17:20:13 --> Config Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:20:13 --> URI Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Router Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Output Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Security Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Input Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:13 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:20:13 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:20:13 --> Language Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:20:13 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:20:13 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:20:13 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:20:13 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:20:13 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Session Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:20:13 --> Session routines successfully run
+DEBUG - 2013-11-24 17:20:13 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Model Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Model Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:20:13 --> Final output sent to browser
+DEBUG - 2013-11-24 17:20:13 --> Total execution time: 0.1610
+DEBUG - 2013-11-24 17:20:13 --> Config Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:20:13 --> URI Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Router Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Output Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Security Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Input Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:13 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:20:13 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:20:13 --> Language Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:20:13 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:20:13 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:20:13 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:20:13 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:20:13 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Session Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:20:13 --> Session routines successfully run
+DEBUG - 2013-11-24 17:20:13 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Model Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Model Class Initialized
+DEBUG - 2013-11-24 17:20:13 --> Final output sent to browser
+DEBUG - 2013-11-24 17:20:13 --> Total execution time: 0.1780
+DEBUG - 2013-11-24 17:20:14 --> Config Class Initialized
+DEBUG - 2013-11-24 17:20:14 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:20:14 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:20:14 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:20:14 --> URI Class Initialized
+DEBUG - 2013-11-24 17:20:14 --> Router Class Initialized
+DEBUG - 2013-11-24 17:20:14 --> Output Class Initialized
+DEBUG - 2013-11-24 17:20:14 --> Security Class Initialized
+DEBUG - 2013-11-24 17:20:14 --> Input Class Initialized
+DEBUG - 2013-11-24 17:20:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:14 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:20:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:20:14 --> Language Class Initialized
+DEBUG - 2013-11-24 17:20:14 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:20:14 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:20:14 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:20:14 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:20:14 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:20:14 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:20:14 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:20:14 --> Session Class Initialized
+DEBUG - 2013-11-24 17:20:14 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:20:14 --> Session routines successfully run
+DEBUG - 2013-11-24 17:20:14 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:20:14 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:20:14 --> Model Class Initialized
+DEBUG - 2013-11-24 17:20:14 --> Model Class Initialized
+DEBUG - 2013-11-24 17:20:14 --> Final output sent to browser
+DEBUG - 2013-11-24 17:20:14 --> Total execution time: 0.1350
+DEBUG - 2013-11-24 17:20:15 --> Config Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:20:15 --> URI Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Router Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Output Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Security Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Input Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:15 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:15 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:20:15 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:20:15 --> Language Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:20:15 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:20:15 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:20:15 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:20:15 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:20:15 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Session Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:20:15 --> Session routines successfully run
+DEBUG - 2013-11-24 17:20:15 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Model Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Model Class Initialized
+ERROR - 2013-11-24 17:20:15 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 30
+ERROR - 2013-11-24 17:20:15 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 38
+ERROR - 2013-11-24 17:20:15 --> Severity: Warning  --> Attempt to assign property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 38
+ERROR - 2013-11-24 17:20:15 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:20:15 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:20:15 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:20:15 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:20:15 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:20:15 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:20:15 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:20:15 --> Final output sent to browser
+DEBUG - 2013-11-24 17:20:15 --> Total execution time: 0.1590
+DEBUG - 2013-11-24 17:20:15 --> Config Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:20:15 --> URI Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Router Class Initialized
+ERROR - 2013-11-24 17:20:15 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:20:15 --> Config Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:20:15 --> URI Class Initialized
+DEBUG - 2013-11-24 17:20:15 --> Router Class Initialized
+ERROR - 2013-11-24 17:20:15 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:20:16 --> Config Class Initialized
+DEBUG - 2013-11-24 17:20:16 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:20:16 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:20:16 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:20:16 --> URI Class Initialized
+DEBUG - 2013-11-24 17:20:16 --> Router Class Initialized
+ERROR - 2013-11-24 17:20:16 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:20:35 --> Config Class Initialized
+DEBUG - 2013-11-24 17:20:35 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:20:35 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:20:35 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:20:35 --> URI Class Initialized
+DEBUG - 2013-11-24 17:20:35 --> Router Class Initialized
+DEBUG - 2013-11-24 17:20:35 --> Output Class Initialized
+DEBUG - 2013-11-24 17:20:35 --> Security Class Initialized
+DEBUG - 2013-11-24 17:20:35 --> Input Class Initialized
+DEBUG - 2013-11-24 17:20:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:35 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:20:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:20:35 --> Language Class Initialized
+DEBUG - 2013-11-24 17:20:35 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:20:35 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:20:35 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:20:35 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:20:35 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:20:35 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:20:35 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:20:35 --> Session Class Initialized
+DEBUG - 2013-11-24 17:20:35 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:20:35 --> Session routines successfully run
+DEBUG - 2013-11-24 17:20:35 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:20:35 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:20:35 --> Model Class Initialized
+DEBUG - 2013-11-24 17:20:35 --> Model Class Initialized
+ERROR - 2013-11-24 17:20:35 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 30
+ERROR - 2013-11-24 17:20:35 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 31
+ERROR - 2013-11-24 17:20:35 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 39
+ERROR - 2013-11-24 17:20:35 --> Severity: Warning  --> Attempt to assign property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 39
+ERROR - 2013-11-24 17:20:35 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:20:35 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:20:35 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:20:35 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:20:35 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:20:35 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:20:35 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:20:35 --> Final output sent to browser
+DEBUG - 2013-11-24 17:20:35 --> Total execution time: 0.1740
+DEBUG - 2013-11-24 17:20:41 --> Config Class Initialized
+DEBUG - 2013-11-24 17:20:41 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:20:41 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:20:41 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:20:41 --> URI Class Initialized
+DEBUG - 2013-11-24 17:20:41 --> Router Class Initialized
+DEBUG - 2013-11-24 17:20:42 --> Output Class Initialized
+DEBUG - 2013-11-24 17:20:42 --> Security Class Initialized
+DEBUG - 2013-11-24 17:20:42 --> Input Class Initialized
+DEBUG - 2013-11-24 17:20:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:42 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:20:42 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:20:42 --> Language Class Initialized
+DEBUG - 2013-11-24 17:20:42 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:20:42 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:20:42 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:20:42 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:20:42 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:20:42 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:20:42 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:20:42 --> Session Class Initialized
+DEBUG - 2013-11-24 17:20:42 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:20:42 --> Session routines successfully run
+DEBUG - 2013-11-24 17:20:42 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:20:42 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:20:42 --> Model Class Initialized
+DEBUG - 2013-11-24 17:20:42 --> Model Class Initialized
+ERROR - 2013-11-24 17:20:42 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 30
+ERROR - 2013-11-24 17:20:42 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 39
+ERROR - 2013-11-24 17:20:42 --> Severity: Warning  --> Attempt to assign property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 39
+ERROR - 2013-11-24 17:20:42 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:20:42 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:20:42 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:20:42 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:20:42 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:20:42 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:20:42 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:20:42 --> Final output sent to browser
+DEBUG - 2013-11-24 17:20:42 --> Total execution time: 0.1990
+DEBUG - 2013-11-24 17:20:43 --> Config Class Initialized
+DEBUG - 2013-11-24 17:20:43 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:20:43 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:20:43 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:20:43 --> URI Class Initialized
+DEBUG - 2013-11-24 17:20:43 --> Router Class Initialized
+DEBUG - 2013-11-24 17:20:43 --> Output Class Initialized
+DEBUG - 2013-11-24 17:20:43 --> Security Class Initialized
+DEBUG - 2013-11-24 17:20:43 --> Input Class Initialized
+DEBUG - 2013-11-24 17:20:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:43 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:20:43 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:20:43 --> Language Class Initialized
+DEBUG - 2013-11-24 17:20:43 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:20:43 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:20:43 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:20:43 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:20:43 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:20:43 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:20:43 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:20:43 --> Session Class Initialized
+DEBUG - 2013-11-24 17:20:43 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:20:43 --> Session routines successfully run
+DEBUG - 2013-11-24 17:20:43 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:20:43 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:20:43 --> Model Class Initialized
+DEBUG - 2013-11-24 17:20:43 --> Model Class Initialized
+ERROR - 2013-11-24 17:20:43 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 30
+ERROR - 2013-11-24 17:20:43 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 39
+ERROR - 2013-11-24 17:20:43 --> Severity: Warning  --> Attempt to assign property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 39
+ERROR - 2013-11-24 17:20:43 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:20:43 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:20:43 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:20:43 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:20:43 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:20:43 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:20:43 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:20:43 --> Final output sent to browser
+DEBUG - 2013-11-24 17:20:43 --> Total execution time: 0.1940
+DEBUG - 2013-11-24 17:20:55 --> Config Class Initialized
+DEBUG - 2013-11-24 17:20:55 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:20:55 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:20:55 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:20:55 --> URI Class Initialized
+DEBUG - 2013-11-24 17:20:55 --> Router Class Initialized
+DEBUG - 2013-11-24 17:20:55 --> Output Class Initialized
+DEBUG - 2013-11-24 17:20:55 --> Security Class Initialized
+DEBUG - 2013-11-24 17:20:55 --> Input Class Initialized
+DEBUG - 2013-11-24 17:20:55 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:55 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:55 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:55 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:55 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:55 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:20:55 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:20:55 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:20:55 --> Language Class Initialized
+DEBUG - 2013-11-24 17:20:55 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:20:55 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:20:55 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:20:55 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:20:55 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:20:55 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:20:55 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:20:55 --> Session Class Initialized
+DEBUG - 2013-11-24 17:20:55 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:20:55 --> Session routines successfully run
+DEBUG - 2013-11-24 17:20:55 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:20:55 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:20:55 --> Model Class Initialized
+DEBUG - 2013-11-24 17:20:55 --> Model Class Initialized
+ERROR - 2013-11-24 17:20:55 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 39
+ERROR - 2013-11-24 17:20:55 --> Severity: Warning  --> Attempt to assign property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 39
+ERROR - 2013-11-24 17:20:55 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:20:55 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:20:55 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:20:55 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:20:55 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:20:55 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:20:55 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:20:55 --> Final output sent to browser
+DEBUG - 2013-11-24 17:20:55 --> Total execution time: 0.1730
+DEBUG - 2013-11-24 17:21:13 --> Config Class Initialized
+DEBUG - 2013-11-24 17:21:13 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:21:13 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:21:13 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:21:13 --> URI Class Initialized
+DEBUG - 2013-11-24 17:21:13 --> Router Class Initialized
+DEBUG - 2013-11-24 17:21:13 --> Output Class Initialized
+DEBUG - 2013-11-24 17:21:13 --> Security Class Initialized
+DEBUG - 2013-11-24 17:21:13 --> Input Class Initialized
+DEBUG - 2013-11-24 17:21:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:13 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:21:13 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:21:13 --> Language Class Initialized
+DEBUG - 2013-11-24 17:21:13 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:21:13 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:21:13 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:21:13 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:21:13 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:21:13 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:21:13 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:21:13 --> Session Class Initialized
+DEBUG - 2013-11-24 17:21:13 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:21:13 --> Session routines successfully run
+DEBUG - 2013-11-24 17:21:13 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:21:13 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:21:13 --> Model Class Initialized
+DEBUG - 2013-11-24 17:21:13 --> Model Class Initialized
+ERROR - 2013-11-24 17:21:13 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:21:13 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:21:13 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:21:13 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:21:13 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:21:13 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:21:13 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:21:13 --> Final output sent to browser
+DEBUG - 2013-11-24 17:21:13 --> Total execution time: 0.1560
+DEBUG - 2013-11-24 17:21:16 --> Config Class Initialized
+DEBUG - 2013-11-24 17:21:16 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:21:16 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:21:16 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:21:16 --> URI Class Initialized
+DEBUG - 2013-11-24 17:21:16 --> Router Class Initialized
+DEBUG - 2013-11-24 17:21:16 --> Output Class Initialized
+DEBUG - 2013-11-24 17:21:16 --> Security Class Initialized
+DEBUG - 2013-11-24 17:21:16 --> Input Class Initialized
+DEBUG - 2013-11-24 17:21:16 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:16 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:16 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:16 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:21:16 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:21:16 --> Language Class Initialized
+DEBUG - 2013-11-24 17:21:16 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:21:16 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:21:16 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:21:16 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:21:16 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:21:16 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:21:16 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:21:16 --> Session Class Initialized
+DEBUG - 2013-11-24 17:21:16 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:21:16 --> Session routines successfully run
+DEBUG - 2013-11-24 17:21:16 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:21:16 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:21:16 --> Model Class Initialized
+DEBUG - 2013-11-24 17:21:16 --> Model Class Initialized
+ERROR - 2013-11-24 17:21:16 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:21:16 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:21:16 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:21:16 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:21:16 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:21:16 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:21:16 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:21:16 --> Final output sent to browser
+DEBUG - 2013-11-24 17:21:16 --> Total execution time: 0.1490
+DEBUG - 2013-11-24 17:21:20 --> Config Class Initialized
+DEBUG - 2013-11-24 17:21:20 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:21:20 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:21:20 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:21:20 --> URI Class Initialized
+DEBUG - 2013-11-24 17:21:20 --> Router Class Initialized
+DEBUG - 2013-11-24 17:21:20 --> Output Class Initialized
+DEBUG - 2013-11-24 17:21:20 --> Security Class Initialized
+DEBUG - 2013-11-24 17:21:20 --> Input Class Initialized
+DEBUG - 2013-11-24 17:21:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:20 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:21:20 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:21:20 --> Language Class Initialized
+DEBUG - 2013-11-24 17:21:20 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:21:20 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:21:20 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:21:20 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:21:20 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:21:20 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:21:20 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:21:20 --> Session Class Initialized
+DEBUG - 2013-11-24 17:21:20 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:21:20 --> Session routines successfully run
+DEBUG - 2013-11-24 17:21:20 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:21:20 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:21:20 --> Model Class Initialized
+DEBUG - 2013-11-24 17:21:20 --> Model Class Initialized
+ERROR - 2013-11-24 17:21:20 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:21:20 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:21:20 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:21:20 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:21:20 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:21:20 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:21:20 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:21:20 --> Final output sent to browser
+DEBUG - 2013-11-24 17:21:20 --> Total execution time: 0.1590
+DEBUG - 2013-11-24 17:21:26 --> Config Class Initialized
+DEBUG - 2013-11-24 17:21:26 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:21:26 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:21:26 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:21:26 --> URI Class Initialized
+DEBUG - 2013-11-24 17:21:26 --> Router Class Initialized
+DEBUG - 2013-11-24 17:21:26 --> Output Class Initialized
+DEBUG - 2013-11-24 17:21:26 --> Security Class Initialized
+DEBUG - 2013-11-24 17:21:26 --> Input Class Initialized
+DEBUG - 2013-11-24 17:21:26 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:26 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:26 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:26 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:21:26 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:21:26 --> Language Class Initialized
+DEBUG - 2013-11-24 17:21:26 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:21:26 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:21:26 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:21:26 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:21:26 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:21:26 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:21:26 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:21:26 --> Session Class Initialized
+DEBUG - 2013-11-24 17:21:26 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:21:26 --> Session routines successfully run
+DEBUG - 2013-11-24 17:21:26 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:21:26 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:21:26 --> Model Class Initialized
+DEBUG - 2013-11-24 17:21:26 --> Model Class Initialized
+ERROR - 2013-11-24 17:21:26 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 39
+ERROR - 2013-11-24 17:21:26 --> Severity: Warning  --> Attempt to assign property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 39
+ERROR - 2013-11-24 17:21:26 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:21:26 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:21:26 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:21:26 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:21:26 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:21:26 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:21:26 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:21:26 --> Final output sent to browser
+DEBUG - 2013-11-24 17:21:26 --> Total execution time: 0.1840
+DEBUG - 2013-11-24 17:21:30 --> Config Class Initialized
+DEBUG - 2013-11-24 17:21:30 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:21:30 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:21:30 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:21:30 --> URI Class Initialized
+DEBUG - 2013-11-24 17:21:30 --> Router Class Initialized
+DEBUG - 2013-11-24 17:21:30 --> Output Class Initialized
+DEBUG - 2013-11-24 17:21:30 --> Security Class Initialized
+DEBUG - 2013-11-24 17:21:30 --> Input Class Initialized
+DEBUG - 2013-11-24 17:21:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:30 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:21:30 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:21:30 --> Language Class Initialized
+DEBUG - 2013-11-24 17:21:30 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:21:30 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:21:30 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:21:30 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:21:30 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:21:30 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:21:30 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:21:30 --> Session Class Initialized
+DEBUG - 2013-11-24 17:21:30 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:21:30 --> Session routines successfully run
+DEBUG - 2013-11-24 17:21:30 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:21:30 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:21:30 --> Model Class Initialized
+DEBUG - 2013-11-24 17:21:30 --> Model Class Initialized
+ERROR - 2013-11-24 17:21:30 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 39
+ERROR - 2013-11-24 17:21:30 --> Severity: Warning  --> Attempt to assign property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 39
+ERROR - 2013-11-24 17:21:30 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:21:30 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:21:30 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:21:30 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:21:30 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 54
+ERROR - 2013-11-24 17:21:30 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:21:30 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:21:30 --> Final output sent to browser
+DEBUG - 2013-11-24 17:21:30 --> Total execution time: 0.1930
+DEBUG - 2013-11-24 17:21:33 --> Config Class Initialized
+DEBUG - 2013-11-24 17:21:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:21:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:21:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:21:33 --> URI Class Initialized
+DEBUG - 2013-11-24 17:21:33 --> Router Class Initialized
+DEBUG - 2013-11-24 17:21:33 --> Output Class Initialized
+DEBUG - 2013-11-24 17:21:33 --> Security Class Initialized
+DEBUG - 2013-11-24 17:21:33 --> Input Class Initialized
+DEBUG - 2013-11-24 17:21:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:33 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:21:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:21:33 --> Language Class Initialized
+DEBUG - 2013-11-24 17:21:33 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:21:33 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:21:33 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:21:33 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:21:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:21:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:21:33 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:21:33 --> Session Class Initialized
+DEBUG - 2013-11-24 17:21:33 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:21:33 --> Session routines successfully run
+DEBUG - 2013-11-24 17:21:33 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:21:33 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:21:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:21:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:21:33 --> Final output sent to browser
+DEBUG - 2013-11-24 17:21:33 --> Total execution time: 0.1860
+DEBUG - 2013-11-24 17:21:34 --> Config Class Initialized
+DEBUG - 2013-11-24 17:21:34 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:21:34 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:21:34 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:21:34 --> URI Class Initialized
+DEBUG - 2013-11-24 17:21:34 --> Router Class Initialized
+DEBUG - 2013-11-24 17:21:34 --> Output Class Initialized
+DEBUG - 2013-11-24 17:21:34 --> Security Class Initialized
+DEBUG - 2013-11-24 17:21:34 --> Input Class Initialized
+DEBUG - 2013-11-24 17:21:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:34 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:21:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:21:34 --> Language Class Initialized
+DEBUG - 2013-11-24 17:21:34 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:21:34 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:21:34 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:21:34 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:21:34 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:21:34 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:21:34 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:21:34 --> Session Class Initialized
+DEBUG - 2013-11-24 17:21:34 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:21:34 --> Session routines successfully run
+DEBUG - 2013-11-24 17:21:34 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:21:34 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:21:34 --> Model Class Initialized
+DEBUG - 2013-11-24 17:21:34 --> Model Class Initialized
+ERROR - 2013-11-24 17:21:34 --> Severity: 4096  --> Object of class stdClass could not be converted to string E:\myworks\ezone\SZone\application\controllers\review.php 30
+DEBUG - 2013-11-24 17:21:34 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:21:34 --> Final output sent to browser
+DEBUG - 2013-11-24 17:21:34 --> Total execution time: 0.2090
+DEBUG - 2013-11-24 17:21:35 --> Config Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:21:35 --> URI Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Router Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Output Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Security Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Input Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:35 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:21:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:21:35 --> Language Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:21:35 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:21:35 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:21:35 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:21:35 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:21:35 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Session Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:21:35 --> Session routines successfully run
+DEBUG - 2013-11-24 17:21:35 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Model Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Model Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Config Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:21:35 --> URI Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Router Class Initialized
+ERROR - 2013-11-24 17:21:35 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:21:35 --> Final output sent to browser
+DEBUG - 2013-11-24 17:21:35 --> Total execution time: 0.2300
+DEBUG - 2013-11-24 17:21:35 --> Config Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:21:35 --> URI Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Router Class Initialized
+ERROR - 2013-11-24 17:21:35 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:21:35 --> Config Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:21:35 --> URI Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Router Class Initialized
+ERROR - 2013-11-24 17:21:35 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:21:35 --> Config Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:21:35 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:21:35 --> URI Class Initialized
+DEBUG - 2013-11-24 17:21:36 --> Router Class Initialized
+DEBUG - 2013-11-24 17:21:36 --> Output Class Initialized
+DEBUG - 2013-11-24 17:21:36 --> Security Class Initialized
+DEBUG - 2013-11-24 17:21:36 --> Input Class Initialized
+DEBUG - 2013-11-24 17:21:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:36 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:21:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:21:36 --> Language Class Initialized
+DEBUG - 2013-11-24 17:21:36 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:21:36 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:21:36 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:21:36 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:21:36 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:21:36 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:21:36 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:21:36 --> Session Class Initialized
+DEBUG - 2013-11-24 17:21:36 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:21:36 --> Session routines successfully run
+DEBUG - 2013-11-24 17:21:36 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:21:36 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:21:36 --> Model Class Initialized
+DEBUG - 2013-11-24 17:21:36 --> Model Class Initialized
+DEBUG - 2013-11-24 17:21:36 --> Final output sent to browser
+DEBUG - 2013-11-24 17:21:36 --> Total execution time: 0.2430
+DEBUG - 2013-11-24 17:21:56 --> Config Class Initialized
+DEBUG - 2013-11-24 17:21:56 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:21:56 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:21:56 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:21:56 --> URI Class Initialized
+DEBUG - 2013-11-24 17:21:56 --> Router Class Initialized
+DEBUG - 2013-11-24 17:21:56 --> Output Class Initialized
+DEBUG - 2013-11-24 17:21:56 --> Security Class Initialized
+DEBUG - 2013-11-24 17:21:56 --> Input Class Initialized
+DEBUG - 2013-11-24 17:21:56 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:56 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:56 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:56 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:56 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:56 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:21:56 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:21:56 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:21:56 --> Language Class Initialized
+DEBUG - 2013-11-24 17:21:56 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:21:56 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:21:56 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:21:56 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:21:56 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:21:56 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:21:56 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:21:56 --> Session Class Initialized
+DEBUG - 2013-11-24 17:21:56 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:21:56 --> Session routines successfully run
+DEBUG - 2013-11-24 17:21:56 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:21:56 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:21:56 --> Model Class Initialized
+DEBUG - 2013-11-24 17:21:56 --> Model Class Initialized
+ERROR - 2013-11-24 17:21:56 --> Severity: Notice  --> Undefined variable: finfo E:\myworks\ezone\SZone\application\controllers\review.php 36
+ERROR - 2013-11-24 17:21:56 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 39
+ERROR - 2013-11-24 17:21:56 --> Severity: Notice  --> Undefined property: stdClass::$fid E:\myworks\ezone\SZone\application\views\review.php 51
+ERROR - 2013-11-24 17:21:56 --> Severity: Notice  --> Undefined property: stdClass::$fid E:\myworks\ezone\SZone\application\views\review.php 54
+DEBUG - 2013-11-24 17:21:56 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:21:56 --> Final output sent to browser
+DEBUG - 2013-11-24 17:21:56 --> Total execution time: 0.2010
+DEBUG - 2013-11-24 17:22:24 --> Config Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:22:24 --> URI Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Router Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Output Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Security Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Input Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:22:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:22:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:22:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:22:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:22:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:22:24 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:22:24 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:22:24 --> Language Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:22:24 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:22:24 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:22:24 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:22:24 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:22:24 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Session Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:22:24 --> Session routines successfully run
+DEBUG - 2013-11-24 17:22:24 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Model Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Model Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:22:24 --> Final output sent to browser
+DEBUG - 2013-11-24 17:22:24 --> Total execution time: 0.1960
+DEBUG - 2013-11-24 17:22:24 --> Config Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:22:24 --> URI Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Router Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Output Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Security Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Input Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:22:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:22:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:22:24 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:22:24 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:22:24 --> Language Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:22:24 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:22:24 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:22:24 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:22:24 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:22:24 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Session Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:22:24 --> Session routines successfully run
+DEBUG - 2013-11-24 17:22:24 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Model Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Model Class Initialized
+DEBUG - 2013-11-24 17:22:24 --> Final output sent to browser
+DEBUG - 2013-11-24 17:22:24 --> Total execution time: 0.2670
+DEBUG - 2013-11-24 17:22:26 --> Config Class Initialized
+DEBUG - 2013-11-24 17:22:26 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:22:26 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:22:26 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:22:26 --> URI Class Initialized
+DEBUG - 2013-11-24 17:22:26 --> Router Class Initialized
+DEBUG - 2013-11-24 17:22:26 --> Output Class Initialized
+DEBUG - 2013-11-24 17:22:26 --> Security Class Initialized
+DEBUG - 2013-11-24 17:22:26 --> Input Class Initialized
+DEBUG - 2013-11-24 17:22:26 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:22:26 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:22:26 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:22:26 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:22:26 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:22:26 --> Language Class Initialized
+DEBUG - 2013-11-24 17:22:26 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:22:26 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:22:26 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:22:26 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:22:26 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:22:26 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:22:26 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:22:26 --> Session Class Initialized
+DEBUG - 2013-11-24 17:22:26 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:22:26 --> Session routines successfully run
+DEBUG - 2013-11-24 17:22:26 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:22:26 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:22:26 --> Model Class Initialized
+DEBUG - 2013-11-24 17:22:26 --> Model Class Initialized
+DEBUG - 2013-11-24 17:22:26 --> Final output sent to browser
+DEBUG - 2013-11-24 17:22:26 --> Total execution time: 0.2140
+DEBUG - 2013-11-24 17:25:34 --> Config Class Initialized
+DEBUG - 2013-11-24 17:25:34 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:25:34 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:25:34 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:25:34 --> URI Class Initialized
+DEBUG - 2013-11-24 17:25:34 --> Router Class Initialized
+DEBUG - 2013-11-24 17:25:34 --> Output Class Initialized
+DEBUG - 2013-11-24 17:25:34 --> Security Class Initialized
+DEBUG - 2013-11-24 17:25:34 --> Input Class Initialized
+DEBUG - 2013-11-24 17:25:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:25:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:25:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:25:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:25:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:25:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:25:34 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:25:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:25:34 --> Language Class Initialized
+DEBUG - 2013-11-24 17:25:49 --> Config Class Initialized
+DEBUG - 2013-11-24 17:25:49 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:25:49 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:25:49 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:25:49 --> URI Class Initialized
+DEBUG - 2013-11-24 17:25:49 --> Router Class Initialized
+DEBUG - 2013-11-24 17:25:49 --> Output Class Initialized
+DEBUG - 2013-11-24 17:25:49 --> Security Class Initialized
+DEBUG - 2013-11-24 17:25:49 --> Input Class Initialized
+DEBUG - 2013-11-24 17:25:49 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:25:49 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:25:49 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:25:49 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:25:49 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:25:49 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:25:49 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:25:49 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:25:49 --> Language Class Initialized
+DEBUG - 2013-11-24 17:25:49 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:25:49 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:25:49 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:25:49 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:25:49 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:25:49 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:25:49 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:25:49 --> Session Class Initialized
+DEBUG - 2013-11-24 17:25:49 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:25:49 --> Session routines successfully run
+DEBUG - 2013-11-24 17:25:49 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:25:49 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:25:49 --> Model Class Initialized
+DEBUG - 2013-11-24 17:25:49 --> Model Class Initialized
+ERROR - 2013-11-24 17:25:49 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 25
+ERROR - 2013-11-24 17:25:49 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 27
+ERROR - 2013-11-24 17:25:49 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 31
+ERROR - 2013-11-24 17:25:49 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 58
+DEBUG - 2013-11-24 17:25:49 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:25:49 --> Final output sent to browser
+DEBUG - 2013-11-24 17:25:49 --> Total execution time: 0.1800
+DEBUG - 2013-11-24 17:26:34 --> Config Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:26:34 --> URI Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Router Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Output Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Security Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Input Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:34 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:26:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:26:34 --> Language Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:26:34 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:26:34 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:26:34 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:26:34 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:26:34 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Session Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:26:34 --> Session routines successfully run
+DEBUG - 2013-11-24 17:26:34 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Model Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Model Class Initialized
+ERROR - 2013-11-24 17:26:34 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 56
+DEBUG - 2013-11-24 17:26:34 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:26:34 --> Final output sent to browser
+DEBUG - 2013-11-24 17:26:34 --> Total execution time: 0.1990
+DEBUG - 2013-11-24 17:26:34 --> Config Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:26:34 --> URI Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Router Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Output Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Security Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Input Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:34 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:26:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:26:34 --> Language Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:26:34 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:26:34 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:26:34 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:26:34 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:26:34 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Session Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:26:34 --> Session routines successfully run
+DEBUG - 2013-11-24 17:26:34 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Model Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Model Class Initialized
+DEBUG - 2013-11-24 17:26:34 --> Final output sent to browser
+DEBUG - 2013-11-24 17:26:34 --> Total execution time: 0.2030
+DEBUG - 2013-11-24 17:26:35 --> Config Class Initialized
+DEBUG - 2013-11-24 17:26:35 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:26:35 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:26:35 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:26:35 --> URI Class Initialized
+DEBUG - 2013-11-24 17:26:35 --> Router Class Initialized
+DEBUG - 2013-11-24 17:26:35 --> Output Class Initialized
+DEBUG - 2013-11-24 17:26:35 --> Security Class Initialized
+DEBUG - 2013-11-24 17:26:35 --> Input Class Initialized
+DEBUG - 2013-11-24 17:26:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:35 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:26:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:26:35 --> Language Class Initialized
+DEBUG - 2013-11-24 17:26:35 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:26:35 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:26:35 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:26:35 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:26:35 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:26:35 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:26:35 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:26:35 --> Session Class Initialized
+DEBUG - 2013-11-24 17:26:35 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:26:35 --> Session routines successfully run
+DEBUG - 2013-11-24 17:26:35 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:26:35 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:26:35 --> Model Class Initialized
+DEBUG - 2013-11-24 17:26:35 --> Model Class Initialized
+DEBUG - 2013-11-24 17:26:35 --> Final output sent to browser
+DEBUG - 2013-11-24 17:26:35 --> Total execution time: 0.2020
+DEBUG - 2013-11-24 17:26:51 --> Config Class Initialized
+DEBUG - 2013-11-24 17:26:51 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:26:51 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:26:51 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:26:51 --> URI Class Initialized
+DEBUG - 2013-11-24 17:26:51 --> Router Class Initialized
+DEBUG - 2013-11-24 17:26:51 --> Output Class Initialized
+DEBUG - 2013-11-24 17:26:51 --> Security Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Input Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:52 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:52 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:52 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:52 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:52 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:52 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:26:52 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:26:52 --> Language Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:26:52 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:26:52 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:26:52 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:26:52 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:26:52 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Session Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:26:52 --> Session routines successfully run
+DEBUG - 2013-11-24 17:26:52 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Model Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Model Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:26:52 --> Final output sent to browser
+DEBUG - 2013-11-24 17:26:52 --> Total execution time: 0.1950
+DEBUG - 2013-11-24 17:26:52 --> Config Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:26:52 --> URI Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Router Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Output Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Security Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Input Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:52 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:52 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:52 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:26:52 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:26:52 --> Language Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:26:52 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:26:52 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:26:52 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:26:52 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:26:52 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Session Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:26:52 --> Session routines successfully run
+DEBUG - 2013-11-24 17:26:52 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Model Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Model Class Initialized
+DEBUG - 2013-11-24 17:26:52 --> Final output sent to browser
+DEBUG - 2013-11-24 17:26:52 --> Total execution time: 0.3320
+DEBUG - 2013-11-24 17:26:53 --> Config Class Initialized
+DEBUG - 2013-11-24 17:26:53 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:26:53 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:26:53 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:26:53 --> URI Class Initialized
+DEBUG - 2013-11-24 17:26:53 --> Router Class Initialized
+DEBUG - 2013-11-24 17:26:53 --> Output Class Initialized
+DEBUG - 2013-11-24 17:26:53 --> Security Class Initialized
+DEBUG - 2013-11-24 17:26:53 --> Input Class Initialized
+DEBUG - 2013-11-24 17:26:53 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:53 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:53 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:26:53 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:26:53 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:26:53 --> Language Class Initialized
+DEBUG - 2013-11-24 17:26:53 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:26:53 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:26:53 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:26:53 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:26:53 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:26:53 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:26:53 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:26:53 --> Session Class Initialized
+DEBUG - 2013-11-24 17:26:53 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:26:53 --> Session routines successfully run
+DEBUG - 2013-11-24 17:26:53 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:26:53 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:26:53 --> Model Class Initialized
+DEBUG - 2013-11-24 17:26:53 --> Model Class Initialized
+DEBUG - 2013-11-24 17:26:53 --> Final output sent to browser
+DEBUG - 2013-11-24 17:26:53 --> Total execution time: 0.1350
+DEBUG - 2013-11-24 17:27:22 --> Config Class Initialized
+DEBUG - 2013-11-24 17:27:22 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:27:22 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:27:22 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:27:22 --> URI Class Initialized
+DEBUG - 2013-11-24 17:27:22 --> Router Class Initialized
+DEBUG - 2013-11-24 17:27:22 --> Output Class Initialized
+DEBUG - 2013-11-24 17:27:22 --> Security Class Initialized
+DEBUG - 2013-11-24 17:27:22 --> Input Class Initialized
+DEBUG - 2013-11-24 17:27:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:22 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:27:22 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:27:22 --> Language Class Initialized
+DEBUG - 2013-11-24 17:27:22 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:27:22 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:27:22 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:27:22 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:27:22 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:27:22 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:27:22 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Session Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:27:23 --> Session routines successfully run
+DEBUG - 2013-11-24 17:27:23 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Model Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Model Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:27:23 --> Final output sent to browser
+DEBUG - 2013-11-24 17:27:23 --> Total execution time: 0.1440
+DEBUG - 2013-11-24 17:27:23 --> Config Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:27:23 --> URI Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Router Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Output Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Security Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Input Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:23 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:27:23 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:27:23 --> Language Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:27:23 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:27:23 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:27:23 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:27:23 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:27:23 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Session Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:27:23 --> Session routines successfully run
+DEBUG - 2013-11-24 17:27:23 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Model Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Model Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Config Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Final output sent to browser
+DEBUG - 2013-11-24 17:27:23 --> Total execution time: 0.2080
+DEBUG - 2013-11-24 17:27:23 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:27:23 --> URI Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Router Class Initialized
+ERROR - 2013-11-24 17:27:23 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:27:23 --> Config Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:27:23 --> URI Class Initialized
+DEBUG - 2013-11-24 17:27:23 --> Router Class Initialized
+ERROR - 2013-11-24 17:27:23 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:27:24 --> Config Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> Config Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:27:24 --> URI Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> Router Class Initialized
+ERROR - 2013-11-24 17:27:24 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:27:24 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:27:24 --> URI Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> Router Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> Output Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> Security Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> Input Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:24 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:27:24 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:27:24 --> Language Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:27:24 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:27:24 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:27:24 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:27:24 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:27:24 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> Session Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:27:24 --> Session routines successfully run
+DEBUG - 2013-11-24 17:27:24 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> Model Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> Model Class Initialized
+DEBUG - 2013-11-24 17:27:24 --> Final output sent to browser
+DEBUG - 2013-11-24 17:27:24 --> Total execution time: 0.5030
+DEBUG - 2013-11-24 17:27:25 --> Config Class Initialized
+DEBUG - 2013-11-24 17:27:25 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:27:25 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:27:25 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:27:25 --> URI Class Initialized
+DEBUG - 2013-11-24 17:27:25 --> Router Class Initialized
+DEBUG - 2013-11-24 17:27:25 --> Output Class Initialized
+DEBUG - 2013-11-24 17:27:25 --> Security Class Initialized
+DEBUG - 2013-11-24 17:27:25 --> Input Class Initialized
+DEBUG - 2013-11-24 17:27:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:25 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:27:25 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:27:25 --> Language Class Initialized
+DEBUG - 2013-11-24 17:27:25 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:27:25 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:27:25 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:27:25 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:27:25 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:27:25 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:27:25 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:27:25 --> Session Class Initialized
+DEBUG - 2013-11-24 17:27:25 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:27:25 --> Session routines successfully run
+DEBUG - 2013-11-24 17:27:25 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:27:25 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:27:25 --> Model Class Initialized
+DEBUG - 2013-11-24 17:27:25 --> Model Class Initialized
+ERROR - 2013-11-24 17:27:25 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 31
+ERROR - 2013-11-24 17:27:25 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 32
+ERROR - 2013-11-24 17:27:25 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 33
+ERROR - 2013-11-24 17:27:25 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 34
+ERROR - 2013-11-24 17:27:25 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 35
+ERROR - 2013-11-24 17:27:25 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 36
+ERROR - 2013-11-24 17:27:25 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 37
+DEBUG - 2013-11-24 17:27:25 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:27:25 --> Final output sent to browser
+DEBUG - 2013-11-24 17:27:25 --> Total execution time: 0.2070
+DEBUG - 2013-11-24 17:27:26 --> Config Class Initialized
+DEBUG - 2013-11-24 17:27:26 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:27:26 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:27:26 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:27:26 --> URI Class Initialized
+DEBUG - 2013-11-24 17:27:26 --> Router Class Initialized
+ERROR - 2013-11-24 17:27:26 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:27:26 --> Config Class Initialized
+DEBUG - 2013-11-24 17:27:26 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:27:26 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:27:26 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:27:26 --> URI Class Initialized
+DEBUG - 2013-11-24 17:27:26 --> Router Class Initialized
+ERROR - 2013-11-24 17:27:26 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:27:26 --> Config Class Initialized
+DEBUG - 2013-11-24 17:27:26 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:27:26 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:27:26 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:27:26 --> URI Class Initialized
+DEBUG - 2013-11-24 17:27:26 --> Router Class Initialized
+ERROR - 2013-11-24 17:27:26 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:27:42 --> Config Class Initialized
+DEBUG - 2013-11-24 17:27:42 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:27:42 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:27:42 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:27:42 --> URI Class Initialized
+DEBUG - 2013-11-24 17:27:42 --> Router Class Initialized
+DEBUG - 2013-11-24 17:27:42 --> Output Class Initialized
+DEBUG - 2013-11-24 17:27:43 --> Security Class Initialized
+DEBUG - 2013-11-24 17:27:43 --> Input Class Initialized
+DEBUG - 2013-11-24 17:27:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:27:43 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:27:43 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:27:43 --> Language Class Initialized
+DEBUG - 2013-11-24 17:27:43 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:27:43 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:27:43 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:27:43 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:27:43 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:27:43 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:27:43 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:27:43 --> Session Class Initialized
+DEBUG - 2013-11-24 17:27:43 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:27:43 --> Session routines successfully run
+DEBUG - 2013-11-24 17:27:43 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:27:43 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:27:43 --> Model Class Initialized
+DEBUG - 2013-11-24 17:27:43 --> Model Class Initialized
+ERROR - 2013-11-24 17:27:43 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 32
+ERROR - 2013-11-24 17:27:43 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 33
+ERROR - 2013-11-24 17:27:43 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 34
+ERROR - 2013-11-24 17:27:43 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 35
+ERROR - 2013-11-24 17:27:43 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 36
+ERROR - 2013-11-24 17:27:43 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 37
+ERROR - 2013-11-24 17:27:43 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 38
+DEBUG - 2013-11-24 17:27:43 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:27:43 --> Final output sent to browser
+DEBUG - 2013-11-24 17:27:43 --> Total execution time: 0.1500
+DEBUG - 2013-11-24 17:29:10 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:11 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:11 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:11 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:11 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:11 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:11 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:11 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:11 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:11 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:11 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:11 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:11 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:11 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:11 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:11 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:11 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:29:11 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:11 --> Total execution time: 0.1580
+DEBUG - 2013-11-24 17:29:11 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:11 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Router Class Initialized
+ERROR - 2013-11-24 17:29:11 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:29:11 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:11 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:11 --> Router Class Initialized
+ERROR - 2013-11-24 17:29:11 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:29:12 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:12 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:12 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:12 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:12 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:12 --> Router Class Initialized
+ERROR - 2013-11-24 17:29:12 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:29:20 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:20 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:20 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:20 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:20 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:20 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:20 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:20 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:20 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:20 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:20 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:20 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> Model Class Initialized
+ERROR - 2013-11-24 17:29:20 --> Severity: Notice  --> Undefined variable: finfo E:\myworks\ezone\SZone\application\controllers\review.php 47
+DEBUG - 2013-11-24 17:29:20 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:29:20 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:20 --> Total execution time: 0.1540
+DEBUG - 2013-11-24 17:29:20 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:20 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:20 --> Router Class Initialized
+ERROR - 2013-11-24 17:29:20 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:29:21 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:21 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:21 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:21 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:21 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:21 --> Router Class Initialized
+ERROR - 2013-11-24 17:29:21 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:29:21 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:21 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:21 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:21 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:21 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:21 --> Router Class Initialized
+ERROR - 2013-11-24 17:29:21 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:29:29 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:29 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:29 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:29 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:29 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:29 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:29 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:29 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:29 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:29 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:29 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:29 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:29:29 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:29 --> Total execution time: 0.1600
+DEBUG - 2013-11-24 17:29:29 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:29 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Router Class Initialized
+ERROR - 2013-11-24 17:29:29 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:29:29 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:29 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:29 --> Router Class Initialized
+ERROR - 2013-11-24 17:29:29 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:29:30 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:30 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:30 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:30 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:30 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:30 --> Router Class Initialized
+ERROR - 2013-11-24 17:29:30 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:29:31 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:31 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:31 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:31 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:31 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:31 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:31 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:31 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:31 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:31 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:31 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:31 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:29:31 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:31 --> Total execution time: 0.2010
+DEBUG - 2013-11-24 17:29:31 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:31 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:31 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:31 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:31 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:31 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:31 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:31 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:31 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:31 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:31 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:31 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:31 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:31 --> Total execution time: 0.1300
+DEBUG - 2013-11-24 17:29:32 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:32 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:32 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:32 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:32 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:32 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:32 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:32 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:32 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:32 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:32 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:32 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:32 --> Total execution time: 0.1440
+DEBUG - 2013-11-24 17:29:32 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:32 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:32 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:32 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:32 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:32 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:32 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:32 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:32 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:32 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:32 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:32 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:32 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:29:32 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:32 --> Total execution time: 0.1750
+DEBUG - 2013-11-24 17:29:33 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:33 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:33 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:33 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:33 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:33 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:33 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:33 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:33 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:33 --> Total execution time: 0.4210
+DEBUG - 2013-11-24 17:29:33 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:33 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:33 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:33 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:33 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:33 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:33 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:33 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:33 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:34 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:34 --> Total execution time: 0.1350
+DEBUG - 2013-11-24 17:29:34 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:34 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:34 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:34 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:34 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:34 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:34 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:34 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:34 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:34 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:34 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:29:34 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:34 --> Total execution time: 0.1410
+DEBUG - 2013-11-24 17:29:34 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:34 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:34 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:34 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:34 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:34 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:34 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:34 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:34 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:34 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:34 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:34 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:35 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:35 --> Total execution time: 0.4140
+DEBUG - 2013-11-24 17:29:35 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:35 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:35 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:35 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:35 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:35 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:35 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:35 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:35 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:35 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:35 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:35 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:35 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:35 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:35 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:35 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:35 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:35 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:36 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:36 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:29:36 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:36 --> Total execution time: 0.1570
+DEBUG - 2013-11-24 17:29:36 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:36 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:36 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:36 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:36 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:36 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:36 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:36 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:36 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:36 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:36 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:36 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:36 --> Total execution time: 0.3040
+DEBUG - 2013-11-24 17:29:37 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:37 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:37 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:37 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:37 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:37 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:37 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:37 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:37 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:37 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:37 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:29:37 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:37 --> Total execution time: 0.1380
+DEBUG - 2013-11-24 17:29:37 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:37 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:37 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:37 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:37 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:37 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:37 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:37 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:37 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:37 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:37 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:37 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:38 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:38 --> Total execution time: 0.3790
+DEBUG - 2013-11-24 17:29:39 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:39 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:39 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:39 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:39 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:39 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:39 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:39 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:39 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:39 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:39 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:39 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:29:39 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:39 --> Total execution time: 0.1270
+DEBUG - 2013-11-24 17:29:39 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:39 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:39 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:39 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:39 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:39 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:39 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:39 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:39 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:39 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:39 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:39 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:39 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:39 --> Total execution time: 0.2460
+DEBUG - 2013-11-24 17:29:41 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:41 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:41 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:41 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:41 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:41 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:41 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:41 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:41 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:41 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:41 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:41 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:29:41 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:41 --> Total execution time: 0.1350
+DEBUG - 2013-11-24 17:29:41 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:41 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:41 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:41 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:41 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:41 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:41 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:41 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:41 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:41 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:41 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:41 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:41 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:41 --> Total execution time: 0.1850
+DEBUG - 2013-11-24 17:29:43 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:43 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:43 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:43 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:43 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:43 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:43 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:43 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:43 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:43 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:43 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:43 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:29:43 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:43 --> Total execution time: 0.1400
+DEBUG - 2013-11-24 17:29:43 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:43 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:43 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:43 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:43 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:43 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:43 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:43 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:43 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:43 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:43 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:44 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:44 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:44 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:44 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:44 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:44 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:44 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:44 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:44 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:44 --> Total execution time: 0.2190
+DEBUG - 2013-11-24 17:29:45 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:45 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Router Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Output Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Security Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Input Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:29:45 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:29:45 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:29:45 --> Language Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:29:45 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:29:45 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:29:45 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:29:45 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:29:45 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Session Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:29:45 --> Session routines successfully run
+DEBUG - 2013-11-24 17:29:45 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Model Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Model Class Initialized
+ERROR - 2013-11-24 17:29:45 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\controllers\review.php 43
+DEBUG - 2013-11-24 17:29:45 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:29:45 --> Final output sent to browser
+DEBUG - 2013-11-24 17:29:45 --> Total execution time: 0.1380
+DEBUG - 2013-11-24 17:29:45 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:45 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Router Class Initialized
+ERROR - 2013-11-24 17:29:45 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:29:45 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:45 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Router Class Initialized
+ERROR - 2013-11-24 17:29:45 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:29:45 --> Config Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:29:45 --> URI Class Initialized
+DEBUG - 2013-11-24 17:29:45 --> Router Class Initialized
+ERROR - 2013-11-24 17:29:45 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:30:01 --> Config Class Initialized
+DEBUG - 2013-11-24 17:30:01 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:30:01 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:30:01 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:30:01 --> URI Class Initialized
+DEBUG - 2013-11-24 17:30:01 --> Router Class Initialized
+DEBUG - 2013-11-24 17:30:01 --> Output Class Initialized
+DEBUG - 2013-11-24 17:30:01 --> Security Class Initialized
+DEBUG - 2013-11-24 17:30:01 --> Input Class Initialized
+DEBUG - 2013-11-24 17:30:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:30:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:30:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:30:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:30:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:30:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:30:01 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:30:01 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:30:01 --> Language Class Initialized
+DEBUG - 2013-11-24 17:30:01 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:30:01 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:30:01 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:30:01 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:30:01 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:30:01 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:30:01 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:30:01 --> Session Class Initialized
+DEBUG - 2013-11-24 17:30:01 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:30:01 --> Session routines successfully run
+DEBUG - 2013-11-24 17:30:01 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:30:01 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:30:01 --> Model Class Initialized
+DEBUG - 2013-11-24 17:30:01 --> Model Class Initialized
+DEBUG - 2013-11-24 17:30:01 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:30:01 --> Final output sent to browser
+DEBUG - 2013-11-24 17:30:01 --> Total execution time: 0.2130
+DEBUG - 2013-11-24 17:30:59 --> Config Class Initialized
+DEBUG - 2013-11-24 17:30:59 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:30:59 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:31:00 --> URI Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Router Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Output Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Security Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Input Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:31:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:31:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:31:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:31:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:31:00 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:31:00 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:31:00 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:31:00 --> Language Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:31:00 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:31:00 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:31:00 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:31:00 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:31:00 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Session Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:31:00 --> Session routines successfully run
+DEBUG - 2013-11-24 17:31:00 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Model Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Model Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:31:00 --> Final output sent to browser
+DEBUG - 2013-11-24 17:31:00 --> Total execution time: 0.1360
+DEBUG - 2013-11-24 17:31:00 --> Config Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:31:00 --> URI Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Router Class Initialized
+ERROR - 2013-11-24 17:31:00 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:31:00 --> Config Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:31:00 --> URI Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Router Class Initialized
+ERROR - 2013-11-24 17:31:00 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:31:00 --> Config Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:31:00 --> URI Class Initialized
+DEBUG - 2013-11-24 17:31:00 --> Router Class Initialized
+ERROR - 2013-11-24 17:31:00 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:33:32 --> Config Class Initialized
+DEBUG - 2013-11-24 17:33:32 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:33:32 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:33:32 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:33:32 --> URI Class Initialized
+DEBUG - 2013-11-24 17:33:32 --> Router Class Initialized
+DEBUG - 2013-11-24 17:33:32 --> Output Class Initialized
+DEBUG - 2013-11-24 17:33:32 --> Security Class Initialized
+DEBUG - 2013-11-24 17:33:32 --> Input Class Initialized
+DEBUG - 2013-11-24 17:33:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:33:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:33:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:33:32 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:33:32 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:33:32 --> Language Class Initialized
+DEBUG - 2013-11-24 17:33:32 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:33:32 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:33:32 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:33:32 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:33:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:33:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:33:33 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:33:33 --> Session Class Initialized
+DEBUG - 2013-11-24 17:33:33 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:33:33 --> Session routines successfully run
+DEBUG - 2013-11-24 17:33:33 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:33:33 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:33:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:33:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:33:33 --> Final output sent to browser
+DEBUG - 2013-11-24 17:33:33 --> Total execution time: 0.1610
+DEBUG - 2013-11-24 17:34:17 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:17 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> No URI present. Default controller set.
+DEBUG - 2013-11-24 17:34:17 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:17 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:17 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:17 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:17 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:17 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> File loaded: E:\myworks\ezone\SZone/application/views/public/header.php
+DEBUG - 2013-11-24 17:34:17 --> File loaded: E:\myworks\ezone\SZone/application/views/public/userinfo.php
+DEBUG - 2013-11-24 17:34:17 --> File loaded: E:\myworks\ezone\SZone/application/views/public/footer.php
+DEBUG - 2013-11-24 17:34:17 --> File loaded: E:\myworks\ezone\SZone/application/views/home.php
+DEBUG - 2013-11-24 17:34:17 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:17 --> Total execution time: 0.2010
+DEBUG - 2013-11-24 17:34:17 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:17 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:17 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:17 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:17 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:17 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:17 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:17 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:17 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:17 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:17 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:17 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:17 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:17 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:17 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:17 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:17 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:17 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:17 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:17 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:17 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:17 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:17 --> Total execution time: 0.1810
+DEBUG - 2013-11-24 17:34:17 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:17 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:17 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:17 --> Total execution time: 0.2940
+DEBUG - 2013-11-24 17:34:17 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:17 --> Total execution time: 0.2790
+DEBUG - 2013-11-24 17:34:17 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:17 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:18 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:18 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:18 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:18 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:18 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:18 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:18 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:18 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:18 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:18 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:18 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:18 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:18 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:18 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:18 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:19 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:19 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:19 --> Total execution time: 1.0651
+DEBUG - 2013-11-24 17:34:19 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:19 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:19 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:19 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:19 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:19 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:19 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:19 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:19 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:19 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:19 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:19 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:19 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:19 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:19 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:19 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:34:19 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:19 --> Total execution time: 0.2480
+DEBUG - 2013-11-24 17:34:19 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:19 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:19 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:19 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:19 --> Total execution time: 1.3521
+DEBUG - 2013-11-24 17:34:21 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:21 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:21 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:21 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:21 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:21 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:21 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:21 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:21 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:21 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:21 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:21 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:21 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:21 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:21 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:21 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:21 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:21 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:21 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:21 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:21 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:21 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:21 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:21 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:21 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:21 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:21 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:34:21 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:21 --> Total execution time: 0.1980
+DEBUG - 2013-11-24 17:34:30 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:30 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:30 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:30 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:30 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:30 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:30 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:30 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:30 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:30 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:30 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:30 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:34:30 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:30 --> Total execution time: 0.2140
+DEBUG - 2013-11-24 17:34:30 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:30 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:30 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:30 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:30 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:30 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:30 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:30 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:30 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:30 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:30 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:30 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:30 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:30 --> Total execution time: 0.2250
+DEBUG - 2013-11-24 17:34:31 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:31 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:31 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:31 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:31 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:31 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:31 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:31 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:31 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:31 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:31 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:31 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:31 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:31 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:31 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:31 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:31 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:31 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:31 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:31 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:31 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:31 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:31 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:31 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:31 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:31 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:31 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:31 --> Total execution time: 0.1970
+DEBUG - 2013-11-24 17:34:33 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:33 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:33 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:33 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:33 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:33 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:33 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:33 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:33 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:34:33 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:33 --> Total execution time: 0.1400
+DEBUG - 2013-11-24 17:34:33 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:33 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:33 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:33 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:33 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:33 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:33 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:33 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:33 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:33 --> Total execution time: 0.2800
+DEBUG - 2013-11-24 17:34:33 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:33 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:33 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:33 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:34 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:34 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:34 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:34 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:34 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:34 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:34 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:34 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:34 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:34 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:34 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:34 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:34 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:34 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:34 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:34 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:34 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:34 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:34 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:34 --> Total execution time: 0.2330
+DEBUG - 2013-11-24 17:34:36 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:36 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:36 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:36 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:36 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:36 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:36 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:36 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:36 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:36 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:36 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:36 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:36 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:36 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:36 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:36 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:36 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:36 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:36 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:36 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:36 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:36 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:36 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:36 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:36 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:36 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:34:36 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:36 --> Total execution time: 0.1510
+DEBUG - 2013-11-24 17:34:37 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:37 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:37 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:37 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:37 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:37 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:37 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:37 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:37 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:37 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:37 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:37 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:37 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:37 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:37 --> Total execution time: 0.3030
+DEBUG - 2013-11-24 17:34:37 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:37 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:37 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:37 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:37 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:37 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:37 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:38 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:38 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:38 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:38 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:38 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:38 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:38 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:38 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:38 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:38 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:38 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:34:38 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:38 --> Total execution time: 0.1460
+DEBUG - 2013-11-24 17:34:38 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:38 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:38 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:38 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:38 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:38 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:38 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:38 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:38 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:38 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:38 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:38 --> Total execution time: 0.1220
+DEBUG - 2013-11-24 17:34:38 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:38 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:38 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:38 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:39 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:39 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:39 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:39 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:39 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:39 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:39 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:39 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:39 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:39 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:39 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:39 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:39 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:39 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:42 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:42 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:42 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:42 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:42 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:42 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:42 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:42 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:42 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:42 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:42 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:42 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:34:42 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:42 --> Total execution time: 0.1500
+DEBUG - 2013-11-24 17:34:42 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:42 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:42 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:42 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:42 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:42 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:42 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:42 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:42 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:42 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:42 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:42 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:42 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:43 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:43 --> Total execution time: 0.1270
+DEBUG - 2013-11-24 17:34:43 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:43 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:43 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:43 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:43 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:43 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:43 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:43 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:43 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:43 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:43 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:43 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:43 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:43 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:43 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:43 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:43 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:43 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:43 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:43 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:43 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:45 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:45 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:45 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:45 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:45 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:45 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:45 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:45 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:45 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:45 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:45 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:45 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:34:45 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:45 --> Total execution time: 0.1310
+DEBUG - 2013-11-24 17:34:45 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:45 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:45 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:45 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:45 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:45 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:45 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:45 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:45 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:45 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:45 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:45 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:45 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:45 --> Total execution time: 0.1250
+DEBUG - 2013-11-24 17:34:45 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:45 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:45 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:45 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:45 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:45 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:45 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:45 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:45 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:45 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:46 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:46 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:46 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:46 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:46 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:46 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:46 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:46 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:46 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:46 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:46 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:46 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:46 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:46 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:46 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:46 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:46 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:34:46 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:46 --> Total execution time: 0.2530
+DEBUG - 2013-11-24 17:34:46 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:46 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:46 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:46 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:46 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:46 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:46 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:46 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:46 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:46 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:46 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:46 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:46 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:47 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:47 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:47 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:47 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:47 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:47 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:47 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:47 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:47 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:47 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:47 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:47 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:47 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:47 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:47 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:47 --> Total execution time: 0.1840
+DEBUG - 2013-11-24 17:34:47 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:47 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:47 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:47 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:47 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:47 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:47 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:47 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:47 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:47 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:47 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:47 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:47 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:47 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:48 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:48 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:48 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:48 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:48 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:48 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:48 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:48 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:48 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:48 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:48 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:34:48 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:48 --> Total execution time: 0.1840
+DEBUG - 2013-11-24 17:34:48 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:48 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:48 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:48 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:48 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:48 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:48 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:48 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:48 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:48 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:48 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:48 --> Total execution time: 0.2670
+DEBUG - 2013-11-24 17:34:48 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:48 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:48 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:48 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:49 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:49 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:49 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:49 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:49 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:49 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:49 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:49 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:49 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:49 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:49 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:49 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:49 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:49 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:49 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:49 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:49 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:49 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:49 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:49 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:50 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:50 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:50 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:50 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:50 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:50 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:50 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:50 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:50 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:50 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:50 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:50 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:50 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:50 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:50 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:34:50 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:50 --> Total execution time: 0.1600
+DEBUG - 2013-11-24 17:34:50 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:50 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:50 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:50 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:50 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:50 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:50 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:50 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:50 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:50 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:53 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:53 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> Router Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> Output Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> Security Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> Input Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:53 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:53 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:53 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:53 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:53 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:34:53 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:34:53 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:34:53 --> Language Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:34:53 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:34:53 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:34:53 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:34:53 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:34:53 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> Session Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:34:53 --> Session routines successfully run
+DEBUG - 2013-11-24 17:34:53 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> Model Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:34:53 --> Final output sent to browser
+DEBUG - 2013-11-24 17:34:53 --> Total execution time: 0.1260
+DEBUG - 2013-11-24 17:34:53 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:53 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:53 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:53 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:54 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:54 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:54 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:54 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:54 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:54 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:54 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:34:54 --> Config Class Initialized
+DEBUG - 2013-11-24 17:34:54 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:34:54 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:34:54 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:34:54 --> URI Class Initialized
+DEBUG - 2013-11-24 17:34:54 --> Router Class Initialized
+ERROR - 2013-11-24 17:34:54 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:36:40 --> Config Class Initialized
+DEBUG - 2013-11-24 17:36:40 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:36:40 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:36:40 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:36:40 --> URI Class Initialized
+DEBUG - 2013-11-24 17:36:40 --> Router Class Initialized
+DEBUG - 2013-11-24 17:36:40 --> Output Class Initialized
+DEBUG - 2013-11-24 17:36:40 --> Security Class Initialized
+DEBUG - 2013-11-24 17:36:40 --> Input Class Initialized
+DEBUG - 2013-11-24 17:36:40 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:36:40 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:36:40 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:36:40 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:36:40 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:36:40 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:36:40 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:36:40 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:36:40 --> Language Class Initialized
+DEBUG - 2013-11-24 17:36:40 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:36:40 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:36:40 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:36:40 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:36:40 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:36:40 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:36:40 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:36:40 --> Session Class Initialized
+DEBUG - 2013-11-24 17:36:40 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:36:40 --> Session routines successfully run
+DEBUG - 2013-11-24 17:36:40 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:36:40 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:36:40 --> Model Class Initialized
+DEBUG - 2013-11-24 17:36:40 --> Model Class Initialized
+ERROR - 2013-11-24 17:36:40 --> Severity: Warning  --> str_replace() expects at least 3 parameters, 2 given E:\myworks\ezone\SZone\application\controllers\review.php 44
+DEBUG - 2013-11-24 17:36:40 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:36:40 --> Final output sent to browser
+DEBUG - 2013-11-24 17:36:40 --> Total execution time: 0.1670
+DEBUG - 2013-11-24 17:36:50 --> Config Class Initialized
+DEBUG - 2013-11-24 17:36:50 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:36:50 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:36:50 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:36:50 --> URI Class Initialized
+DEBUG - 2013-11-24 17:36:50 --> Router Class Initialized
+DEBUG - 2013-11-24 17:36:50 --> Output Class Initialized
+DEBUG - 2013-11-24 17:36:50 --> Security Class Initialized
+DEBUG - 2013-11-24 17:36:50 --> Input Class Initialized
+DEBUG - 2013-11-24 17:36:50 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:36:50 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:36:50 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:36:50 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:36:50 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:36:50 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:36:50 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:36:50 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:36:50 --> Language Class Initialized
+DEBUG - 2013-11-24 17:36:50 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:36:50 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:36:50 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:36:50 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:36:50 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:36:50 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:36:50 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:36:50 --> Session Class Initialized
+DEBUG - 2013-11-24 17:36:50 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:36:50 --> Session routines successfully run
+DEBUG - 2013-11-24 17:36:50 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:36:50 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:36:50 --> Model Class Initialized
+DEBUG - 2013-11-24 17:36:50 --> Model Class Initialized
+DEBUG - 2013-11-24 17:36:50 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:36:50 --> Final output sent to browser
+DEBUG - 2013-11-24 17:36:50 --> Total execution time: 0.1540
+DEBUG - 2013-11-24 17:37:03 --> Config Class Initialized
+DEBUG - 2013-11-24 17:37:03 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:37:03 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:37:03 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:37:03 --> URI Class Initialized
+DEBUG - 2013-11-24 17:37:03 --> Router Class Initialized
+DEBUG - 2013-11-24 17:37:03 --> Output Class Initialized
+DEBUG - 2013-11-24 17:37:03 --> Security Class Initialized
+DEBUG - 2013-11-24 17:37:03 --> Input Class Initialized
+DEBUG - 2013-11-24 17:37:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:37:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:37:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:37:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:37:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:37:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:37:03 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:37:03 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:37:03 --> Language Class Initialized
+DEBUG - 2013-11-24 17:37:03 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:37:03 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:37:03 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:37:03 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:37:03 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:37:03 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:37:03 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:37:03 --> Session Class Initialized
+DEBUG - 2013-11-24 17:37:03 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:37:03 --> Session routines successfully run
+DEBUG - 2013-11-24 17:37:03 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:37:03 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:37:03 --> Model Class Initialized
+DEBUG - 2013-11-24 17:37:03 --> Model Class Initialized
+DEBUG - 2013-11-24 17:37:03 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:37:03 --> Final output sent to browser
+DEBUG - 2013-11-24 17:37:03 --> Total execution time: 0.1460
+DEBUG - 2013-11-24 17:38:03 --> Config Class Initialized
+DEBUG - 2013-11-24 17:38:03 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:38:03 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:38:03 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:38:03 --> URI Class Initialized
+DEBUG - 2013-11-24 17:38:03 --> Router Class Initialized
+DEBUG - 2013-11-24 17:38:03 --> Output Class Initialized
+DEBUG - 2013-11-24 17:38:03 --> Security Class Initialized
+DEBUG - 2013-11-24 17:38:03 --> Input Class Initialized
+DEBUG - 2013-11-24 17:38:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:38:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:38:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:38:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:38:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:38:03 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:38:03 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:38:03 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:38:03 --> Language Class Initialized
+DEBUG - 2013-11-24 17:38:03 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:38:03 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:38:03 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:38:03 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:38:03 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:38:03 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:38:03 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:38:03 --> Session Class Initialized
+DEBUG - 2013-11-24 17:38:03 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:38:03 --> Session routines successfully run
+DEBUG - 2013-11-24 17:38:03 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:38:03 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:38:03 --> Model Class Initialized
+DEBUG - 2013-11-24 17:38:03 --> Model Class Initialized
+ERROR - 2013-11-24 17:38:03 --> Severity: Notice  --> Use of undefined constant order - assumed 'order' E:\myworks\ezone\SZone\application\controllers\review.php 45
+DEBUG - 2013-11-24 17:38:03 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:38:03 --> Final output sent to browser
+DEBUG - 2013-11-24 17:38:03 --> Total execution time: 0.2190
+DEBUG - 2013-11-24 17:38:20 --> Config Class Initialized
+DEBUG - 2013-11-24 17:38:20 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:38:20 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:38:20 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:38:20 --> URI Class Initialized
+DEBUG - 2013-11-24 17:38:20 --> Router Class Initialized
+DEBUG - 2013-11-24 17:38:20 --> Output Class Initialized
+DEBUG - 2013-11-24 17:38:20 --> Security Class Initialized
+DEBUG - 2013-11-24 17:38:20 --> Input Class Initialized
+DEBUG - 2013-11-24 17:38:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:38:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:38:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:38:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:38:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:38:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:38:20 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:38:20 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:38:20 --> Language Class Initialized
+DEBUG - 2013-11-24 17:38:20 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:38:20 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:38:20 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:38:20 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:38:20 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:38:20 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:38:20 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:38:20 --> Session Class Initialized
+DEBUG - 2013-11-24 17:38:20 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:38:20 --> Session routines successfully run
+DEBUG - 2013-11-24 17:38:20 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:38:20 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:38:20 --> Model Class Initialized
+DEBUG - 2013-11-24 17:38:20 --> Model Class Initialized
+DEBUG - 2013-11-24 17:38:20 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:38:20 --> Final output sent to browser
+DEBUG - 2013-11-24 17:38:20 --> Total execution time: 0.2140
+DEBUG - 2013-11-24 17:39:19 --> Config Class Initialized
+DEBUG - 2013-11-24 17:39:19 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:39:19 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:39:19 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:39:19 --> URI Class Initialized
+DEBUG - 2013-11-24 17:39:19 --> Router Class Initialized
+DEBUG - 2013-11-24 17:39:19 --> Output Class Initialized
+DEBUG - 2013-11-24 17:39:19 --> Security Class Initialized
+DEBUG - 2013-11-24 17:39:19 --> Input Class Initialized
+DEBUG - 2013-11-24 17:39:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:39:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:39:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:39:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:39:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:39:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:39:19 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:39:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:39:19 --> Language Class Initialized
+DEBUG - 2013-11-24 17:39:19 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:39:19 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:39:19 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:39:19 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:39:19 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:39:19 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:39:19 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:39:19 --> Session Class Initialized
+DEBUG - 2013-11-24 17:39:19 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:39:19 --> Session routines successfully run
+DEBUG - 2013-11-24 17:39:19 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:39:19 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:39:19 --> Model Class Initialized
+DEBUG - 2013-11-24 17:39:19 --> Model Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> Config Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:39:28 --> URI Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> Router Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> Output Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> Security Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> Input Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:39:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:39:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:39:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:39:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:39:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:39:28 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:39:28 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:39:28 --> Language Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:39:28 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:39:28 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:39:28 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:39:28 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:39:28 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> Session Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:39:28 --> Session routines successfully run
+DEBUG - 2013-11-24 17:39:28 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> Model Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> Model Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:39:28 --> Final output sent to browser
+DEBUG - 2013-11-24 17:39:28 --> Total execution time: 0.1910
+DEBUG - 2013-11-24 17:39:28 --> Config Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:39:28 --> URI Class Initialized
+DEBUG - 2013-11-24 17:39:28 --> Router Class Initialized
+ERROR - 2013-11-24 17:39:28 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:39:29 --> Config Class Initialized
+DEBUG - 2013-11-24 17:39:29 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:39:29 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:39:29 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:39:29 --> URI Class Initialized
+DEBUG - 2013-11-24 17:39:29 --> Router Class Initialized
+ERROR - 2013-11-24 17:39:29 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:39:29 --> Config Class Initialized
+DEBUG - 2013-11-24 17:39:29 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:39:29 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:39:29 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:39:29 --> URI Class Initialized
+DEBUG - 2013-11-24 17:39:29 --> Router Class Initialized
+ERROR - 2013-11-24 17:39:29 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:40:01 --> Config Class Initialized
+DEBUG - 2013-11-24 17:40:01 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:40:01 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:40:01 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:40:01 --> URI Class Initialized
+DEBUG - 2013-11-24 17:40:01 --> Router Class Initialized
+DEBUG - 2013-11-24 17:40:01 --> Output Class Initialized
+DEBUG - 2013-11-24 17:40:01 --> Security Class Initialized
+DEBUG - 2013-11-24 17:40:01 --> Input Class Initialized
+DEBUG - 2013-11-24 17:40:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:01 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:40:01 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:40:01 --> Language Class Initialized
+DEBUG - 2013-11-24 17:40:01 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:40:01 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:40:01 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:40:01 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:40:01 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:40:01 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:40:01 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:40:01 --> Session Class Initialized
+DEBUG - 2013-11-24 17:40:01 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:40:01 --> Session routines successfully run
+DEBUG - 2013-11-24 17:40:01 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:40:01 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:40:01 --> Model Class Initialized
+DEBUG - 2013-11-24 17:40:01 --> Model Class Initialized
+DEBUG - 2013-11-24 17:40:01 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:40:01 --> Final output sent to browser
+DEBUG - 2013-11-24 17:40:01 --> Total execution time: 0.1930
+DEBUG - 2013-11-24 17:40:13 --> Config Class Initialized
+DEBUG - 2013-11-24 17:40:13 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:40:13 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:40:13 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:40:14 --> URI Class Initialized
+DEBUG - 2013-11-24 17:40:14 --> Router Class Initialized
+DEBUG - 2013-11-24 17:40:14 --> Output Class Initialized
+DEBUG - 2013-11-24 17:40:14 --> Security Class Initialized
+DEBUG - 2013-11-24 17:40:14 --> Input Class Initialized
+DEBUG - 2013-11-24 17:40:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:14 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:40:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:40:14 --> Language Class Initialized
+DEBUG - 2013-11-24 17:40:14 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:40:14 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:40:14 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:40:14 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:40:14 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:40:14 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:40:14 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:40:14 --> Session Class Initialized
+DEBUG - 2013-11-24 17:40:14 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:40:14 --> Session routines successfully run
+DEBUG - 2013-11-24 17:40:14 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:40:14 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:40:14 --> Model Class Initialized
+DEBUG - 2013-11-24 17:40:14 --> Model Class Initialized
+DEBUG - 2013-11-24 17:40:14 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:40:14 --> Final output sent to browser
+DEBUG - 2013-11-24 17:40:14 --> Total execution time: 0.2070
+DEBUG - 2013-11-24 17:40:16 --> Config Class Initialized
+DEBUG - 2013-11-24 17:40:16 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:40:16 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:40:16 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:40:16 --> URI Class Initialized
+DEBUG - 2013-11-24 17:40:16 --> Router Class Initialized
+DEBUG - 2013-11-24 17:40:17 --> Output Class Initialized
+DEBUG - 2013-11-24 17:40:17 --> Security Class Initialized
+DEBUG - 2013-11-24 17:40:17 --> Input Class Initialized
+DEBUG - 2013-11-24 17:40:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:17 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:40:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:40:17 --> Language Class Initialized
+DEBUG - 2013-11-24 17:40:17 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:40:17 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:40:17 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:40:17 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:40:17 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:40:17 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:40:17 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:40:17 --> Session Class Initialized
+DEBUG - 2013-11-24 17:40:17 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:40:17 --> Session routines successfully run
+DEBUG - 2013-11-24 17:40:17 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:40:17 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:40:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:40:17 --> Model Class Initialized
+ERROR - 2013-11-24 17:40:17 --> Severity: Notice  --> Trying to get property of non-object E:\myworks\ezone\SZone\application\views\review.php 66
+DEBUG - 2013-11-24 17:40:17 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:40:17 --> Final output sent to browser
+DEBUG - 2013-11-24 17:40:17 --> Total execution time: 0.2320
+DEBUG - 2013-11-24 17:40:18 --> Config Class Initialized
+DEBUG - 2013-11-24 17:40:18 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:40:18 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:40:18 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:40:18 --> URI Class Initialized
+DEBUG - 2013-11-24 17:40:18 --> Router Class Initialized
+DEBUG - 2013-11-24 17:40:18 --> Output Class Initialized
+DEBUG - 2013-11-24 17:40:18 --> Security Class Initialized
+DEBUG - 2013-11-24 17:40:18 --> Input Class Initialized
+DEBUG - 2013-11-24 17:40:18 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:18 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:18 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:18 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:18 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:18 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:40:18 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:40:18 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:40:18 --> Language Class Initialized
+DEBUG - 2013-11-24 17:40:18 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:40:18 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:40:18 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:40:18 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:40:18 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:40:18 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:40:18 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:40:18 --> Session Class Initialized
+DEBUG - 2013-11-24 17:40:18 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:40:18 --> Session routines successfully run
+DEBUG - 2013-11-24 17:40:18 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:40:18 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:40:18 --> Model Class Initialized
+DEBUG - 2013-11-24 17:40:18 --> Model Class Initialized
+DEBUG - 2013-11-24 17:40:18 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:40:18 --> Final output sent to browser
+DEBUG - 2013-11-24 17:40:18 --> Total execution time: 0.1770
+DEBUG - 2013-11-24 17:41:51 --> Config Class Initialized
+DEBUG - 2013-11-24 17:41:51 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:41:51 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:41:51 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:41:51 --> URI Class Initialized
+DEBUG - 2013-11-24 17:41:51 --> Router Class Initialized
+DEBUG - 2013-11-24 17:41:51 --> Output Class Initialized
+DEBUG - 2013-11-24 17:41:51 --> Security Class Initialized
+DEBUG - 2013-11-24 17:41:51 --> Input Class Initialized
+DEBUG - 2013-11-24 17:41:51 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:41:51 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:41:51 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:41:51 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:41:51 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:41:51 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:41:51 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:41:51 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:41:51 --> Language Class Initialized
+DEBUG - 2013-11-24 17:41:51 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:41:51 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:41:51 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:41:51 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:41:51 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:41:51 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:41:51 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:41:51 --> Session Class Initialized
+DEBUG - 2013-11-24 17:41:51 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:41:51 --> Session routines successfully run
+DEBUG - 2013-11-24 17:41:51 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:41:51 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:41:51 --> Model Class Initialized
+DEBUG - 2013-11-24 17:41:51 --> Model Class Initialized
+DEBUG - 2013-11-24 17:41:51 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:41:51 --> Final output sent to browser
+DEBUG - 2013-11-24 17:41:51 --> Total execution time: 0.1960
+DEBUG - 2013-11-24 17:42:33 --> Config Class Initialized
+DEBUG - 2013-11-24 17:42:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:42:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:42:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:42:33 --> URI Class Initialized
+DEBUG - 2013-11-24 17:42:33 --> Router Class Initialized
+DEBUG - 2013-11-24 17:42:33 --> Output Class Initialized
+DEBUG - 2013-11-24 17:42:33 --> Security Class Initialized
+DEBUG - 2013-11-24 17:42:33 --> Input Class Initialized
+DEBUG - 2013-11-24 17:42:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:42:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:42:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:42:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:42:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:42:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:42:33 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:42:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:42:33 --> Language Class Initialized
+DEBUG - 2013-11-24 17:42:33 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:42:33 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:42:33 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:42:33 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:42:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:42:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:42:33 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:42:33 --> Session Class Initialized
+DEBUG - 2013-11-24 17:42:33 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:42:33 --> Session routines successfully run
+DEBUG - 2013-11-24 17:42:33 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:42:33 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:42:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:42:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:42:33 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:42:33 --> Final output sent to browser
+DEBUG - 2013-11-24 17:42:33 --> Total execution time: 0.1620
+DEBUG - 2013-11-24 17:42:54 --> Config Class Initialized
+DEBUG - 2013-11-24 17:42:54 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:42:54 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:42:54 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:42:54 --> URI Class Initialized
+DEBUG - 2013-11-24 17:42:54 --> Router Class Initialized
+DEBUG - 2013-11-24 17:42:54 --> Output Class Initialized
+DEBUG - 2013-11-24 17:42:54 --> Security Class Initialized
+DEBUG - 2013-11-24 17:42:54 --> Input Class Initialized
+DEBUG - 2013-11-24 17:42:54 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:42:54 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:42:54 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:42:54 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:42:54 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:42:54 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:42:54 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:42:54 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:42:54 --> Language Class Initialized
+DEBUG - 2013-11-24 17:42:54 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:42:54 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:42:54 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:42:54 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:42:54 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:42:54 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:42:54 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:42:54 --> Session Class Initialized
+DEBUG - 2013-11-24 17:42:54 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:42:54 --> Session routines successfully run
+DEBUG - 2013-11-24 17:42:54 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:42:54 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:42:54 --> Model Class Initialized
+DEBUG - 2013-11-24 17:42:54 --> Model Class Initialized
+DEBUG - 2013-11-24 17:42:54 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:42:54 --> Final output sent to browser
+DEBUG - 2013-11-24 17:42:54 --> Total execution time: 0.1260
+DEBUG - 2013-11-24 17:43:24 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:24 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:24 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:24 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:24 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:24 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:24 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:24 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:24 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:24 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:24 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:24 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:24 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:24 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:24 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:24 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:24 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:24 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:24 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:24 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:24 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:24 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:24 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:24 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:24 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:24 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:24 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:43:24 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:24 --> Total execution time: 0.1460
+DEBUG - 2013-11-24 17:43:28 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:28 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:28 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:28 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:28 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:28 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:28 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:28 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:28 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:28 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:28 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:28 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:43:28 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:28 --> Total execution time: 0.1400
+DEBUG - 2013-11-24 17:43:28 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:28 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:28 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:28 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:28 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:28 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:28 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:28 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:28 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:28 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:28 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:28 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:28 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:28 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:28 --> Total execution time: 0.1250
+DEBUG - 2013-11-24 17:43:29 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:29 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:29 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:29 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:29 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:29 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:29 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:29 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:29 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:29 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:29 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:29 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:29 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:29 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:29 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:29 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:29 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:29 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:29 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:29 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:29 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:29 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:29 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:29 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:29 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:29 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:29 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:29 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:29 --> Total execution time: 0.1680
+DEBUG - 2013-11-24 17:43:30 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:30 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:30 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:30 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:30 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:30 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:30 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:30 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:30 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:30 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:30 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:30 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:30 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:30 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:30 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:30 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:30 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:30 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:30 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:30 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:30 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:30 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:30 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:30 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:30 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:30 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:30 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:30 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:43:30 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:30 --> Total execution time: 0.1660
+DEBUG - 2013-11-24 17:43:31 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:31 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:31 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:31 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:31 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:31 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:31 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:31 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:31 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:31 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:31 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:31 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:31 --> Total execution time: 0.1740
+DEBUG - 2013-11-24 17:43:31 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:31 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:31 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:31 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:31 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:31 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:31 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:31 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:31 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:31 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:31 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:31 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:31 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:31 --> Total execution time: 0.1320
+DEBUG - 2013-11-24 17:43:31 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:31 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:31 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:32 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:32 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:32 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:32 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:32 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:32 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:32 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:32 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:32 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:32 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:43:32 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:32 --> Total execution time: 0.1650
+DEBUG - 2013-11-24 17:43:32 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:32 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:32 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:32 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:32 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:32 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:32 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:32 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:32 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:32 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:32 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:32 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:32 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:32 --> Total execution time: 0.1770
+DEBUG - 2013-11-24 17:43:33 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:33 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:33 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:33 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:33 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:33 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:33 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:33 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:33 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:43:33 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:33 --> Total execution time: 0.1410
+DEBUG - 2013-11-24 17:43:33 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:33 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:33 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:33 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:33 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:33 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:33 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:34 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:34 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:34 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:34 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:34 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:34 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:34 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:34 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:34 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:34 --> Total execution time: 0.2440
+DEBUG - 2013-11-24 17:43:35 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:35 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:35 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:35 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:35 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:35 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:35 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:35 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:35 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:35 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:35 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:43:35 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:35 --> Total execution time: 0.1550
+DEBUG - 2013-11-24 17:43:35 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:35 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:35 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:35 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:35 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:35 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:35 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:35 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:35 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:35 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:35 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:35 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:35 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:35 --> Total execution time: 0.1910
+DEBUG - 2013-11-24 17:43:36 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:36 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:36 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:36 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:36 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:36 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:36 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:36 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:36 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:36 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:36 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:43:36 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:36 --> Total execution time: 0.1320
+DEBUG - 2013-11-24 17:43:36 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:36 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:36 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:36 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:36 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:36 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:36 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:36 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:36 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:36 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:36 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:36 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:36 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:36 --> Total execution time: 0.1370
+DEBUG - 2013-11-24 17:43:37 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:37 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:37 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:37 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:37 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:37 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:37 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:37 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:37 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:37 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:37 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:43:37 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:37 --> Total execution time: 0.1290
+DEBUG - 2013-11-24 17:43:37 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:37 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:37 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:37 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:37 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:37 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:37 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:37 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:37 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:37 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:37 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:37 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:37 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:37 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:37 --> Total execution time: 0.1810
+DEBUG - 2013-11-24 17:43:38 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:38 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:38 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:38 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:38 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:38 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:38 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:38 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:38 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:38 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:38 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:43:38 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:38 --> Total execution time: 0.1520
+DEBUG - 2013-11-24 17:43:38 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:38 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:38 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:38 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:38 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:39 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:39 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:39 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:39 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:39 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:39 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:39 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:39 --> Total execution time: 0.1520
+DEBUG - 2013-11-24 17:43:39 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:39 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:39 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:39 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:39 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:39 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:39 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:39 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:39 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:39 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:39 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:39 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:39 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:39 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:43:39 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:39 --> Total execution time: 0.1450
+DEBUG - 2013-11-24 17:43:42 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:42 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:42 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:42 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:42 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:42 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:42 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:42 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:42 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:42 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:42 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:42 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:42 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:42 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:42 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:42 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:42 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:42 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:42 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:42 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:42 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:42 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:42 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:42 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:42 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:42 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:42 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:42 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:43:42 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:42 --> Total execution time: 0.1310
+DEBUG - 2013-11-24 17:43:55 --> Config Class Initialized
+DEBUG - 2013-11-24 17:43:55 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:43:55 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:43:55 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:43:55 --> URI Class Initialized
+DEBUG - 2013-11-24 17:43:55 --> Router Class Initialized
+DEBUG - 2013-11-24 17:43:55 --> Output Class Initialized
+DEBUG - 2013-11-24 17:43:55 --> Security Class Initialized
+DEBUG - 2013-11-24 17:43:55 --> Input Class Initialized
+DEBUG - 2013-11-24 17:43:55 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:55 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:55 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:55 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:55 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:55 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:43:55 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:43:55 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:43:55 --> Language Class Initialized
+DEBUG - 2013-11-24 17:43:55 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:43:55 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:43:55 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:43:55 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:43:55 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:43:55 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:43:55 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:43:55 --> Session Class Initialized
+DEBUG - 2013-11-24 17:43:55 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:43:55 --> Session routines successfully run
+DEBUG - 2013-11-24 17:43:55 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:43:55 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:43:55 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:55 --> Model Class Initialized
+DEBUG - 2013-11-24 17:43:55 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:43:55 --> Final output sent to browser
+DEBUG - 2013-11-24 17:43:55 --> Total execution time: 0.1560
+DEBUG - 2013-11-24 17:44:06 --> Config Class Initialized
+DEBUG - 2013-11-24 17:44:06 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:44:06 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:44:06 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:44:06 --> URI Class Initialized
+DEBUG - 2013-11-24 17:44:06 --> Router Class Initialized
+ERROR - 2013-11-24 17:44:06 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:44:06 --> Config Class Initialized
+DEBUG - 2013-11-24 17:44:06 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:44:06 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:44:06 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:44:06 --> URI Class Initialized
+DEBUG - 2013-11-24 17:44:06 --> Router Class Initialized
+ERROR - 2013-11-24 17:44:06 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:44:06 --> Config Class Initialized
+DEBUG - 2013-11-24 17:44:06 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:44:06 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:44:06 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:44:06 --> URI Class Initialized
+DEBUG - 2013-11-24 17:44:06 --> Router Class Initialized
+ERROR - 2013-11-24 17:44:06 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:46:20 --> Config Class Initialized
+DEBUG - 2013-11-24 17:46:20 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:46:20 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:46:20 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:46:20 --> URI Class Initialized
+DEBUG - 2013-11-24 17:46:20 --> Router Class Initialized
+DEBUG - 2013-11-24 17:46:20 --> No URI present. Default controller set.
+DEBUG - 2013-11-24 17:46:20 --> Output Class Initialized
+DEBUG - 2013-11-24 17:46:20 --> Security Class Initialized
+DEBUG - 2013-11-24 17:46:20 --> Input Class Initialized
+DEBUG - 2013-11-24 17:46:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:20 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:46:20 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:46:20 --> Language Class Initialized
+DEBUG - 2013-11-24 17:46:20 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:46:20 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:46:20 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:46:20 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:46:20 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:46:20 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:46:20 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:46:20 --> Session Class Initialized
+DEBUG - 2013-11-24 17:46:20 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:46:20 --> Session routines successfully run
+DEBUG - 2013-11-24 17:46:20 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:46:20 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:46:20 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:20 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:20 --> File loaded: E:\myworks\ezone\SZone/application/views/public/header.php
+DEBUG - 2013-11-24 17:46:20 --> File loaded: E:\myworks\ezone\SZone/application/views/public/userinfo.php
+DEBUG - 2013-11-24 17:46:20 --> File loaded: E:\myworks\ezone\SZone/application/views/public/footer.php
+DEBUG - 2013-11-24 17:46:20 --> File loaded: E:\myworks\ezone\SZone/application/views/home.php
+DEBUG - 2013-11-24 17:46:20 --> Final output sent to browser
+DEBUG - 2013-11-24 17:46:20 --> Total execution time: 0.1660
+DEBUG - 2013-11-24 17:46:21 --> Config Class Initialized
+DEBUG - 2013-11-24 17:46:21 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:46:21 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:46:21 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:46:21 --> URI Class Initialized
+DEBUG - 2013-11-24 17:46:21 --> Router Class Initialized
+DEBUG - 2013-11-24 17:46:21 --> Output Class Initialized
+DEBUG - 2013-11-24 17:46:21 --> Config Class Initialized
+DEBUG - 2013-11-24 17:46:21 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:46:21 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:46:21 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:46:21 --> Security Class Initialized
+DEBUG - 2013-11-24 17:46:21 --> Config Class Initialized
+DEBUG - 2013-11-24 17:46:21 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:46:21 --> Input Class Initialized
+DEBUG - 2013-11-24 17:46:21 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:46:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:21 --> URI Class Initialized
+DEBUG - 2013-11-24 17:46:21 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:46:21 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:21 --> Router Class Initialized
+DEBUG - 2013-11-24 17:46:21 --> Config Class Initialized
+DEBUG - 2013-11-24 17:46:22 --> Config Class Initialized
+DEBUG - 2013-11-24 17:46:22 --> URI Class Initialized
+DEBUG - 2013-11-24 17:46:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:22 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:46:22 --> Output Class Initialized
+DEBUG - 2013-11-24 17:46:22 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Router Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:46:23 --> Security Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:46:23 --> URI Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Router Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:46:23 --> Input Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Output Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> URI Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:23 --> Security Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Router Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:23 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:46:23 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:46:23 --> Language Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:46:23 --> Output Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Security Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Input Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:23 --> Input Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:23 --> Language Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:23 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:46:23 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:46:23 --> Language Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:46:23 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:46:23 --> Output Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Security Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Input Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:23 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:46:23 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:46:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:46:23 --> Session Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Language Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:46:23 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:46:23 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:46:23 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:46:23 --> Language Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:46:23 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:46:23 --> Session routines successfully run
+DEBUG - 2013-11-24 17:46:23 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:46:23 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:46:23 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:46:24 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:46:24 --> Final output sent to browser
+DEBUG - 2013-11-24 17:46:24 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:46:24 --> Session Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Total execution time: 2.3451
+DEBUG - 2013-11-24 17:46:24 --> Session Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:46:24 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:46:24 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:46:24 --> Session routines successfully run
+DEBUG - 2013-11-24 17:46:24 --> Session Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:46:24 --> Session routines successfully run
+DEBUG - 2013-11-24 17:46:24 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:46:24 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Session routines successfully run
+DEBUG - 2013-11-24 17:46:24 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Final output sent to browser
+DEBUG - 2013-11-24 17:46:24 --> Total execution time: 2.8092
+DEBUG - 2013-11-24 17:46:24 --> Final output sent to browser
+DEBUG - 2013-11-24 17:46:24 --> Total execution time: 3.0172
+DEBUG - 2013-11-24 17:46:24 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Session Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:46:24 --> Session routines successfully run
+DEBUG - 2013-11-24 17:46:24 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Final output sent to browser
+DEBUG - 2013-11-24 17:46:24 --> Total execution time: 3.0742
+DEBUG - 2013-11-24 17:46:24 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:24 --> Final output sent to browser
+DEBUG - 2013-11-24 17:46:24 --> Total execution time: 3.1332
+DEBUG - 2013-11-24 17:46:55 --> Config Class Initialized
+DEBUG - 2013-11-24 17:46:55 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:46:55 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:46:55 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:46:55 --> URI Class Initialized
+DEBUG - 2013-11-24 17:46:55 --> Router Class Initialized
+DEBUG - 2013-11-24 17:46:55 --> No URI present. Default controller set.
+DEBUG - 2013-11-24 17:46:55 --> Output Class Initialized
+DEBUG - 2013-11-24 17:46:55 --> Security Class Initialized
+DEBUG - 2013-11-24 17:46:55 --> Input Class Initialized
+DEBUG - 2013-11-24 17:46:55 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:55 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:55 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:46:55 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:46:55 --> Language Class Initialized
+DEBUG - 2013-11-24 17:46:55 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:46:55 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:46:55 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:46:55 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:46:55 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:46:55 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:46:55 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:46:55 --> Session Class Initialized
+DEBUG - 2013-11-24 17:46:55 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:46:55 --> Session routines successfully run
+DEBUG - 2013-11-24 17:46:55 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:46:55 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:46:55 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:55 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:55 --> File loaded: E:\myworks\ezone\SZone/application/views/public/header.php
+DEBUG - 2013-11-24 17:46:55 --> File loaded: E:\myworks\ezone\SZone/application/views/public/userinfo.php
+DEBUG - 2013-11-24 17:46:55 --> File loaded: E:\myworks\ezone\SZone/application/views/public/footer.php
+DEBUG - 2013-11-24 17:46:55 --> File loaded: E:\myworks\ezone\SZone/application/views/home.php
+DEBUG - 2013-11-24 17:46:55 --> Final output sent to browser
+DEBUG - 2013-11-24 17:46:55 --> Total execution time: 0.1870
+DEBUG - 2013-11-24 17:46:56 --> Config Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:46:56 --> URI Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Router Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Output Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Config Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:46:56 --> URI Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Router Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Output Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Security Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Input Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:56 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:56 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:56 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:46:56 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:46:56 --> Security Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Input Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:56 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:56 --> Config Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Config Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:46:56 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:46:56 --> URI Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> URI Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Router Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Router Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Output Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:56 --> Security Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Input Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Output Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:56 --> Language Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:46:56 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> Config Class Initialized
+DEBUG - 2013-11-24 17:46:56 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:56 --> Security Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:46:57 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:46:57 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:57 --> Input Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> Language Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:46:57 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:46:57 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:57 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:46:57 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:46:57 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:46:57 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:57 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:46:57 --> URI Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:46:57 --> Language Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:57 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:46:57 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:46:57 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:46:57 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:46:57 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> Session Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:46:57 --> Router Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:46:57 --> Session routines successfully run
+DEBUG - 2013-11-24 17:46:57 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> Final output sent to browser
+DEBUG - 2013-11-24 17:46:57 --> Total execution time: 1.8031
+DEBUG - 2013-11-24 17:46:57 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:46:57 --> Output Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> Security Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> Input Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:57 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:57 --> Session Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:46:57 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:46:57 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:46:57 --> Session routines successfully run
+DEBUG - 2013-11-24 17:46:57 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:46:57 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:46:58 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:46:58 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:46:58 --> Language Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:46:58 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:46:58 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:46:58 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:46:58 --> Language Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:46:58 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Session Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:46:58 --> Session routines successfully run
+DEBUG - 2013-11-24 17:46:58 --> Final output sent to browser
+DEBUG - 2013-11-24 17:46:58 --> Total execution time: 2.5941
+DEBUG - 2013-11-24 17:46:58 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:46:58 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:46:58 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:46:58 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:46:58 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Final output sent to browser
+DEBUG - 2013-11-24 17:46:58 --> Total execution time: 2.5461
+DEBUG - 2013-11-24 17:46:58 --> Session Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:46:58 --> Session routines successfully run
+DEBUG - 2013-11-24 17:46:58 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:46:58 --> Final output sent to browser
+DEBUG - 2013-11-24 17:46:58 --> Total execution time: 2.5821
+DEBUG - 2013-11-24 17:46:58 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:46:58 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:46:58 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:46:58 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:46:58 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Session Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:46:58 --> Session routines successfully run
+DEBUG - 2013-11-24 17:46:58 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:46:58 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:46:59 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:59 --> Model Class Initialized
+DEBUG - 2013-11-24 17:46:59 --> Final output sent to browser
+DEBUG - 2013-11-24 17:46:59 --> Total execution time: 2.7652
+DEBUG - 2013-11-24 17:47:54 --> Config Class Initialized
+DEBUG - 2013-11-24 17:47:54 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:47:54 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:47:54 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:47:54 --> URI Class Initialized
+DEBUG - 2013-11-24 17:47:54 --> Router Class Initialized
+DEBUG - 2013-11-24 17:47:54 --> Output Class Initialized
+DEBUG - 2013-11-24 17:47:54 --> Security Class Initialized
+DEBUG - 2013-11-24 17:47:54 --> Input Class Initialized
+DEBUG - 2013-11-24 17:47:54 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:54 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:54 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:54 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:54 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:54 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:54 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:47:54 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:47:54 --> Language Class Initialized
+DEBUG - 2013-11-24 17:47:54 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:47:54 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:47:54 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:47:54 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:47:54 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:47:54 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:47:54 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:47:54 --> Session Class Initialized
+DEBUG - 2013-11-24 17:47:54 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:47:54 --> Session routines successfully run
+DEBUG - 2013-11-24 17:47:54 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:47:54 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:47:54 --> Model Class Initialized
+DEBUG - 2013-11-24 17:47:54 --> Model Class Initialized
+DEBUG - 2013-11-24 17:47:54 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:47:54 --> Final output sent to browser
+DEBUG - 2013-11-24 17:47:54 --> Total execution time: 0.2000
+DEBUG - 2013-11-24 17:47:56 --> Config Class Initialized
+DEBUG - 2013-11-24 17:47:56 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:47:56 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:47:56 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:47:56 --> URI Class Initialized
+DEBUG - 2013-11-24 17:47:56 --> Router Class Initialized
+DEBUG - 2013-11-24 17:47:56 --> No URI present. Default controller set.
+DEBUG - 2013-11-24 17:47:56 --> Output Class Initialized
+DEBUG - 2013-11-24 17:47:56 --> Security Class Initialized
+DEBUG - 2013-11-24 17:47:56 --> Input Class Initialized
+DEBUG - 2013-11-24 17:47:56 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:56 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:56 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:47:56 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:47:56 --> Language Class Initialized
+DEBUG - 2013-11-24 17:47:56 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:47:56 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:47:56 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:47:56 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:47:56 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:47:56 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:47:56 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:47:56 --> Session Class Initialized
+DEBUG - 2013-11-24 17:47:56 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:47:56 --> Session routines successfully run
+DEBUG - 2013-11-24 17:47:56 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:47:56 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:47:56 --> Model Class Initialized
+DEBUG - 2013-11-24 17:47:56 --> Model Class Initialized
+DEBUG - 2013-11-24 17:47:56 --> File loaded: E:\myworks\ezone\SZone/application/views/public/header.php
+DEBUG - 2013-11-24 17:47:56 --> File loaded: E:\myworks\ezone\SZone/application/views/public/userinfo.php
+DEBUG - 2013-11-24 17:47:56 --> File loaded: E:\myworks\ezone\SZone/application/views/public/footer.php
+DEBUG - 2013-11-24 17:47:56 --> File loaded: E:\myworks\ezone\SZone/application/views/home.php
+DEBUG - 2013-11-24 17:47:56 --> Final output sent to browser
+DEBUG - 2013-11-24 17:47:56 --> Total execution time: 0.1800
+DEBUG - 2013-11-24 17:47:57 --> Config Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:47:57 --> URI Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Router Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Output Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Security Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Input Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:57 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:57 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:57 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:47:57 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:47:57 --> Language Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:47:57 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:47:57 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:47:57 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:47:57 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:47:57 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Session Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:47:57 --> Session routines successfully run
+DEBUG - 2013-11-24 17:47:57 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Model Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Model Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Final output sent to browser
+DEBUG - 2013-11-24 17:47:57 --> Total execution time: 0.6750
+DEBUG - 2013-11-24 17:47:57 --> Config Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:47:57 --> URI Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Router Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Output Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Security Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Input Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:57 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:57 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:57 --> Config Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Config Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> Config Class Initialized
+DEBUG - 2013-11-24 17:47:57 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:47:58 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:47:58 --> URI Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Router Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Output Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Security Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Input Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:58 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:58 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:58 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:47:58 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:47:58 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Language Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:47:58 --> URI Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Router Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:47:58 --> Output Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:47:58 --> URI Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:47:58 --> Security Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Language Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Router Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Input Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:47:58 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:58 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:47:58 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:58 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:58 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:47:58 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:47:58 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:47:58 --> Language Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Output Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:47:58 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:47:58 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:47:58 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:47:58 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:47:58 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:47:58 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:47:58 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:47:58 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:47:58 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:47:58 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:47:58 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Session Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:47:58 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Session routines successfully run
+DEBUG - 2013-11-24 17:47:58 --> Session Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:47:58 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Session routines successfully run
+DEBUG - 2013-11-24 17:47:58 --> Model Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Model Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Model Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Model Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Final output sent to browser
+DEBUG - 2013-11-24 17:47:58 --> Total execution time: 1.9701
+DEBUG - 2013-11-24 17:47:58 --> Final output sent to browser
+DEBUG - 2013-11-24 17:47:58 --> Total execution time: 1.9601
+DEBUG - 2013-11-24 17:47:58 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Session Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:47:58 --> Session routines successfully run
+DEBUG - 2013-11-24 17:47:58 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Model Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Model Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Security Class Initialized
+DEBUG - 2013-11-24 17:47:58 --> Final output sent to browser
+DEBUG - 2013-11-24 17:47:58 --> Total execution time: 2.1491
+DEBUG - 2013-11-24 17:47:58 --> Input Class Initialized
+DEBUG - 2013-11-24 17:47:59 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:59 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:59 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:47:59 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:47:59 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:47:59 --> Language Class Initialized
+DEBUG - 2013-11-24 17:47:59 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:47:59 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:47:59 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:47:59 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:47:59 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:47:59 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:47:59 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:47:59 --> Session Class Initialized
+DEBUG - 2013-11-24 17:47:59 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:47:59 --> Session routines successfully run
+DEBUG - 2013-11-24 17:47:59 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:47:59 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:47:59 --> Model Class Initialized
+DEBUG - 2013-11-24 17:47:59 --> Model Class Initialized
+DEBUG - 2013-11-24 17:47:59 --> Final output sent to browser
+DEBUG - 2013-11-24 17:47:59 --> Total execution time: 2.3871
+DEBUG - 2013-11-24 17:49:11 --> Config Class Initialized
+DEBUG - 2013-11-24 17:49:11 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:49:11 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:49:11 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:49:11 --> URI Class Initialized
+DEBUG - 2013-11-24 17:49:11 --> Router Class Initialized
+DEBUG - 2013-11-24 17:49:11 --> Output Class Initialized
+DEBUG - 2013-11-24 17:49:11 --> Security Class Initialized
+DEBUG - 2013-11-24 17:49:11 --> Input Class Initialized
+DEBUG - 2013-11-24 17:49:11 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:11 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:11 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:11 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:11 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:11 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:11 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:49:11 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:49:11 --> Language Class Initialized
+DEBUG - 2013-11-24 17:49:11 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:49:11 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:49:11 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:49:11 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:49:11 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:49:11 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:49:11 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:49:11 --> Session Class Initialized
+DEBUG - 2013-11-24 17:49:11 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:49:11 --> Session routines successfully run
+DEBUG - 2013-11-24 17:49:11 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:49:11 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:49:11 --> Model Class Initialized
+DEBUG - 2013-11-24 17:49:11 --> Model Class Initialized
+DEBUG - 2013-11-24 17:49:11 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:49:11 --> Final output sent to browser
+DEBUG - 2013-11-24 17:49:11 --> Total execution time: 0.1830
+DEBUG - 2013-11-24 17:49:13 --> Config Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:49:13 --> URI Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Router Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> No URI present. Default controller set.
+DEBUG - 2013-11-24 17:49:13 --> Output Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Security Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Input Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:13 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:49:13 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:49:13 --> Language Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:49:13 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:49:13 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:49:13 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:49:13 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:49:13 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Session Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:49:13 --> Session routines successfully run
+DEBUG - 2013-11-24 17:49:13 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Model Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Model Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> File loaded: E:\myworks\ezone\SZone/application/views/public/header.php
+DEBUG - 2013-11-24 17:49:13 --> File loaded: E:\myworks\ezone\SZone/application/views/public/userinfo.php
+DEBUG - 2013-11-24 17:49:13 --> File loaded: E:\myworks\ezone\SZone/application/views/public/footer.php
+DEBUG - 2013-11-24 17:49:13 --> File loaded: E:\myworks\ezone\SZone/application/views/home.php
+DEBUG - 2013-11-24 17:49:13 --> Final output sent to browser
+DEBUG - 2013-11-24 17:49:13 --> Total execution time: 0.1610
+DEBUG - 2013-11-24 17:49:13 --> Config Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:49:13 --> URI Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Router Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Output Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Config Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:49:13 --> URI Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Router Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Output Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Security Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Input Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:13 --> Config Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:13 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Config Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:13 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:49:13 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:49:13 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:49:13 --> Language Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> URI Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Router Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Output Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Security Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Input Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:49:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:13 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:13 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:49:13 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:49:13 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:49:13 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:49:13 --> Language Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:49:13 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:49:13 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:49:13 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:49:13 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:49:13 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:49:13 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:49:13 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:49:13 --> URI Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Router Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Output Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Security Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Session Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:49:13 --> Session Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Input Class Initialized
+DEBUG - 2013-11-24 17:49:13 --> Session routines successfully run
+DEBUG - 2013-11-24 17:49:14 --> Config Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Security Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:49:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:14 --> Input Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:14 --> Session routines successfully run
+DEBUG - 2013-11-24 17:49:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:14 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:49:14 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:49:14 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:49:14 --> Model Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> URI Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Router Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Output Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Security Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Input Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Language Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:49:14 --> Model Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:49:14 --> Language Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Final output sent to browser
+DEBUG - 2013-11-24 17:49:14 --> Total execution time: 1.1321
+DEBUG - 2013-11-24 17:49:14 --> Model Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Model Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Final output sent to browser
+DEBUG - 2013-11-24 17:49:14 --> Total execution time: 1.2871
+DEBUG - 2013-11-24 17:49:14 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:49:14 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:49:14 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:49:14 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:49:14 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:49:14 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:49:14 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:49:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:14 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:49:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:14 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:49:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:49:14 --> Language Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:49:14 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:49:14 --> Session Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:49:14 --> Session routines successfully run
+DEBUG - 2013-11-24 17:49:14 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Model Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Model Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Session Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:49:14 --> Session routines successfully run
+DEBUG - 2013-11-24 17:49:14 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Model Class Initialized
+DEBUG - 2013-11-24 17:49:14 --> Model Class Initialized
+DEBUG - 2013-11-24 17:49:15 --> Final output sent to browser
+DEBUG - 2013-11-24 17:49:15 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:49:15 --> Total execution time: 1.3151
+DEBUG - 2013-11-24 17:49:15 --> Final output sent to browser
+DEBUG - 2013-11-24 17:49:15 --> Total execution time: 1.4581
+DEBUG - 2013-11-24 17:49:15 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:49:15 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:49:15 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:49:15 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:49:15 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:49:15 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:49:15 --> Session Class Initialized
+DEBUG - 2013-11-24 17:49:15 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:49:15 --> Session routines successfully run
+DEBUG - 2013-11-24 17:49:15 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:49:15 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:49:15 --> Model Class Initialized
+DEBUG - 2013-11-24 17:49:15 --> Model Class Initialized
+DEBUG - 2013-11-24 17:49:15 --> Final output sent to browser
+DEBUG - 2013-11-24 17:49:15 --> Total execution time: 1.7781
+DEBUG - 2013-11-24 17:49:17 --> Config Class Initialized
+DEBUG - 2013-11-24 17:49:17 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:49:17 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:49:17 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:49:17 --> URI Class Initialized
+DEBUG - 2013-11-24 17:49:17 --> Router Class Initialized
+DEBUG - 2013-11-24 17:49:17 --> Output Class Initialized
+DEBUG - 2013-11-24 17:49:17 --> Security Class Initialized
+DEBUG - 2013-11-24 17:49:17 --> Input Class Initialized
+DEBUG - 2013-11-24 17:49:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:17 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:49:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:49:17 --> Language Class Initialized
+DEBUG - 2013-11-24 17:49:17 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:49:17 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:49:17 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:49:17 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:49:17 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:49:17 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:49:17 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:49:17 --> Session Class Initialized
+DEBUG - 2013-11-24 17:49:17 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:49:17 --> Session routines successfully run
+DEBUG - 2013-11-24 17:49:17 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:49:17 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:49:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:49:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:49:17 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:49:17 --> Final output sent to browser
+DEBUG - 2013-11-24 17:49:17 --> Total execution time: 0.1550
+DEBUG - 2013-11-24 17:49:18 --> Config Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:49:18 --> URI Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> Router Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> Output Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> Security Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> Input Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:18 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:18 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:49:18 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:49:18 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:49:18 --> Language Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:49:18 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:49:18 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:49:18 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:49:18 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:49:18 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> Session Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:49:18 --> Session routines successfully run
+DEBUG - 2013-11-24 17:49:18 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> Model Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> Model Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> Config Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:49:18 --> URI Class Initialized
+DEBUG - 2013-11-24 17:49:18 --> Router Class Initialized
+ERROR - 2013-11-24 17:49:18 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:49:18 --> Final output sent to browser
+DEBUG - 2013-11-24 17:49:18 --> Total execution time: 0.2040
+DEBUG - 2013-11-24 17:49:19 --> Config Class Initialized
+DEBUG - 2013-11-24 17:49:19 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:49:19 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:49:19 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:49:19 --> URI Class Initialized
+DEBUG - 2013-11-24 17:49:19 --> Router Class Initialized
+ERROR - 2013-11-24 17:49:19 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:49:19 --> Config Class Initialized
+DEBUG - 2013-11-24 17:49:19 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:49:19 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:49:19 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:49:19 --> URI Class Initialized
+DEBUG - 2013-11-24 17:49:19 --> Router Class Initialized
+ERROR - 2013-11-24 17:49:19 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:50:14 --> Config Class Initialized
+DEBUG - 2013-11-24 17:50:14 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:50:14 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:50:14 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:50:14 --> URI Class Initialized
+DEBUG - 2013-11-24 17:50:14 --> Router Class Initialized
+DEBUG - 2013-11-24 17:50:14 --> No URI present. Default controller set.
+DEBUG - 2013-11-24 17:50:14 --> Output Class Initialized
+DEBUG - 2013-11-24 17:50:14 --> Security Class Initialized
+DEBUG - 2013-11-24 17:50:14 --> Input Class Initialized
+DEBUG - 2013-11-24 17:50:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:14 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:14 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:50:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:50:14 --> Language Class Initialized
+DEBUG - 2013-11-24 17:50:14 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:50:14 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:50:14 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:50:14 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:50:14 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:50:14 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:50:14 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:50:14 --> Session Class Initialized
+DEBUG - 2013-11-24 17:50:14 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:50:14 --> Session routines successfully run
+DEBUG - 2013-11-24 17:50:14 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:50:14 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:50:14 --> Model Class Initialized
+DEBUG - 2013-11-24 17:50:14 --> Model Class Initialized
+DEBUG - 2013-11-24 17:50:14 --> File loaded: E:\myworks\ezone\SZone/application/views/public/header.php
+DEBUG - 2013-11-24 17:50:14 --> File loaded: E:\myworks\ezone\SZone/application/views/public/userinfo.php
+DEBUG - 2013-11-24 17:50:14 --> File loaded: E:\myworks\ezone\SZone/application/views/public/footer.php
+DEBUG - 2013-11-24 17:50:14 --> File loaded: E:\myworks\ezone\SZone/application/views/home.php
+DEBUG - 2013-11-24 17:50:14 --> Final output sent to browser
+DEBUG - 2013-11-24 17:50:14 --> Total execution time: 0.1780
+DEBUG - 2013-11-24 17:50:15 --> Config Class Initialized
+DEBUG - 2013-11-24 17:50:15 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:50:15 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:50:15 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:50:15 --> URI Class Initialized
+DEBUG - 2013-11-24 17:50:15 --> Router Class Initialized
+DEBUG - 2013-11-24 17:50:15 --> Output Class Initialized
+DEBUG - 2013-11-24 17:50:15 --> Config Class Initialized
+DEBUG - 2013-11-24 17:50:15 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:50:15 --> Security Class Initialized
+DEBUG - 2013-11-24 17:50:15 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:50:15 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:50:15 --> URI Class Initialized
+DEBUG - 2013-11-24 17:50:15 --> Router Class Initialized
+DEBUG - 2013-11-24 17:50:15 --> Output Class Initialized
+DEBUG - 2013-11-24 17:50:15 --> Input Class Initialized
+DEBUG - 2013-11-24 17:50:15 --> Config Class Initialized
+DEBUG - 2013-11-24 17:50:15 --> Config Class Initialized
+DEBUG - 2013-11-24 17:50:15 --> Config Class Initialized
+DEBUG - 2013-11-24 17:50:15 --> Security Class Initialized
+DEBUG - 2013-11-24 17:50:16 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:16 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:50:16 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:50:16 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:50:16 --> URI Class Initialized
+DEBUG - 2013-11-24 17:50:16 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:50:16 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:50:16 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:50:16 --> URI Class Initialized
+DEBUG - 2013-11-24 17:50:16 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:50:16 --> Input Class Initialized
+DEBUG - 2013-11-24 17:50:16 --> Router Class Initialized
+DEBUG - 2013-11-24 17:50:16 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:17 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Output Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Router Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:17 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:50:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:17 --> Output Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Security Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:50:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:17 --> URI Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Security Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Input Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Input Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:17 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:50:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:50:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:50:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:17 --> Language Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:50:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:50:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:17 --> Language Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:17 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:50:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:50:17 --> Language Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:50:17 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:50:17 --> Language Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:50:17 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:50:17 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:50:17 --> Router Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:50:17 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Session Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Session Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:50:17 --> Session routines successfully run
+DEBUG - 2013-11-24 17:50:17 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Output Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:50:17 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Security Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:50:17 --> Session routines successfully run
+DEBUG - 2013-11-24 17:50:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Session Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:50:17 --> Session routines successfully run
+DEBUG - 2013-11-24 17:50:17 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Final output sent to browser
+DEBUG - 2013-11-24 17:50:17 --> Total execution time: 2.0931
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:50:17 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Session Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:50:17 --> Session routines successfully run
+DEBUG - 2013-11-24 17:50:17 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Input Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:17 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Final output sent to browser
+DEBUG - 2013-11-24 17:50:17 --> Total execution time: 2.1501
+DEBUG - 2013-11-24 17:50:17 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Model Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:17 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:17 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:50:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:50:17 --> Language Class Initialized
+DEBUG - 2013-11-24 17:50:17 --> Final output sent to browser
+DEBUG - 2013-11-24 17:50:17 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:50:18 --> Total execution time: 2.2691
+DEBUG - 2013-11-24 17:50:18 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:50:18 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:50:18 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:50:18 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:50:18 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:50:18 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:50:18 --> Session Class Initialized
+DEBUG - 2013-11-24 17:50:18 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:50:18 --> Session routines successfully run
+DEBUG - 2013-11-24 17:50:18 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:50:18 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:50:18 --> Model Class Initialized
+DEBUG - 2013-11-24 17:50:18 --> Model Class Initialized
+DEBUG - 2013-11-24 17:50:18 --> Final output sent to browser
+DEBUG - 2013-11-24 17:50:18 --> Total execution time: 2.4921
+DEBUG - 2013-11-24 17:50:18 --> Final output sent to browser
+DEBUG - 2013-11-24 17:50:18 --> Total execution time: 2.2861
+DEBUG - 2013-11-24 17:50:24 --> Config Class Initialized
+DEBUG - 2013-11-24 17:50:24 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:50:24 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:50:24 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:50:24 --> URI Class Initialized
+DEBUG - 2013-11-24 17:50:24 --> Router Class Initialized
+DEBUG - 2013-11-24 17:50:24 --> Output Class Initialized
+DEBUG - 2013-11-24 17:50:24 --> Security Class Initialized
+DEBUG - 2013-11-24 17:50:24 --> Input Class Initialized
+DEBUG - 2013-11-24 17:50:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:24 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:24 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:50:24 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:50:24 --> Language Class Initialized
+DEBUG - 2013-11-24 17:50:24 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:50:24 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:50:24 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:50:24 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:50:24 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:50:24 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:50:24 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:50:24 --> Session Class Initialized
+DEBUG - 2013-11-24 17:50:24 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:50:24 --> Session routines successfully run
+DEBUG - 2013-11-24 17:50:24 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:50:24 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:50:24 --> Model Class Initialized
+DEBUG - 2013-11-24 17:50:24 --> Model Class Initialized
+DEBUG - 2013-11-24 17:50:24 --> File loaded: E:\myworks\ezone\SZone/application/views/home/mail.php
+DEBUG - 2013-11-24 17:50:24 --> Final output sent to browser
+DEBUG - 2013-11-24 17:50:24 --> Total execution time: 0.2230
+DEBUG - 2013-11-24 17:50:25 --> Config Class Initialized
+DEBUG - 2013-11-24 17:50:25 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:50:25 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:50:25 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:50:25 --> URI Class Initialized
+DEBUG - 2013-11-24 17:50:25 --> Router Class Initialized
+DEBUG - 2013-11-24 17:50:25 --> Output Class Initialized
+DEBUG - 2013-11-24 17:50:25 --> Security Class Initialized
+DEBUG - 2013-11-24 17:50:25 --> Input Class Initialized
+DEBUG - 2013-11-24 17:50:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:25 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:25 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:50:25 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:50:25 --> Language Class Initialized
+DEBUG - 2013-11-24 17:50:25 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:50:25 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:50:25 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:50:25 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:50:25 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:50:25 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:50:25 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:50:25 --> Session Class Initialized
+DEBUG - 2013-11-24 17:50:25 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:50:25 --> Session routines successfully run
+DEBUG - 2013-11-24 17:50:25 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:50:25 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:50:25 --> Model Class Initialized
+DEBUG - 2013-11-24 17:50:25 --> Model Class Initialized
+DEBUG - 2013-11-24 17:50:25 --> Final output sent to browser
+DEBUG - 2013-11-24 17:50:25 --> Total execution time: 0.2340
+DEBUG - 2013-11-24 17:50:26 --> Config Class Initialized
+DEBUG - 2013-11-24 17:50:26 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:50:26 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:50:26 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:50:26 --> URI Class Initialized
+DEBUG - 2013-11-24 17:50:26 --> Router Class Initialized
+DEBUG - 2013-11-24 17:50:26 --> Output Class Initialized
+DEBUG - 2013-11-24 17:50:26 --> Security Class Initialized
+DEBUG - 2013-11-24 17:50:26 --> Input Class Initialized
+DEBUG - 2013-11-24 17:50:26 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:26 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:26 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:50:26 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:50:26 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:50:26 --> Language Class Initialized
+DEBUG - 2013-11-24 17:50:26 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:50:26 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:50:26 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:50:26 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:50:26 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:50:26 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:50:26 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:50:26 --> Session Class Initialized
+DEBUG - 2013-11-24 17:50:26 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:50:26 --> Session routines successfully run
+DEBUG - 2013-11-24 17:50:26 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:50:26 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:50:26 --> Model Class Initialized
+DEBUG - 2013-11-24 17:50:26 --> Model Class Initialized
+DEBUG - 2013-11-24 17:50:26 --> Final output sent to browser
+DEBUG - 2013-11-24 17:50:26 --> Total execution time: 0.1750
+DEBUG - 2013-11-24 17:51:18 --> Config Class Initialized
+DEBUG - 2013-11-24 17:51:18 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:51:18 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:51:18 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:51:18 --> URI Class Initialized
+DEBUG - 2013-11-24 17:51:18 --> Router Class Initialized
+DEBUG - 2013-11-24 17:51:18 --> No URI present. Default controller set.
+DEBUG - 2013-11-24 17:51:18 --> Output Class Initialized
+DEBUG - 2013-11-24 17:51:18 --> Security Class Initialized
+DEBUG - 2013-11-24 17:51:18 --> Input Class Initialized
+DEBUG - 2013-11-24 17:51:18 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:18 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:18 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:51:18 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:51:18 --> Language Class Initialized
+DEBUG - 2013-11-24 17:51:18 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:51:18 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:51:18 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:51:18 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:51:18 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:51:18 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:51:18 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:51:18 --> Session Class Initialized
+DEBUG - 2013-11-24 17:51:18 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:51:18 --> Session routines successfully run
+DEBUG - 2013-11-24 17:51:18 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:51:18 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:51:18 --> Model Class Initialized
+DEBUG - 2013-11-24 17:51:18 --> Model Class Initialized
+DEBUG - 2013-11-24 17:51:18 --> File loaded: E:\myworks\ezone\SZone/application/views/public/header.php
+DEBUG - 2013-11-24 17:51:18 --> File loaded: E:\myworks\ezone\SZone/application/views/public/userinfo.php
+DEBUG - 2013-11-24 17:51:18 --> File loaded: E:\myworks\ezone\SZone/application/views/public/footer.php
+DEBUG - 2013-11-24 17:51:18 --> File loaded: E:\myworks\ezone\SZone/application/views/home.php
+DEBUG - 2013-11-24 17:51:18 --> Final output sent to browser
+DEBUG - 2013-11-24 17:51:18 --> Total execution time: 0.2660
+DEBUG - 2013-11-24 17:51:19 --> Config Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:51:19 --> URI Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Router Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Output Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Security Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Config Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:51:19 --> URI Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Router Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Output Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Security Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Input Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:19 --> Input Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:19 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:19 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:51:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:51:19 --> Language Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:51:19 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:51:19 --> Language Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:51:19 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:51:19 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:51:19 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:51:19 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:51:19 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:51:19 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:51:19 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:51:19 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Config Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Config Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Config Class Initialized
+DEBUG - 2013-11-24 17:51:19 --> Session Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:51:20 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:51:20 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:51:20 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:51:20 --> Session routines successfully run
+DEBUG - 2013-11-24 17:51:20 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Session Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Model Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:51:20 --> Session routines successfully run
+DEBUG - 2013-11-24 17:51:20 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Model Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:51:20 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:51:20 --> URI Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Router Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Model Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Model Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Final output sent to browser
+DEBUG - 2013-11-24 17:51:20 --> Final output sent to browser
+DEBUG - 2013-11-24 17:51:20 --> Total execution time: 1.3481
+DEBUG - 2013-11-24 17:51:20 --> URI Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Router Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Output Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Security Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Input Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:20 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:51:20 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:51:20 --> Language Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> URI Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Router Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Output Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Security Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Input Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:20 --> Output Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Security Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Input Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:20 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:51:20 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:51:20 --> Language Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Total execution time: 1.4121
+DEBUG - 2013-11-24 17:51:20 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:51:20 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:51:20 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:51:20 --> Language Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Session Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:51:20 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:51:20 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Session routines successfully run
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:51:20 --> Session Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:51:20 --> Session routines successfully run
+DEBUG - 2013-11-24 17:51:20 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Model Class Initialized
+DEBUG - 2013-11-24 17:51:20 --> Model Class Initialized
+DEBUG - 2013-11-24 17:51:21 --> Final output sent to browser
+DEBUG - 2013-11-24 17:51:21 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:51:21 --> Model Class Initialized
+DEBUG - 2013-11-24 17:51:21 --> Model Class Initialized
+DEBUG - 2013-11-24 17:51:21 --> Final output sent to browser
+DEBUG - 2013-11-24 17:51:21 --> Total execution time: 1.8811
+DEBUG - 2013-11-24 17:51:21 --> Session Class Initialized
+DEBUG - 2013-11-24 17:51:21 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:51:21 --> Session routines successfully run
+DEBUG - 2013-11-24 17:51:21 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:51:21 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:51:21 --> Model Class Initialized
+DEBUG - 2013-11-24 17:51:21 --> Model Class Initialized
+DEBUG - 2013-11-24 17:51:21 --> Total execution time: 1.8101
+DEBUG - 2013-11-24 17:51:21 --> Final output sent to browser
+DEBUG - 2013-11-24 17:51:21 --> Total execution time: 1.9751
+DEBUG - 2013-11-24 17:51:22 --> Config Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:51:22 --> URI Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Router Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Output Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Security Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Input Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:22 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:51:22 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:51:22 --> Language Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:51:22 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:51:22 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:51:22 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:51:22 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:51:22 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Session Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:51:22 --> Session routines successfully run
+DEBUG - 2013-11-24 17:51:22 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Model Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Model Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:51:22 --> Final output sent to browser
+DEBUG - 2013-11-24 17:51:22 --> Total execution time: 0.3450
+DEBUG - 2013-11-24 17:51:22 --> Config Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:51:22 --> URI Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Router Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Output Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Security Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Input Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:22 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:51:22 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:51:22 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:51:22 --> Language Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:51:22 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:51:22 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:51:22 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:51:22 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:51:22 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Session Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:51:22 --> Session routines successfully run
+DEBUG - 2013-11-24 17:51:22 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Model Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Model Class Initialized
+DEBUG - 2013-11-24 17:51:22 --> Final output sent to browser
+DEBUG - 2013-11-24 17:51:22 --> Total execution time: 0.2470
+DEBUG - 2013-11-24 17:52:26 --> Config Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:52:26 --> URI Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Router Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Output Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Security Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Input Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:52:26 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:52:26 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:52:26 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:52:26 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:52:26 --> Language Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:52:26 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:52:26 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:52:26 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:52:26 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:52:26 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Session Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:52:26 --> Session routines successfully run
+DEBUG - 2013-11-24 17:52:26 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Model Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Model Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> File loaded: E:\myworks\ezone\SZone/application/views/home/mail.php
+DEBUG - 2013-11-24 17:52:26 --> Final output sent to browser
+DEBUG - 2013-11-24 17:52:26 --> Total execution time: 0.3480
+DEBUG - 2013-11-24 17:52:26 --> Config Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:52:26 --> URI Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Router Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Output Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Security Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Input Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:52:26 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:52:26 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:52:26 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:52:26 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:52:26 --> Language Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:52:26 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:52:26 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:52:26 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:52:26 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:52:26 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:52:27 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Session Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:52:27 --> Session routines successfully run
+DEBUG - 2013-11-24 17:52:27 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Model Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Model Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Final output sent to browser
+DEBUG - 2013-11-24 17:52:27 --> Total execution time: 0.1980
+DEBUG - 2013-11-24 17:52:27 --> Config Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:52:27 --> URI Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Router Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Output Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Security Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Input Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:52:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:52:27 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:52:27 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:52:27 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:52:27 --> Language Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:52:27 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:52:27 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:52:27 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:52:27 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:52:27 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Session Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:52:27 --> Session routines successfully run
+DEBUG - 2013-11-24 17:52:27 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Model Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Model Class Initialized
+DEBUG - 2013-11-24 17:52:27 --> Final output sent to browser
+DEBUG - 2013-11-24 17:52:27 --> Total execution time: 0.2150
+DEBUG - 2013-11-24 17:53:01 --> Config Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:53:01 --> URI Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Router Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> No URI present. Default controller set.
+DEBUG - 2013-11-24 17:53:01 --> Output Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Security Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Input Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:01 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:53:01 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:53:01 --> Language Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:53:01 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:53:01 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:53:01 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:53:01 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:53:01 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Session Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:53:01 --> Session routines successfully run
+DEBUG - 2013-11-24 17:53:01 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Model Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Model Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> File loaded: E:\myworks\ezone\SZone/application/views/public/header.php
+DEBUG - 2013-11-24 17:53:01 --> File loaded: E:\myworks\ezone\SZone/application/views/public/userinfo.php
+DEBUG - 2013-11-24 17:53:01 --> File loaded: E:\myworks\ezone\SZone/application/views/public/footer.php
+DEBUG - 2013-11-24 17:53:01 --> File loaded: E:\myworks\ezone\SZone/application/views/home.php
+DEBUG - 2013-11-24 17:53:01 --> Final output sent to browser
+DEBUG - 2013-11-24 17:53:01 --> Total execution time: 0.2040
+DEBUG - 2013-11-24 17:53:01 --> Config Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:53:01 --> URI Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Router Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Output Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Security Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Input Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:01 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:53:01 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:53:01 --> Language Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:53:01 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:53:01 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:53:01 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:53:01 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:53:01 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Session Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:53:01 --> Session routines successfully run
+DEBUG - 2013-11-24 17:53:01 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Model Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Model Class Initialized
+DEBUG - 2013-11-24 17:53:01 --> Final output sent to browser
+DEBUG - 2013-11-24 17:53:01 --> Total execution time: 0.1700
+DEBUG - 2013-11-24 17:53:02 --> Config Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Config Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:53:02 --> URI Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Router Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Output Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Security Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Input Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:02 --> Config Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:53:02 --> URI Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Router Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Config Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:53:02 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:53:02 --> URI Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> URI Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Router Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Router Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Output Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Output Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Security Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Security Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Input Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:02 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:53:02 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:53:02 --> Language Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Input Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:02 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:53:02 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:53:02 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:53:02 --> Language Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:53:02 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:53:02 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:53:02 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:53:02 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:53:02 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Session Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:02 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:53:02 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:53:02 --> Language Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Output Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Security Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:53:02 --> Input Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Session routines successfully run
+DEBUG - 2013-11-24 17:53:02 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:02 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:02 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:53:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:02 --> Model Class Initialized
+DEBUG - 2013-11-24 17:53:02 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:53:02 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:53:03 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:53:03 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:53:03 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:53:03 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:53:03 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:53:03 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:53:03 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:53:03 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Session Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Session Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:53:03 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:53:03 --> Model Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Session routines successfully run
+DEBUG - 2013-11-24 17:53:03 --> Session routines successfully run
+DEBUG - 2013-11-24 17:53:03 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Model Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Model Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Model Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Model Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Final output sent to browser
+DEBUG - 2013-11-24 17:53:03 --> Total execution time: 0.8530
+DEBUG - 2013-11-24 17:53:03 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:53:03 --> Final output sent to browser
+DEBUG - 2013-11-24 17:53:03 --> Total execution time: 0.8780
+DEBUG - 2013-11-24 17:53:03 --> Language Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Final output sent to browser
+DEBUG - 2013-11-24 17:53:03 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:53:03 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:53:03 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:53:03 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:53:03 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:53:03 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Session Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:53:03 --> Session routines successfully run
+DEBUG - 2013-11-24 17:53:03 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Model Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Model Class Initialized
+DEBUG - 2013-11-24 17:53:03 --> Total execution time: 0.8860
+DEBUG - 2013-11-24 17:53:03 --> Final output sent to browser
+DEBUG - 2013-11-24 17:53:03 --> Total execution time: 0.8841
+DEBUG - 2013-11-24 17:53:04 --> Config Class Initialized
+DEBUG - 2013-11-24 17:53:04 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:53:04 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:53:04 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:53:04 --> URI Class Initialized
+DEBUG - 2013-11-24 17:53:04 --> Router Class Initialized
+DEBUG - 2013-11-24 17:53:04 --> Output Class Initialized
+DEBUG - 2013-11-24 17:53:04 --> Security Class Initialized
+DEBUG - 2013-11-24 17:53:04 --> Input Class Initialized
+DEBUG - 2013-11-24 17:53:04 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:04 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:04 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:04 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:04 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:53:04 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:53:05 --> Language Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:53:05 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:53:05 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:53:05 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:53:05 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:53:05 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Session Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:53:05 --> Session routines successfully run
+DEBUG - 2013-11-24 17:53:05 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Model Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Model Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:53:05 --> Final output sent to browser
+DEBUG - 2013-11-24 17:53:05 --> Total execution time: 0.2210
+DEBUG - 2013-11-24 17:53:05 --> Config Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:53:05 --> URI Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Router Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Output Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Security Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Input Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:05 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:05 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:53:05 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:53:05 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:53:05 --> Language Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:53:05 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:53:05 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:53:05 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:53:05 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:53:05 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Session Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:53:05 --> Session routines successfully run
+DEBUG - 2013-11-24 17:53:05 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Model Class Initialized
+DEBUG - 2013-11-24 17:53:05 --> Model Class Initialized
+DEBUG - 2013-11-24 17:53:06 --> Final output sent to browser
+DEBUG - 2013-11-24 17:53:06 --> Total execution time: 0.1180
+DEBUG - 2013-11-24 17:54:48 --> Config Class Initialized
+DEBUG - 2013-11-24 17:54:48 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:54:48 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:54:48 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:54:48 --> URI Class Initialized
+DEBUG - 2013-11-24 17:54:48 --> Router Class Initialized
+DEBUG - 2013-11-24 17:54:48 --> Output Class Initialized
+DEBUG - 2013-11-24 17:54:48 --> Security Class Initialized
+DEBUG - 2013-11-24 17:54:48 --> Input Class Initialized
+DEBUG - 2013-11-24 17:54:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:54:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:54:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:54:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:54:48 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:54:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:54:48 --> Language Class Initialized
+DEBUG - 2013-11-24 17:54:48 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:54:48 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:54:48 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:54:48 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:54:48 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:54:48 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:54:48 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:54:48 --> Session Class Initialized
+DEBUG - 2013-11-24 17:54:48 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:54:48 --> Session routines successfully run
+DEBUG - 2013-11-24 17:54:48 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:54:48 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:54:48 --> Model Class Initialized
+DEBUG - 2013-11-24 17:54:48 --> Model Class Initialized
+DEBUG - 2013-11-24 17:54:48 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:54:48 --> Final output sent to browser
+DEBUG - 2013-11-24 17:54:48 --> Total execution time: 0.1890
+DEBUG - 2013-11-24 17:54:49 --> Config Class Initialized
+DEBUG - 2013-11-24 17:54:49 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:54:49 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:54:49 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:54:49 --> URI Class Initialized
+DEBUG - 2013-11-24 17:54:49 --> Router Class Initialized
+DEBUG - 2013-11-24 17:54:49 --> Output Class Initialized
+DEBUG - 2013-11-24 17:54:49 --> Security Class Initialized
+DEBUG - 2013-11-24 17:54:49 --> Input Class Initialized
+DEBUG - 2013-11-24 17:54:49 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:54:49 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:54:49 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:54:49 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:54:49 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:54:49 --> Language Class Initialized
+DEBUG - 2013-11-24 17:54:49 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:54:49 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:54:49 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:54:49 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:54:49 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:54:49 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:54:49 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:54:49 --> Session Class Initialized
+DEBUG - 2013-11-24 17:54:49 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:54:49 --> Session routines successfully run
+DEBUG - 2013-11-24 17:54:49 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:54:49 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:54:49 --> Model Class Initialized
+DEBUG - 2013-11-24 17:54:49 --> Model Class Initialized
+DEBUG - 2013-11-24 17:54:49 --> Final output sent to browser
+DEBUG - 2013-11-24 17:54:49 --> Total execution time: 0.1780
+DEBUG - 2013-11-24 17:55:41 --> Config Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:55:41 --> URI Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Router Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> No URI present. Default controller set.
+DEBUG - 2013-11-24 17:55:41 --> Output Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Security Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Input Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:55:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:55:41 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:55:41 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:55:41 --> Language Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:55:41 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Session Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:55:41 --> Session routines successfully run
+DEBUG - 2013-11-24 17:55:41 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Model Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Model Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> File loaded: E:\myworks\ezone\SZone/application/views/public/header.php
+DEBUG - 2013-11-24 17:55:41 --> File loaded: E:\myworks\ezone\SZone/application/views/public/userinfo.php
+DEBUG - 2013-11-24 17:55:41 --> File loaded: E:\myworks\ezone\SZone/application/views/public/footer.php
+DEBUG - 2013-11-24 17:55:41 --> File loaded: E:\myworks\ezone\SZone/application/views/home.php
+DEBUG - 2013-11-24 17:55:41 --> Final output sent to browser
+DEBUG - 2013-11-24 17:55:41 --> Total execution time: 0.1570
+DEBUG - 2013-11-24 17:55:41 --> Config Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:55:41 --> URI Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Router Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Config Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Config Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:55:41 --> Output Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> URI Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Security Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Input Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Router Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Config Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:55:41 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:55:41 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Output Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:55:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:55:41 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Config Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:55:41 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:55:41 --> URI Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Language Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Router Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Output Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:55:41 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:55:41 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:55:41 --> URI Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Security Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:55:41 --> URI Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:55:41 --> Router Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:55:41 --> Output Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Security Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Input Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:55:41 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:55:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:55:41 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:55:41 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:55:41 --> Security Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Router Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Session Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Language Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Input Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:55:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:55:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:55:41 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:55:41 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:55:41 --> Input Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:55:41 --> Session routines successfully run
+DEBUG - 2013-11-24 17:55:41 --> Output Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Language Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Model Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Model Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Security Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:55:41 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:55:41 --> Input Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:55:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:55:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:55:41 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:55:41 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:55:41 --> Final output sent to browser
+DEBUG - 2013-11-24 17:55:41 --> Total execution time: 0.2560
+DEBUG - 2013-11-24 17:55:41 --> Language Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:55:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:55:41 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:55:41 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:55:41 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:55:41 --> Language Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:55:41 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:55:41 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:55:41 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Session Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:55:41 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Session Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Session routines successfully run
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:55:41 --> Session routines successfully run
+DEBUG - 2013-11-24 17:55:41 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Model Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Model Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Model Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Model Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:55:41 --> Session Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:55:41 --> Session routines successfully run
+DEBUG - 2013-11-24 17:55:41 --> Final output sent to browser
+DEBUG - 2013-11-24 17:55:41 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Total execution time: 0.2710
+DEBUG - 2013-11-24 17:55:41 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Model Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Model Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Final output sent to browser
+DEBUG - 2013-11-24 17:55:41 --> Total execution time: 0.3860
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:55:41 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Final output sent to browser
+DEBUG - 2013-11-24 17:55:41 --> Total execution time: 0.2820
+DEBUG - 2013-11-24 17:55:41 --> Session Class Initialized
+DEBUG - 2013-11-24 17:55:41 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:55:41 --> Session routines successfully run
+DEBUG - 2013-11-24 17:55:41 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:55:42 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:55:42 --> Model Class Initialized
+DEBUG - 2013-11-24 17:55:42 --> Model Class Initialized
+DEBUG - 2013-11-24 17:55:42 --> Final output sent to browser
+DEBUG - 2013-11-24 17:55:42 --> Total execution time: 0.4470
+DEBUG - 2013-11-24 17:56:47 --> Config Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:56:47 --> URI Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Router Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Output Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Security Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Input Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:56:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:56:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:56:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:56:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:56:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:56:47 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:56:47 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:56:47 --> Language Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:56:47 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:56:47 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:56:47 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:56:47 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:56:47 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Session Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:56:47 --> Session routines successfully run
+DEBUG - 2013-11-24 17:56:47 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Model Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Model Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:56:47 --> Final output sent to browser
+DEBUG - 2013-11-24 17:56:47 --> Total execution time: 0.1780
+DEBUG - 2013-11-24 17:56:47 --> Config Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:56:47 --> URI Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Router Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Output Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Security Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Input Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:56:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:56:47 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:56:47 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:56:47 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:56:47 --> Language Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:56:47 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:56:47 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:56:47 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:56:47 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:56:47 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Session Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:56:47 --> Session routines successfully run
+DEBUG - 2013-11-24 17:56:47 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Model Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Model Class Initialized
+DEBUG - 2013-11-24 17:56:47 --> Final output sent to browser
+DEBUG - 2013-11-24 17:56:47 --> Total execution time: 0.1570
+DEBUG - 2013-11-24 17:56:48 --> Config Class Initialized
+DEBUG - 2013-11-24 17:56:48 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:56:48 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:56:48 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:56:48 --> URI Class Initialized
+DEBUG - 2013-11-24 17:56:48 --> Router Class Initialized
+DEBUG - 2013-11-24 17:56:48 --> Output Class Initialized
+DEBUG - 2013-11-24 17:56:48 --> Security Class Initialized
+DEBUG - 2013-11-24 17:56:48 --> Input Class Initialized
+DEBUG - 2013-11-24 17:56:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:56:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:56:48 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:56:48 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:56:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:56:48 --> Language Class Initialized
+DEBUG - 2013-11-24 17:56:48 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:56:48 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:56:48 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:56:48 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:56:48 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:56:48 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:56:48 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:56:48 --> Session Class Initialized
+DEBUG - 2013-11-24 17:56:48 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:56:48 --> Session routines successfully run
+DEBUG - 2013-11-24 17:56:48 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:56:48 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:56:48 --> Model Class Initialized
+DEBUG - 2013-11-24 17:56:48 --> Model Class Initialized
+DEBUG - 2013-11-24 17:56:48 --> Final output sent to browser
+DEBUG - 2013-11-24 17:56:48 --> Total execution time: 0.1460
+DEBUG - 2013-11-24 17:57:01 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:01 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Router Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Output Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Security Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Input Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:01 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:57:01 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:57:01 --> Language Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:57:01 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:57:01 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:57:01 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:57:01 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:57:01 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Session Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:57:01 --> Session routines successfully run
+DEBUG - 2013-11-24 17:57:01 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:57:01 --> Final output sent to browser
+DEBUG - 2013-11-24 17:57:01 --> Total execution time: 0.1940
+DEBUG - 2013-11-24 17:57:01 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:01 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Router Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Output Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Security Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Input Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:01 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:01 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:57:01 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:57:01 --> Language Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:57:01 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:57:01 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:57:01 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:57:01 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:57:01 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Session Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:57:01 --> Session routines successfully run
+DEBUG - 2013-11-24 17:57:01 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Final output sent to browser
+DEBUG - 2013-11-24 17:57:01 --> Total execution time: 0.1680
+DEBUG - 2013-11-24 17:57:01 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:01 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:01 --> Router Class Initialized
+ERROR - 2013-11-24 17:57:01 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:57:02 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:02 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Router Class Initialized
+ERROR - 2013-11-24 17:57:02 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:57:02 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:02 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Router Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Output Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Security Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Input Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:02 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:02 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:57:02 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:57:02 --> Language Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:57:02 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:57:02 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:57:02 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:57:02 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:57:02 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Session Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:57:02 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Session routines successfully run
+DEBUG - 2013-11-24 17:57:02 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:02 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:02 --> Router Class Initialized
+ERROR - 2013-11-24 17:57:02 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:57:02 --> Final output sent to browser
+DEBUG - 2013-11-24 17:57:02 --> Total execution time: 0.1450
+DEBUG - 2013-11-24 17:57:32 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:32 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:32 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:32 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:32 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:32 --> Router Class Initialized
+DEBUG - 2013-11-24 17:57:32 --> Output Class Initialized
+DEBUG - 2013-11-24 17:57:32 --> Security Class Initialized
+DEBUG - 2013-11-24 17:57:32 --> Input Class Initialized
+DEBUG - 2013-11-24 17:57:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:32 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:32 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:57:32 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:57:32 --> Language Class Initialized
+DEBUG - 2013-11-24 17:57:32 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:57:32 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:57:32 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:57:32 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:57:32 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:57:32 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:57:32 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:57:32 --> Session Class Initialized
+DEBUG - 2013-11-24 17:57:32 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:57:32 --> Session routines successfully run
+DEBUG - 2013-11-24 17:57:32 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:57:33 --> Final output sent to browser
+DEBUG - 2013-11-24 17:57:33 --> Total execution time: 0.1990
+DEBUG - 2013-11-24 17:57:33 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:33 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Router Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Output Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Security Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Input Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:33 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:57:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:57:33 --> Language Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:57:33 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:57:33 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:57:33 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:57:33 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:57:33 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Session Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:57:33 --> Session routines successfully run
+DEBUG - 2013-11-24 17:57:33 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Final output sent to browser
+DEBUG - 2013-11-24 17:57:33 --> Total execution time: 0.1290
+DEBUG - 2013-11-24 17:57:33 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:33 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Router Class Initialized
+ERROR - 2013-11-24 17:57:33 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:57:33 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:33 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Router Class Initialized
+ERROR - 2013-11-24 17:57:33 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:57:33 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:33 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Router Class Initialized
+ERROR - 2013-11-24 17:57:33 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:57:33 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:33 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Router Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Output Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Security Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> Input Class Initialized
+DEBUG - 2013-11-24 17:57:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:33 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:33 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:57:34 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:57:34 --> Language Class Initialized
+DEBUG - 2013-11-24 17:57:34 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:57:34 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:57:34 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:57:34 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:57:34 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:57:34 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:57:34 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:57:34 --> Session Class Initialized
+DEBUG - 2013-11-24 17:57:34 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:57:34 --> Session routines successfully run
+DEBUG - 2013-11-24 17:57:34 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:57:34 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:57:34 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:34 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:34 --> Final output sent to browser
+DEBUG - 2013-11-24 17:57:34 --> Total execution time: 0.2200
+DEBUG - 2013-11-24 17:57:51 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:51 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:51 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:51 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:51 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:51 --> Router Class Initialized
+DEBUG - 2013-11-24 17:57:51 --> Output Class Initialized
+DEBUG - 2013-11-24 17:57:51 --> Security Class Initialized
+DEBUG - 2013-11-24 17:57:51 --> Input Class Initialized
+DEBUG - 2013-11-24 17:57:51 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:51 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:51 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:51 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:51 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:52 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:52 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:57:52 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:57:52 --> Language Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:57:52 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:57:52 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:57:52 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:57:52 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:57:52 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Session Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:57:52 --> Session routines successfully run
+DEBUG - 2013-11-24 17:57:52 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:57:52 --> Final output sent to browser
+DEBUG - 2013-11-24 17:57:52 --> Total execution time: 0.2110
+DEBUG - 2013-11-24 17:57:52 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:52 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Router Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Output Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Security Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Input Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:52 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:52 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:52 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:57:52 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:57:52 --> Language Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:57:52 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:57:52 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:57:52 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:57:52 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:57:52 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Session Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:57:52 --> Session routines successfully run
+DEBUG - 2013-11-24 17:57:52 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Final output sent to browser
+DEBUG - 2013-11-24 17:57:52 --> Total execution time: 0.1880
+DEBUG - 2013-11-24 17:57:52 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:52 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Router Class Initialized
+ERROR - 2013-11-24 17:57:52 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:57:52 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:52 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:52 --> Router Class Initialized
+ERROR - 2013-11-24 17:57:52 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:57:53 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:53 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> Router Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> Output Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> Security Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> Input Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:53 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:53 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:53 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:57:53 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:57:53 --> Language Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:57:53 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:57:53 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:53 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:57:53 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> Router Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> Helper loaded: captcha_helper
+ERROR - 2013-11-24 17:57:53 --> 404 Page Not Found --> fonts
+DEBUG - 2013-11-24 17:57:53 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:57:53 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> Session Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:57:53 --> Session routines successfully run
+DEBUG - 2013-11-24 17:57:53 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:53 --> Final output sent to browser
+DEBUG - 2013-11-24 17:57:53 --> Total execution time: 0.2340
+DEBUG - 2013-11-24 17:57:58 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:58 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:58 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:58 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:58 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:58 --> Router Class Initialized
+DEBUG - 2013-11-24 17:57:58 --> Output Class Initialized
+DEBUG - 2013-11-24 17:57:58 --> Security Class Initialized
+DEBUG - 2013-11-24 17:57:58 --> Input Class Initialized
+DEBUG - 2013-11-24 17:57:58 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:58 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:58 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:58 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:58 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:57:58 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:57:58 --> Language Class Initialized
+DEBUG - 2013-11-24 17:57:58 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:57:58 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:57:58 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:57:58 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:57:58 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:57:58 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:57:58 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:57:58 --> Session Class Initialized
+DEBUG - 2013-11-24 17:57:58 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:57:58 --> Session routines successfully run
+DEBUG - 2013-11-24 17:57:58 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:57:58 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:57:58 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:58 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:58 --> File loaded: E:\myworks\ezone\SZone/application/views/review.php
+DEBUG - 2013-11-24 17:57:58 --> Final output sent to browser
+DEBUG - 2013-11-24 17:57:58 --> Total execution time: 0.3050
+DEBUG - 2013-11-24 17:57:59 --> Config Class Initialized
+DEBUG - 2013-11-24 17:57:59 --> Hooks Class Initialized
+DEBUG - 2013-11-24 17:57:59 --> Utf8 Class Initialized
+DEBUG - 2013-11-24 17:57:59 --> UTF-8 Support Enabled
+DEBUG - 2013-11-24 17:57:59 --> URI Class Initialized
+DEBUG - 2013-11-24 17:57:59 --> Router Class Initialized
+DEBUG - 2013-11-24 17:57:59 --> Output Class Initialized
+DEBUG - 2013-11-24 17:57:59 --> Security Class Initialized
+DEBUG - 2013-11-24 17:57:59 --> Input Class Initialized
+DEBUG - 2013-11-24 17:57:59 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:59 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:59 --> XSS Filtering completed
+DEBUG - 2013-11-24 17:57:59 --> CRSF cookie Set
+DEBUG - 2013-11-24 17:57:59 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-11-24 17:57:59 --> Language Class Initialized
+DEBUG - 2013-11-24 17:57:59 --> Loader Class Initialized
+DEBUG - 2013-11-24 17:57:59 --> Helper loaded: url_helper
+DEBUG - 2013-11-24 17:57:59 --> Helper loaded: file_helper
+DEBUG - 2013-11-24 17:57:59 --> Helper loaded: directory_helper
+DEBUG - 2013-11-24 17:57:59 --> Helper loaded: captcha_helper
+DEBUG - 2013-11-24 17:57:59 --> Helper loaded: util_helper
+DEBUG - 2013-11-24 17:57:59 --> Database Driver Class Initialized
+DEBUG - 2013-11-24 17:57:59 --> Session Class Initialized
+DEBUG - 2013-11-24 17:57:59 --> Helper loaded: string_helper
+DEBUG - 2013-11-24 17:57:59 --> Session routines successfully run
+DEBUG - 2013-11-24 17:57:59 --> Pagination Class Initialized
+DEBUG - 2013-11-24 17:57:59 --> Controller Class Initialized
+DEBUG - 2013-11-24 17:57:59 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:59 --> Model Class Initialized
+DEBUG - 2013-11-24 17:57:59 --> Final output sent to browser
+DEBUG - 2013-11-24 17:57:59 --> Total execution time: 0.3380

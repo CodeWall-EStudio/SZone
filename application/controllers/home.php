@@ -131,6 +131,7 @@ class Home extends SZone_Controller {
 		foreach($query->result() as $row){
 			$file[$row->id] = array(
 				'id' => $row->id,
+				'fid' => $row->fid,
 				'name' => $row->name,
 				'time' => substr($row->createtime,0,10),
 				'content' => $row->content,

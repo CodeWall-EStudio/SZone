@@ -136,7 +136,7 @@ class Cgi extends SZone_Controller {
             }else{
                 $data = array(
                     'path' => $filedata['full_path'],
-                    'size' => $filedata['file_size'],
+                    'size' => $filedata['file_size']*1024,
                     'md5' => $md5,
                     //'type' => $filedata['is_image'],
                     'mimes' => $filedata['file_type'],

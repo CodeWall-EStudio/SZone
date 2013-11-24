@@ -338,4 +338,13 @@
 				break;							
 		}
 	})
+
+	$("#fileList .file .file-name").click(function(e){
+		var target = $(e.target);
+		var fid = target.attr('data-fid');
+		var id= target.attr('data-id');
+		//review?fid=24&t=2&gid=0&id=18
+		$("#reviewIframe").attr('src','/review?fid='+fid+'&id='+id);
+		$('#reviewFile').modal('show');
+	});	
 })()
