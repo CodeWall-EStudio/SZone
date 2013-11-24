@@ -86,6 +86,7 @@ class Cgi extends SZone_Controller {
 
         $fdid = (int) $this->input->get('fid');
         //$this->config->load('szone');
+        $gid = (int) $this->input->get('gid');
         $ft = $this->config->item('filetype');
         $md5 =  md5_file($_FILES['file']['tmp_name']);
         $nowdir = $this->getDir($md5);
