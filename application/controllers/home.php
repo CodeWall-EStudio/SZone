@@ -490,20 +490,20 @@ class Home extends SZone_Controller {
 				}
 			}
 		}
-
-		$data['type'] = 0;
-		$data['fid'] = 0;
-		$data['plist']  = $plist;
-		$data['glist'] = $gradelist;
-		//$data['nav']['userinfo'] = $this->user;
-		// echo json_encode($plist);
 		$data = array(
 			'nav' => array(
 				'userinfo' => $this->user,
 				'group' => $this->grouplist,
 				'dep' => $this->deplist
 			)
-		);		
+		);	
+		$data['type'] = 0;
+		$data['fid'] = 0;
+		$data['plist']  = $plist;
+		$data['glist'] = $gradelist;
+		//$data['nav']['userinfo'] = $this->user;
+		// echo json_encode($plist);
+	
 
 		$this->load->view('home/prep.php',$data);
 	}

@@ -66,7 +66,7 @@
 						<?endforeach?>
 					</ul>					
 					<a class="section-tit-a-first" href="/home">我的备课</a>
-					<?if(isset($fid)):?>
+					<?if($fid):?>
 						<a class="section-tit-a-second"><?=$fname?></a>
 						<a class="section-tit-a-can" href="/home?fid=<?=$pid?>">返回上级</a>
 					<?else:?>
