@@ -18,7 +18,7 @@ class SZone_Controller extends CI_Controller {
     protected $depinfolist = array();
     protected $prelist = array();
 
-    public function __construct()
+    function __construct()
     {
         parent::__construct();
         $this->set_user();
@@ -27,8 +27,7 @@ class SZone_Controller extends CI_Controller {
 
     protected function set_user()
     {
-
-        $this->user['uid'] = (int) $this->session->userdata('uid');
+        $this->user['uid'] = intval($this->session->userdata('uid'));
 
         if ($this->user['uid'] != 0)
         {
@@ -37,14 +36,29 @@ class SZone_Controller extends CI_Controller {
         }
     }
 
-    protected function set_group(){
-        $sql = 'select gid from groupuser where uid='.(int) $this->user['uid'].' and auth>0';
-        $query = $this->db->query($sql);
-        $gidlist = array();
-
-        foreach($query->result() as $row){
-            array_push($gidlist,$row->gid);
+    protected function set_group()
+    {
+        if ($this->user['uid'] != 0)
+        {
+            $this->load->model('Group_model');
+            $gidlist = $this->Group_model->get_user_group_ids($this->user['uid']);
+            $ret = $this->Group_model->get_group_info($gidlist);
+            $this->grouplist = $ret['flist'];
+            $this->deplist = $ret['deplist'];
+            $this->depinfolist = $ret['depinfolist'];
+            $this->prelist = $ret['prelist'];
+            $this->school = $ret['school'];
         }
+    }
+
+    protected function set_group_bak(){
+
+        if ($this->user['uid'] != 0)
+        {
+            $this->load->model('Group_model');
+            $gidlist = $this->Group_model->get_user_group_ids($this->user['uid']);
+        }
+
         $sql = 'select * from groups where status=0';
         $query = $this->db->query($sql);
 

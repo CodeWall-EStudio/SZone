@@ -12,7 +12,7 @@
  */
 class User_model extends CI_Model {
 
-    var $table   = 'user';
+    protected $table   = 'user';
 
     function __construct()
     {
@@ -28,8 +28,8 @@ class User_model extends CI_Model {
         {
             $result = $query->row_array();
             $result['uid'] = $id;
-            $result['real_size'] = (float) $result['size'];
-            $result['real_used'] = (float) $result['used'];
+            $result['real_size'] = $result['size'];
+            $result['real_used'] = $result['used'];
             $result['per'] = round($result['real_used']/$result['real_size']*100,2);
             $result['size'] = format_size($result['real_size']);
             $result['used'] = format_size($result['real_used']);

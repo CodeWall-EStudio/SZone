@@ -12,8 +12,8 @@
  */
 class Group_model extends CI_Model {
 
-    var $table   = 'groups';
-    var $user_table   = 'groupuser';
+    protected $table   = 'groups';
+    protected $user_table   = 'groupuser';
 
     function __construct()
     {
@@ -36,17 +36,16 @@ class Group_model extends CI_Model {
 
     function get_group_info($ids)
     {
-        // $this->db->where_in('id', $ids);
+        //$this->db->where_in('id', $ids);
         $query = $this->db->get($this->table);
 
         $result = array(
-            $flist => array(),
-            $glist => array(),
-            $deplist => array(),
-            $depinfolist => array(),
-            $prelist => array()
+            'flist' => array(),
+            'glist' => array(),
+            'deplist' => array(),
+            'depinfolist' => array(),
+            'prelist' => array()
         );
-
 
         foreach($query->result() as $row){
             if($row->type == 1){
@@ -56,7 +55,7 @@ class Group_model extends CI_Model {
                         'name' => $row->name,
                         'parent' => $row->parent,
                         'content' => $row->content,
-                        'auth' => in_array($row->id,$ids),
+                        'auth' => in_array($row->id,$gidlist),
                         'list' => array()
                     );
                 }else{
@@ -65,7 +64,7 @@ class Group_model extends CI_Model {
                         'name' => $row->name,
                         'parent' => $row->parent,
                         'content' => $row->content,
-                        'auth' => in_array($row->id,$ids)
+                        'auth' => in_array($row->id,$gidlist)
                     );
                     $result['flist'][$row->id] = array(
                         'type' => 1,
@@ -73,7 +72,7 @@ class Group_model extends CI_Model {
                         'name' => $row->name,
                         'parent' => $row->parent,
                         'content' => $row->content,
-                        'auth' => in_array($row->id,$ids)
+                        'auth' => in_array($row->id,$gidlist)
                     );
                 }
             }elseif($row->type == 2){
@@ -90,13 +89,17 @@ class Group_model extends CI_Model {
                 );
             }elseif($row->type == 3){
                 $result['prelist'][$row->id] = $row->name;
+            }elseif($row->type == 0){
+                $result['school'] = $row;
             };
         };
 
         foreach($result['glist'] as $k => $r){
             array_push($result['flist'][$r['parent']]['list'],$r);
+
         }
-        return $flist;
+
+        return $result;
     }
 }
 // END Model class
