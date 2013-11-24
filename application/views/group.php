@@ -117,7 +117,7 @@
 					<?if(count($fold)>0):?>
 					<li class="tit">
 						<div class="td1"><input type="checkbox" /></div>
-						<div class="td2"><span>文件夹(<b><?=count($fold)?></b>个)</span>  名称 <i></i></div>
+						<div class="td2"><span>文件夹(<b><?=$allnum?></b>个)</span>  名称 <i></i></div>
 						<div class="td_mark">&nbsp;</div>
 						<div class="td_uname">&nbsp;</div>
 						<div class="td_source">&nbsp;</div>

@@ -157,7 +157,7 @@
 					<?if(count($file)>0):?>
 						<li class="tit file-list">
 							<div class="td1"><input type="checkbox" id="selectAllFile" /></div>
-							<div class="td2"><span>文件(<b><?=count($file)?></b>个)</span>  </div>
+							<div class="td2"><span>文件(<b><?=$allnum?></b>个)</span>  </div>
 							<div class="td_type">类型</div>
 							<div class="td_size">大小</div>
 							<div class="td_time">时间</div>								

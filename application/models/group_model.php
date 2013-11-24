@@ -91,7 +91,12 @@ class Group_model extends CI_Model {
             }elseif($row->type == 3){
                 $result['prelist'][$row->id] = $row->name;
             }elseif($row->type == 0){
-                $result['school'] = $row;
+                $result['school'] =  array(
+                    'id' => $row->id,
+                    'type' => $row->type,
+                    'name' => $row->name,
+                    'content' => $row->content
+                );
             };
         };
 

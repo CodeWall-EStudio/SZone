@@ -135,11 +135,12 @@
 	}
 
 	var move = function(e){
-		selectResult.html('');
+		//selectResult.html('');
 		searchResult.find('.selected').each(function(e){
 			var id = $(this).attr('data-id');
 			var item = map[id];
-			selectResult.append('<li><a data-id="'+item.id+'">'+item.name+'</a></li>');
+			//selectResult.append('<li><a data-id="'+item.id+'">'+item.name+'</a></li>');
+			$('<li><a data-id="'+item.id+'">'+item.name+'</a></li>').appendTo(selectResult);
 			$(this).remove();
 		});
 		checkBtn();

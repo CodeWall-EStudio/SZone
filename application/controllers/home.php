@@ -147,7 +147,7 @@ class Home extends SZone_Controller {
 		foreach($query->result() as $row){
 			array_push($idlist,$row->fid);
 		}
-
+		$data['allnum'] = $allnum;
 		$data['fold'] = $fold;
 		$data['flist'] = $foldlist;
 		$data['fname'] = $fname;
@@ -494,7 +494,8 @@ class Home extends SZone_Controller {
 			'nav' => array(
 				'userinfo' => $this->user,
 				'group' => $this->grouplist,
-				'dep' => $this->deplist
+				'dep' => $this->deplist,
+				'school' => $this->school
 			)
 		);	
 		$data['type'] = 0;

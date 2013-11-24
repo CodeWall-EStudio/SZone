@@ -97,6 +97,7 @@ class Group extends SZone_Controller {
 				);
 			}
 		}
+		$data['allnum'] = $allnum;
 		$data['page'] = $page;
 		$data['blist'] = $blist;
 		$data['fold'] = $fold;
@@ -109,6 +110,9 @@ class Group extends SZone_Controller {
 			$data['ginfo'] = $this->grouplist[$gid];
 		}elseif(isset($this->depinfolist[$gid])){
 			$data['ginfo'] = $this->depinfolist[$gid];
+		}
+		if(!isset($data['ginfo'])){
+			$data['ginfo'] = $this->school;
 		}
 
 		$this->load->view('group',$data);
