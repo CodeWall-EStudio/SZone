@@ -85,7 +85,7 @@ class Cgi extends SZone_Controller {
         $field_name = "file";
 
         $fdid = (int) $this->input->get('fid');
-        $this->config->load('szone');
+        //$this->config->load('szone');
         $ft = $this->config->item('filetype');
         $md5 =  md5_file($_FILES['file']['tmp_name']);
         $nowdir = $this->getDir($md5);
@@ -269,7 +269,7 @@ class Cgi extends SZone_Controller {
 		$field_name = "file";
 
         $fdid = (int) $this->input->get('fid');
-        $this->config->load('szone');
+        //$this->config->load('szone');
         $ft = $this->config->item('filetype');
         $md5 =  md5_file($_FILES['file']['tmp_name']);
         $nowdir = $this->getDir($md5);
@@ -422,7 +422,7 @@ class Cgi extends SZone_Controller {
 	}
 
 	protected function getDir($md5){
-		$this->config->load('szone');
+		//$this->config->load('szone');
 
         $uploadpath = $this->config->item('upload-path');
         if(!is_dir($uploadpath)){

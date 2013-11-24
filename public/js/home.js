@@ -109,7 +109,7 @@
 		runtimes : 'html5,flash,silverlight,html4',
 		browse_button : 'btnUpload', // you can pass in id...
 		container: document.getElementById('uploadContainer'), // ... or DOM Element itself
-		url : '/cgi/upload',
+		url : '/cgi/upload?csrf_test_name='+$.cookie('csrf_cookie_name'),
 		unique_names : true,
 		flash_swf_url : '/js/lib/Moxie.swf',
 		silverlight_xap_url : '/js/lib/Moxie.xap',
@@ -136,7 +136,7 @@
 					//uploader.settings.url = '';
 					var fid = $('#uploadFile .foldid').val();
 					if(fid){
-						uploader.settings.url = '/cgi/upload?fid='+fid;
+						uploader.settings.url = '/cgi/upload?fid='+fid+'&csrf_test_name='+$.cookie('csrf_cookie_name');
 					}
 					uploader.start();
 				});
