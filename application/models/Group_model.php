@@ -101,5 +101,5 @@ class Group_model extends CI_Model {
 }
 // END Model class
 
-/* End of file Group_model.php */
-/* Location: ./application/controllers/Group_model.php */
+/* End of file group_model.php */
+/* Location: ./application/controllers/group_model.php */
