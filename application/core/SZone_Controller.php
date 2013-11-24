@@ -18,55 +18,23 @@ class SZone_Controller extends CI_Controller {
     protected $depinfolist = array();
     protected $prelist = array();
 
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
         $this->set_user();
         $this->set_group();
     }
 
-    protected function set_user(){
-        $name = $this->session->userdata('name');
-        $nick = $this->session->userdata('nick');
-        $auth = $this->session->userdata('auth');
-        $uid = $this->session->userdata('uid');
-        $openid = $this->session->userdata('openid');
+    protected function set_user()
+    {
 
+        $this->user['uid'] = (int) $this->session->userdata('uid');
 
-        $redirect = $this->uri->uri_string();
-
-        if ( $_SERVER['QUERY_STRING']){
-            $redirect .= $_SERVER['QUERY_STRING'];
+        if ($this->user['uid'] != 0)
+        {
+            $this->load->model('User_model');
+            $this->user = $this->User_model->get_by_id($this->user['uid']);
         }
-
-        $sql = 'select size,used from user where id='.(int) $uid;
-        $query = $this->db->query($sql);
-        $size = 0;
-        $used = 0;
-        $pre = 0;
-        if ($query->num_rows() > 0){
-            $row = $query->row();
-            $size = (int) $row->size/1000000;
-            $used = (float) $row->used;
-            $pre = round((float) $row->used/(int) $row->size*100,2);
-        }
-
-        if($used > 1000000){
-            $used = round($used/1000000,2);
-            $used .='GB';
-        }elseif($used>1000){
-            $used = round($used/1000,2);
-            $used .='MB';
-        }
-        $size .='GB';
-
-        $this->user['name'] = $name;
-        $this->user['nick'] = $nick;
-        $this->user['auth'] = $auth;
-        $this->user['uid'] = $uid;
-        $this->user['openid'] = $openid;
-        $this->user['size'] = $size;
-        $this->user['used'] = $used;
-        $this->user['pre'] = $pre;
     }
 
     protected function set_group(){

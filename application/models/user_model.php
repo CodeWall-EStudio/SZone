@@ -20,20 +20,19 @@ class User_model extends CI_Model {
         $this->load->database();
     }
 
-    function get_storage_by_id($id)
+    function get_by_id($id)
     {
-        $result = array('size'=>0,'used'=>0,'per'=>0);
-        $this->db->select('size, used');
-        $this->db->where('id', $id);
-        $query = $this->db->get($this->table);
+        $result = array('uid' => $id);
+        $query = $this->db->get_where($this->table, array('id' => $id));
         if ($query->num_rows() > 0)
         {
-            $row = $query->row();
-            $result['size'] = (float) $row->size;
-            $result['used'] = (float) $row->used;
-            $result['per'] = round($result['used']/$result['size']*100,2);
-            $result['size'] = format_size($result['size']);
-            $result['used'] = format_size($result['used']);
+            $result = $query->row_array();
+            $result['uid'] = $id;
+            $result['real_size'] = (float) $result['size'];
+            $result['real_used'] = (float) $result['used'];
+            $result['per'] = round($result['real_used']/$result['real_size']*100,2);
+            $result['size'] = format_size($result['real_size']);
+            $result['used'] = format_size($result['real_used']);
         }
         return $result;
     }

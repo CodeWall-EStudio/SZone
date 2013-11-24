@@ -2,7 +2,7 @@
 			<?
 				$used = $nav['userinfo']['used'];
 				$size = $nav['userinfo']['size'];
-				$pre = $nav['userinfo']['pre'];
+				$pre = $nav['userinfo']['per'];
 			?>
 			<div>个人空间已用 <?=$pre?>%</div>
 			<div class="user-zone"> 
