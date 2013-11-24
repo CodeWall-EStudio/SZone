@@ -197,7 +197,7 @@
 								</div>
 								<div class="td_mark"><?=$item['mark']?>&nbsp;</div>
 								<div class="td_uname"><?=$item['uname']?></div>
-								<div class="td_source">来源</div>
+								<div class="td_source">&nbsp;</div>
 								<div class="td_type">
 								<?
 									switch($item['type']){

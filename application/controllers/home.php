@@ -136,7 +136,7 @@ class Home extends SZone_Controller {
 				'time' => substr($row->createtime,0,10),
 				'content' => $row->content,
 				'path' => $row->path,
-				'size' => get_file_size($row->size),
+				'size' => format_size($row->size),
 				'type' => $row->type
 			);
 		}
@@ -297,7 +297,7 @@ class Home extends SZone_Controller {
 				'uname' => $row->uname,
 				'fname' => $row->fname,
 				'path' => $row->path,
-				'size' => get_file_size($row->size),
+				'size' => format_size($row->size),
 				'type' => $row->type
 			);
 			$tlist[$row->uid] = array(
@@ -359,7 +359,7 @@ class Home extends SZone_Controller {
 				'fname' => $row->fname,
 				'fdname' => $row->fdname,
 				'path' => $row->path,
-				'size' => get_file_size($row->size),
+				'size' => format_size($row->size),
 				'ctime' => $row->createtime,
 				'type' => $row->type
 			);
@@ -431,7 +431,7 @@ class Home extends SZone_Controller {
 				'name' => $row->name,
 				'ctime' => $row->createtime,
 				'content' => $row->content,
-				'size' => get_file_size($row->size),
+				'size' => format_size($row->size),
 				'path' => $row->path,
 				'type' => $row->type
 			);
@@ -534,7 +534,7 @@ class Home extends SZone_Controller {
 				'name' => $row->name,
 				'remark' => $row->remark,
 				'time' => $row->time,
-				'size' => get_file_size($row->size),
+				'size' => format_size($row->size),
 				'path' => $row->path,
 				'type' => $row->type
  			);
@@ -565,7 +565,7 @@ class Home extends SZone_Controller {
 				'fid' => $row->fid,
 				'name' => $row->name,
 				'time' => $row->createtime,
-				'size' => get_file_size($row->size),
+				'size' => format_size($row->size),
 				'path' => $row->path,
 				'type' => $row->type
  			);

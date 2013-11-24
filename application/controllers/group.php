@@ -66,7 +66,7 @@ class Group extends SZone_Controller {
 						'name' => $row->fname,
 						'mark' => $row->content,
 						'time' => $row->createtime,
-						'size' => get_file_size($row->size),
+						'size' => format_size($row->size),
 						'type' => $row->type,
 						'uname' => $row->uname,
 						'gname' => $row->gname,
