@@ -36,6 +36,7 @@ class Group_model extends CI_Model {
 
     function get_group_info($ids)
     {
+        $gidlist = $ids;
         //$this->db->where_in('id', $ids);
         $query = $this->db->get($this->table);
 
