@@ -19,7 +19,8 @@
 		var gid = $('#gid').val();
 		var data = {
 			'key' : val,
-			'gid' : gid
+			'gid' : gid,
+			csrf_test_name:$.cookie('csrf_cookie_name')
 		}
 
 		$.post(url,data,function(d){
@@ -122,7 +123,7 @@
 
 		$('#saveName').bind('click',function(d){
 			var n = $('#gName').val();
-			$.post(EDITNAME,{d:n,gid:$('#gid').val()},function(d){
+			$.post(EDITNAME,{d:n,gid:$('#gid').val(),csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 				if(d.ret == 0){
 					alert(d.msg);
 				}else{
@@ -132,7 +133,7 @@
 		})
 		$('#saveDesc').bind('click',function(d){
 			var n = $('#gDesc').val();	
-			$.post('/cgi/group_edit_desc',{d:n,gid:$('#gid').val()},function(d){
+			$.post('/cgi/group_edit_desc',{d:n,gid:$('#gid').val(),csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 				if(d.ret == 0){
 					alert(d.msg);
 				}else{
@@ -145,12 +146,17 @@
 			var name = $('#gName').val();
 			var desc = $('#gDesc').val();	
 			var il = [];
-			$('#selectResult .selected').each(function(){
+			var type = $(this).attr('data-type');
+			
+			var url = '/cgi/group_edit';
+			if(type){
+				url = '/cgi/new_group';
+			}
+			$('#selectResult a').each(function(){
 				var id = $(this).attr("data-id");
 				il.push(id);
 			});
-
-			$.post('/cgi/group_edit',{n:name,d:desc,ul:il.join(','),gid:$('#gid').val()},function(d){
+			$.post(url,{n:name,d:desc,ul:il.join(','),gid:$('#gid').val(),csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 				if(d.ret == 0){
 					alert(d.msg);
 				}else{

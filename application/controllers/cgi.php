@@ -1193,6 +1193,57 @@ class Cgi extends SZone_Controller {
 		    ->set_output(json_encode($ret));		
 	}
 
+	public function new_group(){
+		$gid = (int) $this->input->post('gid');
+		$n = $this->input->post('n');		
+		$desc = $this->input->post('d');
+		$nl = $this->input->post('ul');
+		$il = explode(',',$nl);
+
+		$data = array(
+			'name' => $n,
+			'content' => $desc,
+			'type' => 1,
+			'parent' => 0,
+			'create' => (int) $this->user['uid'],
+			'status' => 1
+		);		
+
+		$str = $this->db->insert_string('groups',$data);
+		$query = $this->db->query($str);
+
+		if($this->db->affected_rows()>0){
+			$gid = $this->db->insert_id();
+			$ul = array('('.$gid.','.(int) $this->user['uid'].',1)');
+			foreach($il as $row){
+				array_push($ul,'('.$gid.','.$row.',0)');
+			}
+			$sql = 'insert into groupuser (gid,uid,auth) value '.implode(',',$ul);
+
+			$query = $this->db->query($sql);
+			if($this->db->affected_rows()>0){
+				$ret = array(
+					'ret' => 0,
+					'msg' => '添加成功!'
+				);
+			}else{
+				$ret = array(
+					'ret' => 100,
+					'msg' => '添加失败!'
+				);
+			}			
+		}else{
+			$ret = array(
+				'ret' => 100,
+				'msg' => '添加失败!'
+			);
+		}
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));			
+
+	}
+
 }
 
 /* End of file welcome.php */

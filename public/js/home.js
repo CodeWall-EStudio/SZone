@@ -24,7 +24,7 @@
 			 	var pid = $('#newFolds .parentid').val();
 			 	if(value != ''){
 			 		//console.log(value);
-			 		$.post('/cgi/addfold',{name: value,pid: pid},function(d){
+			 		$.post('/cgi/addfold',{name: value,pid: pid,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 			 			if(d.ret==0){
 			 				$("#newFold .close").click();
 			 				window.location.reload();
@@ -56,7 +56,8 @@
         submitHandler : function(form) {
         	var data = {
         		fname : $('#reName .foldname').val(),
-        		fid : $('#reName .fid').val()
+        		fid : $('#reName .fid').val(),
+        		csrf_test_name:$.cookie('csrf_cookie_name')
         	}
         	$.post('/cgi/renamefile',data,function(d){
 	 			if(d.ret==0){
@@ -88,7 +89,8 @@
         submitHandler : function(form) {
         	var data = {
         		comment : $('#remarkFile .text-content').val(),
-        		fid : $('#remarkFile .fid').val()
+        		fid : $('#remarkFile .fid').val(),
+        		csrf_test_name:$.cookie('csrf_cookie_name')
         	}
         	$.post('/cgi/add_file_comment',data,function(d){
 	 			if(d.ret==0){
@@ -211,7 +213,8 @@
 		var data = {
 			id : id,
 			info : mark,
-			t : type
+			t : type,
+			csrf_test_name:$.cookie('csrf_cookie_name')
 		}
 
 		$.post(EditMark,data,function(d){
@@ -231,7 +234,7 @@
 			//}
 		});	
 		id = il.join(',');
-		$.post(AddColl,{id:id},function(d){
+		$.post(AddColl,{id:id,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 			if(d.ret == 0){
 				//target.parent('span').prev('span').text(d.info);
 				window.location.reload();
@@ -255,7 +258,8 @@
 
 	var uncollFile = function(id,target){
 		var data = {
-			id : id
+			id : id,
+			csrf_test_name:$.cookie('csrf_cookie_name')
 		}
 		$.post(UnColl,data,function(d){
 			console.log(d);
@@ -317,7 +321,7 @@
 
 		$("#delFile .btn-del").bind('click',function(){
 			var id = $('#delFile .fid').val();
-			$.post('/cgi/del_file?type=0',{id: id},function(d){
+			$.post('/cgi/del_file?type=0',{id: id,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 	 			if(d.ret==0){
 	 				$("#delFile .close").click();
 	 				window.location.reload();
@@ -382,7 +386,8 @@
 
 		  	var data = {
 		  		'tid' : $(e.target).attr('data-id'),
-		  		'fid' : $(ui.draggable).attr('data-id')
+		  		'fid' : $(ui.draggable).attr('data-id'),
+		  		csrf_test_name:$.cookie('csrf_cookie_name')
 		  	}
 		  	$.post(MoveFile,data,function(d){
 		  		console.log(d);

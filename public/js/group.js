@@ -25,7 +25,7 @@
 			 	var gid = $('#newFolds .groupid').val();
 			 	if(value != ''){
 			 		//console.log(value);
-			 		$.post('/cgi/addfold',{name: value,pid: pid,gid:gid},function(d){
+			 		$.post('/cgi/addfold',{name: value,pid: pid,gid:gid,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 			 			if(d.ret==0){
 			 				$("#newFold .close").click();
 			 				window.location.reload();
@@ -57,7 +57,8 @@
         submitHandler : function(form) {
         	var data = {
         		fname : $('#reName .foldname').val(),
-        		fid : $('#reName .fid').val()
+        		fid : $('#reName .fid').val(),
+        		csrf_test_name:$.cookie('csrf_cookie_name')
         	}
         	$.post('/cgi/renamefile',data,function(d){
 	 			if(d.ret==0){
@@ -132,6 +133,8 @@
 
 	uploader.init();
 
+	$('#collFiles').bind('click',collFiles);
+
 	$("#groupDesc a").bind('click',function(){
 		$("#groupDesc").hide();
 		$("#groupEdit").removeClass('hide');
@@ -139,7 +142,7 @@
 
 	$('#groupEdit .save').bind('click',function(){
 		var c = $('#groupEdit textarea').val();
-		$.post('/cgi/group_edit_desc',{d:c,gid:ginfo.id},function(d){
+		$.post('/cgi/group_edit_desc',{d:c,gid:ginfo.id,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 			if(d.ret == 0){
 				$("#groupDesc p").text(c);
 				$("#groupDesc").show();
@@ -156,7 +159,7 @@
 
 	$("#postWin .btn-post").bind('click',function(){
 		var c = $("#postWin textarea").val(); 
-		$.post('/cgi/add_board',{d:c,gid:ginfo.id,type:1,pid:0},function(d){
+		$.post('/cgi/add_board',{d:c,gid:ginfo.id,type:1,pid:0,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 			if(d.ret == 0){
 				//$('#postWin').modal('hide');
 				window.location.reload();
@@ -206,7 +209,7 @@
 			//}
 		});	
 		id = il.join(',');
-		$.post(AddColl,{id:id},function(d){
+		$.post(AddColl,{id:id,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 			if(d.ret == 0){
 				//target.parent('span').prev('span').text(d.info);
 				window.location.reload();
@@ -218,7 +221,8 @@
 
 	var collFile = function(id,target){
 		var data = {
-			id : id
+			id : id,
+			csrf_test_name:$.cookie('csrf_cookie_name')
 		}
 		$.post(AddColl,data,function(d){
 			console.log(d);
@@ -230,7 +234,8 @@
 
 	var uncollFile = function(id,target){
 		var data = {
-			id : id
+			id : id,
+			csrf_test_name:$.cookie('csrf_cookie_name')
 		}
 		$.post(UnColl,data,function(d){
 			console.log(d);

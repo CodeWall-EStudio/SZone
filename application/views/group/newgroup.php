@@ -6,7 +6,7 @@
   <title>教师工作室</title>
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
   <link rel="stylesheet" type="text/css" href="/css/main.css" />
-
+  <link rel="stylesheet" type="text/css" href="/css/share.css" />
 </head>
 <body class="share-zone">
 	<? $idlist = array();?>
@@ -14,17 +14,14 @@
 		<tr>
 			<td width="100">小组名称:</td>
 			<td>
-				<input type="text" id="gName" value="<?=$ginfo->name?>" style="width:400px;" />
-				<input type="hidden" value="<?=$ginfo->id?>" id="gid" />
-				<a id="saveName">保存小组名</a>
-				<div class="right"><button class="btn btn-primary" id="post">保存</button></div>
+				<input type="text" id="gName" value="" style="width:400px;" />
+				<div class="right"><button class="btn btn-primary"  data-type="newgroup" id="post">保存</button></div>
 			</td>
 		</tr>
 		<tr>
 			<td width="100">小组简介:</td>
 			<td>
-				<textarea id="gDesc" style="width:400px;height:120px;"><?=$ginfo->content?></textarea>
-				<a id="saveDesc">保存简介</a>
+				<textarea id="gDesc" style="width:400px;height:120px;"></textarea>
 			</td>
 		</tr>	
 		<tr>
@@ -36,9 +33,6 @@
 				<div class="share-target">
 					现有成员
 					<ul id="selectResult">
-						<?foreach($ulist as $row):?>
-							<li><a <?if($row['auth']==0):?>data-id="<?=$row['uid']?>"<?endif?>><?=$row['name']?></a></li>
-						<?endforeach?>
 					</ul>						
 				</div>
 				<div class="share-select">

@@ -6,8 +6,10 @@
 		switch(cmd){
 			case 'manage':
 				var gid = target.attr('data-id');
-				console.log(gid);
 				$("#manageIframe").attr('src','/group/manage?id='+gid);
+				break;
+			case 'newgroup':
+				$("#manageIframe").attr('src','/group/newgroup');
 				break;
 		}
 	})

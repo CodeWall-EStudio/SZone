@@ -142,4 +142,9 @@ class Group extends SZone_Controller {
 
 		$this->load->view('group/manage',$data);
 	}
+
+	public function newgroup(){
+		$data['uinfo'] = $this->user;
+		$this->load->view('group/newgroup',$data);	
+	}
 }

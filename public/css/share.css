@@ -45,7 +45,7 @@ body {
 .share-act-zone div{
 	float:right;
 }
-.share-act-zone input{
+.share-act-zone input,.search-area input{
 	width:300px;
 	text-indent:6px;
 	padding-right:22px;

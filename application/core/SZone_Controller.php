@@ -79,7 +79,7 @@ class SZone_Controller extends CI_Controller {
         foreach($query->result() as $row){
             array_push($gidlist,$row->gid);
         }
-        $sql = 'select * from groups';
+        $sql = 'select * from groups where status=0';
         $query = $this->db->query($sql);
 
         //gid列表

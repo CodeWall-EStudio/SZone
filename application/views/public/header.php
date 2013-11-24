@@ -33,6 +33,7 @@
 						</li>
 						<?endif?>
 					<? endforeach?>
+					<li><a id="createNewGroup" data-toggle="modal" cmd="newgroup" data-target="#manageWin">申请新的小组</a></li>
 				</ul>
 			</li>
 			<li class="nav">
