@@ -10,6 +10,7 @@
   <meta property="qc:admins" content="124110632765637457144563757" />
 </head>
 <body>
+
 	<?php  $this->load->view('public/header.php',$nav); ?>
 	<div class="container">
 		<div class="main-section">
@@ -65,7 +66,7 @@
 						<?endforeach?>
 					</ul>					
 					<a class="section-tit-a-first" href="/home">我的备课</a>
-					<?if($fid):?>
+					<?if(isset($fid)):?>
 						<a class="section-tit-a-second"><?=$fname?></a>
 						<a class="section-tit-a-can" href="/home?fid=<?=$pid?>">返回上级</a>
 					<?else:?>
@@ -76,6 +77,7 @@
 					<li class="all-file file-type dropdown" id="changeFileType">
 						<a role="button" data-toggle="dropdown" href="#">
 							<?
+							if(isset($type)){
 								switch($type){
 									case 0:
 										echo '全部类型';
@@ -99,6 +101,7 @@
 										echo '压缩包';
 										break;
 								}
+							}
 							?>
 						<b class="caret"></b></a>
 						<ul class="dropdown-menu section-tit-menu1" role="menu" aria-labelledby="dLabel">
@@ -120,7 +123,7 @@
 			<div id="fileList" class="dis-list-type">
 				<ul class="cl">
 
-					<?if(count($plist)>0):?>
+					<?if(isset($plist) && count($plist)>0):?>
 						<li class="tit file-list">
 							<div class="td1"><input type="checkbox" id="selectAllFile" /></div>
 							<div class="td2"><span>文件(<b><?=count($plist)?></b>个)</span>  </div>
@@ -172,6 +175,7 @@
 		<div class="aside">
 			<h3 class="selected">我的备课</h3>
 			<ul class="my-prep-list">
+				<?if(isset($glist)):?>
 				<?foreach($glist as $k => $row):?>
 					<li>
 						<?=$row['name']?>
@@ -202,6 +206,7 @@
 						<?endif?>
 					</li>
 				<?endforeach?>
+				<?endif?>
 			</ul>
 		</div>
 		<?if($nav['userinfo']['uid']):?>

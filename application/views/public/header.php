@@ -50,7 +50,9 @@
 					<li>食堂</li> -->					
 				</ul>				
 			</li>
+			<?if(isset($school)):?>
 			<li class="nav"><a href="/group?id=<?=$school->id?>">学校空间</a></li>
+			<?endif?>
 		</ul>
 		<div class="userinfo">
 			<?if(!$userinfo['name']):?>
