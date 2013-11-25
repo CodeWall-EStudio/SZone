@@ -136,6 +136,30 @@ class SZone_Controller extends CI_Controller {
         $this->grouplist = $flist;
     }
 
+    /*
+     * 输出JSON格式的数据结果
+     */
+
+    protected function json($data = array(), $code = 200, $msg = 'ok')
+    {
+        $result = array(
+            'code' => $code,
+            'msg' => $this->lang->line($msg),
+            'data' => $data
+        );
+        if ($code != '200')
+        {
+            log_message('error', $result['msg']);
+        }
+        else
+        {
+
+        }
+        $this->output
+            ->set_content_type('application/json')
+            ->set_output(json_encode($result));
+    }
+
 }
 // END Controller class
 
