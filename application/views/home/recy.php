@@ -11,9 +11,9 @@
 <body class="share-zone">
 	<div class="collection-tit">
 		<div class="search-zone">
-			<form action="/home/coll" method="post">
+			<form action="/home/recy" method="post">
 			<input type="text" value="搜索文件" name="key" />
-			<button type="submit"></button>
+			<button type="button"></button>
 			</form>
 		</div>
 		<div class="collection-act">
@@ -81,8 +81,8 @@
 				<dl>
 					<dt><?=$row['name']?></dt>
 					<dd>
-						<a href="/cgi/reviewfile?fid=<?=$row['fid']?>" target="_blank">预览</a>
-						<a href="/cgi/getfile?fid=<?=$row['fid']?>" target="_blank">下载</a>
+						<a cmd="ref" data-id="<?=$row['id']?>" data-fid="<?=$row['fid']?>">恢复</a>
+						<a cmd="del" data-id="<?=$row['id']?>" data-fid="<?=$row['fid']?>">完全删除</a>
 					</dd>
 				</dl>
 			</div>
@@ -92,13 +92,48 @@
 		</li>		
 		<?endforeach?>
 		<?else:?>
-			<li class="empty">目前还没有相关的邮件</li>
+			<li class="empty">目前还没有相关的文件</li>
 		<?endif?>
 	</ul>	
+	<div class="page-zone">
+		<?
+			$page['url'] = '/recy?type='.$type.'&key='.$key;
+			create_page($page);
+		?>
+	</div>	
 
 	<script src="/js/lib/jq.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
-	<script src="/js/share.js" ></script>	
+	<script>
+		var reUrl = '/cgi/refrcey',
+			delUrl = '/cgi/compdel';
+
+		$('.dis-list-type').bind('click',function(e){
+			var target = $(e.target),
+				cmd = target.attr('cmd'),
+				id = target.attr('data-id'),
+				fid = target.attr('data-fid');
+			switch(cmd){
+				case 'ref':
+					$.post(reUrl,{id:id},function(d){
+						alert(d.msg);
+						if(d.ret == 0){
+							window.location.reload();
+						}
+					});
+					break;
+				case 'del':
+					$.post(delUrl,{id:id,fid : fid},function(d){
+						alert(d.msg);
+						if(d.ret == 0){
+							window.location.reload();
+						}
+					});				
+					break;
+			}
+		});
+
+	</script>	
 </body>
 </html>

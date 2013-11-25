@@ -191,7 +191,7 @@
 												<li><a cmd="toschool" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到学校空间</a></li>					
 											</ul>
 											</span>										
-											<span><a href="/cgi/getfile?fid=<?=$item['fid']?>">下载</a></span>
+											<span><a href="/cgi/downfile?fid=<?=$item['fid']?>">下载</a></span>
 										</dd>
 									</dl>
 								</div>
