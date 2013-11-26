@@ -6,11 +6,12 @@
   <title>教师工作室</title>
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
   <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/jquery.plupload.queue.css" type="text/css" media="screen" />
 
   <meta property="qc:admins" content="124110632765637457144563757" />
 </head>
 <body>
-	<?php  $this->load->view('public/header.php',$nav); ?>
+	<?php  $this->load->view('public/header.php',$nav);?>
 	<div class="container">
 		<div class="main-section">
 			<div class="tool-zone fade-in">
@@ -297,7 +298,7 @@
 		</div>
 	</div>
 
-	<div id="uploadFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div id="uploadFile" class="modal fade upload-content" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -305,12 +306,18 @@
 					<h4 class="modal-title">上传文件</h4>
 				</div>
 				<div class="modal-body">
-					<div id="uploadContainer">
+
+				<form method="post" action="/cgi/upload">	
+					<div id="uploader">
+						<p>Your browser doesn't have Flash, Silverlight or HTML5 support.</p>
+					</div>
+				</form>					
+<!-- 					<div id="uploadContainer">
 						<button type="button" class="btn btn-default" id="btnUpload">选择文件</button>
 						<button type="button" class="btn btn-primary" id="btnStartUload">上传</button>
 					</div>
 					<input type="hidden" class="foldid" value="<?=$fid?>" />
-					<div id="file_uploadList"></div>
+					<div id="file_uploadList"></div> -->
 				</div>
 			</div>
 		</div>
@@ -438,109 +445,6 @@
 		</div>
 	</div>
 
-	<div id="collection" class="modal fade collection" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">收藏夹</h4>
-				</div>
-				<div class="modal-body collection-body">
-					<div class="collection-tit">
-						<div class="search-zone">
-							<input type="text" value="搜索文件" />
-							<button></button>
-						</div>
-						<div class="collection-act">
-							<a>查看作者</a>
-							<a>查看全部类型</a>
-						</div>
-					</div>
-					<div class="">
-						<ul class="dis-list-type">
-							<li class="tit">
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">名称</div>
-								<div class="td3">作者</div>
-								<div class="td4">位置</div>
-								<div class="td5">大小</div>
-								<div class="td6">时间</div>
-							</li>							
-							<li>
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">
-									<i class="fold"></i>
-									<dl>
-										<dt>接收礼包</dt>
-										<dd>
-											<span class="glyphicon glyphicon-share">分享</span>
-											<span class="glyphicon glyphicon-save">下载</span>
-										</dd>
-									</dl>
-								</div>
-								<div class="td3"></div>
-								<div class="td4"></div>
-								<div class="td5"> 34.5kb</div>
-								<div class="td6"><span>2013-10-13 15:33</span> <i></i></div>
-							</li>
-							<li>
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">
-									<i class="fold"></i>
-									<dl>
-										<dt>接收礼包</dt>
-										<dd>
-											<span class="glyphicon glyphicon-share">分享</span>
-											<span class="glyphicon glyphicon-save">下载</span>
-										</dd>
-									</dl>
-								</div>
-								<div class="td3"></div>
-								<div class="td4"></div>
-								<div class="td5"> 34.5kb</div>
-								<div class="td6"><span>2013-10-13 15:33</span> <i></i></div>
-							</li>
-							<li>
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">
-									<i class="fold"></i>
-									<dl>
-										<dt>接收礼包</dt>
-										<dd>
-											<span class="glyphicon glyphicon-share">分享</span>
-											<span class="glyphicon glyphicon-save">下载</span>
-										</dd>
-									</dl>
-								</div>
-								<div class="td3"></div>
-								<div class="td4"></div>
-								<div class="td5"> 34.5kb</div>
-								<div class="td6"><span>2013-10-13 15:33</span> <i></i></div>
-							</li>
-							<li>
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">
-									<i class="fold"></i>
-									<dl>
-										<dt>接收礼包</dt>
-										<dd>
-											<span class="glyphicon glyphicon-share">分享</span>
-											<span class="glyphicon glyphicon-save">下载</span>
-										</dd>
-									</dl>
-								</div>
-								<div class="td3"></div>
-								<div class="td4"></div>
-								<div class="td5"> 34.5kb</div>
-								<div class="td6"><span>2013-10-13 15:33</span> <i></i></div>
-							</li>															
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
 
 	<div id="mailbox" class="modal fade collection" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -556,114 +460,12 @@
 		</div>
 	</div>
 
-	<div id="recycleBox" class="modal fade collection" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">回收站</h4>
-				</div>
-				<div class="modal-body collection-body">
-					<div class="collection-tit">
-						<div class="search-zone">
-							<input type="text" value="搜索文件" />
-							<button></button>
-						</div>
-						<div class="collection-act">
-							<a>查看作者</a>
-							<a>查看全部类型</a>
-						</div>
-					</div>
-					<div class="">
-						<ul class="dis-list-type">
-							<li class="tit">
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">名称</div>
-								<div class="td3">作者</div>
-								<div class="td4">位置</div>
-								<div class="td5">大小</div>
-								<div class="td6">时间</div>
-							</li>							
-							<li>
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">
-									<i class="fold"></i>
-									<dl>
-										<dt>接收礼包</dt>
-										<dd>
-											<span class="glyphicon glyphicon-retweet">恢复</span>
-											<span class="glyphicon glyphicon-trash">彻底删除</span>
-										</dd>
-									</dl>
-								</div>
-								<div class="td3"></div>
-								<div class="td4"></div>
-								<div class="td5"> 34.5kb</div>
-								<div class="td6"><span>2013-10-13 15:33</span> <i></i></div>
-							</li>
-							<li>
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">
-									<i class="fold"></i>
-									<dl>
-										<dt>接收礼包</dt>
-										<dd>
-											<span class="glyphicon glyphicon-retweet">恢复</span>
-											<span class="glyphicon glyphicon-trash">彻底删除</span>
-										</dd>
-									</dl>
-								</div>
-								<div class="td3"></div>
-								<div class="td4"></div>
-								<div class="td5"> 34.5kb</div>
-								<div class="td6"><span>2013-10-13 15:33</span> <i></i></div>
-							</li>
-							<li>
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">
-									<i class="fold"></i>
-									<dl>
-										<dt>接收礼包</dt>
-										<dd>
-											<span class="glyphicon glyphicon-retweet">恢复</span>
-											<span class="glyphicon glyphicon-trash">彻底删除</span>
-										</dd>
-									</dl>
-								</div>
-								<div class="td3"></div>
-								<div class="td4"></div>
-								<div class="td5"> 34.5kb</div>
-								<div class="td6"><span>2013-10-13 15:33</span> <i></i></div>
-							</li>
-							<li>
-								<div class="td1"><input type="checkbox" /></div>
-								<div class="td2">
-									<i class="fold"></i>
-									<dl>
-										<dt>接收礼包</dt>
-										<dd>
-											<span class="glyphicon glyphicon-retweet">恢复</span>
-											<span class="glyphicon glyphicon-trash">彻底删除</span>
-										</dd>
-									</dl>
-								</div>
-								<div class="td3"></div>
-								<div class="td4"></div>
-								<div class="td5"> 34.5kb</div>
-								<div class="td6"><span>2013-10-13 15:33</span> <i></i></div>
-							</li>															
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>	
-
 	<script src="/js/lib/jq.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
 	<script src="/js/lib/jq.validate.js"></script>
 	<script src="/js/lib/plupload.full.min.js"></script>
+	<script src="/js/lib/jquery.plupload.queue.js"></script>
 <!-- 	// <script type="text/javascript" src="/js/lib/moxie.js"></script>
 	// <script type="text/javascript" src="/js/lib/plupload.dev.js"></script>	 -->
 

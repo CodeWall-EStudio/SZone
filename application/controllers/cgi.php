@@ -280,11 +280,30 @@ class Cgi extends SZone_Controller {
             array_push($allowed,$k);
         }
 
+		$chunk = isset($_REQUEST["chunk"]) ? intval($_REQUEST["chunk"]) : 0;
+		$chunks = isset($_REQUEST["chunks"]) ? intval($_REQUEST["chunks"]) : 0;
+
+		if($chunks){
+			$oname = $this->input->post('name');
+			$config['chunks'] = 1;
+			if($this->session->userdata('user_upload_file') && $oname == $this->session->userdata('user_upload_file_name')){
+				$nowdir = $this->session->userdata('user_upload_file_tmp');
+			}else{
+				$this->session->set_userdata('user_upload_file_name',$oname);
+				$this->session->set_userdata('user_upload_file',$nowdir);	
+				$nowdir .='/tmp';
+				$this->session->set_userdata('user_upload_file_tmp',$nowdir);	
+			}
+		}
         $config['upload_path'] = $nowdir;
         $config['allowed_types'] = implode('|',$allowed);//;'gif|jpg|png';
         $config['overwrite'] = true;
         $this->load->library('upload', $config);
-		if ( ! $this->upload->do_upload($field_name)){
+
+        $this->load->library('szupload', $config);
+
+		//if ( ! $this->upload->do_upload($field_name)){
+		if ( ! $this->szupload->do_upload($field_name)){			
 			$list = array(
 				'jsonrpc' => '2.0',
 				'error' => array(
@@ -296,6 +315,7 @@ class Cgi extends SZone_Controller {
 			    ->set_content_type('application/json')
 			    ->set_output(json_encode($list));			
 		}else{
+
             $sql = 'select size,used from user where id='.(int) $this->user['uid'];
             $query = $this->db->query($sql);
             $size = 0;
@@ -307,7 +327,8 @@ class Cgi extends SZone_Controller {
                 $used = $row->used;
             }
 
-            $filedata = $this->upload->data();
+            //$filedata = $this->upload->data();
+            $filedata = $this->szupload->data();
 
 			//判断是否存在相同的文件
 			$sql = 'select id,size from files where md5="'.$md5.'"';
@@ -334,7 +355,6 @@ class Cgi extends SZone_Controller {
 				}
 
 				//echo $filedata['file_type'].'&&'.$filedata['image_type'];
-
 				if($size < $used + $filedata['file_size']){
 					$ret = array(
 						'ret' => 103,
@@ -1197,7 +1217,7 @@ class Cgi extends SZone_Controller {
 
 			$ky = array();
 			foreach($il as $k){
-				echo $k;
+				// echo $k;
 				array_push($ky,'('.$gid.','.$k.',0)');
 			}
 
