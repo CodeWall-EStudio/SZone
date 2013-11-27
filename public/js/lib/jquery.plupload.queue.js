@@ -387,7 +387,12 @@ used as it is.
 
 				uploader.bind('QueueChanged', updateList);
 
-				uploader.bind('FileUploaded', function(up, file) {
+				uploader.bind('FileUploaded', function(up, file,msg) {
+					var t = msg.response;
+					t = $.parseJSON(t);
+					if(t.error.code !=0){
+						file.status = 4;
+					}
 					handleStatus(file);
 				});
 

@@ -12,7 +12,7 @@
 			mt = 0;
 		}
 		if(value == ''){
-			console.log(123);
+			//console.log(123);
 			return;
 		}
 		mt = setTimeout(function(){

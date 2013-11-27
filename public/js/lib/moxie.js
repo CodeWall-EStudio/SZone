@@ -2784,7 +2784,7 @@ define('moxie/file/FileInput', [
 
 			fileInput.onchange = function(e) {
 				// do something to files array
-				console.info(e.target.files); // or this.files or fileInput.files
+				//console.info(e.target.files); // or this.files or fileInput.files
 			};
 
 			fileInput.init(); // initialize
@@ -7987,7 +7987,7 @@ define("moxie/runtime/html5/image/ImageInfo", [
 				try {
 					return new _cs[i](binstr);
 				} catch (ex) {
-					// console.info(ex);
+					// //console.info(ex);
 				}
 			}
 			throw new x.ImageError(x.ImageError.WRONG_FORMAT);
@@ -10218,7 +10218,7 @@ define("moxie/runtime/html4/xhr/XMLHttpRequest", [
 					container.appendChild(_iframe);
 
 					/* _iframe.onreadystatechange = function() {
-						console.info(_iframe.readyState);
+						//console.info(_iframe.readyState);
 					};*/
 
 					Events.addEvent(_iframe, 'load', function() { // _iframe.onload doesn't work in IE lte 8

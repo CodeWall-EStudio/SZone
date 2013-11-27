@@ -1253,7 +1253,7 @@ vjs.log = function(){
   vjs.log.history = vjs.log.history || [];   // store logs to an array for reference
   vjs.log.history.push(arguments);
   if(window.console){
-    window.console.log(Array.prototype.slice.call(arguments));
+    window.//console.log(Array.prototype.slice.call(arguments));
   }
 };
 
@@ -1312,7 +1312,7 @@ vjs.findPosition = function(el) {
  * Components are also event emitters.
  *
  *     button.on('click', function(){
- *       console.log('Button Clicked!');
+ *       //console.log('Button Clicked!');
  *     });
  *
  *     button.trigger('customevent');

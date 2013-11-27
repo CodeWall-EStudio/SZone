@@ -96,12 +96,29 @@ class Cgi extends SZone_Controller {
             array_push($allowed,$k);
         }
 
+		$chunk = isset($_REQUEST["chunk"]) ? intval($_REQUEST["chunk"]) : 0;
+		$chunks = isset($_REQUEST["chunks"]) ? intval($_REQUEST["chunks"]) : 0;
+
+		if($chunks){
+			$oname = $this->input->post('name');
+			$config['chunks'] = 1;
+			if($this->session->userdata('user_upload_file') && $oname == $this->session->userdata('user_upload_file_name')){
+				$nowdir = $this->session->userdata('user_upload_file_tmp');
+			}else{
+				$this->session->set_userdata('user_upload_file_name',$oname);
+				$this->session->set_userdata('user_upload_file',$nowdir);	
+				$nowdir .='/tmp';
+				$this->session->set_userdata('user_upload_file_tmp',$nowdir);	
+			}
+		}
         $config['upload_path'] = $nowdir;
         $config['allowed_types'] = implode('|',$allowed);//;'gif|jpg|png';
         $config['overwrite'] = true;
         $this->load->library('upload', $config);
 
-        if ( ! $this->upload->do_upload($field_name)){
+        $this->load->library('szupload', $config);
+
+        if ( ! $this->szupload->do_upload($field_name)){
             $list = array(
                 'jsonrpc' => '2.0',
                 'error' => array(
@@ -123,7 +140,8 @@ class Cgi extends SZone_Controller {
                 $size = $row->size;
                 $used = $row->used;
             }
-            $filedata = $this->upload->data();
+            //$filedata = $this->upload->data();
+            $filedata = $this->szupload->data();
 
             //判断是否存在相同的文件
             $sql = 'select id,size from files where md5="'.$md5.'"';

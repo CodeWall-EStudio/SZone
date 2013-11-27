@@ -59,7 +59,6 @@
 	}
 
 	var rendergroup = function(list){
-		console.log(list);
 		var html = [];
 		for(var i in list){
 			var item = list[i];
@@ -171,6 +170,7 @@
 		$.post(url,obj,function(d){
 			if(d.ret == 0){
 				top.hideShare();
+				top.alert(d.msg);
 			}else{
 				top.hideShare();
 				top.alert(d.msg);

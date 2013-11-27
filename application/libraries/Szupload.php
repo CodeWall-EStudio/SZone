@@ -253,7 +253,6 @@ class szupload{
 		// Remove old temp files	
 		if ($cleanupTargetDir) {
 			if (!is_dir($targetDir) || !$dir = opendir($targetDir)) {
-				
 				die('{"jsonrpc" : "2.0", "error" : {"code": 100, "message": "Failed to open temp directory."}, "id" : "id"}');
 				return false;
 			}

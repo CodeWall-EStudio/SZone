@@ -85,7 +85,7 @@ class Group extends SZone_Controller {
 		}
 
 		$blist = array();
-		$sql = 'SELECT a.id,a.content,a.ctime,b.name FROM board a,user b WHERE a.uid = b.id AND a.gid = '.$gid.' AND a.status =1 limit 0,10';
+		$sql = 'SELECT a.id,a.content,a.ctime,b.name FROM board a,user b WHERE a.uid = b.id AND a.gid = '.$gid.' limit 0,10';//AND a.status =1 
 		$query = $this->db->query($sql);
 		if($this->db->affected_rows()>0){
 			foreach($query->result() as $row){

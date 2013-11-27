@@ -3,8 +3,8 @@
 	var grlist = $.parseJSON(gstr);
 	var glist = {};
 
-	console.log(plist);
-	console.log(grlist);
+	//console.log(plist);
+	//console.log(grlist);
 
 	var POSTURL = '/manage/addprepare'
 	
@@ -15,7 +15,7 @@
 
 	var createUn = function(list,dom){
 		dom = dom || unEl;
-		console.log(dom);
+		//console.log(dom);
 		var html = [];
 		for(var j in list){
 			var item = list[j];
@@ -58,7 +58,7 @@
 		groupEl.change(function(){
 			var id = $(this).val();
 			var list = glist[id].list;
-			console.log(list);
+			//console.log(list);
 			if($.isEmptyObject(list)){
 				createUn([]);
 			}else{
@@ -69,7 +69,7 @@
 		grEl.change(function(){
 			var id = $(this).val();
 			var list = grlist[id].list;
-			console.log(id,list);
+			//console.log(id,list);
 			if($.isEmptyObject(list)){
 				createUn([]);
 			}else{
