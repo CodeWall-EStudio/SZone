@@ -35,7 +35,7 @@
 	}
 	$("#uploader").pluploadQueue({
 		// General settings
-		runtimes : 'flash,silverlight,html4',
+		runtimes : 'html5,flash,silverlight,html4',
 		url : upUrl,
 		chunk_size: '1mb',
 		rename : true,
