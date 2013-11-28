@@ -6,6 +6,7 @@
   <title>教师工作室</title>
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
   <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/jquery.plupload.queue.css" type="text/css" media="screen" />
 
   <meta property="qc:admins" content="124110632765637457144563757" />
 </head>
@@ -16,7 +17,7 @@
 			<div class="tool-zone fade-in">
 				<div class="btn-zone">
 <!-- 					<input type="file" class="upload-input" id="uploadFile" /> -->
-					<button class="upload btn btn-primary" data-toggle="modal" data-target="#uploadFile" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>上传</button>
+					<button class="upload btn btn-primary btn-upload" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>上传</button>
 					<button class="btn btn-default" data-toggle="modal" data-target="#newFold" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>新建文件夹</button>
 				</div>
 
@@ -191,7 +192,7 @@
 												<!-- <li><a cmd="toschool" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到学校空间</a></li>		 -->			
 											</ul>
 											</span>										
-											<span><a href="/cgi/getfile?fid=<?=$item['fid']?>">下载</a></span>
+											<span><a href="/cgi/downfile?gid=<?=$gid?>&fid=<?=$item['fid']?>">下载</a></span>
 										</dd>
 									</dl>
 								</div>
@@ -340,7 +341,7 @@
 			</div>
 		</div>
 	</div>		
-
+<!-- 
 	<div id="uploadFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -358,7 +359,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<div id="shareWin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -478,11 +479,36 @@
 		</div>
 	</div>
 
+
+	<div id="uploadFile" class="upload-win" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true" cmd="close">&times;</button>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true" cmd="min">-</button>
+					<h4 class="modal-title">上传文件</h4>
+				</div>
+				<div class="modal-body">
+
+				<form method="post" action="/cgi/upload">	
+					<div id="uploader">
+						<p>Your browser doesn't have Flash, Silverlight or HTML5 support.</p>
+					</div>
+				</form>	
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<script src="/js/lib/jq.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
 	<script src="/js/lib/jq.validate.js"></script>
-	<script src="/js/lib/plupload.full.min.js"></script>
+	<!--<script src="/js/lib/plupload.full.min.js"></script>-->
+
+	<script type="text/javascript" src="/js/lib/moxie.js"></script>
+	<script type="text/javascript" src="/js/lib/plupload.dev.js"></script>
+	<script src="/js/lib/jquery.plupload.queue.js"></script>	
 <!-- 	// <script type="text/javascript" src="/js/lib/moxie.js"></script>
 	// <script type="text/javascript" src="/js/lib/plupload.dev.js"></script>	 -->
 
@@ -499,6 +525,7 @@
 	</script>
 
 	<script src="/js/common.js"></script>
+	<script src="/js/upload.js"></script>
 	<script src="/js/group.js"></script>
 	<div id="alertTips" class="alert-tips"></div>
 	<!--

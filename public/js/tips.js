@@ -1,6 +1,6 @@
 ;(function(root){
 
-	console.log(root);
+	//console.log(root);
 	root.widget = (function(){
 
 		function prog(text){

@@ -1371,7 +1371,6 @@ plupload.Uploader = function(settings) {
 							up.trigger('UploadProgress', file);
 
 							file.status = plupload.DONE;
-
 							up.trigger('FileUploaded', file, {
 								response : xhr.responseText,
 								status : xhr.status,
@@ -1494,7 +1493,7 @@ plupload.Uploader = function(settings) {
 				}
 			});
 
-			self.bind("FileUploaded", function() {
+			self.bind("FileUploaded", function(e,d,c) {
 				calc();
 
 				// Upload next file but detach it from the error event
@@ -1742,7 +1741,7 @@ plupload.Uploader = function(settings) {
 		trigger : function(name) {
 			var list = events[name.toLowerCase()], i, args;
 
-			// console.log(name, arguments);
+			// //console.log(name, arguments);
 
 			if (list) {
 				// Replace name with sender in args

@@ -550,14 +550,35 @@ class Home extends SZone_Controller {
 	public function recy(){
 		$this->load->helper('util');
 
-		$page = $this->input->get('page');
-		$type = $this->input->get('type');
-		$key = $this->input->post('key');
+		$type = (int) $this->input->get('type');
+		$key = $this->input->get_post('key');
+
+		$pagenum = $this->config->item('pagenum');
+		$nowpage = (int) $this->input->get('page');		
+
+		$sql = 'select count(a.id) as anum from userfile a,files b where a.fid = b.id and a.del = 1 and a.uid='.(int) $this->user['uid'];
+		if($type){
+			$sql .= ' and b.type='.$type;
+		}
+		if($key){
+			$sql .= ' and a.name like "%'.$key.'%"';
+		}
+		$query = $this->db->query($sql);
+		$row = $query->row();
+		$allnum = $row->anum;		
+
+		$page = get_page_status($nowpage,$pagenum,$allnum);
 
 		$sql = 'select a.id,a.fid,a.name,a.createtime,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.del = 1 and a.uid='.(int) $this->user['uid'];
 		if($type){
 			$sql .= ' and b.type='.$type;
 		}
+		if($key){
+			$sql .= ' and a.name like "%'.$key.'%"';
+		}
+
+		$sql .= ' limit '.$page['start'].','.$pagenum;	
+
 		$query = $this->db->query($sql);
 		$dlist = array();
 		foreach($query->result() as $row){
@@ -575,6 +596,7 @@ class Home extends SZone_Controller {
 		$data['dlist'] = $dlist;
 		$data['type'] = $type;
 		$data['key'] = $key;
+		$data['page'] = $page;
 		$this->load->view('home/recy.php',$data);
 	}
 }

@@ -39,7 +39,7 @@ $('#uploadFile').bind('change',function(e){
 
 	var rd = new FileReader();
 	rd.onload = function(e){
-		console.log(this.result);
+		//console.log(this.result);
 	}
 	rd.readAsDataURL(file);
 
@@ -60,10 +60,10 @@ $('#uploadFile').bind('change',function(e){
 
 
 function uploadProgress(evt) {
-	console.log(evt);
+	//console.log(evt);
     if (evt.lengthComputable) {
         var percentComplete = Math.round(evt.loaded * 100 / evt.total);
-        console.log(percentComplete);
+        //console.log(percentComplete);
         progs.setProg(percentComplete);
         //document.getElementById('progressNumber').innerHTML = percentComplete.toString() + '%';
     }

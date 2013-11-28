@@ -96,12 +96,29 @@ class Cgi extends SZone_Controller {
             array_push($allowed,$k);
         }
 
+		$chunk = isset($_REQUEST["chunk"]) ? intval($_REQUEST["chunk"]) : 0;
+		$chunks = isset($_REQUEST["chunks"]) ? intval($_REQUEST["chunks"]) : 0;
+
+		if($chunks){
+			$oname = $this->input->post('name');
+			$config['chunks'] = 1;
+			if($this->session->userdata('user_upload_file') && $oname == $this->session->userdata('user_upload_file_name')){
+				$nowdir = $this->session->userdata('user_upload_file_tmp');
+			}else{
+				$this->session->set_userdata('user_upload_file_name',$oname);
+				$this->session->set_userdata('user_upload_file',$nowdir);	
+				$nowdir .='/tmp';
+				$this->session->set_userdata('user_upload_file_tmp',$nowdir);	
+			}
+		}
         $config['upload_path'] = $nowdir;
         $config['allowed_types'] = implode('|',$allowed);//;'gif|jpg|png';
         $config['overwrite'] = true;
         $this->load->library('upload', $config);
 
-        if ( ! $this->upload->do_upload($field_name)){
+        $this->load->library('szupload', $config);
+
+        if ( ! $this->szupload->do_upload($field_name)){
             $list = array(
                 'jsonrpc' => '2.0',
                 'error' => array(
@@ -123,7 +140,8 @@ class Cgi extends SZone_Controller {
                 $size = $row->size;
                 $used = $row->used;
             }
-            $filedata = $this->upload->data();
+            //$filedata = $this->upload->data();
+            $filedata = $this->szupload->data();
 
             //判断是否存在相同的文件
             $sql = 'select id,size from files where md5="'.$md5.'"';
@@ -280,11 +298,30 @@ class Cgi extends SZone_Controller {
             array_push($allowed,$k);
         }
 
+		$chunk = isset($_REQUEST["chunk"]) ? intval($_REQUEST["chunk"]) : 0;
+		$chunks = isset($_REQUEST["chunks"]) ? intval($_REQUEST["chunks"]) : 0;
+
+		if($chunks){
+			$oname = $this->input->post('name');
+			$config['chunks'] = 1;
+			if($this->session->userdata('user_upload_file') && $oname == $this->session->userdata('user_upload_file_name')){
+				$nowdir = $this->session->userdata('user_upload_file_tmp');
+			}else{
+				$this->session->set_userdata('user_upload_file_name',$oname);
+				$this->session->set_userdata('user_upload_file',$nowdir);	
+				$nowdir .='/tmp';
+				$this->session->set_userdata('user_upload_file_tmp',$nowdir);	
+			}
+		}
         $config['upload_path'] = $nowdir;
         $config['allowed_types'] = implode('|',$allowed);//;'gif|jpg|png';
         $config['overwrite'] = true;
         $this->load->library('upload', $config);
-		if ( ! $this->upload->do_upload($field_name)){
+
+        $this->load->library('szupload', $config);
+
+		//if ( ! $this->upload->do_upload($field_name)){
+		if ( ! $this->szupload->do_upload($field_name)){			
 			$list = array(
 				'jsonrpc' => '2.0',
 				'error' => array(
@@ -296,6 +333,7 @@ class Cgi extends SZone_Controller {
 			    ->set_content_type('application/json')
 			    ->set_output(json_encode($list));			
 		}else{
+
             $sql = 'select size,used from user where id='.(int) $this->user['uid'];
             $query = $this->db->query($sql);
             $size = 0;
@@ -307,7 +345,8 @@ class Cgi extends SZone_Controller {
                 $used = $row->used;
             }
 
-            $filedata = $this->upload->data();
+            //$filedata = $this->upload->data();
+            $filedata = $this->szupload->data();
 
 			//判断是否存在相同的文件
 			$sql = 'select id,size from files where md5="'.$md5.'"';
@@ -334,7 +373,6 @@ class Cgi extends SZone_Controller {
 				}
 
 				//echo $filedata['file_type'].'&&'.$filedata['image_type'];
-
 				if($size < $used + $filedata['file_size']){
 					$ret = array(
 						'ret' => 103,
@@ -893,6 +931,39 @@ class Cgi extends SZone_Controller {
 		}
 
 	}
+
+	public function downfile(){
+		$this->load->helper('download');
+		$id = $this->input->get('fid');
+		$gid = (int) $this->input->get('gid');
+		$tablename = 'userfile';
+		$ft = 'name';
+		if($gid){
+			$tablename = 'groupfile';
+			$ft = 'fname';
+		}
+		$sql = 'select a.path,b.'.$ft.' as name from files a,'.$tablename.' b where a.id = b.fid and a.id='.(int) $id;
+		$query = $this->db->query($sql);
+
+		if ($query->num_rows() > 0)
+		{
+		   $row = $query->row(); 
+		   $path = $row->path;
+
+		   $fname = explode('.',$path);
+		   $fname = '.'.$fname[count($fname)-1];
+		   $name = $row->name;
+		   $name .=$fname;
+
+		   //$mime = get_mime_by_extension($path);
+			$data = file_get_contents($path); 
+			force_download($name, $data); 
+
+		}else{
+
+		}
+	}	
+
 	//重命名文件
 	public function renamefile(){
 		$fid = $this->input->post('fid');
@@ -1164,7 +1235,7 @@ class Cgi extends SZone_Controller {
 
 			$ky = array();
 			foreach($il as $k){
-				echo $k;
+				// echo $k;
 				array_push($ky,'('.$gid.','.$k.',0)');
 			}
 
@@ -1245,6 +1316,85 @@ class Cgi extends SZone_Controller {
 
 	}
 
+	public function refrcey(){
+		$id = (int) $this->input->post('id');
+		$data = array(
+			'del' => 0
+		);
+		$sql = $this->db->update_string('userfile',$data,'id='.$id);
+		$query = $this->db->query($sql);
+
+		if($this->db->affected_rows()>0){
+			$ret = array(
+				'ret' => 0,
+				'msg' => '恢复成功!'
+			);
+		}else{
+			$ret = array(
+				'ret' => 100,
+				'msg' => '恢复失败!'
+			);
+		}
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));		
+	}
+
+	public function compdel(){
+		$id = (int) $this->input->post('id');
+		$fid = (int) $this->input->post('fid');
+		$uf = 0;
+		$gf = 0;
+		$sql = 'select count(id) as anum from userfile where fid='.$fid;
+		$query = $this->db->query($sql);
+		$row = $query->row();
+
+		$uf = $row->anum;
+		$sql = 'select count(id) as anum from groupfile where fid='.$fid;
+		$query = $this->db->query($sql);
+		$row = $query->row();	
+		$gf = $row->anum;	
+
+		$sql = 'delete from userfile where id='.$id;
+		$query = $this->db->query($sql);
+		if($this->db->affected_rows()>0){
+			if($uf < 2 && $gf < 2){
+				$sql = 'select path from files where id='.$fid;
+				$query = $this->db->query($sql);
+				$row = $query->row();
+				$path = $row->path;
+
+				$sql = 'delete from files where id='.$fid;
+				$query = $this->db->query($sql);
+				if($this->db->affected_rows()>0){
+					unlink($path);
+					$ret = array(
+						'ret' => 0,
+						'msg' => '删除成功!'
+					);					
+				}else{
+					$ret = array(
+						'ret' => 100,
+						'msg' => '删除失败!'
+					);					
+				}
+			}else{
+				$ret = array(
+					'ret' => 0,
+					'msg' => '删除成功!'
+				);	
+			}			
+		}else{
+			$ret = array(
+				'ret' => 100,
+				'msg' => '删除失败!'
+			);					
+		}
+
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));
+	}
 }
 
 /* End of file welcome.php */

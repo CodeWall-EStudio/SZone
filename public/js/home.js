@@ -105,65 +105,103 @@
         }
     });   
 
-	var uploader = new plupload.Uploader({
-		runtimes : 'html5,flash,silverlight,html4',
-		browse_button : 'btnUpload', // you can pass in id...
-		container: document.getElementById('uploadContainer'), // ... or DOM Element itself
-		url : '/cgi/upload?csrf_test_name='+$.cookie('csrf_cookie_name'),
-		unique_names : true,
-		flash_swf_url : '/js/lib/Moxie.swf',
-		silverlight_xap_url : '/js/lib/Moxie.xap',
+	// $("#uploader").pluploadQueue({
+	// 	// General settings
+	// 	runtimes : 'html5,flash,silverlight,html4',
+	// 	url : '/cgi/upload',
+	// 	chunk_size: '1mb',
+	// 	rename : true,
+	// 	dragdrop: true,
+
+	// 	file_data_name: 'file',
+	// 	filters : {
+	// 		// Maximum file size
+	// 		max_file_size : '500mb',
+	// 		// Specify what files to browse for
+	// 		mime_types: [
+	// 			{title : "图片", extensions : "jpg,gif,png"},
+	// 			{title : "文档", extensions : "doc,txt"},
+	// 			{title : "音乐", extensions : "mid,mp3"},
+	// 			{title : "视频", extensions : "avi,mp4"},
+	// 			{title : "应用", extensions : "exe"},
+	// 			{title : "压缩文件", extensions : "zip"}
+	// 			// {title : "文本", extensions : "txt"},
+	// 		]
+	// 	},
+
+	// 	// Resize images on clientside if we can
+	// 	//resize : {width : 320, height : 240, quality : 90},
+
+	// 	flash_swf_url : '../../js/Moxie.swf',
+	// 	silverlight_xap_url : '../../js/Moxie.xap'
+	// });
+
+	// var uploader = new plupload.Uploader({
+	// 	runtimes : 'html5,flash,silverlight,html4',
+	// 	browse_button : 'btnUpload', // you can pass in id...
+	// 	container: document.getElementById('uploadContainer'), // ... or DOM Element itself
+	// 	url : '/cgi/upload?csrf_test_name='+$.cookie('csrf_cookie_name'),
+	// 	unique_names : true,
+	// 	flash_swf_url : '/js/lib/Moxie.swf',
+	// 	silverlight_xap_url : '/js/lib/Moxie.xap',
 		
-		filters : {
-			max_file_size : '500mb',
-			mime_types: [
-				{title : "图片", extensions : "jpg,gif,png"},
-				{title : "文档", extensions : "doc,txt"},
-				{title : "音乐", extensions : "mid,mp3"},
-				{title : "视频", extensions : "avi,mp4"},
-				{title : "应用", extensions : "exe"},
-				{title : "压缩文件", extensions : "zip"}
-				// {title : "文本", extensions : "txt"},
-				// {title : "word文档", extensions : "doc"}
-			]
-		},
+	// 	filters : {
+	// 		max_file_size : '500mb',
+	// 		mime_types: [
+	// 			{title : "图片", extensions : "jpg,gif,png"},
+	// 			{title : "文档", extensions : "doc,txt"},
+	// 			{title : "音乐", extensions : "mid,mp3"},
+	// 			{title : "视频", extensions : "avi,mp4"},
+	// 			{title : "应用", extensions : "exe"},
+	// 			{title : "压缩文件", extensions : "zip"}
+	// 			// {title : "文本", extensions : "txt"},
+	// 			// {title : "word文档", extensions : "doc"}
+	// 		]
+	// 	},
 
-		init: {
-			PostInit: function() {
-				$('#file_uploadList').html('');
-				//document.getElementById('file_uploadList').innerHTML = '';
-				$('#btnStartUload').bind('click',function(){
-					//uploader.settings.url = '';
-					var fid = $('#uploadFile .foldid').val();
-					if(fid){
-						uploader.settings.url = '/cgi/upload?fid='+fid+'&csrf_test_name='+$.cookie('csrf_cookie_name');
-					}
-					uploader.start();
-				});
-			},
-			FilesAdded: function(up, files) {
-				console.log(plupload);
-				plupload.each(files, function(file) {
-					$('#file_uploadList').append('<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>');
+	// 	init: {
+	// 		PostInit: function() {
+	// 			$('#file_uploadList').html('');
+	// 			//document.getElementById('file_uploadList').innerHTML = '';
+	// 			$('#btnStartUload').bind('click',function(){
+	// 				//uploader.settings.url = '';
+	// 				var fid = $('#uploadFile .foldid').val();
+	// 				if(fid){
+	// 					uploader.settings.url = '/cgi/upload?fid='+fid+'&csrf_test_name='+$.cookie('csrf_cookie_name');
+	// 				}
+	// 				uploader.start();
+	// 			});
+	// 		},
+	// 		FilesAdded: function(up, files) {
+	// 			console.log(plupload);
+	// 			plupload.each(files, function(file) {
+	// 				$('#file_uploadList').append('<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>');
 
-				});
-			},
+	// 			});
+	// 		},
+	// 		UploadComplete : function(up,file){
+	// 			console.log('comp',up,file)
+	// 		},
+	// 		UploadProgress: function(up, file) {
+	// 			document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
+	// 		},
+	// 		FileUploaded: function(e,file){
+	// 			//console.log(e,file);
+	// 			//window.location.reload();
+	// 		},
+	// 		Error: function(up, err) {
+	// 			console.log(up,err);
+	// 			//document.getElementById('console').innerHTML += "\nError #" + err.code + ": " + err.message;
+	// 		}
+	// 	}
+	// });
 
-			UploadProgress: function(up, file) {
-				document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
-			},
-			FileUploaded: function(e,file){
-				console.log(e,file);
-				//window.location.reload();
-			},
-			Error: function(up, err) {
-				console.log(up,err);
-				//document.getElementById('console').innerHTML += "\nError #" + err.code + ": " + err.message;
-			}
-		}
-	});
+	// uploader.bind('StateChanged', function () {
+	// 	console.log(uploader.total.uploaded +'  '+ uploader.total.failed);
 
-	uploader.init();
+	// });
+
+	// uploader.init();
 
 	var showShare = function(id,cmd){
 		var il = [],
