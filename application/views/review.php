@@ -132,7 +132,6 @@
 <script type="text/javascript" src="/js/player/video.js" charset="utf-8"></script>
 <script type="text/javascript">
 	videojs.options.flash.swf = "video-js.swf";
-//		f:'http://szone.codewalle.com/cgi/getfile?fid=<?=$finfo->fid?>',
 </script>
 <?endif?>
 </body>
