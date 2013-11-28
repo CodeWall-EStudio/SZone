@@ -131,7 +131,7 @@
 	// 	}
 	// });
 
-	uploader.init();
+	//uploader.init();
 
 	$('#collFiles').bind('click',collFiles);
 
