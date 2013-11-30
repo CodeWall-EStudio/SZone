@@ -33,6 +33,7 @@
 	if(typeof nowGroupId != 'undefined'){
 		upUrl = '/cgi/gupload?gid='+nowGroupId+'&csrf_test_name='+$.cookie('csrf_cookie_name');
 	}
+	upUrl +='&fid='+fid;
 	$("#uploader").pluploadQueue({
 		// General settings
 		runtimes : 'html5,flash,silverlight,html4',

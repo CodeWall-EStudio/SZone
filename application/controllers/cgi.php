@@ -983,7 +983,9 @@ class Cgi extends SZone_Controller {
 			$str = $this->db->update_string('userfile',$data,'fid='.(int) $fid.' and uid ='.(int) $this->user['uid']);
 		}
 		$query = $this->db->query($str);
+		echo $str;
 
+		return;
 		if ($this->db->affected_rows() > 0){
 			$ret = array(
 				'ret' => 0,

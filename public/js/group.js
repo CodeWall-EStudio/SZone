@@ -64,7 +64,7 @@
         	$.post('/cgi/renamefile',data,function(d){
 	 			if(d.ret==0){
 	 				$("#renameFile .close").click();
-	 				window.location.reload();
+	 				//window.location.reload();
 	 			}else{
 	 				alert(d.msg);
 	 			}
@@ -76,6 +76,13 @@
 
 
 	function bind(){
+
+		$('#renameFile').bind('show.bs.modal',function(){
+			var item = files[$('#fileList .fclick:checked').val()];
+			$('#renameFile .foldname').val(item.name);
+			$('#renameFile .fid').val(item.id);
+		});
+
 		$("#delFile").bind('show.bs.modal',function(){
 			var id = []
 			$('#fileList .fclick:checked').each(function(e){

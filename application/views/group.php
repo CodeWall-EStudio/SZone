@@ -516,6 +516,7 @@
 		var folds = '<?=json_encode($fold);?>',
 			files = '<?=json_encode($file);?>';
 		var ginfo = '<?=json_encode($ginfo);?>';
+		var fid = '<?=$fid?>';
 		var nowGroupId = <?=$gid?>;
 		folds = $.parseJSON(folds);
 		files = $.parseJSON(files);

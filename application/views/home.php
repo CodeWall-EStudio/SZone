@@ -470,6 +470,7 @@
 	<script>
 		var folds = '<?=json_encode($fold);?>',
 			files = '<?=json_encode($file);?>';
+		var fid = '<?=$fid?>';
 		folds = $.parseJSON(folds);
 		files = $.parseJSON(files);
 		console.log(folds);
