@@ -89,8 +89,8 @@ class Group extends SZone_Controller {
 						'type' => $row->type,
 						'uname' => $row->uname,
 						'gname' => $row->gname,
-						'status' => $row->status,
-						'path' => $row->path
+						'status' => $row->status//,
+						//'path' => 0,//$row->path
 				);
 			}
 		}

@@ -517,12 +517,11 @@
 			files = '<?=json_encode($file);?>';
 		var ginfo = '<?=json_encode($ginfo);?>';
 		var fid = '<?=$fid?>';
-		var nowGroupId = <?=$gid?>;
+		var nowGroupId = '<?=$gid?>';
 		folds = $.parseJSON(folds);
-		files = $.parseJSON(files);
+		files = JSON.parse(files);//$.parseJSON(files);
 		ginfo = $.parseJSON(ginfo);
-		console.log(folds);
-		console.log(files);
+
 	</script>
 
 	<script src="/js/common.js"></script>

@@ -99,7 +99,7 @@ class Cgi extends SZone_Controller {
 		$chunk = isset($_REQUEST["chunk"]) ? intval($_REQUEST["chunk"]) : 0;
 		$chunks = isset($_REQUEST["chunks"]) ? intval($_REQUEST["chunks"]) : 0;
 
-		if($chunks){
+		if($chunks>1){
 			$oname = $this->input->post('name');
 			$config['chunks'] = 1;
 			if($this->session->userdata('user_upload_file') && $oname == $this->session->userdata('user_upload_file_name')){
@@ -107,13 +107,14 @@ class Cgi extends SZone_Controller {
 			}else{
 				$this->session->set_userdata('user_upload_file_name',$oname);
 				$this->session->set_userdata('user_upload_file',$nowdir);	
-				$nowdir .='/tmp';
+				$nowdir .='/tmp/';
 				$this->session->set_userdata('user_upload_file_tmp',$nowdir);	
 			}
 		}
         $config['upload_path'] = $nowdir;
         $config['allowed_types'] = implode('|',$allowed);//;'gif|jpg|png';
         $config['overwrite'] = true;
+
         $this->load->library('upload', $config);
 
         $this->load->library('szupload', $config);
@@ -130,6 +131,7 @@ class Cgi extends SZone_Controller {
                 ->set_content_type('application/json')
                 ->set_output(json_encode($list));
         }else{
+
             $sql = 'select size,used from user where id='.(int) $this->user['uid'];
             $query = $this->db->query($sql);
             $size = 0;
@@ -301,7 +303,7 @@ class Cgi extends SZone_Controller {
 		$chunk = isset($_REQUEST["chunk"]) ? intval($_REQUEST["chunk"]) : 0;
 		$chunks = isset($_REQUEST["chunks"]) ? intval($_REQUEST["chunks"]) : 0;
 
-		if($chunks){
+		if($chunks>1){
 			$oname = $this->input->post('name');
 			$config['chunks'] = 1;
 			if($this->session->userdata('user_upload_file') && $oname == $this->session->userdata('user_upload_file_name')){
@@ -313,6 +315,7 @@ class Cgi extends SZone_Controller {
 				$this->session->set_userdata('user_upload_file_tmp',$nowdir);	
 			}
 		}
+
         $config['upload_path'] = $nowdir;
         $config['allowed_types'] = implode('|',$allowed);//;'gif|jpg|png';
         $config['overwrite'] = true;
@@ -916,12 +919,12 @@ class Cgi extends SZone_Controller {
 		$id = $this->input->get('fid');
 		$sql = 'select path from files where id='.(int) $id;
 		$query = $this->db->query($sql);
-
 		if ($query->num_rows() > 0)
 		{
 		   $row = $query->row(); 
 		   $path = $row->path;
 		   $mime = get_mime_by_extension($path);
+
 
 			$this->output
 			    ->set_content_type($mime) // 你也可以用".jpeg"，它在查找 config/mimes.php 文件之前会移除句号

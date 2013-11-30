@@ -64,7 +64,7 @@
         	$.post('/cgi/renamefile',data,function(d){
 	 			if(d.ret==0){
 	 				$("#renameFile .close").click();
-	 				//window.location.reload();
+	 				window.location.reload();
 	 			}else{
 	 				alert(d.msg);
 	 			}
@@ -87,7 +87,7 @@
 			var id = []
 			$('#fileList .fclick:checked').each(function(e){
 				var item = files[$(this).val()];
-				id.push(item.fid);
+				id.push(item.id);
 				$('#delFile .filelist').append('<li>'+item.name+'</li>');
 			});
 			$('#delFile .fid').val(id.join(','));
@@ -104,7 +104,7 @@
 			$.post('/cgi/del_file?type=0',{gid: ginfo.id,id: id,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 	 			if(d.ret==0){
 	 				$("#delFile .close").click();
-	 				//window.location.reload();
+	 				window.location.reload();
 	 			}else{
 	 				alert(d.msg);
 	 			}
