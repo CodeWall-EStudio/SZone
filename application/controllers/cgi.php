@@ -968,12 +968,20 @@ class Cgi extends SZone_Controller {
 	public function renamefile(){
 		$fid = $this->input->post('fid');
 		$fname = $this->input->post('fname');
+		$gid = (int) $this->input->post('gid');
 
-		$data = array(
-			'fid' => $fid,
-			'name' => $fname
-		);
-		$str = $this->db->update_string('userfile',$data,'fid='.(int) $fid.' and uid ='.(int) $this->user['uid']);
+
+		if($gid && $this->user['auth']>1){
+			$data = array(
+				'fname' => $fname,
+			);			
+			$str = $this->db->update_string('groupfile',$data,'fid='.(int) $fid.' and gid ='.$gid);
+		}else{
+			$data = array(
+				'name' => $fname
+			);			
+			$str = $this->db->update_string('userfile',$data,'fid='.(int) $fid.' and uid ='.(int) $this->user['uid']);
+		}
 		$query = $this->db->query($str);
 
 		if ($this->db->affected_rows() > 0){
@@ -1024,6 +1032,7 @@ class Cgi extends SZone_Controller {
 	public function del_file(){
 		$type = $this->input->get('type');
 		$id = $this->input->post('id');
+		$gid = (int) $this->input->post('gid');
 
 		$idlist = explode(',',$id);
 		$kl = array();
@@ -1031,7 +1040,12 @@ class Cgi extends SZone_Controller {
 			array_push($kl,'id='.(int) $k);
 		};
 		$where = implode(' or ',$kl);
-		$sql = 'update userfile set del=1 where uid='.(int) $this->user['uid'].' and '.$where;
+		if($gid){
+			$sql = 'update groupfile set del=1 where gid='.(int) $gid.' and '.$where;	
+		}else{
+			$sql = 'update userfile set del=1 where uid='.(int) $this->user['uid'].' and '.$where;	
+		}
+
 		$query = $this->db->query($sql);
 		if ($this->db->affected_rows() > 0){
 			$ret = array(
@@ -1047,7 +1061,6 @@ class Cgi extends SZone_Controller {
 		$this->output
 		    ->set_content_type('application/json')
 		    ->set_output(json_encode($ret));	
-		//print_r($idlist);
 	}
 
 	public function add_prep(){
