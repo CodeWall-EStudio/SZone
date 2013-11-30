@@ -191,6 +191,7 @@ class Cgi extends SZone_Controller {
 
             $gd = array(
                 'fid' => $fid,
+                'fdid' => $fdid,
                 'gid' => $gid,
                 'fname' => $filedata['raw_name'],
                 'createtime' => time(),
@@ -220,14 +221,13 @@ class Cgi extends SZone_Controller {
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0){
                 $row = $query->row();
-                $list = array(
-                    'jsonrpc' => '2.0',
-                    'error' => array(
-                        'code' => 101,
-                        'message' => '上传失败,已经有重名文件'
-                    ),
-                    'id' => $row->id
-                );
+                    $list = array(
+                        'jsonrpc' => '2.0',
+                        'error' => array(
+                            'code' => 0,
+                            'message' => '上传成功!'
+                        )
+                    );
                 $this->output
                     ->set_content_type('application/json')
                     ->set_output(json_encode($list));
@@ -983,7 +983,7 @@ class Cgi extends SZone_Controller {
 			$str = $this->db->update_string('userfile',$data,'fid='.(int) $fid.' and uid ='.(int) $this->user['uid']);
 		}
 		$query = $this->db->query($str);
-		
+
 		if ($this->db->affected_rows() > 0){
 			$ret = array(
 				'ret' => 0,
