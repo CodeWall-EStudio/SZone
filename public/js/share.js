@@ -35,7 +35,7 @@
 		$.post(url,data,function(d){
 			if(d.ret == 0){
 				var list = d.list;
-				if(type == 1){
+				if(type >= 1){
 					rendergroup(list);
 				}else{
 					render(list);

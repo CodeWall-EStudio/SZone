@@ -60,6 +60,36 @@ if(! function_exists('get_page_status')){
 	}
 }
 
+if(! function_exists('get_file_type')){
+	function get_file_type($type){
+		$ret;
+		switch($item['type']){
+			case 0:
+				$ret = '全部类型';
+				break;
+			case 1:
+				$ret = '图片';
+				break;
+			case 2:
+				$ret = '文档';
+				break;
+			case 3:
+				$ret = '音乐';
+				break;
+			case 4:
+				$ret = '视频';
+				break;
+			case 5:
+				$ret = '应用';
+				break;
+			case 6:
+				$ret = '压缩包';
+				break;
+		}
+	}
+}
+
+
 if(! function_exists('create_page')){
 	function create_page($config){
 		if($config['prev']){

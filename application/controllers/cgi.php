@@ -99,7 +99,7 @@ class Cgi extends SZone_Controller {
 		$chunk = isset($_REQUEST["chunk"]) ? intval($_REQUEST["chunk"]) : 0;
 		$chunks = isset($_REQUEST["chunks"]) ? intval($_REQUEST["chunks"]) : 0;
 
-		if($chunks){
+		if($chunks>1){
 			$oname = $this->input->post('name');
 			$config['chunks'] = 1;
 			if($this->session->userdata('user_upload_file') && $oname == $this->session->userdata('user_upload_file_name')){
@@ -107,13 +107,14 @@ class Cgi extends SZone_Controller {
 			}else{
 				$this->session->set_userdata('user_upload_file_name',$oname);
 				$this->session->set_userdata('user_upload_file',$nowdir);	
-				$nowdir .='/tmp';
+				$nowdir .='/tmp/';
 				$this->session->set_userdata('user_upload_file_tmp',$nowdir);	
 			}
 		}
         $config['upload_path'] = $nowdir;
         $config['allowed_types'] = implode('|',$allowed);//;'gif|jpg|png';
         $config['overwrite'] = true;
+
         $this->load->library('upload', $config);
 
         $this->load->library('szupload', $config);
@@ -130,6 +131,7 @@ class Cgi extends SZone_Controller {
                 ->set_content_type('application/json')
                 ->set_output(json_encode($list));
         }else{
+
             $sql = 'select size,used from user where id='.(int) $this->user['uid'];
             $query = $this->db->query($sql);
             $size = 0;
@@ -191,6 +193,7 @@ class Cgi extends SZone_Controller {
 
             $gd = array(
                 'fid' => $fid,
+                'fdid' => $fdid,
                 'gid' => $gid,
                 'fname' => $filedata['raw_name'],
                 'createtime' => time(),
@@ -220,14 +223,13 @@ class Cgi extends SZone_Controller {
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0){
                 $row = $query->row();
-                $list = array(
-                    'jsonrpc' => '2.0',
-                    'error' => array(
-                        'code' => 101,
-                        'message' => '上传失败,已经有重名文件'
-                    ),
-                    'id' => $row->id
-                );
+                    $list = array(
+                        'jsonrpc' => '2.0',
+                        'error' => array(
+                            'code' => 0,
+                            'message' => '上传成功!'
+                        )
+                    );
                 $this->output
                     ->set_content_type('application/json')
                     ->set_output(json_encode($list));
@@ -301,7 +303,7 @@ class Cgi extends SZone_Controller {
 		$chunk = isset($_REQUEST["chunk"]) ? intval($_REQUEST["chunk"]) : 0;
 		$chunks = isset($_REQUEST["chunks"]) ? intval($_REQUEST["chunks"]) : 0;
 
-		if($chunks){
+		if($chunks>1){
 			$oname = $this->input->post('name');
 			$config['chunks'] = 1;
 			if($this->session->userdata('user_upload_file') && $oname == $this->session->userdata('user_upload_file_name')){
@@ -313,6 +315,7 @@ class Cgi extends SZone_Controller {
 				$this->session->set_userdata('user_upload_file_tmp',$nowdir);	
 			}
 		}
+
         $config['upload_path'] = $nowdir;
         $config['allowed_types'] = implode('|',$allowed);//;'gif|jpg|png';
         $config['overwrite'] = true;
@@ -916,12 +919,12 @@ class Cgi extends SZone_Controller {
 		$id = $this->input->get('fid');
 		$sql = 'select path from files where id='.(int) $id;
 		$query = $this->db->query($sql);
-
 		if ($query->num_rows() > 0)
 		{
 		   $row = $query->row(); 
 		   $path = $row->path;
 		   $mime = get_mime_by_extension($path);
+
 
 			$this->output
 			    ->set_content_type($mime) // 你也可以用".jpeg"，它在查找 config/mimes.php 文件之前会移除句号
@@ -968,12 +971,20 @@ class Cgi extends SZone_Controller {
 	public function renamefile(){
 		$fid = $this->input->post('fid');
 		$fname = $this->input->post('fname');
+		$gid = (int) $this->input->post('gid');
 
-		$data = array(
-			'fid' => $fid,
-			'name' => $fname
-		);
-		$str = $this->db->update_string('userfile',$data,'fid='.(int) $fid.' and uid ='.(int) $this->user['uid']);
+
+		if($gid && $this->user['auth']>1){
+			$data = array(
+				'fname' => $fname,
+			);			
+			$str = $this->db->update_string('groupfile',$data,'id='.(int) $fid.' and gid ='.$gid);
+		}else{
+			$data = array(
+				'name' => $fname
+			);			
+			$str = $this->db->update_string('userfile',$data,'fid='.(int) $fid.' and uid ='.(int) $this->user['uid']);
+		}
 		$query = $this->db->query($str);
 
 		if ($this->db->affected_rows() > 0){
@@ -1024,6 +1035,7 @@ class Cgi extends SZone_Controller {
 	public function del_file(){
 		$type = $this->input->get('type');
 		$id = $this->input->post('id');
+		$gid = (int) $this->input->post('gid');
 
 		$idlist = explode(',',$id);
 		$kl = array();
@@ -1031,7 +1043,12 @@ class Cgi extends SZone_Controller {
 			array_push($kl,'id='.(int) $k);
 		};
 		$where = implode(' or ',$kl);
-		$sql = 'update userfile set del=1 where uid='.(int) $this->user['uid'].' and '.$where;
+		if($gid){
+			$sql = 'update groupfile set del=1 where gid='.(int) $gid.' and '.$where;	
+		}else{
+			$sql = 'update userfile set del=1 where uid='.(int) $this->user['uid'].' and '.$where;	
+		}
+
 		$query = $this->db->query($sql);
 		if ($this->db->affected_rows() > 0){
 			$ret = array(
@@ -1047,7 +1064,6 @@ class Cgi extends SZone_Controller {
 		$this->output
 		    ->set_content_type('application/json')
 		    ->set_output(json_encode($ret));	
-		//print_r($idlist);
 	}
 
 	public function add_prep(){

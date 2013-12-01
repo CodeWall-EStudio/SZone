@@ -39,7 +39,7 @@
 	<!-- 						<li><a>推优到学校</a></li> -->					
 						</ul>						
 					</li>
-					<li><a>下载</a></li>
+					<!--<li id=""><a>下载</a></li>-->
 					<li><a cmd="coll" id="collFiles">收藏</a></li>
 					<li id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
 					<li><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制</a></li>
@@ -50,6 +50,7 @@
 
 			<div class="section-tit">
 				<div class="dropdown">
+					<?if(count($flist)>0):?>
 					<a data-toggle="dropdown" class="section-tit-a-first section-tit-a-border">树</a>
 					<ul class="dropdown-menu section-tit-menu" role="menu" aria-labelledby="dLabel" id="myFileList">
 						<?foreach($flist as $item):?>
@@ -64,7 +65,8 @@
 								<?endif?>
 							</li>						
 						<?endforeach?>
-					</ul>					
+					</ul>				
+					<?endif?>	
 					<a class="section-tit-a-first" href="/home">个人文件</a>
 					<?if($fid):?>
 						<a class="section-tit-a-second"><?=$fname?></a>
@@ -119,7 +121,7 @@
 			</div>
 			<!--dis-list-type -->
 			<div id="fileList" class="dis-list-type">
-				<ulclass="cl">
+				<ul class="cl">
 					<?if($foldnum):?>
 					<li class="tit">
 						<div class="td1"><input type="checkbox" /></div>
@@ -468,6 +470,7 @@
 	<script>
 		var folds = '<?=json_encode($fold);?>',
 			files = '<?=json_encode($file);?>';
+		var fid = '<?=$fid?>';
 		folds = $.parseJSON(folds);
 		files = $.parseJSON(files);
 		console.log(folds);

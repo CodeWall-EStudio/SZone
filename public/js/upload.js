@@ -33,9 +33,10 @@
 	if(typeof nowGroupId != 'undefined'){
 		upUrl = '/cgi/gupload?gid='+nowGroupId+'&csrf_test_name='+$.cookie('csrf_cookie_name');
 	}
+	upUrl +='&fid='+fid;
 	$("#uploader").pluploadQueue({
 		// General settings
-		runtimes : 'flash,silverlight,html4',
+		runtimes : 'html5,flash,silverlight,html4',
 		url : upUrl,
 		chunk_size: '1mb',
 		rename : true,
@@ -60,8 +61,8 @@
 		// Resize images on clientside if we can
 		//resize : {width : 320, height : 240, quality : 90},
 
-		flash_swf_url : '../../js/Moxie.swf',
-		silverlight_xap_url : '../../js/Moxie.xap'
+		flash_swf_url : '../../js/moxie.swf',
+		silverlight_xap_url : '../../js/moxie.xap'
 	});
 
 })();

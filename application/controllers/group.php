@@ -20,6 +20,13 @@ class Group extends SZone_Controller {
 				'school' => $this->school
 			)
 		);
+		$wsql = '';
+		if($fid){
+			$wsql .= ' and a.fdid ='.$fid;
+		}
+		if($type){
+			$wsql .= ' and b.type ='.$type;
+		}		
 
 
 		$key = $this->input->get_post('key');
@@ -43,17 +50,29 @@ class Group extends SZone_Controller {
 			}
 		}
 
-		$sql = 'SELECT count(a.id) AS anum FROM groupfile a LEFT JOIN files b ON b.id = a.fid LEFT JOIN user c ON c.id = a.uid LEFT JOIN groups d ON d.id = a.fgid WHERE a.fid = b.id AND a.del =0 and gid='.$gid;
+		$sql = 'SELECT count(a.id) AS anum FROM groupfile a';
+		$sql .= ' LEFT JOIN files b ON b.id = a.fid';
+		$sql .= ' LEFT JOIN user c ON c.id = a.uid';
+		$sql .= ' LEFT JOIN groups d ON d.id = a.fgid';
+		$sql .= ' WHERE a.del !=1 and a.fid = b.id AND a.del =0 and gid='.$gid;
+		$sql .= $wsql;
+
 		$query = $this->db->query($sql);
 		$row = $query->row();
 
 		$allnum = $row->anum;
 
 		$file = array();
-		$sql = 'SELECT a.id,a.uid,a.fgid,a.fid,a.fname,a.content,a.createtime,a.status,b.size,b.path,b.type,c.name as uname,d.name AS gname FROM groupfile a LEFT JOIN files b ON b.id = a.fid LEFT JOIN user c ON c.id = a.uid LEFT JOIN groups d ON d.id = a.fgid WHERE a.fid = b.id AND a.del =0 and gid='.$gid;
+		$sql = 'SELECT a.id,a.uid,a.fgid,a.fid,a.fname,a.content,a.createtime,a.status,b.size,b.path,b.type,c.name as uname,d.name AS gname FROM groupfile a';
+		$sql .= ' LEFT JOIN files b ON b.id = a.fid';
+		$sql .= ' LEFT JOIN user c ON c.id = a.uid';
+		$sql .= ' LEFT JOIN groups d ON d.id = a.fgid';
+		$sql .= ' WHERE a.del !=1 and a.fid = b.id AND a.del =0 and gid='.$gid;
+		$sql .= $wsql;
 
 		$page = get_page_status($nowpage,$pagenum,$allnum);
 		$sql .= ' limit '.$page['start'].','.$pagenum;		
+
 		//echo $sql;
 		//$sql = 'SELECT a.id,a.fid,a.fname,a.content,a.createtime,a.status,b.size,b.path,b.type FROM groupfile a,files b WHERE a.fid = b.id AND a.del !=1 and gid='.$gid;
 
@@ -70,8 +89,8 @@ class Group extends SZone_Controller {
 						'type' => $row->type,
 						'uname' => $row->uname,
 						'gname' => $row->gname,
-						'status' => $row->status,
-						'path' => $row->path
+						'status' => $row->status//,
+						//'path' => 0,//$row->path
 				);
 			}
 		}

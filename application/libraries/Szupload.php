@@ -88,6 +88,7 @@ class szupload{
 
 		// if a file_name was provided in the config, use it instead of the user input
 		// supplied file name for all uploads until initialized again
+
 		$this->_file_name_override = $this->file_name;
 	}
 
@@ -198,7 +199,14 @@ class szupload{
 						);
 
 		return (in_array($this->file_type, $img_mimes, TRUE)) ? TRUE : FALSE;
-	}	
+	}
+
+	public function set_upload_path($path)
+	{
+		// Make sure it has a trailing slash
+		$this->upload_path = rtrim($path, '/').'/';
+	}
+
 
 	public function do_upload($field = 'file'){
 		header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
@@ -218,6 +226,7 @@ class szupload{
 
 		// 5 minutes execution time
 		@set_time_limit(5 * 60);
+		$this->set_upload_path($this->upload_path);
 
 		// Uncomment this one to fake upload time
 		// usleep(5000);
@@ -315,7 +324,7 @@ class szupload{
 			// Strip the temp .part suffix off 
 			//echo $chunks;
 
-			if($chunks){
+			if($chunks > 1){
 				$oldpath = $this->CI->session->userdata('user_upload_file');
 				$oname = $this->CI->session->userdata('user_upload_file_name');
 

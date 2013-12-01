@@ -118,7 +118,7 @@
 					<?if(count($fold)>0):?>
 					<li class="tit">
 						<div class="td1"><input type="checkbox" /></div>
-						<div class="td2"><span>文件夹(<b><?=$allnum?></b>个)</span>  名称 <i></i></div>
+						<div class="td2"><span>文件夹(<b><?=count($fold)?></b>个)</span>  名称 <i></i></div>
 						<div class="td_mark">&nbsp;</div>
 						<div class="td_uname">&nbsp;</div>
 						<div class="td_source">&nbsp;</div>
@@ -155,7 +155,7 @@
 					<?if(count($file)>0):?>
 						<li class="tit file-list">
 							<div class="td1"><input type="checkbox" id="selectAllFile" /></div>
-							<div class="td2"><span>文件(<b><?=count($file)?></b>个)</span>  </div>
+							<div class="td2"><span>文件(<b><?=$allnum?></b>个)</span>  </div>
 							<div class="td_mark">评论</div>
 							<div class="td_uname">作者</div>
 							<div class="td_source">来源</div>
@@ -516,12 +516,12 @@
 		var folds = '<?=json_encode($fold);?>',
 			files = '<?=json_encode($file);?>';
 		var ginfo = '<?=json_encode($ginfo);?>';
-		var nowGroupId = <?=$gid?>;
+		var fid = '<?=$fid?>';
+		var nowGroupId = '<?=$gid?>';
 		folds = $.parseJSON(folds);
-		files = $.parseJSON(files);
+		files = JSON.parse(files);//$.parseJSON(files);
 		ginfo = $.parseJSON(ginfo);
-		console.log(folds);
-		console.log(files);
+
 	</script>
 
 	<script src="/js/common.js"></script>
