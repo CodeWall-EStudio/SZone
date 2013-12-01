@@ -78,7 +78,7 @@ class Manage extends SZone_Controller {
 						'name' => $name,
 						'parent' => 0,
 						'type' => 3,
-						'create' => $this->user['userid']
+						'create' => $this->user['uid']
 					);
 					$str = $this->db->insert_string('groups', $data); 
 					//echo $str;
@@ -211,7 +211,7 @@ class Manage extends SZone_Controller {
 						'name' => $this->input->post('groupname'),
 						'parent' => 0,
 						'type' => 3,
-						'create' => $this->user['userid']
+						'create' => $this->user['uid']
 					);
 
 					$str = $this->db->insert_string('groups', $data); 
@@ -476,8 +476,9 @@ class Manage extends SZone_Controller {
 			$data = array(
 				'name' => $this->input->post('groupname'),
 				'parent' => $this->input->post('parent'),
+				'content' => '',
 				'type' => $type,
-				'create' => $this->user['userid']
+				'create' => $this->user['uid']
 			);
 
 			$str = $this->db->insert_string('groups', $data); 
