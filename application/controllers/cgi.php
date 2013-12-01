@@ -1475,6 +1475,128 @@ class Cgi extends SZone_Controller {
 		    ->set_content_type('application/json')
 		    ->set_output(json_encode($ret));		
 	}
+
+	public function to_school(){
+		$id = (int) $this->input->post('id');
+
+		if($id){
+
+			$sql = 'select name,fid from userfile where id='.$id;
+			$query = $this->db->query($sql);
+
+			if($this->db->affected_rows() > 0){
+
+				$row = $query->row();
+				$data = array(
+					'fid' => $row->fid,
+					'fname' => $row->name,
+					'fdid' => 0,
+					'gid' => 1,
+	                'createtime' => time(),
+	                'del' => 0,
+	                'uid' => (int) $this->user['uid'],
+	                'status' => 0					
+				);
+
+				$sql = 'select id from groupfile where fid='.(int) $row->fid.' and gid=1';
+				$query = $this->db->query($sql);
+
+				if($this->db->affected_rows() == 0){
+					$str = $this->db->insert_string('groupfile',$data);
+					$query = $this->db->query($str);
+
+					if($this->db->insert_id()){
+						$ret = array(
+							'ret' => 0,
+							'msg' => '添加成功!'
+						);
+					}else{
+						$ret = array(
+							'ret' => 10004,
+							'msg' => '添加失败!'
+						);
+					}
+
+				}else{
+					$ret = array(
+						'ret' => 10003,
+						'msg' => '文件id重复!'
+					);	
+				}
+			}else{
+				$ret = array(
+					'ret' => 10002,
+					'msg' => '没有指定id!'
+				);					
+			}
+
+		}else{
+			$ret = array(
+				'ret' => 10001,
+				'msg' => '没有指定id!'
+			);	
+		}
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));			
+	}
+
+	public function review_pass(){
+		$id = (int) $this->input->post('id');
+
+		$data = array(
+			'ttime' => time(),
+			'ruid' => $this->user['uid']
+		);
+
+		$sql = $this->db->update_string('groupfile',$data,' id='.$id);
+		$query = $this->db->query($sql);
+
+		if($this->db->affected_rows() > 0){
+			$ret = array(
+				'ret' => 0,
+				'msg' => '操作成功!'
+			);	
+		}else{
+			$ret = array(
+				'ret' => 10001,
+				'msg' => '操作失败!'
+			);				
+		}			
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));
+	}
+
+	public function review_not_pass(){
+		$id = (int) $this->input->post('id');
+		$tag = $this->input->post('tag');
+
+		$data = array(
+			'tag' => $tag,
+			'rtag' => 1,
+			'ttime' => time(),
+			'ruid' => $this->user['uid']
+		);	
+
+		$sql = $this->db->update_string('groupfile',$data,' id='.$id);
+		$query = $this->db->query($sql);
+
+		if($this->db->affected_rows() > 0){
+			$ret = array(
+				'ret' => 0,
+				'msg' => '操作成功!'
+			);	
+		}else{
+			$ret = array(
+				'ret' => 10001,
+				'msg' => '操作失败!'
+			);				
+		}			
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));
+	}
 }
 
 /* End of file welcome.php */

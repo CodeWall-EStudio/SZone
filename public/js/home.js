@@ -325,6 +325,16 @@
 
     }	
 
+    var toSchool = function(id){
+    	$.post('/cgi/to_school',{id:id},function(d){
+    		if(d.ret== 0){
+				alert('复制成功');
+    		}else{
+    			alert('复制失败');
+    		}
+    	});
+    }
+
     //显示或者隐藏重命名和评论
     var checkAct = function(){
     	var l = $('#fileList .fclick:checked').length;
@@ -349,7 +359,7 @@
 			downFiles();
 		});
 
-		
+
 		$('#uploadFile').bind('hide.bs.modal',function(){
 			$('#file_uploadList').html('');
 		});
@@ -415,6 +425,7 @@
 				case 'todep':
 					showShare(null,cmd);
 					break;
+
 				case 'copyFile':
 					copyFile();
 					break;							
@@ -481,6 +492,10 @@
 					var name = target.attr('data-name');
 					showShare(id,cmd);
 					break;
+				case 'toschool':
+					var id = target.attr('data-id');
+					toSchool(id);
+					break;					
 				case 'coll':
 					var id = target.attr('data-id'),
 						type = target.attr('data-type');

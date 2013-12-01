@@ -61,12 +61,8 @@
 								</dl>
 							</div>
 							<div class="td_review">
-								<?if($item['ttime']):?>
-									<p>已审核</p>
-								<?else:?>
-									<p id="review<?=$item['id']?>"><a cmd="pass" data-id="<?=$item['id']?>">通过</a> <a cmd="notpass"  data-id="<?=$item['id']?>">不通过</a></p>
-									<p id="reviewStatus<?=$item['id']?>">未审核</p>
-								<?endif?>
+								<p><?if($item['rtag']):?>已退回<?else:?>已审核<?endif?></p>
+								<p><?=$item['tag']?></p>
 							</div>
 							<div class="td_uname"><?=$item['uname']?></div>
 							<div class="td_source">
@@ -78,7 +74,7 @@
 							</div>	
 							<div class="td_size"><?=$item['size']?></div>
 							<div class="td_type"><?=get_file_type($item['type'])?></div>
-							<div class="td_time"><?=date('Y-m-d',$item['time'])?></div>
+							<div class="td_time"><?=date('Y-m-d',$item['ttime'])?></div>
 															
 						</li>		
 
@@ -127,7 +123,7 @@
 	<script src="/js/lib/jq.validate.js"></script>
 
 	<script src="/js/common.js"></script>
-	<script src="/js/school.js"></script>
+
 
 </body>
 </html>
