@@ -224,9 +224,9 @@ a{
 
 /*侧边栏*/
 .aside{
-/*	position:absolute;
+	position:absolute;
 	right:0;
-	top:0;*/
+	/*top:0;*/
 	float:right;
 	width:178px;
 	border-left:1px solid #d3d6da;
