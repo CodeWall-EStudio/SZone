@@ -75,6 +75,26 @@
     });
 
 
+    function downFiles(){
+		$('#fileList .fclick:checked').each(function(){
+			window.open('/cgi/downfile?fid='+files[$(this).val()].fid+'&gid='+ginfo.id);
+		});	
+    }
+
+    //复制文件
+    function copyFiletoMy(fid){
+
+    	$.post('/cgi/copy_to_my',{fid:fid,gid:ginfo.id},function(d){
+    		if(d.ret == 0){
+    			$('#copy'+fid).remove();
+    			alert('保存成功');
+    		}else{
+    			alert(d.msg);
+    		}
+    	});
+
+    }
+
 	function bind(){
 
 		$('#renameFile').bind('show.bs.modal',function(){
@@ -112,7 +132,13 @@
 			});
 		});		
 
-		$('#collFiles').bind('click',collFiles);
+		$('#donwFiles').bind('click',function(){
+			downFiles();
+		});
+
+		$('#collFiles').bind('click',function(){
+			collFiles();
+		});
 
 		$("#groupDesc a").bind('click',function(){
 			$("#groupDesc").hide();
@@ -184,14 +210,14 @@
 			var il = [];
 			$('#fileList .fclick:checked').each(function(){
 				//if($(this).parents('li.file').find('i.s').length == 0){
-					il.push($(this).val());
+					il.push(files[$(this).val()].fid);
 				//}
 			});	
 			id = il.join(',');
 			$.post(AddColl,{id:id,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 				if(d.ret == 0){
 					//target.parent('span').prev('span').text(d.info);
-					window.location.reload();
+					//window.location.reload();
 				}else{
 					//console.log(d.msg);
 				}
@@ -263,6 +289,10 @@
 			var target = $(e.target),
 				cmd = target.attr('cmd');
 			switch(cmd){
+				case 'copy':
+					var fid = target.attr('data-fid');
+					copyFiletoMy(fid);
+					break;
 				case 'toother':
 				case 'togroup':
 				case 'todep':

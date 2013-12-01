@@ -641,7 +641,6 @@ class Cgi extends SZone_Controller {
 		}
 
 		$sql = 'insert into usercollection (uid,fid,time) value '.implode(',',$dlist);
-
 		$query = $this->db->query($sql);
 			
 		if($this->db->affected_rows()>0){
@@ -656,7 +655,7 @@ class Cgi extends SZone_Controller {
 				'msg' => '插入失败!'
 			);
 		}			
-
+		
 		$this->output
 		    ->set_content_type('application/json')
 		    ->set_output(json_encode($ret));
@@ -1032,7 +1031,7 @@ class Cgi extends SZone_Controller {
 	}
 
 	//删除文件
-	public function del_file(){
+	public function g(){
 		$type = $this->input->get('type');
 		$id = $this->input->post('id');
 		$gid = (int) $this->input->post('gid');
@@ -1410,6 +1409,71 @@ class Cgi extends SZone_Controller {
 		$this->output
 		    ->set_content_type('application/json')
 		    ->set_output(json_encode($ret));
+	}
+
+	function copy_to_my(){
+		$gid = (int) $this->input->post('gid');
+		$fid = (int) $this->input->post('fid');
+
+		if($gid){
+			if($fid){
+				$sql = 'select id from userfile where fid='.$fid.' and uid='.$this->user['uid'];
+				$query = $this->db->query($sql);
+				if($this->db->affected_rows()==0){
+
+					$sql = 'select fid,fname from groupfile where gid='.$gid.' and fid='.$fid;
+					$query = $this->db->query($sql);
+					if ($query->num_rows() > 0){
+						$row = $query->row();
+
+						$data = array(
+							'fid' => $fid,
+							'name' => $row->fname,
+							'uid' => $this->user['uid'],
+							'del' => 0,
+							'fdid' => 0
+						);
+
+						$str = $this->db->insert_string('userfile',$data);
+						$query = $this->db->query($str);
+						if($this->db->insert_id()){
+							$ret = array(
+								'ret' => 100,
+								'msg' => '添加成功!'
+							);	
+						}else{
+							$ret = array(
+								'ret' => 100,
+								'msg' => '添加失败!'
+							);	
+						}
+					}else{
+						$ret = array(
+							'ret' => 10002,
+							'msg' => '没有指定文件id!'
+						);	
+					}
+				}else{
+					$ret = array(
+						'ret' => 10004,
+						'msg' => '已经保存了该文件!'
+					);					
+				}
+			}else{
+				$ret = array(
+					'ret' => 10002,
+					'msg' => '没有指定文件id'
+				);					
+			}
+		}else{
+			$ret = array(
+				'ret' => 10001,
+				'msg' => '没有指定分组id!'
+			);	
+		}
+		$this->output
+		    ->set_content_type('application/json')
+		    ->set_output(json_encode($ret));		
 	}
 }
 

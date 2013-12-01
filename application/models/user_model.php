@@ -13,11 +13,27 @@
 class User_model extends CI_Model {
 
     protected $table   = 'user';
+    protected $gtable   = 'groupuser';
 
     function __construct()
     {
         parent::__construct();
         $this->load->database();
+    }
+
+    function get_in_group($id,$gid){
+        $result = array();
+        $query = $this->db->get_where($this->gtable,array('uid' => $id));
+        if ($query->num_rows() > 0){
+            foreach($query->result() as $row){
+                array_push($result,$row->gid);
+            }
+        }
+        if(in_array($gid,$result)){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     function get_by_id($id)

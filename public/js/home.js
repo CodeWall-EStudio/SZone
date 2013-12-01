@@ -23,7 +23,7 @@
 			 	var value = $('#foldname').val();
 			 	var pid = $('#newFolds .parentid').val();
 			 	if(value != ''){
-			 		//console.log(value);
+			 		////console.log(value);
 			 		$.post('/cgi/addfold',{name: value,pid: pid,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 			 			if(d.ret==0){
 			 				$("#newFold .close").click();
@@ -173,31 +173,31 @@
 	// 			});
 	// 		},
 	// 		FilesAdded: function(up, files) {
-	// 			console.log(plupload);
+	// 			//console.log(plupload);
 	// 			plupload.each(files, function(file) {
 	// 				$('#file_uploadList').append('<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>');
 
 	// 			});
 	// 		},
 	// 		UploadComplete : function(up,file){
-	// 			console.log('comp',up,file)
+	// 			//console.log('comp',up,file)
 	// 		},
 	// 		UploadProgress: function(up, file) {
 	// 			document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
 	// 		},
 	// 		FileUploaded: function(e,file){
-	// 			//console.log(e,file);
+	// 			////console.log(e,file);
 	// 			//window.location.reload();
 	// 		},
 	// 		Error: function(up, err) {
-	// 			console.log(up,err);
+	// 			//console.log(up,err);
 	// 			//document.getElementById('console').innerHTML += "\nError #" + err.code + ": " + err.message;
 	// 		}
 	// 	}
 	// });
 
 	// uploader.bind('StateChanged', function () {
-	// 	console.log(uploader.total.uploaded +'  '+ uploader.total.failed);
+	// 	//console.log(uploader.total.uploaded +'  '+ uploader.total.failed);
 
 	// });
 
@@ -221,7 +221,7 @@
 		switch(cmd){
 			case 'toother':
 				$('#shareWin h4').text('共享 发送给别人');
-				console.log('/share/other?id='+id);
+				//console.log('/share/other?id='+id);
 				iframeEl.attr('src','/share/other?id='+id);
 				break;
 			case 'togroup':
@@ -259,7 +259,7 @@
 			if(d.ret == 0){
 				target.parent('span').prev('span').text(d.info);
 			}else{
-				console.log(d.msg);
+				//console.log(d.msg);
 			}
 		});
 	};
@@ -272,22 +272,29 @@
 			//}
 		});	
 		id = il.join(',');
+		console.log(id);
 		$.post(AddColl,{id:id,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 			if(d.ret == 0){
 				//target.parent('span').prev('span').text(d.info);
 				window.location.reload();
 			}else{
-				console.log(d.msg);
+				//console.log(d.msg);
 			}
 		});		
 	}
+
+    function downFiles(){
+		$('#fileList .fclick:checked').each(function(){
+			window.open('/cgi/downfile?fid='+files[$(this).val()].fid);
+		});	
+    }
 
 	var collFile = function(id,target){
 		var data = {
 			id : id
 		}
 		$.post(AddColl,data,function(d){
-			console.log(d);
+			//console.log(d);
 			if(d.ret == 0){
 				target.addClass('s');
 			}
@@ -300,7 +307,7 @@
 			csrf_test_name:$.cookie('csrf_cookie_name')
 		}
 		$.post(UnColl,data,function(d){
-			console.log(d);
+			//console.log(d);
 			if(d.ret == 0){
 				target.removeClass('s');
 			}
@@ -338,6 +345,11 @@
     }
 
 	function bind(){
+		$('#donwFiles').bind('click',function(){
+			downFiles();
+		});
+
+		
 		$('#uploadFile').bind('hide.bs.modal',function(){
 			$('#file_uploadList').html('');
 		});
@@ -433,7 +445,7 @@
 		  		csrf_test_name:$.cookie('csrf_cookie_name')
 		  	}
 		  	$.post(MoveFile,data,function(d){
-		  		console.log(d);
+		  		//console.log(d);
 		  		if(d.ret == 0){
 		  			deleteFile( ui.draggable );		
 		  		}
@@ -491,7 +503,7 @@
 					var mark = target.prev('input').val(),
 						id = target.attr('data-id'),
 						type = target.attr('data-type');
-						console.log(id,type);
+						//console.log(id,type);
 						editMark(id,mark,type,target);
 						target.parent('span').prev('span').show();
 						target.parent('span').addClass('hide');						

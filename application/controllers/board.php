@@ -27,7 +27,11 @@ class Board extends SZone_Controller {
 		}
 
 		$data['blist'] = $blist;
-		$data['ginfo'] = $this->grouplist[$gid];
+		if(isset($this->grouplist[$gid])){
+			$data['ginfo'] = $this->grouplist[$gid];
+		}else{
+			$data['ginfo'] = array();
+		}
 
 		$this->load->view('board',$data);
 	}

@@ -192,6 +192,12 @@
 	background:#e4e3e3;
 	transition:.25s linear;
 }
+.empty{
+	font-size:18px;
+	text-align:center;
+	height:60px;
+	line-height:60px;
+}
 .dis-list-type li.empty{
 	font-size:18px;
 	text-align:center;

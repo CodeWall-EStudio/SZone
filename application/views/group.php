@@ -12,196 +12,69 @@
 </head>
 <body>
 	<?php  $this->load->view('public/header.php',$nav); ?>
+
 	<div class="container">
 		<div class="main-section">
-			<div class="tool-zone fade-in">
-				<div class="btn-zone">
-<!-- 					<input type="file" class="upload-input" id="uploadFile" /> -->
-					<button class="upload btn btn-primary btn-upload" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>上传</button>
-					<button class="btn btn-default" data-toggle="modal" data-target="#newFold" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>新建文件夹</button>
+			<?if($ingroup):?>
+				<div class="tool-zone fade-in">
+					<div class="btn-zone">
+	<!-- 					<input type="file" class="upload-input" id="uploadFile" /> -->
+						<button class="upload btn btn-primary btn-upload" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>上传</button>
+						<button class="btn btn-default" data-toggle="modal" data-target="#newFold" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>新建文件夹</button>
+					</div>
+
+					<div class="search-zone">
+						<form action="/" method="post" accept-charset="utf-8">
+						<input type="text" name="key" value="搜索文件" />
+						<button type="submit"></button>
+						</form>
+					</div>
 				</div>
-
-				<div class="search-zone">
-					<form action="/" method="post" accept-charset="utf-8">
-					<input type="text" name="key" value="搜索文件" />
-					<button type="submit"></button>
-					</form>
-				</div>
-			</div>
-			<div class="file-act-zone fade-in hide">
-				<ul class="nav nav-pills">
-					<li>
-						<a data-toggle="dropdown">共享<span class="caret"></span></a>
-						<ul id="actDropDown" class="dropdown-menu menu" role="menu" aria-labelledby="dLabel">
-							<li><a data-toggle="modal" cmd="toother" data-target="#shareWin">发送给别人</a></li>
-							<li><a data-toggle="modal" cmd="togroup" data-target="#shareWin">发送到小组</a></li>
-							<li><a data-toggle="modal" cmd="todep"  data-target="#shareWin">提交到部门</a></li>
-	<!-- 						<li><a>推优到学校</a></li> -->					
-						</ul>						
-					</li>
-					<li><a>下载</a></li>
-					<li><a cmd="coll" id="collFiles">收藏</a></li>
-					<li id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
-					<li><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制</a></li>
-					<li><a cmd="delFile" data-toggle="modal" data-target="#delFile">删除</a></li>
-					<!-- <li id="remarkAct"><a cmd="remark" data-toggle="modal" data-target="#commentFile">评论</a></li> -->
-				</ul>
-			</div>
-
-			<div class="section-tit">
-				<div class="dropdown">
-					<a data-toggle="dropdown" class="section-tit-a-first section-tit-a-border">树</a>
-					<?if(count($fold)>0):?>
-					<ul class="dropdown-menu section-tit-menu" role="menu" aria-labelledby="dLabel" id="myFileList">
-						<?foreach($fold as $row):?>
-							<li>
-								<a class="glyphicon glyphicon-plus" href="/group?gid=<?=$gid?>&fid=<?=$row['id']?>"> <?=$row['name']?></a>
-							</li>						
-						<?endforeach?>
-					</ul>				
-					<?endif?>	
-					<a class="section-tit-a-first" href="/group?id=<?=$gid?>">小组文件</a>
-					<?if($fid):?>
-						<a class="section-tit-a-second"><?=$fold[$fid]['name']?></a>
-						<a class="section-tit-a-can" href="/group?gid=<?=$gid?>&fid=<?=$fid?>">返回上级</a>
-					<?else:?>
-						<a class="section-tit-a-end">返回上级</a>
-					<?endif?>
-				</div>
-				<ul class="act-zone">
-					<li class="all-file file-type dropdown" id="changeFileType">
-						<a role="button" data-toggle="dropdown" href="#">
-							<?
-								switch($type){
-									case 0:
-										echo '全部类型';
-										break;
-									case 1:
-										echo '图片';
-										break;
-									case 2:
-										echo '文档';
-										break;
-									case 3:
-										echo '音乐';
-										break;
-									case 4:
-										echo '视频';
-										break;
-									case 5:
-										echo '应用';
-										break;
-									case 6:
-										echo '压缩包';
-										break;
-								}
-							?>
-						<b class="caret"></b></a>
-						<ul class="dropdown-menu section-tit-menu1" role="menu" aria-labelledby="dLabel">
-							<li><a data-type="0" href="/?type=0">全部</a></li>
-							<li><a data-type="2">收藏</a></li>
-							<li><a data-type="3" href="/?type=4">视频</a></li>
-							<li><a data-type="1" href="/?type=1">图片</a></li>
-							<li><a data-type="4" href="/?type=3">音乐</a></li>
-							<li><a data-type="5" href="/?type=2">文档</a></li>
-							<li><a data-type="6" href="/?type=5">应用</a></li>
-							<li><a data-type="7" href="/?type=6">压缩包</a></li>
-						</ul>						
-					</li>
-					<!--<li class="list-type" id="changeType"><i></i><span>图标</span></li>-->
-				</ul>
-
-			</div>
-			<!--dis-list-type -->
-			<div id="fileList" class="dis-list-type">
-				<ulclass="cl">
-					<?if(count($fold)>0):?>
-					<li class="tit">
-						<div class="td1"><input type="checkbox" /></div>
-						<div class="td2"><span>文件夹(<b><?=count($fold)?></b>个)</span>  名称 <i></i></div>
-						<div class="td_mark">&nbsp;</div>
-						<div class="td_uname">&nbsp;</div>
-						<div class="td_source">&nbsp;</div>
-						<div class="td_type">&nbsp;</div>
-						<div class="td_size">&nbsp;</div>
-						<div class="td_time">时间</div>	
-					</li>
-					<?endif?>
-					<?foreach($fold as $item):?>
-						<?if($item['pid'] == $fid):?>
-						<li class="fold" data-id="<?=$item['id']?>">
-							<div class="td1"><!-- <input type="checkbox" /> --></div>
-							<div class="td2">
-								<i class="fold"></i>
-								<dl>
-									<dt><a href="/group?id=<?=$gid?>&fid=<?=$item['id']?>"><?=$item['name']?></a>
-										<span cmd="edit" data-id="<?=$item['id']?>"><?=$item['mark']?></span>
-										<span class="hide">
-											<input class="name-edit" type="text" value="<?=$item['mark']?>" />
-											<i class="edit-comp" cmd="editComp" data-type="fold" data-id="<?=$item['id']?>"></i>
-											<i class="edit-close" data-value="<?=$item['mark']?>" cmd="editClose"></i>
-										</span>
-									</dt>
-									<dd>
-									<!-- 	<span>下载</span> -->
-									</dd>
-								</dl>
-							</div>
-
-							<div class="td_time"><span><?=date('Y-m-d',$item['time'])?></span> <i></i></div>							
+				<div class="file-act-zone fade-in hide">
+					<ul class="nav nav-pills">
+						<li>
+							<a data-toggle="dropdown">共享<span class="caret"></span></a>
+							<ul id="actDropDown" class="dropdown-menu menu" role="menu" aria-labelledby="dLabel">
+								<li><a data-toggle="modal" cmd="toother" data-target="#shareWin">发送给别人</a></li>
+								<li><a data-toggle="modal" cmd="togroup" data-target="#shareWin">发送到小组</a></li>
+								<li><a data-toggle="modal" cmd="todep"  data-target="#shareWin">提交到部门</a></li>
+		<!-- 						<li><a>推优到学校</a></li> -->					
+							</ul>						
 						</li>
+						<li><a cmd="downfile" id="donwFiles">下载</a></li>
+						<li><a cmd="coll" id="collFiles">收藏</a></li>
+						<li id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
+						<!--<li><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制</a></li>-->
+						<li><a cmd="delFile" data-toggle="modal" data-target="#delFile">删除</a></li>
+						<!-- <li id="remarkAct"><a cmd="remark" data-toggle="modal" data-target="#commentFile">评论</a></li> -->
+					</ul>
+				</div>
+
+				<div class="section-tit">
+					<div class="dropdown">
+						<a data-toggle="dropdown" class="section-tit-a-first section-tit-a-border">树</a>
+						<?if(count($fold)>0):?>
+						<ul class="dropdown-menu section-tit-menu" role="menu" aria-labelledby="dLabel" id="myFileList">
+							<?foreach($fold as $row):?>
+								<li>
+									<a class="glyphicon glyphicon-plus" href="/group?gid=<?=$gid?>&fid=<?=$row['id']?>"> <?=$row['name']?></a>
+								</li>						
+							<?endforeach?>
+						</ul>				
+						<?endif?>	
+						<a class="section-tit-a-first" href="/group?id=<?=$gid?>">小组文件</a>
+						<?if($fid):?>
+							<a class="section-tit-a-second"><?=$fold[$fid]['name']?></a>
+							<a class="section-tit-a-can" href="/group?gid=<?=$gid?>&fid=<?=$fid?>">返回上级</a>
+						<?else:?>
+							<a class="section-tit-a-end">返回上级</a>
 						<?endif?>
-					<?endforeach?>
-					<?if(count($file)>0):?>
-						<li class="tit file-list">
-							<div class="td1"><input type="checkbox" id="selectAllFile" /></div>
-							<div class="td2"><span>文件(<b><?=$allnum?></b>个)</span>  </div>
-							<div class="td_mark">评论</div>
-							<div class="td_uname">作者</div>
-							<div class="td_source">来源</div>
-							<div class="td_type">类型</div>
-							<div class="td_size">大小</div>
-							<div class="td_time">时间</div>							
-						</li>	
-						<?foreach($file as $item):?>
-							<li class="file" data-id="<?=$item['id']?>">
-								<div class="td1"><input type="checkbox" name="file" class="fclick" value="<?=$item['id']?>" data-type="file" /></div>
-								<div class="td2">
-									<a class="file-name" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>">
-									<?if($item['type'] == 1):?>
-										<img src="/cgi/getfile?fid=<?=$item['fid']?>" data-fid="<?=$item['fid']?>"  data-id="<?=$item['id']?>"/>
-									<?else:?>
-										<i class="fold" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>" ></i>
-									<?endif?>
-									</a>
-									<dl>
-										<dt><?=$item['name']?> 
-											<span cmd="edit" data-id="<?=$item['id']?>"><?=$item['mark']?></span>
-											<span class="hide">
-												<input class="name-edit" type="text" value="<?=$item['mark']?>" />
-												<i class="edit-comp" cmd="editComp" data-type="file" data-id="<?=$item['id']?>"></i>
-												<i class="edit-close" data-value="<?=$item['mark']?>" cmd="editClose"></i>
-											</span>
-										</dt>
-										<dd>
-											<span><a data-toggle="dropdown" href="#">共享</a>
-											<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-												<li><a data-toggle="modal" data-target="#shareWin" cmd="toother" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">发送给别人</a></li>
-												<li><a data-toggle="modal" data-target="#shareWin" cmd="togroup" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到小组空间</a></li>
-												<li><a data-toggle="modal" data-target="#shareWin" cmd="todep" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到部门空间</a></li>
-												<!-- <li><a cmd="toschool" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到学校空间</a></li>		 -->			
-											</ul>
-											</span>										
-											<span><a href="/cgi/downfile?gid=<?=$gid?>&fid=<?=$item['fid']?>">下载</a></span>
-										</dd>
-									</dl>
-								</div>
-								<div class="td_mark"><?=$item['mark']?>&nbsp;</div>
-								<div class="td_uname"><?=$item['uname']?></div>
-								<div class="td_source">&nbsp;</div>
-								<div class="td_type">
+					</div>
+					<ul class="act-zone">
+						<li class="all-file file-type dropdown" id="changeFileType">
+							<a role="button" data-toggle="dropdown" href="#">
 								<?
-									switch($item['type']){
+									switch($type){
 										case 0:
 											echo '全部类型';
 											break;
@@ -225,23 +98,160 @@
 											break;
 									}
 								?>
+							<b class="caret"></b></a>
+							<ul class="dropdown-menu section-tit-menu1" role="menu" aria-labelledby="dLabel">
+								<li><a data-type="0" href="/?type=0">全部</a></li>
+								<li><a data-type="2">收藏</a></li>
+								<li><a data-type="3" href="/?type=4">视频</a></li>
+								<li><a data-type="1" href="/?type=1">图片</a></li>
+								<li><a data-type="4" href="/?type=3">音乐</a></li>
+								<li><a data-type="5" href="/?type=2">文档</a></li>
+								<li><a data-type="6" href="/?type=5">应用</a></li>
+								<li><a data-type="7" href="/?type=6">压缩包</a></li>
+							</ul>						
+						</li>
+						<!--<li class="list-type" id="changeType"><i></i><span>图标</span></li>-->
+					</ul>
+
+				</div>
+				<!--dis-list-type -->
+				<div id="fileList" class="dis-list-type">
+					<ulclass="cl">
+						<?if(count($fold)>0):?>
+						<li class="tit">
+							<div class="td1"><input type="checkbox" /></div>
+							<div class="td2"><span>文件夹(<b><?=count($fold)?></b>个)</span>  名称 <i></i></div>
+							<div class="td_mark">&nbsp;</div>
+							<div class="td_uname">&nbsp;</div>
+							<div class="td_source">&nbsp;</div>
+							<div class="td_type">&nbsp;</div>
+							<div class="td_size">&nbsp;</div>
+							<div class="td_time">时间</div>	
+						</li>
+						<?endif?>
+						<?foreach($fold as $item):?>
+							<?if($item['pid'] == $fid):?>
+							<li class="fold" data-id="<?=$item['id']?>">
+								<div class="td1"><!-- <input type="checkbox" /> --></div>
+								<div class="td2">
+									<i class="fold"></i>
+									<dl>
+										<dt><a href="/group?id=<?=$gid?>&fid=<?=$item['id']?>"><?=$item['name']?></a>
+											<span cmd="edit" data-id="<?=$item['id']?>"><?=$item['mark']?></span>
+											<span class="hide">
+												<input class="name-edit" type="text" value="<?=$item['mark']?>" />
+												<i class="edit-comp" cmd="editComp" data-type="fold" data-id="<?=$item['id']?>"></i>
+												<i class="edit-close" data-value="<?=$item['mark']?>" cmd="editClose"></i>
+											</span>
+										</dt>
+										<dd>
+										<!-- 	<span>下载</span> -->
+										</dd>
+									</dl>
 								</div>
-								<div class="td_size"><?=$item['size']?></div>								
-								<div class="td6"><span><?=date('Y-m-d',$item['time'])?></span> <i <?if(in_array($item['id'],$coll)):?>class="s" cmd="uncoll" title="取消收藏"<?else:?>cmd="coll" title="收藏"<?endif?> data-type="file" data-id="<?=$item['id']?>"></i></div>
+
+								<div class="td_time"><span><?=date('Y-m-d',$item['time'])?></span> <i></i></div>							
 							</li>
-						<?endforeach?>	
-					<?else:?>									
-						<li class="empty">该文件夹还没有文件哦.</li>
-					<?endif?>
-					<li class="last"></li>
-				</ul>
-			</div>
-			<div class="page-zone">
-				<?
-					$page['url'] = '/group?id='.$gid.'&type='.$type.'&fid='.$fid.'&';
-					create_page($page);
-				?>
-			</div>			
+							<?endif?>
+						<?endforeach?>
+						<?if(count($file)>0):?>
+							<li class="tit file-list">
+								<div class="td1"><input type="checkbox" id="selectAllFile" /></div>
+								<div class="td2"><span>文件(<b><?=$allnum?></b>个)</span>  </div>
+								<div class="td_mark">评论</div>
+								<div class="td_uname">作者</div>
+								<div class="td_source">来源</div>
+								<div class="td_type">类型</div>
+								<div class="td_size">大小</div>
+								<div class="td_time">时间</div>							
+							</li>	
+							<?foreach($file as $item):?>
+								<li class="file" data-id="<?=$item['id']?>">
+									<div class="td1"><input type="checkbox" name="file" class="fclick" value="<?=$item['id']?>" data-type="file" /></div>
+									<div class="td2">
+										<a class="file-name" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>">
+										<?if($item['type'] == 1):?>
+											<img src="/cgi/getfile?fid=<?=$item['fid']?>" data-fid="<?=$item['fid']?>"  data-id="<?=$item['id']?>"/>
+										<?else:?>
+											<i class="fold" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>" ></i>
+										<?endif?>
+										</a>
+										<dl>
+											<dt><?=$item['name']?> 
+												<span cmd="edit" data-id="<?=$item['id']?>"><?=$item['mark']?></span>
+												<span class="hide">
+													<input class="name-edit" type="text" value="<?=$item['mark']?>" />
+													<i class="edit-comp" cmd="editComp" data-type="file" data-id="<?=$item['id']?>"></i>
+													<i class="edit-close" data-value="<?=$item['mark']?>" cmd="editClose"></i>
+												</span>
+											</dt>
+											<dd>
+												<span><a data-toggle="dropdown" href="#">共享</a>
+												<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+													<li><a data-toggle="modal" data-target="#shareWin" cmd="toother" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">发送给别人</a></li>
+													<li><a data-toggle="modal" data-target="#shareWin" cmd="togroup" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到小组空间</a></li>
+													<li><a data-toggle="modal" data-target="#shareWin" cmd="todep" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到部门空间</a></li>
+													<!-- <li><a cmd="toschool" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到学校空间</a></li>		 -->			
+												</ul>
+												</span>	
+												<?if($item['cancopy']):?>
+												<span id="copy<?=$item['fid']?>">
+													<a cmd="copy" data-fid="<?=$item['fid']?>">保存</a>
+												</span>	
+												<?endif?>								
+												<span><a href="/cgi/downfile?gid=<?=$gid?>&fid=<?=$item['fid']?>">下载</a></span>
+											</dd>
+										</dl>
+									</div>
+									<div class="td_mark"><?=$item['mark']?>&nbsp;</div>
+									<div class="td_uname"><?=$item['uname']?></div>
+									<div class="td_source">&nbsp;</div>
+									<div class="td_type">
+									<?
+										switch($item['type']){
+											case 0:
+												echo '全部类型';
+												break;
+											case 1:
+												echo '图片';
+												break;
+											case 2:
+												echo '文档';
+												break;
+											case 3:
+												echo '音乐';
+												break;
+											case 4:
+												echo '视频';
+												break;
+											case 5:
+												echo '应用';
+												break;
+											case 6:
+												echo '压缩包';
+												break;
+										}
+									?>
+									</div>
+									<div class="td_size"><?=$item['size']?></div>								
+									<div class="td6"><span><?=date('Y-m-d',$item['time'])?></span> <i <?if($item['coll']):?>class="s" cmd="uncoll" title="取消收藏"<?else:?>cmd="coll" title="收藏"<?endif?> data-type="file" data-id="<?=$item['fid']?>"></i></div>
+								</li>
+							<?endforeach?>	
+						<?else:?>									
+							<li class="empty">该文件夹还没有文件哦.</li>
+						<?endif?>
+						<li class="last"></li>
+					</ul>
+				</div>
+				<div class="page-zone">
+					<?
+						$page['url'] = '/group?id='.$gid.'&type='.$type.'&fid='.$fid.'&';
+						create_page($page);
+					?>
+				</div>	
+			<?else:?>
+				<div class="empty">你不是该组的成员,<a href="/">返回个人空间</a></div>	
+			<?endif?>
 		</div>
 		<div class="aside">
 			<h3 class="selected"><?=$ginfo['name']?></h3>
