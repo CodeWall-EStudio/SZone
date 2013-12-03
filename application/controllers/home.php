@@ -599,6 +599,18 @@ class Home extends SZone_Controller {
 		$data['page'] = $page;
 		$this->load->view('home/recy.php',$data);
 	}
+
+	public function my(){
+		$data = array(
+			'nav' => array(
+				'userinfo' => $this->user,
+				'group' => $this->grouplist,
+				'dep' => $this->deplist,
+				'school' => $this->school
+			)
+		);			
+		$this->load->view('home/index.php',$data);	
+	}
 }
 
 /* End of file welcome.php */

@@ -28,7 +28,6 @@ class SZone_Controller extends CI_Controller {
     protected function set_user()
     {
         $this->user['uid'] = intval($this->session->userdata('uid'));
-
         if ($this->user['uid'] != 0)
         {
             $this->load->model('User_model');
