@@ -24,7 +24,6 @@ define([],function(){
 				templateList[tplid] = template;
 				return template;
 			}
-			console.log(tmplPath+tplid+tmplName);
 			var startTime = new Date().getTime();
 			template = $.ajax({
 				url: tmplPath+tplid+tmplName,

@@ -22,6 +22,7 @@
 
 			$fold = array();
 			$foldlist = array();
+			$foldnum = $query->num_rows();
 			foreach($query->result() as $row){
 				if($row->id == $fid){
 					$fname = $row->name;
@@ -56,7 +57,7 @@
 
 			$query = $this->db->query($sql);
 			$file = array();
-
+			$filenum = $query->num_rows();
 			foreach($query->result() as $row){
 				$file[$row->id] = array(
 					'id' => $row->id,
@@ -73,8 +74,14 @@
 			$data = array(
 				'code' => 0,
 				'data' => array(
-					'fold' => $fold,
-					'file' => $file
+					'fold' => array(
+						'total' => $foldnum,
+						'list' => $fold
+					),
+					'file' => array(
+						'total' => $filenum,
+						'list' => $file
+ 					)
 				)
 			);
 

@@ -31,7 +31,6 @@ define(['util','templateManager'],function($u,$tm){
 			this.append = options.append || false;
 		},
 		createPanel : function(){
-			console.log(this);
 			this.before.call(this);
 
 			var opts = {
@@ -151,8 +150,6 @@ define(['util','templateManager'],function($u,$tm){
 	function renderPanel(target,tplid,data, append){
 		var template = $tm.get(tplid);
 		var html = $u.template(template,data);
-
-		console.log(template,html);
 
 		if(append) return target.append(html);
 		return target.html(html);

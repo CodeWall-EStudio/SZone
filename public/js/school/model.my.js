@@ -10,7 +10,6 @@ define(['config','util','request'],function(config,util,request){
 			data : {}
 		};
 		var suc = function(d){
-			console.log(d);
 			if(d.code == 0){
 				handerObj.triggerHandler("myspace:filelist",d.data);
 			}
