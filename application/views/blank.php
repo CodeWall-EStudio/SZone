@@ -143,7 +143,7 @@
 						<button type="button" class="btn btn-default" id="btnUpload">选择文件</button>
 						<button type="button" class="btn btn-primary" id="btnStartUload">上传</button>
 					</div>
-					<input type="hidden" class="foldid" value="<?=$fid?>" />
+					<input type="hidden" class="foldid" value="" />
 					<div id="file_uploadList"></div>
 				</div>
 			</div>
@@ -272,7 +272,7 @@
 					<div class="modal-body">
 						
 							<label>文件夹名称：</label><input id="foldname" name="foldname" type="text" style="width:80%" />
-							<input type="hidden" class="parentid" name="parentid" value="<?=$fid?>" />
+							<input type="hidden" class="parentid" name="parentid" value="" />
 						
 					</div>
 					<div class="modal-footer">

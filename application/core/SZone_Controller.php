@@ -145,7 +145,10 @@ class SZone_Controller extends CI_Controller {
         $result = array(
             'code' => $code,
             'msg' => $this->lang->line($msg),
-            'data' => $data
+            'elapsed_time' => '{elapsed_time}',
+            'memory_usage' => '{memory_usage}',
+            'data' => $data,
+            'profiler' => '{profiler}'
         );
         if ($code != '200')
         {
@@ -157,7 +160,7 @@ class SZone_Controller extends CI_Controller {
         }
         $this->output
             ->set_content_type('application/json')
-            ->set_output(json_encode($result));
+            ->set_output($result);
     }
 
 }
