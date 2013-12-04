@@ -3,19 +3,12 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013-11-20 14:59:26
+-- 生成日期: 2013-12-04 19:54:43
 -- 服务器版本: 5.6.14
 -- PHP 版本: 5.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 --
 -- 数据库: `szone`
@@ -98,6 +91,10 @@ CREATE TABLE IF NOT EXISTS `groupfile` (
   `uid` int(8) NOT NULL COMMENT '来源用户id',
   `fgid` int(8) NOT NULL DEFAULT '0' COMMENT ' 来源分组',
   `status` tinyint(2) NOT NULL DEFAULT '0' COMMENT '0 上传 1 分享',
+  `tag` varchar(200) DEFAULT NULL COMMENT '审核评语',
+  `rtag` int(1) DEFAULT '0' COMMENT '0 通过 1 不通过',
+  `ttime` int(12) DEFAULT '0' COMMENT '审核时间',
+  `ruid` int(8) DEFAULT '0' COMMENT '审核人的uid',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=1 ;
 
@@ -135,6 +132,7 @@ CREATE TABLE IF NOT EXISTS `groups` (
   `type` int(2) NOT NULL COMMENT '类型 0 系统 1 小组 2 部门 3 备课',
   `parent` int(8) NOT NULL COMMENT '父id 只对小组有效?',
   `create` int(8) DEFAULT NULL COMMENT '创建人id',
+  `status` int(1) DEFAULT '0' COMMENT '是否为新申请',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
@@ -232,15 +230,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `name` varchar(40) NOT NULL COMMENT '用户名',
   `nick` varchar(60) DEFAULT NULL COMMENT '昵称',
   `auth` tinyint(2) unsigned zerofill NOT NULL COMMENT '权限 0x0 普通 0x1 小组管理员 0x2 部门管理员 0x4 管理员 0x8 系统管理员',
-  `size` int(8) unsigned zerofill NOT NULL DEFAULT '00000000' COMMENT '用户总空间',
+  `size` float unsigned zerofill NOT NULL DEFAULT '003000000000' COMMENT '用户总空间',
   `used` float unsigned zerofill NOT NULL DEFAULT '000000000000' COMMENT '用户已用空间',
   `pwd` varchar(60) DEFAULT NULL COMMENT '登录管理后台的密码',
   `access` varchar(64) NOT NULL COMMENT 'access token',
   `openid` varchar(64) DEFAULT NULL COMMENT 'openid',
   `update-time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `lastgroup` int(8) DEFAULT NULL COMMENT '最后一次访问的小组名',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -256,6 +253,8 @@ CREATE TABLE IF NOT EXISTS `usercollection` (
   `fid` int(8) NOT NULL COMMENT '文件id',
   `remark` varchar(120) DEFAULT NULL COMMENT '备注',
   `time` int(12) NOT NULL COMMENT '收藏时间',
+  `tid` int(8) DEFAULT '0' COMMENT '收藏他人或者小组id',
+  `type` int(1) DEFAULT '0' COMMENT '0 自己 1他人 2 小组',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT AUTO_INCREMENT=1 ;
 
@@ -275,6 +274,9 @@ CREATE TABLE IF NOT EXISTS `userfile` (
   `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `content` varchar(255) DEFAULT NULL COMMENT '文件说明',
   `del` int(2) unsigned zerofill DEFAULT NULL COMMENT '是否被逻辑删除',
+  `tag` varchar(200) DEFAULT NULL COMMENT '审核评语',
+  `rtag` int(1) DEFAULT NULL COMMENT '0通过 1不通过',
+  `ttime` int(12) DEFAULT '0' COMMENT '审核时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
