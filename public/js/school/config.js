@@ -46,6 +46,7 @@ define(function(){
 		'foldlist' : '/folder/index',
 		'search' : '/file/search',
 		'coll' : '/file/collect',
+		'uncoll' : '/file/uncollect',
 		'share' : '/file/share',
 		'usersearch' : '/user/search',
 		'groupsearch' : '/group/search',

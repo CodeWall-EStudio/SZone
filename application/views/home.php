@@ -66,7 +66,7 @@
 					<?foreach($fold as $item):?>
 						<?if($item['pid'] == $fid):?>
 						<li class="fold" data-id="<?=$item['id']?>">
-							<div class="td1"><!-- <input type="checkbox" /> --></div>
+							<div class="td1"><input type="checkbox" name="fold" class="fdclick" value="<?=$item['id']?>" data-type="fold" /></div>
 							<div class="td2">
 								<i class="fold"></i>
 								<dl>

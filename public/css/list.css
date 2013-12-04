@@ -51,7 +51,7 @@
 	float:left;
 }
 .dis-list-type .td_time{
-	width:90px;
+	width:110px;
 	line-height:60px;	
 	float:right;
 }
@@ -180,7 +180,7 @@
 .dis-ico-type .td2 i.down,.dis-ico-type .td2 i.more{
 	margin-left:3px;
 }
-.dis-list-type .td6 i{
+.dis-list-type .td6 i,.dis-list-type .td_time i{
 	cursor:pointer;
 	display:inline-block;
 	position:absolute;
@@ -190,7 +190,7 @@
 	height:15px;
 	background:url(imgs/star.png) no-repeat;
 }
-.dis-list-type .td6 i.s{
+.dis-list-type .td6 i.s,.dis-list-type .td_time i.s{
 	height:16px;
 	background:url(imgs/star1.png) no-repeat;
 }

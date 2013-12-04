@@ -10,6 +10,7 @@ define(['config','util','request'],function(config,util,request){
 			data : {}
 		};
 		var suc = function(d){
+			console.log(d);
 			if(d.code == 0){
 				handerObj.triggerHandler("myspace:filelist",d.data);
 			}
@@ -36,18 +37,59 @@ define(['config','util','request'],function(config,util,request){
 		getFold();
 	}
 
-	function del(){
+	function delFile(e,d){
 
 	}
 
-	function rename(){
+	function renameFile(e,d){
 
 	}
+
+	//收藏文件
+	function collFile(e,d){
+		console.log(d);
+		var opt = {
+			cgi : config.coll,
+			method : 'POST'
+		}
+		var suc = function(ret){
+			if(ret.code == 0){
+				handerObj.triggerHandler("myspace:collSuc",d);	
+			}
+		}
+		request(opt,suc);
+	}
+	//取消收藏
+	function uncollFile(e,d){
+		var opt = {
+			cgi : config.uncoll,
+			method : 'POST',
+			data : d
+		}
+		var suc = function(ret){
+			if(ret.code == 0){
+				handerObj.triggerHandler("myspace:uncollSuc",d);	
+			}
+		}
+		request(opt,suc);
+	}	
+	//分享文件
+	function shareFile(e,d){
+
+	}
+	//搜索用户
+	function getUser(e,d){
+
+	}	
 
 	var handlers = {
 		"myspace:init" : init,
-		"myspace:del" : del,
-		"myspace:rename" : rename
+		"myspace:renameFile" : renameFile,
+		"myspace:collFile" : collFile,
+		"myspace:uncollFile" : uncollFile,
+		"myspace:delFile" : delFile,
+		"myspace:shareFile" : shareFile,
+		"myspace:getuser" : getUser
 	}
 
 
