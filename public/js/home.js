@@ -25,7 +25,7 @@
 			 	if(value != ''){
 			 		////console.log(value);
 			 		$.post('/cgi/addfold',{name: value,pid: pid,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
-			 			if(d.ret==0){
+			 			if(d.code==0){
 			 				$("#newFold .close").click();
 			 				window.location.reload();
 			 			}else{
@@ -54,13 +54,19 @@
             }
         },
         submitHandler : function(form) {
+        	var type = parseInt($('#reName .type').val());
         	var data = {
         		fname : $('#reName .foldname').val(),
         		fid : $('#reName .fid').val(),
         		csrf_test_name:$.cookie('csrf_cookie_name')
         	}
-        	$.post('/cgi/renamefile',data,function(d){
-	 			if(d.ret==0){
+        	if(type){
+        		url = '/cgi/renamefold';
+        	}else{
+        		url = '/cgi/renamefile';
+        	}
+        	$.post(url,data,function(d){
+	 			if(d.code==0){
 	 				$("#renameFile .close").click();
 	 				window.location.reload();
 	 			}else{
@@ -93,7 +99,7 @@
         		csrf_test_name:$.cookie('csrf_cookie_name')
         	}
         	$.post('/cgi/add_file_comment',data,function(d){
-	 			if(d.ret==0){
+	 			if(d.code==0){
 	 				$("#remarkFile .close").click();
 	 				window.location.reload();
 	 			}else{
@@ -104,104 +110,6 @@
             return false;
         }
     });   
-
-	// $("#uploader").pluploadQueue({
-	// 	// General settings
-	// 	runtimes : 'html5,flash,silverlight,html4',
-	// 	url : '/cgi/upload',
-	// 	chunk_size: '1mb',
-	// 	rename : true,
-	// 	dragdrop: true,
-
-	// 	file_data_name: 'file',
-	// 	filters : {
-	// 		// Maximum file size
-	// 		max_file_size : '500mb',
-	// 		// Specify what files to browse for
-	// 		mime_types: [
-	// 			{title : "图片", extensions : "jpg,gif,png"},
-	// 			{title : "文档", extensions : "doc,txt"},
-	// 			{title : "音乐", extensions : "mid,mp3"},
-	// 			{title : "视频", extensions : "avi,mp4"},
-	// 			{title : "应用", extensions : "exe"},
-	// 			{title : "压缩文件", extensions : "zip"}
-	// 			// {title : "文本", extensions : "txt"},
-	// 		]
-	// 	},
-
-	// 	// Resize images on clientside if we can
-	// 	//resize : {width : 320, height : 240, quality : 90},
-
-	// 	flash_swf_url : '../../js/Moxie.swf',
-	// 	silverlight_xap_url : '../../js/Moxie.xap'
-	// });
-
-	// var uploader = new plupload.Uploader({
-	// 	runtimes : 'html5,flash,silverlight,html4',
-	// 	browse_button : 'btnUpload', // you can pass in id...
-	// 	container: document.getElementById('uploadContainer'), // ... or DOM Element itself
-	// 	url : '/cgi/upload?csrf_test_name='+$.cookie('csrf_cookie_name'),
-	// 	unique_names : true,
-	// 	flash_swf_url : '/js/lib/Moxie.swf',
-	// 	silverlight_xap_url : '/js/lib/Moxie.xap',
-		
-	// 	filters : {
-	// 		max_file_size : '500mb',
-	// 		mime_types: [
-	// 			{title : "图片", extensions : "jpg,gif,png"},
-	// 			{title : "文档", extensions : "doc,txt"},
-	// 			{title : "音乐", extensions : "mid,mp3"},
-	// 			{title : "视频", extensions : "avi,mp4"},
-	// 			{title : "应用", extensions : "exe"},
-	// 			{title : "压缩文件", extensions : "zip"}
-	// 			// {title : "文本", extensions : "txt"},
-	// 			// {title : "word文档", extensions : "doc"}
-	// 		]
-	// 	},
-
-	// 	init: {
-	// 		PostInit: function() {
-	// 			$('#file_uploadList').html('');
-	// 			//document.getElementById('file_uploadList').innerHTML = '';
-	// 			$('#btnStartUload').bind('click',function(){
-	// 				//uploader.settings.url = '';
-	// 				var fid = $('#uploadFile .foldid').val();
-	// 				if(fid){
-	// 					uploader.settings.url = '/cgi/upload?fid='+fid+'&csrf_test_name='+$.cookie('csrf_cookie_name');
-	// 				}
-	// 				uploader.start();
-	// 			});
-	// 		},
-	// 		FilesAdded: function(up, files) {
-	// 			//console.log(plupload);
-	// 			plupload.each(files, function(file) {
-	// 				$('#file_uploadList').append('<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>');
-
-	// 			});
-	// 		},
-	// 		UploadComplete : function(up,file){
-	// 			//console.log('comp',up,file)
-	// 		},
-	// 		UploadProgress: function(up, file) {
-	// 			document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
-	// 		},
-	// 		FileUploaded: function(e,file){
-	// 			////console.log(e,file);
-	// 			//window.location.reload();
-	// 		},
-	// 		Error: function(up, err) {
-	// 			//console.log(up,err);
-	// 			//document.getElementById('console').innerHTML += "\nError #" + err.code + ": " + err.message;
-	// 		}
-	// 	}
-	// });
-
-	// uploader.bind('StateChanged', function () {
-	// 	//console.log(uploader.total.uploaded +'  '+ uploader.total.failed);
-
-	// });
-
-	// uploader.init();
 
 	var showShare = function(id,cmd){
 		var il = [],
@@ -256,7 +164,7 @@
 		}
 
 		$.post(EditMark,data,function(d){
-			if(d.ret == 0){
+			if(d.code == 0){
 				target.parent('span').prev('span').text(d.info);
 			}else{
 				//console.log(d.msg);
@@ -274,7 +182,7 @@
 		id = il.join(',');
 		console.log(id);
 		$.post(AddColl,{id:id,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
-			if(d.ret == 0){
+			if(d.code == 0){
 				//target.parent('span').prev('span').text(d.info);
 				window.location.reload();
 			}else{
@@ -295,7 +203,7 @@
 		}
 		$.post(AddColl,data,function(d){
 			//console.log(d);
-			if(d.ret == 0){
+			if(d.code == 0){
 				target.addClass('s');
 			}
 		});
@@ -308,7 +216,7 @@
 		}
 		$.post(UnColl,data,function(d){
 			//console.log(d);
-			if(d.ret == 0){
+			if(d.code == 0){
 				target.removeClass('s');
 			}
 		});		
@@ -327,7 +235,7 @@
 
     var toSchool = function(id){
     	$.post('/cgi/to_school',{id:id},function(d){
-    		if(d.ret== 0){
+    		if(d.code== 0){
 				alert('复制成功');
     		}else{
     			alert('复制失败');
@@ -338,6 +246,13 @@
     //显示或者隐藏重命名和评论
     var checkAct = function(){
     	var l = $('#fileList .fclick:checked').length;
+    	$('#fileList .fdclick:checked').each(function(){
+    		$(this).attr('checked',false);
+    	});
+	    	$('#fileActZone .sharefile').show();
+	    	$('#fileActZone .downfile').show();
+	    	$('#fileActZone .collfile').show();    		
+	    	$('#fileActZone .copyfile').show();     	
     	if(l==0){
 			$('.tool-zone').removeClass('hide');
 			$('.file-act-zone').addClass('hide');
@@ -354,6 +269,33 @@
     	}
     }
 
+
+    //显示或者隐藏重命名和评论
+    var checkFoldAct = function(){
+    	var l = $('#fileList .fdclick:checked').length;
+    	$('#fileList .fclick:checked').each(function(){
+    		$(this).attr('checked',false);
+    	});   	
+    	if(l==0){
+			$('.tool-zone').removeClass('hide');
+			$('.file-act-zone').addClass('hide');
+    	}else{
+	    	$('#fileActZone .sharefile').hide();
+	    	$('#fileActZone .downfile').hide();
+	    	$('#fileActZone .collfile').hide();    		
+	    	$('#fileActZone .copyfile').hide(); 
+			$('.tool-zone').addClass('hide');
+			$('.file-act-zone').removeClass('hide');
+    		if(l>1){
+	    		$('#renameAct').addClass('hide');
+	    		$('#remarkAct').addClass('hide');
+    		}else{
+	    		$('#renameAct').removeClass('hide');
+	    		$('#remarkAct').removeClass('hide');
+    		}
+    	}
+    }    
+
 	function bind(){
 		$('#donwFiles').bind('click',function(){
 			downFiles();
@@ -365,12 +307,27 @@
 		});
 
 		$("#delFile").bind('show.bs.modal',function(){
-			var id = []
-			$('#fileList .fclick:checked').each(function(e){
-				var item = files[$(this).val()];
-				id.push(item.id);
-				$('#delFile .filelist').append('<li>'+item.name+'</li>');
-			});
+			var id = [];
+			if($('#fileList .fclick:checked').length > 0){
+				$('#fileList .fclick:checked').each(function(e){
+					var item = files[$(this).val()];
+					id.push(item.id);
+					$('#delFile .filelist').append('<li>'+item.name+'</li>');
+				});
+
+				$('#delFile .modal-title').text('删除文件');
+				$('#delFile .modal-body span').text('将要删除文件:');
+				$('#delFile').attr('data-type','file');
+			}else{
+				$('#fileList .fdclick:checked').each(function(e){
+					var item = folds[$(this).val()];
+					id.push(item.id);
+					$('#delFile .filelist').append('<li>'+item.name+'</li>');
+				});	
+				$('#delFile .modal-title').text('删除文件夹');	
+				$('#delFile .modal-body span').text('将要删除文件夹:');		
+				$('#delFile').attr('data-type','fold');
+			}
 			$('#delFile .fid').val(id.join(','));
 		});
 
@@ -381,21 +338,34 @@
 
 		$("#delFile .btn-del").bind('click',function(){
 			var id = $('#delFile .fid').val();
-			$.post('/cgi/del_file?type=0',{id: id,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
-	 			if(d.ret==0){
-	 				$("#delFile .close").click();
+			var type = $('#delFile').attr("data-type");
+			var url;
+			if(type == 'file'){
+				url = '/cgi/del_file?type=0';
+			}else{
+				url = '/cgi/del_fold?type=0'
+			}
+
+			$.post(url,{id: id,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
+				$("#delFile .close").click();
+	 			if(d.code==0){
 	 				window.location.reload();
 	 			}else{
 	 				alert(d.msg);
 	 			}
-	 			$("#delFile .close").click();
 			});
 		});
 
 		$('#renameFile').bind('show.bs.modal',function(){
 			var item = files[$('#fileList .fclick:checked').val()];
+			if(!item){
+				item = folds[$('#fileList .fdclick:checked').val()];
+				$('#renameFile .type').val(1);
+			}else{
+				$('#renameFile .type').val(0);
+			}
+			$('#renameFile .fid').val(item.id);	
 			$('#renameFile .foldname').val(item.name);
-			$('#renameFile .fid').val(item.id);
 		});
 
 		$('#commentFile').bind('show.bs.modal',function(){
@@ -415,6 +385,18 @@
 				});
 			}
 		});
+
+		$("#selectAllFold").bind('click',function(){
+			if($(this)[0].checked){
+				$('#fileList .fdclick:not(:checked)').each(function(){
+					$(this).click();
+				});
+			}else{
+				$('#fileList .fdclick:checked').each(function(){
+					$(this).attr('checked',false);
+				});
+			}
+		});		
 
 		$('.file-act-zone a').bind('click',function(e){
 			var target = $(e.target),
@@ -457,7 +439,7 @@
 		  	}
 		  	$.post(MoveFile,data,function(d){
 		  		//console.log(d);
-		  		if(d.ret == 0){
+		  		if(d.code == 0){
 		  			deleteFile( ui.draggable );		
 		  		}
 		  	});
@@ -469,14 +451,11 @@
 		});
 
 		$("#fileList input").click(function(e){
-			// if($(e.target).is(":checked")){
-			// 	$('.tool-zone').addClass('hide');
-			// 	$('.file-act-zone').removeClass('hide');
-			// }else{
-			// 	$('.tool-zone').removeClass('hide');
-			// 	$('.file-act-zone').addClass('hide');	
-			// }
-			checkAct();
+			if($(e.target).attr('class') == 'fclick'){
+				checkAct();
+			}else{
+				checkFoldAct();
+			}
 		})
 
 		$('#collFiles').bind('click',collFiles);

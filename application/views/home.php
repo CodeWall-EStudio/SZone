@@ -28,9 +28,9 @@
 					</form>
 				</div>
 			</div>
-			<div class="file-act-zone fade-in hide">
+			<div class="file-act-zone fade-in hide" id="fileActZone">
 				<ul class="nav nav-pills">
-					<li>
+					<li class="sharefile">
 						<a data-toggle="dropdown">共享<span class="caret"></span></a>
 						<ul id="actDropDown" class="dropdown-menu menu" role="menu" aria-labelledby="dLabel">
 							<li><a data-toggle="modal" cmd="toother" data-target="#shareWin">发送给别人</a></li>
@@ -39,11 +39,11 @@
 	<!-- 						<li><a>推优到学校</a></li> -->					
 						</ul>						
 					</li>
-					<li><a cmd="downfile" id="donwFiles">下载</a></li>
-					<li><a cmd="coll" id="collFiles">收藏</a></li>
-					<li id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
-					<li><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制</a></li>
-					<li><a cmd="delFile" data-toggle="modal" data-target="#delFile">删除</a></li>
+					<li class="downfile"><a cmd="downfile" id="donwFiles">下载</a></li>
+					<li class="collfile"><a cmd="coll" id="collFiles">收藏</a></li>
+					<li class="renamefile" id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
+					<li class="copyfile"><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制</a></li>
+					<li class="delfile"><a cmd="delFile" data-toggle="modal" data-target="#delFile">删除</a></li>
 					<!-- <li id="remarkAct"><a cmd="remark" data-toggle="modal" data-target="#commentFile">评论</a></li> -->
 				</ul>
 			</div>
@@ -57,10 +57,14 @@
 				<ul class="cl">
 					<?if($foldnum):?>
 					<li class="tit">
-						<div class="td1"><input type="checkbox" /></div>
+						<div class="td1"><input type="checkbox" id="selectAllFold" /></div>
 						<div class="td2"><span>文件夹(<b><?=$foldnum?></b>个)</span>  名称 <i></i></div>
-						<div class="td3"></div>
-						<div class="td6">时间</div>
+						<div class="td_mark">&nbsp;</div>
+						<div class="td_uname">&nbsp;</div>
+						<div class="td_source">&nbsp;</div>
+						<div class="td_type">&nbsp;</div>
+						<div class="td_size">&nbsp;</div>
+						<div class="td_time">时间</div>	
 					</li>
 					<?endif?>
 					<?foreach($fold as $item):?>
@@ -83,10 +87,12 @@
 									</dd>
 								</dl>
 							</div>
-							<div class="td3">&nbsp;</div>
-							<div class="td4">&nbsp;</div>
-							<div class="td5">&nbsp;</div>							
-							<div class="td6"><span><?=$item['time']?></span> <i></i></div>
+							<div class="td_mark">&nbsp;</div>
+							<div class="td_uname">&nbsp;</div>
+							<div class="td_source">&nbsp;</div>
+							<div class="td_type">&nbsp;</div>
+							<div class="td_size">&nbsp;</div>							
+							<div class="td_time"><span><?=$item['time']?></span> </div>
 						</li>
 						<?endif?>
 					<?endforeach?>
@@ -94,6 +100,9 @@
 						<li class="tit file-list">
 							<div class="td1"><input type="checkbox" id="selectAllFile" /></div>
 							<div class="td2"><span>文件(<b><?=$allnum?></b>个)</span>  </div>
+							<div class="td_mark">&nbsp;</div>
+							<div class="td_uname">&nbsp;</div>
+							<div class="td_source">&nbsp;</div>						
 							<div class="td_type">类型</div>
 							<div class="td_size">大小</div>
 							<div class="td_time">时间</div>								
@@ -131,6 +140,9 @@
 										</dd>
 									</dl>
 								</div>
+								<div class="td_mark">&nbsp;</div>
+								<div class="td_uname">&nbsp;</div>
+								<div class="td_source">&nbsp;</div>									
 								<div class="td_type">
 								<?
 									switch($item['type']){
@@ -221,7 +233,7 @@
 					<h4 class="modal-title">删除文件</h4>
 				</div>
 				<div class="modal-body">
-					将要删除文件:
+					<span>将要删除文件:</span>
 					<ul class="filelist"></ul>
 					<input class="fid" type="hidden" value="" />
 				</div>
@@ -299,6 +311,7 @@
 				<div class="modal-body">
 					<label>文件名称：</label><input class="foldname" name="fname" type="text" style="width:80%" />
 					<input type="hidden" class="fid" />
+					<input type="hidden" class="type" value="0" />
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>

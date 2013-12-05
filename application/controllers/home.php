@@ -62,7 +62,11 @@ class Home extends SZone_Controller {
 				$fname = $row->name;
 				$pid = $row->pid;
 			}
-			if($row->pid > 0 && $row->pid == $fid){
+			if($fid){
+				if($row->pid > 0 && $row->pid == $fid){
+					$foldnum++;
+				}
+			}else{
 				$foldnum++;
 			}
 			if($row->pid == 0){

@@ -63,11 +63,13 @@ class Cgi extends SZone_Controller {
 					'ret' => 0,
 					'msg' => '插入成功!'
 				);
+				$this->json($list,0,'插入成功!');
 			}else{
 				$list = array(
 					'ret' => 2,
 					'msg' => '插入失败!'
 				);
+				$this->json($list,100,'插入失败!');
 			}
 			//echo $str;
 		}else{
@@ -75,10 +77,11 @@ class Cgi extends SZone_Controller {
 				'ret' => 1,
 				'msg' => '已经有记录了!'
 			);
+			$this->json($list,103,'已经有记录了!');
 		}
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($list));		
+		// $this->output
+		//     ->set_content_type('application/json')
+		//     ->set_output(json_encode($list));		
 	}
 
     public function gupload(){
@@ -120,16 +123,18 @@ class Cgi extends SZone_Controller {
         $this->load->library('szupload', $config);
 
         if ( ! $this->szupload->do_upload($field_name)){
-            $list = array(
+            $ret = array(
                 'jsonrpc' => '2.0',
                 'error' => array(
                     'code' => 100,
                     'message' => '上传失败'
                 ),
             );
-            $this->output
-                ->set_content_type('application/json')
-                ->set_output(json_encode($list));
+            $this->json($ret,100,'上传失败');
+            return;
+            // $this->output
+            //     ->set_content_type('application/json')
+            //     ->set_output(json_encode($list));
         }else{
 
             $sql = 'select size,used from user where id='.(int) $this->user['uid'];
@@ -177,10 +182,10 @@ class Cgi extends SZone_Controller {
                         'ret' => 103,
                         'msg' => '空间已经用完!'
                     );
-
-                    $this->output
-                        ->set_content_type('application/json')
-                        ->set_output(json_encode($ret));
+                    $this->json($ret,103,'空间已经用完!');
+                    // $this->output
+                    //     ->set_content_type('application/json')
+                    //     ->set_output(json_encode($ret));
                     return;
                 }
 
@@ -205,17 +210,19 @@ class Cgi extends SZone_Controller {
             $sql = $this->db->insert_string('groupfile',$gd);
             $query = $this->db->query($sql);
             if($this->db->affected_rows() == 0){
-                $list = array(
+                $ret = array(
                     'jsonrpc' => '2.0',
                     'error' => array(
                         'code' => 102,
                         'message' => '上传失败!'
                     )
                 );
-                $this->output
-                    ->set_content_type('application/json')
-                    ->set_output(json_encode($list));
+                $this->json($ret,103,'空间已经用完!');
                 return;
+                // $this->output
+                //     ->set_content_type('application/json')
+                //     ->set_output(json_encode($list));
+                // return;
             }
 
 
@@ -223,17 +230,15 @@ class Cgi extends SZone_Controller {
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0){
                 $row = $query->row();
-                    $list = array(
+                    $ret = array(
                         'jsonrpc' => '2.0',
                         'error' => array(
                             'code' => 0,
                             'message' => '上传成功!'
                         )
                     );
-                $this->output
-                    ->set_content_type('application/json')
-                    ->set_output(json_encode($list));
-                return false;
+                $this->json($ret,0,'上传成功!');
+                return;
             }
 
             $data = array(
@@ -253,35 +258,41 @@ class Cgi extends SZone_Controller {
                 $sql = $this->db->update_string('user',$data,' id='.(int) $this->user['uid']);
                 $query = $this->db->query($sql);
                 if($this->db->affected_rows() > 0){
-                    $list = array(
+                    $ret = array(
                         'jsonrpc' => '2.0',
                         'error' => array(
                             'code' => 0,
                             'message' => '上传成功!'
                         )
                     );
+	                $this->json($ret,0,'上传成功!');
+	                return;                    
                 }else{
-                    $list = array(
+                    $ret = array(
                         'jsonrpc' => '2.0',
                         'error' => array(
                             'code' => 102,
                             'message' => '上传失败!'
                         )
                     );
+	                $this->json($ret,102,'上传失败!');
+	                return;                      
                 }
 
             }else{
-                $list = array(
+                $ret = array(
                     'jsonrpc' => '2.0',
                     'error' => array(
                         'code' => 102,
                         'message' => '上传失败!'
                     )
                 );
+	                $this->json($ret,102,'上传失败!');
+	                return;                                     
             }
-            $this->output
-                ->set_content_type('application/json')
-                ->set_output(json_encode($list));
+            // $this->output
+            //     ->set_content_type('application/json')
+            //     ->set_output(json_encode($list));
         }
     }
 
@@ -325,16 +336,18 @@ class Cgi extends SZone_Controller {
 
 		//if ( ! $this->upload->do_upload($field_name)){
 		if ( ! $this->szupload->do_upload($field_name)){			
-			$list = array(
+			$ret = array(
 				'jsonrpc' => '2.0',
 				'error' => array(
 					'code' => 100,
 					'message' => '上传失败'
 				),
 			);
-			$this->output
-			    ->set_content_type('application/json')
-			    ->set_output(json_encode($list));			
+			$this->json($ret,100,'上传失败');
+			return;
+			// $this->output
+			//     ->set_content_type('application/json')
+			//     ->set_output(json_encode($list));			
 		}else{
 
             $sql = 'select size,used from user where id='.(int) $this->user['uid'];
@@ -382,9 +395,7 @@ class Cgi extends SZone_Controller {
 						'msg' => '空间已经用完!'
 					);
 
-					$this->output
-					    ->set_content_type('application/json')
-					    ->set_output(json_encode($ret));						
+					$this->json($ret,103,'空间已经用完!');
 					return;
 				}
 
@@ -400,7 +411,7 @@ class Cgi extends SZone_Controller {
 			$query = $this->db->query($sql);
 			if ($query->num_rows() > 0){
 				$row = $query->row();
-				$list = array(
+				$ret = array(
 					'jsonrpc' => '2.0',
 					'error' => array(
 						'code' => 101,
@@ -408,10 +419,8 @@ class Cgi extends SZone_Controller {
 					),
 					'id' => $row->id
 				);
-				$this->output
-				    ->set_content_type('application/json')
-				    ->set_output(json_encode($list));				
-				return false;
+					$this->json($ret,101,'上传失败,已经有重名文件!');
+					return;
 			}
 
 			$data = array(
@@ -431,35 +440,41 @@ class Cgi extends SZone_Controller {
 				$sql = $this->db->update_string('user',$data,' id='.(int) $this->user['uid']);
 				$query = $this->db->query($sql);
 				if($this->db->affected_rows() > 0){
-					$list = array(
+					$ret = array(
 						'jsonrpc' => '2.0',
 						'error' => array(
 							'code' => 0,
 							'message' => '上传成功!'
 						)
 					);
+					$this->json($ret,101,'上传失败,已经有重名文件!');
+					return;					
 				}else{
-					$list = array(
+					$ret = array(
 						'jsonrpc' => '2.0',
 						'error' => array(
 							'code' => 102,
 							'message' => '上传失败!'
 						)
 					);
+					$this->json($ret,102,'上传失败!');
+					return;
 				}
 							
 			}else{
-				$list = array(
+				$ret = array(
 					'jsonrpc' => '2.0',
 					'error' => array(
 						'code' => 102,
 						'message' => '上传失败!'
 					)
 				);
+					$this->json($ret,102,'上传失败!');
+					return;				
 			}
-			$this->output
-			    ->set_content_type('application/json')
-			    ->set_output(json_encode($list));							
+			// $this->output
+			//     ->set_content_type('application/json')
+			//     ->set_output(json_encode($list));							
 		}
 	}
 
@@ -483,55 +498,6 @@ class Cgi extends SZone_Controller {
         }
 
         return $dirname;
-
-		//$filenum = $this->config->item("dir-file-num");
-
-		/*$map = directory_map($dirname);
-		if(count($map) == 0){
-            $dirname .= '/'.count($map);
-			mkdir($dirname,DIR_WRITE_MODE);
-			return $dirname;
-			//return $nowdir.'\\'.count($map);
-		}else{
-            $dirname .= '/'.(count($map)-1);
-			$map = directory_map($dirname,1);
-			if($this->db->affected_rows() > 0){
-				$data = array(
-					'used' => $used
-				);
-				$sql = $this->db->update_string('user',$data,' id='.(int) $this->user['uid']);
-				$query = $this->db->query($sql);
-				if($this->db->affected_rows() > 0){
-					$list = array(
-						'jsonrpc' => '2.0',
-						'error' => array(
-							'code' => 0,
-							'message' => '上传成功!'
-						)
-					);
-				}else{
-					$list = array(
-						'jsonrpc' => '2.0',
-						'error' => array(
-							'code' => 102,
-							'message' => '上传失败!'
-						)
-					);
-				}
-							
-			}else{
-				$list = array(
-					'jsonrpc' => '2.0',
-					'error' => array(
-						'code' => 102,
-						'message' => '上传失败!'
-					)
-				);
-			}
-			$this->output
-			    ->set_content_type('application/json')
-			    ->set_output(json_encode($list));							
-		}*/
 	}	
 
 	//修改备注
@@ -568,16 +534,17 @@ class Cgi extends SZone_Controller {
 					'info' => $info,
 					'msg' => '修改成功!'
 				);
+					$this->json($ret,0,'修改成功!');
+					return;				
 			}else{
 				$ret = array(
 					'ret' => 102,
 					'msg' => '修改失败!'
 				);
+					$this->json($ret,102,'修改失败!');
+					return;				
 			}
 		}
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));
 	}
 
 	//移动文件
@@ -596,15 +563,19 @@ class Cgi extends SZone_Controller {
 				'ret' => 0,
 				'msg' => '更新成功!'
 			);
+					$this->json($ret,0,'更新成功!');
+					return;				
 		}else{
 			$ret = array(
 				'ret' => 100,
 				'msg' => '更新失败!'
 			);
+					$this->json($ret,100,'更新失败!');
+					return;				
 		}
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));
+		// $this->output
+		//     ->set_content_type('application/json')
+		//     ->set_output(json_encode($ret));
 	}
 
 	//收藏文件
@@ -649,17 +620,17 @@ class Cgi extends SZone_Controller {
 				'id' => $this->db->insert_id(),
 				'msg' => '收藏成功!'
 			);
+					$this->json($ret,0,'收藏成功!');
+					return;				
 		}else{
 			$ret = array(
 				'ret' => 100,
 				'msg' => '插入失败!'
 			);
+					$this->json($ret,100,'插入失败!');
+					return;				
 		}			
 		
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));
-		return;
 	}
 
 	//取消搜藏文件
@@ -678,17 +649,22 @@ class Cgi extends SZone_Controller {
 		if($this->db->affected_rows()>0){
 			$ret = array(
 				'ret' => 0,
-				'msg' => '更新成功!'
+				'id' => $this->db->insert_id(),
+				'msg' => '收藏成功!'
 			);
+					$this->json($ret,0,'收藏成功!');
+					return;				
 		}else{
 			$ret = array(
 				'ret' => 100,
-				'msg' => '更新失败!'
+				'msg' => '插入失败!'
 			);
-		}
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));
+					$this->json($ret,100,'插入失败!');
+					return;				
+		}	
+		// $this->output
+		//     ->set_content_type('application/json')
+		//     ->set_output(json_encode($ret));
 	}
 
 	public function getgroup(){
@@ -741,9 +717,11 @@ class Cgi extends SZone_Controller {
 			'ret' => 0,
 			'list' => $glist
 		);
-			$this->output
-			    ->set_content_type('application/json')
-			    ->set_output(json_encode($ret));		
+					$this->json($ret,0,'ok');
+					return;			
+			// $this->output
+			//     ->set_content_type('application/json')
+			//     ->set_output(json_encode($ret));		
 	}
 
 	//取用户列表
@@ -773,9 +751,11 @@ class Cgi extends SZone_Controller {
 				'list' => $list
 			);
 		}
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));
+					$this->json($ret,0,'ok');
+					return;			
+		// $this->output
+		//     ->set_content_type('application/json')
+		//     ->set_output(json_encode($ret));
 	}
 
 	public function addgroupshare(){
@@ -829,21 +809,27 @@ class Cgi extends SZone_Controller {
 					'ret' => 0,
 					'msg' => '添加成功!'
 				);
+					$this->json($ret,0,'添加成功!');
+					return;					
 			}else{
 				$ret = array(
 					'ret' => 101,
 					'msg' => '添加失败!'
 				);
+					$this->json($ret,101,'添加失败!');
+					return;					
 			}
 		}else{
 			$ret = array(
 				'ret' => 100,
 				'msg' => '不能重复添加'
 			);
+					$this->json($ret,100,'不能重复添加!');
+					return;					
 		}
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));
+		// $this->output
+		//     ->set_content_type('application/json')
+		//     ->set_output(json_encode($ret));
 	}
 
 	public function addshare(){
@@ -888,21 +874,25 @@ class Cgi extends SZone_Controller {
 					'ret' => 0,
 					'msg' => '添加成功!'
 				);
+					$this->json($ret,0,'添加成功!');
+					return;					
 			}else{
 				$ret = array(
 					'ret' => 101,
 					'msg' => '添加失败!'
 				);
+					$this->json($ret,101,'添加失败!');
+					return;					
 			}
 		}else{
 			$ret = array(
 				'ret' => 100,
 				'msg' => '不能重复添加'
 			);
+					$this->json($ret,100,'不能重复添加!');
+					return;	
 		}
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));
+
 	}
 
 	public function test(){
@@ -982,7 +972,7 @@ class Cgi extends SZone_Controller {
 			$data = array(
 				'name' => $fname
 			);			
-			$str = $this->db->update_string('userfile',$data,'fid='.(int) $fid.' and uid ='.(int) $this->user['uid']);
+			$str = $this->db->update_string('userfile',$data,'id='.(int) $fid.' and uid ='.(int) $this->user['uid']);
 		}
 		$query = $this->db->query($str);
 
@@ -991,17 +981,55 @@ class Cgi extends SZone_Controller {
 				'ret' => 0,
 				'msg' => '更新成功!'
 			);
+			$this->json($ret,0,'ok');
 		}else{
 			$ret = array(
 				'ret' => 100,
 				'msg' => '更新失败!'
 			);
-		}		
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));		
-
+			$this->json($ret,100,'ok');
+		}			
 	}
+
+
+	//重命名文件夹
+	public function renamefold(){
+		$fid = $this->input->post('fid');
+		$fname = $this->input->post('fname');
+		$gid = (int) $this->input->post('gid');
+
+		$data = array(
+			'name' => $fname
+		);
+		if($gid && $this->user['auth']>1){
+	
+			$str = $this->db->update_string('groupfolds',$data,'id='.(int) $fid.' and gid ='.$gid);
+		}else{
+			
+			$str = $this->db->update_string('userfolds',$data,'id='.(int) $fid.' and uid ='.(int) $this->user['uid']);
+		}
+		$query = $this->db->query($str);
+
+		if ($this->db->affected_rows() > 0){
+
+
+			$ret = array(
+				'ret' => 0,
+				'msg' => '更新成功!'
+			);
+			$this->json($ret,0,'ok');
+		}else{
+			$ret = array(
+				'ret' => 100,
+				'msg' => '更新失败!'
+			);
+			$this->json($ret,100,'error');
+		}		
+		// $this->output
+		//     ->set_content_type('application/json')
+		//     ->set_output(json_encode($ret));		
+
+	}	
 
 	//添加文件评论 貌似作废了.
 	public function add_file_comment(){
@@ -1019,15 +1047,16 @@ class Cgi extends SZone_Controller {
 				'ret' => 0,
 				'msg' => '更新成功!'
 			);
+					$this->json($ret,0,'更新成功!');
+					return;				
 		}else{
 			$ret = array(
 				'ret' => 100,
 				'msg' => '更新失败!'
 			);
-		}		
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));	
+					$this->json($ret,100,'更新失败!');
+					return;				
+		}			
 	}
 
 	//删除文件
@@ -1109,22 +1138,24 @@ class Cgi extends SZone_Controller {
 					'ret' => 0,
 					'msg' => '复制成功!'
 				);
+					$this->json($ret,0,'复制成功!');
+					return;					
 			}else{
 				$ret = array(
 					'ret' => 100,
 					'msg' => '复制失败!'
 				);
+					$this->json($ret,100,'复制失败!');
+					return;					
 			}		
 		}else{
 			$ret = array(
 				'ret' => 101,
 				'msg' => '复制失败!没有符合条件的记录.'
 			);
-		}
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));			
-
+					$this->json($ret,101,'复制失败!没有符合条件的记录!');
+					return;				
+		}	
 	}
 
 	public function group_edit_desc(){
@@ -1143,22 +1174,25 @@ class Cgi extends SZone_Controller {
 				$ret = array(
 					'ret' => 0,
 					'msg' => '修改成功'
-				);				
+				);	
+					$this->json($ret,0,'修改成功!');
+					return;	
 			}else{
 				$ret = array(
 					'ret' => 100,
 					'msg' => '修改失败!'
-				);				
+				);	
+					$this->json($ret,100,'修改失败!');
+					return;	
 			}
 		}else{
 			$ret = array(
 				'ret' => 190,
 				'msg' => '修改失败,你不是管理员'
 			);
-		}
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));			
+					$this->json($ret,190,'修改失败,你不是管理员!');
+					return;				
+		}		
 	}
 
 	public function add_board(){
@@ -1185,16 +1219,17 @@ class Cgi extends SZone_Controller {
 			$ret = array(
 				'ret' => 0,
 				'msg' => '修改成功'
-			);				
+			);		
+					$this->json($ret,0,'修改成功!');
+					return;	
 		}else{
 			$ret = array(
 				'ret' => 100,
 				'msg' => '修改失败!'
-			);				
-		}
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));	
+			);		
+					$this->json($ret,100,'修改失败!');
+					return;						
+		}	
 	}
 
 	public function group_edit_name(){
@@ -1213,22 +1248,25 @@ class Cgi extends SZone_Controller {
 				$ret = array(
 					'ret' => 0,
 					'msg' => '修改成功'
-				);				
+				);		
+					$this->json($ret,0,'修改成功!');
+					return;							
 			}else{
 				$ret = array(
 					'ret' => 100,
 					'msg' => '修改失败!'
-				);				
+				);	
+					$this->json($ret,100,'修改失败!');
+					return;								
 			}
 		}else{
 			$ret = array(
 				'ret' => 190,
 				'msg' => '修改失败,你不是管理员'
 			);
-		}
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));		
+					$this->json($ret,190,'修改失败,你不是管理员!');
+					return;				
+		}		
 	}
 
 	public function group_edit(){
@@ -1262,22 +1300,25 @@ class Cgi extends SZone_Controller {
 				$ret = array(
 					'ret' => 0,
 					'msg' => '修改成功'
-				);				
+				);		
+					$this->json($ret,0,'修改成功!');
+					return;							
 			}else{
 				$ret = array(
 					'ret' => 100,
 					'msg' => '修改失败!'
-				);				
+				);	
+					$this->json($ret,100,'修改失败!');
+					return;								
 			}
 		}else{
 			$ret = array(
 				'ret' => 190,
 				'msg' => '修改失败,你不是管理员'
 			);
-		}
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));		
+					$this->json($ret,190,'修改失败,你不是管理员!');
+					return;				
+		}	
 	}
 
 	public function new_group(){
@@ -1313,22 +1354,24 @@ class Cgi extends SZone_Controller {
 					'ret' => 0,
 					'msg' => '添加成功!'
 				);
+					$this->json($ret,0,'添加成功!');
+					return;					
 			}else{
 				$ret = array(
 					'ret' => 100,
 					'msg' => '添加失败!'
 				);
+					$this->json($ret,100,'添加失败!');
+					return;					
 			}			
 		}else{
 			$ret = array(
 				'ret' => 100,
 				'msg' => '添加失败!'
 			);
-		}
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));			
-
+					$this->json($ret,100,'添加失败!');
+					return;				
+		}		
 	}
 
 	public function refrcey(){
@@ -1344,15 +1387,16 @@ class Cgi extends SZone_Controller {
 				'ret' => 0,
 				'msg' => '恢复成功!'
 			);
+					$this->json($ret,0,'恢复成功!');
+					return;				
 		}else{
 			$ret = array(
 				'ret' => 100,
 				'msg' => '恢复失败!'
 			);
-		}
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));		
+					$this->json($ret,100,'恢复失败!');
+					return;				
+		}		
 	}
 
 	public function compdel(){
@@ -1386,29 +1430,33 @@ class Cgi extends SZone_Controller {
 					$ret = array(
 						'ret' => 0,
 						'msg' => '删除成功!'
-					);					
+					);	
+					$this->json($ret,0,'删除成功!');
+					return;										
 				}else{
 					$ret = array(
 						'ret' => 100,
 						'msg' => '删除失败!'
-					);					
+					);	
+					$this->json($ret,100,'删除失败!');
+					return;										
 				}
 			}else{
 				$ret = array(
 					'ret' => 0,
 					'msg' => '删除成功!'
 				);	
+					$this->json($ret,0,'删除成功!');
+					return;					
 			}			
 		}else{
 			$ret = array(
 				'ret' => 100,
 				'msg' => '删除失败!'
-			);					
+			);	
+					$this->json($ret,0,'删除成功!');
+					return;	
 		}
-
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));
 	}
 
 	function copy_to_my(){
@@ -1438,42 +1486,51 @@ class Cgi extends SZone_Controller {
 						$query = $this->db->query($str);
 						if($this->db->insert_id()){
 							$ret = array(
-								'ret' => 100,
+								'ret' => 0,
 								'msg' => '添加成功!'
 							);	
+							$this->json($ret,0,'添加成功!');
+							return;								
 						}else{
 							$ret = array(
 								'ret' => 100,
 								'msg' => '添加失败!'
 							);	
+							$this->json($ret,100,'添加失败!');
+							return;								
 						}
 					}else{
 						$ret = array(
 							'ret' => 10002,
 							'msg' => '没有指定文件id!'
 						);	
+							$this->json($ret,10002,'没有指定文件id!');
+							return;							
 					}
 				}else{
 					$ret = array(
 						'ret' => 10004,
 						'msg' => '已经保存了该文件!'
-					);					
+					);	
+							$this->json($ret,10004,'已经保存了该文件!');
+							return;	
 				}
 			}else{
 				$ret = array(
 					'ret' => 10002,
 					'msg' => '没有指定文件id'
-				);					
+				);	
+							$this->json($ret,10002,'没有指定文件id!');
+							return;								
 			}
 		}else{
 			$ret = array(
 				'ret' => 10001,
 				'msg' => '没有指定分组id!'
 			);	
-		}
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));		
+							$this->json($ret,10001,'没有指定分组id!');
+							return;				
+		}		
 	}
 
 	public function to_school(){
@@ -1504,41 +1561,46 @@ class Cgi extends SZone_Controller {
 				if($this->db->affected_rows() == 0){
 					$str = $this->db->insert_string('groupfile',$data);
 					$query = $this->db->query($str);
-
 					if($this->db->insert_id()){
 						$ret = array(
 							'ret' => 0,
 							'msg' => '添加成功!'
-						);
+						);	
+						$this->json($ret,0,'添加成功!');
+						return;								
 					}else{
 						$ret = array(
-							'ret' => 10004,
+							'ret' => 100,
 							'msg' => '添加失败!'
-						);
+						);	
+						$this->json($ret,100,'添加失败!');
+						return;
 					}
-
 				}else{
 					$ret = array(
 						'ret' => 10003,
 						'msg' => '文件id重复!'
 					);	
+						$this->json($ret,10003,'文件id重复!');
+						return;					
 				}
 			}else{
 				$ret = array(
 					'ret' => 10002,
 					'msg' => '没有指定id!'
-				);					
+				);
+						$this->json($ret,10002,'没有指定id!');
+						return;									
 			}
 
 		}else{
 			$ret = array(
 				'ret' => 10001,
 				'msg' => '没有指定id!'
-			);	
-		}
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));			
+			);
+			$this->json($ret,10001,'没有指定id!');
+			return;					
+		}		
 	}
 
 	public function review_pass(){
@@ -1556,16 +1618,17 @@ class Cgi extends SZone_Controller {
 			$ret = array(
 				'ret' => 0,
 				'msg' => '操作成功!'
-			);	
+			);
+			$this->json($ret,0,'操作成功!');
+			return;				
 		}else{
 			$ret = array(
 				'ret' => 10001,
 				'msg' => '操作失败!'
-			);				
-		}			
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));
+			);	
+			$this->json($ret,10001,'操作失败!');
+			return;							
+		}
 	}
 
 	public function review_not_pass(){
@@ -1587,15 +1650,71 @@ class Cgi extends SZone_Controller {
 				'ret' => 0,
 				'msg' => '操作成功!'
 			);	
+			$this->json($ret,0,'操作成功!');
+			return;				
 		}else{
 			$ret = array(
 				'ret' => 10001,
 				'msg' => '操作失败!'
-			);				
+			);	
+			$this->json($ret,10001,'操作失败!');
+			return;							
 		}			
-		$this->output
-		    ->set_content_type('application/json')
-		    ->set_output(json_encode($ret));
+	}
+
+	public function del_file(){
+		$id = $this->input->post('id');
+		$idlist = explode(',',$id);
+		$kl = array();
+		foreach($idlist as $r){
+			array_push($kl,' id='.$r);
+		}
+		$sql = 'delete from userfile where ('. implode(' or ',$kl).') and uid='.$this->user['uid'];
+		$query = $this->db->query($sql);
+		if($this->db->affected_rows()>0){
+			$ret = array(
+				'msg' => 'ok'
+			);
+			$this->json($ret,0,'ok');
+		}else{
+			$ret = array(
+				'msg' => 'error'
+			);
+			$this->json($ret,100,'error');
+		}
+	}
+
+	public function del_fold(){
+		$id = $this->input->post('id');
+		$idlist = explode(',',$id);
+		$kl = array();
+		$sl = array();
+		$pl = array();
+		foreach($idlist as $r){
+			array_push($kl,' id='.$r);
+			array_push($sl,' fdid='.$r);
+			array_push($pl,' pid='.$r);
+		}
+
+		$sql = 'delete from userfile where ('. implode(' or ',$sl).') and uid='.$this->user['uid'];
+		$query = $this->db->query($sql);
+
+		$sql = 'delete from userfolds where ('. implode(' or ',$pl).') and uid='.$this->user['uid'];
+		$query = $this->db->query($sql);
+
+		$sql = 'delete from userfolds where ('. implode(' or ',$kl).') and uid='.$this->user['uid'];
+		$query = $this->db->query($sql);
+		if($this->db->affected_rows()>0){
+			$ret = array(
+				'msg' => 'ok'
+			);
+			$this->json($ret,0,'ok');
+		}else{
+			$ret = array(
+				'msg' => 'error'
+			);
+			$this->json($ret,100,'error');
+		}
 	}
 }
 
