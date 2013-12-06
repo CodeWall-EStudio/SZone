@@ -306,6 +306,7 @@
 			$('#file_uploadList').html('');
 		});
 
+		//删除文件
 		$("#delFile").bind('show.bs.modal',function(){
 			var id = [];
 			if($('#fileList .fclick:checked').length > 0){

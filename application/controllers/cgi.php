@@ -1663,14 +1663,32 @@ class Cgi extends SZone_Controller {
 	}
 
 	public function del_file(){
+
+		$type = $this->input->get('type');
 		$id = $this->input->post('id');
+		$gid = (int) $this->input->post('gid');
+
 		$idlist = explode(',',$id);
 		$kl = array();
-		foreach($idlist as $r){
-			array_push($kl,' id='.$r);
+		foreach($idlist as $k){
+			array_push($kl,'id='.(int) $k);
+		};
+		$where = implode(' or ',$kl);
+		if($gid){
+			$sql = 'update groupfile set del=1 where gid='.(int) $gid.' and '.$where;	
+		}else{
+			$sql = 'update userfile set del=1 where uid='.(int) $this->user['uid'].' and '.$where;	
 		}
-		$sql = 'delete from userfile where ('. implode(' or ',$kl).') and uid='.$this->user['uid'];
-		$query = $this->db->query($sql);
+
+
+		// $id = $this->input->post('id');
+		// $idlist = explode(',',$id);
+		// $kl = array();
+		// foreach($idlist as $r){
+		// 	array_push($kl,' id='.$r);
+		// }
+		// $sql = 'delete from userfile where ('. implode(' or ',$kl).') and uid='.$this->user['uid'];
+		 $query = $this->db->query($sql);
 		if($this->db->affected_rows()>0){
 			$ret = array(
 				'msg' => 'ok'
@@ -1714,6 +1732,42 @@ class Cgi extends SZone_Controller {
 				'msg' => 'error'
 			);
 			$this->json($ret,100,'error');
+		}
+	}
+
+	public function copymsg_to_my(){
+		$id = (int) $this->input->post('id');
+
+		//$sql = 'SELECT a.id,a.fuid as uid,a.content,a.createtime,a.fid,b.name AS uname,c.name AS fname,d.path,d.size,d.type FROM message a LEFT JOIN `user` b ON a.fuid = b.`id` LEFT JOIN `userfile` c ON c.fid = a.fid		LEFT JOIN `files` d ON d.id = a.fid	WHERE a.tuid = '.$this->user['uid'];		
+		//$sql = 'select a.fid from message a,userfile b where a.id='.$id.' and a.fuid = b.id';
+		$sql = 'select a.fid,b.name from message a left join userfile b ON a.fuid = b.uid where a.id='.$id;
+		$query = $this->db->query($sql);
+		$row = $query->row();
+
+		$sql = 'select id from userfile where uid='.$this->user['uid'].' and fid='.$row->fid;
+		$query = $this->db->query($sql);
+
+		if($this->db->affected_rows() > 0){
+			$ret = array(
+				'msg' => '文件已经存在!'
+			);
+			$this->json($ret,100,'文件已经存在!');
+		}else{
+			$data = array(
+				'fid' => (int) $row->fid,
+				'name' => $row->name,
+				'uid' => (int) $this->user['uid'],
+				'del' => 0,
+				'fdid' => 0			
+			);
+			$sql = $this->db->insert_string('userfile',$data);
+			$query = $this->db->query($sql);
+
+			if($this->db->affected_rows()>0){
+				$this->json(array('msg' => '已经成功复制文件!'),0,'已经成功复制文件!');
+			}else{
+				$this->json(array('msg' => '复制文件失败!'),101,'复制文件失败!');
+			}
 		}
 	}
 }

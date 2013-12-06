@@ -98,7 +98,6 @@
     			alert(d.msg);
     		}
     	});
-
     }
 
 	function bind(){
