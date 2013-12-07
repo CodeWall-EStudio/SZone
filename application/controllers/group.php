@@ -42,25 +42,56 @@ class Group extends SZone_Controller {
 
 
 			$key = $this->input->get_post('key');
+
 			if(!$fid){
-				$sql = 'select id,name,mark,createtime,pid from groupfolds where gid = '.$gid.' or pid='.$gid;
+				$sql = 'select id,name,mark,createtime,pid,tid,idpath from groupfolds where gid = '.$gid.' or pid='.$gid;
 			}else{
-				$sql = 'select id,name,mark,createtime,pid from groupfolds where gid = '.$gid.' or pid='.$fid;
+				$sql = 'select id,name,mark,createtime,pid,tid,idpath from groupfolds where gid = '.$gid.' or pid='.$fid;
 			}
 			$query = $this->db->query($sql);
 			
+			$fname = '';
+			$fold = array();
+			$foldlist = array();
+			foreach($query->result() as $row){
+				if($row->id == $fid){
+					$fname = $row->name;
+					$pid = $row->pid;
+				}
+				$fold[$row->id] = array(
+					'id' => $row->id,
+					'name' => $row->name,
+					'mark' => $row->mark,
+					'pid' => (int) $row->pid,
+					'tid' => (int) $row->tid,
+					'idpath' => $row->idpath,
+					'time' => date('Y-m-d',$row->createtime)
+				);
+			}
+			$foldnum = count($fold);
 
-			if($this->db->affected_rows()>0){
-				foreach($query->result() as $row){
-					$fold[$row->id] = array(
-							'id' => $row->id,
-							'name' => $row->name,
-							'mark' => $row->mark,
-							'time' => $row->createtime,
-							'pid' => $row->pid
-					);
+			foreach($fold as $row){
+				if($row['pid'] == 0){
+					$foldlist[$row['id']] = $row;
+				}else if($row['pid'] == $row['tid']){
+					if(!isset($foldlist[$row['pid']]['list'])){
+						$foldlist[$row['pid']]['list'] = array();
+					}
+					$foldlist[$row['pid']]['list'][$row['id']] = $row;
 				}
 			}
+			
+			// if($this->db->affected_rows()>0){
+			// 	foreach($query->result() as $row){
+			// 		$fold[$row->id] = array(
+			// 				'id' => $row->id,
+			// 				'name' => $row->name,
+			// 				'mark' => $row->mark,
+			// 				'time' => $row->createtime,
+			// 				'pid' => $row->pid
+			// 		);
+			// 	}
+			// }
 
 			$sql = 'SELECT count(a.id) AS anum FROM groupfile a';
 			$sql .= ' LEFT JOIN files b ON b.id = a.fid';
@@ -138,6 +169,8 @@ class Group extends SZone_Controller {
 		$data['page'] = $page;
 		$data['blist'] = $blist;
 		$data['fold'] = $fold;
+		$data['flist'] = $foldlist;
+		$data['foldname'] = $fname;
 		$data['file'] = $file;
 		$data['gid'] = $gid;
 		$data['fid'] = $fid;

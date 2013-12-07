@@ -29,7 +29,7 @@
 			 				$("#newFold .close").click();
 			 				window.location.reload();
 			 			}else{
-			 				alert(d.msg);
+			 				alert(d.data.msg);
 			 			}
 			 			$("#newFold .close").click();
 			 		});
@@ -70,7 +70,7 @@
 	 				$("#renameFile .close").click();
 	 				window.location.reload();
 	 			}else{
-	 				alert(d.msg);
+	 				alert(d.data.msg);
 	 			}
 	 			$("#renameFile .close").click();
         	});
@@ -103,7 +103,7 @@
 	 				$("#remarkFile .close").click();
 	 				window.location.reload();
 	 			}else{
-	 				alert(d.msg);
+	 				alert(d.data.msg);
 	 			}
 	 			$("#remarkFile .close").click();
         	});
@@ -143,6 +143,30 @@
 		}
 	}
 
+	$('#searchKey').on("focus blur",function(e){
+		var dom = $(this),
+			v = dom.val(),
+			def = dom.attr('data-def');
+			if(v == def){
+				if(e.type == 'focus'){
+					dom.val('');
+				}
+			}else{
+				dom.val(def);
+			}
+	});
+
+	var moveFile = function(){
+		var il = [];
+		$('#fileList .fclick:checked').each(function(){
+			il.push($(this).val());
+		});
+
+		id = il.join(',');
+		$('#shareWin h4').text('移动文件');
+		iframeEl.attr('src','/home/movefile?fid='+id);		
+	};		
+
 	var copyFile = function(){
 		var il = [];
 		$('#fileList .fclick:checked').each(function(){
@@ -150,9 +174,8 @@
 		});
 
 		id = il.join(',');
-		$('#shareWin h4').text('复制');
-
-		iframeEl.attr('src','/home/movefile?fid='+id);		
+		$('#shareWin h4').text('复制文件到备课');
+		iframeEl.attr('src','/home/copyfile?fid='+id);		
 	};	
 
 	var editMark = function(id,mark,type,target){
@@ -352,7 +375,7 @@
 	 			if(d.code==0){
 	 				window.location.reload();
 	 			}else{
-	 				alert(d.msg);
+	 				alert(d.data.msg);
 	 			}
 			});
 		});
@@ -408,10 +431,12 @@
 				case 'todep':
 					showShare(null,cmd);
 					break;
-
+				case 'moveFile':
+					moveFile();
+					break;
 				case 'copyFile':
 					copyFile();
-					break;							
+					break;					
 			}
 		})
 

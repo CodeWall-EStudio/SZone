@@ -81,6 +81,19 @@
     });
 
 
+	$('#searchKey').on("focus blur",function(e){
+		var dom = $(this),
+			v = dom.val(),
+			def = dom.attr('data-def');
+			if(v == def){
+				if(e.type == 'focus'){
+					dom.val('');
+				}
+			}else{
+				dom.val(def);
+			}
+	});
+
     function downFiles(){
 		$('#fileList .fclick:checked').each(function(){
 			window.open('/cgi/downfile?fid='+files[$(this).val()].fid+'&gid='+ginfo.id);

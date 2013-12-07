@@ -29,7 +29,11 @@ class Cgi extends SZone_Controller {
 			$tablename = 'groupfolds';
 		};
 
-		$sql = 'select id from '.$tablename.' where name ="'.$name.'"';
+		// $sql = 'select id,pid,tid,idpath from '.$tablename.' where id='.$pid;
+		// $query = $this->db->query($sql);
+		// $row = $query->row();
+
+		$sql = 'select id from '.$tablename.' where pid='.$pid.' and name ="'.$name.'"';
 		if($gid){
 			$sql .= ' and gid = '.(int) $this->user['uid'];
 		}else{
@@ -37,6 +41,20 @@ class Cgi extends SZone_Controller {
 		}
 		$query = $this->db->query($sql);
 		if($query->num_rows() == 0){
+			$tid = 0;
+			$idpath = 0;
+			if($pid){
+				$sql = 'select id,pid,tid,idpath from '.$tablename.' where id='.$pid;
+				$query = $this->db->query($sql);
+				$row = $query->row(); 
+				if($row->tid != 0){
+					$tid = $row->tid;
+					$idpath = $row->idpath.','.$pid;
+				}else if($row->pid == 0){
+					$tid = $pid;
+					$idpath = $pid;
+				}
+			}
 			if($gid){
 				$data = array(
 					'pid' => $pid,
@@ -44,7 +62,9 @@ class Cgi extends SZone_Controller {
 					'gid' => $gid,
 					'mark' => '',
 					'createtime' => time(),
-					'type' => 0
+					'type' => 0,
+					'tid' => $tid,
+					'idpath' => $idpath
 				);
 			}else{
 				$data = array(
@@ -53,7 +73,9 @@ class Cgi extends SZone_Controller {
 					'uid' => $this->user['uid'],
 					'mark' => '',
 					'createtime' => time(),
-					'type' => 0
+					'type' => 0,
+					'tid' => $tid,
+					'idpath' => $idpath
 				);
 			}
 			$str = $this->db->insert_string($tablename,$data);
@@ -75,9 +97,9 @@ class Cgi extends SZone_Controller {
 		}else{
 			$list = array(
 				'ret' => 1,
-				'msg' => '已经有记录了!'
+				'msg' => '已经有同名的目录了!'
 			);
-			$this->json($list,103,'已经有记录了!');
+			$this->json($list,103,'已经有同名的目录了!');
 		}
 		// $this->output
 		//     ->set_content_type('application/json')
@@ -1768,6 +1790,31 @@ class Cgi extends SZone_Controller {
 			}else{
 				$this->json(array('msg' => '复制文件失败!'),101,'复制文件失败!');
 			}
+		}
+	}
+
+	public  function copy_to_fold(){
+		$fid = $this->input->post("fid");
+		$fdid = $this->input->post("fdid");
+		$gid = (int) $this->input->post("gid");
+
+		$fl = explode(',',$fid);
+		$kl = array();
+		foreach($fl as $k){
+			array_push($kl,' id='.$k);
+		}
+		$sql = $this->db->update_string('userfile',array('fdid' => $fdid),implode(' or ',$kl));
+		$query = $this->db->query($sql);
+		if($this->db->affected_rows() > 0){
+			$ret = array(
+				'msg' => 'ok'
+			);
+			$this->json($ret,0,'ok');
+		}else{
+			$ret = array(
+				'msg' => 'error'
+			);
+			$this->json($ret,100,'error');			
 		}
 	}
 }

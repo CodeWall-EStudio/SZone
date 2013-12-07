@@ -100,3 +100,9 @@ if(! function_exists('create_page')){
 		}
 	}
 }
+
+if(! function_exists('sort_folds')){
+	function sort_folds($data){
+		
+	}
+}
