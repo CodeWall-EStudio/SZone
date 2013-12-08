@@ -13,6 +13,10 @@ class Group extends SZone_Controller {
 		$fid = (int) $this->input->get('fid');
 
 		$allnum = 0;
+		$page = array(
+			'prev' => 0,
+			'next' => 0
+			);
 
 		$inGroup = true;
         if ($this->user['uid'] != 0){
@@ -25,7 +29,6 @@ class Group extends SZone_Controller {
 		$foldlist = array();
 		$fname = '';
 
-		if($inGroup || $this->user['auth'] > 10){
 			$data = array(
 				'nav' => array(
 					'userinfo' => $this->user,
@@ -34,6 +37,9 @@ class Group extends SZone_Controller {
 					'school' => $this->school
 				)
 			);
+
+		if($inGroup || $this->user['auth'] > 10){
+
 
 
 			$wsql = '';
