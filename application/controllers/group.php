@@ -12,6 +12,8 @@ class Group extends SZone_Controller {
 		$type = (int) $this->input->get('type');
 		$fid = (int) $this->input->get('fid');
 
+		$allnum = 0;
+
 		$inGroup = true;
         if ($this->user['uid'] != 0){
             $this->load->model('User_model');
@@ -20,6 +22,8 @@ class Group extends SZone_Controller {
 		$fold = array();
 		$file = array();
 		$blist = array();
+		$foldlist = array();
+		$fname = '';
 
 		if($inGroup || $this->user['auth'] > 10){
 			$data = array(
@@ -52,7 +56,7 @@ class Group extends SZone_Controller {
 			
 			$fname = '';
 			$fold = array();
-			$foldlist = array();
+			
 			foreach($query->result() as $row){
 				if($row->id == $fid){
 					$fname = $row->name;
