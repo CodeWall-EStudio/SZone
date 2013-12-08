@@ -269,6 +269,7 @@
 		}	
 
 		var collFiles = function(){
+
 			var il = [];
 			$('#fileList .fclick:checked').each(function(){
 				//if($(this).parents('li.file').find('i.s').length == 0){
@@ -279,9 +280,9 @@
 			$.post(AddColl,{id:id,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 				if(d.code == 0){
 					//target.parent('span').prev('span').text(d.info);
-					//window.location.reload();
+					window.location.reload();
 				}else{
-					//console.log(d.msg);
+					alert(d.msg);
 				}
 			});		
 		}

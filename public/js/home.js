@@ -157,6 +157,7 @@
 	});
 
 	var moveFile = function(){
+		console.log(1234);
 		var il = [];
 		$('#fileList .fclick:checked').each(function(){
 			il.push($(this).val());

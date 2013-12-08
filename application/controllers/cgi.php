@@ -633,6 +633,14 @@ class Cgi extends SZone_Controller {
 			}
 		}
 
+		if(count($dlist)==0){
+			$ret = array(
+				'ret' => 102,
+				'msg' => '插入失败,已经有重复的记录!'
+			);
+			$this->json($ret,100,'插入失败,已经有重复的记录!');
+			return;				
+		}
 		$sql = 'insert into usercollection (uid,fid,time) value '.implode(',',$dlist);
 		$query = $this->db->query($sql);
 			
