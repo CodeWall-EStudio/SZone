@@ -45,7 +45,7 @@
 						<li class="downfile"><a cmd="downfile" id="donwFiles">下载</a></li>
 						<li class="collfile"><a cmd="coll" id="collFiles">收藏</a></li>
 						<li class="renamefile" id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
-						<li class="copyfile"><a cmd="moveFile" data-toggle="modal" data-target="#shareWin">移动文件</a></li>
+						<li class="copyfile"><a cmd="moveFile" data-toggle="modal" data-target="#shareWin" id="moveFile">移动文件</a></li>
 						<li class="delfile"><a cmd="delFile" data-toggle="modal" data-target="#delFile">删除</a></li>
 						<!-- <li id="remarkAct"><a cmd="remark" data-toggle="modal" data-target="#commentFile">评论</a></li> -->
 					</ul>

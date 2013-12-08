@@ -1803,7 +1803,11 @@ class Cgi extends SZone_Controller {
 		foreach($fl as $k){
 			array_push($kl,' id='.$k);
 		}
-		$sql = $this->db->update_string('userfile',array('fdid' => $fdid),implode(' or ',$kl));
+		$tablename = 'userfile';
+		if($gid){
+			$tablename = 'groupfile';
+		}
+		$sql = $this->db->update_string($tablename,array('fdid' => $fdid),implode(' or ',$kl));
 		$query = $this->db->query($sql);
 		if($this->db->affected_rows() > 0){
 			$ret = array(

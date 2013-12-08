@@ -167,9 +167,9 @@ class Home extends SZone_Controller {
 		$tablename = 'userfolds';
 		if($gid){
 			$tablename = 'groupfolds';
-		}else{
-			$sql = 'select id,pid,name,tid,idpath from '.$tablename;
 		}
+		$sql = 'select id,pid,name,tid,idpath from '.$tablename;
+		
 		if($fdid){
 			$sql .= ' where id !='.$fdid;
 		}
@@ -258,7 +258,8 @@ class Home extends SZone_Controller {
 		}	
 		$data = array(
 			'fl' => $nl,
-			'flist' => $folds
+			'flist' => $folds,
+			'gid' => $gid
 			);	
 
 		//echo json_encode($folds);

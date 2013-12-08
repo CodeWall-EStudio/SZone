@@ -36,6 +36,7 @@
 			<div>
 				<button class="btn btn-primary" id="post" disabled="disabled">复制</button>
 				<input type="hidden" id="flist" value="<?=implode(',',$idlist)?>" />
+				<input type="hidden" id="gid" value="<?=$gid?>" />
 			</div>
 		</div>
 		<div class="move-target">

@@ -222,4 +222,82 @@ class Group extends SZone_Controller {
 		$data['uinfo'] = $this->user;
 		$this->load->view('group/newgroup',$data);	
 	}
+
+
+	//移动文件
+	function movefile(){
+		$id = (int) $this->input->get('fid');
+		$fdid = (int) $this->input->get('fdid');
+		$gid = (int) $this->input->get('gid');
+
+		$il = explode(',',$id);
+		$sql = 'select id,pid,name,tid,idpath from groupfolds where gid='.$gid;
+
+		if($fdid){
+			$sql .= ' and id !='.$fdid;
+		}
+		$query = $this->db->query($sql);
+
+		$folds = array();
+		foreach($query->result() as $row){
+			$folds[$row->id] = array(
+				'id' => $row->id,
+				'pid' => $row->pid,
+				'name' => $row->name,
+				'tid' => $row->tid,
+				'idpath' => $row->idpath
+			);					
+		}
+
+		function psort($a,$b){
+			if($a['pid'] == 0){
+				return -1;
+			// }else if( $a['pid'] < $b['pid']){
+			// 	return -1;
+			}else if($a['pid'] = $b['pid']){
+			// return 0;
+				$an = count(explode(',',$a['idpath']));
+				$bn = count(explode(',',$b['idpath']));
+				if( $an < $bn){
+					return -1;
+				}else if($an == $bn){
+					return 0;
+				}else{
+					return 1;
+				}				
+			}else{
+				return 1;
+			}
+		}
+
+		$id = $this->input->get('fid');
+
+		$il = explode(',',$id);
+		$kl = array();
+		foreach($il as $k){
+			array_push($kl,' id='.$k);
+		}		
+		$str = implode(' or ',$kl);
+		$sql = 'select id,name from userfile where '.$str;		
+		$query = $this->db->query($sql);
+
+		$nl = array();
+		foreach($query->result() as $row){
+			array_push($nl,array(
+					'id' => $row->id,
+					'name' => $row->name
+				));
+		}	
+		$data = array(
+			'fl' => $nl,
+			'flist' => $folds,
+			'gid' => $gid
+			);	
+
+		//echo json_encode($folds);
+
+		$this->load->view('share/copyfile.php',$data);		
+		// echo '<hr>';
+		// echo json_encode($flist);
+	}	
 }

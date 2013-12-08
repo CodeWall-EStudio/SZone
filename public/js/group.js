@@ -100,6 +100,17 @@
 		});	
     }
 
+	var moveFile = function(){
+		var il = [];
+		$('#fileList .fclick:checked').each(function(){
+			il.push($(this).val());
+		});
+
+		id = il.join(',');
+		$('#shareWin h4').text('移动文件');
+		iframeEl.attr('src','/home/movefile?fid='+id+'&gid='+ginfo.id);		
+	};	    
+
     //复制文件
     function copyFiletoMy(fid){
 
@@ -114,6 +125,10 @@
     }
 
 	function bind(){
+
+		$('#moveFile').bind("click",function(){
+			moveFile();
+		});
 
 		$('#renameFile').bind('show.bs.modal',function(){
 			var item = files[$('#fileList .fclick:checked').val()];

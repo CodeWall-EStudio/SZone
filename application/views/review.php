@@ -88,12 +88,16 @@
 			<span class="glyphicon glyphicon-zoom-out zoom-out"></span>
 		</div>
 		<?endif?>
-		  <a class="left carousel-control" href="/review?fid=<?=$finfo['fid']?>&t=1&gid=<?=$gid?>&id=<?=$id?>" data-slide="prev">
+		<?if($prev):?>
+		  <a class="left carousel-control" href="/review?fid=<?=$prev?>&gid=<?=$gid?>&id=<?=$id?>" data-slide="prev">
 		    <span class="glyphicon glyphicon-chevron-left"></span>
 		  </a>
-		  <a class="right carousel-control" href="/review?fid=<?=$finfo['fid']?>&t=2&gid=<?=$gid?>&id=<?=$id?>" data-slide="next">
+		<?endif?>
+		<?if($next):?>
+		  <a class="right carousel-control" href="/review?fid=<?=$next?>&t=2&gid=<?=$gid?>&id=<?=$id?>" data-slide="next">
 		    <span class="glyphicon glyphicon-chevron-right"></span>
-		  </a>					
+		  </a>	
+		<?endif?>				
 	</div>	
 <?if($finfo['type']==1):?>
 <script type="text/javascript" src="/js/lib/jq.js" charset="utf-8"></script>	

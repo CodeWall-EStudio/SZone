@@ -15,7 +15,8 @@
 		});
 		var data = {
 			fid : $('#flist').val(),
-			fdid : plist.join(',')
+			fdid : plist.join(','),
+			gid : $('#gid').val()
 		}
 		$.post('/cgi/copy_to_fold',data,function(d){
 			if(d.ret == 0){

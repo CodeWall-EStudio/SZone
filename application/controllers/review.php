@@ -14,16 +14,15 @@ class Review extends SZone_Controller {
 			$tablename = 'groupfile';
 		}
 
-		$sql = 'select a.id,a.fid,a.name,a.content,b.path,b.size,b.type,b.mimes from '.$tablename.' a, files b where a.fid = b.id';
-		if($type == 1){
-			$sql .= ' and a.id < '.$fid.' limit 0,1';
-		}elseif($type ==2){
-			$sql .= ' and a.id > '.$fid.' limit 0,1';
-		}else{
-			$sql .= ' and b.id='.$fid;
-		}
-
-
+		$sql = 'select a.id,a.fid,a.name,a.content,b.path,b.size,b.type,b.mimes from '.$tablename.' a, files b where a.fid = b.id and b.id = '.$fid;
+		// if($type == 1){
+		// 	$sql .= ' and a.id < '.$fid.' limit 0,1';
+		// }elseif($type ==2){
+		// 	$sql .= ' and a.id > '.$fid.' limit 0,1';
+		// }else{
+		// 	$sql .= ' and b.id='.$fid;
+		// }
+		// echo $sql;
 
 		$query = $this->db->query($sql);
 		$finfo = 0;
@@ -47,9 +46,30 @@ class Review extends SZone_Controller {
 				//$finfo->text = file_get_contents($finfo->path);
 			}
 		}
+
+		$prev = 0;
+		$next = 0;
+		$sql = 'select id from '.$tablename.' where id<'.$fid;
+		$query = $this->db->query($sql);
+		if($this->db->affected_rows() > 0){
+			$row = $query->row();
+			$prev = $row->id;
+		}
+
+		$sql = 'select id from '.$tablename.' where id>'.$fid;
+		$query = $this->db->query($sql);
+		if($this->db->affected_rows() > 0){
+			$row = $query->row();
+			$next = $row->id;
+		}
+
+
+
 		$data['finfo'] = $finfo;
 		$data['gid'] = $gid;
 		$data['id'] = $id;
+		$data['prev'] = $prev;
+		$data['next'] = $next;
 
 		$this->load->view('review',$data);
 	}
