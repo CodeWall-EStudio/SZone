@@ -189,7 +189,7 @@
 		sinput.bind('focus',inputfocus);
 		sinput.bind('blur',inputblur);
 
-		$(document).bind('click','[data-save]',function(e){
+		$(document).on('click','[data-save]',function(e){
 			var target = $(e.target);
 			var id = target.attr('data-id');
 			copyFiletoMy(id);			
@@ -199,7 +199,6 @@
 
     //复制文件
     function copyFiletoMy(id){
-    	console.log(id);
     	$.post('/cgi/copymsg_to_my',{id:id},function(d){
     		if(d.code == 0){
     			$('#savefile'+id).remove();

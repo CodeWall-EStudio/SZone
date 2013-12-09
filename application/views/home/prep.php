@@ -49,22 +49,7 @@
 			</div>
 
 			<div class="section-tit">
-				<div class="dropdown">
-					<a data-toggle="dropdown" class="section-tit-a-first section-tit-a-border">树</a>
-					<ul class="dropdown-menu section-tit-menu" role="menu" aria-labelledby="dLabel" id="myFileList">
-						<?foreach($flist as $item):?>
-							<li>
-								<a class="glyphicon glyphicon-plus" href="/home?fid=<?=$item['id']?>"> <?=$item['name']?></a>
-								<?if(isset($item['list'])):?>
-								<ul>
-									<?foreach($item['list'] as $row):?>
-									<li><a class="glyphicon glyphicon-minus" href="/home?fid=<?=$row['id']?>"> <?=$row['name']?></a></li>
-									<?endforeach?>
-								</ul>								
-								<?endif?>
-							</li>						
-						<?endforeach?>
-					</ul>					
+				<div class="dropdown">				
 					<a class="section-tit-a-first" href="/home">我的备课</a>
 					<?if($fid):?>
 						<a class="section-tit-a-second"><?=$fname?></a>

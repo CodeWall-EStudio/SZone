@@ -169,10 +169,15 @@ class Home extends SZone_Controller {
 			$tablename = 'groupfolds';
 		}
 		$sql = 'select id,pid,name,tid,idpath from '.$tablename;
-		
-		if($fdid){
-			$sql .= ' where id !='.$fdid;
+		if(!$gid){
+			$sql .= ' where uid='.(int) $this->user['uid'];
+		}else{
+			$sql .= ' where gid='.$gid;
 		}
+		if($fdid){
+			$sql .= ' and id !='.$fdid;
+		}
+
 		$query = $this->db->query($sql);
 
 		$folds = array();

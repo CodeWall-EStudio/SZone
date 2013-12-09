@@ -506,17 +506,20 @@ class Cgi extends SZone_Controller {
         $uploadpath = $this->config->item('upload-path');
         if(!is_dir($uploadpath)){
             mkdir($uploadpath,DIR_WRITE_MODE);
+            chmod($uploadpath,DIR_WRITE_MODE);
         }
 
         //echo implode('|',$allowed);
         $dirname = $uploadpath.substr($md5,0,2);
         if (!is_dir($dirname)){
             mkdir($dirname,DIR_WRITE_MODE);
+            chmod($dirname,DIR_WRITE_MODE);
         }
 
         $dirname = $dirname.'/'.substr($md5,2,2);
         if (!is_dir($dirname)){
             mkdir($dirname,DIR_WRITE_MODE);
+            chmod($dirname,DIR_WRITE_MODE);
         }
 
         return $dirname;

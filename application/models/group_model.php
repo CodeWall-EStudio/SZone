@@ -45,6 +45,7 @@ class Group_model extends CI_Model {
             'glist' => array(),
             'deplist' => array(),
             'depinfolist' => array(),
+            'school' => array(),
             'prelist' => array()
         );
 
