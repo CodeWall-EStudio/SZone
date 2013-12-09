@@ -1588,7 +1588,7 @@ class Cgi extends SZone_Controller {
 	                'status' => 0					
 				);
 
-				$sql = 'select id from groupfile where fid='.(int) $row->fid.' and type=0 limit 0,1';
+				$sql = 'select a.id from groupfile a,groups b where a.fid='.(int) $row->fid.' and a.gid = b.id and b.type=0 limit 0,1';
 				$query = $this->db->query($sql);
 
 				if($this->db->affected_rows() == 0){
@@ -1713,16 +1713,25 @@ class Cgi extends SZone_Controller {
 			$sql = 'update userfile set del=1 where uid='.(int) $this->user['uid'].' and '.$where;	
 		}
 
+		$query = $this->db->query($sql);
+		$right = $this->db->affected_rows();
 
-		// $id = $this->input->post('id');
-		// $idlist = explode(',',$id);
-		// $kl = array();
-		// foreach($idlist as $r){
-		// 	array_push($kl,' id='.$r);
-		// }
-		// $sql = 'delete from userfile where ('. implode(' or ',$kl).') and uid='.$this->user['uid'];
-		 $query = $this->db->query($sql);
-		if($this->db->affected_rows()>0){
+
+		if($gid){
+			$sql = 'select fid from groupfile where '.implode(' or ',$kl);
+		}else{
+			$sql = 'select fid from userfile where '.implode(' or ',$kl);
+		}
+		$query = $this->db->query($sql);
+		$kl1 = array();
+		foreach($query->result() as $row){
+			array_push($kl1,'fid='.(int) $row->fid);
+		}
+		$sql = 'delete from usercollection where uid ='.(int) $this->user['uid'].' and ('.implode(' or ',$kl1).')';
+		$query = $this->db->query($sql);
+
+
+		if($right){
 			$ret = array(
 				'msg' => 'ok'
 			);

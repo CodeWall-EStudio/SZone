@@ -117,16 +117,16 @@
 			switch(cmd){
 				case 'ref':
 					$.post(reUrl,{id:id},function(d){
-						alert(d.msg);
-						if(d.ret == 0){
+						alert(d.data.msg);
+						if(d.code == 0){
 							window.location.reload();
 						}
 					});
 					break;
 				case 'del':
 					$.post(delUrl,{id:id,fid : fid},function(d){
-						alert(d.msg);
-						if(d.ret == 0){
+						alert(d.data.msg);
+						if(d.code == 0){
 							window.location.reload();
 						}
 					});				
