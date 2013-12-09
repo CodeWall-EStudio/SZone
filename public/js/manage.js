@@ -18,8 +18,8 @@
 		mt = setTimeout(function(){
 			var url = '/query/smartuser?key='+value;
 			$.get(url,function(d){
-				if(d.ret == 0){
-					var list = d.list;
+				if(d.code == 0){
+					var list = d.data.list;
 					var html = [];
 					for(var i = 0,l=list.length;i<l;i++){
 						var item = list[i];

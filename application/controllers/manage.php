@@ -578,6 +578,8 @@ class Manage extends SZone_Controller {
 
 					$this->data['data']['ret'] = 0;
 
+
+
 					$this->load->view('manage/editgroup',$this->data);
 
 			}else{

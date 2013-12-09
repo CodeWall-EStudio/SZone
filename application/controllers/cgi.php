@@ -1724,6 +1724,7 @@ class Cgi extends SZone_Controller {
 		}
 		$query = $this->db->query($sql);
 		$kl1 = array();
+		
 		foreach($query->result() as $row){
 			array_push($kl1,'fid='.(int) $row->fid);
 		}
