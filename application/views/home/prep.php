@@ -168,12 +168,16 @@
 							<ul>
 							<?foreach($row['list'] as $r):?>
 								<li>
+									<?if(isset($r['name'])):?>
 									<?=$r['name']?>
+									<?endif?>
 									<?if(isset($r['list'])):?>
 									<ul>
 									<?foreach($r['list'] as $k):?>
 										<li>
+											<?if(isset($k['name'])):?>
 											<?=$k['name']?>
+											<?endif?>											
 											<?if(isset($k['list'])):?>
 											<ul>
 											<?foreach($k['list'] as $m):?>
