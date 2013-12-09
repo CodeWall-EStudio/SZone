@@ -239,7 +239,7 @@
 								?>
 								</div>
 								<div class="td_size"><?=$item['size']?></div>	
-								<div class="td6"><span><?=$item['time']?></span> <i <?if(in_array($item['id'],$coll)):?>class="s" cmd="uncoll" title="取消收藏"<?else:?>cmd="coll" title="收藏"<?endif?> data-type="file" data-id="<?=$item['id']?>"></i></div>
+								<div class="td6"><span><?=$item['time']?></span> <i <?if(in_array($item['fid'],$coll)):?>class="s" cmd="uncoll" title="取消收藏"<?else:?>cmd="coll" title="收藏"<?endif?> data-type="file" data-id="<?=$item['fid']?>"></i></div>
 							</li>
 						<?endforeach?>	
 					<?else:?>									
