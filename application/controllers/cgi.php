@@ -1588,7 +1588,7 @@ class Cgi extends SZone_Controller {
 	                'status' => 0					
 				);
 
-				$sql = 'select id from groupfile where fid='.(int) $row->fid.' and gid=1';
+				$sql = 'select id from groupfile where fid='.(int) $row->fid.' and type=0 limit 0,1';
 				$query = $this->db->query($sql);
 
 				if($this->db->affected_rows() == 0){
