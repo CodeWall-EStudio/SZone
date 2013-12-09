@@ -24,8 +24,9 @@
 		}
 
 		$.post(url,data,function(d){
-			if(d.ret == 0){
-				var list = d.list;
+
+			if(d.code == 0){
+				var list = d.data.list;
 				render(list);
 			}else{
 
@@ -124,20 +125,20 @@
 		$('#saveName').bind('click',function(d){
 			var n = $('#gName').val();
 			$.post(EDITNAME,{d:n,gid:$('#gid').val(),csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
-				if(d.ret == 0){
-					alert(d.msg);
+				if(d.code == 0){
+					alert(d.data.msg);
 				}else{
-					alert(d.msg);
+					alert(d.data.msg);
 				}
 			});				
 		})
 		$('#saveDesc').bind('click',function(d){
 			var n = $('#gDesc').val();	
 			$.post('/cgi/group_edit_desc',{d:n,gid:$('#gid').val(),csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
-				if(d.ret == 0){
-					alert(d.msg);
+				if(d.code == 0){
+					alert(d.data.msg);
 				}else{
-					alert(d.msg);
+					alert(d.data.msg);
 				}
 			});			
 		})		
@@ -157,10 +158,10 @@
 				il.push(id);
 			});
 			$.post(url,{n:name,d:desc,ul:il.join(','),gid:$('#gid').val(),csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
-				if(d.ret == 0){
-					alert(d.msg);
+				if(d.code == 0){
+					alert(d.data.msg);
 				}else{
-					alert(d.msg);
+					alert(d.data.msg);
 				}
 			});					
 		});

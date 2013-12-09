@@ -34,7 +34,7 @@
 		<div class="share-act-zone">
 			<p>选择目标路径：</p>
 			<div>
-				<button class="btn btn-primary" id="post" disabled="disabled">复制</button>
+				<button class="btn btn-primary" id="post" disabled="disabled">移动</button>
 				<input type="hidden" id="flist" value="<?=implode(',',$idlist)?>" />
 				<input type="hidden" id="gid" value="<?=$gid?>" />
 			</div>
