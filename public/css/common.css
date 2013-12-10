@@ -217,6 +217,7 @@ a{
 .container{
 	position:relative;
 	width:990px;
+	min-width:990px;
 	margin:20px auto;
 	padding:0;
 	border:1px solid #d3d6da;

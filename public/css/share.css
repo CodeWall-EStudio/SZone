@@ -113,6 +113,9 @@ body {
 }
 .perplist a{
 	cursor:pointer;
+	display: inline-block;
+	width: 80%;
+	padding: 4px;	
 }
 .perplist a.selected{
 	background:#b8bec5;

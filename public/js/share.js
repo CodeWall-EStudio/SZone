@@ -33,8 +33,8 @@
 			}
 		}
 		$.post(url,data,function(d){
-			if(d.ret == 0){
-				var list = d.list;
+			if(d.code == 0){
+				var list = d.data.list;
 				if(type >= 1){
 					rendergroup(list);
 				}else{
@@ -168,12 +168,12 @@
 			obj.fname = fname;
 		}
 		$.post(url,obj,function(d){
-			if(d.ret == 0){
+			if(d.code == 0){
 				top.hideShare();
-				top.alert(d.msg);
+				top.alert(d.data.msg);
 			}else{
 				top.hideShare();
-				top.alert(d.msg);
+				top.alert(d.data.msg);
 			}
 		});
 	}
@@ -188,7 +188,26 @@
 		sinput.bind('keyup',keyup);
 		sinput.bind('focus',inputfocus);
 		sinput.bind('blur',inputblur);
+
+		$(document).on('click','[data-save]',function(e){
+			var target = $(e.target);
+			var id = target.attr('data-id');
+			copyFiletoMy(id);			
+		});
 	};
+
+
+    //复制文件
+    function copyFiletoMy(id){
+    	$.post('/cgi/copymsg_to_my',{id:id},function(d){
+    		if(d.code == 0){
+    			$('#savefile'+id).remove();
+    			alert(d.data.msg);
+    		}else{
+    			alert(d.data.msg);
+    		}
+    	});
+    }
 
 	function init(){
 		bind();

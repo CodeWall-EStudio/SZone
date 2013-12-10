@@ -12,6 +12,12 @@ class Group extends SZone_Controller {
 		$type = (int) $this->input->get('type');
 		$fid = (int) $this->input->get('fid');
 
+		$allnum = 0;
+		$page = array(
+			'prev' => 0,
+			'next' => 0
+			);
+
 		$inGroup = true;
         if ($this->user['uid'] != 0){
             $this->load->model('User_model');
@@ -20,8 +26,9 @@ class Group extends SZone_Controller {
 		$fold = array();
 		$file = array();
 		$blist = array();
+		$foldlist = array();
+		$fname = '';
 
-		if($inGroup || $this->user['auth'] > 10){
 			$data = array(
 				'nav' => array(
 					'userinfo' => $this->user,
@@ -30,6 +37,9 @@ class Group extends SZone_Controller {
 					'school' => $this->school
 				)
 			);
+
+		if($inGroup || $this->user['auth'] > 10){
+
 
 
 			$wsql = '';
@@ -42,25 +52,56 @@ class Group extends SZone_Controller {
 
 
 			$key = $this->input->get_post('key');
+
 			if(!$fid){
-				$sql = 'select id,name,mark,createtime,pid from groupfolds where gid = '.$gid.' or pid='.$gid;
+				$sql = 'select id,name,mark,createtime,pid,tid,idpath from groupfolds where gid = '.$gid.' or pid='.$gid;
 			}else{
-				$sql = 'select id,name,mark,createtime,pid from groupfolds where gid = '.$gid.' or pid='.$fid;
+				$sql = 'select id,name,mark,createtime,pid,tid,idpath from groupfolds where gid = '.$gid.' or pid='.$fid;
 			}
 			$query = $this->db->query($sql);
 			
+			$fname = '';
+			$fold = array();
+			
+			foreach($query->result() as $row){
+				if($row->id == $fid){
+					$fname = $row->name;
+					$pid = $row->pid;
+				}
+				$fold[$row->id] = array(
+					'id' => $row->id,
+					'name' => $row->name,
+					'mark' => $row->mark,
+					'pid' => (int) $row->pid,
+					'tid' => (int) $row->tid,
+					'idpath' => $row->idpath,
+					'time' => date('Y-m-d',$row->createtime)
+				);
+			}
+			$foldnum = count($fold);
 
-			if($this->db->affected_rows()>0){
-				foreach($query->result() as $row){
-					$fold[$row->id] = array(
-							'id' => $row->id,
-							'name' => $row->name,
-							'mark' => $row->mark,
-							'time' => $row->createtime,
-							'pid' => $row->pid
-					);
+			foreach($fold as $row){
+				if($row['pid'] == 0){
+					$foldlist[$row['id']] = $row;
+				}else if($row['pid'] == $row['tid']){
+					if(!isset($foldlist[$row['pid']]['list'])){
+						$foldlist[$row['pid']]['list'] = array();
+					}
+					$foldlist[$row['pid']]['list'][$row['id']] = $row;
 				}
 			}
+			
+			// if($this->db->affected_rows()>0){
+			// 	foreach($query->result() as $row){
+			// 		$fold[$row->id] = array(
+			// 				'id' => $row->id,
+			// 				'name' => $row->name,
+			// 				'mark' => $row->mark,
+			// 				'time' => $row->createtime,
+			// 				'pid' => $row->pid
+			// 		);
+			// 	}
+			// }
 
 			$sql = 'SELECT count(a.id) AS anum FROM groupfile a';
 			$sql .= ' LEFT JOIN files b ON b.id = a.fid';
@@ -138,6 +179,8 @@ class Group extends SZone_Controller {
 		$data['page'] = $page;
 		$data['blist'] = $blist;
 		$data['fold'] = $fold;
+		$data['flist'] = $foldlist;
+		$data['foldname'] = $fname;
 		$data['file'] = $file;
 		$data['gid'] = $gid;
 		$data['fid'] = $fid;
@@ -189,4 +232,82 @@ class Group extends SZone_Controller {
 		$data['uinfo'] = $this->user;
 		$this->load->view('group/newgroup',$data);	
 	}
+
+
+	//移动文件
+	function movefile(){
+		$id = (int) $this->input->get('fid');
+		$fdid = (int) $this->input->get('fdid');
+		$gid = (int) $this->input->get('gid');
+
+		$il = explode(',',$id);
+		$sql = 'select id,pid,name,tid,idpath from groupfolds where gid='.$gid;
+
+		if($fdid){
+			$sql .= ' and id !='.$fdid;
+		}
+		$query = $this->db->query($sql);
+
+		$folds = array();
+		foreach($query->result() as $row){
+			$folds[$row->id] = array(
+				'id' => $row->id,
+				'pid' => $row->pid,
+				'name' => $row->name,
+				'tid' => $row->tid,
+				'idpath' => $row->idpath
+			);					
+		}
+
+		function psort($a,$b){
+			if($a['pid'] == 0){
+				return -1;
+			// }else if( $a['pid'] < $b['pid']){
+			// 	return -1;
+			}else if($a['pid'] = $b['pid']){
+			// return 0;
+				$an = count(explode(',',$a['idpath']));
+				$bn = count(explode(',',$b['idpath']));
+				if( $an < $bn){
+					return -1;
+				}else if($an == $bn){
+					return 0;
+				}else{
+					return 1;
+				}				
+			}else{
+				return 1;
+			}
+		}
+
+		$id = $this->input->get('fid');
+
+		$il = explode(',',$id);
+		$kl = array();
+		foreach($il as $k){
+			array_push($kl,' id='.$k);
+		}		
+		$str = implode(' or ',$kl);
+		$sql = 'select id,name from userfile where '.$str;		
+		$query = $this->db->query($sql);
+
+		$nl = array();
+		foreach($query->result() as $row){
+			array_push($nl,array(
+					'id' => $row->id,
+					'name' => $row->name
+				));
+		}	
+		$data = array(
+			'fl' => $nl,
+			'flist' => $folds,
+			'gid' => $gid
+			);	
+
+		//echo json_encode($folds);
+
+		$this->load->view('share/copyfile.php',$data);		
+		// echo '<hr>';
+		// echo json_encode($flist);
+	}	
 }

@@ -29,19 +29,19 @@
 			</div>
 			<div class="file-act-zone fade-in hide">
 				<ul class="nav nav-pills">
-					<li>
+					<li class="share-act">
 						<a data-toggle="dropdown">共享<span class="caret"></span></a>
 						<ul id="actDropDown" class="dropdown-menu menu" role="menu" aria-labelledby="dLabel">
-							<li><a data-toggle="modal" cmd="toother" data-target="#shareWin">发送给别人</a></li>
-							<li><a data-toggle="modal" cmd="togroup" data-target="#shareWin">发送到小组</a></li>
-							<li><a data-toggle="modal" cmd="todep"  data-target="#shareWin">提交到部门</a></li>				
+							<li><a data-toggle="modal" cmd="toother" data-click-share-other data-target="#shareWin">发送给别人</a></li>
+							<li><a data-toggle="modal" cmd="togroup" data-click-share-group data-target="#shareWin">发送到小组</a></li>
+							<li><a data-toggle="modal" cmd="todep"  data-click-share-dep data-target="#shareWin">提交到部门</a></li>				
 						</ul>						
 					</li>
-					<li><a cmd="downfile" id="donwFiles">下载</a></li>
-					<li><a cmd="coll" id="collFiles">收藏</a></li>
-					<li id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
-					<li><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制</a></li>
-					<li><a cmd="delFile" data-toggle="modal" data-target="#delFile">删除</a></li>
+					<li class="down-act"><a cmd="downfile" data-click-downfile id="donwFiles">下载</a></li>
+					<li class="coll-act"><a cmd="coll" data-click-coll id="collFiles">收藏</a></li>
+					<li class="rename-act"><a cmd="rename" data-click-rename data-toggle="modal" data-target="#renameFile">重命名</a></li>
+					<li class="copy-act"><a cmd="copyFile" data-click-copy data-toggle="modal" data-target="#shareWin">复制</a></li>
+					<li class="del-act"><a cmd="delFile" data-click-del data-toggle="modal" data-target="#delFile">删除</a></li>
 				</ul>
 			</div>
 
@@ -93,15 +93,67 @@
 	<div class="footer"></div>
 </div>
 
+
+<div id="shareWin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">共享 </h4>
+			</div>
+			<div class="modal-body">
+				<iframe id="shareIframe" width="538" height="370" border="0" frameborder="0" scroll="false" ></iframe>				
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="reviewFile" class="modal fade collection" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">预览文件</h4>
+			</div>
+			<div class="modal-body">
+				<iframe id="reviewIframe" width="750" height="640" border="0" frameborder="0" scroll="false" ></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="fileWin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">重命名文件</h4>
+			</div>
+			<form class="new-fold" id="reName" method="post">
+			<div class="modal-body">
+				<label>文件名称：</label><input class="foldname" name="fname" type="text" style="width:80%" />
+				<input type="hidden" class="fid" />
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button type="submit" class="btn btn-primary" id="renameFileBtn">确定</button>
+			</div>
+			</form>
+		</div>
+	</div>
+</div>
+
 <script type="text/javascript" src="/js/lib/jquery/jquery-1.9.1.min.js"></script>
-<!--<script src="/js/bootstrap.min.js"></script>-->
+<script src="/js/common.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 <!--
 <script src="/js/lib/jquery.ui.min.js"></script>
 <script src="/js/lib/jq.validate.js"></script>
+-->
 <script type="text/javascript" src="/js/lib/moxie.js"></script>
 <script type="text/javascript" src="/js/lib/plupload.dev.js"></script>
 <script src="/js/lib/jquery.plupload.queue.js"></script>
--->
+
 <script data-main="/js/school/homemain.js" src="/js/lib/require/require.2.1.9.js"></script>
 <!-- <script src="/js/lib/plupload.full.min.js"></script> -->
 

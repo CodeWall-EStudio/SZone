@@ -71,9 +71,22 @@
 				);
 			}
 
+			$sql = 'select fid from usercollection where uid='.(int) $this->user['uid'];
+			$query = $this->db->query($sql);
+			$clist = array();
+			foreach($query->result() as $row){
+				array_push($clist,$row->fid);
+			}	
+
+			foreach($file as &$row){
+				if(in_array($row['fid'],$clist)){
+					$row['coll'] = 1;
+				}else{
+					$row['coll'] = 0;
+				}
+			}
+
 			$data = array(
-				'code' => 0,
-				'data' => array(
 					'fold' => array(
 						'total' => $foldnum,
 						'list' => $fold
@@ -82,12 +95,83 @@
 						'total' => $filenum,
 						'list' => $file
  					)
-				)
-			);
+				);
+			$this->json($data,0,'ok');
+			// $this->output
+			//     ->set_content_type('application/json')
+			//     ->set_output(json_encode($data));	
 
-			$this->output
-			    ->set_content_type('application/json')
-			    ->set_output(json_encode($data));	
+		}
 
+		public function collect(){
+			$id = $this->input->post('id');
+			$idlist = explode(',',$id);
+			$w = array();
+			foreach($idlist as $k){
+				array_push($w,'fid='.(int) $k);
+			};
+			$wh = implode(' or ',$w);
+			//echo $wh;
+			$sql = 'select fid from usercollection where '.$wh .' and uid='.(int) $this->user['uid'];
+			$query = $this->db->query($sql);
+
+			//有已经收藏过的文件
+			$dlist = array();
+			if($this->db->affected_rows()>0){
+				$fidlist = array();
+
+				foreach($query->result() as $row){
+					array_push($fidlist,$row->fid);
+				}
+
+				foreach($idlist as $k){
+					if(!in_array($k,$fidlist)){
+						array_push($dlist,'('.(int) $this->user['uid'].','.(int) $k.','.time().')');
+					}				
+				}
+			}else{		
+				foreach($idlist as $k){
+					array_push($dlist,'('.(int) $this->user['uid'].','.(int) $k.','.time().')');
+				}
+			}
+
+			$sql = 'insert into usercollection (uid,fid,time) value '.implode(',',$dlist);
+			$query = $this->db->query($sql);
+				
+			if($this->db->affected_rows()>0){
+				$data = array(
+					'id' => $this->db->insert_id(),
+				);
+				$this->json($data,0,'ok');				
+			}else{
+				$this->json(array(),10001,'插入失败!');	
+			}					
+		}
+
+		public function uncollect(){
+			$id = $this->input->post('id');
+			$idlist = explode(',',$id);
+			$w = array();
+			foreach($idlist as $k){
+				array_push($w,'fid='.(int) $k);
+			};
+
+			$wh = implode(' or ',$w);
+			$sql = 'delete from usercollection where uid='.(int) $this->user['uid'].' and '.$wh;
+			$query = $this->db->query($sql);
+
+			if($this->db->affected_rows()>0){
+				$ret = array(
+					'ret' => 0,
+					'msg' => '更新成功!'
+				);
+				$this->json(array(),0,'更新成功!');	
+			}else{
+				$ret = array(
+					'ret' => 100,
+					'msg' => '更新失败!'
+				);
+				$this->json(array(),10001,'插入失败!');	
+			}			
 		}
 	}

@@ -7,10 +7,16 @@
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
   <link rel="stylesheet" type="text/css" href="/css/main.css" />
   <link rel="stylesheet" type="text/css" href="/css/share.css" />
+  <style>
+  	.share-act-zone{
+  		float:left;
+  	}
+  </style>
 </head>
+
 <body class="share-zone">
 	<? $idlist = array();?>
-	<table class="table" width="90%" align="cneter">
+	<table class="table" width="90%" align="center">
 		<tr>
 			<td width="100">小组名称:</td>
 			<td>
@@ -26,7 +32,12 @@
 		</tr>	
 		<tr>
 			<td width="100">成员管理:</td>
-			<td><p class"search-area"><input type="text" value="搜索用户" id="search" /><i></i></p><button class="btn btn-default right" id="joinList">加入名单</button></td>
+			<td>
+				<div class="share-act-zone">
+					<p><input type="text" value="搜索用户" id="search" /><i></i></p>
+				</div>
+				<button class="btn btn-default right" id="joinList">加入名单</button>
+			</td>
 		</tr>
 		<tr>
 			<td colspan="2">

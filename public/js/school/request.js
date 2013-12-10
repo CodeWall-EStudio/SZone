@@ -1,7 +1,7 @@
-define(['jquery','util'],function($,util){
+define(['util'],function(util){
 
   	var loop = function() {};
-  	var g_tk = '';
+  	var g_tk = $.cookie('csrf_cookie_name');
 	var ReqTime = function(url) {
 		this._start = +new Date();
 		// 传递cgi
@@ -26,13 +26,13 @@ define(['jquery','util'],function($,util){
 			if(!onSuccess || typeof onSuccess != 'function') onSuccess = loop; // throw new Error('require success handler'); // cache不用onsuccess
 		}
 		if(method == 'GET') {
-			$.extend(data, {g_tk: g_tk});
+			$.extend(data, {csrf_test_name: g_tk});
 		} else {
 			var mark = '?',
 			index = cgi.indexOf(mark);
 
 			if(~index) mark = '&';
-			cgi = cgi + mark + 'g_tk=' + g_tk;
+			cgi = cgi + mark + 'csrf_test_name=' + g_tk;
 		}	
 
 		var ajaxOpt = {

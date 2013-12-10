@@ -335,23 +335,24 @@ class Manage extends SZone_Controller {
 
 	public function prepare(){
 		$this->data['data'] = array();
-		$sql = 'SELECT a.id,a.name,b.id AS bid,b.name AS bname FROM groups a,prepare b WHERE a.type=3 AND b.pid = a.id';
+		$sql = 'SELECT a.id,a.name,b.id AS bid,b.name AS bname,b.pid,b.sid,b.gid FROM groups a,prepare b WHERE a.type=3 AND b.gid = a.id';
 		$query = $this->db->query($sql);
 
 		$ulist = array();
 		if($query->num_rows() > 0){
 				foreach($query->result() as $row){
-					array_push($ulist,array(
+					$ulist[$row->bid] = array(
 						'id' => $row->id,
+						'bid' => $row->bid,
 						'name' => $row->name,
-						'nick' => $row->nick,
-						'auth' => $row->auth,
-						'size' => $row->size,
-						'used' => $row->used,
-					));
+						'bname' => $row->bname,
+						'pid' => $row->pid,
+						'sid' => $row->sid,
+						'gid' => $row->gid
+					);
 				}
 		}
-
+		$this->data['ulist'] = $ulist;
 		$this->load->view('manage/prepare',$this->data);
 	}
 
@@ -578,6 +579,8 @@ class Manage extends SZone_Controller {
 
 					$this->data['data']['ret'] = 0;
 
+
+
 					$this->load->view('manage/editgroup',$this->data);
 
 			}else{
@@ -708,6 +711,36 @@ class Manage extends SZone_Controller {
 		}
 
 		$this->load->view('manage',$this->data);
+	}
+
+	public function delprep(){
+		$id = (int) $this->input->get('id');
+		if($this->user['auth'] & 0x8){
+			$sql = 'delete from prepare where id='.$id.' or pid='.$id.' or sid='.$id;
+			$query = $this->db->query($sql);
+
+			if($this->db->affected_rows()>0){
+				$this->data['data'] = array(
+					'ret' => 0,
+					'msg' => '删除记录成功!'
+				);	
+			}else{
+				$this->data['data'] = array(
+					'ret' => 2,
+					'msg' => '删除记录失败!'
+				);				
+			}
+		}else{
+			$this->data['data'] = array(
+				'ret' => 1,
+				'msg' => '权限不够!'
+			);
+		}
+		$this->load->view('manage',$this->data);
+	}
+
+	public function editprep(){
+		$id = (int) $this->input->get('id');
 	}
 }
 

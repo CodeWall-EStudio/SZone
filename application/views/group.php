@@ -24,15 +24,16 @@
 					</div>
 
 					<div class="search-zone">
-						<form action="/" method="post" accept-charset="utf-8">
-						<input type="text" name="key" value="搜索文件" />
+						<form action="/" method="post" accept-charset="utf-8" data-def="搜索文件">
+						<input type="text" name="key" value="搜索文件" data-def="搜索文件" id="searchKey" />
 						<button type="submit"></button>
 						</form>
 					</div>
 				</div>
-				<div class="file-act-zone fade-in hide">
+
+				<div class="file-act-zone fade-in hide" id="fileActZone">
 					<ul class="nav nav-pills">
-						<li>
+						<li class="sharefile">
 							<a data-toggle="dropdown">共享<span class="caret"></span></a>
 							<ul id="actDropDown" class="dropdown-menu menu" role="menu" aria-labelledby="dLabel">
 								<li><a data-toggle="modal" cmd="toother" data-target="#shareWin">发送给别人</a></li>
@@ -41,11 +42,11 @@
 		<!-- 						<li><a>推优到学校</a></li> -->					
 							</ul>						
 						</li>
-						<li><a cmd="downfile" id="donwFiles">下载</a></li>
-						<li><a cmd="coll" id="collFiles">收藏</a></li>
-						<li id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
-						<!--<li><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制</a></li>-->
-						<li><a cmd="delFile" data-toggle="modal" data-target="#delFile">删除</a></li>
+						<li class="downfile"><a cmd="downfile" id="donwFiles">下载</a></li>
+						<li class="collfile"><a cmd="coll" id="collFiles">收藏</a></li>
+						<li class="renamefile" id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
+						<li class="copyfile"><a cmd="moveFile" data-toggle="modal" data-target="#shareWin" id="moveFile">移动文件</a></li>
+						<li class="delfile"><a cmd="delFile" data-toggle="modal" data-target="#delFile">删除</a></li>
 						<!-- <li id="remarkAct"><a cmd="remark" data-toggle="modal" data-target="#commentFile">评论</a></li> -->
 					</ul>
 				</div>
@@ -53,15 +54,23 @@
 				<div class="section-tit">
 					<div class="dropdown">
 						<a data-toggle="dropdown" class="section-tit-a-first section-tit-a-border">树</a>
-						<?if(count($fold)>0):?>
+						<?if(count($flist)>0):?>
+						<a data-toggle="dropdown" class="section-tit-a-first section-tit-a-border">树</a>
 						<ul class="dropdown-menu section-tit-menu" role="menu" aria-labelledby="dLabel" id="myFileList">
-							<?foreach($fold as $row):?>
+							<?foreach($flist as $item):?>
 								<li>
-									<a class="glyphicon glyphicon-plus" href="/group?gid=<?=$gid?>&fid=<?=$row['id']?>"> <?=$row['name']?></a>
+									<a class="glyphicon glyphicon-plus" href="/home?fid=<?=$item['id']?>"> <?=$item['name']?></a>
+									<?if(isset($item['list'])):?>
+									<ul>
+										<?foreach($item['list'] as $row):?>
+										<li><a class="glyphicon glyphicon-minus" href="/home?fid=<?=$row['id']?>"> <?=$row['name']?></a></li>
+										<?endforeach?>
+									</ul>								
+									<?endif?>
 								</li>						
 							<?endforeach?>
 						</ul>				
-						<?endif?>	
+						<?endif?>		
 						<a class="section-tit-a-first" href="/group?id=<?=$gid?>">小组文件</a>
 						<?if($fid):?>
 							<a class="section-tit-a-second"><?=$fold[$fid]['name']?></a>
@@ -101,7 +110,6 @@
 							<b class="caret"></b></a>
 							<ul class="dropdown-menu section-tit-menu1" role="menu" aria-labelledby="dLabel">
 								<li><a data-type="0" href="/?type=0">全部</a></li>
-								<li><a data-type="2">收藏</a></li>
 								<li><a data-type="3" href="/?type=4">视频</a></li>
 								<li><a data-type="1" href="/?type=1">图片</a></li>
 								<li><a data-type="4" href="/?type=3">音乐</a></li>
@@ -119,7 +127,7 @@
 					<ulclass="cl">
 						<?if(count($fold)>0):?>
 						<li class="tit">
-							<div class="td1"><input type="checkbox" /></div>
+							<div class="td1"><input type="checkbox" id="selectAllFold" /></div>
 							<div class="td2"><span>文件夹(<b><?=count($fold)?></b>个)</span>  名称 <i></i></div>
 							<div class="td_mark">&nbsp;</div>
 							<div class="td_uname">&nbsp;</div>
@@ -132,7 +140,7 @@
 						<?foreach($fold as $item):?>
 							<?if($item['pid'] == $fid):?>
 							<li class="fold" data-id="<?=$item['id']?>">
-								<div class="td1"><!-- <input type="checkbox" /> --></div>
+								<div class="td1"><input type="checkbox" name="fold" class="fdclick" value="<?=$item['id']?>" data-type="fold" /></div>
 								<div class="td2">
 									<i class="fold"></i>
 									<dl>
@@ -150,7 +158,7 @@
 									</dl>
 								</div>
 
-								<div class="td_time"><span><?=date('Y-m-d',$item['time'])?></span> <i></i></div>							
+								<div class="td_time"><span><?=$item['time']?></span> <i></i></div>							
 							</li>
 							<?endif?>
 						<?endforeach?>
@@ -303,7 +311,7 @@
 					<h4 class="modal-title">删除文件</h4>
 				</div>
 				<div class="modal-body">
-					将要删除文件:
+					<span>将要删除文件:</span>
 					<ul class="filelist"></ul>
 					<input class="fid" type="hidden" value="" />
 				</div>
@@ -411,6 +419,7 @@
 				<div class="modal-body">
 					<label>文件名称：</label><input class="foldname" name="fname" type="text" style="width:80%" />
 					<input type="hidden" class="fid" />
+					<input type="hidden" class="type" value="0" />
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>

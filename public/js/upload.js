@@ -43,6 +43,7 @@
 		dragdrop: true,
 
 		file_data_name: 'file',
+		/*
 		filters : {
 			// Maximum file size
 			max_file_size : '500mb',
@@ -57,6 +58,7 @@
 				// {title : "文本", extensions : "txt"},
 			]
 		},
+		*/
 
 		// Resize images on clientside if we can
 		//resize : {width : 320, height : 240, quality : 90},

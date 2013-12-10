@@ -82,12 +82,12 @@
 				<?if($row['type'] == 1):?>
 					<img src="/cgi/getfile?fid=<?=$row['fid']?>" />
 				<?else:?>
-					<i class="file<?=$row['type']?>"></i>
+					<i class="fold file<?=$row['type']?>"></i>
 				<?endif?>
 				<dl>
-					<dt><?=$row['fname']?></dt>
+					<dt><?=$row['fname']?>&nbsp;</dt>
 					<dd>
-						<a href="/cgi/reviewfile?fid=<?=$row['fid']?>" target="_blank">预览</a>
+						<a id="savefile<?=$row['id']?>" data-save data-id="<?=$row['id']?>" target="_blank">保存</a>
 						<a href="/cgi/getfile?fid=<?=$row['fid']?>" target="_blank">下载</a>
 					</dd>
 				</dl>

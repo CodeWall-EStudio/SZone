@@ -48,7 +48,7 @@ class Home extends SZone_Controller {
 
 		$key = $this->input->get_post('key');
 
-		$sql = 'select id,name,mark,createtime,pid from userfolds where uid = '.(int) $this->user['uid'];
+		$sql = 'select id,name,mark,createtime,pid,tid,idpath from userfolds where uid = '.(int) $this->user['uid'];
 		if($key){
 			$sql .= ' and name like "%'.$key.'%"';
 		}
@@ -62,29 +62,22 @@ class Home extends SZone_Controller {
 				$fname = $row->name;
 				$pid = $row->pid;
 			}
-			if($row->pid > 0 && $row->pid == $fid){
-				$foldnum++;
-			}
-			if($row->pid == 0){
-				$foldlist[$row->id] = array(
-					'id' => $row->id,
-					'name' => $row->name,
-					'mark' => $row->mark,
-					'pid' => $row->pid,
-					'time' => date('Y-m-d',$row->createtime)
-				);
-			}
 			$fold[$row->id] = array(
 				'id' => $row->id,
 				'name' => $row->name,
 				'mark' => $row->mark,
-				'pid' => $row->pid,
+				'pid' => (int) $row->pid,
+				'tid' => (int) $row->tid,
+				'idpath' => $row->idpath,
 				'time' => date('Y-m-d',$row->createtime)
 			);
 		}
+		$foldnum = count($fold);
 
 		foreach($fold as $row){
-			if($row['pid']){
+			if($row['pid'] == 0){
+				$foldlist[$row['id']] = $row;
+			}else if($row['pid'] == $row['tid']){
 				if(!isset($foldlist[$row['pid']]['list'])){
 					$foldlist[$row['pid']]['list'] = array();
 				}
@@ -166,6 +159,123 @@ class Home extends SZone_Controller {
 
 	//移动文件
 	function movefile(){
+		$id = (int) $this->input->get('fid');
+		$fdid = (int) $this->input->get('fdid');
+		$gid = (int) $this->input->get('gid');
+
+		$il = explode(',',$id);
+		$tablename = 'userfolds';
+		if($gid){
+			$tablename = 'groupfolds';
+		}
+		$sql = 'select id,pid,name,tid,idpath from '.$tablename;
+		if(!$gid){
+			$sql .= ' where uid='.(int) $this->user['uid'];
+		}else{
+			$sql .= ' where gid='.$gid;
+		}
+		if($fdid){
+			$sql .= ' and id !='.$fdid;
+		}
+
+		$query = $this->db->query($sql);
+
+		$folds = array();
+		foreach($query->result() as $row){
+			$folds[$row->id] = array(
+				'id' => $row->id,
+				'pid' => $row->pid,
+				'name' => $row->name,
+				'tid' => $row->tid,
+				'idpath' => $row->idpath
+			);					
+		}
+
+		function psort($a,$b){
+			if($a['pid'] == 0){
+				return -1;
+			// }else if( $a['pid'] < $b['pid']){
+			// 	return -1;
+			}else if($a['pid'] = $b['pid']){
+			// return 0;
+				$an = count(explode(',',$a['idpath']));
+				$bn = count(explode(',',$b['idpath']));
+				if( $an < $bn){
+					return -1;
+				}else if($an == $bn){
+					return 0;
+				}else{
+					return 1;
+				}				
+			}else{
+				return 1;
+			}
+		}
+
+
+		//usort($folds,'psort');
+		// foreach($folds as $row){
+		// 	echo json_encode($row).'<br>';	
+		// }
+
+
+		// $flist = array();
+		// foreach($folds as $row){
+			
+		// 	if($row['pid'] == 0){
+		// 		$flist[$row['id']] = $row;
+		// 		$flist[$row['id']]['list'] = array();
+
+		// 	}else if($row['pid'] == $row['tid']){
+		// 		$flist[$row['pid']]['list'][$row['id']] = $row;
+		// 		$flist[$row['pid']]['list'][$row['id']]['list'] = array();
+		// 	}else{
+		// 		$l = explode(',',$row['idpath']);
+				
+		// 		// $td = $flist[$row['tid']]['list'][$row['pid']]['list'];
+		// 		// // $len = count($l);
+		// 		// for($i=1;$i<$l;$i++){
+		// 		//  	$td = parseData($td,$i,$row);
+		// 		// }
+		// 		// // echo json_encode($row).'<br>';	
+		// 	}
+		// }
+		//$data['flist'] = $folds;
+
+
+		$id = $this->input->get('fid');
+
+		$il = explode(',',$id);
+		$kl = array();
+		foreach($il as $k){
+			array_push($kl,' id='.$k);
+		}		
+		$str = implode(' or ',$kl);
+		$sql = 'select id,name from userfile where '.$str;		
+		$query = $this->db->query($sql);
+
+		$nl = array();
+		foreach($query->result() as $row){
+			array_push($nl,array(
+					'id' => $row->id,
+					'name' => $row->name
+				));
+		}	
+		$data = array(
+			'fl' => $nl,
+			'flist' => $folds,
+			'gid' => $gid
+			);	
+
+		//echo json_encode($folds);
+
+		$this->load->view('share/copyfile.php',$data);		
+		// echo '<hr>';
+		// echo json_encode($flist);
+	}
+
+	//复制文件到备课
+	function copyfile(){
 		$id = $this->input->get('fid');
 
 		$il = explode(',',$id);

@@ -10,10 +10,9 @@
   <meta property="qc:admins" content="124110632765637457144563757" />
 </head>
 <body>
-	<?php  $this->load->view('public/header.php',$userinfo); ?>
+	<?php  $this->load->view('public/header.php',$nav); ?>
 	<div class="container">
 		<div>
-
 			<?
 				if($type == 1){
 					$titname = '小组';

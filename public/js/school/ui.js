@@ -1,3 +1,5 @@
-define(['jq', 'util'], function($, $u) {
+define(['jquery', 'util'], function($,util) {
+	
+
 	
 });
