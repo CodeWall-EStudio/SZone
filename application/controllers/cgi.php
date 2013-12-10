@@ -551,7 +551,8 @@ class Cgi extends SZone_Controller {
 				'msg' => '没有查到文件!'
 			);
 		}else{
-			$str = $this->db->update_string($tname,$data,'id='.$fid.' and uid='.(int) $this->user['uid']);
+			$sql = $this->db->update_string($tname,$data,'id='.$fid.' and uid='.(int) $this->user['uid']);
+
 			$query = $this->db->query($sql);
 			if($this->db->affected_rows()>0){
 				$ret = array(
@@ -1359,7 +1360,9 @@ class Cgi extends SZone_Controller {
 		$n = $this->input->post('n');		
 		$desc = $this->input->post('d');
 		$nl = $this->input->post('ul');
-		$il = explode(',',$nl);
+		if($nl != ''){
+			$il = explode(',',$nl);
+		}
 
 		$data = array(
 			'name' => $n,
@@ -1376,8 +1379,10 @@ class Cgi extends SZone_Controller {
 		if($this->db->affected_rows()>0){
 			$gid = $this->db->insert_id();
 			$ul = array('('.$gid.','.(int) $this->user['uid'].',1)');
-			foreach($il as $row){
-				array_push($ul,'('.$gid.','.$row.',0)');
+			if(isset($il)){
+				foreach($il as $row){
+					array_push($ul,'('.$gid.','.$row.',0)');
+				}
 			}
 			$sql = 'insert into groupuser (gid,uid,auth) value '.implode(',',$ul);
 
@@ -1839,7 +1844,7 @@ class Cgi extends SZone_Controller {
 			$ret = array(
 				'msg' => 'error'
 			);
-			$this->json($ret,100,'error');			
+			$this->json($ret,100,'操作失败!');			
 		}
 	}
 }

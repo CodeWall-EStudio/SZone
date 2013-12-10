@@ -30,6 +30,27 @@ class Home extends SZone_Controller {
 		$pagenum = $this->config->item('pagenum');
 		$nowpage = (int) $this->input->get('page');
 
+		$od = (int) $this->input->get('od');
+		$on = $this->input->get('on');
+		$desc = '';
+		$odname = 'name';
+		if($od == 2){
+			$desc = 'desc';
+		}
+		switch($on){
+			case 1:
+				$odname = 'name';
+				break;
+			case 2:
+				$odname = 'type';
+				break;
+			case 3:
+				$odname = 'size';
+				break;
+			case 4:
+				$odname = 'createtime';
+				break;			
+		}
 		// echo json_encode($this->user);
 		//var_dump($this->user);
 		$type = (int) $this->input->get('type');
@@ -49,16 +70,24 @@ class Home extends SZone_Controller {
 		$key = $this->input->get_post('key');
 
 		$sql = 'select id,name,mark,createtime,pid,tid,idpath from userfolds where uid = '.(int) $this->user['uid'];
-		if($key){
-			$sql .= ' and name like "%'.$key.'%"';
-		}
+		// if($key){
+		// 	$sql .= ' and name like "%'.$key.'%"';
+		// }
 
 		$query = $this->db->query($sql);
 
 		$fold = array();
 		$foldlist = array();
+		$thisfold = array();
 		foreach($query->result() as $row){
 			if($row->id == $fid){
+				$thisfold = array(
+					'id' => $row->id,
+					'pid' => $row->pid,
+					'name' => $row->name,
+					'tid' => $row->tid,
+					'idpath' => explode(',',$row->idpath)
+				);
 				$fname = $row->name;
 				$pid = $row->pid;
 			}
@@ -112,6 +141,10 @@ class Home extends SZone_Controller {
 		if($key){
 			$sql .= ' and a.name like "%'.$key.'%"';
 		}
+		if($od){
+			$sql .= ' order by '.$odname.' '.$desc;
+		}
+
 		$page = get_page_status($nowpage,$pagenum,$allnum);
 		$sql .= ' limit '.$page['start'].','.$pagenum;
 
@@ -143,6 +176,7 @@ class Home extends SZone_Controller {
 		$data['allnum'] = $allnum;
 		$data['fold'] = $fold;
 		$data['flist'] = $foldlist;
+		$data['thisfold'] = $thisfold;
 		$data['fname'] = $fname;
 		$data['fid'] = $fid;
 		$data['file'] = $file;
@@ -152,6 +186,8 @@ class Home extends SZone_Controller {
 		$data['foldnum'] = $foldnum;
 		$data['page'] = $page;
 		$data['key'] = $key;
+		$data['od'] = $od;
+		$data['on'] = $on;
 
 
 		$this->load->view('home',$data);	

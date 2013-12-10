@@ -71,9 +71,9 @@
 		<li class="tit">
 			<!-- <div class="td1"><input type="checkbox" /></div> -->
 			<div class="td2">文件名</div>
-			<div class="td3"><?if((int) $m):?>来源<?else:?>目标<?endif?>用户</div>
-			<div class="td5">大小</div>
-			<div class="td6">时间</div>
+			<div class="td_source"><?if((int) $m):?>来源<?else:?>目标<?endif?>用户</div>
+			<div class="td_size">大小</div>
+			<div class="td_time">时间</div>
 		</li>
 		<?foreach($mail as $row):?>
 		<li>
@@ -92,9 +92,9 @@
 					</dd>
 				</dl>
 			</div>
-			<div class="td3"><?=$row['uname']?></div>
-			<div class="td5"><?=$row['size']?></div>
-			<div class="td6"><span><?=$row['ctime']?></span> <i></i></div>
+			<div class="td_source"><?=$row['uname']?></div>
+			<div class="td_size"><?=$row['size']?></div>
+			<div class="td_time"><span><?=$row['ctime']?></span> </div>
 		</li>		
 		<?endforeach?>
 		<?else:?>

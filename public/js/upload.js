@@ -10,7 +10,9 @@
 			case 'close':
 				
 				if($('#uploader_filelist .plupload_delete').length > 0){
-					$('#uploadFile .modal-body').slideUp(400);
+					$('#uploadFile .modal-body').slideUp(400,function(){
+						window.location.reload();
+					});
 				}else{
 					$('#uploadFile').slideUp(400);
 					$('#uploader_filelist').html('');
@@ -65,6 +67,8 @@
 
 		flash_swf_url : '../../js/moxie.swf',
 		silverlight_xap_url : '../../js/moxie.xap'
+	}).bind('allcomplete',function(){
+		window.location.reload();
 	});
 
 })();

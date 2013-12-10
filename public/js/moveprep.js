@@ -54,11 +54,11 @@
 			pid : plist.join(',')
 		}
 		$.post('/cgi/add_prep',data,function(d){
-			if(d.ret == 0){
+			if(d.code == 0){
 				top.hideShare();
 			}else{
 				//top.hideShare();
-				top.alert(d.msg);
+				top.alert(d.data.msg);
 			}
 		});
 	}

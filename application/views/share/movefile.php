@@ -52,7 +52,6 @@
 	<script>
 		var pstr = '<?=json_encode($plist)?>';
 		var plist = $.parseJSON(pstr);
-		console.log(plist);
 	</script>
 	<script src="/js/moveprep.js" ></script>	
 </body>

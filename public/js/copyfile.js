@@ -19,11 +19,12 @@
 			gid : $('#gid').val()
 		}
 		$.post('/cgi/copy_to_fold',data,function(d){
-			if(d.ret == 0){
-				//top.hideShare();
+			console.log(d);
+			if(d.code == 0){
+				top.hideShare();
 			}else{
-				//top.hideShare();
-				//top.alert(d.msg);
+				top.hideShare();
+				top.alert(d.data.msg);
 			}
 		});
 	}

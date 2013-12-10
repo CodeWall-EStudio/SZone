@@ -404,6 +404,10 @@ used as it is.
 					updateTotalProgress();
 				});
 
+				uploader.bind('UploadComplete',function(){
+					target.triggerHandler('allcomplete');
+				});
+
 				// Call setup function
 				if (settings.setup) {
 					settings.setup(uploader);
