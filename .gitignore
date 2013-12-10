@@ -1,3 +1,5 @@
 file/*
 cache/*
 logs/*
+workspace.xml
+tasks.xml
