@@ -58,11 +58,11 @@
 					<ul class="dropdown-menu section-tit-menu" role="menu" aria-labelledby="dLabel" id="myFileList">
 						<?foreach($flist as $item):?>
 							<li>
-								<a class="glyphicon glyphicon-plus" href="/home?fid=<?=$item['id']?>"> <?=$item['name']?></a>
+								<a class="glyphicon glyphicon-plus" href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"> <?=$item['name']?></a>
 								<?if(isset($item['list'])):?>
 								<ul style="padding-left:24px;">
 									<?foreach($item['list'] as $row):?>
-									<li><a class="glyphicon glyphicon-minus" href="/home?fid=<?=$row['id']?>"> <?=$row['name']?></a></li>
+									<li><a class="glyphicon glyphicon-minus" href="/home?fid=<?=$row['id']?>&od=<?=$od?>&on=<?=$on?>"> <?=$row['name']?></a></li>
 									<?endforeach?>
 								</ul>								
 								<?endif?>
@@ -78,17 +78,17 @@
 								<?endif?>					
 							<?if($thisfold['pid']):?>
 
-								<a class="section-tit-a-first" href="/home?fid=<?=$thisfold['pid']?>"><?= $fold[$thisfold['pid']]['name'] ?></a>
+								<a class="section-tit-a-first" href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>"><?= $fold[$thisfold['pid']]['name'] ?></a>
 							<?endif?>
 							<a class="section-tit-a-second"><?= $thisfold['name'] ?></a>
-							<a class="section-tit-a-can" href="/home?fid=<?=$pid?>">返回上级</a>
+							<a class="section-tit-a-can" href="/home?fid=<?=$pid?>&od=<?=$od?>&on=<?=$on?>">返回上级</a>
 						<?else:?>
 							<a class="section-tit-a-end">返回上级</a>
 						<?endif?>
 					<?else:?>
 						<a class="section-tit-a-first" >搜索结果</a>
 						<a class="section-tit-a-end">返回上级</a>
-						<a class="section-tit-a-can" href="/home">退出搜索结果</a>
+						<a class="section-tit-a-can" href="/home&od=<?=$od?>&on=<?=$on?>">退出搜索结果</a>
 					<?endif?>
 				</div>
 				<ul class="act-zone">
@@ -163,10 +163,10 @@
 						<li class="fold" data-id="<?=$item['id']?>">
 							<div class="td1"><input type="checkbox" name="file" class="fdclick liclick" value="<?=$item['id']?>" data-type="fold" /></div>
 							<div class="td2">
-								<a href="/home?fid=<?=$item['id']?>"><i class="fold"></i></a>
+								<a href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"><i class="fold"></i></a>
 								
 								<dl>
-									<dt><a href="/home?fid=<?=$item['id']?>"><?=$item['name']?></a>
+									<dt><a href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"><?=$item['name']?></a>
 										<span cmd="edit" data-id="<?=$item['id']?>">
 											<?if($item['mark']==''):?>
 												编辑备注

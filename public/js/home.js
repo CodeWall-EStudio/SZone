@@ -551,28 +551,28 @@
 					target.parent('span').addClass('hide');
 					break;
 				case 'ordername':
-					if(des = 2){
+					if(des == 2){
 						window.location.href = '/home?od=1&on=1';
 					}else{
 						window.location.href = '/home?od=2&on=1';
 					}
 					break;
 				case 'ordertype':
-					if(des = 2){
+					if(des == 2){
 						window.location.href = '/home?od=1&on=2';
 					}else{
 						window.location.href = '/home?od=2&on=2';
 					}
 					break;
 				case 'ordersize':
-					if(des = 2){
+					if(des == 2){
 						window.location.href = '/home?od=1&on=3';
 					}else{
 						window.location.href = '/home?od=2&on=3';
 					}
 					break;
 				case 'ordertime':
-					if(des = 2){
+					if(des == 2){
 						window.location.href = '/home?od=1&on=4';
 					}else{
 						window.location.href = '/home?od=2&on=4';

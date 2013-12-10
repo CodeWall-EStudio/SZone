@@ -32,6 +32,8 @@ class Home extends SZone_Controller {
 
 		$od = (int) $this->input->get('od');
 		$on = $this->input->get('on');
+
+
 		$desc = '';
 		$odname = 'name';
 		if($od == 2){
