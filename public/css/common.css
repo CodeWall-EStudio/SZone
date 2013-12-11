@@ -590,3 +590,6 @@ a{
 	display:inline-block;
 	margin-right:12px;
 	}
+.reviewWin{
+	z-index:1060;
+}

@@ -80,7 +80,10 @@ class Home extends SZone_Controller {
 
 		$fold = array();
 		$foldlist = array();
-		$thisfold = array();
+		$thisfold = array(
+			'id' => 0,
+			'pid' => 0
+		);
 		foreach($query->result() as $row){
 			if($row->id == $fid){
 				$thisfold = array(
@@ -175,6 +178,25 @@ class Home extends SZone_Controller {
 		foreach($query->result() as $row){
 			array_push($idlist,$row->fid);
 		}
+
+		$sql = 'select id,name,mark,createtime,pid,tid,idpath from userfolds where uid = '.(int) $this->user['uid'];
+		if($key){
+			$sql .= ' and name like "%'.$key.'%"';
+		}	
+		$query = $this->db->query($sql);
+		$fold = array();
+		foreach($query->result() as $row){
+			$fold[$row->id] = array(
+				'id' => $row->id,
+				'name' => $row->name,
+				'mark' => $row->mark,
+				'pid' => (int) $row->pid,
+				'tid' => (int) $row->tid,
+				'idpath' => $row->idpath,
+				'time' => date('Y-m-d',$row->createtime)
+			);
+		}
+
 		$data['allnum'] = $allnum;
 		$data['fold'] = $fold;
 		$data['flist'] = $foldlist;
@@ -412,6 +434,29 @@ class Home extends SZone_Controller {
 		$uid = (int) $this->input->get('uid');
 		$key = $this->input->post('key');
 
+		
+		$od = (int) $this->input->get('od');
+		$on = $this->input->get('on');		
+		$desc = '';
+		$odname = 'fname';
+		if($od == 2){
+			$desc = 'desc';
+		}
+		switch($on){
+			case 1:
+				$odname = 'fname';
+				break;
+			case 2:
+				$odname = 'type';
+				break;
+			case 3:
+				$odname = 'size';
+				break;
+			case 4:
+				$odname = 'createtime';
+				break;			
+		}			
+
 		if($m){
 			$sql = 'SELECT a.id,a.fuid as uid,a.content,a.createtime,a.fid,b.name AS uname,c.name AS fname,d.path,d.size,d.type FROM message a LEFT JOIN `user` b ON a.fuid = b.`id` LEFT JOIN `userfile` c ON c.fid = a.fid		LEFT JOIN `files` d ON d.id = a.fid	WHERE a.tuid = '.$this->user['uid'];
 		}else{
@@ -433,6 +478,10 @@ class Home extends SZone_Controller {
 			}
 		}
 
+		if($od){
+			$sql .= ' order by '.$odname.' '.$desc;
+		}		
+
 		$query = $this->db->query($sql);
 		$mlist = array();
 		$tlist = array();
@@ -441,6 +490,7 @@ class Home extends SZone_Controller {
 				'id' => $row->id,
 				'uid' => $row->uid,
 				'ctime' => $row->createtime,
+				'content' => $row->content,
 				'fid' => $row->fid,
 				'uname' => $row->uname,
 				'fname' => $row->fname,
@@ -473,6 +523,8 @@ class Home extends SZone_Controller {
 		$data['uid'] = $uid;
 		$data['mail'] = $mlist;
 		$data['ulist'] = $tlist;
+		$data['od'] = $od;
+		$data['on'] = $on;		
 
 		$this->load->view('home/mail.php',$data);
 	}
@@ -482,6 +534,29 @@ class Home extends SZone_Controller {
 		$type = (int) $this->input->get('type');
 		$gid = (int) $this->input->get('gid');
 		$key = $this->input->post('key');
+
+		
+		$od = (int) $this->input->get('od');
+		$on = $this->input->get('on');		
+		$desc = '';
+		$odname = 'name';
+		if($od == 2){
+			$desc = 'desc';
+		}
+		switch($on){
+			case 1:
+				$odname = 'name';
+				break;
+			case 2:
+				$odname = 'type';
+				break;
+			case 3:
+				$odname = 'size';
+				break;
+			case 4:
+				$odname = 'createtime';
+				break;			
+		}	
 
 		$sql = 'SELECT a.id,a.fname,a.fid,a.createtime,a.gid,b.name AS gname,c.path,c.size,c.type,d.name AS fdname FROM groupfile a LEFT JOIN groups b ON b.id = a.gid	LEFT JOIN files c ON c.id = a.fid LEFT JOIN groupfolds d ON a.fdid = d.id WHERE a.uid ='.(int) $this->user['uid'];
 
@@ -495,6 +570,11 @@ class Home extends SZone_Controller {
 				$sql .= ' and a.gid='.$gid;
 			}
 		}
+
+		if($od){
+			$sql .= ' order by '.$odname.' '.$desc;
+		}
+
 
 		$query = $this->db->query($sql);
 		$mlist = array();
@@ -536,6 +616,8 @@ class Home extends SZone_Controller {
 		$data['gid'] = $gid;
 		$data['mail'] = $mlist;
 		$data['glist'] = $tlist;
+		$data['od'] = $od;
+		$data['on'] = $on;
 
 		$this->load->view('home/gmail.php',$data);
 	}	
@@ -664,7 +746,33 @@ class Home extends SZone_Controller {
 		$type = $this->input->get('type');
 		$key = $this->input->post('key');
 
+		$od = (int) $this->input->get('od');
+		$on = $this->input->get('on');		
+		$desc = '';
+		$odname = 'name';
+		if($od == 2){
+			$desc = 'desc';
+		}
+		switch($on){
+			case 1:
+				$odname = 'name';
+				break;
+			case 2:
+				$odname = 'type';
+				break;
+			case 3:
+				$odname = 'size';
+				break;
+			case 4:
+				$odname = 'createtime';
+				break;			
+		}		
+
 		$sql = 'SELECT a.id,a.fid,a.remark,a.time,b.name,c.size,c.path,c.type FROM usercollection a LEFT JOIN userfile b ON a.fid = b.fid LEFT JOIN files c ON a.fid = c.id WHERE a.uid ='.$this->user['uid'];
+
+		if($od){
+			$sql .= ' order by '.$odname.' '.$desc;
+		}
 
 		if($type){
 			$sql .= ' and c.type='.$type;
@@ -692,6 +800,8 @@ class Home extends SZone_Controller {
 		$data['flist'] = $flist;
 		$data['type'] = $type;
 		$data['key'] = $key;
+		$data['od'] = $od;
+		$data['on'] = $on;
 		$this->load->view('home/coll.php',$data);
 	}
 

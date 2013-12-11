@@ -40,7 +40,7 @@
 						</ul>						
 					</li>
 					<li class="downfile"><a cmd="downfile" id="donwFiles">下载</a></li>
-					<li class="collfile"><a cmd="coll" id="collFiles">收藏</a></li>
+					<!--<li class="collfile"><a cmd="coll" id="collFiles">收藏</a></li>-->
 					<li class="renamefile" id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
 					<li class="copyfile"><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制到备课</a></li>
 					<li class="copyfile"><a cmd="moveFile" data-toggle="modal" data-target="#shareWin">移动文件</a></li>
@@ -88,7 +88,7 @@
 					<?else:?>
 						<a class="section-tit-a-first" >搜索结果</a>
 						<a class="section-tit-a-end">返回上级</a>
-						<a class="section-tit-a-can" href="/home&od=<?=$od?>&on=<?=$on?>">退出搜索结果</a>
+						<a class="section-tit-a-can" href="/home?od=<?=$od?>&on=<?=$on?>">退出搜索结果</a>
 					<?endif?>
 				</div>
 				<ul class="act-zone">
@@ -135,26 +135,37 @@
 
 
 			</div>
-			<!--dis-list-type -->
+
 			<div id="fileList" class="dis-list-type">
 				<ul class="cl">
 					<?if($foldnum):?>
 					<li class="tit">
 						<div class="td1"><input type="checkbox" id="selectAllFold" /></div>
-						<div class="td2"><span>文件夹和文件</span>  <span cmd="ordername" <?if($on==1):?>data-od="<?=$od?>"<?endif?>>名称</span> 
-								<?if($on==1 && $od ==1):?><i class="ad"></i><?elseif($on==1 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+						<div class="td2"><span>文件夹和文件</span>  
+								<a href="/home?fid=<?=$thisfold['id']?>&on=1&od=<?if($on==1 && $od ==1):?>2<?else:?>1<?endif?>"><span>名称</span> 
+									<?if($on==1 && $od ==1):?><i class="ad"></i><?elseif($on==1 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+								</a>
 							</div>
 						<div class="td_mark">&nbsp;</div>
 						<div class="td_uname">&nbsp;</div>
 						<div class="td_source">&nbsp;</div>						
-						<div class="td_type"><span cmd="ordertype" <?if($on==2):?>data-od="<?=$od?>"<?endif?>>类型</span>  
+						<div class="td_type">
+						<a href="/home?fid=<?=$thisfold['id']?>&on=2&od=<?if($on==2 && $od ==1):?>2<?else:?>1<?endif?>">
+							<span>类型</span>  
 							<?if($on==2 && $od ==1):?><i class="ad"></i><?elseif($on==2 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+						</a>
 						</div>
-						<div class="td_size"><span cmd="ordersize" <?if($on==3):?>data-od="<?=$od?>"<?endif?>>大小</span>  
+						<div class="td_size">
+							<a href="/home?fid=<?=$thisfold['id']?>&on=3&od=<?if($on==3 && $od ==1):?>2<?else:?>1<?endif?>">
+							<span>大小</span>  
 							<?if($on==3 && $od ==1):?><i class="ad"></i><?elseif($on==3 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+							</a>
 						</div>
-						<div class="td_time"><span cmd="ordertime" <?if($on==4):?>data-od="<?=$od?>"<?endif?>>时间</span>  
+						<div class="td_time">
+							<a href="/home?fid=<?=$thisfold['id']?>&on=4&od=<?if($on==4 && $od ==1):?>2<?else:?>1<?endif?>">
+							<span>时间</span>  
 							<?if($on==4 && $od ==1):?><i class="ad"></i><?elseif($on==4 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+							</a>
 						</div>	
 					</li>
 					<?endif?>
@@ -384,7 +395,7 @@
 		</div>
 	</div>		
 
-	<div id="reviewFile" class="modal fade collection" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div id="reviewFile" class="modal fade collection reviewWin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">

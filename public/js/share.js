@@ -16,67 +16,77 @@
 	var search = function(e){
 		var val = sinput.val();
 		var type = parseInt(sinput.attr('data-type'));
-		var url = SEARCHUSER
-		if(type){
-			var data = {
-				'key' : val,
-				csrf_test_name:$.cookie('csrf_cookie_name'),
-				'gid' : $('#gid').val(),
-				'type' : type
-			}	
-			url = SEARCHGROUP;		
+		if(val == ''){
+			searchResult.find('li').show();
 		}else{
-			var data = {
-				csrf_test_name:$.cookie('csrf_cookie_name'),
-				
-				'key' : val
-			}
-		}
-		$.post(url,data,function(d){
-			if(d.code == 0){
-				var list = d.data.list;
-				if(type >= 1){
-					rendergroup(list);
-				}else{
-					render(list);
+			searchResult.find('li').each(function(e){
+				var v = $(this).text();
+				if(v.indexOf(val)<0){
+					$(this).hide();
 				}
-			}else{
+			});
+		}
+		// var url = SEARCHUSER
+		// if(type){
+		// 	var data = {
+		// 		'key' : val,
+		// 		csrf_test_name:$.cookie('csrf_cookie_name'),
+		// 		'gid' : $('#gid').val(),
+		// 		'type' : type
+		// 	}	
+		// 	url = SEARCHGROUP;		
+		// }else{
+		// 	var data = {
+		// 		csrf_test_name:$.cookie('csrf_cookie_name'),
+				
+		// 		'key' : val
+		// 	}
+		// }
+		// $.post(url,data,function(d){
+		// 	if(d.code == 0){
+		// 		var list = d.data.list;
+		// 		if(type >= 1){
+		// 			rendergroup(list);
+		// 		}else{
+		// 			render(list);
+		// 		}
+		// 	}else{
 
-			}
-		});
+		// 	}
+		// });
 	};
 	//缓存
-	var map = {};
+	//var map = {};
 
-	var render = function(list){
-		var html = [];
-		for(var i =0,l=list.length;i<l;i++){
-			var item = list[i];
-			map[item.id] = item;
-			html.push('<li><a data-id="'+item.id+'">'+item.name+'</a></li>');
-		}
-		$("#searchResult").html(html.join(""));
-	}
+	// var render = function(list){
+	// 	var html = [];
+	// 	for(var i =0,l=list.length;i<l;i++){
+	// 		var item = list[i];
+	// 		map[item.id] = item;
+	// 		html.push('<li><a data-id="'+item.id+'">'+item.name+'</a></li>');
+	// 	}
+	// 	$("#searchResult").html(html.join(""));
+	// }
 
-	var rendergroup = function(list){
-		var html = [];
-		for(var i in list){
-			var item = list[i];
-			map[item.id] = item;
-			html.push('<li><a data-id="'+item.id+'">'+item.name+'</a>');
-			// if(item.list){
-			// 	html.push('<ul class="second">');
-			// 	for(var j in item.list){
-			// 		var it = item.list[j];
-			// 		map[it.id] = it;
-			// 		html.push('<li><a data-id="'+it.id+'">'+it.name+'</a></li>');
-			// 	}
-			// 	html.push('</ul>');
-			// }
-			html.push('</li>');
-		}
-		$("#searchResult").html(html.join(""));
-	}	
+	// var rendergroup = function(list){
+	// 	var html = [];
+	// 	for(var i in list){
+	// 		var item = list[i];
+	// 		map[item.id] = item;
+	// 		html.push('<li><a data-id="'+item.id+'">'+item.name+'</a>');
+	// 		// if(item.list){
+	// 		// 	html.push('<ul class="second">');
+	// 		// 	for(var j in item.list){
+	// 		// 		var it = item.list[j];
+	// 		// 		map[it.id] = it;
+	// 		// 		html.push('<li><a data-id="'+it.id+'">'+it.name+'</a></li>');
+	// 		// 	}
+	// 		// 	html.push('</ul>');
+	// 		// }
+	// 		html.push('</li>');
+	// 	}
+	// 	$("#searchResult").html(html.join(""));
+	// }	
 
 	var keyup = function(e){
 		if(e.keyCode == 13){
@@ -126,10 +136,12 @@
 	}
 
 	var unselected = function(e){
+		console.log(e);
 		var id = $(e.target).attr('data-id');
 		var item = map[id];
 		searchResult.append('<li><a data-id="'+item.id+'">'+item.name+'</a></li>');
-		$(this).remove();
+		$(e.target).parents('li').remove();
+		//$(this).remove();
 		checkBtn();
 	}
 
@@ -194,6 +206,32 @@
 			var id = target.attr('data-id');
 			copyFiletoMy(id);			
 		});
+
+		$(document).on('click','[data-review]',function(e){
+			var target = $(e.target);
+			var id = target.attr('data-id');
+			var fid = target.attr('data-fid');
+			console.log(id,fid);
+			top.showReview(id,fid);
+			//copyFiletoMy(id);			
+		});		
+
+		$(document).on('click','[data-uncoll]',function(e){
+			var target = $(e.target);
+			var id = target.attr('data-id');
+			var data = {
+				id : id,
+				csrf_test_name:$.cookie('csrf_cookie_name')
+			}
+
+			$.post('/cgi/uncoll',data,function(d){
+				//console.log(d);
+				if(d.code == 0){
+					target.parents('li').remove();
+				}
+			});	
+			//copyFiletoMy(id);			
+		});			
 	};
 
 

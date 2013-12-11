@@ -64,31 +64,48 @@
 		<?if(count($flist)>0):?>
 		<li class="tit">
 			<!-- <div class="td1"><input type="checkbox" /></div> -->
-			<div class="td2">文件名</div>
+			<div class="td2">
+				<a href="/home/coll?on=1&od=<?if($on==1 && $od ==1):?>2<?else:?>1<?endif?>">
+				<span>文件名</span>  
+				<?if($on==3 && $od ==1):?><i class="ad"></i><?elseif($on==3 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+				</a>				
+				
+			</div>
 			<div class="td3">来源</div>
-			<div class="td5">大小</div>
-			<div class="td6">时间</div>
+			<div class="td_size">
+				<a href="/home/coll?on=3&od=<?if($on==3 && $od ==1):?>2<?else:?>1<?endif?>">
+				<span>大小</span>  
+				<?if($on==3 && $od ==1):?><i class="ad"></i><?elseif($on==3 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+				</a>
+			</div>
+			<div class="td_time">
+				<a href="/home/coll?on=4&od=<?if($on==4 && $od ==1):?>2<?else:?>1<?endif?>">
+				<span>时间</span>  
+				<?if($on==4 && $od ==1):?><i class="ad"></i><?elseif($on==4 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+				</a>
+			</div>	
 		</li>
 		<?foreach($flist as $row):?>
 		<li>
 			<!-- <div class="td1"><input type="checkbox" /></div> -->
 			<div class="td2">
 				<?if($row['type'] == 1):?>
-					<img src="/cgi/getfile?fid=<?=$row['fid']?>" />
+					<img data-review data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>"  src="/cgi/getfile?fid=<?=$row['fid']?>" />
 				<?else:?>
-					<i class="file<?=$row['type']?>"></i>
+					<i data-review data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>"  class="file<?=$row['type']?>"></i>
 				<?endif?>
 				<dl>
-					<dt><?=$row['name']?></dt>
+					<dt><a data-review data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>"><?=$row['name']?></a></dt>
 					<dd>
 						<a href="/cgi/reviewfile?fid=<?=$row['fid']?>" target="_blank">预览</a>
 						<a href="/cgi/getfile?fid=<?=$row['fid']?>" target="_blank">下载</a>
+						<a data-uncoll data-id="<?=$row['fid']?>">取消收藏</a>
 					</dd>
 				</dl>
 			</div>
 			<div class="td3"></div>
-			<div class="td5"><?=$row['size']?></div>
-			<div class="td6"><span><?=date('Y-m-d',$row['time'])?></span> </div>
+			<div class="td_size"><?=$row['size']?></div>
+			<div class="td_time"><span><?=date('Y-m-d',$row['time'])?></span> </div>
 		</li>		
 		<?endforeach?>
 		<?else:?>
@@ -99,6 +116,7 @@
 	<script src="/js/lib/jq.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
+	<script src="/js/common.js" ></script>	
 	<script src="/js/share.js" ></script>	
 </body>
 </html>

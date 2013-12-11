@@ -455,7 +455,7 @@
 					copyFile();
 					break;		
 				case 'cancel':
-					$('#fileList .liclick:checked').each(function(){
+					$('#fileList input:checked').each(function(){
 						$(this).attr('checked',false);
 					});
 					break;
@@ -549,37 +549,9 @@
 					target.prev('input').val(mark);
 					target.parent('span').prev('span').show();
 					target.parent('span').addClass('hide');
-					break;
-				case 'ordername':
-					if(des == 2){
-						window.location.href = '/home?od=1&on=1';
-					}else{
-						window.location.href = '/home?od=2&on=1';
-					}
-					break;
-				case 'ordertype':
-					if(des == 2){
-						window.location.href = '/home?od=1&on=2';
-					}else{
-						window.location.href = '/home?od=2&on=2';
-					}
-					break;
-				case 'ordersize':
-					if(des == 2){
-						window.location.href = '/home?od=1&on=3';
-					}else{
-						window.location.href = '/home?od=2&on=3';
-					}
-					break;
-				case 'ordertime':
-					if(des == 2){
-						window.location.href = '/home?od=1&on=4';
-					}else{
-						window.location.href = '/home?od=2&on=4';
-					}
-					break;															
+					break;														
 				default : 
-					if(!target.hasClass('liclick')){
+					if(!target.hasClass('liclick') && !target.hasClass('name-edit')){
 						var p = target.parents("li");
 						p.find('.liclick').click();										
 					}
@@ -640,6 +612,11 @@
 
 	init();
 })();
+
+function showReview(id,fid){
+	$("#reviewIframe").attr('src','/review?fid='+fid+'&id='+id);
+	$('#reviewFile').modal('show');
+}
 
 function hideShare(){
 	$('#shareWin').modal('hide');

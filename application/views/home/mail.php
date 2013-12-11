@@ -70,22 +70,44 @@
 		<?if(count($mail)>0):?>
 		<li class="tit">
 			<!-- <div class="td1"><input type="checkbox" /></div> -->
-			<div class="td2">文件名</div>
+			<div class="td2">
+				<a href="/home/sendmail?on=1&od=<?if($on==1 && $od ==1):?>2<?else:?>1<?endif?>">
+				<span>文件名</span>  
+				<?if($on==1 && $od ==1):?><i class="ad"></i><?elseif($on==1 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+				</a>	
+			</div>
 			<div class="td_source"><?if((int) $m):?>来源<?else:?>目标<?endif?>用户</div>
-			<div class="td_size">大小</div>
-			<div class="td_time">时间</div>
+			<div class="td_size">
+				<a href="/home/sendmail?on=3&od=<?if($on==3 && $od ==1):?>2<?else:?>1<?endif?>">
+				<span>大小</span>  
+				<?if($on==3 && $od ==1):?><i class="ad"></i><?elseif($on==3 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+				</a>				
+
+			</div>
+			<div class="td_time">
+				<a href="/home/sendmail?on=4&od=<?if($on==4 && $od ==1):?>2<?else:?>1<?endif?>">
+				<span>时间</span>  
+				<?if($on==4 && $od ==1):?><i class="ad"></i><?elseif($on==4 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+				</a>				
+
+			</div>
 		</li>
 		<?foreach($mail as $row):?>
 		<li>
 			<!-- <div class="td1"><input type="checkbox" /></div> -->
 			<div class="td2">
+				<a class="file-name" data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>">
 				<?if($row['type'] == 1):?>
-					<img src="/cgi/getfile?fid=<?=$row['fid']?>" />
+					<img  data-review data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>" src="/cgi/getfile?fid=<?=$row['fid']?>" />
 				<?else:?>
-					<i class="fold file<?=$row['type']?>"></i>
+					<i  data-review data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>" class="fold file<?=$row['type']?>"></i>
 				<?endif?>
+				</a>
 				<dl>
-					<dt><?=$row['fname']?>&nbsp;</dt>
+					<dt>
+						<a class="file-name" data-review data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>"><?=$row['fname']?></a>&nbsp;
+						<span title="<?=$row['content']?>"><?=$row['content']?></span>
+					</dt>
 					<dd>
 						<a id="savefile<?=$row['id']?>" data-save data-id="<?=$row['id']?>" target="_blank">保存</a>
 						<a href="/cgi/getfile?fid=<?=$row['fid']?>" target="_blank">下载</a>
@@ -94,7 +116,7 @@
 			</div>
 			<div class="td_source"><?=$row['uname']?></div>
 			<div class="td_size"><?=$row['size']?></div>
-			<div class="td_time"><span><?=$row['ctime']?></span> </div>
+			<div class="td_time"><span><?=substr($row['ctime'],0,10)?></span> </div>
 		</li>		
 		<?endforeach?>
 		<?else:?>

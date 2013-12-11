@@ -88,7 +88,7 @@
 			</div>
 			<div class="td3"></div>
 			<div class="td5"><?=$row['size']?></div>
-			<div class="td6"><span><?=$row['time']?></span> <i></i></div>
+			<div class="td6"><span><?=$row['time']?></span> </div>
 		</li>		
 		<?endforeach?>
 		<?else:?>

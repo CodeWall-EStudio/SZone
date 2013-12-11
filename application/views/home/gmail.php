@@ -70,22 +70,39 @@
 		<?if(count($mail)>0):?>
 		<li class="tit">
 			<!-- <div class="td1"><input type="checkbox" /></div> -->
-			<div class="td2">文件名</div>
+			<div class="td2">
+				<a href="/home/groupmail?on=1&od=<?if($on==1 && $od ==1):?>2<?else:?>1<?endif?>">
+				<span>文件名</span>  
+				<?if($on==1 && $od ==1):?><i class="ad"></i><?elseif($on==1 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+				</a>				
+				
+			</div>
 			<div class="td3">目标组织</div>
-			<div class="td5">大小</div>
-			<div class="td6">时间</div>
+			<div class="td_size">
+				<a href="/home/groupmail?on=3&od=<?if($on==3 && $od ==1):?>2<?else:?>1<?endif?>">
+				<span>大小</span>  
+				<?if($on==3 && $od ==1):?><i class="ad"></i><?elseif($on==3 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+				</a>				
+				
+			</div>
+			<div class="td_time">
+				<a href="/home/groupmail?on=4&od=<?if($on==4 && $od ==1):?>2<?else:?>1<?endif?>">
+				<span>时间</span>  
+				<?if($on==4 && $od ==1):?><i class="ad"></i><?elseif($on==4 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+				</a>				
+			</div>
 		</li>
 		<?foreach($mail as $row):?>
 		<li>
 			<!-- <div class="td1"><input type="checkbox" /></div> -->
 			<div class="td2">
 				<?if($row['type'] == 1):?>
-					<img src="/cgi/getfile?fid=<?=$row['fid']?>" />
+					<img data-review data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>"  src="/cgi/getfile?fid=<?=$row['fid']?>" />
 				<?else:?>
-					<i class="file<?=$row['type']?>"></i>
+					<i data-review data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>"  class="file<?=$row['type']?>"></i>
 				<?endif?>
 				<dl>
-					<dt><?=$row['fname']?></dt>
+					<dt><a class="file-name" data-review data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>"><?=$row['fname']?></a></dt>
 					<dd>
 						<a href="/cgi/reviewfile?fid=<?=$row['fid']?>" target="_blank">预览</a>
 						<a href="/cgi/getfile?fid=<?=$row['fid']?>" target="_blank">下载</a>
@@ -93,8 +110,8 @@
 				</dl>
 			</div>
 			<div class="td3"><?=$row['gname']?></div>
-			<div class="td5"><?=$row['size']?></div>
-			<div class="td6"><span><?=$row['ctime']?></span> <i></i></div>
+			<div class="td_size"><?=$row['size']?></div>
+			<div class="td_time"><span><?=date('Y-m-d',$row['ctime'])?></span> </div>
 		</li>		
 		<?endforeach?>
 		<?else:?>

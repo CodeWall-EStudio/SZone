@@ -40,17 +40,28 @@
 		</div>
 		<div class="share-target">
 			发送目标
-			<ul id="selectResult">
-
+			<ul id="searchResult">
+				<?foreach($gl as $row):?>
+					<li><a data-id="<?=$row['id']?>"><?=$row['name']?></a></li>
+				<?endforeach?>
 			</ul>						
 		</div>
 		<div class="share-select">
-			搜索结果
-			<ul id="searchResult">
+			发送列表
+			<ul id="selectResult">
 			</ul>						
 		</div>	
 		<div class="clear"></div>
 	</div>
+	<script>
+		var map = {};
+		<?foreach($gl as $row):?>
+			map[<?=$row['id']?>] = {
+				'id' : <?=$row['id']?>,
+				'name' : '<?=$row['name']?>'
+			}
+		<?endforeach?>
+	</script>	
 	<script src="/js/lib/jq.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
