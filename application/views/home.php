@@ -17,8 +17,10 @@
 			<div class="tool-zone fade-in">
 				<div class="btn-zone">
 <!-- 					<input type="file" class="upload-input" id="uploadFile" />  data-toggle="modal" data-target="#uploadFile"-->
+					<?if($key==''):?>
 					<button class="upload btn btn-primary btn-upload" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>上传</button>
 					<button class="btn btn-default" data-toggle="modal" data-target="#newFold" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>新建文件夹</button>
+					<?endif?>
 				</div>
 
 				<div class="search-zone">
@@ -81,7 +83,7 @@
 								<a class="section-tit-a-first" href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>"><?= $fold[$thisfold['pid']]['name'] ?></a>
 							<?endif?>
 							<a class="section-tit-a-second"><?= $thisfold['name'] ?></a>
-							<a class="section-tit-a-can" href="/home?fid=<?=$pid?>&od=<?=$od?>&on=<?=$on?>">返回上级</a>
+							<a class="section-tit-a-can" href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>">返回上级</a>
 						<?else:?>
 							<a class="section-tit-a-end">返回上级</a>
 						<?endif?>
@@ -237,7 +239,7 @@
 											</span>
 										</dt>
 										<dd>
-											<span><a data-toggle="dropdown" href="#">共享</a>
+											<span><a class="share-file" data-toggle="dropdown" href="#">共享</a>
 											<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 												<li><a data-toggle="modal" data-target="#shareWin" cmd="toother" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">发送给别人</a></li>
 												<li><a data-toggle="modal" data-target="#shareWin" cmd="togroup" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到小组空间</a></li>

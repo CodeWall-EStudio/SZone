@@ -11,6 +11,32 @@ class Group extends SZone_Controller {
 		$gid = (int) $this->input->get('id');
 		$type = (int) $this->input->get('type');
 		$fid = (int) $this->input->get('fid');
+		$key = $this->input->get_post('key');
+
+
+		$od = (int) $this->input->get('od');
+		$on = $this->input->get('on');
+
+		$desc = '';
+		$odname = 'name';
+		if($od == 2){
+			$desc = 'desc';
+		}
+		switch($on){
+			case 1:
+				$odname = 'a.fname';
+				break;
+			case 2:
+				$odname = 'b.type';
+				break;
+			case 3:
+				$odname = 'b.size';
+				break;
+			case 4:
+				$odname = 'a.createtime';
+				break;			
+		}
+
 
 		$allnum = 0;
 		$page = array(
@@ -28,24 +54,26 @@ class Group extends SZone_Controller {
 		$blist = array();
 		$foldlist = array();
 		$fname = '';
+		$thisfold = array(
+			'id' => 0,
+			'pid' => 0
+		);		
 
-			$data = array(
-				'nav' => array(
-					'userinfo' => $this->user,
-					'group' => $this->grouplist,
-					'dep' => $this->deplist,
-					'school' => $this->school
-				)
-			);
+		$data = array(
+			'nav' => array(
+				'userinfo' => $this->user,
+				'group' => $this->grouplist,
+				'dep' => $this->deplist,
+				'school' => $this->school
+			)
+		);
 
 		if($inGroup || $this->user['auth'] > 10){
 
-
-
 			$wsql = '';
-			if($fid){
+			//if($fid){
 				$wsql .= ' and a.fdid ='.$fid;
-			}
+			//}
 			if($type){
 				$wsql .= ' and b.type ='.$type;
 			}		
@@ -65,6 +93,13 @@ class Group extends SZone_Controller {
 			
 			foreach($query->result() as $row){
 				if($row->id == $fid){
+					$thisfold = array(
+						'id' => $row->id,
+						'pid' => $row->pid,
+						'name' => $row->name,
+						'tid' => $row->tid,
+						'idpath' => explode(',',$row->idpath)
+					);
 					$fname = $row->name;
 					$pid = $row->pid;
 				}
@@ -126,6 +161,11 @@ class Group extends SZone_Controller {
 
 			//echo $sql;
 			$page = get_page_status($nowpage,$pagenum,$allnum);
+
+			if($od){
+				$sql .= ' order by '.$odname.' '.$desc;
+			}
+
 			$sql .= ' limit '.$page['start'].','.$pagenum;		
 
 			//echo $sql;
@@ -186,6 +226,10 @@ class Group extends SZone_Controller {
 		$data['fid'] = $fid;
 		$data['type'] = $type;
 		$data['ingroup'] = $inGroup;
+		$data['key'] = $key;
+		$data['od'] = $od;
+		$data['on'] = $on;
+		$data['thisfold'] = $thisfold;
 
 		if(isset($this->grouplist[$gid])){
 			$data['ginfo'] = $this->grouplist[$gid];

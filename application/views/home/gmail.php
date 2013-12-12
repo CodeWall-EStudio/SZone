@@ -20,6 +20,7 @@
 			<div>
 				<a role="button" data-toggle="dropdown" href="#">全部组织<b class="caret"></b></a>
 				<ul class="dropdown-menu section-tit-menu1" role="menu" aria-labelledby="dLabel">
+					<li><a href="/home/groupmail?gid=0&type=<?=$type?>">全部组织</a></li>
 					<?foreach($glist as $row):?>
 						<li><a href="/home/groupmail?gid=<?=$row['id']?>&type=<?=$type?>"><?=$row['name']?></a></li>
 					<?endforeach?>

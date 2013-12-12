@@ -20,6 +20,7 @@
 			<div>
 				<a role="button" data-toggle="dropdown" href="#">全部用户<b class="caret"></b></a>
 				<ul class="dropdown-menu section-tit-menu1" role="menu" aria-labelledby="dLabel">
+					<li><a href="/home/sendmail?m=<?=$m?>&uid=0&type=<?=$type?>">全部用户</a></li>
 					<?foreach($ulist as $row):?>
 						<li><a href="/home/sendmail?m=<?=$m?>&uid=<?=$row['id']?>&type=<?=$type?>"><?=$row['name']?></a></li>
 					<?endforeach?>

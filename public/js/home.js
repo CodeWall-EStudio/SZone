@@ -551,7 +551,7 @@
 					target.parent('span').addClass('hide');
 					break;														
 				default : 
-					if(!target.hasClass('liclick') && !target.hasClass('name-edit')){
+					if(!target.hasClass('liclick') && !target.hasClass('name-edit') && !target.hasClass('share-file')){
 						var p = target.parents("li");
 						p.find('.liclick').click();										
 					}

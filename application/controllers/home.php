@@ -120,9 +120,9 @@ class Home extends SZone_Controller {
 		}
 
 		$sql = 'select count(a.id) as anum from userfile a left join files b on b.id = a.fid where a.del =0 and a.uid='.(int) $this->user['uid'];
-		if($fid){
+		//if($fid){
 			$sql.=' and a.fdid='.$fid;
-		}
+		//}
 		if($type){
 			$sql .= ' and b.type='.$type;
 		}
@@ -183,6 +183,9 @@ class Home extends SZone_Controller {
 		if($key){
 			$sql .= ' and name like "%'.$key.'%"';
 		}	
+		if($od && $on !=2 && $on != 3){
+			$sql .= ' order by '.$odname.' '.$desc;
+		}		
 		$query = $this->db->query($sql);
 		$fold = array();
 		foreach($query->result() as $row){

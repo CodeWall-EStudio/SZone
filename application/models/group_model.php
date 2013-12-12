@@ -37,7 +37,7 @@ class Group_model extends CI_Model {
     function get_group_info($ids)
     {
         $gidlist = $ids;
-        //$this->db->where_in('id', $ids);
+        $this->db->where_in('id', $ids);
         $query = $this->db->get($this->table);
 
         $result = array(
@@ -51,7 +51,7 @@ class Group_model extends CI_Model {
 
         foreach($query->result() as $row){
             if($row->type == 1){
-                if($row->parent == 0){
+                //if($row->parent == 0){
                     $result['flist'][$row->id] = array(
                         'id' => $row->id,
                         'name' => $row->name,
@@ -60,23 +60,23 @@ class Group_model extends CI_Model {
                         'auth' => in_array($row->id,$gidlist),
                         'list' => array()
                     );
-                }else{
-                    $result['glist'][$row->id] = array(
-                        'id' => $row->id,
-                        'name' => $row->name,
-                        'parent' => $row->parent,
-                        'content' => $row->content,
-                        'auth' => in_array($row->id,$gidlist)
-                    );
-                    $result['flist'][$row->id] = array(
-                        'type' => 1,
-                        'id' => $row->id,
-                        'name' => $row->name,
-                        'parent' => $row->parent,
-                        'content' => $row->content,
-                        'auth' => in_array($row->id,$gidlist)
-                    );
-                }
+                // }else{
+                //     $result['glist'][$row->id] = array(
+                //         'id' => $row->id,
+                //         'name' => $row->name,
+                //         'parent' => $row->parent,
+                //         'content' => $row->content,
+                //         'auth' => in_array($row->id,$gidlist)
+                //     );
+                //     $result['flist'][$row->id] = array(
+                //         'type' => 1,
+                //         'id' => $row->id,
+                //         'name' => $row->name,
+                //         'parent' => $row->parent,
+                //         'content' => $row->content,
+                //         'auth' => in_array($row->id,$gidlist)
+                //     );
+                // }
             }elseif($row->type == 2){
                 array_push($result['deplist'],array(
                     'id' => $row->id,

@@ -117,7 +117,7 @@
 	display:inline-block;
 	text-indent:1em;
 	font-size:12px;
-	width:120px;
+/*	width:120px;*/
 	overflow:hidden;
 	text-overflow:ellipsis;
 	white-space: nowrap;

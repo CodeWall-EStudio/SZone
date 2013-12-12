@@ -19,8 +19,10 @@
 				<div class="tool-zone fade-in">
 					<div class="btn-zone">
 	<!-- 					<input type="file" class="upload-input" id="uploadFile" /> -->
+						<?if($key==''):?>
 						<button class="upload btn btn-primary btn-upload" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>上传</button>
 						<button class="btn btn-default" data-toggle="modal" data-target="#newFold" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>新建文件夹</button>
+						<?endif?>
 					</div>
 
 					<div class="search-zone">
@@ -43,17 +45,17 @@
 							</ul>						
 						</li>
 						<li class="downfile"><a cmd="downfile" id="donwFiles">下载</a></li>
-						<li class="collfile"><a cmd="coll" id="collFiles">收藏</a></li>
+						<!-- <li class="collfile"><a cmd="coll" id="collFiles">收藏</a></li> -->
 						<li class="renamefile" id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
 						<li class="copyfile"><a cmd="moveFile" data-toggle="modal" data-target="#shareWin" id="moveFile">移动文件</a></li>
 						<li class="delfile"><a cmd="delFile" data-toggle="modal" data-target="#delFile">删除</a></li>
+						<li class="cancel"><a cmd="cancel">取消</a></li>
 						<!-- <li id="remarkAct"><a cmd="remark" data-toggle="modal" data-target="#commentFile">评论</a></li> -->
 					</ul>
 				</div>
 
 				<div class="section-tit">
 					<div class="dropdown">
-						<a data-toggle="dropdown" class="section-tit-a-first section-tit-a-border">树</a>
 						<?if(count($flist)>0):?>
 						<a data-toggle="dropdown" class="section-tit-a-first section-tit-a-border">树</a>
 						<ul class="dropdown-menu section-tit-menu" role="menu" aria-labelledby="dLabel" id="myFileList">
@@ -71,12 +73,26 @@
 							<?endforeach?>
 						</ul>				
 						<?endif?>		
-						<a class="section-tit-a-first" href="/group?id=<?=$gid?>">小组文件</a>
-						<?if($fid):?>
-							<a class="section-tit-a-second"><?=$fold[$fid]['name']?></a>
-							<a class="section-tit-a-can" href="/group?gid=<?=$gid?>&fid=<?=$fid?>">返回上级</a>
+
+						<?if($key==''):?>
+							<a class="section-tit-a-first" href="/group?id=<?=$gid?>">小组文件</a>
+							<?if($fid):?>					
+									<?if(count($thisfold['idpath'])>1):?>
+										<a>......</a>
+									<?endif?>					
+								<?if($thisfold['pid']):?>
+
+									<a class="section-tit-a-first" href="/group?id=<?=$gid?>&fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>"><?= $fold[$thisfold['pid']]['name'] ?></a>
+								<?endif?>
+								<a class="section-tit-a-second"><?= $thisfold['name'] ?></a>
+								<a class="section-tit-a-can" href="/group?id=<?=$gid?>&fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>">返回上级</a>
+							<?else:?>
+								<a class="section-tit-a-end">返回上级</a>
+							<?endif?>
 						<?else:?>
+							<a class="section-tit-a-first" >搜索结果</a>
 							<a class="section-tit-a-end">返回上级</a>
+							<a class="section-tit-a-can" href="/group?id=<?=$gid?>&od=<?=$od?>&on=<?=$on?>">退出搜索结果</a>
 						<?endif?>
 					</div>
 					<ul class="act-zone">
@@ -127,25 +143,61 @@
 					<ulclass="cl">
 						<?if(count($fold)>0):?>
 						<li class="tit">
-							<div class="td1"><input type="checkbox" id="selectAllFold" /></div>
-							<div class="td2"><span>文件夹(<b><?=count($fold)?></b>个)</span>  名称 <i></i></div>
+<!-- 							<div class="td1"><input type="checkbox" id="selectAllFold" /></div>
+							<div class="td2"><span>文件夹</span>  名称 <i></i></div>
 							<div class="td_mark">&nbsp;</div>
 							<div class="td_uname">&nbsp;</div>
 							<div class="td_source">&nbsp;</div>
 							<div class="td_type">&nbsp;</div>
 							<div class="td_size">&nbsp;</div>
-							<div class="td_time">时间</div>	
+							<div class="td_time">时间</div>	 -->
+
+							<div class="td1"><input type="checkbox" id="selectAllFile" /></div>
+							<div class="td2"><span>文件夹和文件</span>  
+								<a href="/group/?id=<?=$gid?>&on=1&od=<?if($on==1 && $od ==1):?>2<?else:?>1<?endif?>">
+								<span>文件名</span>  
+								<?if($on==3 && $od ==1):?><i class="ad"></i><?elseif($on==3 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+								</a>
+							</div>
+							<div class="td_mark">评论</div>
+							<div class="td_uname">作者</div>
+							<div class="td_source">来源</div>
+							<div class="td_type">
+								<a href="/group/?id=<?=$gid?>&on=2&od=<?if($on==2 && $od ==1):?>2<?else:?>1<?endif?>">
+									<span>类型</span>  
+									<?if($on==2 && $od ==1):?><i class="ad"></i><?elseif($on==2 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+								</a>
+							</div>
+							<div class="td_size">
+								<a href="/group/?id=<?=$gid?>&on=3&od=<?if($on==3 && $od ==1):?>2<?else:?>1<?endif?>">
+								<span>大小</span>  
+								<?if($on==3 && $od ==1):?><i class="ad"></i><?elseif($on==3 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+								</a>								
+
+							</div>
+							<div class="td_time">
+									<a href="/group/?id=<?=$gid?>&on=4&od=<?if($on==4 && $od ==1):?>2<?else:?>1<?endif?>">
+									<span>时间</span>  
+									<?if($on==4 && $od ==1):?><i class="ad"></i><?elseif($on==4 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+									</a>								
+							</div>
 						</li>
 						<?endif?>
 						<?foreach($fold as $item):?>
 							<?if($item['pid'] == $fid):?>
 							<li class="fold" data-id="<?=$item['id']?>">
-								<div class="td1"><input type="checkbox" name="fold" class="fdclick" value="<?=$item['id']?>" data-type="fold" /></div>
+								<div class="td1"><input type="checkbox" name="fold" class="fdclick liclick" value="<?=$item['id']?>" data-type="fold" /></div>
 								<div class="td2">
 									<i class="fold"></i>
 									<dl>
-										<dt><a href="/group?id=<?=$gid?>&fid=<?=$item['id']?>"><?=$item['name']?></a>
-											<span cmd="edit" data-id="<?=$item['id']?>"><?=$item['mark']?></span>
+										<dt><a href="/group?id=<?=$gid?>&fid=<?=$item['id']?>"><?=$item['name']?></a>										
+											<span cmd="edit" data-id="<?=$item['id']?>">
+												<?if($item['mark']==''):?>
+													编辑备注
+												<?else:?>
+													<?=$item['mark']?>&nbsp;
+												<?endif?>	
+											</span>
 											<span class="hide">
 												<input class="name-edit" type="text" value="<?=$item['mark']?>" />
 												<i class="edit-comp" cmd="editComp" data-type="fold" data-id="<?=$item['id']?>"></i>
@@ -158,12 +210,12 @@
 									</dl>
 								</div>
 
-								<div class="td_time"><span><?=$item['time']?></span> <i></i></div>							
+								<div class="td_time"><span><?=$item['time']?></span> </div>							
 							</li>
 							<?endif?>
 						<?endforeach?>
 						<?if(count($file)>0):?>
-							<li class="tit file-list">
+<!-- 							<li class="tit file-list">
 								<div class="td1"><input type="checkbox" id="selectAllFile" /></div>
 								<div class="td2"><span>文件(<b><?=$allnum?></b>个)</span>  </div>
 								<div class="td_mark">评论</div>
@@ -172,10 +224,10 @@
 								<div class="td_type">类型</div>
 								<div class="td_size">大小</div>
 								<div class="td_time">时间</div>							
-							</li>	
+							</li>	 -->
 							<?foreach($file as $item):?>
 								<li class="file" data-id="<?=$item['id']?>">
-									<div class="td1"><input type="checkbox" name="file" class="fclick" value="<?=$item['id']?>" data-type="file" /></div>
+									<div class="td1"><input type="checkbox" name="file" class="fclick liclick" value="<?=$item['id']?>" data-type="file" /></div>
 									<div class="td2">
 										<a class="file-name" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>">
 										<?if($item['type'] == 1):?>

@@ -530,20 +530,36 @@ class Cgi extends SZone_Controller {
 		$t = $this->input->post('t');
 		$fid = $this->input->post('id');
 		$info = $this->input->post('info');
+		$gid = (int) $this->input->post('gid');
 
-		if($t == 'fold'){
-			$tname = 'userfolds';
-			$fname = 'mark';
+		if($gid){
+			if($t == 'fold'){
+				$tname = 'groupfolds';
+				$fname = 'mark';
+			}else{
+				$tname = 'groupfile';
+				$fname = 'content';
+			};
+			$idname = 'gid';
+			$sid = $gid;
 		}else{
-			$tname = 'userfile';
-			$fname = 'content';
-		};
+			if($t == 'fold'){
+				$tname = 'userfolds';
+				$fname = 'mark';
+			}else{
+				$tname = 'userfile';
+				$fname = 'content';
+			};
+			$idname = 'uid';
+			$sid = (int) $this->user['uid'];
+		}
+
 
 		$data = array(
 			$fname => $info
 		);
 
-		$sql = 'select id from '.$tname.' where id='.$fid.' and uid='.(int) $this->user['uid'];
+		$sql = 'select id from '.$tname.' where id='.$fid.' and '.$idname.'='.$sid;
 		$query = $this->db->query($sql);
 		if($query->num_rows() == 0){
 			$ret = array(
@@ -551,7 +567,7 @@ class Cgi extends SZone_Controller {
 				'msg' => '没有查到文件!'
 			);
 		}else{
-			$sql = $this->db->update_string($tname,$data,'id='.$fid.' and uid='.(int) $this->user['uid']);
+			$sql = $this->db->update_string($tname,$data,'id='.$fid.' and '.$idname.'='.$sid);
 
 			$query = $this->db->query($sql);
 			if($this->db->affected_rows()>0){

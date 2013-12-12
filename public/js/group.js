@@ -124,6 +124,25 @@
     	});
     }
 
+	var editMark = function(id,mark,type,target){
+		var data = {
+			id : id,
+			info : mark,
+			t : type,
+			gid : ginfo.id,
+			csrf_test_name:$.cookie('csrf_cookie_name')
+		}
+
+		$.post(EditMark,data,function(d){
+			if(d.code == 0){
+				target.parent('span').prev('span').text(d.data.info);
+			}else{
+				alert(d.data.msg);
+				//console.log(d.msg);
+			}
+		});
+	};    
+
 	function bind(){
 
 		$('#moveFile').bind("click",function(){
@@ -322,12 +341,13 @@
 
 
 
+
     //显示或者隐藏重命名和评论
     var checkAct = function(){
     	var l = $('#fileList .fclick:checked').length;
-    	$('#fileList .fdclick:checked').each(function(){
-    		$(this).attr('checked',false);
-    	});
+    	// $('#fileList .fdclick:checked').each(function(){
+    	// 	$(this).attr('checked',false);
+    	// });
 	    	$('#fileActZone .sharefile').show();
 	    	$('#fileActZone .downfile').show();
 	    	$('#fileActZone .collfile').show();    		
@@ -352,9 +372,9 @@
     //显示或者隐藏重命名和评论
     var checkFoldAct = function(){
     	var l = $('#fileList .fdclick:checked').length;
-    	$('#fileList .fclick:checked').each(function(){
-    		$(this).attr('checked',false);
-    	});   	
+    	// $('#fileList .fclick:checked').each(function(){
+    	// 	$(this).attr('checked',false);
+    	// });   	
     	if(l==0){
 			$('.tool-zone').removeClass('hide');
 			$('.file-act-zone').addClass('hide');
@@ -373,46 +393,70 @@
 	    		$('#remarkAct').removeClass('hide');
     		}
     	}
-    }   
+    }    
 
 
-		$("#selectAllFile").bind('click',function(){
-			if($(this)[0].checked){
-				$('#fileList .fclick:not(:checked)').each(function(){
-					$(this).click();
-				});
-			}else{
-				$('#fileList .fclick:checked').each(function(){
-					$(this).attr('checked',false);
-				});
-			}
-		});
+		// $("#selectAllFile").bind('click',function(){
+		// 	if($(this)[0].checked){
+		// 		$('#fileList .fclick:not(:checked)').each(function(){
+		// 			$(this).click();
+		// 		});
+		// 	}else{
+		// 		$('#fileList .fclick:checked').each(function(){
+		// 			$(this).attr('checked',false);
+		// 		});
+		// 	}
+		// });
 
-		$("#selectAllFold").bind('click',function(){
-			if($(this)[0].checked){
-				$('#fileList .fdclick:not(:checked)').each(function(){
-					$(this).click();
-				});
-			}else{
-				$('#fileList .fdclick:checked').each(function(){
-					$(this).attr('checked',false);
-				});
-			}
-		});	
+		// $("#selectAllFold").bind('click',function(){
+		// 	if($(this)[0].checked){
+		// 		$('#fileList .fdclick:not(:checked)').each(function(){
+		// 			$(this).click();
+		// 		});
+		// 	}else{
+		// 		$('#fileList .fdclick:checked').each(function(){
+		// 			$(this).attr('checked',false);
+		// 		});
+		// 	}
+		// });	
 
-
-	    //输入框点击事件
-		$("#fileList input").click(function(e){
-			if($(e.target).attr('class') == 'fclick'){
+		$("#fileList .liclick").click(function(e){
+			var t = $(e.target),
+				type = t.attr("data-type");
+			if(type == 'file'){
 				checkAct();
 			}else{
 				checkFoldAct();
 			}
-		})   
+		})
+
+		$("#selectAllFold").bind('click',function(){
+			//console.log($(this)[0].checked,$('#fileList .liclick:not(:checked)').length);
+			if($(this)[0].checked){
+				$('#fileList .liclick:not(:checked)').each(function(){
+					$(this)[0].checked = true;
+				});
+			}else{
+				$('#fileList .liclick:checked').each(function(){
+					$(this).attr('checked',false);
+				});
+			}
+			checkAct();
+		});	
+
+	 //    //输入框点击事件
+		// $("#fileList input").click(function(e){
+		// 	if($(e.target).attr('class') == 'fclick'){
+		// 		checkAct();
+		// 	}else{
+		// 		checkFoldAct();
+		// 	}
+		// })   
 
 		$('#fileList').bind('click',function(e){
 			var target = $(e.target),
 				cmd = target.attr('cmd');
+				des = parseInt(target.attr('data-od'));
 			switch(cmd){
 				case 'copy':
 					var fid = target.attr('data-fid');
@@ -456,7 +500,12 @@
 					var mark = target.attr('data-value');
 					target.prev('input').val(mark);
 					target.parent('span').prev('span').show();
-					target.parent('span').addClass('hide');
+					target.parent('span').addClass('hide');													
+				default : 
+					if(!target.hasClass('liclick') && !target.hasClass('name-edit') && !target.hasClass('share-file')){
+						var p = target.parents("li");
+						p.find('.liclick').click();										
+					}					
 					break;
 			}
 		});	
@@ -472,7 +521,12 @@
 					break;
 				case 'copyFile':
 					copyFile();
-					break;							
+					break;	
+				case 'cancel':
+					$('#fileList input:checked').each(function(){
+						$(this).attr('checked',false);
+					});
+					break;											
 			}
 		})
 
