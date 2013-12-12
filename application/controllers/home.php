@@ -548,7 +548,7 @@ class Home extends SZone_Controller {
 		}
 		switch($on){
 			case 1:
-				$odname = 'name';
+				$odname = 'a.fname';
 				break;
 			case 2:
 				$odname = 'type';
