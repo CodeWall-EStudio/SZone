@@ -703,7 +703,9 @@ class Home extends SZone_Controller {
 			foreach($query->result() as $row){
 				array_push($kpf,' fdid='.$row->id);
 			}
-			$wh .= ' and ('.implode(' or ',$kpf).')';
+			if(count($kpf) > 0){
+				$wh .= ' and ('.implode(' or ',$kpf).')';
+			}
 			$fid = 0;
 		}else{
 			if($fid){

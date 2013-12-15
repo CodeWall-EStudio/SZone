@@ -430,11 +430,13 @@ class Group extends SZone_Controller {
 			array_push($pls,' a.prid='.$row->id);
 		}
 
-		$sql = 'select a.id,a.name from user a,groupuser b where a.id = b.uid and ';
+		$sql = 'select a.id,a.name from user a,groupuser b where a.id = b.uid  ';
 		if($prid){
-			$sql .= 'b.gid='.$prid;	
+			$sql .= 'and b.gid='.$prid;	
 		}else{
-			$sql .= '('.implode(' or ',$pids).')';
+			if(count($pids)>0){
+				$sql .= 'and ('.implode(' or ',$pids).')';
+			}
 		}	
 		$query = $this->db->query($sql);
 
