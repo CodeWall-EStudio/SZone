@@ -6,6 +6,7 @@
   <title>教师工作室</title>
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
   <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/jquery.plupload.queue.css" type="text/css" media="screen" />
 
   <meta property="qc:admins" content="124110632765637457144563757" />
 </head>
@@ -16,9 +17,10 @@
 		<div class="main-section">
 			<div class="tool-zone fade-in">
 				<div class="btn-zone">
-<!-- 					<input type="file" class="upload-input" id="uploadFile" /> -->
-					<button class="upload btn btn-primary" data-toggle="modal" data-target="#uploadFile" disabled="disabled">上传</button>
-
+					<?if($key=='' && $prid != 0):?>
+					<button class="upload btn btn-primary btn-upload" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>上传</button>
+					<button class="btn btn-default" data-toggle="modal" data-target="#newFold" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>新建文件夹</button>
+					<?endif?>
 				</div>
 
 				<div class="search-zone">
@@ -51,12 +53,20 @@
 			<div class="section-tit">
 				<div class="dropdown">				
 					<a class="section-tit-a-first" href="/home">我的备课</a>
-					<?if($fid):?>
-						<a class="section-tit-a-second"><?=$fname?></a>
-						<a class="section-tit-a-can" href="/home?fid=<?=$pid?>">返回上级</a>
+					<a><?=$pname?></a>&nbsp;&nbsp;
+					<a href="/home/prepare?prid=<?=$prid?>"><?=$pfname?></a> &nbsp;&nbsp;
+					<?if($thisfold['id'] > 0):?>	
+							<?if(count($thisfold['idpath'])>1):?>
+								<a>......</a>
+							<?endif?>					
+						<?if($thisfold['pid']):?>
+							<a href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>"><?= $fold[$thisfold['pid']]['name'] ?></a>
+						<?endif?>
+						<a class="section-tit-a-second"><?= $thisfold['name'] ?></a>
+						<a class="section-tit-a-can" href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>">返回上级</a>
 					<?else:?>
 						<a class="section-tit-a-end">返回上级</a>
-					<?endif?>
+					<?endif?>					
 				</div>
 				<ul class="act-zone">
 					<li class="all-file file-type dropdown" id="changeFileType">
@@ -90,14 +100,13 @@
 							?>
 						<b class="caret"></b></a>
 						<ul class="dropdown-menu section-tit-menu1" role="menu" aria-labelledby="dLabel">
-							<li><a data-type="0" href="/home/prepare?type=0">全部</a></li>
-							<li><a data-type="2">收藏</a></li>
-							<li><a data-type="3" href="/home/prepare?type=4">视频</a></li>
-							<li><a data-type="1" href="/home/prepare?type=1">图片</a></li>
-							<li><a data-type="4" href="/home/prepare?type=3">音乐</a></li>
-							<li><a data-type="5" href="/home/prepare?type=2">文档</a></li>
-							<li><a data-type="6" href="/home/prepare?type=5">应用</a></li>
-							<li><a data-type="7" href="/home/prepare?type=6">压缩包</a></li>
+							<li><a data-type="0" href="/home/prepare?pid=<?=$prid?>&type=0">全部</a></li>
+							<li><a data-type="3" href="/home/prepare?pid=<?=$prid?>&type=4">视频</a></li>
+							<li><a data-type="1" href="/home/prepare?pid=<?=$prid?>&type=1">图片</a></li>
+							<li><a data-type="4" href="/home/prepare?pid=<?=$prid?>&type=3">音乐</a></li>
+							<li><a data-type="5" href="/home/prepare?pid=<?=$prid?>&type=2">文档</a></li>
+							<li><a data-type="6" href="/home/prepare?pid=<?=$prid?>&type=5">应用</a></li>
+							<li><a data-type="7" href="/home/prepare?pid=<?=$prid?>&type=6">压缩包</a></li>
 						</ul>						
 					</li>
 					<!--<li class="list-type" id="changeType"><i></i><span>图标</span></li>-->
@@ -108,33 +117,88 @@
 			<div id="fileList" class="dis-list-type">
 				<ul class="cl">
 
-					<?if(isset($plist) && count($plist)>0):?>
+					<?if(isset($fold) && count($fold)>0):?>
 						<li class="tit file-list">
-							<div class="td1"><input type="checkbox" id="selectAllFile" /></div>
-							<div class="td2"><span>文件(<b><?=count($plist)?></b>个)</span>  </div>
-							<div class="td3">评论</div>
-							<div class="td4">类型</div>
-							<div class="td5">大小</div>
-							<div class="td6">时间</div>
+							<div class="td1"><input type="checkbox" id="selectAllFold" /></div>
+							<div class="td2"><span>文件夹和文件</span>  
+									<a href="/home/prepare?pid=<?=$prid?>&fid=<?=$thisfold['id']?>&on=1&od=<?if($on==1 && $od ==1):?>2<?else:?>1<?endif?>"><span>名称</span> 
+										<?if($on==1 && $od ==1):?><i class="ad"></i><?elseif($on==1 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+									</a>
+								</div>
+							<div class="td_mark">&nbsp;</div>
+							<div class="td_uname">&nbsp;</div>
+							<div class="td_source">&nbsp;</div>						
+							<div class="td_type">
+							<a href="/home/prepare?prid=<?=$prid?>&fid=<?=$thisfold['id']?>&on=2&od=<?if($on==2 && $od ==1):?>2<?else:?>1<?endif?>">
+								<span>类型</span>  
+								<?if($on==2 && $od ==1):?><i class="ad"></i><?elseif($on==2 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+							</a>
+							</div>
+							<div class="td_size">
+								<a href="/home/prepare?prid=<?=$prid?>&fid=<?=$thisfold['id']?>&on=3&od=<?if($on==3 && $od ==1):?>2<?else:?>1<?endif?>">
+								<span>大小</span>  
+								<?if($on==3 && $od ==1):?><i class="ad"></i><?elseif($on==3 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+								</a>
+							</div>
+							<div class="td_time">
+								<a href="/home/prepare?prid=<?=$prid?>&fid=<?=$thisfold['id']?>&on=4&od=<?if($on==4 && $od ==1):?>2<?else:?>1<?endif?>">
+								<span>时间</span>  
+								<?if($on==4 && $od ==1):?><i class="ad"></i><?elseif($on==4 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+								</a>
+							</div>	
 						</li>	
-						<?foreach($plist as $item):?>
+					<?foreach($fold as $item):?>
+						<?if($item['pid'] == $fid):?>
+						<li class="fold" data-id="<?=$item['id']?>">
+							<div class="td1"><input type="checkbox" name="file" class="fdclick liclick" value="<?=$item['id']?>" data-type="fold" /></div>
+							<div class="td2">
+								<a href="/home/prepare?prid=<?=$prid?>&fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"><i class="fold"></i></a>
+								
+								<dl>
+									<dt><a href="/home/prepare?prid=<?=$item['prid']?>&fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"><?=$item['name']?></a>
+										<span cmd="edit" data-id="<?=$item['id']?>">
+											<?if($item['mark']==''):?>
+												编辑备注
+											<?else:?>
+											<?=$item['mark']?>&nbsp;
+											<?endif?>
+										</span>
+										<span class="hide">
+											<input class="name-edit" type="text" maxlength="20" value="<?=$item['mark']?>" />
+											<i class="edit-comp" cmd="editComp" data-type="fold" data-id="<?=$item['id']?>"></i>
+											<i class="edit-close" data-value="<?=$item['mark']?>" cmd="editClose"></i>
+										</span>
+									</dt>
+									<dd>
+									<!-- 	<span>下载</span> -->
+									</dd>
+								</dl>
+							</div>
+							<div class="td_mark">&nbsp;</div>
+							<div class="td_uname">&nbsp;</div>
+							<div class="td_source">&nbsp;</div>
+							<div class="td_type">&nbsp;</div>
+							<div class="td_size">&nbsp;</div>							
+							<div class="td_time"><span><?=$item['time']?></span> </div>
+						</li>
+						<?endif?>
+					<?endforeach?>					
+						<?foreach($flist as $item):?>
 							<li class="file" data-id="<?=$item['id']?>">
-								<div class="td1"><input type="checkbox" name="file" class="fclick" value="<?=$item['id']?>" data-type="file" /></div>
+								<div class="td1"><input type="checkbox" name="file" class="fclick liclick" value="<?=$item['id']?>" data-type="file" /></div>
 								<div class="td2">
 									<a class="file-name">
-									<?if($item['type'] == 1):?>
-										<img src="/cgi/getfile?fid=<?=$item['fid']?>" />
+									<?if($item['type'] < 7):?>
+										<i class="icon-type<?=(int) $item['type']?>" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>" ></i>
 									<?else:?>
-										<i class="fold"></i>
+										<i class="icon-type" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>" ></i>
 									<?endif?>
 									</a>
 									<dl>
 										<dt><?=$item['name']?> 
-											<span cmd="edit" data-id="<?=$item['id']?>"><?=$item['content']?></span>
+											<span cmd="edit" data-id="<?=$item['id']?>"></span>
 											<span class="hide">
-												<input class="name-edit" type="text" value="<?=$item['content']?>" />
-												<i class="edit-comp" cmd="editComp" data-type="file" data-id="<?=$item['id']?>"></i>
-												<i class="edit-close" data-value="<?=$item['content']?>" cmd="editClose"></i>
+
 											</span>
 										</dt>
 										<dd>								
@@ -142,12 +206,16 @@
 										</dd>
 									</dl>
 								</div>
-								<div class="td3"><?=$item['content']?>&nbsp;</div>
-								<div class="td4">
+								<div class="td_mark">&nbsp;</div>
+								<div class="td_uname">&nbsp;</div>								
+								<div class="td_source">&nbsp;</div>
+								<div class="td_type">
 									<?=get_file_type($item['type'])?>
 								</div>
-								<div class="td5"><?=$item['size']?></div>
-								<div class="td6"><?=$item['ctime']?></div>
+								<div class="td_size"><?=$item['size']?></div>
+								<div class="td_time"><?=$item['time']?>
+<i <?if(isset($item['iscoll'])):?>class="s" cmd="uncoll" title="取消收藏"<?else:?>cmd="coll" title="收藏"<?endif?> data-type="file" data-id="<?=$item['fid']?>"></i>
+								</div>
 							</li>
 						<?endforeach?>	
 					<?else:?>									
@@ -160,8 +228,8 @@
 		<div class="aside">
 			<h3 class="selected">我的备课</h3>
 			<ul class="my-prep-list">
-				<?if(isset($glist)):?>
-				<?foreach($glist as $k => $row):?>
+				<?if(isset($plist)):?>
+				<?foreach($plist as $k => $row):?>
 					<li>
 						<?=$row['name']?>
 						<?if(isset($row['list'])):?>
@@ -169,25 +237,7 @@
 							<?foreach($row['list'] as $r):?>
 								<li>
 									<?if(isset($r['name'])):?>
-									<?=$r['name']?>
-									<?endif?>
-									<?if(isset($r['list'])):?>
-									<ul>
-									<?foreach($r['list'] as $k):?>
-										<li>
-											<?if(isset($k['name'])):?>
-											<?=$k['name']?>
-											<?endif?>											
-											<?if(isset($k['list'])):?>
-											<ul>
-											<?foreach($k['list'] as $m):?>
-												<li><a href="/home/prepare?pid=<?=$m['id']?>"> <?=$m['name']?></a></li>
-											<?endforeach?>	
-											</ul>										
-											<?endif?>
-										</li>
-									<?endforeach?>
-									</ul>
+										<a href="/home/prepare?prid=<?=$r['id']?>"> <?=$r['name']?></a>
 									<?endif?>
 								</li>
 							<?endforeach?>
@@ -205,6 +255,20 @@
 	</div>	
 	<div class="footer"></div>
 
+
+	<div id="shareWin" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">共享 </h4>
+				</div>
+				<div class="modal-body">
+					<iframe id="shareIframe" width="538" height="370" border="0" frameborder="0" scroll="false" ></iframe>				
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div id="delFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -226,26 +290,25 @@
 		</div>
 	</div>
 
-	<div id="uploadFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div id="uploadFile" class="upload-win" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true" cmd="close">&times;</button>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true" cmd="min">-</button>
 					<h4 class="modal-title">上传文件</h4>
 				</div>
 				<div class="modal-body">
-					<div id="uploadContainer">
-						<button type="button" class="btn btn-default" id="btnUpload">选择文件</button>
-						<button type="button" class="btn btn-primary" id="btnStartUload">上传</button>
+
+				<form method="post" action="/cgi/upload">	
+					<div id="uploader">
+						<p>Your browser doesn't have Flash, Silverlight or HTML5 support.</p>
 					</div>
-					<input type="hidden" class="foldid" value="<?=$fid?>" />
-					<div id="file_uploadList"></div>
+				</form>	
 				</div>
 			</div>
 		</div>
 	</div>
-
-
 
 	<div id="reviewFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -346,20 +409,24 @@
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
 	<script src="/js/lib/jq.validate.js"></script>
-	<script src="/js/lib/plupload.full.min.js"></script>
+	<script type="text/javascript" src="/js/lib/moxie.js"></script>
+	<script type="text/javascript" src="/js/lib/plupload.dev.js"></script>
+	<script src="/js/lib/jquery.plupload.queue.js"></script>
 <!-- 	// <script type="text/javascript" src="/js/lib/moxie.js"></script>
 	// <script type="text/javascript" src="/js/lib/plupload.dev.js"></script>	 -->
 
 	<script>
+		var fid = '<?=$fid?>';
+
 		var folds = '<?=json_encode($fold);?>',
-			files = '<?=json_encode($file);?>';
+			files = '<?=json_encode($flist);?>';
 		folds = $.parseJSON(folds);
-		files = $.parseJSON(files);
-		console.log(folds);
-		console.log(files);
+		files = $.parseJSON(files);		
+		//var nowPrepId = '<?=$pid?>';
 	</script>
 
 	<script src="/js/common.js"></script>
+	<script src="/js/upload.js"></script>
 	<script src="/js/home.js"></script>
 	<div id="alertTips" class="alert-tips"></div>
 	<!--

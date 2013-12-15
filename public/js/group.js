@@ -539,6 +539,48 @@
 			$('#reviewFile').modal('show');
 		});	
 
+		$("#list-tree").bind('click',function(e){
+			if($("#foldList").attr('show')){
+				$("#foldList").hide().removeAttr('show');
+			}else{
+				$("#foldList").show().attr('show',1);
+			}
+		});
+
+		$("#foldList").bind('click',function(e){
+			var t = $(e.target),
+				id = t.attr('data-id'),
+				nodata = t.attr('no-data');
+			if(!id || nodata){
+				return;
+			}
+			var p = t.parent('li');
+			if(p.find('ul').length > 0){
+				if(t.hasClass("glyphicon-minus")){
+					t.removeClass('glyphicon-minus');
+					p.find('ul').hide();
+				}else{
+					t.addClass('glyphicon-minus');
+					p.find('ul').show();
+				}
+				return;
+			}
+			//glyphicon-minus
+			$.get('/cgi/get_fold_lev',{fid: id,gid:ginfo.id},function(d){
+				if(d.code == 0){
+					var tmp = $("#fold-list-tmp").html();
+					var obj = {
+						list : d.data.list
+					}
+					console.log($.tmp(tmp,obj));
+					p.append($.tmp(tmp,obj));
+					t.addClass('glyphicon-minus');
+				}else{
+					t.attr('no-data',1);
+				}
+			});
+		});		
+
 	}
 
 	function init(){

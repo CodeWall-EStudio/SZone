@@ -4,6 +4,14 @@ body{
 li{
 	list-style-type:none;
 }
+.mcontainer{
+	position: relative;
+	min-width:990px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	padding-top: 20px;
+}
 .clear{
 	clear:both;
 }
@@ -12,7 +20,8 @@ a{
 	text-decoration: none;
 }
 .header{
-	width:1000px;
+	width:100%;
+	min-width:1000px;
 	margin:0 auto;
 	height:60px;
 	background-color:#224888;
@@ -216,18 +225,19 @@ a{
 }
 .container{
 	position:relative;
-	width:990px;
-	min-width:990px;
-	margin:20px auto;
+	width:100%;
+	/*//min-width:990px;*/
+	margin:0;
 	padding:0;
-	border:1px solid #d3d6da;
+	padding-top:20px;
+	/*border:1px solid #d3d6da;*/
 }
 
 /*侧边栏*/
 .aside{
 	position:absolute;
 	right:0;
-	/*top:0;*/
+	top:0;
 	float:right;
 	width:178px;
 	border-left:1px solid #d3d6da;
@@ -268,9 +278,12 @@ a{
 .main-section{
 	float:left;
 	background:#fff;
-	width:810px;
+	min-width:810px;
 	min-height:600px;
+	height:100%;
+	width:100%;
 	padding:0 5px;
+	padding-right:185px;
 }
 /*工具条*/
 .tool-zone{
@@ -342,6 +355,7 @@ a{
 }
 .section-tit a{
 	float:left;
+	margin-right:12px;
 	display:block;
 	text-decoration: none;
 }

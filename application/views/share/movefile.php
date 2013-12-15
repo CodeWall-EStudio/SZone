@@ -41,7 +41,24 @@
 		<div class="move-target">
 			我的备课
 			<ul id="prepList" class="perplist">
-				<li></li>
+				<?if(isset($plist)):?>
+				<?foreach($plist as $k => $row):?>
+					<li>
+						<?=$row['name']?>
+						<?if(isset($row['list'])):?>
+							<ul>
+							<?foreach($row['list'] as $r):?>
+								<li>
+									<?if(isset($r['name'])):?>
+										<a class="a-click" data-id="<?=$r['id']?>"><?=$r['name']?></a>
+									<?endif?>
+								</li>
+							<?endforeach?>
+							</ul>
+						<?endif?>
+					</li>
+				<?endforeach?>
+				<?endif?>
 			</ul>
 		</div>
 		<div class="clear"></div>

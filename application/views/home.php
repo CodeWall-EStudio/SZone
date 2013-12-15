@@ -12,7 +12,7 @@
 </head>
 <body>
 	<?php  $this->load->view('public/header.php',$nav);?>
-	<div class="container">
+	<div class="mcontainer">
 		<div class="main-section">
 			<div class="tool-zone fade-in">
 				<div class="btn-zone">
@@ -30,6 +30,7 @@
 					</form>
 				</div>
 			</div>
+
 			<div class="file-act-zone fade-in hide" id="fileActZone">
 				<ul class="nav nav-pills">
 					<li class="sharefile">
@@ -56,21 +57,7 @@
 			<div class="section-tit">
 				<div class="dropdown">
 					<?if(count($flist)>0):?>
-					<a data-toggle="dropdown" class="section-tit-a-first section-tit-a-border">树</a>
-					<ul class="dropdown-menu section-tit-menu" role="menu" aria-labelledby="dLabel" id="myFileList">
-						<?foreach($flist as $item):?>
-							<li>
-								<a class="glyphicon glyphicon-plus" href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"> <?=$item['name']?></a>
-								<?if(isset($item['list'])):?>
-								<ul style="padding-left:24px;">
-									<?foreach($item['list'] as $row):?>
-									<li><a class="glyphicon glyphicon-minus" href="/home?fid=<?=$row['id']?>&od=<?=$od?>&on=<?=$on?>"> <?=$row['name']?></a></li>
-									<?endforeach?>
-								</ul>								
-								<?endif?>
-							</li>						
-						<?endforeach?>
-					</ul>				
+						<a id="list-tree" class="section-tit-a-first section-tit-a-border">树</a>				
 					<?endif?>	
 					<?if($key==''):?>
 						<a class="section-tit-a-first" href="/home">个人文件</a>
@@ -79,7 +66,6 @@
 									<a>......</a>
 								<?endif?>					
 							<?if($thisfold['pid']):?>
-
 								<a class="section-tit-a-first" href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>"><?= $fold[$thisfold['pid']]['name'] ?></a>
 							<?endif?>
 							<a class="section-tit-a-second"><?= $thisfold['name'] ?></a>
@@ -134,10 +120,18 @@
 					</li>
 					<!--<li class="list-type" id="changeType"><i></i><span>图标</span></li>-->
 				</ul>
-
-
 			</div>
-
+			<div id="foldList" class="fold-list">
+				<?if(count($flist)>0):?>
+				<ul>
+					<?foreach($flist as $item):?>
+						<li class="list-li">
+							<i class="glyphicon <?if(isset($item['child'])):?>glyphicon-plus<?endif?>" data-id="<?=$item['id']?>"></i><a class="list-link" href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"> <?=$item['name']?></a>							
+						</li>						
+					<?endforeach?>
+				</ul>				
+				<?endif?>
+			</div>
 			<div id="fileList" class="dis-list-type">
 				<ul class="cl">
 					<?if($foldnum):?>
@@ -223,10 +217,10 @@
 								<div class="td1"><input type="checkbox" name="file" class="fclick liclick" value="<?=$item['id']?>" data-type="file" /></div>
 								<div class="td2">
 									<a class="file-name" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>">
-									<?if($item['type'] == 1):?>
-										<img src="/cgi/getfile?fid=<?=$item['fid']?>" data-fid="<?=$item['fid']?>"  data-id="<?=$item['id']?>"/>
+									<?if($item['type'] < 7):?>
+										<i class="icon-type<?=(int) $item['type']?>" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>" ></i>
 									<?else:?>
-										<i class="fold" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>" ></i>
+										<i class="icon-type" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>" ></i>
 									<?endif?>
 									</a>
 									<dl>
@@ -291,6 +285,7 @@
 					<li class="last"></li>
 				</ul>
 			</div>
+			<div class="clear"></div>	
 			<div class="page-zone">
 				<?
 					$page['url'] = '/?type='.$type.'&fid='.$fid.'&key='.$key.'&';
@@ -513,10 +508,26 @@
 		</div>
 	</div>
 
+	<script type="text/template" id="fold-list-tmp">
+		<ul>
+			<%
+				for(var i in list){
+					var item = list[i];
+					console.log(item);
+			%>
+			<li>
+				<i class="glyphicon <%if(item.child){%>glyphicon-plus<%}%>" data-id="<%=item.id%>"></i><a class="list-link" href="/home?fid=<%=item.id%>&od=<?=$od?>&on=<?=$on?>"> <%=item.name%></a>	
+			</li>
+			<%}%>
+		</ul>
+	</script>
+
 	<script src="/js/lib/jq.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
 	<script src="/js/lib/jq.validate.js"></script>
+	<script src="/js/lib/jQuery.tmp.js"></script>
+	
 
 <!-- <script src="/js/lib/plupload.full.min.js"></script> -->
 	
@@ -530,8 +541,8 @@
 		var fid = '<?=$fid?>';
 		folds = $.parseJSON(folds);
 		files = $.parseJSON(files);
-		console.log(folds);
-		console.log(files);
+		// console.log(folds);
+		// console.log(files);
 	</script>
 
 	<script src="/js/common.js"></script>

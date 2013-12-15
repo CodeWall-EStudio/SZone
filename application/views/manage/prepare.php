@@ -31,9 +31,9 @@
 				<?foreach($ulist as $key => $item):?>
 				<tr>
 					<td><input type="checkbox" /></td>
-					<td><?=$item['name'];?> > <?=$item['bname'];?></td>
+					<td><?=$item['name'];?></td>
 					<td></td>
-					<td align="right"> <a href="/manage/delprep?id=<?=$item['bid']?>">删除</a></td>
+					<td align="right"> <a href="/manage/delprep?id=<?=$item['id']?>">删除</a></td>
 				</tr>
 				<?endforeach?>			
 			</table>

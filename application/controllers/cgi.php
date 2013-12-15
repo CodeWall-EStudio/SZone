@@ -15,7 +15,7 @@ class Cgi extends SZone_Controller {
 	 *
 	 * So any other public methods not prefixed with an underscore will
 	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
+	 * @see http://codeigniter.comuploser_guide/general/urls.html
 	 */
 
 
@@ -323,6 +323,7 @@ class Cgi extends SZone_Controller {
 		$field_name = "file";
 
         $fdid = (int) $this->input->get('fid');
+        //$pid = (int) $this->input->get('pid');
         //$this->config->load('szone');
         $ft = $this->config->item('filetype');
         $md5 =  md5_file($_FILES['file']['tmp_name']);
@@ -428,8 +429,12 @@ class Cgi extends SZone_Controller {
 				$used += $filedata['file_size'];
 			}
 			
+			$tablename = 'userfile';
+			// if($pid){
+			// 	$tablename = 'preparefile';
+			// }
 
-			$sql = 'select id from userfile where fid='.$fid.' and uid='.(int) $this->user['uid'];
+			$sql = 'select id from '.$tablename.' where fid='.$fid.' and uid='.(int) $this->user['uid'];
 			$query = $this->db->query($sql);
 			if ($query->num_rows() > 0){
 				$row = $query->row();
@@ -452,7 +457,10 @@ class Cgi extends SZone_Controller {
 				'del' => 0,
 				'fdid' => $fdid
 			);
-			$sql = $this->db->insert_string('userfile',$data);
+			// if($pid){
+			// 	$data['pid'] = $pid;
+			// }
+			$sql = $this->db->insert_string($tablename,$data);
 			$query = $this->db->query($sql);
 
 			if($this->db->affected_rows() > 0){
@@ -1154,58 +1162,104 @@ class Cgi extends SZone_Controller {
 
 		foreach($fl as $k){
 			array_push($kv,'('.(int) $pid.','.(int) $k.','.(int) $this->user['uid'].')');
-			array_push($fw,'fid='.$k);
+			array_push($fw,'id='.$k);
 		}
-			
-		$wh = implode(' or ',$fw);
-		$sql = 'select fid from preparefile where uid='.(int) $this->user['uid'].' and pid='.(int) $pid.' and ('.$wh.')';
+
+		$sql = 'select id from userfolds where pid=0 and uid='.(int) $this->user['uid'].' and prid='.$pid;
 		$query = $this->db->query($sql);
-
-		if ($this->db->affected_rows() > 0){
-			$fkl = array();
-			$nfl = array();
-			$kv = array();
-			foreach($query->result() as $row){
-				array_push($fkl,$row->fid);
-			}
-			foreach($fl as $k){
-				if(!in_array($k,$fkl)){
-					array_push($nfl,$k);
-				}
-			}
-			if(count($nfl) > 0){
-				foreach($nfl as $k){
-					array_push($kv,'('.(int) $pid.','.(int) $k.','.(int) $this->user['uid'].')');
-				}
-			}
-
-		}
-		if(count($kv)>0){
-			$sql = 'insert into preparefile (pid,fid,uid) value '.implode(',',$kv);
+		if($this->db->affected_rows() == 0){
+			$sql = 'select name from groups where id='.$pid;
 			$query = $this->db->query($sql);
-			if ($this->db->affected_rows() > 0){
-				$ret = array(
-					'ret' => 0,
-					'msg' => '复制成功!'
-				);
-					$this->json($ret,0,'复制成功!');
-					return;					
-			}else{
-				$ret = array(
-					'ret' => 100,
-					'msg' => '复制失败!'
-				);
-					$this->json($ret,100,'复制失败!');
-					return;					
-			}		
+
+			$row = $query->row();
+
+			$fname = $row->name;
+
+			$data = array(
+				'pid' => 0,
+				'name' => $fname,
+				'uid' => $this->user['uid'],
+				'mark' => '',
+				'createtime' => time(),
+				'type' => 0,
+				'prid' => $pid
+			);
+			$sql = $this->db->insert_string('userfolds',$data);
+			$query = $this->db->query($sql);
+
+			$pfdid = $this->insert_id();
+		}else{
+			$row = $query->row();
+			$pfdid = $row->id;
+		};
+
+		$sql = $this->db->update_string("userfile",array('fdid' => $pfdid),implode(' or ',$fw));
+		$query = $this->db->query($sql);
+			
+		if ($this->db->affected_rows() > 0){
+			$ret = array(
+				'ret' => 0,
+				'msg' => '复制成功!'
+			);
+				$this->json($ret,0,'复制成功!');
+				return;					
 		}else{
 			$ret = array(
-				'ret' => 101,
-				'msg' => '复制失败!没有符合条件的记录.'
+				'ret' => 100,
+				'msg' => '复制失败!'
 			);
-					$this->json($ret,101,'复制失败!没有符合条件的记录!');
-					return;				
-		}	
+				$this->json($ret,100,'复制失败!');
+				return;					
+		}			
+		// $wh = implode(' or ',$fw);
+		// $sql = 'select fid from preparefile where uid='.(int) $this->user['uid'].' and pid='.(int) $pid.' and ('.$wh.')';
+		// $query = $this->db->query($sql);
+
+		// if ($this->db->affected_rows() > 0){
+		// 	$fkl = array();
+		// 	$nfl = array();
+		// 	$kv = array();
+		// 	foreach($query->result() as $row){
+		// 		array_push($fkl,$row->fid);
+		// 	}
+		// 	foreach($fl as $k){
+		// 		if(!in_array($k,$fkl)){
+		// 			array_push($nfl,$k);
+		// 		}
+		// 	}
+		// 	if(count($nfl) > 0){
+		// 		foreach($nfl as $k){
+		// 			array_push($kv,'('.(int) $pid.','.(int) $k.','.(int) $this->user['uid'].')');
+		// 		}
+		// 	}
+
+		// }
+		// if(count($kv)>0){
+		// 	$sql = 'insert into preparefile (pid,fid,uid) value '.implode(',',$kv);
+		// 	$query = $this->db->query($sql);
+		// 	if ($this->db->affected_rows() > 0){
+		// 		$ret = array(
+		// 			'ret' => 0,
+		// 			'msg' => '复制成功!'
+		// 		);
+		// 			$this->json($ret,0,'复制成功!');
+		// 			return;					
+		// 	}else{
+		// 		$ret = array(
+		// 			'ret' => 100,
+		// 			'msg' => '复制失败!'
+		// 		);
+		// 			$this->json($ret,100,'复制失败!');
+		// 			return;					
+		// 	}		
+		// }else{
+		// 	$ret = array(
+		// 		'ret' => 101,
+		// 		'msg' => '复制失败!没有符合条件的记录.'
+		// 	);
+		// 			$this->json($ret,101,'复制失败!没有符合条件的记录!');
+		// 			return;				
+		// }	
 	}
 
 	public function group_edit_desc(){
@@ -1862,6 +1916,82 @@ class Cgi extends SZone_Controller {
 			);
 			$this->json($ret,100,'操作失败!');			
 		}
+	}
+
+	public function get_fold_lev(){
+		$fid = $this->input->get('fid');
+		$gid = (int) $this->input->get('gid');
+
+		$tablename = 'userfolds';
+		if($gid){
+			$tablename = 'groupfolds';
+		}
+
+		$sql = 'select id,name from '.$tablename.' where pid='.$fid;
+		$query = $this->db->query($sql);
+
+		$flist = array();
+		$wh = array();
+		$rets = 0;
+		foreach($query->result() as $row){
+			array_push($wh,' pid='.$row->id);
+			$flist[$row->id] = array(
+				'id' => $row->id,
+				'name' => $row->name
+			);
+		}
+		if($this->db->affected_rows()>0){
+			$rets = 1;
+		}
+		$sql = 'select pid from '.$tablename.' where '.implode(' or ',$wh);
+		$query = $this->db->query($sql);
+		foreach($query->result() as $row){
+			$flist[$row->pid]['child'] = 1;
+		}
+
+		if($rets){
+			$ret = array(
+				'list' => $flist
+			);
+			$this->json($ret,0,'操作失败!');	
+		}else{
+			$ret = array(
+				'msg' => '加载失败'
+			);
+			$this->json($ret,100,'操作失败!');			
+		}
+	}
+
+	public function mark_file(){
+		$m = $this->input->post('mark');
+		$fid = $this->input->post('fid');
+
+		if($this->user['auth'] > 10){
+			$data = array(
+				'mark' => $m
+			);
+
+			$sql = $this->db->update_string('userfile',$data,'id='.$fid);
+			$query = $this->db->query($sql);
+
+			if($this->db->affected_rows() > 0){
+				$ret = array(
+					'msg' => '操作成功'
+				);
+				$this->json($ret,0,'操作失败!');	
+			}else{
+				$ret = array(
+					'msg' => '操作失败'
+				);
+				$this->json($ret,100,'操作失败!');			
+			}				
+		}else{
+			$ret = array(
+				'msg' => '没有权限'
+			);
+			$this->json($ret,10001,'操作失败!');				
+		}
+
 	}
 }
 

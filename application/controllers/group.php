@@ -14,6 +14,11 @@ class Group extends SZone_Controller {
 		$key = $this->input->get_post('key');
 
 
+		if(isset($this->depinfolist[$gid]) && $this->depinfolist[$gid]['pt']){
+			redirect('/group/prep');
+			return;
+		}
+
 		$od = (int) $this->input->get('od');
 		$on = $this->input->get('on');
 
@@ -81,15 +86,16 @@ class Group extends SZone_Controller {
 
 			$key = $this->input->get_post('key');
 
-			if(!$fid){
-				$sql = 'select id,name,mark,createtime,pid,tid,idpath from groupfolds where gid = '.$gid.' or pid='.$gid;
-			}else{
+			// if(!$fid){
+			// 	$sql = 'select id,name,mark,createtime,pid,tid,idpath from groupfolds where gid = '.$gid.' or pid='.$gid;
+			// }else{
 				$sql = 'select id,name,mark,createtime,pid,tid,idpath from groupfolds where gid = '.$gid.' or pid='.$fid;
-			}
+			//}
 			$query = $this->db->query($sql);
 			
 			$fname = '';
 			$fold = array();
+			$foldlist = array();
 			
 			foreach($query->result() as $row){
 				if($row->id == $fid){
@@ -112,6 +118,20 @@ class Group extends SZone_Controller {
 					'idpath' => $row->idpath,
 					'time' => date('Y-m-d',$row->createtime)
 				);
+				if($row->pid == 0){
+					$foldlist[$row->id] = array(
+						'id' => $row->id,
+						'name' => $row->name,
+						'mark' => $row->mark,
+						'pid' => (int) $row->pid,
+						'tid' => (int) $row->tid,
+						'time' => date('Y-m-d',$row->createtime)
+					);				
+				}else{
+					if(isset($fold[$row->pid])){
+						$fold[$row->pid]['child'] = 1;
+					}
+				}
 			}
 			$foldnum = count($fold);
 
@@ -354,4 +374,167 @@ class Group extends SZone_Controller {
 		// echo '<hr>';
 		// echo json_encode($flist);
 	}	
+
+	public function prep(){
+
+		$prid = (int) $this->input->get('prid');
+		$gr = (int) $this->input->get('gr');
+		$tag = $this->input->get('tag');
+		$ud = (int) $this->input->get('ud');
+		$fdid = (int) $this->input->get('fdid');
+
+		$key = $this->input->post('key');
+
+		$sql = 'select id from groups where pt=1';
+		$query = $this->db->query($sql);
+
+		$row = $query->row();
+		$gid = $row->id;
+
+		$sql = 'select id,name,parent,tag,grade from groups where type=3 and parent=0 order by parent';
+		$query = $this->db->query($sql);
+
+		$plist = array();
+		$kp = array();
+
+		$pfname = '';
+		$pname = '';
+
+		$first = 0;
+		$pids = array();
+		$pls = array();
+		//选择备课目录
+		foreach($query->result() as $row){
+			$plist[$row->id] = array(
+				'id' => $row->id,
+				'name' => $row->name,
+				'list' => array()
+			);
+			array_push($kp,$row->id);
+			if($row->id == $prid){
+				$plist[$row->id]['selected'] = 1;
+				$first = 1;
+			}
+		};
+
+  		$this->db->where_in('parent',$kp);
+		if($gr){
+			$this->db->where('grade',$gr);
+		}
+		if($tag){
+			$this->db->where('tag',$tag);
+		}
+		$query = $this->db->get('groups');
+		foreach($query->result() as $row){
+			array_push($pids,' b.gid='.$row->id);
+			array_push($pls,' a.prid='.$row->id);
+		}
+
+		$sql = 'select a.id,a.name from user a,groupuser b where a.id = b.uid and ';
+		if($prid){
+			$sql .= 'b.gid='.$prid;	
+		}else{
+			$sql .= '('.implode(' or ',$pids).')';
+		}	
+		$query = $this->db->query($sql);
+
+		$ulist = array();
+		foreach($query->result() as $row){
+			$ulist[$row->id] = array(
+				'id' => $row->id,
+				'name' => $row->name
+			);
+		}
+
+		$sql = 'select a.id,a.name,a.pid,a.prid,b.name as uname,b.id as uid from userfolds a,user b where ';
+		if($ud){
+			$sql .= ' b.id = '.$ud.' and';
+		}
+		if($first){
+			if(count($pls)>0){
+				$sql .= ' ('.implode(' or ',$pls).') and a.uid = b.id';
+			}else{
+				$sql .= ' a.prid =-1 and a.uid = b.id';
+			}
+		}else{
+			if($prid){
+				$sql .= ' a.prid = '.$prid.' and a.uid = b.id';
+			}else{
+				if(count($pls)>0){
+					$sql .= ' ('.implode(' or ',$pls).') and a.uid = b.id';	
+				}else{
+					$sql .= ' a.prid =-1 and a.uid = b.id';
+				}
+			}		
+		}
+		$query = $this->db->query($sql);
+
+		$fold = array();
+		foreach($query->result() as $row){
+			$fold[$row->id] = array(
+				'id' => $row->id,
+				'name' => $row->uname .' '.$row->name,
+				'fname' => $row->name,
+				'uid' => $row->uid,
+				'prid' => $row->prid,
+				'uname' => $row->uname
+			);
+		}
+
+		$flist = array();
+		if($fdid && count($fold)>0 ){
+			$fold = array();
+			$sql = 'select a.id,a.name,a.pid,a.prid,b.name as uname,b.id as uid from userfolds a,user b where a.pid='.$fdid;
+			$query = $this->db->query($sql);
+			// $this->db->where('pid',$fdid);
+			// $query = $this->db->get('userfolds');
+			foreach($query->result() as $row){
+				$fold[$row->id] = array(
+					'id' => $row->id,
+					'name' => $row->uname .' '.$row->name,
+					'fname' => $row->name,
+					'uid' => $row->uid,
+					'prid' => $row->prid,
+					'uname' => $row->uname
+				);
+			}
+
+			$sql = 'select a.id,a.name,a.fid,a.mark,b.size,b.type from userfile a,files b where a.fdid='.$fdid.' and a.fid = b.id';
+			if($key && $key != '' && $key != '搜索文件'){
+				$sql .= ' and a.name like "%'.$key.'%"';
+			}
+			$query = $this->db->query($sql);
+
+			foreach($query->result() as $row){
+				$flist[$row->id] = array(
+					'id' => $row->id,
+					'fid' => $row->fid,
+					'name' => $row->name,
+					'mark' => $row->mark,
+					'size' => format_size($row->size),
+					'type' => $row->type
+				);
+			}
+		}
+
+		$data = array(
+			'nav' => array(
+				'userinfo' => $this->user,
+				'group' => $this->grouplist,
+				'dep' => $this->deplist,
+				'school' => $this->school
+			)
+		);	
+		$data['prid'] = $prid;
+		$data['fdid'] = $fdid;
+		$data['ud'] = $ud;
+		$data['plist'] = $plist;
+		$data['ulist'] = $ulist;
+		$data['fold'] = $fold;
+		$data['gr'] = $gr;
+		$data['tag'] = $tag;
+		$data['flist'] = $flist;
+
+		$this->load->view('group/prep.php',$data);	
+	}
 }

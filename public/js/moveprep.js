@@ -1,40 +1,5 @@
 ;(function(){
 
-	function renderUl(list,id){
-		var html = [];
-		var  id = id || 0;
-		for(var i in list){
-			var item = list[i];
-			var sl = '';
-			if(item.list){
-				sl = renderUl(item.list,item.id);
-				html.push('<li><i class="i-c">-</i> <a  data-toggle="collapse" data-target=".second_'+item.id+'" data-id="'+item.id+'">'+item.name+'</a>'+sl+'</li>');
-			}else{
-				if(item.sid){
-					html.push('<li><i>-</i> <a class="a-click" data-id="'+item.id+'">'+item.name+'</a>'+sl+'</li>');
-				}else{
-					html.push('<li><i>-</i> <a  data-id="'+item.id+'">'+item.name+'</a>'+sl+'</li>');
-				}
-			}
-			
-		}
-		var str = '<ul class="panel-collapse collapse in second second_'+id+' ">'+html.join('')+'</ul>';
-		return str;
-	}
-
-	function render(){
-		var d = plist;
-		var html = [];
-		for(var i in plist){
-			var item = plist[i];
-			var sl = '';
-			if(item.list){
-				sl = renderUl(item.list);
-			}
-			html.push('<li>'+item.name+sl+'</li>');
-		}
-		$("#prepList").html(html.join(''));
-	}
 
 	function check(){
 		if($('#prepList a.selected').length == 1){
@@ -89,9 +54,7 @@
 	}
 
 	function init(){
-		render();
 		bind();
-
 	}
 
 	init();

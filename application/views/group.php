@@ -57,21 +57,7 @@
 				<div class="section-tit">
 					<div class="dropdown">
 						<?if(count($flist)>0):?>
-						<a data-toggle="dropdown" class="section-tit-a-first section-tit-a-border">树</a>
-						<ul class="dropdown-menu section-tit-menu" role="menu" aria-labelledby="dLabel" id="myFileList">
-							<?foreach($flist as $item):?>
-								<li>
-									<a class="glyphicon glyphicon-plus" href="/home?fid=<?=$item['id']?>"> <?=$item['name']?></a>
-									<?if(isset($item['list'])):?>
-									<ul>
-										<?foreach($item['list'] as $row):?>
-										<li><a class="glyphicon glyphicon-minus" href="/home?fid=<?=$row['id']?>"> <?=$row['name']?></a></li>
-										<?endforeach?>
-									</ul>								
-									<?endif?>
-								</li>						
-							<?endforeach?>
-						</ul>				
+							<a id="list-tree" class="section-tit-a-first section-tit-a-border">树</a>				
 						<?endif?>		
 
 						<?if($key==''):?>
@@ -138,6 +124,18 @@
 					</ul>
 
 				</div>
+
+				<div id="foldList" class="fold-list">
+					<?if(count($flist)>0):?>
+					<ul>
+						<?foreach($flist as $item):?>
+							<li class="list-li">
+								<i class="glyphicon <?if(isset($item['child'])):?>glyphicon-plus<?endif?>" data-id="<?=$item['id']?>"></i><a class="list-link" href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"> <?=$item['name']?></a>							
+							</li>						
+						<?endforeach?>
+					</ul>				
+					<?endif?>
+				</div>				
 				<!--dis-list-type -->
 				<div id="fileList" class="dis-list-type">
 					<ulclass="cl">
@@ -230,11 +228,11 @@
 									<div class="td1"><input type="checkbox" name="file" class="fclick liclick" value="<?=$item['id']?>" data-type="file" /></div>
 									<div class="td2">
 										<a class="file-name" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>">
-										<?if($item['type'] == 1):?>
-											<img src="/cgi/getfile?fid=<?=$item['fid']?>" data-fid="<?=$item['fid']?>"  data-id="<?=$item['id']?>"/>
-										<?else:?>
-											<i class="fold" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>" ></i>
-										<?endif?>
+									<?if($item['type'] < 7):?>
+										<i class="icon-type<?=(int) $item['type']?>" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>" ></i>
+									<?else:?>
+										<i class="icon-type" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>" ></i>
+									<?endif?>
 										</a>
 										<dl>
 											<dt><?=$item['name']?> 
@@ -571,10 +569,26 @@
 		</div>
 	</div>
 
+
+	<script type="text/template" id="fold-list-tmp">
+		<ul>
+			<%
+				for(var i in list){
+					var item = list[i];
+					console.log(item);
+			%>
+			<li>
+				<i class="glyphicon <%if(item.child){%>glyphicon-plus<%}%>" data-id="<%=item.id%>"></i><a class="list-link" href="/home?fid=<%=item.id%>&od=<?=$od?>&on=<?=$on?>"> <%=item.name%></a>	
+			</li>
+			<%}%>
+		</ul>
+	</script>	
+
 	<script src="/js/lib/jq.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
 	<script src="/js/lib/jq.validate.js"></script>
+	<script src="/js/lib/jQuery.tmp.js"></script>
 	<!--<script src="/js/lib/plupload.full.min.js"></script>-->
 
 	<script type="text/javascript" src="/js/lib/moxie.js"></script>

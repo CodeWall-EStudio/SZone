@@ -394,6 +394,21 @@ $config['filetype']['exe'] = 5;   //应用
 $config['filetype']['zip'] = 6;   //压缩包
 $config['filetype']['rar'] = 6;   //压缩包
 
+
+$config['grades']['1'] = '一年级';
+$config['grades']['2'] = '二年级';
+$config['grades']['3'] = '三年级';
+$config['grades']['4'] = '四年级';
+$config['grades']['5'] = '五年级';
+$config['grades']['6'] = '六年级';
+
+$config['subs']['1'] = '语文';
+$config['subs']['2'] = '数学';
+$config['subs']['3'] = '英语';
+$config['subs']['4'] = '体育';
+$config['subs']['5'] = '音乐';
+$config['subs']['6'] = '自然';
+
 $mime = array (
     //applications
     'ai'    => 'application/postscript',

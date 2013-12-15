@@ -161,194 +161,97 @@ class Manage extends SZone_Controller {
 
 		$plist = array();
 
-		$this->data['prelist'] = $this->prelist;
+		$groupid = (int) $this->input->post('groupid');
+		$grade = (int) $this->input->post('grade');
+		$type = $this->input->post('type');
+		$group = $this->input->post('group');
 
-		$sql = 'select * from prepare';
+		$sql = 'select id,name,parent from groups where type =3';
 		$query = $this->db->query($sql);
-		$gradelist = array();
+
 		foreach($query->result() as $row){
-			if($row->pid == 0){
-				$gradelist[$row->id] = array(
+			if($row->parent == 0){
+				$plist[$row->id] = array(
 					'id' => $row->id,
-					'name' => $row->name,
-					'pid' => $row->pid,
-					'sid' => $row->sid,
-					'gid' => $row->gid
+					'name' => $row->name
 				);
-			}else{
-				if(!isset($gradelist[$row->pid]['list'])){
-					$gradelist[$row->pid]['list'] = array();
-				}
-				if($row->sid == 0){
-					$gradelist[$row->pid]['list'][$row->id] = array(
-						'id' => $row->id,
-						'name' => $row->name,
-						'pid' => $row->pid,
-						'sid' => $row->sid,
-						'gid' => $row->gid						
+			}	
+		}
+		$this->data['plist'] = $plist;
+
+		if(!$groupid && !$group){
+			$this->load->view('manage/addprep',$this->data);	
+			return;
+					
+		}else{
+			//添加年纪科目
+			if($groupid){
+				$gl = $this->config->item('grades');
+				$tl = $this->config->item('subs');
+
+				$sql = 'select id from groups where parent='.$groupid.' and grade='.$grade.' and tag = "'.$type.'" and name = "'.$gl[$grade].$tl[$type].'"';
+				$query = $this->db->query($sql);
+				if($this->db->affected_rows() > 0){
+					$this->data['ret'] = 1;
+					$this->data['msg'] = '添加失败,已经有重复的记录了';	
+					$this->load->view('manage/retmsg',$this->data);				
+					return;
+				}else{
+					$data = array(
+						'name' => $gl[$grade].$tl[$type],
+						'parent' => $groupid,
+						'tag' => $type,
+						'grade' => $grade,
+						'type' => 3,
+						'create' => (int) $this->user['uid'],
+						'content' => ''
 					);
 				}
-			}
-		}
-		$this->data['grade'] = $gradelist;
-
-		$gname = $this->input->post('groupname');
-		$grname = $this->input->post('gradename');
-		$gid = (int) $this->input->post('groupid');
-		$grid = (int) $this->input->post('grid');
-		$unid = (int) $this->input->post('unid');
-		$uname = $this->input->post('unitname');
-		$lname = $this->input->post('lessonname');
-
-		if($gname){//添加学年名
-
-			if($this->input->post('groupname')){ //添加学年名称
-				$this->form_validation->set_rules('groupname', 'groupname', 'required|min_length[2]|max_length[40]|callback_checkgroupname');
+			//添加学年
+			}else{
+				$this->form_validation->set_rules('group', 'group', 'required|min_length[2]|max_length[40]|callback_checkgroupname');
 				if ($this->form_validation->run() == FALSE){
 					$this->data['data']['ret'] = 0;
-				}else{
-					$data = array(
-						'name' => $this->input->post('groupname'),
-						'parent' => 0,
-						'type' => 3,
-						'create' => $this->user['uid']
-					);
-
-					$str = $this->db->insert_string('groups', $data); 
-					//echo $str;
-					$query = $this->db->query($str);
-					if($this->db->affected_rows()>0){
-						$this->data['ret'] = 0;
-						$this->data['msg'] = '添加成功!';
-					}else{
-						$this->data['ret'] = 1;
-						$this->data['msg'] = '添加失败!';
-					};
-					
-					$this->load->view('manage/retmsg',$this->data);
+					$this->load->view('manage/addprep',$this->data);
 					return;
-				}				
-			}
-		}else if($this->input->post('gradename')){
-			$this->form_validation->set_rules('groupid','groupid','required');
-			$this->form_validation->set_rules('gradename', 'gradename', 'required|min_length[2]|max_length[40]');
-			if ($this->form_validation->run() == FALSE){
-				$this->data['data']['ret'] = 0;
-			}else{
-				$sql = 'select * from prepare where gid='.$gid.' and name="'.$grname.'"';
-				$query = $this->db->query($sql);
-				if(!$this->db->affected_rows()){
-					$data = array(
-						'gid' => $gid,
-						'name' => $grname,
-						'pid' => 0
-					);
-					$str = $this->db->insert_string('prepare',$data);
-					$query = $this->db->query($str);
-					if($this->db->affected_rows()>0){
-						$this->data['ret'] = 0;
-						$this->data['msg'] = '添加成功!';
-					}else{
-						$this->data['ret'] = 1;
-						$this->data['msg'] = '添加失败!';
-					};
-					$this->load->view('manage/retmsg',$this->data);
-					return;					
-				}else{
-					$this->data['data']['ret'] = 0;
-				}
-			}				
-		}else if($uname){
-			$this->form_validation->set_rules('groupid','groupid','required');
-			$this->form_validation->set_rules('grid','grid','required');
-			$this->form_validation->set_rules('unitname','unitname','required|min_length[2]|max_length[40]');
-			if ($this->form_validation->run() == FALSE){
-				$this->data['data']['ret'] = 0;
-			}else{
-				$sql = 'select * from prepare where gid='.$gid.' and pid='.$grid.' and name="'.$uname.'"';
-				$query = $this->db->query($sql);
-
-				if($this->db->affected_rows() > 0){
-					$this->data['data']['ret'] = 0;
-				}else{
-					$data = array(
-						'gid' => $gid,
-						'name' => $uname,
-						'pid' => $grid
-					);
-					$str = $this->db->insert_string('prepare',$data);
-					$query = $this->db->query($str);
-					if($this->db->affected_rows()>0){
-						$this->data['ret'] = 0;
-						$this->data['msg'] = '添加成功!';
-					}else{
-						$this->data['ret'] = 1;
-						$this->data['msg'] = '添加失败!';
-					};
-					$this->load->view('manage/retmsg',$this->data);
-				};
-				//
-				return;	
-			}			
-
-		}else if($lname){
-			$this->form_validation->set_rules('groupid','groupid','required');
-			$this->form_validation->set_rules('grid','grid','required');
-			$this->form_validation->set_rules('unid','unid','required');
-			$this->form_validation->set_rules('lessonname','lessonname','required|min_length[2]|max_length[40]');
-			if ($this->form_validation->run() == FALSE){
-				$this->data['data']['ret'] = 0;
-			}else{
-				$sql = 'select * from prepare where gid='.$gid.' and pid='.$grid.' and sid='.$unid.' and name="'.$lname.'"';
-				$query = $this->db->query($sql);
-
-
-				if($this->db->affected_rows() > 0){
-						$this->data['ret'] = 1;
-						$this->data['msg'] = '添加失败!记录重名了';
 				}else{				
-					$data = array(
-						'gid' => $gid,
-						'name' => $lname,
-						'pid' => $grid,
-						'sid' => $unid
-					);	
-					$str = $this->db->insert_string('prepare',$data);
-					$query = $this->db->query($str);
-					if($this->db->affected_rows()>0){
-						$this->data['ret'] = 0;
-						$this->data['msg'] = '添加成功!';
-					}else{
-						$this->data['ret'] = 1;
-						$this->data['msg'] = '添加失败!';
-					};
-
+					$data =array(
+						'name' => $group,
+						'type' => 3,
+						'parent' => 0,
+						'create' => (int) $this->user['uid'],
+						'content' => ''
+					);
 				}
-					$this->load->view('manage/retmsg',$this->data);
-					return;				
-			}			
-		}
+			}	
+			$sql = $this->db->insert_string('groups',$data);
+			$query = $this->db->query($sql);
 
-		$this->load->view('manage/addprep',$this->data);	
+			if($this->db->insert_id() > 0){
+				$this->data['ret'] = 0;
+				$this->data['msg'] = '添加成功!';
+			}else{
+				$this->data['ret'] = 1;
+				$this->data['msg'] = '添加失败!';
+			}
+			$this->load->view('manage/retmsg',$this->data);
+			return;
+
+		}
 	}
 
 
 	public function prepare(){
 		$this->data['data'] = array();
-		$sql = 'SELECT a.id,a.name,b.id AS bid,b.name AS bname,b.pid,b.sid,b.gid FROM groups a,prepare b WHERE a.type=3 AND b.gid = a.id';
+		$sql = 'select id,name from groups where type=3';
 		$query = $this->db->query($sql);
 
 		$ulist = array();
 		if($query->num_rows() > 0){
 				foreach($query->result() as $row){
-					$ulist[$row->bid] = array(
+					$ulist[$row->id] = array(
 						'id' => $row->id,
-						'bid' => $row->bid,
-						'name' => $row->name,
-						'bname' => $row->bname,
-						'pid' => $row->pid,
-						'sid' => $row->sid,
-						'gid' => $row->gid
+						'name' => $row->name
 					);
 				}
 		}

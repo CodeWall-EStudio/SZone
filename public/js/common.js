@@ -199,3 +199,14 @@
 	this.view = {};
 
 }.call(window.szone = {}));
+
+var windowdom = $(window);
+windowdom.bind('resize',function(){
+	if(windowdom.width() < 1000){
+		$('.mcontainer').css('width','1000px');
+		$('#header').css("width",'1000px');
+	}else{
+		$('.mcontainer').css('width','100%');
+		$('#header').css("width",'100%');
+	}
+});

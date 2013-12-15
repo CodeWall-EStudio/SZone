@@ -28,6 +28,7 @@
 			 		var data = {name: value,pid: pid,csrf_test_name:$.cookie('csrf_cookie_name')};
 			 		
 			 		$.post('/cgi/addfold',data,function(d){
+			 			console.log(d);
 			 			if(d.code==0){
 			 				$("#newFold .close").click();
 			 				window.location.reload();
@@ -61,6 +62,7 @@
         	var data = {
         		fname : $('#reName .foldname').val(),
         		fid : $('#reName .fid').val(),
+        		prid : nowPrepId,
         		csrf_test_name:$.cookie('csrf_cookie_name')
         	}
         	if(type){
@@ -80,72 +82,7 @@
             return false;
         }
     });   
-    $("#remarkFile").validate({
-        rules:{
-            comment : {
-                    required : true,
-                    maxlength : 255,
-                    minlength : 2
-            } 
-        },
-        messages:{
-            fname : {
-                    require : '请填写评论内容',
-                    maxlength : '评论最多255个字',
-                    minlength : '评论最少需要2个字'
-            }
-        },
-        submitHandler : function(form) {
-        	var data = {
-        		comment : $('#remarkFile .text-content').val(),
-        		fid : $('#remarkFile .fid').val(),
-        		csrf_test_name:$.cookie('csrf_cookie_name')
-        	}
-        	$.post('/cgi/add_file_comment',data,function(d){
-	 			if(d.code==0){
-	 				$("#remarkFile .close").click();
-	 				window.location.reload();
-	 			}else{
-	 				alert(d.data.msg);
-	 			}
-	 			$("#remarkFile .close").click();
-        	});
-            return false;
-        }
-    });   
-
-	var showShare = function(id,cmd){
-		var il = [],
-			nl = [];
-		if(!id){
-			$('#fileList .fclick:checked').each(function(){
-				il.push($(this).val());
-			});
-		}else if(typeof id == 'string'){
-			il.push(id);
-			nl.push(name);
-		}else{
-			il = id;
-			nl = name;
-		}
-		var id = il.join(',');
-		switch(cmd){
-			case 'toother':
-				$('#shareWin h4').text('共享 发送给别人');
-				//console.log('/share/other?id='+id);
-				iframeEl.attr('src','/share/other?id='+id);
-				break;
-			case 'togroup':
-				$('#shareWin h4').text('共享 到小组空间');
-				iframeEl.attr('src','/share/group?id='+id);
-				break;
-			case 'todep':
-				$('#shareWin h4').text('共享 到部门空间');
-				iframeEl.attr('src','/share/dep?id='+id);
-				break;
-		}
-	}
-
+ 
 	$('#searchKey').on("focus blur",function(e){
 		var dom = $(this),
 			v = dom.val(),
@@ -171,17 +108,6 @@
 		$('#shareWin h4').text('移动文件');
 		iframeEl.attr('src','/home/movefile?fid='+id);		
 	};		
-
-	var copyFile = function(){
-		var il = [];
-		$('#fileList .fclick:checked').each(function(){
-			il.push($(this).val());
-		});
-
-		id = il.join(',');
-		$('#shareWin h4').text('复制文件到备课');
-		iframeEl.attr('src','/home/copyfile?fid='+id);		
-	};	
 
 	var editMark = function(id,mark,type,target){
 		var data = {
@@ -280,8 +206,7 @@
     	// });
 	    	$('#fileActZone .sharefile').show();
 	    	$('#fileActZone .downfile').show();
-	    	$('#fileActZone .collfile').show();    		
-	    	$('#fileActZone .copyfile').show();     	
+	    	$('#fileActZone .collfile').show();    		 	
     	if(l==0){
 			$('.tool-zone').removeClass('hide');
 			$('.file-act-zone').addClass('hide');
@@ -312,7 +237,6 @@
 	    	$('#fileActZone .sharefile').hide();
 	    	$('#fileActZone .downfile').hide();
 	    	$('#fileActZone .collfile').hide();    		
-	    	$('#fileActZone .copyfile').hide(); 
 			$('.tool-zone').addClass('hide');
 			$('.file-act-zone').removeClass('hide');
     		if(l>1){
@@ -453,17 +377,14 @@
 					break;
 				case 'moveFile':
 					moveFile();
-					break;
-				case 'copyFile':
-					copyFile();
-					break;		
+					break;	
 				case 'cancel':
 					$('#fileList input:checked').each(function(){
 						$(this).attr('checked',false);
 					});
 					break;
 			}
-		})
+		});
 
 		$("#fileList .file").draggable({ 
 			revert: true
@@ -621,18 +542,11 @@
 			var t = $(e.target),
 				id = t.attr('data-id'),
 				nodata = t.attr('no-data');
-			if(!id || nodata){
+			if(!id){
 				return;
 			}
 			var p = t.parent('li');
-			if(p.find('ul').length > 0){
-				if(t.hasClass("glyphicon-minus")){
-					t.removeClass('glyphicon-minus');
-					p.find('ul').hide();
-				}else{
-					t.addClass('glyphicon-minus');
-					p.find('ul').show();
-				}
+			if(p.find('ul').length > 0 || nodata){
 				return;
 			}
 			//glyphicon-minus
@@ -644,7 +558,6 @@
 					}
 					console.log($.tmp(tmp,obj));
 					p.append($.tmp(tmp,obj));
-					t.addClass('glyphicon-minus');
 				}else{
 					t.attr('no-data',1);
 				}

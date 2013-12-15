@@ -395,3 +395,29 @@ i.ad{
 	position:static;
 	background:url(imgs/arrow-down2.png) no-repeat;	
 }
+
+.dropdown-menu > li > a.list-link{
+	display:inline-block;
+	padding-left:4px;
+}
+.list-li{
+	padding-left:12px;
+}
+.fold-list{
+	display:none;
+	width:150px;
+	float:left;
+}
+.dis-list-type{
+	float:left;
+}
+.fold-list ul{
+	padding:4px;
+}
+.fold-list li{
+	padding-left:4px;
+}
+.fold-list i.glyphicon{
+	width:7px;
+	height:14px;
+}

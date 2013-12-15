@@ -58,6 +58,7 @@ class Group_model extends CI_Model {
                         'parent' => $row->parent,
                         'content' => $row->content,
                         'auth' => in_array($row->id,$gidlist),
+                        'pt' => $row->pt,
                         'list' => array()
                     );
                 // }else{
@@ -80,12 +81,14 @@ class Group_model extends CI_Model {
             }elseif($row->type == 2){
                 array_push($result['deplist'],array(
                     'id' => $row->id,
+                    'pt' => $row->pt,
                     'name' => $row->name
                 ));
                 $result['depinfolist'][$row->id] = array(
                     'id' => $row->id,
                     'name' => $row->name,
                     'parent' => $row->parent,
+                    'pt' => $row->pt,
                     'content' => $row->content,
                     'auth' => in_array($row->id,$gidlist)
                 );
@@ -95,6 +98,7 @@ class Group_model extends CI_Model {
                 $result['school'] =  array(
                     'id' => $row->id,
                     'type' => $row->type,
+                    'pt' => $row->pt,
                     'name' => $row->name,
                     'content' => $row->content
                 );

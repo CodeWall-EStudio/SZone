@@ -32,6 +32,9 @@
 	//'/cgi/gupload?gid='+nowGroupId+'&csrf_test_name='+$.cookie('csrf_cookie_name'),
 
 	var upUrl = '/cgi/upload?csrf_test_name='+$.cookie('csrf_cookie_name');
+	// if(typeof nowPrepId != 'undefined'){
+	// 	upUrl += '&pid='+nowPrepId;
+	// }
 	if(typeof nowGroupId != 'undefined'){
 		upUrl = '/cgi/gupload?gid='+nowGroupId+'&csrf_test_name='+$.cookie('csrf_cookie_name');
 	}

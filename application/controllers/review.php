@@ -15,6 +15,9 @@ class Review extends SZone_Controller {
 		}
 
 		$sql = 'select a.id,a.fid,a.name,a.content,b.path,b.size,b.type,b.mimes from '.$tablename.' a, files b where a.fid = b.id and b.id = '.$fid;
+		if(!$gid){
+			$sql .= ' and a.uid='.(int) $this->user['uid'];
+		}
 		// if($type == 1){
 		// 	$sql .= ' and a.id < '.$fid.' limit 0,1';
 		// }elseif($type ==2){

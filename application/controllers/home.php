@@ -71,7 +71,7 @@ class Home extends SZone_Controller {
 
 		$key = $this->input->get_post('key');
 
-		$sql = 'select id,name,mark,createtime,pid,tid,idpath from userfolds where uid = '.(int) $this->user['uid'];
+		$sql = 'select id,name,mark,createtime,pid,tid,idpath from userfolds where prid=0 and uid = '.(int) $this->user['uid'];
 		// if($key){
 		// 	$sql .= ' and name like "%'.$key.'%"';
 		// }
@@ -105,19 +105,33 @@ class Home extends SZone_Controller {
 				'idpath' => $row->idpath,
 				'time' => date('Y-m-d',$row->createtime)
 			);
+			if($row->pid == 0){
+				$foldlist[$row->id] = array(
+					'id' => $row->id,
+					'name' => $row->name,
+					'mark' => $row->mark,
+					'pid' => (int) $row->pid,
+					'tid' => (int) $row->tid,
+					'time' => date('Y-m-d',$row->createtime)
+				);				
+			}else{
+				if(isset($foldlist[$row->pid])){
+					$foldlist[$row->pid]['child'] = 1;
+				}
+			}
 		}
 		$foldnum = count($fold);
 
-		foreach($fold as $row){
-			if($row['pid'] == 0){
-				$foldlist[$row['id']] = $row;
-			}else if($row['pid'] == $row['tid']){
-				if(!isset($foldlist[$row['pid']]['list'])){
-					$foldlist[$row['pid']]['list'] = array();
-				}
-				$foldlist[$row['pid']]['list'][$row['id']] = $row;
-			}
-		}
+		// foreach($fold as $row){
+		// 	if($row['pid'] == 0){
+		// 		$foldlist[$row['id']] = $row;
+		// 	}else if($row['pid'] == $row['tid']){
+		// 		if(!isset($foldlist[$row['pid']]['list'])){
+		// 			$foldlist[$row['pid']]['list'] = array();
+		// 		}
+		// 		$foldlist[$row['pid']]['list'][$row['id']] = $row;
+		// 	}
+		// }
 
 		$sql = 'select count(a.id) as anum from userfile a left join files b on b.id = a.fid where a.del =0 and a.uid='.(int) $this->user['uid'];
 		//if($fid){
@@ -179,7 +193,7 @@ class Home extends SZone_Controller {
 			array_push($idlist,$row->fid);
 		}
 
-		$sql = 'select id,name,mark,createtime,pid,tid,idpath from userfolds where uid = '.(int) $this->user['uid'];
+		$sql = 'select id,name,mark,createtime,pid,tid,idpath from userfolds where prid=0 and uid = '.(int) $this->user['uid'];
 		if($key){
 			$sql .= ' and name like "%'.$key.'%"';
 		}	
@@ -337,97 +351,6 @@ class Home extends SZone_Controller {
 		// echo json_encode($flist);
 	}
 
-	//复制文件到备课
-	function copyfile(){
-		$id = $this->input->get('fid');
-
-		$il = explode(',',$id);
-		$kl = array();
-		foreach($il as $k){
-			array_push($kl,' id='.$k);
-		}		
-		$str = implode(' or ',$kl);
-		$sql = 'select id,name from userfile where '.$str;		
-		$query = $this->db->query($sql);
-
-		$nl = array();
-		foreach($query->result() as $row){
-			array_push($nl,array(
-					'id' => $row->id,
-					'name' => $row->name
-				));
-		}	
-		$data = array('fl' => $nl);	
-
-		$sql = 'select id,name from groups where type=3';
-		$query = $this->db->query($sql);
-		$plist = array();
-		foreach($query->result() as $row){
-			$plist[$row->id] = array(
-				'id' => $row->id,
-				'name' => $row->name,
-				'list' => array()
-			);
-		}
-
-		$sql = 'select id,name,pid,sid,gid from prepare';
-		$query = $this->db->query($sql);
-
-		$gradelist = array();
-		// echo json_encode($query->result());
-		foreach($query->result() as $row){
-			if($row->pid == 0){
-				$plist[$row->gid]['list'][$row->id] = array(
-				//$gradelist[$row->id] = array(
-					'id' => $row->id,
-					'name' => $row->name,
-					'pid' => $row->pid,
-					'sid' => $row->sid,
-					'gid' => $row->gid
-				);
-					//echo $row->id.json_encode($plist[$row->gid]['list']);
-					//echo '<hr>';				
-			}else{
-
-				if($row->sid == 0){
-					if(!isset($plist[$row->gid]['list'][$row->pid]['list'])){
-						$plist[$row->gid]['list'][$row->pid]['list'] = array();
-					}
-
-					$plist[$row->gid]['list'][$row->pid]['list'][$row->id] = array(
-						'id' => $row->id,
-						'name' => $row->name,
-						'pid' => $row->pid,
-						'sid' => $row->sid,
-						'gid' => $row->gid						
-					);
-					//echo $row->id.json_encode($plist[$row->gid]['list']);
-					//echo '<hr>';
-				}else{
-
-					if(!isset($plist[$row->gid]['list'][$row->pid]['list'][$row->sid]['list'])){
-						$plist[$row->gid]['list'][$row->pid]['list'][$row->sid]['list'] = array();
-					}
-					if($row->sid == 13){
-						//var_dump($plist[$row->gid]['list'][$row->pid]['list'][$row->sid]);
-						//echo json_encode($plist[$row->gid]['list'][$row->pid]['list'][$row->sid]);
-					}
-
-					$plist[$row->gid]['list'][$row->pid]['list'][$row->sid]['list'][$row->id] = array(
-							'id' => $row->id,
-							'name' => $row->name,
-							'pid' => $row->pid,
-							'sid' => $row->sid,
-							'gid' => $row->gid						
-						);				
-				}
-			}
-		}
-		//echo json_encode($plist);
-		$data['plist'] = $plist;
-
-		$this->load->view('share/movefile.php',$data);
-	}	
 
 	function sendmail(){
 		$this->load->helper('util');
@@ -625,104 +548,293 @@ class Home extends SZone_Controller {
 		$this->load->view('home/gmail.php',$data);
 	}	
 
-	function prepare(){
-		$this->load->helper('util');
-// SELECT a.id,
-// 	a.content,
-// 	a.createtime,
-// 	a.fid,
-// 	b.name AS uname,
-// 	c.name AS fname,
-// 	d.path
-//  FROM message a 
-// LEFT JOIN `user` b ON a.tuid = b.`id`
-// LEFT JOIN `userfile` c ON c.fid = a.fid
-// LEFT JOIN `files` d ON d.id = a.fid
-// WHERE a.fuid = 2;		
-		$pid = (int) $this->input->get('pid');
-		$type = (int) $this->input->get('type');
-		$key = $this->input->post('key');
-		$sql = 'SELECT a.id,a.pid,a.fid,b.name,b.createtime,b.content,c.size,c.path,c.type FROM preparefile a LEFT JOIN userfile b ON b.fid = a.fid LEFT JOIN files c ON c.id = a.fid WHERE a.uid ='.(int) $this->user['uid'];
-		//类型选择
-		if($type){
-			$sql .= ' and c.type='.$type;
-		}
-		if($pid){
-			$sql .= ' and a.pid='.$pid;
-		}
-		if($key){
-			$sql .= ' and b.name like "%'.$key.'%"';
-		}
+	//复制文件到备课
+	function copyfile(){
+		$id = $this->input->get('fid');
 
+		$il = explode(',',$id);
+		$kl = array();
+		foreach($il as $k){
+			array_push($kl,' id='.$k);
+		}		
+		$str = implode(' or ',$kl);
+		$sql = 'select id,name from userfile where '.$str;		
 		$query = $this->db->query($sql);
 
-		$plist = array();
+		$nl = array();
 		foreach($query->result() as $row){
-			$plist[$row->id] = array(
-				'id' => $row->id,
-				'fid' => $row->fid,
-				'name' => $row->name,
-				'ctime' => $row->createtime,
-				'content' => $row->content,
-				'size' => format_size($row->size),
-				'path' => $row->path,
-				'type' => $row->type
-			);
-		}
-		$prelist = $this->prelist;
-
-		$gradelist = array();
-		foreach($prelist as $k => $row){
-			$gradelist[$k] = array(
-					'id' => $k,
-					'name' => $row
-				);
-		}
-
-		$sql = 'select id,name,pid,sid,gid from prepare';
-		$query = $this->db->query($sql);
-	
-		foreach($query->result() as $row){
-			if($row->pid == 0){
-				if(!isset($gradelist[$row->gid]['list'])){
-					$gradelist[$row->gid]['list'] = array();
-				}
-
-				$gradelist[$row->gid]['list'][$row->id] = array(
+			array_push($nl,array(
 					'id' => $row->id,
-					'name' => $row->name,
-					'pid' => $row->pid,
-					'sid' => $row->sid,
-					'gid' => $row->gid
-				);
+					'name' => $row->name
+				));
+		}	
+		$data = array('fl' => $nl);	
 
-			}else{
-				if($row->sid == 0){
-					if(!isset($gradelist[$row->gid]['list'][$row->pid]['list'])){
-						$gradelist[$row->gid]['list'][$row->pid]['list'] = array();
-					}					
-					$gradelist[$row->gid]['list'][$row->pid]['list'][$row->id] = array(
-						'id' => $row->id,
-						'name' => $row->name,
-						'pid' => $row->pid,
-						'sid' => $row->sid,
-						'gid' => $row->gid						
-					);
+		$sql = 'select id,name,parent from groups where type=3';
+		$query = $this->db->query($sql);
+		$plist = array();
+
+		//选择备课目录
+		foreach($query->result() as $row){
+			if($row->parent == 0){
+				if(isset($plist[$row->id])){
+					$plist[$row->id] = $row->id;
+					$plist[$row->id] = $row->name;
 				}else{
-					if(!isset($gradelist[$row->gid]['list'][$row->pid]['list'][$row->sid]['list'])){
-						$gradelist[$row->gid]['list'][$row->pid]['list'][$row->sid]['list'] = array();
-					}
-					$gradelist[$row->gid]['list'][$row->pid]['list'][$row->sid]['list'][$row->id] = array(
+					$plist[$row->id] = array(
 						'id' => $row->id,
 						'name' => $row->name,
-						'pid' => $row->pid,
-						'sid' => $row->sid,
-						'gid' => $row->gid						
-					);						
-										
+						'list' => array()
+					);
+				}
+			}else{
+				if(isset($plist[$row->parent])){
+					$plist[$row->parent]['list'][$row->id]['id'] = $row->id;
+					$plist[$row->parent]['list'][$row->id]['name'] = $row->name;
+				}else{
+					$plist[$row->parent] = array(
+						'list' => array()
+					);
+					$plist[$row->parent]['list'][$row->id] = array(
+						'id' => $row->id,
+						'name' => $row->name
+					);
 				}
 			}
 		}
+
+		//echo json_encode($plist);
+		$data['plist'] = $plist;
+
+		$this->load->view('share/movefile.php',$data);
+	}	
+
+
+	function prepare(){
+		$this->load->helper('util');
+
+		$key = $this->input->get_post('key');
+		$pagenum = $this->config->item('pagenum');
+		$nowpage = (int) $this->input->get('page');
+		$type = (int) $this->input->get('type');
+		$fid = (int) $this->input->get('fid');	
+		$allnum = 0;	
+
+		$wh = '';
+
+		$od = (int) $this->input->get('od');
+		$on = $this->input->get('on');
+
+		$desc = '';
+		$odname = 'name';
+		if($od == 2){
+			$desc = 'desc';
+		}
+
+		switch($on){
+			case 1:
+				$odname = 'name';
+				break;
+			case 2:
+				$odname = 'b.type';
+				break;
+			case 3:
+				$odname = 'size';
+				break;
+			case 4:
+				$odname = 'createtime';
+				break;			
+		}
+
+		$prid = (int) $this->input->get('prid');
+		$pid = (int) $this->input->get('pid');
+		$fdid = (int) $this->input->get('fdid');
+
+		$sql = 'select id,name,parent from groups where type=3 order by parent';
+		$query = $this->db->query($sql);
+
+		$plist = array();
+		$kp = array();
+
+		$pfname = '';
+		$pname = '';
+		//选择备课目录
+		foreach($query->result() as $row){
+			array_push($kp,' prid='.$row->id);
+			if($row->id == $prid){
+				$pfname = $row->name;
+				if($row->parent){
+					$pname = $plist[$row->parent]['name'];
+				}
+			}
+			if($row->parent == 0){
+				if(isset($plist[$row->id])){
+					$plist[$row->id] = $row->id;
+					$plist[$row->id] = $row->name;
+				}else{
+					$plist[$row->id] = array(
+						'id' => $row->id,
+						'name' => $row->name,
+						'list' => array()
+					);
+				}
+			}else{
+				if(isset($plist[$row->parent])){
+					$plist[$row->parent]['list'][$row->id]['id'] = $row->id;
+					$plist[$row->parent]['list'][$row->id]['name'] = $row->name;
+				}else{
+					$plist[$row->parent] = array(
+						'list' => array()
+					);
+					$plist[$row->parent]['list'][$row->id] = array(
+						'id' => $row->id,
+						'name' => $row->name
+					);
+				}
+			}
+		};
+
+		if(!$prid){
+			//取对应的文件夹
+			$sql = 'select id from userfolds where '.implode(' or ',$kp);
+			$query = $this->db->query($sql);
+
+			$kpf = array();
+			foreach($query->result() as $row){
+				array_push($kpf,' fdid='.$row->id);
+			}
+			$wh .= ' and ('.implode(' or ',$kpf).')';
+			$fid = 0;
+		}else{
+			if($fid){
+				$wh .= ' and fdid='.$fid;
+			}else{
+				$sql = 'select id from userfolds where pid=0 and prid='.$prid;	
+				$query = $this->db->query($sql);
+
+				if($query->num_rows() > 0){
+					$row = $query->row();
+					$fid = $row->id;
+					$wh .= ' and fdid='.$fid;
+				//还没有目录,新建目录
+				}else{
+					$data = array(
+						'pid' => 0,
+						'name' => $pfname,
+						'uid' => $this->user['uid'],
+						'mark' => '',
+						'createtime' => time(),
+						'type' => 0,
+						'prid' => $prid
+					);
+					$sql = $this->db->insert_string('userfolds',$data);
+					$query = $this->db->query($sql);
+					$fid = $this->db->insert_id();
+
+				}
+				$wh .= ' and fdid='.$fid;
+			}
+		}
+		
+		if($type){
+			$wh .= ' and b.type='.$type;
+		}
+		if($key){
+			$wh .= ' and a.name like "%'.$key.'%"';
+		}
+		if($od){
+			$wh .= ' order by '.$odname.' '.$desc;
+		}		
+
+		$sql = 'select count(a.id) as allnum from userfile a,files b where a.del=0 and a.fid=b.id and uid='.(int) $this->user['uid'];
+		$sql .= $wh;
+
+		$query = $this->db->query($sql);
+		$row = $query->row();
+
+		$allnum = $row->allnum;
+
+		//选择文件
+		$sql = 'select a.id,a.fid,a.name,a.createtime,b.type,b.size from userfile a,files b where a.del = 0 and a.fid = b.id and uid = '.(int) $this->user['uid'];
+		$sql .= $wh;
+		$page = get_page_status($nowpage,$pagenum,$allnum);
+
+		$query = $this->db->query($sql);
+		$flist = array();
+		$kfc = array();
+		foreach($query->result() as $row){
+			array_push($kfc,' a.fid='.$row->fid);
+			$flist[$row->id] = array(
+				'id' => $row->id,
+				'fid' => $row->fid,
+				'name' => $row->name,
+				'type' => $row->type,
+				'size' => format_size($row->size),
+				'time' => substr($row->createtime,0,10)
+			);
+		}
+
+		$sql = 'select a.id from userfile a,usercollection b where a.fid=b.fid and b.uid='.(int) $this->user['uid'];
+		if(count($kfc)>0){
+		$sql .=' and ('.implode(' or ',$kfc).')';
+		}
+		$query = $this->db->query($sql);
+
+		foreach($query->result() as $row){
+			$flist[$row->id]['iscoll'] = 1;
+		}
+
+		$thisfold = array(
+			'id' => 0,
+			'pid' => 0
+		);
+		$fold = array();
+		$foldlist = array();
+		if(!$prid){
+			$sql = 'select id,name,mark,createtime,pid,tid,idpath,prid from userfolds where pid='.$fid.' and prid !=0 and uid='.(int) $this->user['uid'];
+		}else{
+			$sql = 'select id,name,mark,createtime,pid,tid,idpath,prid from userfolds where pid='.$fid.' and uid='.(int) $this->user['uid'];
+		}
+		$query = $this->db->query($sql);
+		foreach($query->result() as $row){
+			if($row->id == $fid){
+				$thisfold = array(
+					'id' => $row->id,
+					'pid' => $row->pid,
+					'name' => $row->name,
+					'tid' => $row->tid,
+					'idpath' => explode(',',$row->idpath)
+				);
+				$fname = $row->name;
+				$pid = $row->pid;
+			}
+			$fold[$row->id] = array(
+				'id' => $row->id,
+				'name' => $row->name,
+				'mark' => $row->mark,
+				'pid' => (int) $row->pid,
+				'prid' => (int) $row->prid,
+				'tid' => (int) $row->tid,
+				'idpath' => $row->idpath,
+				'time' => date('Y-m-d',$row->createtime)
+			);
+			if($row->pid == 0){
+				$foldlist[$row->id] = array(
+					'id' => $row->id,
+					'name' => $row->name,
+					'mark' => $row->mark,
+					'pid' => (int) $row->pid,
+					'tid' => (int) $row->tid,
+					'prid' => (int) $row->prid,
+					'time' => date('Y-m-d',$row->createtime)
+				);				
+			}else{
+				if(isset($foldlist[$row->pid])){
+					$foldlist[$row->pid]['child'] = 1;
+				}
+			}
+		}
+
 		$data = array(
 			'nav' => array(
 				'userinfo' => $this->user,
@@ -731,13 +843,21 @@ class Home extends SZone_Controller {
 				'school' => $this->school
 			)
 		);	
+
+		$data['thisfold'] = $thisfold;
 		$data['type'] = 0;
-		$data['fid'] = 0;
+		$data['pfname'] = $pfname;
+		$data['fid'] = $fid;
+		$data['prid'] = $prid;
+		$data['pid'] = $pid;
 		$data['plist']  = $plist;
-		$data['glist'] = $gradelist;
-		//$data['nav']['userinfo'] = $this->user;
-		// echo json_encode($plist);
-	
+		$data['flist'] = $flist;
+		$data['pname'] = $pname;
+		$data['on'] = $on;
+		$data['od'] = $od;
+		$data['key'] = $key;
+		$data['thisfold'] = $thisfold;
+		$data['fold'] = $fold;
 
 		$this->load->view('home/prep.php',$data);
 	}
