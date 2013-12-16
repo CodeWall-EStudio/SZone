@@ -3,7 +3,7 @@
  * SZone Application Controller Class
  *
  * This class object extends from the CodeIgniter super class CI_Controller.
- *
+ * 
  * @package		SZone
  * @subpackage	application
  * @category	controllers

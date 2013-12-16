@@ -12,5 +12,5 @@ class Myspace extends SZone_Controller {
 			)
 		);			
 		$this->load->view('home/index.php',$data);		
-	}
+	} 
 }

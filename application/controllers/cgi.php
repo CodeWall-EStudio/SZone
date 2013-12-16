@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Cgi extends SZone_Controller {
-
+ 
 	/**
 	 * Index Page for this controller.
 	 *

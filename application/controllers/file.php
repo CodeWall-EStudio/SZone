@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 	class File extends SZone_Controller {
-
+ 
 		public function index(){
 
 			$type = (int) $this->input->get('type'); 

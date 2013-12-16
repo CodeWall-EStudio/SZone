@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class School extends SZone_Controller {
-
+ 
 	public function index(){
 
 		if($this->user['auth'] < 15){

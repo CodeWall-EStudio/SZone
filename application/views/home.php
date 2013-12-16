@@ -137,7 +137,7 @@
 					<tr>
 						<th width="30"><input type="checkbox" id="selectAllFold" /></th>
 						<th >文件夹和文件</th>
-						<th width="60">
+						<th width="90">
 						<a href="/home?fid=<?=$thisfold['id']?>&on=2&od=<?if($on==2 && $od ==1):?>2<?else:?>1<?endif?>">
 							<span>类型</span>  
 							<?if($on==2 && $od ==1):?><i class="ad"></i><?elseif($on==2 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>

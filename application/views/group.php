@@ -150,7 +150,7 @@
 						<th width="60">评论</th>
 						<th width="60">作者</th>
 						<th width="60">来源</th>
-						<th width="60">
+						<th width="90">
 							<a href="/group/?id=<?=$gid?>&on=2&od=<?if($on==2 && $od ==1):?>2<?else:?>1<?endif?>">
 								<span>类型</span>  
 								<?if($on==2 && $od ==1):?><i class="ad"></i><?elseif($on==2 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>

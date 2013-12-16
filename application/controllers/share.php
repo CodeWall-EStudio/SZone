@@ -2,7 +2,7 @@
 
 
 	class Share extends SZone_Controller {
-
+    
 		public function other(){
 			$type = $this->input->get('type');
 			$gid = (int) $this->input->get('gid');

@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Review extends SZone_Controller {
-
+ 
 	public function index(){
 		$gid = (int) $this->input->get('gid');
 		$fdid = (int) $this->input->get('fdid');

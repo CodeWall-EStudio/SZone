@@ -1,6 +1,6 @@
 <?
 class Board extends SZone_Controller {
-
+ 
 	public function index(){
 		$gid = (int) $this->input->get('gid');
 		$uid = (int) $this->input->get('uid');
