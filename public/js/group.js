@@ -503,7 +503,7 @@
 					target.parent('span').addClass('hide');													
 				default : 
 					if(!target.hasClass('liclick') && !target.hasClass('name-edit') && !target.hasClass('share-file')){
-						var p = target.parents("li");
+						var p = target.parents("tr");
 						p.find('.liclick').click();										
 					}					
 					break;
@@ -542,8 +542,10 @@
 		$("#list-tree").bind('click',function(e){
 			if($("#foldList").attr('show')){
 				$("#foldList").hide().removeAttr('show');
+				$('#fileList').css('float','none').css('width','100%');
 			}else{
 				$("#foldList").show().attr('show',1);
+				$('#fileList').css('float','left').css('width','90%');
 			}
 		});
 
@@ -572,7 +574,7 @@
 					var obj = {
 						list : d.data.list
 					}
-					console.log($.tmp(tmp,obj));
+					// console.log($.tmp(tmp,obj));
 					p.append($.tmp(tmp,obj));
 					t.addClass('glyphicon-minus');
 				}else{

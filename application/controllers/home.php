@@ -70,6 +70,9 @@ class Home extends SZone_Controller {
 		);
 
 		$key = $this->input->get_post('key');
+		if($key){
+			$fid = (int) $this->input->post('fid');
+		}
 
 		$sql = 'select id,name,mark,createtime,pid,tid,idpath from userfolds where prid=0 and uid = '.(int) $this->user['uid'];
 		// if($key){

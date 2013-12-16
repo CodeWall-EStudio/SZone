@@ -231,7 +231,22 @@
 				}
 			});	
 			//copyFiletoMy(id);			
-		});			
+		});	
+
+		$('#searchKey').on("focus blur",function(e){
+			var dom = $(this),
+				v = dom.val(),
+				def = dom.attr('data-def');
+				if(v == def || v == ''){
+					if(e.type == 'focus'){
+						dom.val('');
+					}else{
+						dom.val(def);
+					}
+				}else{
+					//dom.val(def);
+				}
+		});
 	};
 
 

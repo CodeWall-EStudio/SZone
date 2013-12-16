@@ -13,7 +13,6 @@ class Group extends SZone_Controller {
 		$fid = (int) $this->input->get('fid');
 		$key = $this->input->get_post('key');
 
-
 		if(isset($this->depinfolist[$gid]) && $this->depinfolist[$gid]['pt']){
 			redirect('/group/prep');
 			return;
@@ -85,12 +84,11 @@ class Group extends SZone_Controller {
 
 
 			$key = $this->input->get_post('key');
-
-			// if(!$fid){
-			// 	$sql = 'select id,name,mark,createtime,pid,tid,idpath from groupfolds where gid = '.$gid.' or pid='.$gid;
-			// }else{
+			if(!$fid){
+			  	$sql = 'select id,name,mark,createtime,pid,tid,idpath from groupfolds where gid = '.$gid;
+			}else{
 				$sql = 'select id,name,mark,createtime,pid,tid,idpath from groupfolds where gid = '.$gid.' or pid='.$fid;
-			//}
+			}
 			$query = $this->db->query($sql);
 			
 			$fname = '';
@@ -164,6 +162,9 @@ class Group extends SZone_Controller {
 			$sql .= ' LEFT JOIN groups d ON d.id = a.fgid';
 			$sql .= ' WHERE a.del !=1 and a.fid = b.id AND a.del =0 and gid='.$gid;
 			$sql .= $wsql;
+			if($key){
+				$sql .= ' and a.fname like "%'.$key.'%"';
+			}
 
 			$query = $this->db->query($sql);
 			$row = $query->row();
@@ -178,7 +179,9 @@ class Group extends SZone_Controller {
 			$sql .= ' left join usercollection f on f.fid = a.fid';
 			$sql .= ' WHERE a.del !=1 and a.fid = b.id AND a.del =0 and gid='.$gid;
 			$sql .= $wsql;
-
+			if($key){
+				$sql .= ' and a.fname like "%'.$key.'%"';
+			}
 			//echo $sql;
 			$page = get_page_status($nowpage,$pagenum,$allnum);
 
@@ -212,6 +215,26 @@ class Group extends SZone_Controller {
 				}
 			}
 
+			$sql = 'select id,name,mark,createtime,pid,tid,idpath from groupfolds where gid = '.$gid;
+			if($key){
+				$sql .= ' and name like "%'.$key.'%"';
+			}	
+			if($od && $on !=2 && $on != 3){
+				$sql .= ' order by '.$odname.' '.$desc;
+			}
+			$query = $this->db->query($sql);
+			$fold = array();
+			foreach($query->result() as $row){
+				$fold[$row->id] = array(
+					'id' => $row->id,
+					'name' => $row->name,
+					'mark' => $row->mark,
+					'pid' => (int) $row->pid,
+					'tid' => (int) $row->tid,
+					'idpath' => $row->idpath,
+					'time' => date('Y-m-d',$row->createtime)
+				);
+			}
 
 			// $sql = 'select fid from groupcollection where gid='.$gid;
 			// $query = $this->db->query($sql);

@@ -6,13 +6,18 @@
   <title>教师工作室</title>
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
   <link rel="stylesheet" type="text/css" href="/css/mailbox.css" />
-
+  <link rel="stylesheet" type="text/css" href="/css/type.css" />
+  <style>
+  	dl{
+  		margin:0;
+  	}
+  </style>
 </head>
 <body class="share-zone">
 	<div class="collection-tit">
 		<div class="search-zone">
-			<form action="/home/sendmail" method="post">
-			<input type="text" value="搜索文件" name="key" />
+			<form action="/home/sendmail?m=<?=$m?>" method="post">
+			<input type="text" value="搜索文件" name="key"  data-def="搜索文件" id="searchKey" />
 			<button type="submit"></button>
 			</form>
 		</div>
@@ -67,42 +72,43 @@
 			</div>
 		</div>
 	</div>
-	<ul class="dis-list-type">
+	<table width="100%" class="table table-striped table-hover">
 		<?if(count($mail)>0):?>
-		<li class="tit">
+		<tr>
 			<!-- <div class="td1"><input type="checkbox" /></div> -->
-			<div class="td2">
+			<th>
 				<a href="/home/sendmail?on=1&od=<?if($on==1 && $od ==1):?>2<?else:?>1<?endif?>">
 				<span>文件名</span>  
 				<?if($on==1 && $od ==1):?><i class="ad"></i><?elseif($on==1 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
 				</a>	
-			</div>
-			<div class="td_source"><?if((int) $m):?>来源<?else:?>目标<?endif?>用户</div>
-			<div class="td_size">
+			</th>
+			<th width="90"><?if((int) $m):?>来源<?else:?>目标<?endif?>用户</th>
+			<th width="70">
 				<a href="/home/sendmail?on=3&od=<?if($on==3 && $od ==1):?>2<?else:?>1<?endif?>">
 				<span>大小</span>  
 				<?if($on==3 && $od ==1):?><i class="ad"></i><?elseif($on==3 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
 				</a>				
 
-			</div>
-			<div class="td_time">
+			</th>
+			<th width="120">
 				<a href="/home/sendmail?on=4&od=<?if($on==4 && $od ==1):?>2<?else:?>1<?endif?>">
 				<span>时间</span>  
 				<?if($on==4 && $od ==1):?><i class="ad"></i><?elseif($on==4 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
 				</a>				
 
-			</div>
-		</li>
+			</th>
+		</tr>
 		<?foreach($mail as $row):?>
-		<li>
+		<tr>
 			<!-- <div class="td1"><input type="checkbox" /></div> -->
-			<div class="td2">
+			<td>
 				<a class="file-name" data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>">
-				<?if($row['type'] == 1):?>
-					<img  data-review data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>" src="/cgi/getfile?fid=<?=$row['fid']?>" />
+				<?if($row['type'] < 7):?>
+					<i class="icon-type<?=(int) $row['type']?>" data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>" ></i>
 				<?else:?>
-					<i  data-review data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>" class="fold file<?=$row['type']?>"></i>
-				<?endif?>
+					<i class="icon-type" data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>" ></i>
+				<?endif?>					
+
 				</a>
 				<dl>
 					<dt>
@@ -114,16 +120,18 @@
 						<a href="/cgi/getfile?fid=<?=$row['fid']?>" target="_blank">下载</a>
 					</dd>
 				</dl>
-			</div>
-			<div class="td_source"><?=$row['uname']?></div>
-			<div class="td_size"><?=$row['size']?></div>
-			<div class="td_time"><span><?=substr($row['ctime'],0,10)?></span> </div>
-		</li>		
-		<?endforeach?>
+			</td>
+			<td><?=$row['uname']?></td>
+			<td><?=$row['size']?></td>
+			<td><span><?=substr($row['ctime'],0,10)?></span> </td>
+		</tr>		
+		<?endforeach?>		
 		<?else:?>
-			<li class="empty">目前还没有相关的邮件</li>
-		<?endif?>
-	</ul>	
+			<tr>
+				<td colspan="4">目前还没有相关的邮件</td>
+			</tr>
+		<?endif?>		
+	</table>	
 
 	<script src="/js/lib/jq.js"></script>
 	<script src="/js/bootstrap.min.js"></script>

@@ -6,13 +6,18 @@
   <title>教师工作室</title>
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
   <link rel="stylesheet" type="text/css" href="/css/mailbox.css" />
-
+  <link rel="stylesheet" type="text/css" href="/css/type.css" />
+  <style>
+  	dl{
+  		margin:0;
+  	}
+  </style>
 </head>
 <body class="share-zone">
 	<div class="collection-tit">
 		<div class="search-zone">
 			<form action="/home/recy" method="post">
-			<input type="text" value="搜索文件" name="key" />
+			<input type="text" value="搜索文件" name="key" data-def="搜索文件" id="searchKey"  />
 			<button type="button"></button>
 			</form>
 		</div>
@@ -48,36 +53,35 @@
 					?>
 				<b class="caret"></b></a>
 				<ul class="dropdown-menu section-tit-menu1" role="menu" aria-labelledby="dLabel">
-					<li><a data-type="0" href="/home/coll?type=0">全部</a></li>
-					<li><a data-type="2">收藏</a></li>
-					<li><a data-type="3" href="/home/coll?type=4">视频</a></li>
-					<li><a data-type="1" href="/home/coll?type=1">图片</a></li>
-					<li><a data-type="4" href="/home/coll?type=3">音乐</a></li>
-					<li><a data-type="5" href="/home/coll?type=2">文档</a></li>
-					<li><a data-type="6" href="/home/coll?type=5">应用</a></li>
-					<li><a data-type="7" href="/home/coll?type=6">压缩包</a></li>
+					<li><a data-type="0" href="/home/recy?type=0">全部</a></li>
+					<li><a data-type="3" href="/home/recy?type=4">视频</a></li>
+					<li><a data-type="1" href="/home/recy?type=1">图片</a></li>
+					<li><a data-type="4" href="/home/recy?type=3">音乐</a></li>
+					<li><a data-type="5" href="/home/recy?type=2">文档</a></li>
+					<li><a data-type="6" href="/home/recy?type=5">应用</a></li>
+					<li><a data-type="7" href="/home/recy?type=6">压缩包</a></li>
 				</ul>
 			</div>
 		</div>
 	</div>
-	<ul class="dis-list-type">
+	<table width="100%" class="table table-striped table-hover">
 		<?if(count($dlist)>0):?>
-		<li class="tit">
+		<tr>
 			<!-- <div class="td1"><input type="checkbox" /></div> -->
-			<div class="td2">文件名</div>
-			<div class="td3">来源</div>
-			<div class="td5">大小</div>
-			<div class="td6">时间</div>
-		</li>
+			<th>文件名</th>
+			<th width="80">来源</th>
+			<th width="80">大小</th>
+			<th width="120">时间</th>
+		</tr>	
 		<?foreach($dlist as $row):?>
-		<li>
+		<tr>
 			<!-- <div class="td1"><input type="checkbox" /></div> -->
-			<div class="td2">
-				<?if($row['type'] == 1):?>
-					<img src="/cgi/getfile?fid=<?=$row['fid']?>" />
+			<td>
+				<?if($row['type'] < 7):?>
+					<i class="icon-type<?=(int) $row['type']?>" data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>" ></i>
 				<?else:?>
-					<i class="file<?=$row['type']?>"></i>
-				<?endif?>
+					<i class="icon-type" data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>" ></i>
+				<?endif?>	
 				<dl>
 					<dt><?=$row['name']?></dt>
 					<dd>
@@ -85,16 +89,18 @@
 						<a cmd="del" data-id="<?=$row['id']?>" data-fid="<?=$row['fid']?>">完全删除</a>
 					</dd>
 				</dl>
-			</div>
-			<div class="td3"></div>
-			<div class="td5"><?=$row['size']?></div>
-			<div class="td6"><span><?=$row['time']?></span> </div>
-		</li>		
+			</td>
+			<td></td>
+			<td><?=$row['size']?></td>
+			<td><span><?=$row['time']?></span> </td>
+		</tr>		
 		<?endforeach?>
 		<?else:?>
-			<li class="empty">目前还没有相关的文件</li>
-		<?endif?>
-	</ul>	
+			<tr>
+				<td colspan="4">目前还没有相关的文件</td>
+			</tr>		
+		<?endif?>		
+	</table>	
 	<div class="page-zone">
 		<?
 			$page['url'] = '/recy?type='.$type.'&key='.$key;
@@ -106,6 +112,21 @@
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
 	<script>
+	$('#searchKey').on("focus blur",function(e){
+		var dom = $(this),
+			v = dom.val(),
+			def = dom.attr('data-def');
+			if(v == def || v == ''){
+				if(e.type == 'focus'){
+					dom.val('');
+				}else{
+					dom.val(def);
+				}
+			}else{
+				//dom.val(def);
+			}
+	});
+
 		var reUrl = '/cgi/refrcey',
 			delUrl = '/cgi/compdel';
 

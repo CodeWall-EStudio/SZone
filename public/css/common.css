@@ -226,6 +226,7 @@ a{
 .container{
 	position:relative;
 	width:100%;
+	max-width:100%;
 	/*//min-width:990px;*/
 	margin:0;
 	padding:0;

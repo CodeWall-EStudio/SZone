@@ -555,7 +555,7 @@
 					break;														
 				default : 
 					if(!target.hasClass('liclick') && !target.hasClass('name-edit') && !target.hasClass('share-file')){
-						var p = target.parents("li");
+						var p = target.parents("tr");
 						p.find('.liclick').click();										
 					}
 
@@ -610,8 +610,10 @@
 		$("#list-tree").bind('click',function(e){
 			if($("#foldList").attr('show')){
 				$("#foldList").hide().removeAttr('show');
+				$('#fileList').css('float','none').css('width','100%');
 			}else{
 				$("#foldList").show().attr('show',1);
+				$('#fileList').css('float','left').css('width','90%');
 			}
 		});
 
