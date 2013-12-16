@@ -115,47 +115,43 @@
 			</div>
 			<!--dis-list-type -->
 			<div id="fileList" class="dis-list-type">
-				<ul class="cl">
-
+				<table width="100%" class="table table-striped table-hover">
 					<?if(isset($fold) && count($fold)>0):?>
-						<li class="tit file-list">
-							<div class="td1"><input type="checkbox" id="selectAllFold" /></div>
-							<div class="td2"><span>文件夹和文件</span>  
-									<a href="/home/prepare?pid=<?=$prid?>&fid=<?=$thisfold['id']?>&on=1&od=<?if($on==1 && $od ==1):?>2<?else:?>1<?endif?>"><span>名称</span> 
+						<tr>
+							<th width="30"><input type="checkbox" id="selectAllFold" /></th>
+							<th><span>文件夹和文件</span>  
+									<a href="/home/prepare?pid=<?=$prid?>&fid=<?=$fid?>&on=1&od=<?if($on==1 && $od ==1):?>2<?else:?>1<?endif?>"><span>名称</span> 
 										<?if($on==1 && $od ==1):?><i class="ad"></i><?elseif($on==1 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
 									</a>
-								</div>
-							<div class="td_mark">&nbsp;</div>
-							<div class="td_uname">&nbsp;</div>
-							<div class="td_source">&nbsp;</div>						
-							<div class="td_type">
-							<a href="/home/prepare?prid=<?=$prid?>&fid=<?=$thisfold['id']?>&on=2&od=<?if($on==2 && $od ==1):?>2<?else:?>1<?endif?>">
+							</th>				
+							<th width="60">
+							<a href="/home/prepare?prid=<?=$prid?>&fid=<?=$fid?>&on=2&od=<?if($on==2 && $od ==1):?>2<?else:?>1<?endif?>">
 								<span>类型</span>  
 								<?if($on==2 && $od ==1):?><i class="ad"></i><?elseif($on==2 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
 							</a>
-							</div>
-							<div class="td_size">
-								<a href="/home/prepare?prid=<?=$prid?>&fid=<?=$thisfold['id']?>&on=3&od=<?if($on==3 && $od ==1):?>2<?else:?>1<?endif?>">
+							</th>
+							<th width="60">
+								<a href="/home/prepare?prid=<?=$prid?>&fid=<?=$fid?>&on=3&od=<?if($on==3 && $od ==1):?>2<?else:?>1<?endif?>">
 								<span>大小</span>  
 								<?if($on==3 && $od ==1):?><i class="ad"></i><?elseif($on==3 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
 								</a>
-							</div>
-							<div class="td_time">
-								<a href="/home/prepare?prid=<?=$prid?>&fid=<?=$thisfold['id']?>&on=4&od=<?if($on==4 && $od ==1):?>2<?else:?>1<?endif?>">
+							</th>
+							<th width="120">
+								<a href="/home/prepare?prid=<?=$prid?>&fid=<?=$fid?>&on=4&od=<?if($on==4 && $od ==1):?>2<?else:?>1<?endif?>">
 								<span>时间</span>  
 								<?if($on==4 && $od ==1):?><i class="ad"></i><?elseif($on==4 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
 								</a>
-							</div>	
-						</li>	
+							</th>	
+						</tr>	
 					<?foreach($fold as $item):?>
 						<?if($item['pid'] == $fid):?>
-						<li class="fold" data-id="<?=$item['id']?>">
-							<div class="td1"><input type="checkbox" name="file" class="fdclick liclick" value="<?=$item['id']?>" data-type="fold" /></div>
-							<div class="td2">
+						<tr data-id="<?=$item['id']?>">
+							<td><input type="checkbox" name="file" class="fdclick liclick" value="<?=$item['id']?>" data-type="fold" /></td>
+							<td>
 								<a href="/home/prepare?prid=<?=$prid?>&fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"><i class="fold"></i></a>
 								
 								<dl>
-									<dt><a href="/home/prepare?prid=<?=$item['prid']?>&fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"><?=$item['name']?></a>
+									<dt><a href="/home/prepare?prid=<?=$prid?>&fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"><?=$item['name']?></a>
 										<span cmd="edit" data-id="<?=$item['id']?>">
 											<?if($item['mark']==''):?>
 												编辑备注
@@ -173,20 +169,19 @@
 									<!-- 	<span>下载</span> -->
 									</dd>
 								</dl>
-							</div>
-							<div class="td_mark">&nbsp;</div>
-							<div class="td_uname">&nbsp;</div>
-							<div class="td_source">&nbsp;</div>
-							<div class="td_type">&nbsp;</div>
-							<div class="td_size">&nbsp;</div>							
-							<div class="td_time"><span><?=$item['time']?></span> </div>
-						</li>
+							</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>							
+							<td><span><?=$item['time']?></span> </td>
+						</tr>
 						<?endif?>
-					<?endforeach?>					
+						<?endforeach?>
+					<?endif?>		
+					<?if(count($flist)>0):?>				
 						<?foreach($flist as $item):?>
-							<li class="file" data-id="<?=$item['id']?>">
-								<div class="td1"><input type="checkbox" name="file" class="fclick liclick" value="<?=$item['id']?>" data-type="file" /></div>
-								<div class="td2">
+							<tr data-id="<?=$item['id']?>">
+								<td><input type="checkbox" name="file" class="fclick liclick" value="<?=$item['id']?>" data-type="file" /></td>
+								<td>
 									<a class="file-name">
 									<?if($item['type'] < 7):?>
 										<i class="icon-type<?=(int) $item['type']?>" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>" ></i>
@@ -205,24 +200,24 @@
 											<span><a href="/cgi/downfile?fid=<?=$item['fid']?>">下载</a></span>
 										</dd>
 									</dl>
-								</div>
-								<div class="td_mark">&nbsp;</div>
-								<div class="td_uname">&nbsp;</div>								
-								<div class="td_source">&nbsp;</div>
-								<div class="td_type">
+								</td>
+
+								<td>
 									<?=get_file_type($item['type'])?>
-								</div>
-								<div class="td_size"><?=$item['size']?></div>
-								<div class="td_time"><?=$item['time']?>
-<i <?if(isset($item['iscoll'])):?>class="s" cmd="uncoll" title="取消收藏"<?else:?>cmd="coll" title="收藏"<?endif?> data-type="file" data-id="<?=$item['fid']?>"></i>
-								</div>
-							</li>
-						<?endforeach?>	
+								</td>
+								<td><?=$item['size']?></td>
+								<td><?=$item['time']?>
+									<i <?if(isset($item['iscoll'])):?>class="colls s" cmd="uncoll" title="取消收藏"<?else:?>class="colls" cmd="coll" title="收藏"<?endif?> data-type="file" data-id="<?=$item['fid']?>"></i>
+								</td>
+							</tr>
+						<?endforeach?>
 					<?else:?>									
-						<li class="empty">该文件夹还没有文件哦.</li>
+						<tr>
+							<td colspan="5" align="center">还没有文件哦.</td>
+						</tr>
 					<?endif?>
-					<li class="last"></li>
-				</ul>
+				</table>
+
 			</div>
 		</div>
 		<div class="aside">

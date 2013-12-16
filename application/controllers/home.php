@@ -786,7 +786,9 @@ class Home extends SZone_Controller {
 		$query = $this->db->query($sql);
 
 		foreach($query->result() as $row){
-			$flist[$row->id]['iscoll'] = 1;
+			if(isset($flist[$row->id])){
+				$flist[$row->id]['iscoll'] = 1;
+			}
 		}
 
 		$thisfold = array(
