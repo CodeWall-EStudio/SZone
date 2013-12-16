@@ -77,7 +77,7 @@
             <tr>
               <th>文件名</th>
               <th width="100">类型</th>
-              <th width="100">大小</th>
+              <th width="100">大小 </th>
             </tr>          
           <?foreach($flist as $row):?>
             <tr>
