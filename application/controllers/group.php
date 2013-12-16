@@ -509,7 +509,7 @@ class Group extends SZone_Controller {
 		$flist = array();
 		if($fdid && count($fold)>0 ){
 			$fold = array();
-			$sql = 'select a.id,a.name,a.pid,a.prid,b.name as uname,b.id as uid from userfolds a,user b where a.pid='.$fdid;
+			$sql = 'select a.id,a.name,a.pid,a.prid,b.name as uname,b.id as uid from userfolds a,user b where b.id='.$ud.' and a.pid='.$fdid;
 			$query = $this->db->query($sql);
 			// $this->db->where('pid',$fdid);
 			// $query = $this->db->get('userfolds');
