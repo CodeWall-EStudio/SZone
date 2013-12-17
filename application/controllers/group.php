@@ -12,6 +12,8 @@ class Group extends SZone_Controller {
 		$type = (int) $this->input->get('type');
 		$fid = (int) $this->input->get('fid');
 		$key = $this->input->get_post('key');
+		$st = (int) $this->input->get('st');
+		$ud = (int) $this->input->get('ud');
 
 		if(isset($this->depinfolist[$gid]) && $this->depinfolist[$gid]['pt']){
 			redirect('/group/prep');
@@ -57,6 +59,7 @@ class Group extends SZone_Controller {
 		$file = array();
 		$blist = array();
 		$foldlist = array();
+		$ulist = array();
 		$fname = '';
 		$thisfold = array(
 			'id' => 0,
@@ -80,8 +83,13 @@ class Group extends SZone_Controller {
 			//}
 			if($type){
 				$wsql .= ' and b.type ='.$type;
-			}		
-
+			}	
+			if($ud){
+				$wsql .= ' and a.uid ='.$ud;
+			}
+			if($st){
+				$wsql .= ' and a.status='.($st-1);
+			}
 
 			$key = $this->input->get_post('key');
 			if(!$fid){
@@ -160,7 +168,7 @@ class Group extends SZone_Controller {
 			$sql .= ' LEFT JOIN files b ON b.id = a.fid';
 			$sql .= ' LEFT JOIN user c ON c.id = a.uid';
 			$sql .= ' LEFT JOIN groups d ON d.id = a.fgid';
-			$sql .= ' WHERE a.del !=1 and a.fid = b.id AND a.del =0 and gid='.$gid;
+			$sql .= ' WHERE a.del =0  and a.fid = b.id and gid='.$gid;
 			$sql .= $wsql;
 			if($key){
 				$sql .= ' and a.fname like "%'.$key.'%"';
@@ -177,12 +185,12 @@ class Group extends SZone_Controller {
 			$sql .= ' LEFT JOIN user c ON c.id = a.uid';
 			$sql .= ' LEFT JOIN groups d ON d.id = a.fgid';
 			$sql .= ' left join usercollection f on f.fid = a.fid';
-			$sql .= ' WHERE a.del !=1 and a.fid = b.id AND a.del =0 and gid='.$gid;
+			$sql .= ' WHERE a.del =0 and a.fid = b.id and gid='.$gid;
 			$sql .= $wsql;
 			if($key){
 				$sql .= ' and a.fname like "%'.$key.'%"';
 			}
-			//echo $sql;
+
 			$page = get_page_status($nowpage,$pagenum,$allnum);
 
 			if($od){
@@ -190,7 +198,7 @@ class Group extends SZone_Controller {
 			}
 
 			$sql .= ' limit '.$page['start'].','.$pagenum;		
-
+			//echo $wsql;
 			//echo $sql;
 			//$sql = 'SELECT a.id,a.fid,a.fname,a.content,a.createtime,a.status,b.size,b.path,b.type FROM groupfile a,files b WHERE a.fid = b.id AND a.del !=1 and gid='.$gid;
 
@@ -256,6 +264,16 @@ class Group extends SZone_Controller {
 					);
 				}
 			}
+
+			$sql = 'select a.uid,b.name from groupuser a,user b where gid='.$gid.' and a.uid = b.id';
+			$query = $this->db->query($sql);
+
+			foreach($query->result() as $row){
+				$ulist[$row->uid] = array(
+					'id' => $row->uid,
+					'name' => $row->name
+				);
+			}
 		}
 
 		$data['allnum'] = $allnum;
@@ -272,6 +290,7 @@ class Group extends SZone_Controller {
 		$data['key'] = $key;
 		$data['od'] = $od;
 		$data['on'] = $on;
+		$data['ulist'] = $ulist;
 		$data['thisfold'] = $thisfold;
 
 		if(isset($this->grouplist[$gid])){

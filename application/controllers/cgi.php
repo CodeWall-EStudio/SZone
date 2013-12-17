@@ -855,12 +855,12 @@ class Cgi extends SZone_Controller {
 		foreach($id as $k){
 			foreach($fid as $i){
 				if(!in_array($i,$cache[$k])){
-	array_push($key,'('.$i.','.$k.','.$time.',"'.$nl[$i].'",'.'"'.$content.'",'.$this->user['uid'].','.$gid.')');	
+	array_push($key,'('.$i.','.$k.','.$time.',"'.$nl[$i].'",'.'"'.$content.'",'.$this->user['uid'].','.$gid.',1)');	
 				}
 			}
 		}
 		if(count($key)>0){
-			$sql = 'insert into groupfile (fid,gid,createtime,fname,content,uid,fgid) value '.implode(',',$key);
+			$sql = 'insert into groupfile (fid,gid,createtime,fname,content,uid,fgid,status) value '.implode(',',$key);
 			$query = $this->db->query($sql);
 			if($this->db->affected_rows()>0){
 				$ret = array(

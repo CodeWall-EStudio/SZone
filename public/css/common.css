@@ -162,7 +162,7 @@ a{
 }
 
 .userinfo{
-	position:absolute;
+	/*position:absolute;*/
 	right:0;
 	bottom:0;
 	line-height:22px;
@@ -562,7 +562,9 @@ a{
 	padding:10px 0;
 }
 .group-board{
-	padding:20px;
+	padding:20px 8px;
+	max-height:600px;
+	overflow-y:auto;
 	background:#ebeef3;
 }
 .group-board h4{

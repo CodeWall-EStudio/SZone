@@ -130,7 +130,7 @@
 		var reUrl = '/cgi/refrcey',
 			delUrl = '/cgi/compdel';
 
-		$('.dis-list-type').bind('click',function(e){
+		$('table').bind('click',function(e){
 			var target = $(e.target),
 				cmd = target.attr('cmd'),
 				id = target.attr('data-id'),

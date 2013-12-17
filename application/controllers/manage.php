@@ -492,24 +492,29 @@ class Manage extends SZone_Controller {
 
 					$query = $this->db->query($sql);
 					$ulist = array();
+					if($this->db->affected_rows() > 0){
+						foreach ($query->result() as $row){
+							$gid= $row->id;
+							$gname = $row->name;
+							$gparent = $row->parent;
+							$type = $row->type;
+							array_push($ulist,$row->uname);
+						};
 
-					foreach ($query->result() as $row){
-						$gid= $row->id;
-						$gname = $row->name;
-						$gparent = $row->parent;
-						$type = $row->type;
-						array_push($ulist,$row->uname);
-					};
+						$this->data['manage'] = implode(';',$ulist);
+						$this->data['gname'] = $gname;
+						$this->data['gid'] = $gid;
+						$this->data['parent'] = $gparent;
+						$this->data['type'] = $type;
 
-					$this->data['manage'] = implode(';',$ulist);
-					$this->data['gname'] = $gname;
-					$this->data['gid'] = $gid;
-					$this->data['parent'] = $gparent;
-					$this->data['type'] = $type;
+						$this->data['data']['ret'] = 0;
 
-					$this->data['data']['ret'] = 0;
-
-					$this->load->view('manage/editgroup',$this->data);
+						$this->load->view('manage/editgroup',$this->data);
+					}else{
+						$this->data['ret'] =1;
+						$this->data['msg'] = '权限不够!';	
+						$this->load->view('manage/retmsg',$this->data);
+					}
 				}else{
 
 					$manage = $this->input->post('manage');

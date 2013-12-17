@@ -82,6 +82,23 @@
 						<?endif?>
 					</div>
 					<ul class="act-zone">
+						<li class="all-file file-type dropdown">
+							<a role="button" data-toggle="dropdown" href="#">用户<b class="caret"></b></a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+								<li><a href="/group?id=<?=$gid?>&fid=<?=$fid?>">全部用户</a></li>
+								<?foreach($ulist as $row):?>	
+								<li><a href="/group?id=<?=$gid?>&fid=<?=$fid?>&ud=<?=$row['id']?>"><?=$row['name']?></a></li>
+								<?endforeach?>
+							</ul>							
+						</li>
+						<li class="all-file file-type dropdown">
+							<a role="button" data-toggle="dropdown" href="#">来源<b class="caret"></b></a>
+							<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+								<li><a href="/group?id=<?=$gid?>&fid=<?=$fid?>&st=0">全部</a></li>
+								<li><a href="/group?id=<?=$gid?>&fid=<?=$fid?>&st=1">上传</a></li>
+								<li><a href="/group?id=<?=$gid?>&fid=<?=$fid?>&st=2">分享</a></li>
+							</ul>
+						</li>
 						<li class="all-file file-type dropdown" id="changeFileType">
 							<a role="button" data-toggle="dropdown" href="#">
 								<?
@@ -247,7 +264,13 @@
 								</td>
 								<td><?=$item['mark']?></td>
 								<td><?=$item['uname']?></td>
-								<td></td>
+								<td>
+									<?if($item['status']):?>
+										分享
+									<?else:?>
+										上传
+									<?endif?>
+								</td>
 								<td>
 								<?
 									switch($item['type']){
@@ -331,12 +354,14 @@
 					<li>暂无留言</li>
 					<?endif?>
 				</ul>
+
 			</div>
-		<?if($nav['userinfo']['uid']):?>
-			<?  $this->load->view('public/userinfo.php',$nav['userinfo']); ?>
-		<?endif?>
+			<?if($nav['userinfo']['uid']):?>
+				<?  $this->load->view('public/userinfo.php',$nav['userinfo']); ?>
+			<?endif?>
+		</div>
 		<div class="clear"></div>		
-	</div>	
+		
 	<div class="footer"></div>
 </div>
 
