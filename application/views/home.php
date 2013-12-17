@@ -301,10 +301,11 @@
 					<a id="myRecy" data-toggle="modal" data-target="#mailbox">回收站</a>
 				</li>
 			</ul>
-		</div>
 		<?if($nav['userinfo']['uid']):?>
 			<?  $this->load->view('public/userinfo.php',$nav['userinfo']); ?>
-		<?endif?>
+		<?endif?>			
+		</div>
+
 		<div class="clear"></div>		
 	</div>	
 	<div class="footer"></div>
