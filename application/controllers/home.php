@@ -697,9 +697,9 @@ class Home extends SZone_Controller {
 			}
 		};
 
-		if(!$prid){
+		if(!$prid && !$fid){
 			//取对应的文件夹
-			$sql = 'select id from userfolds where '.implode(' or ',$kp);
+			$sql = 'select id from userfolds where uid='.(int) $this->user['uid'].' and '.implode(' or ',$kp);
 			$query = $this->db->query($sql);
 
 			$kpf = array();
@@ -714,7 +714,7 @@ class Home extends SZone_Controller {
 			if($fid){
 				$wh .= ' and fdid='.$fid;
 			}else{
-				$sql = 'select id from userfolds where pid=0 and prid='.$prid;	
+				$sql = 'select id from userfolds where uid='.(int) $this->user['uid'].' and pid=0 and prid='.$prid;	
 				$query = $this->db->query($sql);
 
 				if($query->num_rows() > 0){
@@ -797,7 +797,7 @@ class Home extends SZone_Controller {
 		);
 		$fold = array();
 		$foldlist = array();
-		if(!$prid){
+		if(!$prid && !$fid){
 			$sql = 'select id,name,mark,createtime,pid,tid,idpath,prid from userfolds where pid='.$fid.' and prid !=0 and uid='.(int) $this->user['uid'];
 		}else{
 			$sql = 'select id,name,mark,createtime,pid,tid,idpath,prid from userfolds where pid='.$fid.' and uid='.(int) $this->user['uid'];

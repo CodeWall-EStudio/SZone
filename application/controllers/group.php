@@ -31,6 +31,7 @@ class Group extends SZone_Controller {
 		switch($on){
 			case 1:
 				$odname = 'a.fname';
+				$odname1 = 'name';
 				break;
 			case 2:
 				$odname = 'b.type';
@@ -40,6 +41,7 @@ class Group extends SZone_Controller {
 				break;
 			case 4:
 				$odname = 'a.createtime';
+				$odname1 = 'createtime';
 				break;			
 		}
 
@@ -228,7 +230,7 @@ class Group extends SZone_Controller {
 				$sql .= ' and name like "%'.$key.'%"';
 			}	
 			if($od && $on !=2 && $on != 3){
-				$sql .= ' order by '.$odname.' '.$desc;
+				$sql .= ' order by '.$odname1.' '.$desc;
 			}
 			$query = $this->db->query($sql);
 			$fold = array();

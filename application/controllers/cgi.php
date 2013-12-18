@@ -194,7 +194,11 @@ class Cgi extends SZone_Controller {
                     $data['type'] = 1;
                 }else{
                     $type =  substr($filedata['file_ext'],1);
-                    $data['type'] = $ft[$type];
+					if(isset($ft[$type])){
+						$data['type'] = $ft[$type];						
+					}else{
+						$data['type'] = 0;
+					}
                 }
 
                 //echo $filedata['file_type'].'&&'.$filedata['image_type'];
@@ -408,7 +412,12 @@ class Cgi extends SZone_Controller {
 					$data['type'] = 1;
 				}else{
 					$type =  substr($filedata['file_ext'],1);
-					$data['type'] = $ft[$type];					
+					if(isset($ft[$type])){
+						$data['type'] = $ft[$type];						
+					}else{
+						$data['type'] = 0;
+					}
+					
 				}
 
 				//echo $filedata['file_type'].'&&'.$filedata['image_type'];

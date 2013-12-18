@@ -286,7 +286,7 @@ class szupload{
 
 		// Open temp file
 		if (!$out = @fopen("{$filePath}.part", $chunks ? "ab" : "wb")) {
-			
+
 			die('{"jsonrpc" : "2.0", "error" : {"code": 102, "message": "Failed to open output stream."}, "id" : "id"}');
 			return false;
 		}
@@ -337,23 +337,31 @@ class szupload{
 
 				$this->full_path = $oldpath;
 				$this->file_size = filesize($oldpath);
-				$this->file_type = $_FILES[$field]['type'];
+				//$this->file_type = $_FILES[$field]['type'];
 				$this->file_name = $fileName;
 				$this->file_ext	 = $this->get_extension($this->full_path);
 				$this->set_image_properties($this->full_path);	
 
+				$finfo    = finfo_open(FILEINFO_MIME_TYPE);
+				$mimetype = finfo_file($finfo, $oldpath);
+				$this->file_type = $mimetype;
+				finfo_close($finfo);
 				return true;
 
 			}else{
 
 				rename("{$filePath}.part", $filePath);	
-
+				//echo $filePath;
 				$this->full_path = $filePath;
 				$this->file_size = filesize($filePath);
-				$this->file_type = $_FILES[$field]['type'];
+				//$this->file_type = $_FILES[$field]['type'];
 				$this->file_name = $fileName;
 				$this->file_ext	 = $this->get_extension($this->full_path);
 				$this->set_image_properties($this->full_path);	
+
+				$finfo    = finfo_open(FILEINFO_MIME_TYPE);
+				$mimetype = finfo_file($finfo, $filePath);
+				$this->file_type = $mimetype;				
 				return true;			
 			}
 			//rename("{$filePath}.part", $filePath);

@@ -17,7 +17,7 @@
 		<div class="main-section">
 			<div class="tool-zone fade-in">
 				<div class="btn-zone">
-					<?if($key=='' && $prid != 0):?>
+					<?if($key=='' && ($prid != 0 || $fid != 0) ):?>
 					<button class="upload btn btn-primary btn-upload" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>上传</button>
 					<button class="btn btn-default" data-toggle="modal" data-target="#newFold" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>新建文件夹</button>
 					<?endif?>
@@ -52,7 +52,7 @@
 
 			<div class="section-tit">
 				<div class="dropdown">				
-					<a class="section-tit-a-first" href="/home">我的备课</a>
+					<a class="section-tit-a-first" href="/home/prepare">我的备课</a>
 					<a><?=$pname?></a>&nbsp;&nbsp;
 					<a href="/home/prepare?prid=<?=$prid?>"><?=$pfname?></a> &nbsp;&nbsp;
 					<?if($thisfold['id'] > 0):?>	
@@ -242,10 +242,11 @@
 				<?endforeach?>
 				<?endif?>
 			</ul>
+			<?if($nav['userinfo']['uid']):?>
+				<?  $this->load->view('public/userinfo.php',$nav['userinfo']); ?>
+			<?endif?>			
 		</div>
-		<?if($nav['userinfo']['uid']):?>
-			<?  $this->load->view('public/userinfo.php',$nav['userinfo']); ?>
-		<?endif?>
+
 		<div class="clear"></div>		
 	</div>	
 	<div class="footer"></div>

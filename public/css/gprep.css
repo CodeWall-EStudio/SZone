@@ -2,6 +2,9 @@
 	margin-bottom:20px;
 	line-height:32px;
 }
+.pre-fold-list li{
+	padding:4px;
+}
 .prep-file-list > tr > td{
 	line-height:32px;
 }

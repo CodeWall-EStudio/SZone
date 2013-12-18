@@ -72,7 +72,7 @@
           </li>
         <?endforeach?>
       </ul>
-      <?if(count($flist>0)):?>
+      <?if(count($flist)>0):?>
         <table width="100%" class="table table-striped table-hover prep-file-list">
             <tr>
               <th>文件名</th>
@@ -123,6 +123,10 @@
               <td><?=$row['size']?></td>
             </tr>
           <?endforeach?>
+        </table>
+      <?elseif($ud && count($flist)==0):?>
+        <table width="100%" class="table table-striped table-hover prep-file-list">
+          <tr><td align="center">还没有文件哦!</td></tr>
         </table>
       <?endif?>
     </div>
