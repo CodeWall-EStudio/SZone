@@ -72,6 +72,11 @@
 			</div>
 		</div>
 	</div>
+		<?if($key!=''):?>
+		<div class="search-key">
+			当前搜索关键字:　<span><?=$key?></span>  <a href="/home/groupmail">退出搜索</>
+		</div>
+		<?endif?>	
 	<table width="100%" class="table table-striped table-hover">
 		<?if(count($mail)>0):?>
 		<tr>

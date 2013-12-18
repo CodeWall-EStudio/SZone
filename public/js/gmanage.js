@@ -116,36 +116,58 @@
 	}
 
 	var post = function(){
-		var type = parseInt(sinput.attr('data-type'));
-		var ilist = [];
-		selectResult.find('a').each(function(){
-			var id = $(this).attr("data-id");
-			ilist.push(id);
-		});
-		var flist = $('#flist').val().split(',');
-		var obj = {
-			id : ilist,
-			content : $('#content').val(),
-			type : $("#type").val(),
-			flist : flist,
-			csrf_test_name:$.cookie('csrf_cookie_name'),
-			gid : $('#gid').val()
-		}
-		var url = ADDSHARE;
+
+		var name = $('#gName').val();
+		var desc = $('#gDesc').val();	
+		var il = [];
+		var type = $(this).attr('data-type');
+		
+		var url = '/cgi/group_edit';
 		if(type){
-			var fname = $("#fnames").val().split(',');
-			url = ADDSHAREGROUP;
-			obj.fname = fname;
+			url = '/cgi/new_group';
 		}
-		$.post(url,obj,function(d){
-			if(d.code == 0){
-				top.hideShare();
-				top.alert(d.data.msg);
-			}else{
-				top.hideShare();
-				top.alert(d.data.msg);
-			}
+		$('#selectResult a').each(function(){
+			var id = $(this).attr("data-id");
+			il.push(id);
 		});
+		$.post(url,{n:name,d:desc,ul:il.join(','),gid:$('#gid').val(),csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
+			if(d.code == 0){
+				alert(d.data.msg);
+			}else{
+				alert(d.data.msg);
+			}
+		});	
+		
+		// var type = parseInt(sinput.attr('data-type'));
+		// var ilist = [];
+		// selectResult.find('a').each(function(){
+		// 	var id = $(this).attr("data-id");
+		// 	ilist.push(id);
+		// });
+		// var flist = $('#flist').val().split(',');
+		// var obj = {
+		// 	id : ilist,
+		// 	content : $('#content').val(),
+		// 	type : $("#type").val(),
+		// 	flist : flist,
+		// 	csrf_test_name:$.cookie('csrf_cookie_name'),
+		// 	gid : $('#gid').val()
+		// }
+		// var url = ADDSHARE;
+		// if(type){
+		// 	var fname = $("#fnames").val().split(',');
+		// 	url = ADDSHAREGROUP;
+		// 	obj.fname = fname;
+		// }
+		// $.post(url,obj,function(d){
+		// 	if(d.code == 0){
+		// 		top.hideShare();
+		// 		top.alert(d.data.msg);
+		// 	}else{
+		// 		top.hideShare();
+		// 		top.alert(d.data.msg);
+		// 	}
+		// });
 	}	
 
 	var bind = function(){

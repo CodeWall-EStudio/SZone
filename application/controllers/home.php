@@ -453,7 +453,8 @@ class Home extends SZone_Controller {
 		$data['mail'] = $mlist;
 		$data['ulist'] = $tlist;
 		$data['od'] = $od;
-		$data['on'] = $on;		
+		$data['on'] = $on;	
+		$data['key'] = $key;
 
 		$this->load->view('home/mail.php',$data);
 	}
@@ -547,6 +548,7 @@ class Home extends SZone_Controller {
 		$data['glist'] = $tlist;
 		$data['od'] = $od;
 		$data['on'] = $on;
+		$data['key'] = $key;
 
 		$this->load->view('home/gmail.php',$data);
 	}	
