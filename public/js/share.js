@@ -210,7 +210,6 @@
 			var target = $(e.target);
 			var id = target.attr('data-id');
 			var fid = target.attr('data-fid');
-			console.log(id,fid);
 			top.showReview(id,fid);
 			//copyFiletoMy(id);			
 		});		

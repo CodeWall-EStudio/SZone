@@ -666,7 +666,9 @@ function showReview(id,fid){
 	$("#reviewIframe").attr('src','/review?fid='+fid+'&id='+id);
 	$('#reviewFile').modal('show');
 }
-
+function hideManage(){
+	$('#manageWin').modal('hide');
+}
 function hideShare(){
 	$('#shareWin').modal('hide');
 }

@@ -38,22 +38,47 @@
 		<tr>
 			<td colspan="2">
 				<div class="share-target">
-					现有成员
-					<ul id="selectResult">
-						<?foreach($ulist as $row):?>
-							<li><a <?if($row['auth']==0):?>data-id="<?=$row['uid']?>"<?endif?>><?=$row['name']?></a></li>
+					用户列表
+					<ul id="searchResult">
+						<?foreach($ul as $row):?>
+							<li <?if(isset($ulist[$row['id']])):?>style="display:none"<?endif?>><a data-id="<?=$row['id']?>" <?if(isset($ulist[$row['id']])):?>data-group="1"<?endif?>><?=$row['name']?></a></li>
 						<?endforeach?>
 					</ul>						
 				</div>
 				<div class="share-select">
-					搜索结果
-					<ul id="searchResult">
-					</ul>						
+					小组成员
+					<ul id="selectResult">
+						<?foreach($ulist as $row):?>
+							<li><a <?if($row['auth']==0):?>data-id="<?=$row['uid']?>"<?endif?>><?=$row['name']?></a></li>
+						<?endforeach?>
+					</ul>					
 				</div>	
 
 			</td>
 		</tr>
 	</tabel>
+	<script>
+		var map = {};
+		var omap = {};
+		<?foreach($ul as $row):?>
+			map[<?=$row['id']?>] = {
+				'id' : <?=$row['id']?>,
+				'name' : '<?=$row['name']?>'
+			}
+		<?endforeach?>
+		<?foreach($ulist as $row):?>
+			<?if($row['auth']==0):?>
+			map[<?=$row['uid']?>] = {
+				'id' : <?=$row['uid']?>,
+				'name' : '<?=$row['name']?>'
+			}		
+			<?endif?>
+			omap[<?=$row['uid']?>] = {
+				'id' : <?=$row['uid']?>,
+				'name' : '<?=$row['name']?>'
+			}
+		<?endforeach?>		
+	</script>	
 	<script src="/js/lib/jq.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>

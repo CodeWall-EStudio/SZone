@@ -16,7 +16,7 @@
 						<li>
 							<a href="/group?id=<?=$item['id']?>"><?=$item['name']?></a>
 							<?if($item['auth']):?>
-								<span><a href="/manage/group?id=<?=$item['id']?>">管理</a></span>
+								<span><a data-toggle="modal" data-id="<?=$item['id']?>" cmd="manage" data-target="#manageWin">管理</a></span>
 							<?endif?>
 							<?if(count($item['list'])>0):?>
 								<ul class="head-second">

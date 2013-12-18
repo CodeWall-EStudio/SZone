@@ -319,7 +319,7 @@ class Group extends SZone_Controller {
 		}
 
 		$ulist = array();
-		$sql = 'select a.uid,b.name,b.auth from groupuser a,user b where a.uid = b.id and a.gid='.$gid;
+		$sql = 'select a.uid,b.name,a.auth from groupuser a,user b where a.uid = b.id and a.gid='.$gid;
 		$query = $this->db->query($sql);
 
 		foreach($query->result() as $row){
@@ -330,6 +330,19 @@ class Group extends SZone_Controller {
 			);
 		}
 
+		$sql = 'select id,name from user where id !='.(int) $this->user['id'];
+		$query = $this->db->query($sql);
+
+		$ul = array();
+		foreach($query->result() as $row){
+			if(!isset($ulist[$row->id])){
+				$ul[$row->id] = array(
+					'id' => $row->id,
+					'name' => $row->name
+				);
+			}
+		}
+		$data['ul'] = $ul;		
 		$data['ulist'] = $ulist;
 		$data['ginfo'] = $ginfo;
 

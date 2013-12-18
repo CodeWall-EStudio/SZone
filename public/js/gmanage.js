@@ -126,13 +126,17 @@
 		if(type){
 			url = '/cgi/new_group';
 		}
+
 		$('#selectResult a').each(function(){
 			var id = $(this).attr("data-id");
-			il.push(id);
+			if(id){
+				il.push(id);
+			}
 		});
 		$.post(url,{n:name,d:desc,ul:il.join(','),gid:$('#gid').val(),csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 			if(d.code == 0){
 				alert(d.data.msg);
+				top.hideManage();
 			}else{
 				alert(d.data.msg);
 			}

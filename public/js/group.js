@@ -595,6 +595,10 @@
 function hideShare(){
 	$('#shareWin').modal('hide');
 }
+function hideManage(){
+	$('#manageWin').modal('hide');
+}
+
 function sharealert(msg){
 	alert(msg);
 }

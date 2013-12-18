@@ -124,6 +124,4 @@
 
 	<script src="/js/common.js"></script>
 
-
-</body>
-</html>
+<?php  $this->load->view('public/footer.php'); ?>

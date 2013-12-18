@@ -1387,7 +1387,11 @@ class Cgi extends SZone_Controller {
 		$n = $this->input->post('n');		
 		$desc = $this->input->post('d');
 		$nl = $this->input->post('ul');
+		if($nl != ''){
 		$il = explode(',',$nl);
+		}else{
+			$il = array();
+		}
 
 		$sql = 'select auth from groupuser where uid='.(int) $this->user['uid'].' and gid='.$gid;
 		$query = $this->db->query($sql);
@@ -1399,17 +1403,40 @@ class Cgi extends SZone_Controller {
 			$str = $this->db->update_string('groups',$data,'id='.$gid);
 			$query = $this->db->query($str);
 
+			$this->db->where('gid',$gid);
+			$this->db->where('auth',0);
+			$query = $this->db->get('groupuser');
+
 			$ky = array();
-			foreach($il as $k){
-				// echo $k;
-				array_push($ky,'('.$gid.','.$k.',0)');
+			$delid = array();
+			$inid = array();
+			foreach($query->result() as $row){
+				if(!in_array($row->uid,$il)){
+					array_push($delid,' id='.$row->id);
+				}else{
+					array_push($inid,$row->uid);
+				}
 			}
 
-			$sql = 'insert into groupuser (gid,uid,auth) value '.implode(',',$ky);
+			foreach($il as $k){
+				if(!in_array($k,$inid)){
+					array_push($ky,'('.$gid.','.$k.',0)');
+				}
+			}
 
-			$query = $this->db->query($sql);
+			if(count($delid)>0){
+				$sql = 'delete from groupuser where '.implode(' or ',$delid);
+				$query = $this->db->query($sql);
+			}
 
-			if($this->db->affected_rows()>0 ){
+			if(count($ky)>0){
+				$sql = 'insert into groupuser (gid,uid,auth) value '.implode(',',$ky);
+				echo $sql;
+				return;
+				$query = $this->db->query($sql);
+			}
+
+			if($this->db->affected_rows()>0 || count($ky)==0){
 				$ret = array(
 					'ret' => 0,
 					'msg' => '修改成功'

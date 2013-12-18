@@ -55,3 +55,12 @@
 
 	init();
 })();
+function hideManage(){
+	$('#manageWin').modal('hide');
+}
+function hideShare(){
+	$('#shareWin').modal('hide');
+}
+function sharealert(msg){
+	alert(msg);
+}
