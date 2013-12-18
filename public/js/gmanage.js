@@ -15,26 +15,19 @@
 		postBtn = $("#post");
 	var search = function(e){
 		var val = sinput.val();
-		var url = SEARCHUSER;
-		var gid = $('#gid').val();
-		var data = {
-			'key' : val,
-			'gid' : gid,
-			csrf_test_name:$.cookie('csrf_cookie_name')
+		var type = parseInt(sinput.attr('data-type'));
+		if(val == ''){
+			searchResult.find('li').show();
+		}else{
+			searchResult.find('li').each(function(e){
+				var v = $(this).text();
+				if(v.indexOf(val)<0){
+					$(this).hide();
+				}
+			});
 		}
-
-		$.post(url,data,function(d){
-
-			if(d.code == 0){
-				var list = d.data.list;
-				render(list);
-			}else{
-
-			}
-		});
 	};
 	//缓存
-	var map = {};
 
 	var render = function(list){
 		var html = [];
@@ -93,24 +86,67 @@
 		}
 	}
 
+	// var unselected = function(e){
+	// 	var id = $(e.target).attr('data-id');
+	// 	var item = map[id];
+	// 	searchResult.append('<li><a data-id="'+item.id+'">'+item.name+'</a></li>');
+	// 	$(this).remove();
+	// 	checkBtn();
+	// }
+
 	var unselected = function(e){
 		var id = $(e.target).attr('data-id');
 		var item = map[id];
 		searchResult.append('<li><a data-id="'+item.id+'">'+item.name+'</a></li>');
-		$(this).remove();
+		$(e.target).parents('li').remove();
+		//$(this).remove();
 		checkBtn();
-	}
+	}	
 
 	var move = function(e){
-		selectResult.html('');
+		//selectResult.html('');
 		searchResult.find('.selected').each(function(e){
 			var id = $(this).attr('data-id');
 			var item = map[id];
-			selectResult.append('<li><a data-id="'+item.id+'">'+item.name+'</a></li>');
+			//selectResult.append('<li><a data-id="'+item.id+'">'+item.name+'</a></li>');
+			$('<li><a data-id="'+item.id+'">'+item.name+'</a></li>').appendTo(selectResult);
 			$(this).remove();
 		});
 		checkBtn();
 	}
+
+	var post = function(){
+		var type = parseInt(sinput.attr('data-type'));
+		var ilist = [];
+		selectResult.find('a').each(function(){
+			var id = $(this).attr("data-id");
+			ilist.push(id);
+		});
+		var flist = $('#flist').val().split(',');
+		var obj = {
+			id : ilist,
+			content : $('#content').val(),
+			type : $("#type").val(),
+			flist : flist,
+			csrf_test_name:$.cookie('csrf_cookie_name'),
+			gid : $('#gid').val()
+		}
+		var url = ADDSHARE;
+		if(type){
+			var fname = $("#fnames").val().split(',');
+			url = ADDSHAREGROUP;
+			obj.fname = fname;
+		}
+		$.post(url,obj,function(d){
+			if(d.code == 0){
+				top.hideShare();
+				top.alert(d.data.msg);
+			}else{
+				top.hideShare();
+				top.alert(d.data.msg);
+			}
+		});
+	}	
 
 	var bind = function(){
 		$('.share-act-zone i').bind('click',search);
@@ -118,6 +154,7 @@
 		selectResult.bind('click',selected);
 		selectResult.bind('dblclick',unselected);
 		joinBtn.bind('click',move);
+		postBtn.bind('click',post);
 		sinput.bind('keyup',keyup);
 		sinput.bind('focus',inputfocus);
 		sinput.bind('blur',inputblur);
@@ -143,28 +180,28 @@
 			});			
 		})		
 
-		$("#post").bind('click',function(d){
-			var name = $('#gName').val();
-			var desc = $('#gDesc').val();	
-			var il = [];
-			var type = $(this).attr('data-type');
+		// $("#post").bind('click',function(d){
+		// 	var name = $('#gName').val();
+		// 	var desc = $('#gDesc').val();	
+		// 	var il = [];
+		// 	var type = $(this).attr('data-type');
 			
-			var url = '/cgi/group_edit';
-			if(type){
-				url = '/cgi/new_group';
-			}
-			$('#selectResult a').each(function(){
-				var id = $(this).attr("data-id");
-				il.push(id);
-			});
-			$.post(url,{n:name,d:desc,ul:il.join(','),gid:$('#gid').val(),csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
-				if(d.code == 0){
-					alert(d.data.msg);
-				}else{
-					alert(d.data.msg);
-				}
-			});					
-		});
+		// 	var url = '/cgi/group_edit';
+		// 	if(type){
+		// 		url = '/cgi/new_group';
+		// 	}
+		// 	$('#selectResult a').each(function(){
+		// 		var id = $(this).attr("data-id");
+		// 		il.push(id);
+		// 	});
+		// 	$.post(url,{n:name,d:desc,ul:il.join(','),gid:$('#gid').val(),csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
+		// 		if(d.code == 0){
+		// 			alert(d.data.msg);
+		// 		}else{
+		// 			alert(d.data.msg);
+		// 		}
+		// 	});					
+		// });
 	};
 
 	function init(){

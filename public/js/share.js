@@ -136,7 +136,6 @@
 	}
 
 	var unselected = function(e){
-		console.log(e);
 		var id = $(e.target).attr('data-id');
 		var item = map[id];
 		searchResult.append('<li><a data-id="'+item.id+'">'+item.name+'</a></li>');
