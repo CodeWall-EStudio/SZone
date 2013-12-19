@@ -71,7 +71,7 @@
 		flash_swf_url : '../../js/moxie.swf',
 		silverlight_xap_url : '../../js/moxie.xap'
 	}).bind('allcomplete',function(){
-		//window.location.reload();
+		window.location.reload();
 	});
 
 })();
