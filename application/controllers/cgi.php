@@ -1431,8 +1431,6 @@ class Cgi extends SZone_Controller {
 
 			if(count($ky)>0){
 				$sql = 'insert into groupuser (gid,uid,auth) value '.implode(',',$ky);
-				echo $sql;
-				return;
 				$query = $this->db->query($sql);
 			}
 

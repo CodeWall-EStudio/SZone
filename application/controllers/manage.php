@@ -160,6 +160,7 @@ class Manage extends SZone_Controller {
 		$this->load->helper('form');	
 
 		$plist = array();
+		$ulist = array();
 
 		$groupid = (int) $this->input->post('groupid');
 		$grade = (int) $this->input->post('grade');
@@ -177,7 +178,18 @@ class Manage extends SZone_Controller {
 				);
 			}	
 		}
+
+		$sql = 'select id,name from user';
+		$query = $this->db->query($sql);
+		foreach($query->result() as $row){
+			$ulist[$row->id] = array(
+				'id' => $row->id,
+				'name' => $row->name
+			);
+		}
+
 		$this->data['plist'] = $plist;
+		$this->data['ulist'] = $ulist;
 
 		if(!$groupid && !$group){
 			$this->load->view('manage/addprep',$this->data);	
@@ -188,6 +200,7 @@ class Manage extends SZone_Controller {
 			if($groupid){
 				$gl = $this->config->item('grades');
 				$tl = $this->config->item('subs');
+				$ul = $this->input->post('uids');
 
 				$sql = 'select id from groups where parent='.$groupid.' and grade='.$grade.' and tag = "'.$type.'" and name = "'.$gl[$grade].$tl[$type].'"';
 				$query = $this->db->query($sql);
@@ -227,7 +240,16 @@ class Manage extends SZone_Controller {
 			$sql = $this->db->insert_string('groups',$data);
 			$query = $this->db->query($sql);
 
-			if($this->db->insert_id() > 0){
+			$ngid = $this->db->insert_id();
+			if($ngid > 0){
+				$istr = array();
+				foreach($ul as $k){
+					array_push($istr,'('.$ngid.','.$k.',0)');
+				}
+
+				$sql = 'insert into groupuser (gid,uid,auth) value '.implode(',',$istr);
+				$query = $this->db->query($sql);
+
 				$this->data['ret'] = 0;
 				$this->data['msg'] = '添加成功!';
 			}else{
@@ -337,10 +359,21 @@ class Manage extends SZone_Controller {
 			$grouplist[$row->id] = $row->name;
 		}
 
+		$ulist = array();
+		$sql = 'select id,name from user';
+		$query = $this->db->query($sql);
+		foreach ($query->result() as $row){
+			$ulist[$row->id] = array(
+				'id' => $row->id,
+				'name' => $row->name
+			);
+		}
+
 		$this->form_validation->set_rules('groupname', 'groupname', 'required|min_length[2]|max_length[40]|callback_checkgroupname');
 
 		$this->data['index'] = 'addgroup';
 		$this->data['data']['group'] = $grouplist;
+		$this->data['data']['ulist'] = $ulist;
 		
 		//表单验证失败
 		if ($this->form_validation->run() == FALSE){
@@ -348,10 +381,11 @@ class Manage extends SZone_Controller {
 		}else{
 			$this->data['data']['ret'] = 1;
 
-			$manage = $this->input->post('manage');
+			$manage = $this->input->post('manage');		
 
 			$manage = preg_replace('/;$/e','',$manage);
 			$ul = explode(';',$manage);
+
 			foreach($ul as $key => $item){
 				$ul[$key] = ' name="'.$item.'" ';
 			}
@@ -364,9 +398,8 @@ class Manage extends SZone_Controller {
 			$idqlist = array();
 			foreach ($query->result() as $row){
 				array_push($idlist,(int) $row->id);
-				array_push($idqlist,'uid='.(int) $row->id);
+				//array_push($idqlist,'uid='.(int) $row->id);
 			}
-
 
 			//echo $sql;
 
@@ -389,33 +422,48 @@ class Manage extends SZone_Controller {
 			$query = $this->db->query($str);
 			//取分组id
 			$id = $this->db->insert_id();
+
 			//echo $id;
 
-			$where = implode(' or ',$idqlist);
-			$sql = 'SELECT id,uid FROM groupuser where gid='.$id.' and ('.$where.')';
+			// $where = implode(' or ',$idqlist);
+			// $sql = 'SELECT id,uid FROM groupuser where gid='.$id.' and ('.$where.')';
 
-			$query = $this->db->query($sql);
-			$guid = array();
-			$insertid = array();
-			foreach ($query->result() as $row){
-				if(in_array((int) $row->uid,$idlist)){
-					array_push($guid,(int) $row->uid);
-					array_push($insertid,(int) $row->id);
+			// $query = $this->db->query($sql);
+			// $guid = array();
+			// $insertid = array();
+			// foreach ($query->result() as $row){
+			// 	if(in_array((int) $row->uid,$idlist)){
+			// 		array_push($guid,(int) $row->uid);
+			// 		array_push($insertid,(int) $row->id);
 
-					$data = array('auth' => 1);
-					$where = 'id='.(int) $row->id;
-					$str = $this->db->update_string('groupuser',$data,$where);
+			// 		$data = array('auth' => 1);
+			// 		$where = 'id='.(int) $row->id;
+			// 		$str = $this->db->update_string('groupuser',$data,$where);
 
-					$query = $this->db->query($str);
-				};
+			// 		$query = $this->db->query($str);
+			// 	};
+			// }
+
+			$uls = $this->input->post('uids');
+
+			$nuls = array_diff($uls,$idlist);
+			$istr = array();
+			foreach($idlist as $row){
+				//array_push($istr,'('gid' => $id,'uid'=>$item,'auth' => 1);
+				array_push($istr,'('.$id.','.$row.',1)');
+			}		
+			foreach($nuls as $row){
+				array_push($istr,'('.$id.','.$row.',0)');
 			}
 
-			$idlist = array_diff_assoc($idlist, $guid);
-			foreach($idlist as $item){
-				$data = array('gid' => $id,'uid'=>$item,'auth' => 1);
-				$str = $this->db->insert_string('groupuser',$data);
-				$query = $this->db->query($str);				
-			}
+			$sql = 'insert into groupuser (gid,uid,auth) value '.implode(',',$istr);			
+			$query = $this->db->query($sql);			
+			// $idlist = array_diff_assoc($idlist, $uls);
+			// foreach($idlist as $item){
+			// 	$data = array('gid' => $id,'uid'=>$item,'auth' => 1);
+			// 	$str = $this->db->insert_string('groupuser',$data);
+			// 	$query = $this->db->query($str);				
+			// }
 
 			$num = $this->db->affected_rows();
 			if(!$num){

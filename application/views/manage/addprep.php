@@ -61,8 +61,17 @@
 									</select>								
 
 								</td>
-							</tr>						
-							
+							</tr>		
+							<?if(count($ulist)>0):?>				
+							<tr>
+								<td>选择教师</td>
+								<td>
+									<?foreach($ulist as $row):?>
+										<span><input type="checkbox" name="uids[]" value="<?=$row['id']?>" /> <?=$row['name']?></span>
+									<?endforeach?>
+								</td>
+							</tr>
+							<?endif?>
 							<tr>
 								<td colspan="2">
 									<input class="btn btn-primary" type="submit" value="提交" />
