@@ -41,12 +41,14 @@ class SZone_Controller extends CI_Controller {
         {
             $this->load->model('Group_model');
             $gidlist = $this->Group_model->get_user_group_ids($this->user['uid']);
-            $ret = $this->Group_model->get_group_info($gidlist);
+            $authlist = $this->Group_model->get_user_group_auth($this->user['uid']);
+            $ret = $this->Group_model->get_group_info($gidlist,$authlist);
             $this->grouplist = $ret['flist'];
             $this->deplist = $ret['deplist'];
             $this->depinfolist = $ret['depinfolist'];
             $this->prelist = $ret['prelist'];
             $this->school = $ret['school'];
+            // echo json_encode($this->grouplist);
         }
     }
 

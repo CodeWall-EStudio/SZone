@@ -23,6 +23,7 @@ class Cgi extends SZone_Controller {
 		$name = $this->input->post('name');
 		$pid = (int) $this->input->post('pid');
 		$gid = (int) $this->input->post('gid');
+		$prid = (int) $this->input->post('prid');
 
 		$tablename = 'userfolds';
 		if($gid){
@@ -75,7 +76,8 @@ class Cgi extends SZone_Controller {
 					'createtime' => time(),
 					'type' => 0,
 					'tid' => $tid,
-					'idpath' => $idpath
+					'idpath' => $idpath,
+					'prid' => $prid
 				);
 			}
 			$str = $this->db->insert_string($tablename,$data);

@@ -22,10 +22,11 @@
             submitHandler : function(form) { 
 			 	var value = $('#foldname').val();
 			 	var pid = $('#newFolds .parentid').val();
+			 	var prid = parseInt($('#newFolds .prid').val());
 
 			 	if(value != ''){
 			 		////console.log(value);
-			 		var data = {name: value,pid: pid,csrf_test_name:$.cookie('csrf_cookie_name')};
+			 		var data = {name: value,pid: pid,prid : prid,csrf_test_name:$.cookie('csrf_cookie_name')};
 			 		
 			 		$.post('/cgi/addfold',data,function(d){
 			 			if(d.code==0){

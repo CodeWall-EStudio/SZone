@@ -388,6 +388,7 @@
 						
 							<label>文件夹名称：</label><input id="foldname" name="foldname" type="text" style="width:80%" />
 							<input type="hidden" class="parentid" name="parentid" value="<?=$fid?>" />
+							<input type="hidden" class="prid" name="prid" value="<?=$prid?>" />
 						
 					</div>
 					<div class="modal-footer">

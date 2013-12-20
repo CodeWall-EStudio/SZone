@@ -242,14 +242,15 @@ class Manage extends SZone_Controller {
 
 			$ngid = $this->db->insert_id();
 			if($ngid > 0){
-				$istr = array();
-				foreach($ul as $k){
-					array_push($istr,'('.$ngid.','.$k.',0)');
+				if($groupid){
+					$istr = array();
+					foreach($ul as $k){
+						array_push($istr,'('.$ngid.','.$k.',0)');
+					}
+
+					$sql = 'insert into groupuser (gid,uid,auth) value '.implode(',',$istr);
+					$query = $this->db->query($sql);
 				}
-
-				$sql = 'insert into groupuser (gid,uid,auth) value '.implode(',',$istr);
-				$query = $this->db->query($sql);
-
 				$this->data['ret'] = 0;
 				$this->data['msg'] = '添加成功!';
 			}else{

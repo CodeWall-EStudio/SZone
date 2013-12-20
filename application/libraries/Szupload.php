@@ -97,7 +97,7 @@ class szupload{
 		return array (
 						'file_name'			=> $this->file_name,
 						'file_type'			=> $this->file_type,
-						'full_path'			=> $this->upload_path.$this->file_name,
+						'full_path'			=> $this->full_path,
 						'file_ext'			=> $this->file_ext,
 						'file_size'			=> $this->file_size,
 						'raw_name'			=> str_replace($this->file_ext, '', $this->file_name),
@@ -282,9 +282,8 @@ class szupload{
 			closedir($dir);
 		}	
 
-
-
 		// Open temp file
+		//echo $filePath;
 		if (!$out = @fopen("{$filePath}.part", $chunks ? "ab" : "wb")) {
 
 			die('{"jsonrpc" : "2.0", "error" : {"code": 102, "message": "Failed to open output stream."}, "id" : "id"}');
@@ -335,6 +334,8 @@ class szupload{
 				$this->CI->session->unset_userdata('user_upload_file_name');
 				$this->CI->session->unset_userdata('user_upload_file_tmp');
 
+				
+
 				$this->full_path = $oldpath;
 				$this->file_size = filesize($oldpath);
 				//$this->file_type = $_FILES[$field]['type'];
@@ -361,7 +362,7 @@ class szupload{
 
 				$finfo    = finfo_open(FILEINFO_MIME_TYPE);
 				$mimetype = finfo_file($finfo, $filePath);
-				$this->file_type = $mimetype;				
+				$this->file_type = $mimetype;		
 				return true;			
 			}
 			//rename("{$filePath}.part", $filePath);

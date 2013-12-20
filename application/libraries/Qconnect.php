@@ -40,7 +40,6 @@
 	            "state" => $state,
 	            "scope" => $this->scope
 	        );			
-
 	        $login_url =  $this->combineURL(self::GET_AUTH_CODE_URL, $keysArr);
 	        header("Location:$login_url");
 		}
@@ -50,11 +49,14 @@
 				return false;
 			}
 			$state = $this->CI->session->userdata('state');
+
+			//echo json_encode($this->CI->session->userdata('state'));
+
 			if($state != $this->CI->input->get('state')){
 				$this->CI->set_error('state error!');
 				return false;
 			}
-
+			
 	        //-------请求参数列表
 	        $keysArr = array(
 	            "grant_type" => "authorization_code",
@@ -105,7 +107,7 @@
 
 	        $user = json_decode($response);
 	        if(isset($user->error)){
-	            $this->error->showError($user->error, $user->error_description);
+	            $this->CI->set_error($user->error, $user->error_description);
 	        }
 	        //------记录openid
 	        $this->CI->session->set_userdata('openid',$user->openid);

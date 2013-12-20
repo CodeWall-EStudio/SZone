@@ -24,6 +24,18 @@ class Group_model extends CI_Model {
     function get_user_group_ids($id)
     {
         $this->db->where('uid', $id);
+        //$this->db->where('auth >', 0);
+        $query = $this->db->get($this->user_table);
+        $gidlist = array();
+
+        foreach($query->result() as $row){
+            array_push($gidlist,$row->gid);
+        }
+        return $gidlist;
+    }
+
+    function get_user_group_auth($id){
+        $this->db->where('uid', $id);
         $this->db->where('auth >', 0);
         $query = $this->db->get($this->user_table);
         $gidlist = array();
@@ -34,9 +46,10 @@ class Group_model extends CI_Model {
         return $gidlist;
     }
 
-    function get_group_info($ids)
+    function get_group_info($ids,$authid)
     {
         $gidlist = $ids;
+        $authlist = $authid;
         if(count($ids)>0){
             $this->db->where_in('id', $ids);
         }
@@ -50,7 +63,6 @@ class Group_model extends CI_Model {
             'school' => array(),
             'prelist' => array()
         );
-
         foreach($query->result() as $row){
             if($row->type == 1){
                 //if($row->parent == 0){
@@ -59,7 +71,7 @@ class Group_model extends CI_Model {
                         'name' => $row->name,
                         'parent' => $row->parent,
                         'content' => $row->content,
-                        'auth' => in_array($row->id,$gidlist),
+                        'auth' => in_array($row->id,$authlist),
                         'pt' => $row->pt,
                         'list' => array()
                     );
@@ -92,7 +104,7 @@ class Group_model extends CI_Model {
                     'parent' => $row->parent,
                     'pt' => $row->pt,
                     'content' => $row->content,
-                    'auth' => in_array($row->id,$gidlist)
+                    'auth' => in_array($row->id,$authlist)
                 );
             }elseif($row->type == 3){
                 $result['prelist'][$row->id] = $row->name;

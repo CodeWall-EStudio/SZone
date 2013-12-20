@@ -250,7 +250,7 @@ class Home extends SZone_Controller {
 		}
 		$sql = 'select id,pid,name,tid,idpath from '.$tablename;
 		if(!$gid){
-			$sql .= ' where uid='.(int) $this->user['uid'];
+			$sql .= ' where prid=0 and uid='.(int) $this->user['uid'];
 		}else{
 			$sql .= ' where gid='.$gid;
 		}
