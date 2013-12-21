@@ -124,7 +124,7 @@
             </tr>
           <?endforeach?>
         </table>
-      <?elseif($ud && count($flist)==0):?>
+      <?else:?>
         <table width="100%" class="table table-striped table-hover prep-file-list">
           <tr><td align="center">还没有文件哦!</td></tr>
         </table>

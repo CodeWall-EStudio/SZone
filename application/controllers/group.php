@@ -477,6 +477,7 @@ class Group extends SZone_Controller {
 			$plist[$row->id] = array(
 				'id' => $row->id,
 				'name' => $row->name,
+				'parent' => (int) $row->parent,
 				'list' => array()
 			);
 			array_push($kp,$row->id);
@@ -497,24 +498,6 @@ class Group extends SZone_Controller {
 		foreach($query->result() as $row){
 			array_push($pids,' b.gid='.$row->id);
 			array_push($pls,' a.prid='.$row->id);
-		}
-
-		$sql = 'select a.id,a.name from user a,groupuser b where a.id = b.uid  ';
-		if($prid){
-			$sql .= 'and b.gid='.$prid;	
-		}else{
-			if(count($pids)>0){
-				$sql .= 'and ('.implode(' or ',$pids).')';
-			}
-		}	
-		$query = $this->db->query($sql);
-
-		$ulist = array();
-		foreach($query->result() as $row){
-			$ulist[$row->id] = array(
-				'id' => $row->id,
-				'name' => $row->name
-			);
 		}
 
 		$sql = 'select a.id,a.name,a.pid,a.prid,b.name as uname,b.id as uid from userfolds a,user b where ';
@@ -587,6 +570,25 @@ class Group extends SZone_Controller {
 				);
 			}
 		}
+
+		$sql = 'select a.id,a.name from user a,groupuser b where a.id = b.uid  ';
+		if($prid && $plist[$prid]['parent']){
+			$sql .= 'and b.gid='.$prid;	
+		}else{
+			if(count($pids)>0){
+				$sql .= 'and ('.implode(' or ',$pids).')';
+			}
+		}
+		//echo $sql;
+		$query = $this->db->query($sql);
+
+		$ulist = array();
+		foreach($query->result() as $row){
+			$ulist[$row->id] = array(
+				'id' => $row->id,
+				'name' => $row->name
+			);
+		}		
 
 		$data = array(
 			'nav' => array(
