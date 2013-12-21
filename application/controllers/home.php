@@ -658,9 +658,15 @@ class Home extends SZone_Controller {
 		$this->load->model('Group_model');
 		$gidlist = $this->Group_model->get_prep_group_ids($this->user['uid']);
 		
-		$gidstr = '('.implode(',',$gidlist).')';
-
-		$sql = 'select id,name,parent from groups where (id in '.$gidstr.' or parent = 0) and type=3 order by parent';
+		
+		$sql = 'select id,name,parent from groups where';  
+		if(count($gidlist)>0){
+			$gidstr = '('.implode(',',$gidlist).')';	
+			$sql .= '(id in '.$gidstr.' or parent = 0) and type=3 order by parent';
+		}else{
+			$sql .= ' type=3 and parent<0 order by parent';
+		}
+		
 		$query = $this->db->query($sql);
 
 		$plist = array();
@@ -704,150 +710,154 @@ class Home extends SZone_Controller {
 			}
 		};
 
-		if(!$prid && !$fid){
-			//取对应的文件夹
-			$sql = 'select id from userfolds where uid='.(int) $this->user['uid'].' and '.implode(' or ',$kp);
-			$query = $this->db->query($sql);
 
-			$kpf = array();
-			foreach($query->result() as $row){
-				array_push($kpf,' fdid='.$row->id);
-			}
-			if(count($kpf) > 0){
-				$wh .= ' and ('.implode(' or ',$kpf).')';
-			}
-			$fid = 0;
-		}else{
-			if($fid){
-				$wh .= ' and fdid='.$fid;
-			}else{
-				$sql = 'select id from userfolds where uid='.(int) $this->user['uid'].' and pid=0 and prid='.$prid;	
-				$query = $this->db->query($sql);
-
-				if($query->num_rows() > 0){
-					$row = $query->row();
-					$fid = $row->id;
-					$wh .= ' and fdid='.$fid;
-				//还没有目录,新建目录
-				}else{
-					$data = array(
-						'pid' => 0,
-						'name' => $pfname,
-						'uid' => $this->user['uid'],
-						'mark' => '',
-						'createtime' => time(),
-						'type' => 0,
-						'prid' => $prid
-					);
-					$sql = $this->db->insert_string('userfolds',$data);
-					$query = $this->db->query($sql);
-					$fid = $this->db->insert_id();
-
-				}
-				$wh .= ' and fdid='.$fid;
-			}
-		}
-		
-		if($type){
-			$wh .= ' and b.type='.$type;
-		}
-		if($key){
-			$wh .= ' and a.name like "%'.$key.'%"';
-		}
-		if($od){
-			$wh .= ' order by '.$odname.' '.$desc;
-		}		
-
-		$sql = 'select count(a.id) as allnum from userfile a,files b where a.del=0 and a.fid=b.id and uid='.(int) $this->user['uid'];
-		$sql .= $wh;
-
-		$query = $this->db->query($sql);
-		$row = $query->row();
-
-		$allnum = $row->allnum;
-
-		//选择文件
-		$sql = 'select a.id,a.fid,a.name,a.createtime,b.type,b.size from userfile a,files b where a.del = 0 and a.fid = b.id and uid = '.(int) $this->user['uid'];
-		$sql .= $wh;
-		$page = get_page_status($nowpage,$pagenum,$allnum);
-
-		$query = $this->db->query($sql);
 		$flist = array();
 		$kfc = array();
-		foreach($query->result() as $row){
-			array_push($kfc,' a.fid='.$row->fid);
-			$flist[$row->id] = array(
-				'id' => $row->id,
-				'fid' => $row->fid,
-				'name' => $row->name,
-				'type' => $row->type,
-				'size' => format_size($row->size),
-				'time' => substr($row->createtime,0,10)
-			);
-		}
-
-		$sql = 'select a.id from userfile a,usercollection b where a.fid=b.fid and b.uid='.(int) $this->user['uid'];
-		if(count($kfc)>0){
-		$sql .=' and ('.implode(' or ',$kfc).')';
-		}
-		$query = $this->db->query($sql);
-
-		foreach($query->result() as $row){
-			if(isset($flist[$row->id])){
-				$flist[$row->id]['iscoll'] = 1;
-			}
-		}
-
+		$fold = array();
+		$foldlist = array();	
 		$thisfold = array(
 			'id' => 0,
 			'pid' => 0
 		);
-		$fold = array();
-		$foldlist = array();
-		if(!$prid && !$fid){
-			$sql = 'select id,name,mark,createtime,pid,tid,idpath,prid from userfolds where pid='.$fid.' and prid !=0 and uid='.(int) $this->user['uid'];
-		}else{
-			$sql = 'select id,name,mark,createtime,pid,tid,idpath,prid from userfolds where pid='.$fid.' and uid='.(int) $this->user['uid'];
-		}
-		$query = $this->db->query($sql);
-		foreach($query->result() as $row){
-			if($row->id == $fid){
-				$thisfold = array(
-					'id' => $row->id,
-					'pid' => $row->pid,
-					'name' => $row->name,
-					'tid' => $row->tid,
-					'idpath' => explode(',',$row->idpath)
-				);
-				$fname = $row->name;
-				$pid = $row->pid;
+		if(count($plist)>0){
+			if(!$prid && !$fid){
+				//取对应的文件夹
+				$sql = 'select id from userfolds where uid='.(int) $this->user['uid'].' and '.implode(' or ',$kp);
+				$query = $this->db->query($sql);
+
+				$kpf = array();
+				foreach($query->result() as $row){
+					array_push($kpf,' fdid='.$row->id);
+				}
+				if(count($kpf) > 0){
+					$wh .= ' and ('.implode(' or ',$kpf).')';
+				}
+				$fid = 0;
+			}else{
+				if($fid){
+					$wh .= ' and fdid='.$fid;
+				}else{
+					$sql = 'select id from userfolds where uid='.(int) $this->user['uid'].' and pid=0 and prid='.$prid;	
+					$query = $this->db->query($sql);
+
+					if($query->num_rows() > 0){
+						$row = $query->row();
+						$fid = $row->id;
+						$wh .= ' and fdid='.$fid;
+					//还没有目录,新建目录
+					}else{
+						$data = array(
+							'pid' => 0,
+							'name' => $pfname,
+							'uid' => $this->user['uid'],
+							'mark' => '',
+							'createtime' => time(),
+							'type' => 0,
+							'prid' => $prid
+						);
+						$sql = $this->db->insert_string('userfolds',$data);
+						$query = $this->db->query($sql);
+						$fid = $this->db->insert_id();
+
+					}
+					$wh .= ' and fdid='.$fid;
+				}
 			}
-			$fold[$row->id] = array(
-				'id' => $row->id,
-				'name' => $row->name,
-				'mark' => $row->mark,
-				'pid' => (int) $row->pid,
-				'prid' => (int) $row->prid,
-				'tid' => (int) $row->tid,
-				'idpath' => $row->idpath,
-				'time' => date('Y-m-d',$row->createtime)
-			);
-			if($row->pid == 0){
-				$foldlist[$row->id] = array(
+			if($type){
+				$wh .= ' and b.type='.$type;
+			}
+			if($key){
+				$wh .= ' and a.name like "%'.$key.'%"';
+			}
+			if($od){
+				$wh .= ' order by '.$odname.' '.$desc;
+			}		
+
+			$sql = 'select count(a.id) as allnum from userfile a,files b where a.del=0 and a.fid=b.id and uid='.(int) $this->user['uid'];
+			$sql .= $wh;
+
+			$query = $this->db->query($sql);
+			$row = $query->row();
+
+			$allnum = $row->allnum;
+
+			//选择文件
+			$sql = 'select a.id,a.fid,a.name,a.createtime,b.type,b.size from userfile a,files b where a.del = 0 and a.fid = b.id and uid = '.(int) $this->user['uid'];
+			$sql .= $wh;
+			$page = get_page_status($nowpage,$pagenum,$allnum);
+
+			$query = $this->db->query($sql);
+
+			foreach($query->result() as $row){
+				array_push($kfc,' a.fid='.$row->fid);
+				$flist[$row->id] = array(
+					'id' => $row->id,
+					'fid' => $row->fid,
+					'name' => $row->name,
+					'type' => $row->type,
+					'size' => format_size($row->size),
+					'time' => substr($row->createtime,0,10)
+				);
+			}
+
+			$sql = 'select a.id from userfile a,usercollection b where a.fid=b.fid and b.uid='.(int) $this->user['uid'];
+			if(count($kfc)>0){
+			$sql .=' and ('.implode(' or ',$kfc).')';
+			}
+			$query = $this->db->query($sql);
+
+			foreach($query->result() as $row){
+				if(isset($flist[$row->id])){
+					$flist[$row->id]['iscoll'] = 1;
+				}
+			}
+
+			if(!$prid && !$fid){
+				$sql = 'select id,name,mark,createtime,pid,tid,idpath,prid from userfolds where pid='.$fid.' and prid !=0 and uid='.(int) $this->user['uid'];
+			}else{
+				$sql = 'select id,name,mark,createtime,pid,tid,idpath,prid from userfolds where pid='.$fid.' and uid='.(int) $this->user['uid'];
+			}
+			$query = $this->db->query($sql);
+			foreach($query->result() as $row){
+				if($row->id == $fid){
+					$thisfold = array(
+						'id' => $row->id,
+						'pid' => $row->pid,
+						'name' => $row->name,
+						'tid' => $row->tid,
+						'idpath' => explode(',',$row->idpath)
+					);
+					$fname = $row->name;
+					$pid = $row->pid;
+				}
+				$fold[$row->id] = array(
 					'id' => $row->id,
 					'name' => $row->name,
 					'mark' => $row->mark,
 					'pid' => (int) $row->pid,
-					'tid' => (int) $row->tid,
 					'prid' => (int) $row->prid,
+					'tid' => (int) $row->tid,
+					'idpath' => $row->idpath,
 					'time' => date('Y-m-d',$row->createtime)
-				);				
-			}else{
-				if(isset($foldlist[$row->pid])){
-					$foldlist[$row->pid]['child'] = 1;
+				);
+				if($row->pid == 0){
+					$foldlist[$row->id] = array(
+						'id' => $row->id,
+						'name' => $row->name,
+						'mark' => $row->mark,
+						'pid' => (int) $row->pid,
+						'tid' => (int) $row->tid,
+						'prid' => (int) $row->prid,
+						'time' => date('Y-m-d',$row->createtime)
+					);				
+				}else{
+					if(isset($foldlist[$row->pid])){
+						$foldlist[$row->pid]['child'] = 1;
+					}
 				}
-			}
+			}			
 		}
+
 
 		$data = array(
 			'nav' => array(
