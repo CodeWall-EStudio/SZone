@@ -342,7 +342,7 @@
 				</div>
 				<form class="new-fold" id="reName" method="post">
 				<div class="modal-body">
-					<label>文件名称：</label><input class="foldname" name="fname" type="text" style="width:80%" />
+					<label>文件名称：</label><input class="foldname"  maxlength="20"  name="fname" type="text" style="width:80%" />
 					<input type="hidden" class="fid" />
 				</div>
 				<div class="modal-footer">
@@ -386,7 +386,7 @@
 				<form class="new-fold" id="newFolds" method="get">
 					<div class="modal-body">
 						
-							<label>文件夹名称：</label><input id="foldname" name="foldname" type="text" style="width:80%" />
+							<label>文件夹名称：</label><input id="foldname"  maxlength="20"  name="foldname" type="text" style="width:80%" />
 							<input type="hidden" class="parentid" name="parentid" value="<?=$fid?>" />
 							<input type="hidden" class="prid" name="prid" value="<?=$prid?>" />
 						

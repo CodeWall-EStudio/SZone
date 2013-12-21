@@ -10,6 +10,7 @@
 
 </head>
 <body class="share-zone">
+	<?if($inGroup):?>
 	<div>
 		<div>
 			<p> <input type="text" id="content" class="board-input" /> <button class="btn btn-primary" id="post">发留言</button></p>
@@ -42,6 +43,9 @@
 	var ginfo = '<?=json_encode($ginfo);?>';
 		ginfo = $.parseJSON(ginfo);
 	</script>
-	<script src="/js/board.js" ></script>		
+	<script src="/js/board.js" ></script>	
+	<?else:?>	
+		<div style="width:200px;margin:30px auto;">你还不是这个小组或部门的成员!</div>
+	<?endif?>
 </body>
 </html>

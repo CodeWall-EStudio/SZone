@@ -14,7 +14,7 @@
 	<? $idlist = array();?>
 	<div>
 		<div class="share-tit">
-			复制文件(<?=count($fl)?>)个到文件夹：
+			复制文件(<?=count($fl)?>)个到我的备课：
 			<i>
 				<?for($i = 0;$i<count($fl);$i++):?>
 				<?
@@ -34,27 +34,35 @@
 		<div class="share-act-zone">
 			<p>选择目标路径：</p>
 			<div>
-				<button class="btn btn-primary" id="post" disabled="disabled">移动</button>
+				<button class="btn btn-primary" id="post" disabled="disabled">复制</button>
 				<input type="hidden" id="flist" value="<?=implode(',',$idlist)?>" />
-				<input type="hidden" id="gid" value="<?=$gid?>" />
 			</div>
 		</div>
 		<div class="move-target">
-			我的文件夹
+			我的备课
 			<ul id="prepList" class="perplist">
-				<?foreach($flist as $row):?>
-					<li>
-						<a class="a-click" data-id="<?=$row['id']?>">
-						<?if($row['pid'] ==0):?>
+				<?if(isset($plist)):?>
+					<?if(count($plist) > 0):?>
+					<?foreach($plist as $k => $row):?>
+						<li>
 							<?=$row['name']?>
-						<?elseif($row['pid'] == $row['tid']):?>
-							<?=$flist[$row['tid']]['name']?> &gt; <?=$row['name']?>
-						<?else:?>	
-							<?=$flist[$row['tid']]['name']?> &gt; .... &gt; <?=$flist[$row['pid']]['name']?> &gt;  <?=$row['name']?>						
-						<?endif?>
-						</a>
-					</li>
-				<?endforeach?>
+							<?if(isset($row['list'])):?>
+								<ul>
+								<?foreach($row['list'] as $r):?>
+									<li>
+										<?if(isset($r['name'])):?>
+											<a class="a-click" data-id="<?=$r['id']?>"><?=$r['name']?></a>
+										<?endif?>
+									</li>
+								<?endforeach?>
+								</ul>
+							<?endif?>
+						</li>
+					<?endforeach?>
+					<?else:?>
+						<li>你还没有加入教学组</li>
+					<?endif?>
+				<?endif?>
 			</ul>
 		</div>
 		<div class="clear"></div>
@@ -62,6 +70,10 @@
 	<script src="/js/lib/jq.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
-	<script src="/js/copyfile.js" ></script>	
+	<script>
+		var pstr = '<?=json_encode($plist)?>';
+		var plist = $.parseJSON(pstr);
+	</script>
+	<script src="/js/moveprep.js" ></script>	
 </body>
 </html>

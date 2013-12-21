@@ -7,6 +7,11 @@ class Board extends SZone_Controller {
 		$fid = (int) $this->input->get('fid');
 		$key = $this->input->get('key');
 
+		$inGroup = false;
+        if ($this->user['uid'] != 0){
+            $this->load->model('User_model');
+           	$inGroup = $this->User_model->get_in_group($this->user['uid'],$gid);
+        }	
 
 		$sql = 'select a.id,a.content,a.uid,a.ctime,b.name from board a,user b where a.uid = b.id and a.ttype = 1 and a.gid='.$gid;
 		if($key){
@@ -27,6 +32,7 @@ class Board extends SZone_Controller {
 		}
 
 		$data['blist'] = $blist;
+		$data['inGroup'] = $inGroup;
 		if(isset($this->grouplist[$gid])){
 			$data['ginfo'] = $this->grouplist[$gid];
 		}else{

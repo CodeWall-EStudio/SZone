@@ -124,3 +124,7 @@ body {
 .right{
 	float:right;
 }
+.search-input-length{
+	outline:none;
+	width:280px;
+}

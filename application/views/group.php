@@ -147,7 +147,7 @@
 					<ul>
 						<?foreach($flist as $item):?>
 							<li class="list-li">
-								<i class="glyphicon <?if(isset($item['child'])):?>glyphicon-plus<?endif?>" data-id="<?=$item['id']?>"></i><a class="list-link" href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"> <?=$item['name']?></a>							
+								<i class="glyphicon <?if(isset($item['child'])):?>glyphicon-plus<?endif?>" data-id="<?=$item['id']?>"></i><a  title="<?=$item['name']?>"  class="list-link" href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"> <?=$item['name']?></a>							
 							</li>						
 						<?endforeach?>
 					</ul>				
@@ -321,6 +321,7 @@
 				<div class="empty">你不是该组的成员,<a href="/">返回个人空间</a></div>	
 			<?endif?>
 		</div>
+		<?if($ingroup):?>
 		<div class="aside">
 			<h3 class="selected"><?=$ginfo['name']?></h3>
 			<div class="group-desc" id="groupDesc">
@@ -360,6 +361,7 @@
 				<?  $this->load->view('public/userinfo.php',$nav['userinfo']); ?>
 			<?endif?>
 		</div>
+		<?endif?>
 		<div class="clear"></div>		
 		
 	<div class="footer"></div>
@@ -479,7 +481,7 @@
 				</div>
 				<form class="new-fold" id="reName" method="post">
 				<div class="modal-body">
-					<label>文件名称：</label><input class="foldname" name="fname" type="text" style="width:80%" />
+					<label>文件名称：</label><input class="foldname" maxlength="20" name="fname" type="text" style="width:80%" />
 					<input type="hidden" class="fid" />
 					<input type="hidden" class="type" value="0" />
 				</div>
@@ -523,7 +525,7 @@
 				</div>
 				<form class="new-fold" id="reName" method="post">
 				<div class="modal-body">
-					<label>文件名称：</label><input class="foldname" name="fname" type="text" style="width:80%" />
+					<label>文件名称：</label><input class="foldname"  maxlength="20"  name="fname" type="text" style="width:80%" />
 					<input type="hidden" class="fid" />
 					<input type="hidden" class="parentid" name="groupid" value="<?=$gid?>" />					
 				</div>
