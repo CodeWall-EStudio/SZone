@@ -34,6 +34,17 @@ class Group_model extends CI_Model {
         return $gidlist;
     }
 
+    function get_prep_group_ids($id){
+        $sql = 'select gid from groupuser a,groups b where b.type=3 and a.uid='.$id.' and a.gid = b.id ';
+        $query = $this->db->query($sql);
+        $gidlist = array();
+
+        foreach($query->result() as $row){
+            array_push($gidlist,$row->gid);
+        }
+        return $gidlist;
+    }
+
     function get_user_group_auth($id){
         $this->db->where('uid', $id);
         $this->db->where('auth >', 0);

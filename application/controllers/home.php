@@ -655,7 +655,12 @@ class Home extends SZone_Controller {
 		$pid = (int) $this->input->get('pid');
 		$fdid = (int) $this->input->get('fdid');
 
-		$sql = 'select id,name,parent from groups where type=3 order by parent';
+		$this->load->model('Group_model');
+		$gidlist = $this->Group_model->get_prep_group_ids($this->user['uid']);
+		
+		$gidstr = '('.implode(',',$gidlist).')';
+
+		$sql = 'select id,name,parent from groups where (id in '.$gidstr.' or parent = 0) and type=3 order by parent';
 		$query = $this->db->query($sql);
 
 		$plist = array();
