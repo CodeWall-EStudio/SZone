@@ -133,7 +133,13 @@
 				<table width="100%" class="table table-striped table-hover">
 					<tr>
 						<th width="30"><input type="checkbox" id="selectAllFold" /></th>
-						<th >文件夹和文件</th>
+						<th>
+							文件夹和文件
+							<a href="/home?on=1&od=<?if($on==1 && $od ==1):?>2<?else:?>1<?endif?>">
+							<span>文件名</span>  
+							<?if($on==1 && $od ==1):?><i class="ad"></i><?elseif($on==1 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
+							</a>							
+						</th>
 						<th width="90">
 						<a href="/home?fid=<?=$thisfold['id']?>&on=2&od=<?if($on==2 && $od ==1):?>2<?else:?>1<?endif?>">
 							<span>类型</span>  
