@@ -112,9 +112,11 @@ class Upload extends SZone_Controller {
 
         }
 
+        $file_name = $this->input->post('file_name', TRUE);
+
         $result = $this->File_model->insert_user_entry(array(
             'fid' => $file['id'],
-            'name' => $file_name = $this->input->post('file_name', TRUE),
+            'name' => $file_name,
             'uid' => $this->user['uid'],
             'fdid' => intval($this->input->get('fid'))
         ));
@@ -126,6 +128,18 @@ class Upload extends SZone_Controller {
             if (!$file_isnew) {
                 $this->File_model->update_ref($file['id'], $file['ref']);
             }
+        }
+
+        $gid = intval($this->input->get('gid'));
+        if ($gid > 0 ) {
+            $this->File_model->insert_group_entry(array(
+                'fid' => $file['id'],
+                'fdid' => intval($this->input->get('fid')),
+                'gid' => $gid,
+                'name' => $file_name,
+                'uid' => $this->user['uid'],
+                'status' => 0
+            ));
         }
 
         $ret = array(

@@ -14,6 +14,7 @@ class File_model extends CI_Model {
 
     protected $table   = 'files';
     protected $utable = 'userfile';
+    protected $gtable = 'groupfile';
 
     function __construct()
     {
@@ -54,6 +55,13 @@ class File_model extends CI_Model {
     function insert_user_entry($data)
     {
         $str = $this->db->insert_string($this->utable, $data);
+        $this->db->query($str);
+        return $this->db->insert_id();
+    }
+
+    function insert_group_entry($data)
+    {
+        $str = $this->db->insert_string($this->gtable, $data);
         $this->db->query($str);
         return $this->db->insert_id();
     }

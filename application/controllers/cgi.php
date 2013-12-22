@@ -461,6 +461,38 @@ class Cgi extends SZone_Controller {
 					return;
 			}
 
+            $gid = (int) $this->input->get('gid');
+            if ($gid > 0) {
+                $gd = array(
+                    'fid' => $fid,
+                    'fdid' => $fdid,
+                    'gid' => $gid,
+                    'fname' => $filedata['raw_name'],
+                    'createtime' => time(),
+                    'del' => 0,
+                    'uid' => (int) $this->user['uid'],
+                    'status' => 0
+                );
+
+                $sql = $this->db->insert_string('groupfile',$gd);
+                $query = $this->db->query($sql);
+                if($this->db->affected_rows() == 0){
+                    $ret = array(
+                        'jsonrpc' => '2.0',
+                        'error' => array(
+                            'code' => 102,
+                            'message' => '上传失败!'
+                        )
+                    );
+                    $this->json($ret,103,'数据库操作失败!');
+                    return;
+                    // $this->output
+                    //     ->set_content_type('application/json')
+                    //     ->set_output(json_encode($list));
+                    // return;
+                }
+            }
+
 			$data = array(
 				'fid' => (int) $fid,
 				'name' => $filedata['raw_name'],
