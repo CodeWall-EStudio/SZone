@@ -353,7 +353,7 @@ a{
 	padding-left:10px;
 	background:#ebeef4;
 	color:#6a6a6a;
-	overflow:hidden;
+	/*overflow:hidden;*/
 	border: solid 1px #d7d9e0;
 	background:url(imgs/path.png) repeat-x;
 }
@@ -645,4 +645,10 @@ a{
 	}
 .reviewWin{
 	z-index:1060;
+}
+.aside a{
+	margin-right:12px;
+}
+.aside .mailnum{
+	color:#f00;
 }

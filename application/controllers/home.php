@@ -217,6 +217,12 @@ class Home extends SZone_Controller {
 			);
 		}
 
+
+		$this->load->model('Mail_model');
+		$newmail = $this->Mail_model->get_user_new_mail($this->user['uid']);
+		$postmail = $this->Mail_model->get_user_post_mail($this->user['uid']);
+
+
 		$data['allnum'] = $allnum;
 		$data['fold'] = $fold;
 		$data['flist'] = $foldlist;
@@ -232,6 +238,9 @@ class Home extends SZone_Controller {
 		$data['key'] = $key;
 		$data['od'] = $od;
 		$data['on'] = $on;
+
+		$data['newmail'] = $newmail;
+		$data['postmail'] = $postmail;
 
         // 文件上传
         $data['upload_url'] = $this->config->item('upload_url');
@@ -336,6 +345,14 @@ class Home extends SZone_Controller {
 	function sendmail(){
 		$this->load->helper('util');
 		$m = (int) $this->input->get('m'); // m= 0 发件箱  m = 1 收件箱
+
+		$this->load->model('Mail_model');
+
+		if($m){
+			$this->Mail_model->look_all_mail($this->user['id']);
+		}else{
+			$this->Mail_model->look_all_post($this->user['id']);
+		}
 
 		$type = (int) $this->input->get('type');
 		$uid = (int) $this->input->get('uid');

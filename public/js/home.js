@@ -299,6 +299,21 @@
     }
 
 
+    var changeMailnum = function(type){
+    	var n = 0;
+    	var n1 = $('#allNums').attr('data-num');
+    	if(type){
+    		n = $("#newMailnum").text();
+    		$("#newMailnum").parents('span').remove();
+    	}else{
+    		n = $("#postMailnum").text();
+    		$("#postMailnum").parents('span').remove();
+    	}
+    	if(n1 == n){
+    		$('#allNums').parents('span').remove();
+    	}    	
+    }
+
     //显示或者隐藏重命名和评论
     var checkFoldAct = function(){
     	var l = $('#fileList .fdclick:checked').length;
@@ -428,20 +443,6 @@
 			$('#commentFile .fid').val(item.id);
 		});		
 
-		// $("#selectAllFile").bind('click',function(){
-		// 	if($(this)[0].checked){
-		// 		$('#fileList .fclick:not(:checked)').each(function(){
-		// 			$(this).click();
-		// 		});
-		// 	}else{
-		// 		$('#fileList .fclick:checked').each(function(){
-		// 			$(this).attr('checked',false);
-		// 		});
-		// 	}
-		// });
-
-
-
 		$('.file-act-zone a').bind('click',function(e){
 			var target = $(e.target),
 				cmd = target.attr('cmd');
@@ -563,21 +564,6 @@
 			}
 		});
 
-		// $('#changeType').bind('click',function(e){
-		// 	var dom = $(this);
-		// 	if(dom.attr('class') == 'list-type'){
-		// 		dom.attr('class','icon-type');
-		// 		dom.find('span').text('列表');
-		// 		//dom.text('列表')
-		// 		$('#fileList').attr('class','dis-list-type');
-		// 	}else{
-		// 		dom.attr('class','list-type');
-		// 		$('#fileList').attr('class','dis-ico-type');	
-		// 		dom.find('span').text('图标');
-		// 		//dom.html('<i></i>图标')	
-		// 	}
-		// })
-
 		$('#myColl').bind('click',function(){
 			$("#mailbox h4").text('收藏夹');
 			$("#mailIframe").attr('src','/home/coll');
@@ -595,10 +581,12 @@
 				case 'send':
 					$("#mailbox h4").text('发件箱');
 					$("#mailIframe").attr('src','/home/sendmail?m=0');
+					changeMailnum(0);
 					break;
 				case 'get':
 					$("#mailbox h4").text('收件箱');
 					$("#mailIframe").attr('src','/home/sendmail?m=1');
+					changeMailnum(1);
 					break;	
 				case 'share':
 					$("#mailbox h4").text('我的共享');	

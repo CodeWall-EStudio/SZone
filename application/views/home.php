@@ -40,17 +40,14 @@
 							<li><a data-toggle="modal" cmd="toother" data-target="#shareWin">发送给别人</a></li>
 							<li><a data-toggle="modal" cmd="togroup" data-target="#shareWin">发送到小组</a></li>
 							<li><a data-toggle="modal" cmd="todep"  data-target="#shareWin">提交到部门</a></li>
-	<!-- 						<li><a>推优到学校</a></li> -->					
 						</ul>						
 					</li>
 					<li class="downfile"><a cmd="downfile" id="donwFiles">下载</a></li>
-					<!--<li class="collfile"><a cmd="coll" id="collFiles">收藏</a></li>-->
 					<li class="renamefile" id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
 					<li class="copyfile"><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制到备课</a></li>
 					<li class="copyfile"><a cmd="moveFile" data-toggle="modal" data-target="#shareWin">移动文件</a></li>
 					<li class="delfile"><a cmd="delFile" data-toggle="modal" data-target="#delFile">删除</a></li>
 					<li class="cancel"><a cmd="cancel">取消</a></li>
-					<!-- <li id="remarkAct"><a cmd="remark" data-toggle="modal" data-target="#commentFile">评论</a></li> -->
 				</ul>
 			</div>
 
@@ -81,7 +78,7 @@
 				</div>
 				<ul class="act-zone">
 					<li class="all-file file-type dropdown" id="changeFileType">
-						<a role="button" data-toggle="dropdown" href="#">
+						<a id="drop-type" "button" data-toggle="dropdown" href="#">
 							<?
 								switch($type){
 									case 0:
@@ -108,7 +105,7 @@
 								}
 							?>
 						<b class="caret"></b></a>
-						<ul class="dropdown-menu section-tit-menu1" role="menu" aria-labelledby="dLabel">
+						<ul class="dropdown-menu section-tit-menu1" aria-labelledby="drop-type">
 							<li><a data-type="0" href="/?fid=<?=$fid?>&type=0">全部</a></li>
 							<li><a data-type="3" href="/?fid=<?=$fid?>&type=4">视频</a></li>
 							<li><a data-type="1" href="/?fid=<?=$fid?>&type=1">图片</a></li>
@@ -280,15 +277,15 @@
 			<?endif?>
 			<ul>
 				<li>
-					<a>通知</a>
+					<a>通知</a><?if(($postmail+$newmail)>0):?><span>(<span id="allNums" data-num="<?=$postmail+$newmail?>" class="mailnum"><?=$postmail+$newmail?></span>)</span><?endif?>
 				</li>
 				<li id="shareHis">
 					共享历史
 					<p>
-						<a cmd="get" data-toggle="modal" data-target="#mailbox">收件箱</a> 
+						<a cmd="get" data-toggle="modal" data-target="#mailbox">收件箱</a><?if($newmail>0):?><span>(<span id="newMailnum" class="mailnum"><?=$newmail?></span>)</span><?endif?>
 					</p>
 					<P>
-						<a cmd="send" data-toggle="modal" data-target="#mailbox">发件箱</a>
+						<a cmd="send" data-toggle="modal" data-target="#mailbox">发件箱</a><?if($postmail>0):?><span>(<span id="postMailnum" class="mailnum"><?=$postmail?></span>)</span><?endif?>
 					</p>						
 					<p>					
 						<a cmd="share" data-toggle="modal" data-target="#mailbox">我的贡献</a>
