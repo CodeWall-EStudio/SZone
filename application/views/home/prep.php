@@ -406,9 +406,11 @@
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
 	<script src="/js/lib/jq.validate.js"></script>
+
 	<script type="text/javascript" src="/js/lib/moxie.js"></script>
 	<script type="text/javascript" src="/js/lib/plupload.dev.js"></script>
 	<script src="/js/lib/jquery.plupload.queue.js"></script>
+    <script src="/js/common.js"></script>
 <!-- 	// <script type="text/javascript" src="/js/lib/moxie.js"></script>
 	// <script type="text/javascript" src="/js/lib/plupload.dev.js"></script>	 -->
 
@@ -419,10 +421,11 @@
 			files = '<?=json_encode($flist);?>';
 		folds = $.parseJSON(folds);
 		files = $.parseJSON(files);		
+		var upload_url = '<?=$upload_url;?>?fid=<?=$fid?>&csrf_test_name='+$.cookie('csrf_cookie_name'),
+            upload_chunk = <?=$upload_chunk;?>;
 		//var nowPrepId = '<?=$pid?>';
 	</script>
 
-	<script src="/js/common.js"></script>
 	<script src="/js/upload.js"></script>
 	<script src="/js/home.js"></script>
 	<div id="alertTips" class="alert-tips"></div>
