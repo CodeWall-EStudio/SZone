@@ -35,7 +35,7 @@ class Group_model extends CI_Model {
     }
 
     function get_prep_group_ids($id){
-        $sql = 'select gid from groupuser a,groups b where b.type=3 and (a.uid='.$id.' or b.create='.$id.') and a.gid = b.id';
+        $sql = 'select gid from groupuser a,groups b where b.type=3 and a.uid='.$id.' and a.gid = b.id ';
         $query = $this->db->query($sql);
         $gidlist = array();
 
