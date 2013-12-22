@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013-12-20 15:49:08
+-- 生成日期: 2013-12-22 17:00:08
 -- 服务器版本: 5.6.14
 -- PHP 版本: 5.3.27
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `board` (
   `ttype` int(8) NOT NULL COMMENT '类型 0 个人 1 小组 的文件',
   `gid` int(8) NOT NULL DEFAULT '0' COMMENT '分组id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -47,10 +47,10 @@ CREATE TABLE IF NOT EXISTS `files` (
   `id` int(8) NOT NULL AUTO_INCREMENT COMMENT '文件id',
   `path` varchar(120) NOT NULL COMMENT '文件存放路径',
   `md5` varchar(60) NOT NULL COMMENT '文件md5',
+  `del` int(2) unsigned zerofill NOT NULL COMMENT '文件是否被删除',
   `size` float unsigned zerofill NOT NULL COMMENT '文件大小',
   `type` tinyint(2) unsigned zerofill DEFAULT NULL COMMENT '文件类型',
   `mimes` varchar(60) NOT NULL,
-  `ref` int(8) NOT NULL DEFAULT 1 COMMENT '文件引用计数',
   PRIMARY KEY (`id`),
   UNIQUE KEY `md5` (`md5`),
   UNIQUE KEY `path` (`path`)
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `groupfolds` (
   `tid` int(8) DEFAULT '0' COMMENT '顶层id',
   `idpath` text COMMENT 'id路径',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
 
@@ -172,8 +172,9 @@ CREATE TABLE IF NOT EXISTS `message` (
   `fid` int(8) DEFAULT NULL,
   `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '发送时间',
   `pid` int(8) unsigned zerofill DEFAULT NULL,
-  `looked` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否已经看过',
+  `flooked` tinyint(1) NOT NULL DEFAULT '0' COMMENT '发件人是否已经看过',
   `saved` int(1) DEFAULT '0' COMMENT '是否已经保存',
+  `tlooked` tinyint(1) DEFAULT '0' COMMENT '收件人是否已经看过',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
@@ -214,7 +215,7 @@ CREATE TABLE IF NOT EXISTS `preparefile` (
   `ctime` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '时间',
   `del` int(1) DEFAULT '0' COMMENT '删除状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -268,7 +269,7 @@ CREATE TABLE IF NOT EXISTS `usercollection` (
   `tid` int(8) DEFAULT '0' COMMENT '收藏他人或者小组id',
   `type` int(1) DEFAULT '0' COMMENT '0 自己 1他人 2 小组',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
 
