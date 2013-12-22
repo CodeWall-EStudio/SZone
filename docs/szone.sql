@@ -47,10 +47,10 @@ CREATE TABLE IF NOT EXISTS `files` (
   `id` int(8) NOT NULL AUTO_INCREMENT COMMENT '文件id',
   `path` varchar(120) NOT NULL COMMENT '文件存放路径',
   `md5` varchar(60) NOT NULL COMMENT '文件md5',
-  `del` int(2) unsigned zerofill NOT NULL COMMENT '文件是否被删除',
   `size` float unsigned zerofill NOT NULL COMMENT '文件大小',
   `type` tinyint(2) unsigned zerofill DEFAULT NULL COMMENT '文件类型',
   `mimes` varchar(60) NOT NULL,
+  `ref` int(8) NOT NULL DEFAULT 1 COMMENT '文件引用计数',
   PRIMARY KEY (`id`),
   UNIQUE KEY `md5` (`md5`),
   UNIQUE KEY `path` (`path`)

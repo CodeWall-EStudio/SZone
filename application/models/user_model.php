@@ -44,8 +44,8 @@ class User_model extends CI_Model {
         {
             $result = $query->row_array();
             $result['uid'] = $id;
-            $result['real_size'] = $result['size'];
-            $result['real_used'] = $result['used'];
+            $result['real_size'] = intval($result['size']);
+            $result['real_used'] = intval($result['used']);
             $result['per'] = round($result['real_used']/$result['real_size']*100,2);
             $result['size'] = format_size($result['real_size']);
             $result['used'] = format_size($result['real_used']);
@@ -68,6 +68,11 @@ class User_model extends CI_Model {
         return $result;
     }
 
+    function update_used($id, $used)
+    {
+        $this->db->update($this->table, array('used' => $used), array('id' => $id));
+    }
+
     function get_last_ten_entries()
     {
         $query = $this->db->get('entries', 10);
@@ -77,7 +82,7 @@ class User_model extends CI_Model {
     function insert_entry($data)
     {
         $str = $this->db->insert_string($this->table, $data);
-        $query = $this->db->query($str);
+        $this->db->query($str);
         return $this->db->insert_id();
     }
 

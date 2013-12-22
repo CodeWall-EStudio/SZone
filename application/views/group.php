@@ -605,23 +605,24 @@
 
 	<script type="text/javascript" src="/js/lib/moxie.js"></script>
 	<script type="text/javascript" src="/js/lib/plupload.dev.js"></script>
-	<script src="/js/lib/jquery.plupload.queue.js"></script>	
-<!-- 	// <script type="text/javascript" src="/js/lib/moxie.js"></script>
-	// <script type="text/javascript" src="/js/lib/plupload.dev.js"></script>	 -->
+	<script src="/js/lib/jquery.plupload.queue.js"></script>
+    <script src="/js/common.js"></script>
+    <!-- 	// <script type="text/javascript" src="/js/lib/moxie.js"></script>
+        // <script type="text/javascript" src="/js/lib/plupload.dev.js"></script>	 -->
 
 	<script>
 		var folds = '<?=json_encode($fold);?>',
 			files = '<?=json_encode($file);?>';
 		var ginfo = '<?=json_encode($ginfo);?>';
 		var fid = '<?=$fid?>';
-		var nowGroupId = '<?=$gid?>';
 		folds = $.parseJSON(folds);
 		files = JSON.parse(files);//$.parseJSON(files);
 		ginfo = $.parseJSON(ginfo);
+        var upload_url = '<?=json_encode($upload_url);?>?fid=<?=$fid?>&gid=<?=$gid?>&csrf_test_name='+$.cookie('csrf_cookie_name'),
+            upload_chunk = '<?=json_encode($upload_chunk);?>';
 
 	</script>
 
-	<script src="/js/common.js"></script>
 	<script src="/js/upload.js"></script>
 	<script src="/js/group.js"></script>
 	<div id="alertTips" class="alert-tips"></div>

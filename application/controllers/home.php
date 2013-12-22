@@ -155,7 +155,7 @@ class Home extends SZone_Controller {
 		if($fid){
 			$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = '.$fid.' and a.del = 0 and a.uid='.(int) $this->user['uid'];
 		}else{
-			$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = 0 and a.del = 0  and a.uid='.(int) $this->user['uid'];			
+			$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = 0 and a.del = 0  and a.uid='.(int) $this->user['uid'];
 		}
 		if($type){
 			$sql .= ' and b.type='.$type;
@@ -232,6 +232,10 @@ class Home extends SZone_Controller {
 		$data['key'] = $key;
 		$data['od'] = $od;
 		$data['on'] = $on;
+
+        // 文件上传
+        $data['upload_url'] = $this->config->item('upload_url');
+        $data['upload_chunk'] = $this->config->item('upload_chunk');
 
 
 		$this->load->view('home',$data);	

@@ -44,3 +44,77 @@ if ( ! function_exists('format_size'))
     }
 
 }
+
+if ( ! function_exists('format_type'))
+{
+    function format_type($mimes)
+    {
+        switch($mimes)
+        {
+            // archives
+            case 'application/x-gzip':
+            case 'application/x-bzip2':
+            case 'application/zip':
+            case 'application/x-rar':
+            case 'application/x-7z-compressed':
+                return 6;
+            // documents
+            case 'application/postscript':
+            case 'application/vnd.ms-word':
+            case 'application/vnd.ms-excel':
+            case 'application/vnd.ms-powerpoint':
+            case 'application/pdf':
+            case 'application/xml':
+            case 'application/vnd.oasis.opendocument.text':
+            case 'application/x-shockwave-flash':
+                return 2;
+            // texts
+            case 'text/plain':
+            case 'text/x-php':
+            case 'text/html':
+            case 'text/javascript':
+            case 'text/css':
+            case 'text/rtf':
+            case 'text/rtfd':
+            case 'text/x-python':
+            case 'text/x-java-source':
+            case 'text/x-ruby':
+            case 'text/x-shellscript':
+            case 'text/x-perl':
+            case 'text/x-sql':
+                return 2;
+                // images
+            case 'image/x-ms-bmp':
+            case 'image/jpeg':
+            case 'image/gif':
+            case 'image/png':
+            case 'image/tiff':
+            case 'image/x-targa':
+            case 'image/vnd.adobe.photoshop':
+                return 1;
+                //audio
+            case 'audio/mpeg':
+            case 'audio/midi':
+            case 'audio/ogg':
+            case 'audio/mp4':
+            case 'audio/wav':
+            case 'audio/x-ms-wma':
+                return 3;
+                // video
+            case 'video/x-msvideo':
+            case 'video/x-dv':
+            case 'video/mp4':
+            case 'video/mpeg':
+            case 'video/quicktime':
+            case 'video/x-ms-wmv':
+            case 'video/x-flv':
+            case 'video/x-matroska':
+                return 4;
+            case 'application/octet-stream':
+                return 5;
+            default:
+                return 0;
+        }
+    }
+
+}

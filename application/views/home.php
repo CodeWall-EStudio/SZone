@@ -514,18 +514,20 @@
 	<script type="text/javascript" src="/js/lib/moxie.js"></script>
 	<script type="text/javascript" src="/js/lib/plupload.dev.js"></script>
 	<script src="/js/lib/jquery.plupload.queue.js"></script>
+    <script src="/js/common.js"></script>
 
-	<script>
+    <script>
 		var folds = '<?=json_encode($fold);?>',
 			files = '<?=json_encode($file);?>';
 		var fid = '<?=$fid?>';
 		folds = $.parseJSON(folds);
 		files = $.parseJSON(files);
+        var upload_url = '<?=$upload_url;?>?fid=<?=$fid?>&csrf_test_name='+$.cookie('csrf_cookie_name'),
+            upload_chunk = <?=$upload_chunk;?>;
 		// console.log(folds);
 		// console.log(files);
 	</script>
 
-	<script src="/js/common.js"></script>
 	<script src="/js/upload.js"></script>
 	<script src="/js/home.js"></script>
 	<div id="alertTips" class="alert-tips"></div>

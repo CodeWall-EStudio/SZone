@@ -91,3 +91,39 @@ if ( ! function_exists('directory_acquire'))
         return FALSE;
     }
 }
+
+if ( ! function_exists('directory_check'))
+{
+    function directory_check($upload_dir, $md5, &$error)
+    {
+        if(!is_dir($upload_dir))
+        {
+            if(!mkdir($upload_dir, DIR_WRITE_MODE))
+            {
+                $error = 'upload_not_writable';
+                return FALSE;
+            };
+        }
+
+        //echo implode('|',$allowed);
+        $dirname = $upload_dir.substr($md5,0,2).'/';
+        if (!is_dir($dirname)){
+            if(!mkdir($dirname, DIR_WRITE_MODE))
+            {
+                $error = 'upload_not_writable';
+                return FALSE;
+            };
+        }
+
+        $dirname = $dirname.substr($md5,2,2).'/';
+        if (!is_dir($dirname)){
+            if(!mkdir($dirname, DIR_WRITE_MODE))
+            {
+                $error = 'upload_not_writable';
+                return FALSE;
+            };
+        }
+
+        return $dirname;
+    }
+}

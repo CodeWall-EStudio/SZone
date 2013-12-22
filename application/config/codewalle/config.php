@@ -378,6 +378,8 @@ $config['pagenum'] = 10;
 $config['upload-path'] = ROOTPATH.'/file/';
 $config['dir-file-num'] = 1023;
 $config['storage-limit'] = 3221225472; //3GB;
+$config['upload_url'] = '/upload';
+$config['upload_chunk'] = 0;
 
 //上传类型
 $config['filetype']['jpg'] = 1;   //图片
