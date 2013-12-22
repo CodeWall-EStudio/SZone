@@ -69,7 +69,7 @@
     }
 
     $("#uploader").pluploadQueue(upload_settings).bind('allcomplete',function(){
-		//window.location.reload();
+		window.location.reload();
 	});
 
 })();
