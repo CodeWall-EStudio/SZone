@@ -669,7 +669,7 @@ class Home extends SZone_Controller {
 		}else{
 			$sql .= ' type=3 and parent<0 order by parent';
 		}
-		
+
 		$query = $this->db->query($sql);
 
 		$plist = array();
@@ -722,6 +722,7 @@ class Home extends SZone_Controller {
 			'id' => 0,
 			'pid' => 0
 		);
+
 		if(count($plist)>0){
 			if(!$prid && !$fid){
 				//取对应的文件夹
@@ -734,8 +735,9 @@ class Home extends SZone_Controller {
 				}
 				if(count($kpf) > 0){
 					$wh .= ' and ('.implode(' or ',$kpf).')';
+				}else{
+					$fid = 0;
 				}
-				$fid = 0;
 			}else{
 				if($fid){
 					$wh .= ' and fdid='.$fid;
@@ -766,6 +768,7 @@ class Home extends SZone_Controller {
 					$wh .= ' and fdid='.$fid;
 				}
 			}
+
 			if($type){
 				$wh .= ' and b.type='.$type;
 			}
@@ -776,42 +779,44 @@ class Home extends SZone_Controller {
 				$wh .= ' order by '.$odname.' '.$desc;
 			}		
 
-			$sql = 'select count(a.id) as allnum from userfile a,files b where a.del=0 and a.fid=b.id and uid='.(int) $this->user['uid'];
-			$sql .= $wh;
+			if($fid){
+				$sql = 'select count(a.id) as allnum from userfile a,files b where a.del=0 and a.fid=b.id and uid='.(int) $this->user['uid'];
+				$sql .= $wh;
 
-			$query = $this->db->query($sql);
-			$row = $query->row();
+				$query = $this->db->query($sql);
+				$row = $query->row();
 
-			$allnum = $row->allnum;
+				$allnum = $row->allnum;
 
-			//选择文件
-			$sql = 'select a.id,a.fid,a.name,a.createtime,b.type,b.size from userfile a,files b where a.del = 0 and a.fid = b.id and uid = '.(int) $this->user['uid'];
-			$sql .= $wh;
-			$page = get_page_status($nowpage,$pagenum,$allnum);
+				//选择文件
+				$sql = 'select a.id,a.fid,a.name,a.createtime,b.type,b.size from userfile a,files b where a.del = 0 and a.fid = b.id and uid = '.(int) $this->user['uid'];
+				$sql .= $wh;
+				$page = get_page_status($nowpage,$pagenum,$allnum);
 
-			$query = $this->db->query($sql);
+				$query = $this->db->query($sql);
 
-			foreach($query->result() as $row){
-				array_push($kfc,' a.fid='.$row->fid);
-				$flist[$row->id] = array(
-					'id' => $row->id,
-					'fid' => $row->fid,
-					'name' => $row->name,
-					'type' => $row->type,
-					'size' => format_size($row->size),
-					'time' => substr($row->createtime,0,10)
-				);
-			}
+				foreach($query->result() as $row){
+					array_push($kfc,' a.fid='.$row->fid);
+					$flist[$row->id] = array(
+						'id' => $row->id,
+						'fid' => $row->fid,
+						'name' => $row->name,
+						'type' => $row->type,
+						'size' => format_size($row->size),
+						'time' => substr($row->createtime,0,10)
+					);
+				}
 
-			$sql = 'select a.id from userfile a,usercollection b where a.fid=b.fid and b.uid='.(int) $this->user['uid'];
-			if(count($kfc)>0){
-			$sql .=' and ('.implode(' or ',$kfc).')';
-			}
-			$query = $this->db->query($sql);
+				$sql = 'select a.id from userfile a,usercollection b where a.fid=b.fid and b.uid='.(int) $this->user['uid'];
+				if(count($kfc)>0){
+				$sql .=' and ('.implode(' or ',$kfc).')';
+				}
+				$query = $this->db->query($sql);
 
-			foreach($query->result() as $row){
-				if(isset($flist[$row->id])){
-					$flist[$row->id]['iscoll'] = 1;
+				foreach($query->result() as $row){
+					if(isset($flist[$row->id])){
+						$flist[$row->id]['iscoll'] = 1;
+					}
 				}
 			}
 

@@ -625,14 +625,15 @@ class Manage extends SZone_Controller {
 						$sql = 'update groupuser set auth=1 where uid in ('.implode(',',$uptomanage).')';
 						$query = $this->db->query($sql);
 					}		
-					return;
 			
-					
 					$data = array(
-						'name' => $this->input->post('groupname'),
-						'parent' => $this->input->post('parent')
+						'name' => $this->input->post('groupname')
 					);
+					if((int) $this->input->post('parent')){
+						$data['parent'] = $this->input->post('parent');
+					}
 					$where = 'id = '.$id;					
+
 					$str = $this->db->update_string('groups', $data, $where); 
 					$query = $this->db->query($str);
 					$num = $this->db->affected_rows();
