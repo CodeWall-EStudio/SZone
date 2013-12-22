@@ -66,7 +66,7 @@
 									<a style="z-index:19">......</a>
 								<?endif?>					
 							<?if($thisfold['pid']):?>
-								<a  style="z-index:19"  href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>"><?= $fold[$thisfold['pid']]['name'] ?></a>
+								<a  style="z-index:19"  href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>"><?= htmlspecialchars($fold[$thisfold['pid']]['name']) ?></a>
 							<?endif?>
 							<a style="z-index:18"><?= $thisfold['name'] ?></a>
 							<a style="z-index:17" class="end" href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>">返回上级</a>
@@ -165,18 +165,18 @@
 								<a href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"><i class="fold"></i></a>
 								
 								<dl>
-									<dt><a href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"><?=$item['name']?></a>
+									<dt><a href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"><?=htmlspecialchars($item['name'])?></a>
 										<span cmd="edit" data-id="<?=$item['id']?>">
 											<?if($item['mark']==''):?>
 												编辑备注
 											<?else:?>
-											<?=$item['mark']?>&nbsp;
+											<?=htmlspecialchars($item['mark'])?>&nbsp;
 											<?endif?>
 										</span>
 										<span class="hide">
 											<input class="name-edit" type="text" maxlength="20" value="<?=$item['mark']?>" />
 											<i class="edit-comp" cmd="editComp" data-type="fold" data-id="<?=$item['id']?>"></i>
-											<i class="edit-close" data-value="<?=$item['mark']?>" cmd="editClose"></i>
+											<i class="edit-close" data-value="<?=htmlspecialchars($item['mark'])?>" cmd="editClose"></i>
 										</span>
 									</dt>
 									<dd>
@@ -203,8 +203,8 @@
 									<?endif?>
 									</a>
 									<dl>
-										<dt><a class="file-name" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>"><?=$item['name']?></a>
-											<span cmd="edit" data-id="<?=$item['id']?>"><?=$item['content']?></span>
+										<dt><a class="file-name" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>"><?=htmlspecialchars($item['name'])?></a>
+											<span cmd="edit" data-id="<?=$item['id']?>"><?=htmlspecialchars($item['content'])?></span>
 											<span class="hide">
 												<input class="name-edit" type="text" value="<?=$item['content']?>" />
 												<i class="edit-comp" cmd="editComp" data-type="file" data-id="<?=$item['id']?>"></i>
@@ -214,9 +214,9 @@
 										<dd>
 											<span><a class="share-file" data-toggle="dropdown" href="#">共享</a>
 											<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-												<li><a data-toggle="modal" data-target="#shareWin" cmd="toother" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">发送给别人</a></li>
-												<li><a data-toggle="modal" data-target="#shareWin" cmd="togroup" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到小组空间</a></li>
-												<li><a data-toggle="modal" data-target="#shareWin" cmd="todep" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到部门空间</a></li>
+												<li><a data-toggle="modal" data-target="#shareWin" cmd="toother" data-id="<?=$item['id']?>" data-name="<?=htmlspecialchars($item['name'])?>">发送给别人</a></li>
+												<li><a data-toggle="modal" data-target="#shareWin" cmd="togroup" data-id="<?=$item['id']?>" data-name="<?=htmlspecialchars($item['name'])?>">到小组空间</a></li>
+												<li><a data-toggle="modal" data-target="#shareWin" cmd="todep" data-id="<?=$item['id']?>" data-name="<?=htmlspecialchars($item['name'])?>">到部门空间</a></li>
 												<li><a cmd="toschool" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到学校空间</a></li>					
 											</ul>
 											</span>										

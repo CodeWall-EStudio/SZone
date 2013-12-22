@@ -34,6 +34,44 @@
 		},40);
 	});
 
+	$("#searchManage").bind('keyup',function(e){
+		//if(e.keyCode == 13){
+			var v = $.trim($(this).val());
+			if(v == ''){
+				return;
+			}
+			$("#manageList span").removeClass("color");
+			for(var i in ul){
+				if(i.indexOf(v) >=0 ){
+					$('#mid'+ul[i]).addClass('color');
+				}
+			}
+		//}
+	}).bind('blur',function(e){
+			var v = $.trim($(this).val());
+			if(v == ''){
+				$("#manageList span").removeClass("color");
+			}		
+	});
+
+	$("#searchUser").bind('keyup',function(e){
+			var v = $.trim($(this).val());
+			if(v == ''){
+				return;
+			}
+			$("#userList span").removeClass("color");
+			for(var i in ul){
+				if(i.indexOf(v) >=0 ){
+					$('#id'+ul[i]).addClass('color');
+				}
+			}
+	}).bind('blur',function(e){
+			var v = $.trim($(this).val());
+			if(v == ''){
+				$("#userList span").removeClass("color");
+			}		
+	});
+
 	$('#unameList').bind('click',function(e){
 
 		if(e.target.nodeName == 'A'){

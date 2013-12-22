@@ -17,6 +17,7 @@
 			}
 		?>
 			<table id="newOther" width="100%" class="table table-striped table-hover addfrom">
+				<?if($act == 'group'):?>
 				<tr>
 					<td width="100">
 						<label>小组层次:</label>
@@ -24,6 +25,7 @@
 					</td>
 					<td><?=form_dropdown('parent', $group, '0') ?></td>
 				</tr>
+				<?endif?>
 				<tr>
 					<td><?=$gname?>名称:</td>
 					<td>
@@ -34,20 +36,29 @@
 				<tr>
 					<td>管 理 员:</td>
 					<td>
-					<input type="text" name="manage" id="manageName" value="<?=set_value('manage')?>" />
-					<ul class="dropdown-menu manage-list" id="unameList"  role="menu" aria-labelledby="dLabel">
+						<input type="text" name="manage" id="searchManage" value="" /> 输入用户名称高亮
+						<div id="manageList" class="user-list">
+						<?foreach($ulist as $row):?>
+							<span id="mid<?=$row['id']?>"><input id="mid<?=$row['id']?>" type="checkbox" name="muids[]" value="<?=$row['id']?>" /> <?=htmlspecialchars($row['name'])?></span>
+						<?endforeach?>	
+						</div>
+					
+<!-- 					<ul class="dropdown-menu manage-list" id="unameList"  role="menu" aria-labelledby="dLabel">
 						
 					</ul>					
-					<span>管理员之间已","分隔.</span>						
+					<span>管理员之间已","分隔.</span>						 -->
 					</td>
 				</tr>	
 				<?if(count($ulist)>0):?>			
 				<tr>
 					<td><?=$gname?>成员:</td>
 					<td>
+						<input type="text" id="searchUser" /> 输入用户名称高亮
+						<div id="userList" class="user-list">
 						<?foreach($ulist as $row):?>
-							<span><input type="checkbox" name="uids[]" value="<?=$row['id']?>" /> <?=$row['name']?></span>
-						<?endforeach?>						
+							<span id="id<?=$row['id']?>"><input type="checkbox" name="uids[]" value="<?=$row['id']?>" /> <?=htmlspecialchars($row['name'])?></span>
+						<?endforeach?>	
+						</div>					
 					</td>
 				</tr>	
 				<?endif?>		
@@ -62,3 +73,9 @@
 	<?endif?>
 	</div>
 </div>
+<script>
+	var ul = {};
+	<?foreach($ulist as $row):?>
+		ul['<?=$row['name']?>'] = <?=$row['id']?>;
+	<?endforeach?>
+</script>

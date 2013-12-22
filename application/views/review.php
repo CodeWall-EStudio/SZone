@@ -51,7 +51,7 @@
 				<img id="reviewImg" src="/cgi/getfile?fid=<?=$finfo['fid']?>" onload="change(this)" />
 			<?elseif($finfo['type']==2):?>
 				<?if(isset($finfo['text'])):?>
-					<p class="text"><?=$finfo['text']?></p>
+					<p class="text"><?=htmlspecialchars($finfo['text'])?></p>
 				<?else:?>
 				 	其他文本
 				 	

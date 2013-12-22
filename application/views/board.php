@@ -26,8 +26,8 @@
 				<?if(count($blist)>0):?>
 					<?foreach($blist as $row):?>
 					<li>
-						<div><?=date('Y-m-d',$row['time'])?>  <?=$row['name']?></div>
-						<p><?=$row['content']?></p>
+						<div><?=date('Y-m-d',$row['time'])?>  <?=htmlspecialchars($row['name'])?></div>
+						<p><?=htmlspecialchars($row['content'])?></p>
 					</li>
 					<?endforeach?>
 				<?else:?>

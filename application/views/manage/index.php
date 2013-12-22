@@ -10,8 +10,8 @@
 			<?foreach($ulist as $key => $item):?>
 			<tr>
 				<td><input type="checkbox" /></td>
-				<td><?=$item['name'];?></td>
-				<td><?=$item['nick'];?></td>
+				<td><?=htmlspecialchars($item['name']);?></td>
+				<td><?=htmlspecialchars($item['nick']);?></td>
 				<td>
 					<?
 						$auth = (int) $item['auth'];

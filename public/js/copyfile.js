@@ -18,9 +18,8 @@
 			fdid : plist.join(','),
 			gid : $('#gid').val()
 		}
-		
+
 		$.post('/cgi/copy_to_fold',data,function(d){
-			console.log(d);
 			if(d.code == 0){
 				top.hideShare();
 			}else{

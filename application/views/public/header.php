@@ -14,7 +14,7 @@
 					<? foreach($group as $item):?>
 						<?if(!isset($item['type'])):?>
 						<li>
-							<a href="/group?id=<?=$item['id']?>"><?=$item['name']?></a>
+							<a href="/group?id=<?=$item['id']?>"><?=htmlspecialchars($item['name'])?></a>
 							<?if($item['auth']):?>
 								<span><a data-toggle="modal" data-id="<?=$item['id']?>" cmd="manage" data-target="#manageWin">管理</a></span>
 							<?endif?>
@@ -22,7 +22,7 @@
 								<ul class="head-second">
 								<?foreach($item['list'] as $row):?>
 									<li>
-										<a href="/group?id=<?=$row['id']?>"><?=$row['name']?></a>
+										<a href="/group?id=<?=$row['id']?>"><?=htmlspecialchars($row['name'])?></a>
 										<?if($row['auth']):?>
 											<span><a data-toggle="modal" data-id="<?=$row['id']?>" cmd="manage" data-target="#manageWin">管理</a></span>
 										<?endif?>										
@@ -40,7 +40,7 @@
 				<a data-toggle="dropdown">部门空间<b class="caret"></b></a>
 				<ul class="dropdown-menu menu" role="menu" aria-labelledby="dLabel">
 					<? foreach($dep as $item):?>
-						<li><a href="/group?id=<?=$item['id']?>"><?=$item['name']?></a></li>
+						<li><a href="/group?id=<?=$item['id']?>"><?=htmlspecialchars($item['name'])?></a></li>
 					<? endforeach?>					
 <!-- 					<li>教育处</li>
 					<li>教学处</li>
@@ -58,7 +58,7 @@
 			<?if(!$userinfo['name']):?>
 				<a href="/login/connect">登录</a>
 			<?else:?>
-				<a><?=$userinfo['name']?></a>
+				<a><?=htmlspecialchars($userinfo['name'])?></a>
 			<?if($userinfo['auth']>0):?>
 				<a href="/manage/">管理</a>
 			<?endif?>

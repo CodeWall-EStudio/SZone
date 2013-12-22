@@ -28,7 +28,6 @@
 			 		var data = {name: value,pid: pid,csrf_test_name:$.cookie('csrf_cookie_name')};
 			 		
 			 		$.post('/cgi/addfold',data,function(d){
-			 			console.log(d);
 			 			if(d.code==0){
 			 				$("#newFold .close").click();
 			 				window.location.reload();
@@ -135,7 +134,6 @@
 			//}
 		});	
 		id = il.join(',');
-		console.log(id);
 		$.post(AddColl,{id:id,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 			if(d.code == 0){
 				//target.parent('span').prev('span').text(d.info);

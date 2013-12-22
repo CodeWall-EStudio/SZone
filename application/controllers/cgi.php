@@ -28,6 +28,16 @@ class Cgi extends SZone_Controller {
 		$tablename = 'userfolds';
 		if($gid){
 			$tablename = 'groupfolds';
+
+            $this->load->model('User_model');
+           	if(!$this->User_model->get_in_group($this->user['uid'],$gid)){
+				$list = array(
+					'ret' => 2,
+					'msg' => '非小组成员!'
+				);
+				$this->json($list,10001,'非小组成员!');           		
+           		return;
+           	};			
 		};
 
 		// $sql = 'select id,pid,tid,idpath from '.$tablename.' where id='.$pid;
@@ -117,6 +127,16 @@ class Cgi extends SZone_Controller {
         $ft = $this->config->item('filetype');
         $md5 =  md5_file($_FILES['file']['tmp_name']);
         $nowdir = $this->getDir($md5);
+
+        $this->load->model('User_model');
+       	if(!$this->User_model->get_in_group($this->user['uid'],$gid)){
+			$list = array(
+				'ret' => 2,
+				'msg' => '非小组成员!'
+			);
+			$this->json($list,10001,'非小组成员!');           		
+       		return;
+       	};	
 
         $allowed = array();
         foreach($ft as $k => $item){
@@ -584,6 +604,16 @@ class Cgi extends SZone_Controller {
 		$gid = (int) $this->input->post('gid');
 
 		if($gid){
+            $this->load->model('User_model');
+           	if(!$this->User_model->get_in_group($this->user['uid'],$gid)){
+				$list = array(
+					'ret' => 2,
+					'msg' => '非小组成员!'
+				);
+				$this->json($list,10001,'非小组成员!');           		
+           		return;
+           	};	
+			
 			if($t == 'fold'){
 				$tname = 'groupfolds';
 				$fname = 'mark';

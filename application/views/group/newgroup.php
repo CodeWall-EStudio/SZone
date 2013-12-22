@@ -45,7 +45,7 @@
 					用户列表
 					<ul id="searchResult">
 				<?foreach($ul as $row):?>
-					<li><a data-id="<?=$row['id']?>"><?=$row['name']?></a></li>
+					<li><a data-id="<?=$row['id']?>"><?=htmlspecialchars($row['name'])?></a></li>
 				<?endforeach?>						
 					</ul>					
 				</div>

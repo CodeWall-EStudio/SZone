@@ -21,7 +21,7 @@
 					array_push($idlist,$fl[$i]['id']);
 				?>
 					<?if($i<8):?>
-						<?=$fl[$i]['name']?>
+						<?=htmlspecialchars($fl[$i]['name'])?>
 					<?endif?>
 					<?if($i < count($fl)-1):?>
 					<?endif?>

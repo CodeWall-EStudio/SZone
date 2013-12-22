@@ -33,7 +33,7 @@
 					<td><input type="checkbox" /></td>
 					<td><?=$item['name'];?></td>
 					<td></td>
-					<td align="right"> <a href="/manage/delprep?id=<?=$item['id']?>">删除</a></td>
+					<td align="right"><a href="/manage/editgroup?id=<?=$item['id']?>">修改</a> <a href="/manage/delprep?id=<?=$item['id']?>">删除</a></td>
 				</tr>
 				<?endforeach?>			
 			</table>

@@ -16,3 +16,18 @@
 .manage-list{
 	margin-left:60px;
 }
+.user-list span{
+	display:inline-block;
+	padding:4px 8px;
+}
+.fail{
+	padding:40px;
+	text-align:center;
+}
+.success{
+	padding:40px;
+	text-align:center;
+}
+.user-list .color{
+	color:#f00;
+}

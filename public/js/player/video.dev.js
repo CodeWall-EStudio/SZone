@@ -1253,7 +1253,7 @@ vjs.log = function(){
   vjs.log.history = vjs.log.history || [];   // store logs to an array for reference
   vjs.log.history.push(arguments);
   if(window.console){
-    window.//console.log(Array.prototype.slice.call(arguments));
+    window.console.log(Array.prototype.slice.call(arguments));
   }
 };
 

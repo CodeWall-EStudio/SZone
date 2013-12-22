@@ -371,6 +371,7 @@ class Manage extends SZone_Controller {
 		}
 
 		$this->form_validation->set_rules('groupname', 'groupname', 'required|min_length[2]|max_length[40]|callback_checkgroupname');
+		$this->form_validation->set_rules('muids', 'muids', 'required');
 
 		$this->data['index'] = 'addgroup';
 		$this->data['data']['group'] = $grouplist;
@@ -381,35 +382,6 @@ class Manage extends SZone_Controller {
 			$this->data['data']['ret'] = 0;
 		}else{
 			$this->data['data']['ret'] = 1;
-
-			$manage = $this->input->post('manage');		
-
-			$manage = preg_replace('/;$/e','',$manage);
-			$ul = explode(';',$manage);
-
-			foreach($ul as $key => $item){
-				$ul[$key] = ' name="'.$item.'" ';
-			}
-			$where = implode('or',$ul);
-
-			$sql = 'SELECT id FROM `user` where '.$where;
-			$query = $this->db->query($sql);
-
-			$idlist = array();
-			$idqlist = array();
-			foreach ($query->result() as $row){
-				array_push($idlist,(int) $row->id);
-				//array_push($idqlist,'uid='.(int) $row->id);
-			}
-
-			//echo $sql;
-
-			// $query = $this->db->query($sql);
-			// foreach ($query->result() as $row){
-			// 	echo $row->id;
-			// }
-
-			//return;
 
 			$data = array(
 				'name' => $this->input->post('groupname'),
@@ -424,32 +396,12 @@ class Manage extends SZone_Controller {
 			//取分组id
 			$id = $this->db->insert_id();
 
-			//echo $id;
-
-			// $where = implode(' or ',$idqlist);
-			// $sql = 'SELECT id,uid FROM groupuser where gid='.$id.' and ('.$where.')';
-
-			// $query = $this->db->query($sql);
-			// $guid = array();
-			// $insertid = array();
-			// foreach ($query->result() as $row){
-			// 	if(in_array((int) $row->uid,$idlist)){
-			// 		array_push($guid,(int) $row->uid);
-			// 		array_push($insertid,(int) $row->id);
-
-			// 		$data = array('auth' => 1);
-			// 		$where = 'id='.(int) $row->id;
-			// 		$str = $this->db->update_string('groupuser',$data,$where);
-
-			// 		$query = $this->db->query($str);
-			// 	};
-			// }
-
+			$mids = $this->input->post('muids');
 			$uls = $this->input->post('uids');
 
-			$nuls = array_diff($uls,$idlist);
+			$nuls = array_diff($uls,$mids);
 			$istr = array();
-			foreach($idlist as $row){
+			foreach($mids as $row){
 				//array_push($istr,'('gid' => $id,'uid'=>$item,'auth' => 1);
 				array_push($istr,'('.$id.','.$row.',1)');
 			}		
@@ -459,12 +411,6 @@ class Manage extends SZone_Controller {
 
 			$sql = 'insert into groupuser (gid,uid,auth) value '.implode(',',$istr);			
 			$query = $this->db->query($sql);			
-			// $idlist = array_diff_assoc($idlist, $uls);
-			// foreach($idlist as $item){
-			// 	$data = array('gid' => $id,'uid'=>$item,'auth' => 1);
-			// 	$str = $this->db->insert_string('groupuser',$data);
-			// 	$query = $this->db->query($str);				
-			// }
 
 			$num = $this->db->affected_rows();
 			if(!$num){
@@ -493,7 +439,19 @@ class Manage extends SZone_Controller {
 		
 		//$this->data['index'] = 'editgroup';	
 		$id = $this->input->get('id');
+
 		if($this->user['auth'] & 0x8){
+
+
+			$ulist = array();
+			$sql = 'select id,name from user';
+			$query = $this->db->query($sql);
+			foreach($query->result() as $row){
+				$ulist[$row->id] = array(
+					'id' => $row->id,
+					'name' => $row->name
+				);
+			}	
 
 			$grouplist = array(
 				0 => '一级分组'
@@ -507,54 +465,72 @@ class Manage extends SZone_Controller {
 			$this->data['group'] = $grouplist;
 
 			$this->form_validation->set_rules('groupname', 'groupname', 'required|min_length[2]|max_length[40]');
+			$this->form_validation->set_rules('muids', 'muids', 'required');
 
 			if ($this->form_validation->run() == FALSE && $this->input->post('groupname')){
 
-					$sql = 'SELECT g.*,u.name as uname,u.id as uid FROM groups g,`user` u,groupuser gu WHERE  gu.uid = u.id AND gu.auth = 1 AND gu.gid = g.id AND g.id = '.$id;
-
+					//$sql = 'SELECT g.*,u.name as uname,u.id as uid FROM groups g,`user` u,groupuser gu WHERE  gu.uid = u.id AND gu.auth = 1 AND gu.gid = g.id AND g.id = '.$id;
+					$sql = 'select uid,auth from groupuser where gid='.$id;
 					$query = $this->db->query($sql);
-					$ulist = array();
 
 					foreach ($query->result() as $row){
-						$gid= $row->id;
-						$gname = $row->name;
-						$gparent = $row->parent;
-						$type = $row->type;
-						array_push($ulist,$row->uname);
+						if($row->auth == 1){
+							$ulist[$row->uid]['auth'] = 1;
+						}	
+						$ulist[$row->uid]['in'] = 1;
 					};
+				
+					$sql = 'select id,name,parent,type,`create` from groups where id='.$id;
+					$query = $this->db->query($sql);
+					$row = $query->row();
+					$gid= $row->id;
+					$gname = $row->name;
+					$gparent = $row->parent;
+					$type = $row->type;					
 
-					$this->data['manage'] = implode(';',$ulist);
+					//$this->data['manage'] = implode(';',$ulist);
 					$this->data['gname'] = $gname;
 					$this->data['gid'] = $gid;
 					$this->data['parent'] = $gparent;
 					$this->data['type'] = $type;
+					$this->data['ulist'] = $ulist;
+					// $this->data['urlist'] = $urlist;
 
 					$this->data['data']['ret'] = 0;
-
-
 
 					$this->load->view('manage/editgroup',$this->data);
 
 			}else{
 				if(!$this->input->post('groupname')){
-					$sql = 'SELECT g.*,u.name as uname,u.id as uid FROM groups g,`user` u,groupuser gu WHERE  gu.uid = u.id AND gu.auth = 1 AND gu.gid = g.id AND g.id = '.$id;
-
+					//$sql = 'SELECT g.*,u.name as uname,u.id as uid FROM groups g,`user` u,groupuser gu WHERE  gu.uid = u.id AND gu.auth = 1 AND gu.gid = g.id AND g.id = '.$id;
+					$sql = 'select uid,auth from groupuser where gid='.$id;
 					$query = $this->db->query($sql);
-					$ulist = array();
-					if($this->db->affected_rows() > 0){
-						foreach ($query->result() as $row){
-							$gid= $row->id;
-							$gname = $row->name;
-							$gparent = $row->parent;
-							$type = $row->type;
-							array_push($ulist,$row->uname);
-						};
 
-						$this->data['manage'] = implode(';',$ulist);
+
+
+					if($this->db->affected_rows() > 0){
+
+					foreach ($query->result() as $row){
+						if($row->auth == 1){
+							$ulist[$row->uid]['auth'] = 1;
+						}	
+						$ulist[$row->uid]['in'] = 1;
+					};
+
+						$sql = 'select id,name,parent,type,`create` from groups where id='.$id;
+						$query = $this->db->query($sql);
+						$row = $query->row();
+						$gid= $row->id;
+						$gname = $row->name;
+						$gparent = $row->parent;
+						$type = $row->type;						
+
+						//$this->data['manage'] = implode(';',$ulist);
 						$this->data['gname'] = $gname;
 						$this->data['gid'] = $gid;
 						$this->data['parent'] = $gparent;
 						$this->data['type'] = $type;
+						$this->data['ulist'] = $ulist;
 
 						$this->data['data']['ret'] = 0;
 
@@ -565,57 +541,88 @@ class Manage extends SZone_Controller {
 						$this->load->view('manage/retmsg',$this->data);
 					}
 				}else{
-
-					$manage = $this->input->post('manage');
-					$manage = preg_replace('/;$/e','',$manage);
-
-					$ul = explode(';',$manage);
-					foreach($ul as $key => $item){
-						$ul[$key] = ' name="'.$item.'" ';
-					}
-					$where = implode('or',$ul);
-
-					$sql = 'SELECT id FROM `user` where '.$where;
+					$sql = 'select id,name,parent,type,`create` from groups where id='.$id;
 					$query = $this->db->query($sql);
 
-					$idlist = array();
-					$wlist = array();
-					foreach ($query->result() as $row){
-						array_push($idlist,(int) $row->id);
-						array_push($wlist,'gu.uid='.(int) $row->id);
-					}				
+					$row = $query->row();
 
-					$where = implode(' or ',$wlist);
-					$sql = 'SELECT gu.id,gu.uid FROM groupuser gu where gid='.$id.' and ('.$where.')';
+					$createId = $row->create;
+
+					$mids = $this->input->post('muids');
+					$uids = $this->input->post('uids');
+
+					$allnewuser = array_values(array_unique(array_merge($mids,$uids)));
+
+					//$where = implode(' or ',$wlist);
+					$sql = 'select id,uid,auth from groupuser where gid='.$id;
 
 					$query = $this->db->query($sql);
 					$guid = array();
 					$insertid = array();
+					$dellist = array();
+					$uplist = array(); //管理员变成普通成员
+					$uptomanage = array(); //普通成员变管理员
+					$inlist = array(); //小组现有成员
 					foreach ($query->result() as $row){
-						if(in_array((int) $row->uid,$idlist)){
-							array_push($guid,(int) $row->uid);
-							array_push($insertid,(int) $row->id);
-
-							// $data = array('auth' => 1);
-							// $where = 'id='.(int) $row->id;
-							// $str = $this->db->update_string('groupuser',$data,$where);
-
-						$sql = 'UPDATE groupuser gu,`user` u SET gu.auth = 1,u.auth = 1 WHERE gu.uid = u.id AND u.id = '.(int) $row->uid.' AND gu.gid = '.$id;
-						
-							$query = $this->db->query($sql);
+						array_push($inlist,$row->uid);
+						if(in_array((int) $row->uid,$allnewuser) && $row->uid != $createId){
+							//要更新权限的.
+							if(!in_array($row->uid,$mids) && $row->auth == 1){
+								array_push($uplist,$row->uid);
+							}
+							//
+							if(in_array($row->uid,$mids) && $row->auth == 0){
+								array_push($uptomanage,$row->uid);
+							}
+						}else{
+							//要删除的
+							array_push($dellist,$row->id);
 						};
 					}
 
-					$idlist = array_diff_assoc($idlist, $guid);
-					foreach($idlist as $item){
-						$data = array('gid' => $id,'uid'=>$item,'auth' => 1);
-
-
-						$str = $this->db->insert_string('groupuser',$data);
-						//$query = $this->db->query($sql);				
+					$idlist = array();
+					foreach($allnewuser as $row){
+						
+						if(!in_array($row,$inlist)){
+							array_push($idlist,$row);
+						}
 					}
 
-					//UPDATE `groups` g,groupuser gu SET g.name = '食堂5', g.parent = '0' , gu.auth = 1 WHERE gu.gid = g.id AND g.id = 10 AND (gu.uid = 3 OR gu.uid = 4);
+					$insertData = array();
+
+					// echo 'mids'.json_encode($mids).'<br>';
+					// echo 'uids'.json_encode($uids).'<br>';
+					// echo 'in'.json_encode($inlist).'<br>';
+					// echo 'all'.json_encode($allnewuser).'<br>';
+					// echo 'inset'.json_encode($idlist).'<br>';
+					// echo 'up to 0'.json_encode($uplist).'<br>';
+					// echo 'up to 1'.json_encode($uptomanage).'<br>';
+					// return;
+					foreach($idlist as $row){
+						if($row != $createId){
+							if(in_array($row,$mids)){
+								array_push($insertData,'('.$id.','.$row.',1)');
+							}else{
+								array_push($insertData,'('.$id.','.$row.',0)');
+							}
+						}
+					}
+					if(count($insertData)>0){
+						$sql = 'insert into groupuser (gid,uid,auth) value '.implode(',',$insertData);
+						$query = $this->db->query($sql);
+					}
+
+					if(count($uplist)>0){
+						$sql = 'update groupuser set auth=0 where uid in ('.implode(',',$uplist).')';
+						$query = $this->db->query($sql);
+					}
+					
+					if(count($uptomanage)>0){
+						$sql = 'update groupuser set auth=1 where uid in ('.implode(',',$uptomanage).')';
+						$query = $this->db->query($sql);
+					}		
+			
+					
 					$data = array(
 						'name' => $this->input->post('groupname'),
 						'parent' => $this->input->post('parent')
@@ -673,27 +680,30 @@ class Manage extends SZone_Controller {
 	public function delprep(){
 		$id = (int) $this->input->get('id');
 		if($this->user['auth'] & 0x8){
-			$sql = 'delete from prepare where id='.$id.' or pid='.$id.' or sid='.$id;
+			$sql = 'select id from groups where type=3 and parent='.$id;
 			$query = $this->db->query($sql);
 
-			if($this->db->affected_rows()>0){
-				$this->data['data'] = array(
-					'ret' => 0,
-					'msg' => '删除记录成功!'
-				);	
+			if($this->db->affected_rows() > 0){
+				$this->data['ret'] =10010;
+				$this->data['msg'] = '改分组下还有其他分组!';	
 			}else{
-				$this->data['data'] = array(
-					'ret' => 2,
-					'msg' => '删除记录失败!'
-				);				
+				$sql = 'delete from groups where id='.$id;
+				$query = $this->db->query($sql);
+
+				if($this->db->affected_rows()>0){
+					$this->data['ret'] =0;
+					$this->data['msg'] = '删除记录成功!';
+				}else{
+					$this->data['ret'] =2;
+					$this->data['msg'] = '删除记录失败!';
+				}
 			}
 		}else{
-			$this->data['data'] = array(
-				'ret' => 1,
-				'msg' => '权限不够!'
-			);
+			$this->data['ret'] =1;
+			$this->data['msg'] = '权限不够!';				
 		}
-		$this->load->view('manage',$this->data);
+		
+			$this->load->view('manage/retmsg',$this->data);
 	}
 
 	public function editprep(){

@@ -68,9 +68,9 @@
 									<?endif?>					
 								<?if($thisfold['pid']):?>
 
-									<a class="section-tit-a-first" href="/group?id=<?=$gid?>&fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>"><?= $fold[$thisfold['pid']]['name'] ?></a>
+									<a class="section-tit-a-first" href="/group?id=<?=$gid?>&fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>"><?= htmlspecialchars($fold[$thisfold['pid']]['name']) ?></a>
 								<?endif?>
-								<a class="section-tit-a-second"><?= $thisfold['name'] ?></a>
+								<a class="section-tit-a-second"><?= htmlspecialchars($thisfold['name']) ?></a>
 								<a class="section-tit-a-can" href="/group?id=<?=$gid?>&fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>">返回上级</a>
 							<?else:?>
 								<a class="section-tit-a-end">返回上级</a>
@@ -87,7 +87,7 @@
 							<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 								<li><a href="/group?id=<?=$gid?>&fid=<?=$fid?>">全部用户</a></li>
 								<?foreach($ulist as $row):?>	
-								<li><a href="/group?id=<?=$gid?>&fid=<?=$fid?>&ud=<?=$row['id']?>"><?=$row['name']?></a></li>
+								<li><a href="/group?id=<?=$gid?>&fid=<?=$fid?>&ud=<?=$row['id']?>"><?=htmlspecialchars($row['name'])?></a></li>
 								<?endforeach?>
 							</ul>							
 						</li>
@@ -147,7 +147,7 @@
 					<ul>
 						<?foreach($flist as $item):?>
 							<li class="list-li">
-								<i class="glyphicon <?if(isset($item['child'])):?>glyphicon-plus<?endif?>" data-id="<?=$item['id']?>"></i><a  title="<?=$item['name']?>"  class="list-link" href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"> <?=$item['name']?></a>							
+								<i class="glyphicon <?if(isset($item['child'])):?>glyphicon-plus<?endif?>" data-id="<?=$item['id']?>"></i><a  title="<?=$item['name']?>"  class="list-link" href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"> <?=htmlspecialchars($item['name'])?></a>							
 							</li>						
 						<?endforeach?>
 					</ul>				
@@ -194,18 +194,18 @@
 							<td>
 								<i class="fold"></i>
 								<dl>
-									<dt><a href="/group?id=<?=$gid?>&fid=<?=$item['id']?>"><?=$item['name']?></a>										
+									<dt><a href="/group?id=<?=$gid?>&fid=<?=$item['id']?>"><?=htmlspecialchars($item['name'])?></a>										
 										<span cmd="edit" data-id="<?=$item['id']?>">
 											<?if($item['mark']==''):?>
 												编辑备注
 											<?else:?>
-												<?=$item['mark']?>&nbsp;
+												<?=htmlspecialchars($item['mark'])?>&nbsp;
 											<?endif?>	
 										</span>
 										<span class="hide">
 											<input class="name-edit" type="text" value="<?=$item['mark']?>" />
 											<i class="edit-comp" cmd="editComp" data-type="fold" data-id="<?=$item['id']?>"></i>
-											<i class="edit-close" data-value="<?=$item['mark']?>" cmd="editClose"></i>
+											<i class="edit-close" data-value="<?=htmlspecialchars($item['mark'])?>" cmd="editClose"></i>
 										</span>
 									</dt>
 									<dd>
@@ -241,15 +241,15 @@
 											<span class="hide">
 												<input class="name-edit" type="text" value="<?=$item['mark']?>" />
 												<i class="edit-comp" cmd="editComp" data-type="file" data-id="<?=$item['id']?>"></i>
-												<i class="edit-close" data-value="<?=$item['mark']?>" cmd="editClose"></i>
+												<i class="edit-close" data-value="<?=htmlspecialchars($item['mark'])?>" cmd="editClose"></i>
 											</span>
 										</dt>
 										<dd>
 											<span><a data-toggle="dropdown" href="#">共享</a>
 											<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-												<li><a data-toggle="modal" data-target="#shareWin" cmd="toother" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">发送给别人</a></li>
-												<li><a data-toggle="modal" data-target="#shareWin" cmd="togroup" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到小组空间</a></li>
-												<li><a data-toggle="modal" data-target="#shareWin" cmd="todep" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到部门空间</a></li>
+												<li><a data-toggle="modal" data-target="#shareWin" cmd="toother" data-id="<?=$item['id']?>" data-name="<?=htmlspecialchars($item['name'])?>">发送给别人</a></li>
+												<li><a data-toggle="modal" data-target="#shareWin" cmd="togroup" data-id="<?=$item['id']?>" data-name="<?=htmlspecialchars($item['name'])?>">到小组空间</a></li>
+												<li><a data-toggle="modal" data-target="#shareWin" cmd="todep" data-id="<?=$item['id']?>" data-name="<?=htmlspecialchars($item['name'])?>">到部门空间</a></li>
 												<!-- <li><a cmd="toschool" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到学校空间</a></li>		 -->			
 											</ul>
 											</span>	
@@ -262,8 +262,8 @@
 										</dd>
 									</dl>
 								</td>
-								<td><?=$item['mark']?></td>
-								<td><?=$item['uname']?></td>
+								<td><?=htmlspecialchars($item['mark'])?></td>
+								<td><?=htmlspecialchars($item['uname'])?></td>
 								<td>
 									<?if($item['status']):?>
 										分享
@@ -323,7 +323,7 @@
 		</div>
 		<?if($ingroup):?>
 		<div class="aside">
-			<h3 class="selected"><?=$ginfo['name']?></h3>
+			<h3 class="selected"><?=htmlspecialchars($ginfo['name'])?></h3>
 			<div class="group-desc" id="groupDesc">
 				<h6>小组公告: &nbsp;&nbsp;<a>编辑</a></h6> 
 				<p>

@@ -210,7 +210,6 @@
 			//}
 		});	
 		id = il.join(',');
-		console.log(id);
 		$.post(AddColl,{id:id,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 			if(d.code == 0){
 				//target.parent('span').prev('span').text(d.info);
