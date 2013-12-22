@@ -69,3 +69,7 @@ ul{
 .search-key span{
 	color:#f00;
 }
+.search-input-length{
+	outline:none;
+	width:280px;
+}

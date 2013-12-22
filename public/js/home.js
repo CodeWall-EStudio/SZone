@@ -614,7 +614,7 @@
 				$('#fileList').css('float','none').css('width','100%');
 			}else{
 				$("#foldList").show().attr('show',1);
-				$('#fileList').css('float','left').css('width','90%');
+				$('#fileList').css('float','left').css('width','80%');
 			}
 		});
 
@@ -645,7 +645,6 @@
 					var obj = {
 						list : d.data.list
 					}
-					console.log($.tmp(tmp,obj));
 					p.append($.tmp(tmp,obj));
 					t.addClass('glyphicon-minus');
 				}else{

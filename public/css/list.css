@@ -404,7 +404,7 @@ i.ad{
 }
 .fold-list{
 	display:none;
-	width:10%;
+	width:20%;
 	overflow:auto;
 	float:left;
 }
@@ -416,6 +416,7 @@ i.ad{
 }
 .fold-list li{
 	padding-left:4px;
+	width:200px;
 }
 .fold-list i.glyphicon{
 	width:7px;
@@ -423,4 +424,12 @@ i.ad{
 }
 td{
 	position:relative;
+}
+
+.list-link{
+	width:160px;
+	display:inline-block;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
 }

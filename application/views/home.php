@@ -55,28 +55,28 @@
 			</div>
 
 			<div class="section-tit">
-				<div class="dropdown">
+				<div class="fold-list-link">
 					<?if(count($flist)>0):?>
 						<a id="list-tree" class="section-tit-a-first section-tit-a-border">树</a>				
 					<?endif?>	
 					<?if($key==''):?>
-						<a class="section-tit-a-first" href="/home">个人文件</a>
+						<a  href="/home" style="z-index:20">个人文件</a>
 						<?if($fid):?>					
 								<?if(count($thisfold['idpath'])>1):?>
-									<a>......</a>
+									<a style="z-index:19">......</a>
 								<?endif?>					
 							<?if($thisfold['pid']):?>
-								<a class="section-tit-a-first" href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>"><?= $fold[$thisfold['pid']]['name'] ?></a>
+								<a  style="z-index:19"  href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>"><?= $fold[$thisfold['pid']]['name'] ?></a>
 							<?endif?>
-							<a class="section-tit-a-second"><?= $thisfold['name'] ?></a>
-							<a class="section-tit-a-can" href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>">返回上级</a>
+							<a style="z-index:18"><?= $thisfold['name'] ?></a>
+							<a style="z-index:17" class="end" href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>">返回上级</a>
 						<?else:?>
-							<a class="section-tit-a-end">返回上级</a>
+							<a  style="z-index:15" class="return">返回上级</a>
 						<?endif?>
 					<?else:?>
-						<a class="section-tit-a-first" >搜索结果</a>
-						<a class="section-tit-a-end">返回上级</a>
-						<a class="section-tit-a-can" href="/home?fid=<?=$fid?>&od=<?=$od?>&on=<?=$on?>">退出搜索结果</a>
+						<a >搜索结果</a>
+						<a class="end">返回上级</a>
+						<a class="return" href="/home?fid=<?=$fid?>&od=<?=$od?>&on=<?=$on?>">退出搜索结果</a>
 					<?endif?>
 				</div>
 				<ul class="act-zone">
@@ -126,7 +126,7 @@
 				<ul>
 					<?foreach($flist as $item):?>
 						<li class="list-li">
-							<i class="glyphicon <?if(isset($item['child'])):?>glyphicon-plus<?endif?>" data-id="<?=$item['id']?>"></i><a class="list-link" href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"> <?=$item['name']?></a>							
+							<i class="glyphicon <?if(isset($item['child'])):?>glyphicon-plus<?endif?>" data-id="<?=$item['id']?>"></i><a title="<?=$item['name']?>" class="list-link" href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"> <?=$item['name']?></a>							
 						</li>						
 					<?endforeach?>
 				</ul>				
@@ -395,7 +395,7 @@
 				</div>
 				<form class="new-fold" id="reName" method="post">
 				<div class="modal-body">
-					<label>文件名称：</label><input class="foldname" name="fname" type="text" style="width:80%" />
+					<label>文件名称：</label><input class="foldname" name="fname" type="text" style="width:80%" maxlength="20" />
 					<input type="hidden" class="fid" />
 					<input type="hidden" class="type" value="0" />
 				</div>
@@ -440,7 +440,7 @@
 				<form class="new-fold" id="newFolds" method="get">
 					<div class="modal-body">
 						
-							<label>文件夹名称：</label><input id="foldname" name="foldname" type="text" style="width:80%" />
+							<label>文件夹名称：</label><input id="foldname" maxlength="20" name="foldname" type="text" style="width:80%" />
 							<input type="hidden" class="parentid" name="parentid" value="<?=$fid?>" />
 						
 					</div>

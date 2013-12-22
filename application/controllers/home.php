@@ -256,7 +256,7 @@ class Home extends SZone_Controller {
 		if(!$gid){
 			$sql .= ' where prid=0 and uid='.(int) $this->user['uid'];
 		}else{
-			$sql .= ' where gid='.$gid;
+			$sql .= ' where gid='.$gid.' and pid = 0';
 		}
 		if($fdid){
 			$sql .= ' and id !='.$fdid;
@@ -266,20 +266,29 @@ class Home extends SZone_Controller {
 
 		$folds = array();
 		foreach($query->result() as $row){
-			$folds[$row->id] = array(
-				'id' => $row->id,
-				'pid' => $row->pid,
-				'name' => $row->name,
-				'tid' => $row->tid,
-				'idpath' => $row->idpath
-			);					
+			if($row->pid == 0){
+				if(isset($folds[$row->id])){
+					$folds[$row->id]['pid'] = $row->pid;
+					$folds[$row->id]['name'] = $row->name;
+					$folds[$row->id]['tid'] = $row->tid;
+					$folds[$row->id]['idpath'] = $row->idpath;
+				}else{
+					$folds[$row->id] = array(
+						'id' => $row->id,
+						'pid' => $row->pid,
+						'name' => $row->name,
+						'tid' => $row->tid,
+						'idpath' => $row->idpath
+					);
+				}
+			}else{
+				$folds[$row->tid]['child'] = 1;
+			}
 		}
 
 		function psort($a,$b){
 			if($a['pid'] == 0){
 				return -1;
-			// }else if( $a['pid'] < $b['pid']){
-			// 	return -1;
 			}else if($a['pid'] = $b['pid']){
 			// return 0;
 				$an = count(explode(',',$a['idpath']));
@@ -295,37 +304,6 @@ class Home extends SZone_Controller {
 				return 1;
 			}
 		}
-
-
-		//usort($folds,'psort');
-		// foreach($folds as $row){
-		// 	echo json_encode($row).'<br>';	
-		// }
-
-
-		// $flist = array();
-		// foreach($folds as $row){
-			
-		// 	if($row['pid'] == 0){
-		// 		$flist[$row['id']] = $row;
-		// 		$flist[$row['id']]['list'] = array();
-
-		// 	}else if($row['pid'] == $row['tid']){
-		// 		$flist[$row['pid']]['list'][$row['id']] = $row;
-		// 		$flist[$row['pid']]['list'][$row['id']]['list'] = array();
-		// 	}else{
-		// 		$l = explode(',',$row['idpath']);
-				
-		// 		// $td = $flist[$row['tid']]['list'][$row['pid']]['list'];
-		// 		// // $len = count($l);
-		// 		// for($i=1;$i<$l;$i++){
-		// 		//  	$td = parseData($td,$i,$row);
-		// 		// }
-		// 		// // echo json_encode($row).'<br>';	
-		// 	}
-		// }
-		//$data['flist'] = $folds;
-
 
 		$id = $this->input->get('fid');
 
@@ -351,11 +329,7 @@ class Home extends SZone_Controller {
 			'gid' => $gid
 			);	
 
-		//echo json_encode($folds);
-
-		$this->load->view('share/copyfile.php',$data);		
-		// echo '<hr>';
-		// echo json_encode($flist);
+		$this->load->view('share/movefile.php',$data);		
 	}
 
 
@@ -563,19 +537,24 @@ class Home extends SZone_Controller {
 
 		$il = explode(',',$id);
 		$kl = array();
+
 		foreach($il as $k){
 			array_push($kl,' id='.$k);
 		}		
 		$str = implode(' or ',$kl);
+
+		$this->load->model('Group_model');
+		$gidlist = $this->Group_model->get_prep_group_ids($this->user['uid']);
+
 		$sql = 'select id,name from userfile where '.$str;		
 		$query = $this->db->query($sql);
 
 		$nl = array();
 		foreach($query->result() as $row){
-			array_push($nl,array(
-					'id' => $row->id,
-					'name' => $row->name
-				));
+				array_push($nl,array(
+						'id' => $row->id,
+						'name' => $row->name
+					));
 		}	
 		$data = array('fl' => $nl);	
 
@@ -585,29 +564,31 @@ class Home extends SZone_Controller {
 
 		//选择备课目录
 		foreach($query->result() as $row){
-			if($row->parent == 0){
-				if(isset($plist[$row->id])){
-					$plist[$row->id] = $row->id;
-					$plist[$row->id] = $row->name;
+			if(in_array($row->id,$gidlist)){
+				if($row->parent == 0){
+					if(isset($plist[$row->id])){
+						$plist[$row->id] = $row->id;
+						$plist[$row->id] = $row->name;
+					}else{
+						$plist[$row->id] = array(
+							'id' => $row->id,
+							'name' => $row->name,
+							'list' => array()
+						);
+					}
 				}else{
-					$plist[$row->id] = array(
-						'id' => $row->id,
-						'name' => $row->name,
-						'list' => array()
-					);
-				}
-			}else{
-				if(isset($plist[$row->parent])){
-					$plist[$row->parent]['list'][$row->id]['id'] = $row->id;
-					$plist[$row->parent]['list'][$row->id]['name'] = $row->name;
-				}else{
-					$plist[$row->parent] = array(
-						'list' => array()
-					);
-					$plist[$row->parent]['list'][$row->id] = array(
-						'id' => $row->id,
-						'name' => $row->name
-					);
+					if(isset($plist[$row->parent])){
+						$plist[$row->parent]['list'][$row->id]['id'] = $row->id;
+						$plist[$row->parent]['list'][$row->id]['name'] = $row->name;
+					}else{
+						$plist[$row->parent] = array(
+							'list' => array()
+						);
+						$plist[$row->parent]['list'][$row->id] = array(
+							'id' => $row->id,
+							'name' => $row->name
+						);
+					}
 				}
 			}
 		}
@@ -615,7 +596,7 @@ class Home extends SZone_Controller {
 		//echo json_encode($plist);
 		$data['plist'] = $plist;
 
-		$this->load->view('share/movefile.php',$data);
+		$this->load->view('share/copyfile.php',$data);
 	}	
 
 

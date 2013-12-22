@@ -17,7 +17,7 @@
 	<div class="collection-tit">
 		<div class="search-zone">
 			<form action="/home/sendmail?m=<?=$m?>" method="post">
-			<input type="text" value="搜索文件" name="key"  data-def="搜索文件" id="searchKey" />
+			<input class="search-input-length"  type="text" value="搜索文件" name="key"  data-def="搜索文件" id="searchKey" />
 			<button type="submit"></button>
 			</form>
 		</div>

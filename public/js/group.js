@@ -545,7 +545,7 @@
 				$('#fileList').css('float','none').css('width','100%');
 			}else{
 				$("#foldList").show().attr('show',1);
-				$('#fileList').css('float','left').css('width','90%');
+				$('#fileList').css('float','left').css('width','80%');
 			}
 		});
 
