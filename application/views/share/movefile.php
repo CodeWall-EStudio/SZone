@@ -44,13 +44,13 @@
 			<ul id="prepList" class="perplist">
 				<?if(count($flist)>0):?>
 				<?foreach($flist as $row):?>
-					
+					<?if(isset($row['id'])):?>
 					<li>
 						<i class="glyphicon <?if(isset($row['child'])):?>glyphicon-plus<?endif?>" data-fid="<?=$row['id']?>"></i><a class="a-click" data-id="<?=$row['id']?>">
 							<?=$row['name']?>
 						</a>
 					</li>
-
+					<?endif?>
 				<?endforeach?>
 				<?else:?>
 					<li>您还没有创建文件夹</li>

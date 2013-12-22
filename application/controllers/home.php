@@ -338,7 +338,6 @@ class Home extends SZone_Controller {
 			'flist' => $folds,
 			'gid' => $gid
 			);	
-
 		$this->load->view('share/movefile.php',$data);		
 	}
 
