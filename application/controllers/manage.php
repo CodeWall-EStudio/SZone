@@ -247,6 +247,9 @@ class Manage extends SZone_Controller {
 					foreach($ul as $k){
 						array_push($istr,'('.$ngid.','.$k.',0)');
 					}
+					if(!in_array($this->user['uid'],$ul)){
+						array_push($istr,'('.$ngid.','.$this->user['uid'].',0)');
+					}
 
 					$sql = 'insert into groupuser (gid,uid,auth) value '.implode(',',$istr);
 					$query = $this->db->query($sql);
@@ -607,6 +610,7 @@ class Manage extends SZone_Controller {
 							}
 						}
 					}
+					echo json_encode($insertData);
 					if(count($insertData)>0){
 						$sql = 'insert into groupuser (gid,uid,auth) value '.implode(',',$insertData);
 						$query = $this->db->query($sql);
@@ -621,6 +625,7 @@ class Manage extends SZone_Controller {
 						$sql = 'update groupuser set auth=1 where uid in ('.implode(',',$uptomanage).')';
 						$query = $this->db->query($sql);
 					}		
+					return;
 			
 					
 					$data = array(

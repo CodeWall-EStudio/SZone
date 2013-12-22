@@ -277,6 +277,7 @@ class Home extends SZone_Controller {
 		foreach($query->result() as $row){
 			if($row->pid == 0){
 				if(isset($folds[$row->id])){
+					$folds[$row->id]['id'] = $row->id;
 					$folds[$row->id]['pid'] = $row->pid;
 					$folds[$row->id]['name'] = $row->name;
 					$folds[$row->id]['tid'] = $row->tid;

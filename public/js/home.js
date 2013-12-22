@@ -312,7 +312,9 @@
     	if(n1 == n){
     		$('#allNums').parents('span').remove();
     	}else{
-    		$('#allNums').text(parseInt(n1)-parseInt(n));
+    		if(n){
+    			$('#allNums').text(parseInt(n1)-parseInt(n));
+    		}
     	}	
     }
 
