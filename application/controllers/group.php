@@ -486,7 +486,9 @@ class Group extends SZone_Controller {
 			array_push($kp,$row->id);
 			if($row->id == $prid){
 				$plist[$row->id]['selected'] = 1;
-				$first = 1;
+				if($row->parent == 0){
+					$first = 1;
+				}
 			}
 		};
 
@@ -515,10 +517,10 @@ class Group extends SZone_Controller {
 			}
 		}else{
 			if($prid){
-				$sql .= ' a.prid = '.$prid.' and a.uid = b.id';
+				$sql .= ' a.pid > 0 and a.prid = '.$prid.' and a.uid = b.id';
 			}else{
 				if(count($pls)>0){
-					$sql .= ' ('.implode(' or ',$pls).') and a.uid = b.id';	
+					$sql .= ' a.pid =0 and ('.implode(' or ',$pls).') and a.uid = b.id';	
 				}else{
 					$sql .= ' a.prid =-1 and a.uid = b.id';
 				}
@@ -528,6 +530,7 @@ class Group extends SZone_Controller {
 
 		$fold = array();
 		foreach($query->result() as $row){
+
 			$fold[$row->id] = array(
 				'id' => $row->id,
 				'name' => $row->uname .' '.$row->name,
