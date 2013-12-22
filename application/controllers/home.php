@@ -578,9 +578,17 @@ class Home extends SZone_Controller {
 		$sql = 'select id,name,parent from groups where type=3';
 		$query = $this->db->query($sql);
 		$plist = array();
+		$pplist = array();
 
 		//选择备课目录
 		foreach($query->result() as $row){
+			if($row->parent == 0){
+				$pplist[$row->id] = array(
+					'id' => $row->id,
+					'name' => $row->name
+				);
+			}
+
 			if(in_array($row->id,$gidlist)){
 				if($row->parent == 0){
 					if(isset($plist[$row->id])){
@@ -599,6 +607,7 @@ class Home extends SZone_Controller {
 						$plist[$row->parent]['list'][$row->id]['name'] = $row->name;
 					}else{
 						$plist[$row->parent] = array(
+							'id' => $row->parent,
 							'list' => array()
 						);
 						$plist[$row->parent]['list'][$row->id] = array(
@@ -610,7 +619,12 @@ class Home extends SZone_Controller {
 			}
 		}
 
-		//echo json_encode($plist);
+		foreach($plist as &$row){
+			if(!isset($row['name'])){
+				//echo json_encode($pplist[$row['id']]);
+				$row['name'] = $pplist[$row['id']]['name'];
+			}
+		}
 		$data['plist'] = $plist;
 
 		$this->load->view('share/copyfile.php',$data);
