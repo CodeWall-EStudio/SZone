@@ -311,7 +311,9 @@
     	}
     	if(n1 == n){
     		$('#allNums').parents('span').remove();
-    	}    	
+    	}else{
+    		$('#allNums').text(parseInt(n1)-parseInt(n));
+    	}	
     }
 
     //显示或者隐藏重命名和评论
