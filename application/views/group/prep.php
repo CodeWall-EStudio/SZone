@@ -25,12 +25,14 @@
       </div>      
 
       <div class="section-tit">
-        <a href="/group/prep">备课检查</a>
+        <a href="/group/prep" style="float:left">备课检查</a>
 
-        <div>
+        <div style="float:right">
           <select id="prepName">
             <?foreach($plist as $row):?>
+              <?if($row['parent']==0):?>
               <option value="<?=$row['id']?>" <?if(isset($row['selected'])):?>selected<?endif?>><?=$row['name']?></option>
+              <?endif?>
             <?endforeach?>
           </select>
 

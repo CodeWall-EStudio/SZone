@@ -463,7 +463,7 @@ class Group extends SZone_Controller {
 		$row = $query->row();
 		$gid = $row->id;
 
-		$sql = 'select id,name,parent,tag,grade from groups where type=3 and parent=0 order by parent';
+		$sql = 'select id,name,parent,tag,grade from groups where type=3  order by parent';
 		$query = $this->db->query($sql);
 
 		$plist = array();
@@ -575,6 +575,7 @@ class Group extends SZone_Controller {
 		}
 
 		$sql = 'select a.id,a.name from user a,groupuser b where a.id = b.uid  ';
+		// echo json_encode($plist);
 		if($prid && $plist[$prid]['parent']){
 			$sql .= 'and b.gid='.$prid;	
 		}else{
