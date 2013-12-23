@@ -908,12 +908,18 @@ class Cgi extends SZone_Controller {
 			array_push($kl,' id='.$k);			
 		}
 		$str = implode(' or ',$kl);
-		$sql = 'select id,name from userfile where '.$str;
+		$sql = 'select id,fid,name from userfile where '.$str;
 		$query = $this->db->query($sql);
 		$nl = array();
+		$fids = array();
 		foreach($query->result() as $row){
-			$nl[$row->id] = $row->name;
+			$nl[$row->id] = array(
+				'id' => $row->fid,
+				'name' => $row->name
+			);
+			// array_push($fids,$row->fid);
 		};
+
 
 		$sql = 'select fid,gid from groupfile where uid='.$this->user['uid'];
 		$query = $this->db->query($sql);
@@ -928,7 +934,7 @@ class Cgi extends SZone_Controller {
 		foreach($id as $k){
 			foreach($fid as $i){
 				if(!in_array($i,$cache[$k])){
-	array_push($key,'('.$i.','.$k.','.$time.',"'.$nl[$i].'",'.'"'.$content.'",'.$this->user['uid'].','.$gid.',1)');	
+	array_push($key,'('.$nl[$i]['id'].','.$k.','.$time.',"'.$nl[$i]['name'].'",'.'"'.$content.'",'.$this->user['uid'].','.$gid.',1)');	
 				}
 			}
 		}
@@ -958,9 +964,6 @@ class Cgi extends SZone_Controller {
 					$this->json($ret,100,'不能重复添加!');
 					return;					
 		}
-		// $this->output
-		//     ->set_content_type('application/json')
-		//     ->set_output(json_encode($ret));
 	}
 
 	public function addshare(){

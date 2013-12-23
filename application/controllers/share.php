@@ -58,16 +58,17 @@
 			}
 			$str = implode(' or ',$kl);
 			if($gid){
-				$sql = 'select fid,fname as name from groupfile where '.$str;
+				$sql = 'select id,fid,fname as name from groupfile where '.$str;
 			}else{
-				$sql = 'select fid,name from userfile where '.$str;	
+				$sql = 'select id,fid,name from userfile where '.$str;	
 			}
 			$query = $this->db->query($sql);
 
 			$nl = array();
 			foreach($query->result() as $row){
 				array_push($nl,array(
-						'id' => $row->fid,
+						'id' => $row->id,
+						'fid' => $row->fid,
 						'name' => $row->name
 					));
 			}
@@ -100,22 +101,23 @@
 			}
 			$str = implode(' or ',$kl);
 			if($gid){
-				$sql = 'select fid,fname as name from groupfile where '.$str;
+				$sql = 'select id,fid,fname as name from groupfile where '.$str;
 			}else{
-				$sql = 'select fid,name from userfile where '.$str;	
+				$sql = 'select id,fid,name from userfile where '.$str;	
 			}
 			$query = $this->db->query($sql);
 
 			$nl = array();
 			foreach($query->result() as $row){
 				array_push($nl,array(
-						'id' => $row->fid,
+						'id' => $row->id,
+						'fid' => $row->fid,
 						'name' => $row->name
 					));
 			}
 
 
-			$sql = 'select a.id,a.name from groups a,groupuser b where a.id = b.gid and a.type = 2 and b.uid='.$this->user['uid'];
+			$sql = 'select a.id,a.name from groups a,groupuser b where a.id = b.gid and a.type = 2 and a.pt=0 and b.uid='.$this->user['uid'];
 			$query = $this->db->query($sql);
 			$gl = array();
 			foreach($query->result() as $row){
