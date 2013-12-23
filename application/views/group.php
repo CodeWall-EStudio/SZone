@@ -55,30 +55,28 @@
 				</div>
 
 				<div class="section-tit">
-					<div class="dropdown">
+					<div class="fold-list-link">
 						<?if(count($flist)>0):?>
 							<a id="list-tree" class="section-tit-a-first section-tit-a-border">树</a>				
 						<?endif?>		
 
 						<?if($key==''):?>
-							<a class="section-tit-a-first" href="/group?id=<?=$gid?>">小组文件</a>
+							<a class="first" href="/group?id=<?=$gid?>" style="z-index:20">小组文件</a>
 							<?if($fid):?>					
 									<?if(count($thisfold['idpath'])>1):?>
-										<a>......</a>
+										<a style="z-index:19">......</a>
 									<?endif?>					
 								<?if($thisfold['pid']):?>
 
-									<a class="section-tit-a-first" href="/group?id=<?=$gid?>&fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>"><?= htmlspecialchars($fold[$thisfold['pid']]['name']) ?></a>
+									<a class="first" href="/group?id=<?=$gid?>&fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>"><?= htmlspecialchars($fold[$thisfold['pid']]['name']) ?></a>
 								<?endif?>
-								<a class="section-tit-a-second"><?= htmlspecialchars($thisfold['name']) ?></a>
-								<a class="section-tit-a-can" href="/group?id=<?=$gid?>&fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>">返回上级</a>
-							<?else:?>
-								<a class="section-tit-a-end">返回上级</a>
+								<a class="end" style="z-index:18"><?= htmlspecialchars($thisfold['name']) ?></a>
+								<a class="second" style="z-index:17" href="/group?id=<?=$gid?>&fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>">返回上级</a>
 							<?endif?>
 						<?else:?>
-							<a class="section-tit-a-first" >搜索结果</a>
-							<a class="section-tit-a-end">返回上级</a>
-							<a class="section-tit-a-can" href="/group?id=<?=$gid?>&fid=<?=$fid?>&od=<?=$od?>&on=<?=$on?>">退出搜索结果</a>
+							<a class="first" >搜索结果</a>
+							<!-- <a class="section-tit-a-end">返回上级</a> -->
+							<a class="end" href="/group?id=<?=$gid?>&fid=<?=$fid?>&od=<?=$od?>&on=<?=$on?>">退出搜索结果</a>
 						<?endif?>
 					</div>
 					<ul class="act-zone">
@@ -157,7 +155,7 @@
 				<div id="fileList" class="dis-list-type">
 				<table width="100%" class="table table-striped table-hover">
 					<tr>
-						<th width="30"><input type="checkbox" id="selectAllFile" /></th>
+						<th width="30"><input type="checkbox" id="selectAllFold" /></th>
 						<th><span>文件夹和文件</span>  
 							<a href="/group/?id=<?=$gid?>&on=1&od=<?if($on==1 && $od ==1):?>2<?else:?>1<?endif?>">
 							<span>文件名</span>  

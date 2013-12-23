@@ -486,6 +486,8 @@
 					copyFile();
 					break;		
 				case 'cancel':
+					$('.tool-zone').removeClass('hide');
+					$('.file-act-zone').addClass('hide');				
 					$('#fileList input:checked').each(function(){
 						$(this).attr('checked',false);
 					});

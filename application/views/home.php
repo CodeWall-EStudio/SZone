@@ -63,16 +63,14 @@
 									<a style="z-index:19">......</a>
 								<?endif?>					
 							<?if($thisfold['pid']):?>
-								<a  style="z-index:19"  href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>"><?= htmlspecialchars($fold[$thisfold['pid']]['name']) ?></a>
+								<a class="frist" style="z-index:19"  href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>"><?= htmlspecialchars($fold[$thisfold['pid']]['name']) ?></a>
 							<?endif?>
-							<a style="z-index:18"><?= $thisfold['name'] ?></a>
-							<a style="z-index:17" class="end" href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>">返回上级</a>
-						<?else:?>
-							<a  style="z-index:15" class="return">返回上级</a>
+							<a class="end" style="z-index:18"><?= $thisfold['name'] ?></a>
+							<a class="second" style="z-index:17" class="end" href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>">返回上级</a>
 						<?endif?>
 					<?else:?>
 						<a >搜索结果</a>
-						<a class="end">返回上级</a>
+						<!-- <a class="end" href="/home?fid=<?=$fid?>&od=<?=$od?>&on=<?=$on?>">返回上级</a> -->
 						<a class="return" href="/home?fid=<?=$fid?>&od=<?=$od?>&on=<?=$on?>">退出搜索结果</a>
 					<?endif?>
 				</div>
