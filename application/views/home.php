@@ -168,10 +168,10 @@
 						<tr>
 							<td><input type="checkbox" name="file" class="fdclick liclick" value="<?=$item['id']?>" data-type="fold" /></td>
 							<td>
-								<a href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"><i class="fold"></i></a>
+								<a href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>" data-id="1"><i class="fold"></i></a>
 								
 								<dl>
-									<dt><a href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"><?=htmlspecialchars($item['name'])?></a>
+									<dt><a href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>" data-id="1"><?=htmlspecialchars($item['name'])?></a>
 										<span cmd="edit" data-id="<?=$item['id']?>">
 											<?if($item['mark']==''):?>
 												编辑备注
@@ -218,7 +218,7 @@
 											</span>
 										</dt>
 										<dd>
-											<span><a class="share-file" data-toggle="dropdown" href="#">共享</a>
+											<span><a class="share-file" data-toggle="dropdown" href="#" data-id="1">共享</a>
 											<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 												<li><a data-toggle="modal" data-target="#shareWin" cmd="toother" data-id="<?=$item['id']?>" data-name="<?=htmlspecialchars($item['name'])?>">发送给别人</a></li>
 												<li><a data-toggle="modal" data-target="#shareWin" cmd="togroup" data-id="<?=$item['id']?>" data-name="<?=htmlspecialchars($item['name'])?>">到小组空间</a></li>

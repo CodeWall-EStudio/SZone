@@ -194,9 +194,9 @@
 						<tr class="fold" data-id="<?=$item['id']?>">
 							<td><input type="checkbox" name="fold" class="fdclick liclick" value="<?=$item['id']?>" data-type="fold" /></td>
 							<td>
-								<i class="fold"></i>
+								<a href="/group?id=<?=$gid?>&fid=<?=$item['id']?>" data-id="1"><i class="fold" data-id="1"></i></a>
 								<dl>
-									<dt><a href="/group?id=<?=$gid?>&fid=<?=$item['id']?>"><?=htmlspecialchars($item['name'])?></a>										
+									<dt><a href="/group?id=<?=$gid?>&fid=<?=$item['id']?>" data-id="1"><?=htmlspecialchars($item['name'])?></a>										
 										<span cmd="edit" data-id="<?=$item['id']?>">
 											<?if($item['mark']==''):?>
 												编辑备注
@@ -238,7 +238,7 @@
 									<?endif?>
 									</a>
 									<dl>
-										<dt><?=$item['name']?> 
+										<dt><a class="file-name" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>"><?=$item['name']?></a>
 											<span cmd="edit" data-id="<?=$item['id']?>"><?=$item['mark']?></span>
 											<span class="hide">
 												<input class="name-edit" type="text" value="<?=$item['mark']?>" />
@@ -247,7 +247,7 @@
 											</span>
 										</dt>
 										<dd>
-											<span><a data-toggle="dropdown" href="#">共享</a>
+											<span><a data-toggle="dropdown" href="#"  data-id="1">共享</a>
 											<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
 												<li><a data-toggle="modal" data-target="#shareWin" cmd="toother" data-id="<?=$item['id']?>" data-name="<?=htmlspecialchars($item['name'])?>">发送给别人</a></li>
 												<li><a data-toggle="modal" data-target="#shareWin" cmd="togroup" data-id="<?=$item['id']?>" data-name="<?=htmlspecialchars($item['name'])?>">到小组空间</a></li>

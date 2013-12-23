@@ -590,7 +590,10 @@
 					target.parent('span').prev('span').show();
 					target.parent('span').addClass('hide');
 					break;														
-				default : 
+				default :
+					if(target.attr('data-id')){
+						return;
+					};
 					if(!target.hasClass('liclick') && !target.hasClass('name-edit') && !target.hasClass('share-file')){
 						var p = target.parents("tr");
 						p.find('.liclick').click();										
