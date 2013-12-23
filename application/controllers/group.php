@@ -527,19 +527,31 @@ class Group extends SZone_Controller {
 			}		
 		}
 		$query = $this->db->query($sql);
-
 		$fold = array();
 		foreach($query->result() as $row){
-
-			$fold[$row->id] = array(
-				'id' => $row->id,
-				'name' => $row->uname .' '.$row->name,
-				'fname' => $row->name,
-				'uid' => $row->uid,
-				'prid' => $row->prid,
-				'uname' => $row->uname
-			);
+			if($fdid){
+				$fold[$row->id] = array(
+					'id' => $row->id,
+					'name' => $row->uname .' '.$row->name,
+					'fname' => $row->name,
+					'uid' => $row->uid,
+					'prid' => $row->prid,
+					'uname' => $row->uname
+				);
+			}else{
+				if($row->pid == 0){
+					$fold[$row->id] = array(
+						'id' => $row->id,
+						'name' => $row->uname .' '.$row->name,
+						'fname' => $row->name,
+						'uid' => $row->uid,
+						'prid' => $row->prid,
+						'uname' => $row->uname
+					);					
+				}
+			}
 		}
+
 
 		$flist = array();
 		if($fdid && count($fold)>0 ){
@@ -558,6 +570,7 @@ class Group extends SZone_Controller {
 					'uname' => $row->uname
 				);
 			}
+
 
 			$sql = 'select a.id,a.name,a.fid,a.mark,b.size,b.type from userfile a,files b where a.fdid='.$fdid.' and a.fid = b.id';
 			if($key && $key != '' && $key != '搜索文件'){

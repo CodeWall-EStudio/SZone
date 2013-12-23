@@ -726,7 +726,6 @@ class Home extends SZone_Controller {
 			}
 		};
 
-
 		$flist = array();
 		$kfc = array();
 		$fold = array();

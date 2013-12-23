@@ -138,7 +138,10 @@
 							<a href="/home?on=1&od=<?if($on==1 && $od ==1):?>2<?else:?>1<?endif?>">
 							<span>文件名</span>  
 							<?if($on==1 && $od ==1):?><i class="ad"></i><?elseif($on==1 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
-							</a>							
+							</a>	
+
+							<a data-tag="folds">选择所有文件夹</a>
+							<a data-tag="files">选择所有文件</a>
 						</th>
 						<th width="90">
 						<a href="/home?fid=<?=$thisfold['id']?>&on=2&od=<?if($on==2 && $od ==1):?>2<?else:?>1<?endif?>">

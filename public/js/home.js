@@ -275,6 +275,7 @@
     //显示或者隐藏重命名和评论
     var checkAct = function(){
     	var l = $('#fileList .fclick:checked').length;
+
     	// $('#fileList .fdclick:checked').each(function(){
     	// 	$(this).attr('checked',false);
     	// });
@@ -342,7 +343,27 @@
 	    		$('#remarkAct').removeClass('hide');
     		}
     	}
-    }    
+    }   
+
+    function selectAllFolds(){
+		$('#fileList .fdclick:not(:checked)').each(function(){
+			$(this)[0].checked = true;
+		});
+		$('#fileList .fclick:checked').each(function(){
+			$(this).attr('checked',false);
+		});
+		checkFoldAct();
+    } 
+
+    function selectAllFiles(){
+		$('#fileList .fclick:not(:checked)').each(function(){
+			$(this)[0].checked = true;
+		});
+		$('#fileList .fdclick:checked').each(function(){
+			$(this).attr('checked',false);
+		});
+		checkAct();
+    }
 
 	function bind(){
 
@@ -368,7 +389,9 @@
 				});
 			}
 			checkAct();
-		});				
+		});	
+
+
 		$('#donwFiles').bind('click',function(){
 			downFiles();
 		});
@@ -513,6 +536,15 @@
 			var target = $(e.target),
 				cmd = target.attr('cmd');
 				des = parseInt(target.attr('data-od'));
+			var tag = target.attr('data-tag');
+			if(tag){
+				if(tag == 'folds'){				
+					selectAllFolds();				
+				}else{
+					selectAllFiles();
+				}
+				return;
+			}
 			switch(cmd){
 				case 'toother':
 				case 'togroup':

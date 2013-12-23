@@ -143,6 +143,26 @@
 		});
 	};    
 
+    function selectAllFolds(){
+		$('#fileList .fdclick:not(:checked)').each(function(){
+			$(this)[0].checked = true;
+		});
+		$('#fileList .fclick:checked').each(function(){
+			$(this).attr('checked',false);
+		});
+		checkFoldAct();
+    } 
+
+    function selectAllFiles(){
+		$('#fileList .fclick:not(:checked)').each(function(){
+			$(this)[0].checked = true;
+		});
+		$('#fileList .fdclick:checked').each(function(){
+			$(this).attr('checked',false);
+		});
+		checkAct();
+    }
+
 	function bind(){
 
 		$('#moveFile').bind("click",function(){
@@ -457,6 +477,17 @@
 			var target = $(e.target),
 				cmd = target.attr('cmd');
 				des = parseInt(target.attr('data-od'));
+
+			var tag = target.attr('data-tag');
+			if(tag){
+				if(tag == 'folds'){				
+					selectAllFolds();				
+				}else{
+					selectAllFiles();
+				}
+				return;
+			}
+							
 			switch(cmd){
 				case 'copy':
 					var fid = target.attr('data-fid');
