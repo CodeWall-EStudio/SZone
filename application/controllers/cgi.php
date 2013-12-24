@@ -1076,6 +1076,54 @@ class Cgi extends SZone_Controller {
 
 	}
 
+
+	public function downfile_test(){
+		$this->load->helper('download');
+		$id = $this->input->get('fid');
+		$gid = (int) $this->input->get('gid');
+		$tablename = 'userfile';
+		$ft = 'name';
+		if($gid){
+			$tablename = 'groupfile';
+			$ft = 'fname';
+		}
+		$sql = 'select a.path,a.mimes,b.'.$ft.' as name from files a,'.$tablename.' b where ';
+		if($gid){
+			$sql .= ' b.gid='.$gid;
+		}else{
+			$sql .= ' b.uid='.$this->user['uid'];
+		}
+		$sql .= ' and a.id = b.fid and a.id='.(int) $id;
+		$query = $this->db->query($sql);
+	
+
+		if ($query->num_rows() > 0)
+		{
+		   $row = $query->row(); 
+		   $path = $row->path;
+
+		   //$ext = '.'.get_ext_type($row->mimes);
+
+		   $fname = explode('.',$path);
+		   $fname = '.'.$fname[count($fname)-1];
+		   $name = $row->name;
+		   //$name .=$fname;
+		   //fname;
+		   //$mime = get_mime_by_extension($path);
+			
+			$handle = fopen ($path, "r");
+			$data = "";
+			while (!feof($handle)) {
+			  $data .= fread($handle, 8192);
+			}
+			fclose($handle);
+			force_download($name, $data); 
+
+		}else{
+
+		}
+	}	
+
 	public function downfile(){
 		$this->load->helper('download');
 		$id = $this->input->get('fid');
