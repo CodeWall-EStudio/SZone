@@ -346,6 +346,8 @@ class Home extends SZone_Controller {
 		$this->load->helper('util');
 		$m = (int) $this->input->get('m'); // m= 0 发件箱  m = 1 收件箱
 
+		//$this->user['uid'] = 1;
+
 		$this->load->model('Mail_model');
 
 		if($m){
@@ -381,7 +383,7 @@ class Home extends SZone_Controller {
 				break;			
 		}	
 
-		//$this->user['uid']	= 1;
+		$this->user['uid']	= 1;
 
 		if($m){
 			$sql = 'SELECT a.id,a.fuid as uid,a.content,a.createtime,a.fid,b.name AS uname,c.name AS fname,d.path,d.size,d.type FROM message a LEFT JOIN `user` b ON a.fuid = b.`id` LEFT JOIN `userfile` c ON c.fid = a.fid		LEFT JOIN `files` d ON d.id = a.fid	WHERE a.tuid = '.$this->user['uid'];

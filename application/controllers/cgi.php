@@ -895,7 +895,15 @@ class Cgi extends SZone_Controller {
 		$type = $this->input->post('type'); //类型 0 用户到用户 1 到小组 2到部门
 		$gid = $this->input->post('gid'); //用户发起还是在小组发起
 		$content = $this->input->post('content');
-		
+
+		if($this->user['uid']==0){
+			$ret = array(
+				'ret' => 10001,
+				'msg' => '没有登录!'
+			);
+				$this->json($ret,101,'not login!');
+			return;	
+		}		
 
 		$cache = array();
 
@@ -974,6 +982,15 @@ class Cgi extends SZone_Controller {
 		$gid = (Int) $this->input->post('gid'); //用户发起还是在小组发起
 		$content = $this->input->post('content');
 
+		if($this->user['uid']==0){
+			$ret = array(
+				'ret' => 10001,
+				'msg' => '没有登录!'
+			);
+				$this->json($ret,101,'not login!');
+			return;	
+		}
+
 		$cache = array();
 
 		foreach($id as $k){
@@ -999,6 +1016,7 @@ class Cgi extends SZone_Controller {
 				}
 			}
 		}
+
 		if(count($key)>0){
 			$sql = 'insert into message (fuid,tuid,content,fid) value '.implode(',',$key);
 			$query = $this->db->query($sql);

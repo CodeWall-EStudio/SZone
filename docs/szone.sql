@@ -1,20 +1,18 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.7
+-- version 3.5.8.2
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013-12-22 17:00:08
--- 服务器版本: 5.6.14
--- PHP 版本: 5.3.27
+-- 生成日期: 2013 年 12 月 24 日 12:05
+-- 服务器版本: 5.1.71-log
+-- PHP 版本: 5.3.3
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
 -- 数据库: `szone`
 --
-CREATE DATABASE IF NOT EXISTS `szone` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `szone`;
 
 -- --------------------------------------------------------
 
@@ -34,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `board` (
   `ttype` int(8) NOT NULL COMMENT '类型 0 个人 1 小组 的文件',
   `gid` int(8) NOT NULL DEFAULT '0' COMMENT '分组id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -47,10 +45,10 @@ CREATE TABLE IF NOT EXISTS `files` (
   `id` int(8) NOT NULL AUTO_INCREMENT COMMENT '文件id',
   `path` varchar(120) NOT NULL COMMENT '文件存放路径',
   `md5` varchar(60) NOT NULL COMMENT '文件md5',
-  `del` int(2) unsigned zerofill NOT NULL COMMENT '文件是否被删除',
   `size` float unsigned zerofill NOT NULL COMMENT '文件大小',
   `type` tinyint(2) unsigned zerofill DEFAULT NULL COMMENT '文件类型',
   `mimes` varchar(60) NOT NULL,
+  `ref` int(8) NOT NULL DEFAULT '1' COMMENT '文件引用计数',
   PRIMARY KEY (`id`),
   UNIQUE KEY `md5` (`md5`),
   UNIQUE KEY `path` (`path`)
@@ -118,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `groupfolds` (
   `tid` int(8) DEFAULT '0' COMMENT '顶层id',
   `idpath` text COMMENT 'id路径',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
 
@@ -135,9 +133,9 @@ CREATE TABLE IF NOT EXISTS `groups` (
   `parent` int(8) NOT NULL COMMENT '父id 只对小组有效?',
   `create` int(8) DEFAULT NULL COMMENT '创建人id',
   `status` int(1) DEFAULT '0' COMMENT '是否为新申请',
-  `tag` int(2) DEFAULT '0' COMMENT '学科名',
-  `grade` int(1) DEFAULT '0' COMMENT '年级',
-  `pt` int(1) DEFAULT '0' COMMENT '是否为备课',
+  `pt` int(1) NOT NULL DEFAULT '0' COMMENT '是否为备课',
+  `tag` int(1) NOT NULL DEFAULT '0' COMMENT '学科',
+  `grade` int(1) NOT NULL DEFAULT '0' COMMENT '年级',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
@@ -172,9 +170,9 @@ CREATE TABLE IF NOT EXISTS `message` (
   `fid` int(8) DEFAULT NULL,
   `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '发送时间',
   `pid` int(8) unsigned zerofill DEFAULT NULL,
-  `flooked` tinyint(1) NOT NULL DEFAULT '0' COMMENT '发件人是否已经看过',
+  `flooked` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否已经看过',
   `saved` int(1) DEFAULT '0' COMMENT '是否已经保存',
-  `tlooked` tinyint(1) DEFAULT '0' COMMENT '收件人是否已经看过',
+  `tlooked` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
@@ -188,13 +186,11 @@ DROP TABLE IF EXISTS `prepare`;
 CREATE TABLE IF NOT EXISTS `prepare` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(120) NOT NULL COMMENT '备课目录名称',
-  `pid` int(8) NOT NULL DEFAULT '0' COMMENT '父id',
-  `tid` int(8) DEFAULT '0' COMMENT '顶级id',
-  `gid` int(8) NOT NULL COMMENT '分组id',
-  `idpath` varchar(600) DEFAULT NULL COMMENT '分组路径',
-  `uid` int(8) NOT NULL COMMENT '用户id',
+  `pid` int(8) NOT NULL COMMENT '年级id',
+  `sid` int(8) DEFAULT '0' COMMENT '单元id',
+  `gid` int(8) NOT NULL COMMENT '学期id',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -210,12 +206,8 @@ CREATE TABLE IF NOT EXISTS `preparefile` (
   `uid` int(8) NOT NULL COMMENT '用户id',
   `mark` varchar(255) DEFAULT NULL COMMENT '备注',
   `type` tinyint(2) DEFAULT '0' COMMENT '0 用户 1 小组 2部门',
-  `fdid` int(8) DEFAULT '0' COMMENT '目录id',
-  `name` varchar(120) NOT NULL COMMENT '文件名',
-  `ctime` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '时间',
-  `del` int(1) DEFAULT '0' COMMENT '删除状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -243,7 +235,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `name` varchar(40) NOT NULL COMMENT '用户名',
   `nick` varchar(60) DEFAULT NULL COMMENT '昵称',
   `auth` tinyint(2) unsigned zerofill NOT NULL COMMENT '权限 0x0 普通 0x1 小组管理员 0x2 部门管理员 0x4 管理员 0x8 系统管理员',
-  `size` float unsigned zerofill NOT NULL DEFAULT '003000000000' COMMENT '用户总空间',
+  `size` float unsigned zerofill NOT NULL DEFAULT '00000003e+09' COMMENT '用户总空间',
   `used` float unsigned zerofill NOT NULL DEFAULT '000000000000' COMMENT '用户已用空间',
   `pwd` varchar(60) DEFAULT NULL COMMENT '登录管理后台的密码',
   `access` varchar(64) NOT NULL COMMENT 'access token',
@@ -269,7 +261,7 @@ CREATE TABLE IF NOT EXISTS `usercollection` (
   `tid` int(8) DEFAULT '0' COMMENT '收藏他人或者小组id',
   `type` int(1) DEFAULT '0' COMMENT '0 自己 1他人 2 小组',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- --------------------------------------------------------
 
@@ -286,11 +278,11 @@ CREATE TABLE IF NOT EXISTS `userfile` (
   `uid` int(8) NOT NULL COMMENT '用户id',
   `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `content` varchar(255) DEFAULT NULL COMMENT '文件说明',
-  `del` int(2) unsigned zerofill DEFAULT NULL COMMENT '是否被逻辑删除',
   `tag` varchar(200) DEFAULT NULL COMMENT '审核评语',
   `rtag` int(1) DEFAULT NULL COMMENT '0通过 1不通过',
   `ttime` int(12) DEFAULT '0' COMMENT '审核时间',
-  `mark` varchar(200) DEFAULT NULL COMMENT '评论',
+  `mark` varchar(200) NOT NULL COMMENT '评论',
+  `del` int(2) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
@@ -312,6 +304,6 @@ CREATE TABLE IF NOT EXISTS `userfolds` (
   `type` int(2) unsigned zerofill NOT NULL COMMENT '预留扩展 是否隐藏的类型?',
   `tid` int(8) DEFAULT '0' COMMENT '顶层id',
   `idpath` text COMMENT '父id list',
-  `prid` int(8) DEFAULT '0' COMMENT '备课目录id',
+  `prid` int(8) NOT NULL DEFAULT '0' COMMENT '备课id',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;

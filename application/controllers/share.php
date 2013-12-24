@@ -11,14 +11,14 @@
 			$il = explode(',',$id);
 			$kl = array();
 			foreach($il as $k){
-				array_push($kl,' id='.$k);
+				array_push($kl,$k);
 			}
 			$str = implode(' or ',$kl);
 
 			if($gid){
-				$sql = 'select fid,fname as name from groupfile where '.$str;
+				$sql = 'select fid,fname as name from groupfile where gid='.$gid.' and '.$str;
 			}else{
-				$sql = 'select fid,name from userfile where '.$str;	
+				$sql = 'select fid,name from userfile where uid='.$this->user['uid'].' and id in ('.implode(',',$kl).')';
 			}
 
 			$query = $this->db->query($sql);
