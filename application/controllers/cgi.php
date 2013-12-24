@@ -1719,6 +1719,8 @@ class Cgi extends SZone_Controller {
 						);
 
 						$str = $this->db->insert_string('userfile',$data);
+
+
 						$query = $this->db->query($str);
 						if($this->db->insert_id()){
 							$ret = array(
@@ -1984,14 +1986,22 @@ class Cgi extends SZone_Controller {
 	public function copymsg_to_my(){
 		$id = (int) $this->input->post('id');
 
-		//$sql = 'SELECT a.id,a.fuid as uid,a.content,a.createtime,a.fid,b.name AS uname,c.name AS fname,d.path,d.size,d.type FROM message a LEFT JOIN `user` b ON a.fuid = b.`id` LEFT JOIN `userfile` c ON c.fid = a.fid		LEFT JOIN `files` d ON d.id = a.fid	WHERE a.tuid = '.$this->user['uid'];		
-		//$sql = 'select a.fid from message a,userfile b where a.id='.$id.' and a.fuid = b.id';
-		$sql = 'select a.fid,b.name from message a left join userfile b ON a.fuid = b.uid where a.id='.$id;
+		$sql = 'select fid,fuid from message where id='.$id;
 		$query = $this->db->query($sql);
 		$row = $query->row();
 
-		$sql = 'select id from userfile where uid='.$this->user['uid'].' and fid='.$row->fid;
+		$fuid = $row->fuid;
+		$fid = $row->fid;
+
+
+		$sql = 'select name from userfile where uid='.$fuid.' and fid='.$fid;
 		$query = $this->db->query($sql);
+		$row = $query->row();
+		$fname = $row->name;
+
+		$sql = 'select fid,name from userfile where uid='.$this->user['uid'].' and fid='.$fid;
+		$query = $this->db->query($sql);
+		
 
 		if($this->db->affected_rows() > 0){
 			$ret = array(
@@ -2000,11 +2010,12 @@ class Cgi extends SZone_Controller {
 			$this->json($ret,100,'文件已经存在!');
 		}else{
 			$data = array(
-				'fid' => (int) $row->fid,
-				'name' => $row->name,
+				'fid' => (int) $fid,
+				'name' => $fname,
 				'uid' => (int) $this->user['uid'],
 				'del' => 0,
-				'fdid' => 0			
+				'fdid' => 0,
+				'mark' => ''			
 			);
 			$sql = $this->db->insert_string('userfile',$data);
 			$query = $this->db->query($sql);

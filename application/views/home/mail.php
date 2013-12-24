@@ -121,7 +121,7 @@
 						<span title="<?=$row['content']?>"><?=$row['content']?></span>
 					</dt>
 					<dd>
-						<a id="savefile<?=$row['id']?>" data-save data-id="<?=$row['id']?>" target="_blank">保存</a>
+						<?if($m):?><a id="savefile<?=$row['id']?>" data-save data-id="<?=$row['id']?>" target="_blank">保存</a><?endif?>
 						<a href="/cgi/downfile?fid=<?=$row['fid']?>" target="_blank">下载</a>
 					</dd>
 				</dl>

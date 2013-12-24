@@ -30,7 +30,7 @@
 					));
 			}			
 
-			$sql = 'select id,name from user where id !='.(int) $this->user['id'];
+			$sql = 'select id,name from user where id !='.(int) $this->user['uid'];
 			$query = $this->db->query($sql);
 
 			$ul = array();
