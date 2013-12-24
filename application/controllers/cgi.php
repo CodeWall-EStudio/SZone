@@ -1068,19 +1068,30 @@ class Cgi extends SZone_Controller {
 			$tablename = 'groupfile';
 			$ft = 'fname';
 		}
-		$sql = 'select a.path,b.'.$ft.' as name from files a,'.$tablename.' b where a.id = b.fid and a.id='.(int) $id;
+		$sql = 'select a.path,a.mimes,b.'.$ft.' as name from files a,'.$tablename.' b where ';
+		if($gid){
+			$sql .= ' b.gid='.$gid;
+		}else{
+			$sql .= ' b.uid='.$this->user['uid'];
+		}
+		$sql .= ' and a.id = b.fid and a.id='.(int) $id;
 		$query = $this->db->query($sql);
+	
 
 		if ($query->num_rows() > 0)
 		{
 		   $row = $query->row(); 
 		   $path = $row->path;
 
+		   $ext = '.'.get_ext_type($row->mimes);
+
 		   $fname = explode('.',$path);
 		   $fname = '.'.$fname[count($fname)-1];
 		   $name = $row->name;
-		   $name .=$fname;
-
+		   $name .=$ext;
+		   //fname;
+		   //echo $name;
+		   //return;
 		   //$mime = get_mime_by_extension($path);
 			$data = file_get_contents($path); 
 			force_download($name, $data); 

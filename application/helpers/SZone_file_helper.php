@@ -45,6 +45,120 @@ if ( ! function_exists('format_size'))
 
 }
 
+
+if ( ! function_exists('get_ext_type')){
+    function get_ext_type($mimes){
+        echo $mimes;
+        switch($mimes)
+        {        
+            case 'application/x-gzip':
+                return 'gz';
+            case 'application/x-bzip2':
+                return 'bz';
+            case 'application/zip':
+                return 'zip';
+            case 'application/x-rar':
+                return 'rar';
+            case 'application/x-7z-compressed':
+                return '7z';
+            // documents
+            case 'application/postscript':
+                return 'ai';
+            case 'application/vnd.ms-word':
+            case 'application/msword':
+                return 'doc';
+            case 'application/vnd.ms-excel':
+                return 'xls';
+            case 'application/vnd.ms-powerpoint':
+                return 'ppt';
+            case 'application/pdf':
+                return 'pdf';
+            case 'application/xml':
+                return 'xml';
+            case 'application/vnd.oasis.opendocument.text':
+                return 'odt';
+            case 'application/x-shockwave-flash':
+                return 2;
+            // texts
+            case 'text/plain':
+                return 'txt';
+            case 'text/x-php':
+                return 'php';
+            case 'text/html':
+                return 'html';
+            case 'text/javascript':
+                return 'js';
+            case 'text/css':
+                return 'css';
+            case 'text/rtf':
+                return 'rtf';
+            case 'text/rtfd':
+                return 'rtfd';
+            case 'text/x-python':
+                return 'py';
+            case 'text/x-java-source':
+                return 'java';
+            case 'text/x-ruby':
+                return 'rb';
+            case 'text/x-shellscript':
+                return 'sh';
+            case 'text/x-perl':
+                return 'pl';
+            case 'text/x-sql':
+                return 'sql';
+                // images
+            case 'image/x-ms-bmp':
+                return 'bmp';
+            case 'image/jpeg':
+                return 'jpg';
+            case 'image/gif':
+                return 'gif';
+            case 'image/png':
+                return 'png';
+            case 'image/tiff':
+                return 'tif';
+            case 'image/x-targa':
+                return 'tga';
+            case 'image/vnd.adobe.photoshop':
+                return 'psd';
+                //audio
+            case 'audio/mpeg':
+                return 'mp3';
+            case 'audio/midi':
+                return 'mid';
+            case 'audio/ogg':
+                return 'ogg';
+            case 'audio/mp4':
+                return 'mp4a';
+            case 'audio/wav':
+                return 'wav';
+            case 'audio/x-ms-wma':
+                return 'wma';
+                // video
+            case 'video/x-msvideo':
+                return 'avi';
+            case 'video/x-dv':
+                return 'dv';
+            case 'video/mp4':
+                return 'mp4';
+            case 'video/mpeg':
+                return 'mpeg';
+            case 'video/quicktime':
+                return 'mov';
+            case 'video/x-ms-wmv':
+                return 'wm';
+            case 'video/x-flv':
+                return 'flv';
+            case 'video/x-matroska':
+                return 'mkv';
+            case 'application/octet-stream':
+                return 'exe';
+            default:
+                return '';        
+        }
+    }
+}
+
 if ( ! function_exists('format_type'))
 {
     function format_type($mimes)

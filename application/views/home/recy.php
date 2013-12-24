@@ -108,7 +108,7 @@
 	</table>	
 	<div class="page-zone">
 		<?
-			$page['url'] = '/recy?type='.$type.'&key='.$key;
+			$page['url'] = '/home/recy?type='.$type.'&key='.$key.'&';
 			create_page($page);
 		?>
 	</div>	
