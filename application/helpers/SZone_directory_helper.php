@@ -103,6 +103,7 @@ if ( ! function_exists('directory_check'))
                 $error = 'upload_not_writable';
                 return FALSE;
             };
+            chmod($upload_dir,DIR_WRITE_MODE);
         }
 
         //echo implode('|',$allowed);
@@ -113,6 +114,7 @@ if ( ! function_exists('directory_check'))
                 $error = 'upload_not_writable';
                 return FALSE;
             };
+            chmod($dirname,DIR_WRITE_MODE);
         }
 
         $dirname = $dirname.substr($md5,2,2).'/';
@@ -122,6 +124,7 @@ if ( ! function_exists('directory_check'))
                 $error = 'upload_not_writable';
                 return FALSE;
             };
+            chmod($dirname,DIR_WRITE_MODE);
         }
 
         return $dirname;
