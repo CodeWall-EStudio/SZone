@@ -1083,12 +1083,12 @@ class Cgi extends SZone_Controller {
 		   $row = $query->row(); 
 		   $path = $row->path;
 
-		   $ext = '.'.get_ext_type($row->mimes);
+		   //$ext = '.'.get_ext_type($row->mimes);
 
 		   $fname = explode('.',$path);
 		   $fname = '.'.$fname[count($fname)-1];
 		   $name = $row->name;
-		   $name .=$ext;
+		   $name .=$fname;
 		   //fname;
 		   //echo $name;
 		   //return;

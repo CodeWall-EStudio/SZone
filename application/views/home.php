@@ -138,8 +138,8 @@
 							<?if($on==1 && $od ==1):?><i class="ad"></i><?elseif($on==1 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
 							</a>	
 
-							<a data-tag="folds">选择所有文件夹</a>
-							<a data-tag="files">选择所有文件</a>
+							<a data-tag="folds">选择本页所有文件夹</a>
+							<a data-tag="files">选择本页所有文件</a>
 						</th>
 						<th width="90">
 						<a href="/home?fid=<?=$thisfold['id']?>&on=2&od=<?if($on==2 && $od ==1):?>2<?else:?>1<?endif?>">
@@ -224,7 +224,7 @@
 												<li><a cmd="toschool" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到学校空间</a></li>					
 											</ul>
 											</span>										
-											<span><a href="/cgi/downfile?fid=<?=$item['fid']?>">下载</a></span>
+											<span><a href="/cgi/downfile?fid=<?=$item['fid']?>" data-id="1">下载</a></span>
 										</dd>
 									</dl>
 								</td>

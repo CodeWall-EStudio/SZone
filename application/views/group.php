@@ -161,8 +161,8 @@
 							<span>文件名</span>  
 							<?if($on==3 && $od ==1):?><i class="ad"></i><?elseif($on==3 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
 							</a>
-							<a data-tag="folds">选择所有文件夹</a>
-							<a data-tag="files">选择所有文件</a>							
+							<a data-tag="folds">选择本页所有文件夹</a>
+							<a data-tag="files">选择本页所有文件</a>							
 						</th>
 						<th width="60">评论</th>
 						<th width="60">作者</th>
@@ -258,7 +258,7 @@
 												<a cmd="copy" data-fid="<?=$item['fid']?>">保存</a>
 											</span>	
 											<?endif?>								
-											<span><a href="/cgi/downfile?gid=<?=$gid?>&fid=<?=$item['fid']?>">下载</a></span>
+											<span><a href="/cgi/downfile?gid=<?=$gid?>&fid=<?=$item['fid']?>"  data-id="1">下载</a></span>
 										</dd>
 									</dl>
 								</td>

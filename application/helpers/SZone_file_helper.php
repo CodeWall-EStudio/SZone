@@ -181,6 +181,7 @@ if ( ! function_exists('format_type'))
             case 'application/xml':
             case 'application/vnd.oasis.opendocument.text':
             case 'application/x-shockwave-flash':
+            case 'application/vnd.openxmlformats-officedocument.wordprocessing':
                 return 2;
             // texts
             case 'text/plain':
