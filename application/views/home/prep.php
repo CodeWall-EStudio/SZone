@@ -146,7 +146,7 @@
 					<?foreach($fold as $item):?>
 						<?if($item['pid'] == $fid):?>
 						<tr data-id="<?=$item['id']?>">
-							<td><input type="checkbox" name="file" class="fdclick liclick" value="<?=$item['id']?>" data-type="fold" /></td>
+							<td width="30"><input type="checkbox" name="file" class="fdclick liclick" value="<?=$item['id']?>" data-type="fold" /></td>
 							<td>
 								<a href="/home/prepare?prid=<?=$prid?>&fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"><i class="fold"></i></a>
 								
@@ -172,7 +172,7 @@
 							</td>
 							<td>&nbsp;</td>
 							<td>&nbsp;</td>							
-							<td><span><?=$item['time']?></span> </td>
+							<td width="90"><span><?=$item['time']?></span> </td>
 						</tr>
 						<?endif?>
 						<?endforeach?>

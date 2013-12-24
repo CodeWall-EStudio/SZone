@@ -254,6 +254,7 @@
     		if(d.code == 0){
     			$('#savefile'+id).remove();
     			alert(d.data.msg);
+    			// top.location.reload();
     		}else{
     			alert(d.data.msg);
     		}

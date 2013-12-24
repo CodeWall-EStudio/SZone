@@ -570,13 +570,16 @@ class Group extends SZone_Controller {
 					'uname' => $row->uname
 				);
 			}
+		}
 
-
+		if($fdid){
 			$sql = 'select a.id,a.name,a.fid,a.mark,b.size,b.type from userfile a,files b where a.fdid='.$fdid.' and a.fid = b.id';
 			if($key && $key != '' && $key != '搜索文件'){
 				$sql .= ' and a.name like "%'.$key.'%"';
 			}
 			$query = $this->db->query($sql);
+
+			echo $sql;
 
 			foreach($query->result() as $row){
 				$flist[$row->id] = array(
@@ -587,8 +590,8 @@ class Group extends SZone_Controller {
 					'size' => format_size($row->size),
 					'type' => $row->type
 				);
-			}
-		}
+			}	
+		}	
 
 		$sql = 'select a.id,a.name from user a,groupuser b where a.id = b.uid  ';
 		// echo json_encode($plist);

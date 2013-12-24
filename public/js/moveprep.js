@@ -21,6 +21,7 @@
 		$.post('/cgi/add_prep',data,function(d){
 			if(d.code == 0){
 				top.hideShare();
+				top.location.reload();
 			}else{
 				//top.hideShare();
 				top.alert(d.data.msg);

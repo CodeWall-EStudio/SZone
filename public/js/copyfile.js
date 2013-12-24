@@ -22,6 +22,7 @@
 		$.post('/cgi/copy_to_fold',data,function(d){
 			if(d.code == 0){
 				top.hideShare();
+				top.location.reload();
 			}else{
 				top.hideShare();
 				top.alert(d.data.msg);
