@@ -16,11 +16,11 @@
 			$str = implode(' or ',$kl);
 
 			if($gid){
-				$sql = 'select fid,fname as name from groupfile where gid='.$gid.' and '.$str;
+				$sql = 'select fid,fname as name from groupfile where gid='.$gid.' and id in ('.implode(',',$kl).')';
 			}else{
 				$sql = 'select fid,name from userfile where uid='.$this->user['uid'].' and id in ('.implode(',',$kl).')';
 			}
-
+			
 			$query = $this->db->query($sql);
 			$nl = array();
 			foreach($query->result() as $row){
