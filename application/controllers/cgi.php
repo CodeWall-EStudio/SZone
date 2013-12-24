@@ -1088,10 +1088,10 @@ class Cgi extends SZone_Controller {
 		   $fname = explode('.',$path);
 		   $fname = '.'.$fname[count($fname)-1];
 		   $name = $row->name;
-		   $name .=$fname;
+		   //$name .=$fname;
 		   //fname;
-		   //echo $name;
-		   //return;
+		   echo $name;
+		   return;
 		   //$mime = get_mime_by_extension($path);
 			$data = file_get_contents($path); 
 			force_download($name, $data); 
