@@ -174,9 +174,16 @@ if ( ! function_exists('format_type'))
                 return 6;
             // documents
             case 'application/postscript':
-            case 'application/vnd.ms-word':
+            case 'application/vnd.msword':
             case 'application/vnd.ms-excel':
             case 'application/vnd.ms-powerpoint':
+            case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+            case 'application/vnd.openxmlformats-officedocument.wordprocessingml.template':
+            case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
+            case 'application/vnd.openxmlformats-officedocument.spreadsheetml.template':
+            case 'application/vnd.openxmlformats-officedocument.presentationml.presentation':
+            case 'application/vnd.openxmlformats-officedocument.presentationml.template':
+            case 'application/vnd.openxmlformats-officedocument.presentationml.slideshow':
             case 'application/pdf':
             case 'application/xml':
             case 'application/vnd.oasis.opendocument.text':

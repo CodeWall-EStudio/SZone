@@ -142,7 +142,18 @@ class Upload extends SZone_Controller {
             ));
         }
 
-        $docs = array('application/vnd.ms-word','application/vnd.ms-excel','application/vnd.ms-powerpoint','application/msword');
+        $docs = array(
+            'application/msword',
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.template',
+            'application/vnd.ms-excel',
+            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            'application/vnd.openxmlformats-officedocument.spreadsheetml.template',
+            'application/vnd.ms-powerpoint',
+            'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+            'application/vnd.openxmlformats-officedocument.presentationml.template',
+            'application/vnd.openxmlformats-officedocument.presentationml.slideshow'
+        );
         $pdfs = array('application/pdf');
 
         //判断是否为文档，如果是则加入消息队列
