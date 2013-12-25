@@ -1157,7 +1157,14 @@ class Cgi extends SZone_Controller {
 		   //$name .=$fname;
 		   //fname;
 		   //$mime = get_mime_by_extension($path);
-			$data = file_get_contents($path); 
+
+			$handle = fopen ($path, "r");
+			$data = "";
+			while (!feof($handle)) {
+			  $data .= fread($handle, 8192);
+			}
+			fclose($handle);		   
+			//$data = file_get_contents($path); 
 			force_download($name, $data); 
 
 		}else{
