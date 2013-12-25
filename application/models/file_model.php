@@ -34,6 +34,19 @@ class File_model extends CI_Model {
         return $result;
     }
 
+    function get_by_id($id)
+    {
+        $result = array();
+        $query = $this->db->get_where($this->table, array('id' => $id));
+        if ($query->num_rows() > 0)
+        {
+            $result = $query->row_array();
+            $result['size'] = intval($result['size']);
+        }
+        return $result;
+    }
+
+
     function get_by_uid($fid, $uid)
     {
         $result = array();
