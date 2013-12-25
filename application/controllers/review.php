@@ -27,6 +27,9 @@ class Review extends SZone_Controller {
 		// }
 		// echo $sql;
 
+		//$docs = array('application/vnd.ms-word','application/vnd.ms-excel','application/vnd.ms-powerpoint','application/msword');
+
+
 		$query = $this->db->query($sql);
 		$finfo = 0;
 		if($this->db->affected_rows()>0){
@@ -41,6 +44,7 @@ class Review extends SZone_Controller {
 				'type' => (int) $row->type,
 				'mimes' => $row->mimes
 			);
+
 			if($finfo['type']==2 && $finfo['mimes'] == 'text/plain'){
 				$txt =  file_get_contents($finfo['path']);
 				$order = array("\r\n", "\n", "\r");
@@ -75,5 +79,9 @@ class Review extends SZone_Controller {
 		$data['next'] = $next;
 
 		$this->load->view('review',$data);
+	}
+
+	public function reviewfile(){
+
 	}
 }

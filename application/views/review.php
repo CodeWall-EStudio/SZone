@@ -34,6 +34,10 @@
   		border:1px solid #000;
   		cursor:pointer;
   	}
+  	.flexpaper_viewer{
+  		width:500px;
+  		margin:0 auto;
+  	}
   </style>
   <script>
     
@@ -50,12 +54,9 @@
 			<?if($finfo['type'] == 1):?>
 				<img id="reviewImg" src="/cgi/getfile?fid=<?=$finfo['fid']?>" onload="change(this)" />
 			<?elseif($finfo['type']==2):?>
-				<?if(isset($finfo['text'])):?>
-					<p class="text"><?=htmlspecialchars($finfo['text'])?></p>
-				<?else:?>
-				 	其他文本
-				 	
-				<?endif?>
+				<div id="documentViewer" class="flexpaper_viewer" style="width:770px;height:500px">
+					
+				</div>
 			<?elseif($finfo['type']==3):?>
 				<div class="playerZone">
 				  <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"
@@ -100,43 +101,79 @@
 		<?endif?>				
 	</div>	
 <?if($finfo['type']==1):?>
-<script type="text/javascript" src="/js/lib/jq.js" charset="utf-8"></script>	
-<script type="text/javascript" src="/js/lib/jq.rotate.js" charset="utf-8"></script>	
-<script>
-	var num = 0;
-	$('.to-left').bind('click',function(){
-		num++;
-		$('#reviewImg').rotate({                          
-					angle: (num-1)*90,
-                    animateTo: num*90,
-				});
-	});
-	$('.to-right').bind('click',function(){
-		num--;
-		$('#reviewImg').rotate({
-			angle: 0-(num+1)*90,
-            animateTo: 0-num*90,
+	<script type="text/javascript" src="/js/lib/jq.js" charset="utf-8"></script>	
+	<script type="text/javascript" src="/js/lib/jq.rotate.js" charset="utf-8"></script>	
+	<script>
+		var num = 0;
+		$('.to-left').bind('click',function(){
+			num++;
+			$('#reviewImg').rotate({                          
+						angle: (num-1)*90,
+	                    animateTo: num*90,
+					});
 		});
-	});	
-	$('.zoom-in').bind('click',function(){
-		$('#reviewImg').css('width',function(i,v){
-			var nv = parseInt(v,10);
-			return nv*0.8;
+		$('.to-right').bind('click',function(){
+			num--;
+			$('#reviewImg').rotate({
+				angle: 0-(num+1)*90,
+	            animateTo: 0-num*90,
+			});
 		});	
-	});
-	$('.zoom-out').bind('click',function(){
-		$('#reviewImg').css('width',function(i,v){
-			var nv = parseInt(v,10);
-			return nv*1.2;
+		$('.zoom-in').bind('click',function(){
+			$('#reviewImg').css('width',function(i,v){
+				var nv = parseInt(v,10);
+				return nv*0.8;
+			});	
+		});
+		$('.zoom-out').bind('click',function(){
+			$('#reviewImg').css('width',function(i,v){
+				var nv = parseInt(v,10);
+				return nv*1.2;
+			});	
 		});	
-	});	
-</script>
+	</script>
+<?endif?>
+<?if($finfo['type']==2):?>
+    <script type="text/javascript" src="/js/lib/jq.js" charset="utf-8"></script>	
+    <script type="text/javascript" src="/js/lib/flex/flexpaper.js"></script>
+    <script type="text/javascript" src="/js/lib/flex/flexpaper_handlers.js"></script>
+    <script>
+    $('#documentViewer').FlexPaperViewer(
+            { config : {
+
+                SWFFile : '/download?id=<?=$finfo['fid']?>&rv=1',
+                jsDirectory : '/js/lib/flex/',
+                Scale : 0.6,
+                ZoomTransition : 'easeOut',
+                ZoomTime : 0.5,
+                ZoomInterval : 0.2,
+                FitPageOnLoad : true,
+                FitWidthOnLoad : false,
+                FullScreenAsMaxWindow : false,
+                ProgressiveLoading : false,
+                MinZoomSize : 0.2,
+                MaxZoomSize : 5,
+                SearchMatchAll : false,
+                InitViewMode : 'Portrait',
+                RenderingOrder : 'flash',
+                StartAtPage : '',
+
+                ViewModeToolsVisible : true,
+                ZoomToolsVisible : true,
+                NavToolsVisible : true,
+                CursorToolsVisible : true,
+                SearchToolsVisible : true,
+                WMode : 'window',
+                localeChain: 'en_US'
+            }}
+    );
+    </script>
 <?endif?>
 <?if($finfo['type']==3):?>
-<script type="text/javascript" src="/js/player/video.js" charset="utf-8"></script>
-<script type="text/javascript">
-	videojs.options.flash.swf = "video-js.swf";
-</script>
+	<script type="text/javascript" src="/js/player/video.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		videojs.options.flash.swf = "video-js.swf";
+	</script>
 <?endif?>
 </body>
 </html>

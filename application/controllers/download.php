@@ -47,6 +47,7 @@ class Download extends CI_Controller {
 
         $gid = $this->input->get('gid');
         $mid = $this->input->get('mid');
+        $review = $this->input->get('rv');
 
         if (empty($gid))
         {
@@ -83,12 +84,23 @@ class Download extends CI_Controller {
             $auth['name'] = $auth['fname'];
         }
 
+        $path = '/file/'.substr($file['md5'],0,2).'/'.substr($file['md5'],2,2).'/'.$file['md5'];
+        $mimes = $file['mimes'];
+        $size = $file['size'];
+        if($review){
+            $path .= '.swf';
+            $mimes = 'application/x-shockwave-flash';
+            $size = filesize($file['path'].'.swf');
+        }
 
-        header('Content-type: '.$file['mimes']);
+        header('Content-type: '.$mimes);
         header('Content-Disposition: attachment; filename='.$auth['name']);
-        header('Content-Length: '.$file['size']);
-        header('X-Accel-Redirect: /file/'.substr($file['md5'],0,2).'/'.substr($file['md5'],2,2).'/'.$file['md5']);
-
+        header('Content-Length: '.$size);
+        header('X-Accel-Redirect: '.$path);
+        // header('Content-type: '.$file['mimes']);
+        // header('Content-Disposition: attachment; filename='.$auth['name']);
+        // header('Content-Length: '.$file['size']);
+        // header('X-Accel-Redirect: /file/'.substr($file['md5'],0,2).'/'.substr($file['md5'],2,2).'/'.$file['md5']);
     }
 
     public function batch()

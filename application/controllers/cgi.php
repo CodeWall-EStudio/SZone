@@ -1151,7 +1151,12 @@ class Cgi extends SZone_Controller {
 		   //$name .=$fname;
 		   //fname;
 		   //$mime = get_mime_by_extension($path);
-			
+		 //   echo filesize($path.'.pdf');
+			// $path .= '.swf';
+
+			// echo $path;
+			// echo filesize($path);
+			// return;
 			$handle = fopen ($path, "r");
 			$data = "";
 			while (!feof($handle)) {
@@ -1183,7 +1188,6 @@ class Cgi extends SZone_Controller {
 		}
 		$sql .= ' and a.id = b.fid and a.id='.(int) $id;
 		$query = $this->db->query($sql);
-	
 
 		if ($query->num_rows() > 0)
 		{
