@@ -65,7 +65,7 @@
 						<a class="section-tit-a-second"><?= $thisfold['name'] ?></a>
 						<a class="section-tit-a-can" href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>">返回上级</a>
 					<?else:?>
-						<a class="section-tit-a-end">返回上级</a>
+						
 					<?endif?>					
 				</div>
 				<ul class="act-zone">
@@ -148,10 +148,10 @@
 						<tr data-id="<?=$item['id']?>">
 							<td width="30"><input type="checkbox" name="file" class="fdclick liclick" value="<?=$item['id']?>" data-type="fold" /></td>
 							<td>
-								<a href="/home/prepare?prid=<?=$prid?>&fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"><i class="fold"></i></a>
+								<a href="/home/prepare?prid=<?=$prid?>&fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>" data-id="1"><i class="fold"></i></a>
 								
 								<dl>
-									<dt><a href="/home/prepare?prid=<?=$prid?>&fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"><?=$item['name']?></a>
+									<dt><a href="/home/prepare?prid=<?=$prid?>&fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>" data-id="1"><?=$item['name']?></a>
 										<span cmd="edit" data-id="<?=$item['id']?>">
 											<?if($item['mark']==''):?>
 												编辑备注

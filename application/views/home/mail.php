@@ -121,8 +121,14 @@
 						<span title="<?=$row['content']?>"><?=$row['content']?></span>
 					</dt>
 					<dd>
-						<?if($m):?><a id="savefile<?=$row['id']?>" data-save data-id="<?=$row['id']?>" target="_blank">保存</a><?endif?>
-						<a href="/download?id=<?=$row['fid']?>" target="_blank">下载</a>
+						<?if($m):?>
+
+							<?if(!$row['save']):?><a id="savefile<?=$row['id']?>" data-save data-id="<?=$row['id']?>" target="_blank">保存</a><?endif?>
+							<a href="/download?id=<?=$row['fid']?>&mid=<?=$row['uid']?>" target="_blank">下载</a>
+						<?else:?>
+							<a href="/download?id=<?=$row['fid']?>" target="_blank">下载</a>
+						<?endif?>
+						
 					</dd>
 				</dl>
 			</td>

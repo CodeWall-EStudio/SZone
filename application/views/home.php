@@ -58,7 +58,7 @@
 					<?endif?>	
 					<?if($key==''):?>
 						<a  href="/home" style="z-index:20">个人文件</a>
-						<?if($fid):?>					
+						<?if($fid && $thisfold['pid']):?>					
 								<?if(count($thisfold['idpath'])>1):?>
 									<a style="z-index:19">......</a>
 								<?endif?>					
@@ -197,7 +197,7 @@
 					<?if(count($file)>0):?>
 					<?foreach($file as $item):?>
 						<tr class="file" data-id="<?=$item['id']?>">
-								<td><input type="checkbox" name="file" class="fclick liclick" value="<?=$item['id']?>" data-type="file" /></td>
+								<td><input type="checkbox" name="file" class="fclick liclick" value="<?=$item['id']?>"  data-fid="<?=$item['fid']?>" data-type="file" /></td>
 								<td>
 									<a class="file-name" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>">
 									<?if($item['type'] < 7):?>

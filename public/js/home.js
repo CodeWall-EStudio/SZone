@@ -221,9 +221,20 @@
 	}
 
     function downFiles(){
+    	var ids = [];
 		$('#fileList .fclick:checked').each(function(){
-			window.open('/cgi/downfile?fid='+files[$(this).val()].fid);
+			var fid = $(this).attr('data-fid');
+			ids.push(fid);
+			//window.open('/cgi/downfile?fid='+files[$(this).val()].fid);
 		});	
+		if(ids.length>1){
+			$.post('/download',{ids:ids},function(e){
+			});
+		}else{
+			if(ids[0]){
+				window.open('/download?id='+ids[0]);	
+			}
+		}
     }
 
 	var collFile = function(id,target){
