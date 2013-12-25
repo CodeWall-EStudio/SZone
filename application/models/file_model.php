@@ -46,6 +46,18 @@ class File_model extends CI_Model {
         return $result;
     }
 
+    function get_by_ids($ids)
+    {
+        $result = array();
+        $this->db->where_in('id', $ids);
+        $this->db->order_by('id', "desc");
+        $query = $this->db->get($this->table);
+        if ($query->num_rows() == count($ids))
+        {
+            $result = $query->result_array();
+        }
+        return $result;
+    }
 
     function get_by_uid($fid, $uid)
     {
@@ -58,6 +70,20 @@ class File_model extends CI_Model {
         return $result;
     }
 
+    function get_by_uid_ids($ids, $uid)
+    {
+        $result = array();
+        $this->db->where('uid', $uid);
+        $this->db->where_in('fid', $ids);
+        $this->db->order_by("fid", "desc");
+        $query = $this->db->get($this->utable);
+        if ($query->num_rows() == count($ids))
+        {
+            $result = $query->result_array();
+        }
+        return $result;
+    }
+
     function get_by_gid($fid, $gid)
     {
         $result = array();
@@ -65,6 +91,20 @@ class File_model extends CI_Model {
         if ($query->num_rows() > 0)
         {
             $result = $query->row_array();
+        }
+        return $result;
+    }
+
+    function get_by_gid_ids($ids, $gid)
+    {
+        $result = array();
+        $this->db->where('gid', $gid);
+        $this->db->where_in('fid', $ids);
+        $this->db->order_by("fid", "desc");
+        $query = $this->db->get($this->gtable);
+        if ($query->num_rows() == count($ids))
+        {
+            $result = $query->result_array();
         }
         return $result;
     }
