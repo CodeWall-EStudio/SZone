@@ -95,4 +95,29 @@ class Fold_model extends CI_Model {
     	);
     	return $fold;
     }
+
+    function get_child_prep($pid,$uid){
+    	$this->db->where('pid',$pid);
+    	$this->db->where('uid',$uid);
+    	$query = $this->db->get($this->utable);
+    	return  $query->num_rows();
+    }
+
+    function get_prep_fold($pid,$uid){
+    	$this->db->where('prid',$pid);
+    	$this->db->where('pid',0);
+    	$this->db->where('uid',$uid);
+    	$query = $this->db->get($this->utable);
+    	$row = $query->row();
+    	if($row){
+	    	$id = $row->id;
+	    	$child = $this->get_child_prep($id,$uid);
+	    	return array(
+	    			'id' => $id,
+	    			'child' => $child
+	    		);
+    	}else{
+    		return false;
+    	}
+    }
 }
