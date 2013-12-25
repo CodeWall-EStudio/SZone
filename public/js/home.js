@@ -228,7 +228,7 @@
 			//window.open('/cgi/downfile?fid='+files[$(this).val()].fid);
 		});	
 		if(ids.length>1){
-			$.post('/download',{ids:ids},function(e){
+			$.post('/download/batch',{ids:ids},function(e){
 			});
 		}else{
 			if(ids[0]){

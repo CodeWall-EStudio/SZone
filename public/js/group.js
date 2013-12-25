@@ -102,7 +102,7 @@
 			//window.open('/cgi/downfile?fid='+files[$(this).val()].fid);
 		});	
 		if(ids.length>1){
-			$.post('/download',{ids:ids,gid:ginfo.id},function(e){
+			$.post('/download/batch',{ids:ids,gid:ginfo.id},function(e){
 			});
 		}else{
 			if(ids[0]){
