@@ -258,7 +258,7 @@
 												<a cmd="copy" data-fid="<?=$item['fid']?>">保存</a>
 											</span>	
 											<?endif?>								
-											<span><a href="/cgi/downfile?gid=<?=$gid?>&fid=<?=$item['fid']?>"  data-id="1">下载</a></span>
+											<span><a href="/download?id=<?=$item['fid']?>&gid=<?=$gid?>"  data-id="1">下载</a></span>
 										</dd>
 									</dl>
 								</td>

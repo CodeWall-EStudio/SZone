@@ -107,7 +107,7 @@
 						<dt><a data-review data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>"><?=$row['name']?></a></dt>
 						<dd>
 							<a data-review data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>" >预览</a>
-							<a href="/cgi/downfile?fid=<?=$row['fid']?>" target="_blank">下载</a>
+							<a href="/download?id=<?=$row['fid']?>" target="_blank">下载</a>
 							<a data-uncoll data-id="<?=$row['fid']?>">取消收藏</a>
 						</dd>
 					</dl>
