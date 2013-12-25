@@ -58,7 +58,8 @@
 					<?endif?>	
 					<?if($key==''):?>
 						<a  href="/home" style="z-index:20">个人文件</a>
-						<?if($fid && $thisfold['pid']):?>					
+						
+						<?if($fid ):?>					
 								<?if(count($thisfold['idpath'])>1):?>
 									<a style="z-index:19">......</a>
 								<?endif?>					

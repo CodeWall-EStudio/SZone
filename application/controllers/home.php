@@ -33,6 +33,12 @@ class Home extends SZone_Controller {
 		$od = (int) $this->input->get('od');
 		$on = $this->input->get('on');
 
+		if(!$od){
+			$od = 2;
+		}
+		if(!$on){
+			$on = 4;
+		}
 
 		$desc = '';
 		$odname = 'name';
@@ -202,7 +208,7 @@ class Home extends SZone_Controller {
 		}	
 		if($od && $on !=2 && $on != 3){
 			$sql .= ' order by '.$odname.' '.$desc;
-		}		
+		}	
 		$query = $this->db->query($sql);
 		$fold = array();
 		foreach($query->result() as $row){
@@ -362,7 +368,15 @@ class Home extends SZone_Controller {
 
 		
 		$od = (int) $this->input->get('od');
-		$on = $this->input->get('on');		
+		$on = $this->input->get('on');	
+
+		if(!$od){
+			$od = 2;
+		}
+		if(!$on){
+			$on = 4;
+		}
+
 		$desc = '';
 		$odname = 'fname';
 		if($od == 2){
@@ -465,7 +479,16 @@ class Home extends SZone_Controller {
 
 		
 		$od = (int) $this->input->get('od');
-		$on = $this->input->get('on');		
+		$on = $this->input->get('on');	
+
+		if(!$od){
+			$od = 2;
+		}
+		if(!$on){
+			$on = 4;
+		}
+
+
 		$desc = '';
 		$odname = 'name';
 		if($od == 2){
@@ -656,6 +679,13 @@ class Home extends SZone_Controller {
 
 		$od = (int) $this->input->get('od');
 		$on = $this->input->get('on');
+
+		if(!$od){
+			$od = 2;
+		}
+		if(!$on){
+			$on = 4;
+		}		
 
 		$desc = '';
 		$odname = 'name';
@@ -929,6 +959,14 @@ class Home extends SZone_Controller {
 
 		$od = (int) $this->input->get('od');
 		$on = $this->input->get('on');		
+
+		if(!$od){
+			$od = 2;
+		}
+		if(!$on){
+			$on = 4;
+		}
+				
 		$desc = '';
 		$odname = 'name';
 		if($od == 2){

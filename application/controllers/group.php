@@ -23,6 +23,13 @@ class Group extends SZone_Controller {
 		$od = (int) $this->input->get('od');
 		$on = $this->input->get('on');
 
+		if(!$od){
+			$od = 2;
+		}
+		if(!$on){
+			$on = 4;
+		}
+
 		$desc = '';
 		$odname = 'name';
 		if($od == 2){
