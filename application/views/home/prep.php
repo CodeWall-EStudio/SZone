@@ -148,10 +148,10 @@
 						<tr data-id="<?=$item['id']?>">
 							<td width="30"><input type="checkbox" name="file" class="fdclick liclick" value="<?=$item['id']?>" data-type="fold" /></td>
 							<td>
-								<a href="/home/prepare?prid=<?=$prid?>&fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>" data-id="1"><i class="fold"></i></a>
+								<a href="/home/prepare?prid=<?=$item['prid']?>&fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>" data-id="1"><i class="fold"></i></a>
 								
 								<dl>
-									<dt><a href="/home/prepare?prid=<?=$prid?>&fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>" data-id="1"><?=$item['name']?></a>
+									<dt><a href="/home/prepare?prid=<?=$item['prid']?>&fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>" data-id="1"><?=$item['name']?></a>
 										<span cmd="edit" data-id="<?=$item['id']?>">
 											<?if($item['mark']==''):?>
 												编辑备注

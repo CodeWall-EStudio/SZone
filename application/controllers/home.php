@@ -582,7 +582,9 @@ class Home extends SZone_Controller {
 		$query = $this->db->query($sql);
 		$plist = array();
 		$pplist = array();
+		$pids = array();
 
+		$this->load->model('Fold_model');
 		//选择备课目录
 		foreach($query->result() as $row){
 			if($row->parent == 0){
@@ -605,6 +607,7 @@ class Home extends SZone_Controller {
 						);
 					}
 				}else{
+					$child = $this->Fold_model->get_prep_fold($row->id,$this->user['uid']);
 					if(isset($plist[$row->parent])){
 						$plist[$row->parent]['list'][$row->id]['id'] = $row->id;
 						$plist[$row->parent]['list'][$row->id]['name'] = $row->name;
@@ -618,9 +621,14 @@ class Home extends SZone_Controller {
 							'name' => $row->name
 						);
 					}
+					if($child){
+						$plist[$row->parent]['list'][$row->id]['child'] = $child;
+					}					
 				}
 			}
 		}
+
+		//echo json_encode($plist);
 
 		foreach($plist as &$row){
 			if(!isset($row['name'])){
@@ -741,7 +749,7 @@ class Home extends SZone_Controller {
 		if(count($plist)>0){
 			if(!$prid && !$fid){
 				//取对应的文件夹
-				$sql = 'select id from userfolds where uid='.(int) $this->user['uid'].' and '.implode(' or ',$kp);
+				$sql = 'select id,prid from userfolds where uid='.(int) $this->user['uid'].' and '.implode(' or ',$kp);
 				$query = $this->db->query($sql);
 
 				$kpf = array();

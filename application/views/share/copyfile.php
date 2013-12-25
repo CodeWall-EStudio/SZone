@@ -51,7 +51,12 @@
 								<?foreach($row['list'] as $r):?>
 									<li>
 										<?if(isset($r['name'])):?>
-											<a class="a-click" data-id="<?=$r['id']?>"><?=$r['name']?></a>
+											<?if(isset($r['child']) && $r['child']['child']):?>
+												<i class="glyphicon glyphicon-plus" data-pid="<?=$r['id']?>" data-fid="<?=$r['child']['id']?>"></i>
+											<?else:?>
+												<i class="glyphicon"></i>
+											<?endif?> 
+											<a class="a-click" data-pid="<?=$r['id']?>"><?=$r['name']?></a>
 										<?endif?>
 									</li>
 								<?endforeach?>
@@ -67,9 +72,24 @@
 		</div>
 		<div class="clear"></div>
 	</div>
+
+	<script type="text/template" id="fold-list-tmp">
+		<ul>
+			<%
+				for(var i in list){
+					var item = list[i];
+			%>
+			<li>
+				<i class="glyphicon <%if(item.child){%>glyphicon-plus<%}%>" data-fid="<%=item.id%>"></i><a  class="a-click" data-pid="<%=pid%>" data-id="<%=item['id']%>"> <%=item.name%></a>	
+			</li>
+			<%}%>
+		</ul>
+	</script>
+
 	<script src="/js/lib/jq.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
+	<script src="/js/lib/jQuery.tmp.js"></script>
 	<script>
 		var pstr = '<?=json_encode($plist)?>';
 		var plist = $.parseJSON(pstr);

@@ -1313,9 +1313,11 @@ class Cgi extends SZone_Controller {
 
 	public function add_prep(){
 		$fid = $this->input->post('fid');
-		$pid = $this->input->post('pid');
+		$pid = (int) $this->input->post('pid');
+		$fdid = (int) $this->input->post('fdid');
 		$fl = explode(',',$fid);
 		//$pl = explode(',',$pid);
+
 		$fw = array();
 		$kv = array();
 
@@ -1349,7 +1351,11 @@ class Cgi extends SZone_Controller {
 			$pfdid = $this->insert_id();
 		}else{
 			$row = $query->row();
-			$pfdid = $row->id;
+			if(!$fdid){
+				$pfdid = $row->id;
+			}else{
+				$pfdid = $fdid;	
+			}
 		};
 
 		$sql = $this->db->update_string("userfile",array('fdid' => $pfdid),implode(' or ',$fw));
