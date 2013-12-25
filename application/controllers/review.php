@@ -9,6 +9,29 @@ class Review extends SZone_Controller {
 		$id = (int) $this->input->get('id');
 		$type = (int) $this->input->get('t');  //1 上一条 2 下一条
 
+        $this->load->model('File_model');
+        $file = $this->File_model->get_by_id($fid);
+        if (empty($file))
+        {
+            show_error('文件不存在');
+        }
+
+        if (empty($gid)){
+                $auth = $this->File_model->get_by_uid($fid, $this->user['uid']);
+                if (empty($auth))
+                {
+                    show_error('用户没有查看此文件的权限');
+                }        	
+        }else{
+        	$auth = $this->File_model->get_by_gid($id, $gid);
+            if (empty($auth))
+            {
+                show_error('用户没有查看此文件的权限');
+            }
+            $auth['name'] = $auth['fname'];
+        }
+
+
 		$tablename = 'userfile';
 		if($gid){
 			$tablename = 'groupfile';
@@ -54,20 +77,31 @@ class Review extends SZone_Controller {
 			}
 		}
 
+		$wh = '';
+		if($gid){
+			$wh .= ' and gid='.$gid.' order by id desc';
+		}else{
+			$wh .= ' and uid='.$this->user['uid'].' order by id desc';
+		}
 		$prev = 0;
 		$next = 0;
-		$sql = 'select id from '.$tablename.' where id<'.$fid;
+		$prevfid = 0;
+		$nextfid = 0;		
+		$sql = 'select id,fid from '.$tablename.' where id<'.$id.$wh;
+
 		$query = $this->db->query($sql);
 		if($this->db->affected_rows() > 0){
 			$row = $query->row();
 			$prev = $row->id;
+			$prevfid = $row->fid;
 		}
 
-		$sql = 'select id from '.$tablename.' where id>'.$fid;
+		$sql = 'select id,fid from '.$tablename.' where id>'.$id.$wh;
 		$query = $this->db->query($sql);
 		if($this->db->affected_rows() > 0){
 			$row = $query->row();
 			$next = $row->id;
+			$nextfid = $row->fid;
 		}
 
 
@@ -77,6 +111,8 @@ class Review extends SZone_Controller {
 		$data['id'] = $id;
 		$data['prev'] = $prev;
 		$data['next'] = $next;
+		$data['prevfid'] = $prevfid;
+		$data['nextfid'] = $nextfid;		
 
 		$this->load->view('review',$data);
 	}

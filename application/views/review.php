@@ -90,12 +90,12 @@
 		</div>
 		<?endif?>
 		<?if($prev):?>
-		  <a class="left carousel-control" href="/review?fid=<?=$prev?>&gid=<?=$gid?>&id=<?=$id?>" data-slide="prev">
+		  <a class="left carousel-control" href="/review?fid=<?=$prevfid?>&gid=<?=$gid?>&id=<?=$prev?>" data-slide="prev">
 		    <span class="glyphicon glyphicon-chevron-left"></span>
 		  </a>
 		<?endif?>
 		<?if($next):?>
-		  <a class="right carousel-control" href="/review?fid=<?=$next?>&t=2&gid=<?=$gid?>&id=<?=$id?>" data-slide="next">
+		  <a class="right carousel-control" href="/review?fid=<?=$nextfid?>&t=2&gid=<?=$gid?>&id=<?=$next?>" data-slide="next">
 		    <span class="glyphicon glyphicon-chevron-right"></span>
 		  </a>	
 		<?endif?>				
@@ -165,7 +165,7 @@
                 CursorToolsVisible : true,
                 SearchToolsVisible : true,
                 WMode : 'window',
-                localeChain: 'en_US'
+                localeChain: 'zh_CN'
             }}
     );
     </script>
