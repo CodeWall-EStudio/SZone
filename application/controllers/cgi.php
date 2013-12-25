@@ -1078,6 +1078,7 @@ class Cgi extends SZone_Controller {
 
 
 	public function downfile_test(){
+
 		$this->load->helper('download');
 		$id = $this->input->get('fid');
 		$gid = (int) $this->input->get('gid');

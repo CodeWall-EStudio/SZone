@@ -95,9 +95,23 @@
 	});
 
     function downFiles(){
+    	var ids = [];
 		$('#fileList .fclick:checked').each(function(){
-			window.open('/cgi/downfile?fid='+files[$(this).val()].fid+'&gid='+ginfo.id);
+			var fid = $(this).attr('data-fid');
+			ids.push(fid);
+			//window.open('/cgi/downfile?fid='+files[$(this).val()].fid);
 		});	
+		if(ids.length>1){
+			$.post('/download',{ids:ids,gid:ginfo.id},function(e){
+			});
+		}else{
+			if(ids[0]){
+				window.open('/download?id='+ids[0]+'&gid='+ginfo.id);	
+			}
+		}    	
+		// $('#fileList .fclick:checked').each(function(){
+		// 	window.open('/cgi/downfile?fid='+files[$(this).val()].fid+'&gid='+ginfo.id);
+		// });	
     }
 
 	var moveFile = function(){
