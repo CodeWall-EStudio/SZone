@@ -41,7 +41,7 @@
 	<!-- 						<li><a>推优到学校</a></li> -->					
 						</ul>						
 					</li>
-					<li><a>下载</a></li>
+					<li class="downfile"><a cmd="downfile" id="donwFiles">下载</a></li>
 					<li><a cmd="coll" id="collFiles">收藏</a></li>
 					<li id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
 					<li><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制</a></li>
@@ -197,7 +197,7 @@
 											</span>
 										</dt>
 										<dd>								
-											<span><a href="/cgi/downfile?fid=<?=$item['fid']?>">下载</a></span>
+											<span><a href="/download?id=<?=$item['fid']?>">下载</a></span>
 										</dd>
 									</dl>
 								</td>

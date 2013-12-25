@@ -56,7 +56,7 @@
 										</span>
 									</dt>
 									<dd>									
-										<span><a href="/cgi/downfile?fid=<?=$item['fid']?>">下载</a></span>
+										<span><a href="/download?id=<?=$item['fid']?>">下载</a></span>
 									</dd>
 								</dl>
 							</div>
