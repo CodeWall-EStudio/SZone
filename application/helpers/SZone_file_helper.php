@@ -184,6 +184,7 @@ if ( ! function_exists('format_type'))
             case 'application/vnd.openxmlformats-officedocument.presentationml.presentation':
             case 'application/vnd.openxmlformats-officedocument.presentationml.template':
             case 'application/vnd.openxmlformats-officedocument.presentationml.slideshow':
+            case 'application/kswps':
             case 'application/pdf':
             case 'application/xml':
             case 'application/vnd.oasis.opendocument.text':
