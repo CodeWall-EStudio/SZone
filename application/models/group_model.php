@@ -66,6 +66,15 @@ class Group_model extends CI_Model {
         return $query->num_rows();
     }
 
+    //更新群公告
+    function set_group_desc($gid,$str){
+        $data = array(
+            'content' => $str
+        );
+
+        $this->db->update($table, $data, array('id' => $gid));
+    }
+
     function get_group_info($ids,$authid)
     {
         $gidlist = $ids;
