@@ -46,7 +46,6 @@ window.FlexPaperViewerEmbedding = window.$f = function(id, args) {
         _SWFFile 	= FLEXPAPER.translateUrlByFormat(_uDoc,"swf");
     }
 
-
     _SWFFile  			= (config.SwfFile!=null?config.SwfFile:_SWFFile);
     _SWFFile  			= (config.SWFFile!=null?config.SWFFile:_SWFFile);
     _PDFFile 			= (config.PDFFile!=null?config.PDFFile:_PDFFile);
