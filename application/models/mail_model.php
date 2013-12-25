@@ -39,5 +39,16 @@ class Mail_model extends CI_Model {
 
     function look_all_post($id){
    		$this->db->update($this->table, array('flooked' => 1), array('fuid' => $id)); 	
-    }    
+    }
+
+    function check_auth($fid, $tuid, $fuid)
+    {
+        $result = array();
+        $query = $this->db->get_where($this->table, array('fid' => $fid, 'tuid' => $tuid, 'fuid' => $fuid));
+        if ($query->num_rows() > 0)
+        {
+            $result = $query->row_array();
+        }
+        return $result;
+    }
 }

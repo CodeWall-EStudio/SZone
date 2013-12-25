@@ -35,12 +35,31 @@ class Download extends CI_Controller {
         }
 
         $gid = $this->input->get('gid');
+        $mid = $this->input->get('mid');
+
         if (empty($gid))
         {
-            $auth = $this->File_model->get_by_uid($id, $this->user['uid']);
-            if (empty($auth))
+            if (empty($mid))
             {
-                show_error('用户没有查看此文件的权限');
+                $auth = $this->File_model->get_by_uid($id, $this->user['uid']);
+                if (empty($auth))
+                {
+                    show_error('用户没有查看此文件的权限');
+                }
+            }
+            else
+            {
+                $this->load->model('Mail_model');
+                $auth = $this->Mail_model->check_auth($id, $this->user['uid'], $mid);
+                if (empty($auth))
+                {
+                    show_error('用户没有查看此文件的权限');
+                }
+                $auth = $this->File_model->get_by_uid($id, $mid);
+                if (empty($auth))
+                {
+                    show_error('用户没有查看此文件的权限');
+                }
             }
         }
         else
@@ -59,6 +78,14 @@ class Download extends CI_Controller {
         header('Content-Length: '.filesize($file['size']));
         header('X-Accel-Redirect: /file/'.substr($file['md5'],0,2).'/'.substr($file['md5'],2,2).'/'.$file['md5']);
 
+    }
+
+    public function batch()
+    {
+        header('Content-type: application/zip');
+        header('Content-Disposition: attachment; filename=download.zip');
+        header('Content-Length: '.filesize($file['size']));
+        header('X-Accel-Redirect: /file/'.substr($file['md5'],0,2).'/'.substr($file['md5'],2,2).'/'.$file['md5']);
     }
 }
 
