@@ -70,7 +70,7 @@ class Group_model extends CI_Model {
     function set_group_desc($gid,$str){
         $data = array(
             'content' => $str
-        }
+        );
 
         $this->db->update($table, $data, array('id' => $gid));
     }
