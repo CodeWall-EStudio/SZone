@@ -41,6 +41,16 @@ class Mail_model extends CI_Model {
    		$this->db->update($this->table, array('flooked' => 1), array('fuid' => $id)); 	
     }
 
+    function get_a_mail($id){
+        $this->db->where('id',$id);
+        $query = $this->db->get($this->table);
+        return $query->row();
+    }
+
+    function save_a_mail($id){
+        $this->db->update($this->table, array('saved' => 1), array('id' => $id));     
+    }
+
     function check_auth($fid, $tuid, $fuid)
     {
         $result = array();

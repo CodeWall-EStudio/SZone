@@ -2041,6 +2041,7 @@ class Cgi extends SZone_Controller {
 
 	public function copymsg_to_my(){
 		$id = (int) $this->input->post('id');
+		$this->load->model('Mail_model');
 
 		$sql = 'select fid,fuid from message where id='.$id;
 		$query = $this->db->query($sql);
@@ -2075,6 +2076,9 @@ class Cgi extends SZone_Controller {
 			);
 			$sql = $this->db->insert_string('userfile',$data);
 			$query = $this->db->query($sql);
+
+			
+			$this->Mail_model->save_a_mail($id);
 
 			if($this->db->affected_rows()>0){
 				$this->json(array('msg' => '已经成功复制文件!'),0,'已经成功复制文件!');

@@ -384,9 +384,9 @@ class Home extends SZone_Controller {
 		}	
 
 		if($m){
-			$sql = 'SELECT a.id,a.fuid as uid,a.content,a.createtime,a.fid,b.name AS uname,c.name AS fname,d.path,d.size,d.type FROM message a LEFT JOIN `user` b ON a.fuid = b.`id` LEFT JOIN `userfile` c ON c.fid = a.fid		LEFT JOIN `files` d ON d.id = a.fid	WHERE a.tuid = '.$this->user['uid'];
+			$sql = 'SELECT a.id,a.fuid as uid,a.content,a.saved,a.createtime,a.fid,b.name AS uname,c.name AS fname,d.path,d.size,d.type FROM message a LEFT JOIN `user` b ON a.fuid = b.`id` LEFT JOIN `userfile` c ON c.fid = a.fid		LEFT JOIN `files` d ON d.id = a.fid	WHERE a.tuid = '.$this->user['uid'];
 		}else{
-			$sql = 'SELECT a.id,a.tuid as uid,a.content,a.createtime,a.fid,b.name AS uname,c.name AS fname,d.path,d.size,d.type FROM message a LEFT JOIN `user` b ON a.tuid = b.`id` LEFT JOIN `userfile` c ON c.fid = a.fid		LEFT JOIN `files` d ON d.id = a.fid	WHERE a.fuid = '.$this->user['uid'];
+			$sql = 'SELECT a.id,a.tuid as uid,a.content,a.saved,a.createtime,a.fid,b.name AS uname,c.name AS fname,d.path,d.size,d.type FROM message a LEFT JOIN `user` b ON a.tuid = b.`id` LEFT JOIN `userfile` c ON c.fid = a.fid		LEFT JOIN `files` d ON d.id = a.fid	WHERE a.fuid = '.$this->user['uid'];
 		}
 
 		if($key && $key != '搜索文件'){
@@ -420,6 +420,7 @@ class Home extends SZone_Controller {
 				'fid' => $row->fid,
 				'uname' => $row->uname,
 				'fname' => $row->fname,
+				'save' => $row->saved,
 				'path' => $row->path,
 				'size' => format_size($row->size),
 				'type' => $row->type
