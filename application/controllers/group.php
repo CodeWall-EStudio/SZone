@@ -261,7 +261,7 @@ class Group extends SZone_Controller {
 			// }
 
 			
-			$sql = 'SELECT a.id,a.content,a.ctime,b.name FROM board a,user b WHERE a.uid = b.id AND a.gid = '.$gid.' limit 0,10';//AND a.status =1 
+			$sql = 'SELECT a.id,a.content,a.ctime,b.name FROM board a,user b WHERE a.uid = b.id AND a.gid = '.$gid.' order by a.ctime desc limit 0,10 ';//AND a.status =1 
 			$query = $this->db->query($sql);
 			if($this->db->affected_rows()>0){
 				foreach($query->result() as $row){
