@@ -141,8 +141,8 @@
     $('#documentViewer').FlexPaperViewer(
             { config : {
 
-                SWFFile : encodeURIComponent('/download?id=<?=$finfo['fid']?>&rv=1'),
-                //SWFFile : '/cgi/downfile_test?fid=<?=$finfo['fid']?>&rv=1',
+                //SWFFile : encodeURIComponent('/download?id=<?=$finfo['fid']?>&rv=1'),
+                SWFFile : encodeURIComponent('/download/review?id=<?=$finfo['fid']?>&rv=1'),
                 jsDirectory : '/js/lib/flex/',
                 Scale : 0.6,
                 ZoomTransition : 'easeOut',

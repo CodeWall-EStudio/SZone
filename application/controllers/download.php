@@ -47,7 +47,6 @@ class Download extends CI_Controller {
 
         $gid = $this->input->get('gid');
         $mid = $this->input->get('mid');
-        $review = $this->input->get('rv');
 
         if (empty($gid))
         {
@@ -84,25 +83,70 @@ class Download extends CI_Controller {
             $auth['name'] = $auth['fname'];
         }
 
-        $path = '/file/'.substr($file['md5'],0,2).'/'.substr($file['md5'],2,2).'/'.$file['md5'];
-        $mimes = $file['mimes'];
-        $size = $file['size'];
-        $filaname = $auth['name'];
-        if($review){
-            $path .= '.swf';
-            $filaname = 'review.swf';
-            $mimes = 'application/x-shockwave-flash';
-            $size = filesize($file['path'].'.swf');
+
+        header('Content-type: '.$file['mimes']);
+        header('Content-Disposition: attachment; filename='.$auth['name']);
+        header('Content-Length: '.$file['size']);
+        header('X-Accel-Redirect: /file/'.substr($file['md5'],0,2).'/'.substr($file['md5'],2,2).'/'.$file['md5']);
+    }
+
+    public function review(){
+        $id = $this->input->get('id');
+        $this->load->model('File_model');
+        $file = $this->File_model->get_by_id($id);
+        if (empty($file))
+        {
+            show_error('文件不存在');
         }
 
-        header('Content-type: '.$mimes);
-        header('Content-Disposition: attachment; filename='.$filaname);
-        header('Content-Length: '.$size);
-        header('X-Accel-Redirect: '.$path);
-        // header('Content-type: '.$file['mimes']);
-        // header('Content-Disposition: attachment; filename='.$auth['name']);
-        // header('Content-Length: '.$file['size']);
-        // header('X-Accel-Redirect: /file/'.substr($file['md5'],0,2).'/'.substr($file['md5'],2,2).'/'.$file['md5']);
+        $gid = $this->input->get('gid');
+        $mid = $this->input->get('mid');
+
+        if (empty($gid))
+        {
+            if (empty($mid))
+            {
+                $auth = $this->File_model->get_by_uid($id, $this->user['uid']);
+                if (empty($auth))
+                {
+                    show_error('用户没有查看此文件的权限');
+                }
+            }
+            else
+            {
+                $this->load->model('Mail_model');
+                $auth = $this->Mail_model->check_auth($id, $this->user['uid'], $mid);
+                if (empty($auth))
+                {
+                    show_error('用户没有查看此文件的权限');
+                }
+                $auth = $this->File_model->get_by_uid($id, $mid);
+                if (empty($auth))
+                {
+                    show_error('用户没有查看此文件的权限');
+                }
+            }
+        }
+        else
+        {
+            $auth = $this->File_model->get_by_gid($id, $gid);
+            if (empty($auth))
+            {
+                show_error('用户没有查看此文件的权限');
+            }
+            $auth['name'] = $auth['fname'];
+        }  
+        
+        $path = $file['path'].'.swf';
+        $handle = fopen ($path, "r");
+        $data = "";
+        while (!feof($handle)) {
+          $data .= fread($handle, 8192);
+        }
+        fclose($handle);
+        $this->load->helper('download');
+        force_download('review.swf', $data); 
+
     }
 
     public function batch()

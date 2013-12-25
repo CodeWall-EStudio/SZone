@@ -1137,7 +1137,6 @@ class Cgi extends SZone_Controller {
 		$sql .= ' and a.id = b.fid and a.id='.(int) $id;
 		$query = $this->db->query($sql);
 	
-
 		if ($query->num_rows() > 0)
 		{
 		   $row = $query->row(); 
@@ -1154,16 +1153,14 @@ class Cgi extends SZone_Controller {
 		 //   echo filesize($path.'.pdf');
 			// $path .= '.swf';
 
-			// echo $path;
-			// echo filesize($path);
-			// return;
+			$path .= '.swf';
 			$handle = fopen ($path, "r");
 			$data = "";
 			while (!feof($handle)) {
 			  $data .= fread($handle, 8192);
 			}
 			fclose($handle);
-			force_download($name, $data); 
+			force_download($name.'.swf', $data); 
 
 		}else{
 
