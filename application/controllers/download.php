@@ -95,8 +95,6 @@ class Download extends CI_Controller {
     {
         $ids = $this->input->post('ids');
 
-        $ids = array('1', '2', '3', '4');
-
         $this->load->model('File_model');
         $files = $this->File_model->get_by_ids($ids);
         if (empty($files))
@@ -104,7 +102,7 @@ class Download extends CI_Controller {
             show_error('文件不存在');
         }
 
-        $gid = $this->input->get('gid');
+        $gid = $this->input->post('gid');
 
         if (empty($gid))
         {
@@ -145,7 +143,7 @@ class Download extends CI_Controller {
         }
         $zip->close();//关闭
         if(!file_exists($path)){
-            exit('无法找到文件');           //即使创建，仍有可能失败
+            show_error('无法找到文件');           //即使创建，仍有可能失败
         }
 
         header('Content-type: application/zip');
