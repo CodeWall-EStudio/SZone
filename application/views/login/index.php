@@ -35,21 +35,22 @@
 	</div>
 
 	<div>
+		<form action="/login/act" method="post">
 		<ul id="loginForm">
 			<li>
 				<label>用户名：</label>
-				<input type="text" class="form-control" def-value="请输入用户名" value="请输入用户名" />
+				<input type="text" class="name form-control" def-value="请输入用户名" value="请输入用户名" />
 			</li>
 			<li>
 				<label>密　码：</label>
-				<input type="password" class="form-control" />
+				<input type="password" class="pwd form-control" />
 			</li>
 			<li class="btns">
-				<button class="btn btn-primary">登录</button>
-				<button class="btn btn-default">取消</button>
+				<submit id="submit" class="btn btn-primary">登录</submit>
+				<reset class="btn btn-default">取消</reset>
 			</li>
 		</ul>
-
+		</form>
 	</div>
 	<script src="/js/lib/jq.js"></script>
 	<script>
@@ -60,15 +61,31 @@
 		if(v == def){
 			t.val('');
 		}
+		t.parent().removeClass("has-error");
 
 	}).bind('blur',function(e){
 		var t = $(e.target),
 			def = t.attr('def-value'),
 			v = t.val();
+		if(v == '' || v == def){
+			t.parent().addClass("has-error");;
+		}
 		if(def){
 			if(v == ''){
 				t.val(def);
 			}
+		}
+	});
+
+	$("#submit").click(function(){
+		var n = $('.name').val();
+		var dn = $('.name').attr('def-value');
+		var p = $('.pwd').val();
+		if(n == '' || n == dn){
+			$('.name').parent().addClass("has-error");
+		}
+		if(p == ''){
+			$('.pwd').parent().addClass('has-error');
 		}
 	});
 	</script>
