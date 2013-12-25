@@ -3,7 +3,7 @@
  * SZone Application Controller Class
  *
  * This class object extends from the CodeIgniter super class CI_Controller.
- * 
+ *
  * @package		SZone
  * @subpackage	application
  * @category	controllers
@@ -26,25 +26,40 @@ class Download extends CI_Controller {
             redirect('/');
         }
 
-        $fid = $this->input->get('id');
+        $id = $this->input->get('id');
         $this->load->model('File_model');
-        $file = $this->File_model->get_by_id($fid);
+        $file = $this->File_model->get_by_id($id);
         if (empty($file))
         {
             show_error('文件不存在');
         }
-        /*$auth = $this->File_model->get_by_uid($this->user['uid']);
-        if (empty($auth))
+
+        $gid = $this->input->get('gid');
+        if (empty($gid))
         {
-            show_error('用户没有查看此文件的权限');
-        }*/
+            $auth = $this->File_model->get_by_uid($id, $this->user['uid']);
+            if (empty($auth))
+            {
+                show_error('用户没有查看此文件的权限');
+            }
+        }
+        else
+        {
+            $auth = $this->File_model->get_by_gid($id, $gid);
+            if (empty($auth))
+            {
+                show_error('用户没有查看此文件的权限');
+            }
+            $auth['name'] = $auth['fname'];
+        }
+
 
         header('Content-type: '.$file['mimes']);
-        header('Content-Disposition: attachment; filename='.$this->input->get('name'));
+        header('Content-Disposition: attachment; filename='.$auth['name']);
         header('Content-Length: '.filesize($file['size']));
         header('X-Accel-Redirect: /file/'.substr($file['md5'],0,2).'/'.substr($file['md5'],2,2).'/'.$file['md5']);
 
-	}
+    }
 }
 
 // END Controller class

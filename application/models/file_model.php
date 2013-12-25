@@ -58,6 +58,17 @@ class File_model extends CI_Model {
         return $result;
     }
 
+    function get_by_gid($fid, $gid)
+    {
+        $result = array();
+        $query = $this->db->get_where($this->gtable, array('fid' => $fid, 'gid' => $gid));
+        if ($query->num_rows() > 0)
+        {
+            $result = $query->row_array();
+        }
+        return $result;
+    }
+
     function insert_entry($data)
     {
         $str = $this->db->insert_string($this->table, $data);
