@@ -142,6 +142,17 @@ class Upload extends SZone_Controller {
             ));
         }
 
+        $docs = array('application/vnd.ms-word','application/vnd.ms-excel','application/vnd.ms-powerpoint');
+
+        //判断是否为文档，如果是则加入消息队列
+        if (ENVIRONMENT == 'testing') {
+            if (in_array($file['mimes'],$docs))
+            {
+                exec('java -jar /root/jodconverter/lib/jodconverter-core-3.0-beta-4.jar '.$file['path'].' '.$file['path'].'.pdf');
+                exec('pdf2swf '.$file['path'].'.pdf -o '.$file['path'].'.swf');
+            }
+        }
+
         $ret = array(
             'jsonrpc' => '2.0',
             'error' => array(

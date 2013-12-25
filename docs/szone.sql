@@ -49,6 +49,7 @@ CREATE TABLE IF NOT EXISTS `files` (
   `type` tinyint(2) unsigned zerofill DEFAULT NULL COMMENT '文件类型',
   `mimes` varchar(60) NOT NULL,
   `ref` int(8) NOT NULL DEFAULT '1' COMMENT '文件引用计数',
+  `convert` INT(2) UNSIGNED ZEROFILL NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `md5` (`md5`),
   UNIQUE KEY `path` (`path`)
