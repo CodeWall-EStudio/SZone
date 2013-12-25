@@ -175,6 +175,7 @@ if ( ! function_exists('format_type'))
             // documents
             case 'application/postscript':
             case 'application/vnd.msword':
+            case 'application/vnd.ms-word':
             case 'application/vnd.ms-excel':
             case 'application/vnd.ms-powerpoint':
             case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':

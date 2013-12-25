@@ -144,6 +144,7 @@ class Upload extends SZone_Controller {
 
         $docs = array(
             'application/msword',
+            'application/vnd.ms-word',
             'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
             'application/vnd.openxmlformats-officedocument.wordprocessingml.template',
             'application/vnd.ms-excel',
