@@ -87,8 +87,10 @@ class Download extends CI_Controller {
         $path = '/file/'.substr($file['md5'],0,2).'/'.substr($file['md5'],2,2).'/'.$file['md5'];
         $mimes = $file['mimes'];
         $size = $file['size'];
+        $filaname = $auth['name'];
         if($review){
             $path .= '.swf';
+            $filaname = 'review.swf';
             $mimes = 'application/x-shockwave-flash';
             $size = filesize($file['path'].'.swf');
         }

@@ -141,7 +141,8 @@
     $('#documentViewer').FlexPaperViewer(
             { config : {
 
-                SWFFile : '/download?id=<?=$finfo['fid']?>&rv=1',
+                //SWFFile : '/download?id=<?=$finfo['fid']?>&rv=1',
+                SWFFile : '/cgi/downfile_test?fid=<?=$finfo['fid']?>&rv=1',
                 jsDirectory : '/js/lib/flex/',
                 Scale : 0.6,
                 ZoomTransition : 'easeOut',
