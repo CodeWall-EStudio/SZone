@@ -96,7 +96,7 @@ class Download extends CI_Controller {
         }
 
         header('Content-type: '.$mimes);
-        header('Content-Disposition: attachment; filename='.$auth['name']);
+        header('Content-Disposition: attachment; filename='.$filaname);
         header('Content-Length: '.$size);
         header('X-Accel-Redirect: '.$path);
         // header('Content-type: '.$file['mimes']);
