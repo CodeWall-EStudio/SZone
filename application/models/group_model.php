@@ -57,6 +57,15 @@ class Group_model extends CI_Model {
         return $gidlist;
     }
 
+    function get_group_auth_byid($gid,$id){
+        $this->db->where('uid', $id);
+        $this->db->where('gid', $id);
+        $this->db->where('auth >', 0);
+        $query = $this->db->get($this->user_table);
+
+        return $query->num_rows();
+    }
+
     function get_group_info($ids,$authid)
     {
         $gidlist = $ids;

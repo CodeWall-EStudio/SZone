@@ -1471,6 +1471,10 @@ class Cgi extends SZone_Controller {
 		$gid = (int) $this->input->post('gid');
 		$desc = $this->input->post('d');
 
+		$this->load->model('Group_model');
+
+		//echo $this->Group_model->get_group_auth_byid($gid,$this->user['uid']);
+
 		$sql = 'select auth from groupuser where uid='.(int) $this->user['uid'].' and gid='.$gid;
 		$query = $this->db->query($sql);
 		if($this->db->affected_rows()>0 || $this->user['auth'] > 10){
