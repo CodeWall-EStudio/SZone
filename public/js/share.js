@@ -26,67 +26,8 @@
 				}
 			});
 		}
-		// var url = SEARCHUSER
-		// if(type){
-		// 	var data = {
-		// 		'key' : val,
-		// 		csrf_test_name:$.cookie('csrf_cookie_name'),
-		// 		'gid' : $('#gid').val(),
-		// 		'type' : type
-		// 	}	
-		// 	url = SEARCHGROUP;		
-		// }else{
-		// 	var data = {
-		// 		csrf_test_name:$.cookie('csrf_cookie_name'),
-				
-		// 		'key' : val
-		// 	}
-		// }
-		// $.post(url,data,function(d){
-		// 	if(d.code == 0){
-		// 		var list = d.data.list;
-		// 		if(type >= 1){
-		// 			rendergroup(list);
-		// 		}else{
-		// 			render(list);
-		// 		}
-		// 	}else{
-
-		// 	}
-		// });
 	};
 	//缓存
-	//var map = {};
-
-	// var render = function(list){
-	// 	var html = [];
-	// 	for(var i =0,l=list.length;i<l;i++){
-	// 		var item = list[i];
-	// 		map[item.id] = item;
-	// 		html.push('<li><a data-id="'+item.id+'">'+item.name+'</a></li>');
-	// 	}
-	// 	$("#searchResult").html(html.join(""));
-	// }
-
-	// var rendergroup = function(list){
-	// 	var html = [];
-	// 	for(var i in list){
-	// 		var item = list[i];
-	// 		map[item.id] = item;
-	// 		html.push('<li><a data-id="'+item.id+'">'+item.name+'</a>');
-	// 		// if(item.list){
-	// 		// 	html.push('<ul class="second">');
-	// 		// 	for(var j in item.list){
-	// 		// 		var it = item.list[j];
-	// 		// 		map[it.id] = it;
-	// 		// 		html.push('<li><a data-id="'+it.id+'">'+it.name+'</a></li>');
-	// 		// 	}
-	// 		// 	html.push('</ul>');
-	// 		// }
-	// 		html.push('</li>');
-	// 	}
-	// 	$("#searchResult").html(html.join(""));
-	// }	
 
 	var keyup = function(e){
 		if(e.keyCode == 13){

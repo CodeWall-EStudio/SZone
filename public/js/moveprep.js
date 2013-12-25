@@ -28,7 +28,7 @@
 				top.hideShare();
 				top.location.reload();
 			}else{
-				//top.hideShare();
+				top.hideShare();
 				top.alert(d.data.msg);
 			}
 		});

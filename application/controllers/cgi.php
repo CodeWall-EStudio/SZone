@@ -890,11 +890,15 @@ class Cgi extends SZone_Controller {
 	}
 
 	public function addgroupshare(){
+		$this->load->model('Uf_model');
+		$this->load->model('Gf_model');
+
 		$id = $this->input->post('id');  //分组id
-		$fid = $this->input->post('flist'); //文件id
+		$fid = $this->input->post('flist'); //用户文件表的id;
 		$type = $this->input->post('type'); //类型 0 用户到用户 1 到小组 2到部门
 		$gid = $this->input->post('gid'); //用户发起还是在小组发起
 		$content = $this->input->post('content');
+	
 
 		if($this->user['uid']==0){
 			$ret = array(
@@ -916,36 +920,36 @@ class Cgi extends SZone_Controller {
 			array_push($kl,' id='.$k);			
 		}
 		$str = implode(' or ',$kl);
-		$sql = 'select id,fid,name from userfile where '.$str;
-		$query = $this->db->query($sql);
-		$nl = array();
-		$fids = array();
-		foreach($query->result() as $row){
-			$nl[$row->id] = array(
-				'id' => $row->fid,
-				'name' => $row->name
-			);
-			// array_push($fids,$row->fid);
-		};
 
-
-		$sql = 'select fid,gid from groupfile where uid='.$this->user['uid'];
-		$query = $this->db->query($sql);
-
-		foreach($query->result() as $row){
-			if(isset($cache[$row->gid])){
-				array_push($cache[$row->gid],$row->fid);
+		$nl = $this->Uf_model->get_file_byid($fid,$this->user['uid']);
+		$filelist = array();
+		if($nl){
+			foreach($nl as $row){
+				array_push($filelist,$row['fid']);
 			}
-		}	
+		}else{
+			$ret = array(
+				'ret' => 10004,
+				'msg' => '文件不存在!'
+			);
+			$this->json($ret,10004,'文件不存在!');
+			return;	
+		}
+
 		$key = array();
-		$time = time();		
+		$time = time();
 		foreach($id as $k){
-			foreach($fid as $i){
-				if(!in_array($i,$cache[$k])){
-	array_push($key,'('.$nl[$i]['id'].','.$k.','.$time.',"'.$nl[$i]['name'].'",'.'"'.$content.'",'.$this->user['uid'].','.$gid.',1)');	
+			$gfids = $this->Gf_model->get_filenum_byfid($filelist,$k);
+			if ( count($gfids) != count($filelist)){
+				foreach($nl as $row){
+					echo in_array($row['fid'],$gfids);
+					if(!in_array($row['fid'],$gfids)){
+						array_push($key,'('.$row['fid'].','.$k.','.$time.',"'.$row['name'].'",'.'"'.$content.'",'.$this->user['uid'].','.$gid.',1)');
+					}
 				}
 			}
 		}
+
 		if(count($key)>0){
 			$sql = 'insert into groupfile (fid,gid,createtime,fname,content,uid,fgid,status) value '.implode(',',$key);
 			$query = $this->db->query($sql);
@@ -971,7 +975,43 @@ class Cgi extends SZone_Controller {
 			);
 					$this->json($ret,100,'不能重复添加!');
 					return;					
-		}
+		}		
+
+		// echo json_encode($key);
+		// return;
+		// $sql = 'select id,fid,name from userfile where '.$str;
+		// $query = $this->db->query($sql);
+		// $nl = array();
+		// $fids = array();
+		// foreach($query->result() as $row){
+		// 	$nl[$row->id] = array(
+		// 		'id' => $row->fid,
+		// 		'name' => $row->name
+		// 	);
+		// 	// array_push($fids,$row->fid);
+		// };
+		// echo $sql;
+		// return;
+
+
+	// 	$sql = 'select fid,gid from groupfile where uid='.$this->user['uid'];
+	// 	$query = $this->db->query($sql);
+
+	// 	foreach($query->result() as $row){
+	// 		if(isset($cache[$row->gid])){
+	// 			array_push($cache[$row->gid],$row->fid);
+	// 		}
+	// 	}	
+	// 	$key = array();
+	// 	$time = time();		
+	// 	foreach($id as $k){
+	// 		foreach($fid as $i){
+	// 			if(!in_array($i,$cache[$k])){
+	// array_push($key,'('.$nl[$i]['id'].','.$k.','.$time.',"'.$nl[$i]['name'].'",'.'"'.$content.'",'.$this->user['uid'].','.$gid.',1)');	
+	// 			}
+	// 		}
+	// 	}
+
 	}
 
 	public function addshare(){

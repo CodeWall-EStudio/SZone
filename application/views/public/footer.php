@@ -11,6 +11,9 @@
 			</div>
 		</div>
 	</div>
+	<form action="/download/batch" target="_blank" method="post" id="downloadForm" class="hide">
+		
+	</form>
 	<script src="/js/public.js"></script>
 </body>
 </html>

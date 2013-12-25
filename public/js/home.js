@@ -222,14 +222,15 @@
 
     function downFiles(){
     	var ids = [];
+    	$('#downloadForm').html('');
 		$('#fileList .fclick:checked').each(function(){
 			var fid = $(this).attr('data-fid');
 			ids.push(fid);
+			$('#downloadForm').append('<input name="ids[]" type="checkbox" checked value="'+fid+'" />');
 			//window.open('/cgi/downfile?fid='+files[$(this).val()].fid);
 		});	
 		if(ids.length>1){
-			$.post('/download/batch',{ids:ids},function(e){
-			});
+			$('#downloadForm').submit();
 		}else{
 			if(ids[0]){
 				window.open('/download?id='+ids[0]);	
