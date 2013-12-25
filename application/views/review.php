@@ -54,7 +54,7 @@
 			<?if($finfo['type'] == 1):?>
 				<img id="reviewImg" src="/cgi/getfile?fid=<?=$finfo['fid']?>" onload="change(this)" />
 			<?elseif($finfo['type']==2):?>
-				<div id="documentViewer" class="flexpaper_viewer" style="width:770px;height:500px">
+				<div id="documentViewer" class="flexpaper_viewer" style="width:640px;height:500px">
 					
 				</div>
 			<?elseif($finfo['type']==3):?>
