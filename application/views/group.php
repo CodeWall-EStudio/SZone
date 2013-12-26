@@ -620,8 +620,8 @@
 		folds = $.parseJSON(folds);
 		files = JSON.parse(files);//$.parseJSON(files);
 		ginfo = $.parseJSON(ginfo);
-        var upload_url = '<?=json_encode($upload_url);?>?fid=<?=$fid?>&gid=<?=$gid?>&csrf_test_name='+$.cookie('csrf_cookie_name'),
-            upload_chunk = '<?=json_encode($upload_chunk);?>';
+        var upload_url = '<?=$upload_url?>?fid=<?=$fid?>&gid=<?=$gid?>&csrf_test_name='+$.cookie('csrf_cookie_name'),
+            upload_chunk = '<?=$upload_chunk?>';
 
 	</script>
 
