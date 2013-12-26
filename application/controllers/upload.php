@@ -163,11 +163,11 @@ class Upload extends SZone_Controller {
             if (in_array($file['mimes'],$docs))
             {
                 exec('java -jar /var/run/jodconverter/lib/jodconverter-core-3.0-beta-4.jar '.$file['path'].' '.$file['path'].'.pdf');
-                exec('pdf2swf '.$file['path'].'.pdf -o '.$file['path'].'.swf');
+                exec('pdf2swf '.$file['path'].'.pdf -s flashversion=9 -o '.$file['path'].'.swf');
             }
             if (in_array($file['mime'],$pdfs))
             {
-                exec('pdf2swf '.$file['path'].' -o '.$file['path'].'.swf');
+                exec('pdf2swf '.$file['path'].' -s flashversion=9 -o '.$file['path'].'.swf');
             }
         }
 
