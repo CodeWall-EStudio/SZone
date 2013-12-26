@@ -88,7 +88,7 @@
 				</a>	
 			</th>
 			<th width="90"><?if((int) $m):?>来源<?else:?>目标<?endif?>用户</th>
-			<th width="70">
+			<th width="90">
 				<a href="/home/sendmail?on=3&od=<?if($on==3 && $od ==1):?>2<?else:?>1<?endif?>">
 				<span>大小</span>  
 				<?if($on==3 && $od ==1):?><i class="ad"></i><?elseif($on==3 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>

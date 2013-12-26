@@ -137,6 +137,7 @@
     <script type="text/javascript" src="/js/lib/jq.js" charset="utf-8"></script>	
     <script type="text/javascript" src="/js/lib/flex/flexpaper.js"></script>
     <script type="text/javascript" src="/js/lib/flex/flexpaper_handlers.js"></script>
+     <script type="text/javascript" src="/js/lib/flex/flexpaper_handlers_debug.js"></script>
     <script>
     $('#documentViewer').FlexPaperViewer(
             { config : {

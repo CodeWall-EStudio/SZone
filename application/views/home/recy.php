@@ -75,7 +75,7 @@
 			<!-- <div class="td1"><input type="checkbox" /></div> -->
 			<th>文件名</th>
 			<th width="80">来源</th>
-			<th width="80">大小</th>
+			<th width="90">大小</th>
 			<th width="120">时间</th>
 		</tr>	
 		<?foreach($dlist as $row):?>

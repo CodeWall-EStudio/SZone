@@ -32,7 +32,7 @@
 				</div>
 			</div>
 
-			<div class="file-act-zone fade-in hide" id="fileActZone">
+			<div class="file-act-zone fade-in bs-callout bs-callout-warning hide" id="fileActZone">
 				<ul class="nav nav-pills">
 					<li class="sharefile">
 						<a data-toggle="dropdown">共享<span class="caret"></span></a>
@@ -148,7 +148,7 @@
 							<?if($on==2 && $od ==1):?><i class="ad"></i><?elseif($on==2 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
 						</a>
 						</th>
-						<th width="60">
+						<th width="90">
 							<a href="/home?fid=<?=$thisfold['id']?>&on=3&od=<?if($on==3 && $od ==1):?>2<?else:?>1<?endif?>">
 							<span>大小</span>  
 							<?if($on==3 && $od ==1):?><i class="ad"></i><?elseif($on==3 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>

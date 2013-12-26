@@ -162,7 +162,7 @@ a{
 }
 
 .userinfo{
-	/*position:absolute;*/
+	position:absolute;
 	right:0;
 	bottom:0;
 	line-height:22px;
@@ -293,7 +293,11 @@ a{
 }
 .file-act-zone{
 	padding:10px 0;
-	height:58px;	
+	margin:5px 0;
+	height:48px;	
+	border-radius:10px;
+	background-color: #faf8f0;
+	border-color: #faebcc;	
 }
 .tool-zone .btn-zone{
 	float:left;
@@ -354,7 +358,7 @@ a{
 	background:#ebeef4;
 	color:#6a6a6a;
 	/*overflow:hidden;*/
-	border: solid 1px #d7d9e0;
+	/*border: solid 1px #d7d9e0;*/
 	background:url(imgs/path.png) repeat-x;
 }
 .section-tit .fold-list-link a{
@@ -651,4 +655,10 @@ a{
 }
 .aside .mailnum{
 	color:#f00;
+}
+
+.page-select{
+
+	border:1px solid #eee;
+	padding:4px;
 }
