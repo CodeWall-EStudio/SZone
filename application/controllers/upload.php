@@ -137,6 +137,7 @@ class Upload extends SZone_Controller {
                 'fdid' => intval($this->input->get('fid')),
                 'gid' => $gid,
                 'fname' => $file_name,
+                'createtime' => time(),
                 'uid' => $this->user['uid'],
                 'status' => 0
             ));
