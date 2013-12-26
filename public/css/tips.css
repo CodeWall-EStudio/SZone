@@ -59,6 +59,12 @@
 .collection .modal-dialog{
 	width:800px;
 }
+
+.collection .review-dialog{
+	width:1100px;
+}
+
+
 .collection .search-zone{
 	float:left;
 }

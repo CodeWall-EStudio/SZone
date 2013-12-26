@@ -378,14 +378,14 @@
 	</div>		
 
 	<div id="reviewFile" class="modal fade collection reviewWin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
+		<div class="modal-dialog review-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title">预览文件</h4>
 				</div>
 				<div class="modal-body">
-					<iframe id="reviewIframe" width="750" height="640" border="0" frameborder="0" scroll="false" ></iframe>
+					<iframe id="reviewIframe" width="1040" height="820" border="0" frameborder="0" scroll="false" ></iframe>
 				</div>
 			</div>
 		</div>

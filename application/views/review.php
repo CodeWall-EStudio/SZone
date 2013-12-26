@@ -54,7 +54,7 @@
 			<?if($finfo['type'] == 1):?>
 				<img id="reviewImg" src="/cgi/getfile?fid=<?=$finfo['fid']?>" onload="change(this)" />
 			<?elseif($finfo['type']==2):?>
-				<div id="documentViewer" class="flexpaper_viewer" style="width:640px;height:500px">
+				<div id="documentViewer" class="flexpaper_viewer" style="width:960px;height:700px">
 					
 				</div>
 			<?elseif($finfo['type']==3):?>
@@ -78,7 +78,7 @@
 			<?endif?>
 			<dl>
 				<dt>文件名:<?=$finfo['name']?></dt>
-				<dd>说明：<?=$finfo['content']?></dd>
+				
 			</dl>
 		</div>
 		<?if($finfo['type']==1):?>
@@ -145,7 +145,7 @@
                 //SWFFile : encodeURIComponent('/download?id=<?=$finfo['fid']?>&rv=1'),
                 SWFFile : encodeURIComponent('/download/review?id=<?=$finfo['fid']?>&rv=1'),
                 jsDirectory : '/js/lib/flex/',
-                Scale : 0.6,
+                Scale : 0.8,
                 ZoomTransition : 'easeOut',
                 ZoomTime : 0.5,
                 ZoomInterval : 0.2,
