@@ -31,7 +31,7 @@
 			 		$.post('/cgi/addfold',data,function(d){
 			 			if(d.code==0){
 			 				$("#newFold .close").click();
-			 				//window.location.reload();
+			 				window.location.reload();
 			 			}else{
 			 				alert(d.data.msg);
 			 			}

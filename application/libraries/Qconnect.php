@@ -26,6 +26,10 @@
 			
 		}
 
+		public function logmsg($msg){
+			
+		}
+
 		public function set_error($msg)
 		{
 			log_message('error', $msg);
@@ -116,8 +120,12 @@
 	            $this->set_error($user->error, $user->error_description);
 	        }
 	        //------记录openid
-	        $this->CI->session->set_userdata('openid',$user->openid);
-	        return $user->openid;
+	        if(isset($user->openid)){
+		        $this->CI->session->set_userdata('openid',$user->openid);
+		        return $user->openid;
+	    	}else{
+	    		return false;
+	    	}
 		}
 
 		public function get_info(){

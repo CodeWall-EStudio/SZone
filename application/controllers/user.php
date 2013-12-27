@@ -19,12 +19,15 @@ class User extends SZone_Controller {
 
     public function index()
     {
-        echo 'Hello World！';
+        $this->session->set_userdata('state','123345');
+        //$this->session->userdata('uid');
+        echo $this->session->userdata('state');
     }
 
     public function info()
     {
-        $this->json($this->user);
+        echo $this->session->userdata('state');
+        //$this->json($this->user);
     }
 }
 // END Controller class
