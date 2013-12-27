@@ -586,8 +586,6 @@ class Group extends SZone_Controller {
 			}
 			$query = $this->db->query($sql);
 
-			echo $sql;
-
 			foreach($query->result() as $row){
 				$flist[$row->id] = array(
 					'id' => $row->id,

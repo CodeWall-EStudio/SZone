@@ -23,8 +23,14 @@
 		}		
 
 		public function initialize($config = array()){
-
+			
 		}
+
+		public function set_error($msg)
+		{
+			log_message('error', $msg);
+			$this->error_msg[] = $msg;
+		}		
 
 		public function qq_login(){
 	        //-------生成唯一随机串防CSRF攻击
@@ -40,6 +46,8 @@
 	            "state" => $state,
 	            "scope" => $this->scope
 	        );			
+
+
 	        $login_url =  $this->combineURL(self::GET_AUTH_CODE_URL, $keysArr);
 	        header("Location:$login_url");
 		}
@@ -49,11 +57,9 @@
 				return false;
 			}
 			$state = $this->CI->session->userdata('state');
-
 			//echo json_encode($this->CI->session->userdata('state'));
-
 			if($state != $this->CI->input->get('state')){
-				$this->CI->set_error('state error!');
+				$this->set_error('state error!');
 				return false;
 			}
 			
@@ -76,7 +82,7 @@
 	            $msg = json_decode($response);
 
 	            if(isset($msg->error)){
-	                $this->CI->set_error($msg->error, $msg->error_description);
+	                $this->set_error($msg->error, $msg->error_description);
 	            }
 	        }
 
@@ -87,7 +93,7 @@
 
 		public function get_openid(){
 			if($this->CI->session->userdata('openid')){
-				return $this->CI->session->userdata('openid');
+				return $this->session->userdata('openid');
 			}			
 	        //-------请求参数列表
 	        $keysArr = array(
@@ -107,7 +113,7 @@
 
 	        $user = json_decode($response);
 	        if(isset($user->error)){
-	            $this->CI->set_error($user->error, $user->error_description);
+	            $this->set_error($user->error, $user->error_description);
 	        }
 	        //------记录openid
 	        $this->CI->session->set_userdata('openid',$user->openid);
@@ -161,7 +167,7 @@
 	                        $arr[$tmpKey] = "@$filename";
 
 	                    }else{
-	                        $this->CI->set_error("api调用参数错误","未传入参数$tmpKey");
+	                        $this->set_error("api调用参数错误","未传入参数$tmpKey");
 	                    }
 	                }
 	            }

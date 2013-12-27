@@ -115,7 +115,7 @@
 				<dl>
 					<dt><a class="file-name" data-review data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>"><?=$row['fname']?></a></dt>
 					<dd>
-						<a href="/cgi/reviewfile?fid=<?=$row['fid']?>" target="_blank">预览</a>
+						<a data-id="<?=$row['id']?>"  data-review data-fid="<?=$row['fid']?>">预览</a>
 						<a href="/download?id=<?=$row['fid']?>" target="_blank">下载</a>
 					</dd>
 				</dl>

@@ -67,20 +67,23 @@
         </div>
       </div>
 
-      <ul class="pre-fold-list">
-        <?foreach($fold as $row):?>
-          <li>
-             <a href="/group/prep?prid=<?=$row['prid']?>&ud=<?=$row['uid']?>&fdid=<?=$row['id']?>"><i class="fold"></i><?=$row['name']?></a>
-          </li>
-        <?endforeach?>
-      </ul>
-      <?if(count($flist)>0):?>
+      
         <table width="100%" class="table table-striped table-hover prep-file-list">
             <tr>
               <th>文件名</th>
-              <th width="100">类型</th>
-              <th width="100">大小 </th>
-            </tr>          
+              <th width="100"><?if(count($flist)>0):?>类型<?endif?></th>
+              <th width="100"><?if(count($flist)>0):?>大小<?endif?></th>
+            </tr>         
+        <?foreach($fold as $row):?>
+          <tr>
+            <td>
+             <a href="/group/prep?prid=<?=$row['prid']?>&ud=<?=$row['uid']?>&fdid=<?=$row['id']?>"><i class="fold"></i><?=$row['name']?></a>
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+        <?endforeach?>
+        <?if(count($flist)>0):?>
           <?foreach($flist as $row):?>
             <tr>
               <td>
@@ -124,13 +127,13 @@
               </td>
               <td><?=$row['size']?></td>
             </tr>
-          <?endforeach?>
-        </table>
+          <?endforeach?>    
       <?else:?>
-        <table width="100%" class="table table-striped table-hover prep-file-list">
-          <tr><td align="center">还没有文件哦!</td></tr>
-        </table>
-      <?endif?>
+        
+          <tr><td colspan="3" align="center">还没有文件哦!</td></tr>
+        
+        <?endif?>
+      </table>
     </div>
 
       <div class="aside">
