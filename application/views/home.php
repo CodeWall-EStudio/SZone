@@ -525,11 +525,25 @@
         var upload_url = '<?=$upload_url;?>?fid=<?=$fid?>&csrf_test_name='+$.cookie('csrf_cookie_name'),
             upload_chunk = <?=$upload_chunk;?>;
            
-		var folds = '<?=json_encode($fold);?>',
-			files = '<?=json_encode($file);?>';
+		// var folds = '<?=json_encode($fold);?>',
+		// 	files = '<?=json_encode($file);?>';
 		var fid = '<?=$fid?>';
-		folds = $.parseJSON(folds);
-		files = $.parseJSON(files);
+		var folds = {},
+			files = {};
+		<?foreach($fold as $row):?>
+			folds['<?=$row['id']?>'] = {
+				id : '<?=$row['id']?>',
+				name : '<?=$row['name']?>'
+			};
+		<?endforeach?>
+		<?foreach($file as $row):?>
+			files['<?=$row['id']?>'] = {
+				id : '<?=$row['id']?>',
+				name : '<?=$row['name']?>'
+			};
+		<?endforeach?>
+		// folds = $.parseJSON(folds);
+		// files = $.parseJSON(files);
 
 		// console.log(folds);
 		// console.log(files);
