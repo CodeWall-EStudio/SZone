@@ -16,13 +16,22 @@ class Download extends CI_Controller {
 
     function __construct()
     {
+        if(!isset($_SESSION)){
+            session_start();
+        }          
         parent::__construct();
         $this->set_user();
     }
 
     protected function set_user()
     {
-        $this->user['uid'] = $this->session->userdata('uid');
+        //$this->user['uid'] = $this->session->userdata('uid');
+        if(isset($_SESSION['uid'])){
+            $this->user['uid'] = (int) $_SESSION['uid'];//intval($this->session->userdata('uid'));
+        }else{
+            $this->user['uid'] = 0;
+            redirect('/login/nologin');
+        }        
         if (!empty($this->user['uid']))
         {
             $this->load->model('User_model');
