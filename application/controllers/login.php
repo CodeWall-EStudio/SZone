@@ -100,6 +100,10 @@ class Login extends CI_Controller {
 */
 	}
 
+    public function nologin(){
+        $this->load->view('notlogin');    
+    }
+
     public function quit(){
         if(!isset($_SESSION)){
             session_start();

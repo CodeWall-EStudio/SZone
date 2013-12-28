@@ -34,6 +34,7 @@ class SZone_Controller extends CI_Controller {
             $this->user['uid'] = (int) $_SESSION['uid'];//intval($this->session->userdata('uid'));
         }else{
             $this->user['uid'] = 0;
+            redirect('/login/nologin');
         }
         if ($this->user['uid'] != 0)
         {
