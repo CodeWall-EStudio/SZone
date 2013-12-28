@@ -20,7 +20,7 @@
 			    session_start();
 			}
 			$this->CI =& get_instance();
-			$this->CI->load->library('session');
+			//$this->CI->load->library('session');
 
 			$this->initialize($props);
 
@@ -46,7 +46,7 @@
 	        //-------生成唯一随机串防CSRF攻击
 	        $state = md5(uniqid(rand(), TRUE));
 
-	        $this->CI->session->set_userdata('state',$state);
+	        //$this->CI->session->set_userdata('state',$state);
 	        $_SESSION['state'] = $state;
 	        log_message('debug','state:'.$state);
 
@@ -64,14 +64,14 @@
 		}
 
 		public function get_access(){
-			if($this->CI->session->userdata('access_token')){
-				return false;
+			if(isset($_SESSION['access_token'])){
+				return $_SESSION['access_token'];
 			}
-			$state = $this->CI->session->userdata('state');
+			//$state = $this->CI->session->userdata('state');
 
-			if(empty($state)){
+			//if(empty($state)){
 				$state = $_SESSION['state'];
-			}
+			//}
 
 			log_message('debug','access state:'.$state);
 			//echo json_encode($this->CI->session->userdata('state'));
@@ -106,13 +106,17 @@
 	        $params = array();
 	        parse_str($response, $params);
 	        $_SESSION['access_token'] = $params["access_token"];
-       		$this->CI->session->set_userdata('access_token',$params["access_token"]);	        
+       		//$this->CI->session->set_userdata('access_token',$params["access_token"]);	        
 		}
 
 		public function get_openid(){
-			if($this->CI->session->userdata('openid')){
-				return $this->session->userdata('openid');
-			}	
+
+			if(isset($_SESSION['openid'])){
+				return $_SESSION['openid'];
+			}			
+			// if($this->CI->session->userdata('openid')){
+			// 	return $this->session->userdata('openid');
+			// }	
 
 			$access_token = $_SESSION['access_token'];
 	        //-------请求参数列表
@@ -139,7 +143,7 @@
 	        //------记录openid
 	        if(isset($user->openid)){
 	        	$_SESSION['openid'] = $user->openid;
-		        $this->CI->session->set_userdata('openid',$user->openid);
+		        //$this->CI->session->set_userdata('openid',$user->openid);
 		        return $user->openid;
 	    	}else{
 	    		return false;

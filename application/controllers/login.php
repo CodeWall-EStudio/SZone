@@ -101,7 +101,11 @@ class Login extends CI_Controller {
 	}
 
     public function quit(){
-        $this->session->sess_destroy();
+        if(!isset($_SESSION)){
+            session_start();
+        }        
+        session_destroy();
+        //$this->session->sess_destroy();
         redirect('/');
     }
 
