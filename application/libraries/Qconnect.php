@@ -27,7 +27,7 @@
 		}
 
 		public function logmsg($msg){
-			
+			//error_log($msg,1,'',headers)
 		}
 
 		public function set_error($msg)

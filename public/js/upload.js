@@ -31,7 +31,7 @@
 	});
 	//'/cgi/gupload?gid='+nowGroupId+'&csrf_test_name='+$.cookie('csrf_cookie_name'),
 
-
+	//console.log(upload_url);
     var upload_settings = {
         // General settings
         runtimes : 'html5,flash,silverlight,html4',

@@ -78,6 +78,7 @@ class Login extends CI_Controller {
 
 		$this->session->set_userdata($data);
 
+        //echo json_encode($this->session->userdata($openid));
 		redirect('/');
 /*
 　　获得access_token，在callback页面中使用$qc->qq_callback()返回access_token,

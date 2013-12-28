@@ -47,7 +47,8 @@ class SZone_Controller extends CI_Controller {
             $this->deplist = $ret['deplist'];
             $this->depinfolist = $ret['depinfolist'];
             $this->prelist = $ret['prelist'];
-            $this->school = $ret['school'];
+            $this->school = $this->Group_model->get_school_info();//$ret['school'];
+            //$this->school = $ret['school'];
             // echo json_encode($this->grouplist);
         }
     }

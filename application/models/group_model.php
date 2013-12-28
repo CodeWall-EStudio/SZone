@@ -45,6 +45,21 @@ class Group_model extends CI_Model {
         return $gidlist;
     }
 
+    function get_school_info(){
+        $this->db->where('type',0);
+        $query = $this->db->get($this->table);
+
+        $row = $query->row();
+        $result =  array(
+            'id' => $row->id,
+            'type' => $row->type,
+            'pt' => $row->pt,
+            'name' => $row->name,
+            'content' => $row->content
+        );     
+        return $result;   
+    }
+
     function get_user_group_auth($id){
         $this->db->where('uid', $id);
         $this->db->where('auth >', 0);

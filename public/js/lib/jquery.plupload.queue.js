@@ -97,7 +97,7 @@ used as it is.
 						'<div class="plupload_header">' +
 							'<div class="plupload_header_content">' +
 								'<div class="plupload_header_title">' + _('选择文件') + '</div>' +
-								'<div class="plupload_header_text">' + _('添加文件然后按开始上传') + '</div>' +
+								'<div class="plupload_header_text">' + _('选择文件然后按开始上传') + '</div>' +
 							'</div>' +
 						'</div>' +
 
@@ -115,7 +115,7 @@ used as it is.
 							'<div class="plupload_filelist_footer">' +
 								'<div class="plupload_file_name">' +
 									'<div class="plupload_buttons">' +
-										'<a href="#" class="plupload_button plupload_add" id="' + id + '_browse">' + _('添加文件') + '</a>' +
+										'<a href="#" class="plupload_button plupload_add" id="' + id + '_browse">' + _('选择文件') + '</a>' +
 										'<a href="#" class="plupload_button plupload_start">' + _('开始上传') + '</a>' +
 									'</div>' +
 									'<span class="plupload_upload_status"></span>' +
@@ -238,7 +238,7 @@ used as it is.
 					$('span.plupload_total_file_size', target).html(plupload.formatSize(uploader.total.size));
 
 					if (uploader.total.queued === 0) {
-						$('span.plupload_add_text', target).html(_('添加文件'));
+						$('span.plupload_add_text', target).html(_('选择文件'));
 					} else {
 						$('span.plupload_add_text', target).html(_('%d files queued').replace(/%d/, uploader.total.queued));
 					}
@@ -307,7 +307,7 @@ used as it is.
 						up.settings.drop_element = id + '_filelist';
 					}
 
-					$('#' + id + '_container').attr('title', 'Using runtime: ' + res.runtime);
+					//$('#' + id + '_container').attr('title', 'Using runtime: ' + res.runtime);
 
 					$('a.plupload_start', target).click(function(e) {
 						if (!$(this).hasClass('plupload_disabled')) {

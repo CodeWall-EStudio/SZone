@@ -522,13 +522,15 @@
     <script src="/js/common.js"></script>
 
     <script>
+        var upload_url = '<?=$upload_url;?>?fid=<?=$fid?>&csrf_test_name='+$.cookie('csrf_cookie_name'),
+            upload_chunk = <?=$upload_chunk;?>;
+           
 		var folds = '<?=json_encode($fold);?>',
 			files = '<?=json_encode($file);?>';
 		var fid = '<?=$fid?>';
 		folds = $.parseJSON(folds);
 		files = $.parseJSON(files);
-        var upload_url = '<?=$upload_url;?>?fid=<?=$fid?>&csrf_test_name='+$.cookie('csrf_cookie_name'),
-            upload_chunk = <?=$upload_chunk;?>;
+
 		// console.log(folds);
 		// console.log(files);
 	</script>
