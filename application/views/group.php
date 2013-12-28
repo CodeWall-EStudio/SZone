@@ -613,6 +613,8 @@
         // <script type="text/javascript" src="/js/lib/plupload.dev.js"></script>	 -->
 
 	<script>
+        var upload_url = '<?=$upload_url?>?fid=<?=$fid?>&gid=<?=$gid?>&csrf_test_name='+$.cookie('csrf_cookie_name'),
+            upload_chunk = '<?=$upload_chunk?>';	
 		var folds = '<?=json_encode($fold);?>',
 			files = '<?=json_encode($file);?>';
 		var ginfo = '<?=json_encode($ginfo);?>';
@@ -620,8 +622,7 @@
 		folds = $.parseJSON(folds);
 		files = JSON.parse(files);//$.parseJSON(files);
 		ginfo = $.parseJSON(ginfo);
-        var upload_url = '<?=$upload_url?>?fid=<?=$fid?>&gid=<?=$gid?>&csrf_test_name='+$.cookie('csrf_cookie_name'),
-            upload_chunk = '<?=$upload_chunk?>';
+
 
 	</script>
 
