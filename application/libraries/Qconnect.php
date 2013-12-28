@@ -6,6 +6,7 @@
 	    const GET_ACCESS_TOKEN_URL = "https://graph.qq.com/oauth2.0/token";
 	    const GET_OPENID_URL = "https://graph.qq.com/oauth2.0/me";		
 	    const GET_USER_INFO = 'https://graph.qq.com/user/get_user_info';
+	    const FILE_PATH = 'E:\myworks\ezone\logs';
 
 		public $appid = '100548719';
 		public $appkey = '9e47324ac7fed9f8364d4982ccf3037e';
@@ -13,7 +14,11 @@
 		public $scope = null;
 		public $CI;
 
+
 		public function __construct($props = array()){
+			if(!isset($_SESSION)){
+			    session_start();
+			}
 			$this->CI =& get_instance();
 			$this->CI->load->library('session');
 
@@ -27,7 +32,8 @@
 		}
 
 		public function logmsg($msg){
-			//error_log($msg,1,'',headers)
+			$path = self::FILE_PATH.'\\logs';
+			error_log(print_r($msg.'\r\n',true),3,$path);
 		}
 
 		public function set_error($msg)
@@ -41,6 +47,8 @@
 	        $state = md5(uniqid(rand(), TRUE));
 
 	        $this->CI->session->set_userdata('state',$state);
+	        $_SESSION['state'] = $state;
+	        log_message('debug','state:'.$state);
 
 	        //-------构造请求参数列表
 	        $keysArr = array(
@@ -51,7 +59,6 @@
 	            "scope" => $this->scope
 	        );			
 
-
 	        $login_url =  $this->combineURL(self::GET_AUTH_CODE_URL, $keysArr);
 	        header("Location:$login_url");
 		}
@@ -61,6 +68,12 @@
 				return false;
 			}
 			$state = $this->CI->session->userdata('state');
+
+			if(empty($state)){
+				$state = $_SESSION['state'];
+			}
+
+			log_message('debug','access state:'.$state);
 			//echo json_encode($this->CI->session->userdata('state'));
 			if($state != $this->CI->input->get('state')){
 				$this->set_error('state error!');
@@ -92,17 +105,21 @@
 
 	        $params = array();
 	        parse_str($response, $params);
+	        $_SESSION['access_token'] = $params["access_token"];
        		$this->CI->session->set_userdata('access_token',$params["access_token"]);	        
 		}
 
 		public function get_openid(){
 			if($this->CI->session->userdata('openid')){
 				return $this->session->userdata('openid');
-			}			
+			}	
+
+			$access_token = $_SESSION['access_token'];
 	        //-------请求参数列表
 	        $keysArr = array(
-	            "access_token" => $state = $this->CI->session->userdata('access_token')//$this->recorder->read("access_token")
-	        );
+	            "access_token" => $access_token//$state = $this->CI->session->userdata('access_token')//$this->recorder->read("access_token")
+	        );	        
+
 
 	        $graph_url = $this->combineURL(self::GET_OPENID_URL, $keysArr);
 	        $response = $this->get_contents($graph_url);
@@ -121,6 +138,7 @@
 	        }
 	        //------记录openid
 	        if(isset($user->openid)){
+	        	$_SESSION['openid'] = $user->openid;
 		        $this->CI->session->set_userdata('openid',$user->openid);
 		        return $user->openid;
 	    	}else{
@@ -136,8 +154,8 @@
 
             $keysArr = array(
                 "oauth_consumer_key" => (int)$this->appid,
-                "access_token" => $this->CI->session->userdata('access_token'),
-                "openid" => $this->CI->session->userdata('openid')
+                "access_token" => $_SESSION['access_token'],//$this->CI->session->userdata('access_token'),
+                "openid" => $_SESSION['openid']// $this->CI->session->userdata('openid')
             );		
 
             $optionArgList = array();//一些多项选填参数必选一的情形

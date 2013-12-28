@@ -20,6 +20,9 @@ class SZone_Controller extends CI_Controller {
 
     function __construct()
     {
+        if(!isset($_SESSION)){
+            session_start();
+        }        
         parent::__construct();
         $this->set_user();
         $this->set_group();
@@ -27,7 +30,11 @@ class SZone_Controller extends CI_Controller {
 
     protected function set_user()
     {
-        $this->user['uid'] = intval($this->session->userdata('uid'));
+        if(isset($_SESSION['uid'])){
+            $this->user['uid'] = (int) $_SESSION['uid'];//intval($this->session->userdata('uid'));
+        }else{
+            $this->user['uid'] = 0;
+        }
         if ($this->user['uid'] != 0)
         {
             $this->load->model('User_model');

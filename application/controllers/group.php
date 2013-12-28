@@ -361,7 +361,7 @@ class Group extends SZone_Controller {
 
 	public function newgroup(){
 		$data['uinfo'] = $this->user;
-		$sql = 'select id,name from user where id !='.(int) $this->user['id'];
+		$sql = 'select id,name from user where id !='.(int) $this->user['uid'];
 		$query = $this->db->query($sql);
 
 		$ul = array();

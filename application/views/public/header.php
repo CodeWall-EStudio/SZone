@@ -22,7 +22,7 @@
 								<ul class="head-second">
 								<?foreach($item['list'] as $row):?>
 									<li>
-										<a href="/group?id=<?=$row['id']?>"><?=htmlspecialchars($row['name'])?></a>
+										<a href="/group?id=<?=$row['id']?>" title="<?=htmlspecialchars($row['name'])?>"><?=htmlspecialchars($row['name'])?></a>
 										<?if($row['auth']):?>
 											<span><a data-toggle="modal" data-id="<?=$row['id']?>" cmd="manage" data-target="#manageWin">管理</a></span>
 										<?endif?>										

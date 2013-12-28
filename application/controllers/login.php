@@ -40,6 +40,10 @@ class Login extends CI_Controller {
     }
 
 	public function callback(){
+        if(!isset($_SESSION)){
+            session_start();
+        }
+
 		$this->load->library('qconnect');
 
 		$this->qconnect->get_access();
@@ -76,7 +80,15 @@ class Login extends CI_Controller {
             $data['nick'] = $nick;
         }
 
-		$this->session->set_userdata($data);
+        $_SESSION['uid'] = $data['uid'];
+        $_SESSION['name'] = $data['name'];
+        $_SESSION['nick'] = $data['nick'];
+        $_SESSION['auth'] = $data['auth'];
+        if(isset($data['size'])){
+            $_SESSION['size'] = $data['size'];
+        }
+
+		//$this->session->set_userdata($data);
 
         //echo json_encode($this->session->userdata($openid));
 		redirect('/');

@@ -47,6 +47,8 @@ class CI_Session {
 	var $CI;
 	var $now;
 
+	const FILE_PATH = 'E:\myworks\ezone\logs';
+
 	/**
 	 * Session Constructor
 	 *
@@ -123,6 +125,11 @@ class CI_Session {
 
 		log_message('debug', "Session routines successfully run");
 	}
+
+	public function logmsg($msg){
+		$path = self::FILE_PATH.'\\logs';
+		error_log(print_r($msg.'\r\n',true),3,$path);
+	}	
 
 	// --------------------------------------------------------------------
 
@@ -351,17 +358,19 @@ class CI_Session {
 		// Save the old session id so we know which record to
 		// update in the database if we need it
 		$old_sessid = $this->userdata['session_id'];
+		log_message('debug','old_sessid:'.$old_sessid);
 		$new_sessid = '';
 		while (strlen($new_sessid) < 32)
 		{
 			$new_sessid .= mt_rand(0, mt_getrandmax());
 		}
-
 		// To make the session ID even more secure we'll combine it with the user's IP
 		$new_sessid .= $this->CI->input->ip_address();
 
 		// Turn it into a hash
 		$new_sessid = md5(uniqid($new_sessid, TRUE));
+
+		log_message('debug','new_sessid:'.$new_sessid);
 
 		// Update the session data in the session data array
 		$this->userdata['session_id'] = $new_sessid;
@@ -663,7 +672,7 @@ class CI_Session {
 		}
 
 		$expire = ($this->sess_expire_on_close === TRUE) ? 0 : $this->sess_expiration + time();
-
+		log_message('debug','cookie :'.$this->sess_cookie_name);
 		// Set the cookie
 		setcookie(
 					$this->sess_cookie_name,
