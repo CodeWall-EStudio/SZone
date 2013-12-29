@@ -34,12 +34,14 @@ class Login extends CI_Controller {
     }
 
     public function connect(){
+        log_message('debug','start connect :'.time());
         $this->load->library('qconnect');
         $this->qconnect->qq_login();
         return;
     }
 
 	public function callback(){
+        log_message('debug','callback :'.time());
         if(!isset($_SESSION)){
             session_start();
         }
@@ -49,7 +51,7 @@ class Login extends CI_Controller {
 		$this->qconnect->get_access();
 		$openid = $this->qconnect->get_openid();
 		$ret = $this->qconnect->get_info();
-
+        log_message('debug','callback cmp :'.time());
         $name = $ret->nickname;
 		$nick = $name;
 
@@ -87,7 +89,7 @@ class Login extends CI_Controller {
         if(isset($data['size'])){
             $_SESSION['size'] = $data['size'];
         }
-
+        log_message('debug','callback redirect :'.time());
 		//$this->session->set_userdata($data);
 
         //echo json_encode($this->session->userdata($openid));

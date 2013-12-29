@@ -67,6 +67,7 @@
 			if(isset($_SESSION['access_token'])){
 				return $_SESSION['access_token'];
 			}
+			log_message('debug','start get access_token:'.time());
 			//$state = $this->CI->session->userdata('state');
 
 			//if(empty($state)){
@@ -91,7 +92,7 @@
 
 	        $token_url = $this->combineURL(self::GET_ACCESS_TOKEN_URL, $keysArr);	
 	        $response = $this->get_contents($token_url);	
-
+	        log_message('debug','start get access_token end1:'.time());
 	        if(strpos($response, "callback") !== false){
 	            $lpos = strpos($response, "(");
 	            $rpos = strrpos($response, ")");
@@ -105,6 +106,7 @@
 
 	        $params = array();
 	        parse_str($response, $params);
+	        log_message('debug','start get access_token end2:'.time());
 	        $_SESSION['access_token'] = $params["access_token"];
        		//$this->CI->session->set_userdata('access_token',$params["access_token"]);	        
 		}
@@ -117,7 +119,7 @@
 			// if($this->CI->session->userdata('openid')){
 			// 	return $this->session->userdata('openid');
 			// }	
-
+			log_message('debug','start get openid:'.time());
 			$access_token = $_SESSION['access_token'];
 	        //-------请求参数列表
 	        $keysArr = array(
@@ -127,7 +129,7 @@
 
 	        $graph_url = $this->combineURL(self::GET_OPENID_URL, $keysArr);
 	        $response = $this->get_contents($graph_url);
-
+			log_message('debug','start get openid1:'.time());
 	        //--------检测错误是否发生
 	        if(strpos($response, "callback") !== false){
 
@@ -137,6 +139,7 @@
 	        }
 
 	        $user = json_decode($response);
+	        log_message('debug','start get openid2:'.time());
 	        if(isset($user->error)){
 	            $this->set_error($user->error, $user->error_description);
 	        }
