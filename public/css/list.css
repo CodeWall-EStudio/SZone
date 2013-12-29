@@ -411,17 +411,42 @@ i.ad{
 .dis-list-type{
 	/*float:left;*/
 }
+
+
 .fold-list ul{
 	padding:4px;
 }
 .fold-list li{
 	padding-left:4px;
 	width:200px;
+	padding:4px 0;
 }
-.fold-list i.glyphicon{
+.fold-list li i{
+	display:inline-block;
+	width:16px;
+	height:16px;
+}
+
+.fold-list li i{
+	display:inline-block;
+	position: relative;
+	top:4px;
+	width:16px;
+	height:16px;
+	margin-right:4px;
+}
+.fold-list li i.plus{
+	background:url(imgs/jia.png) no-repeat;
+}
+.fold-list li i.minus{
+	background:url(imgs/jian.png) no-repeat;
+}
+
+
+/*.fold-list i.glyphicon{
 	width:7px;
 	height:14px;
-}
+}*/
 td{
 	position:relative;
 }

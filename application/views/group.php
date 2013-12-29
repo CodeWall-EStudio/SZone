@@ -68,7 +68,7 @@
 									<?endif?>					
 								<?if($thisfold['pid']):?>
 
-									<a class="first" href="/group?id=<?=$gid?>&fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>"><?= htmlspecialchars($fold[$thisfold['pid']]['name']) ?></a>
+									<a class="first" href="/group?id=<?=$gid?>&fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>" style="z-index:19"><?= htmlspecialchars($fold[$thisfold['pid']]['name']) ?></a>
 								<?endif?>
 								<a class="end" style="z-index:18"><?= htmlspecialchars($thisfold['name']) ?></a>
 								<a class="second" style="z-index:17" href="/group?id=<?=$gid?>&fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>">返回上级</a>
@@ -145,7 +145,7 @@
 					<ul>
 						<?foreach($flist as $item):?>
 							<li class="list-li">
-								<i class="glyphicon <?if(isset($item['child'])):?>glyphicon-plus<?endif?>" data-id="<?=$item['id']?>"></i><a  title="<?=$item['name']?>"  class="list-link" href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"> <?=htmlspecialchars($item['name'])?></a>							
+								<i class="<?if(isset($item['child'])):?>plus<?endif?>" data-id="<?=$item['id']?>"></i><a  title="<?=$item['name']?>"  class="list-link" href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"> <?=htmlspecialchars($item['name'])?></a>							
 							</li>						
 						<?endforeach?>
 					</ul>				
@@ -592,7 +592,7 @@
 					console.log(item);
 			%>
 			<li>
-				<i class="glyphicon <%if(item.child){%>glyphicon-plus<%}%>" data-id="<%=item.id%>"></i><a class="list-link" href="/home?fid=<%=item.id%>&od=<?=$od?>&on=<?=$on?>"> <%=item.name%></a>	
+				<i class="<%if(item.child){%>plus<%}%>" data-id="<%=item.id%>"></i><a class="list-link" href="/home?fid=<%=item.id%>&od=<?=$od?>&on=<?=$on?>"> <%=item.name%></a>	
 			</li>
 			<%}%>
 		</ul>

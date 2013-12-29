@@ -669,11 +669,11 @@
 			}
 			var p = t.parent('li');
 			if(p.find('ul').length > 0){
-				if(t.hasClass("glyphicon-minus")){
-					t.removeClass('glyphicon-minus');
+				if(t.hasClass("minus")){
+					t.removeClass('minus');
 					p.find('ul').hide();
 				}else{
-					t.addClass('glyphicon-minus');
+					t.addClass('minus');
 					p.find('ul').show();
 				}
 				return;
@@ -686,7 +686,7 @@
 						list : d.data.list
 					}
 					p.append($.tmp(tmp,obj));
-					t.addClass('glyphicon-minus');
+					t.addClass('minus');
 				}else{
 					t.attr('no-data',1);
 				}

@@ -210,7 +210,7 @@ class Cgi extends SZone_Controller {
                     'md5' => $md5,
                     //'type' => $filedata['is_image'],
                     'mimes' => $filedata['file_type'],
-                    'del' => 0
+                    'ref' => 1
                 );
                 if($filedata['is_image']){
                     $data['type'] = 1;

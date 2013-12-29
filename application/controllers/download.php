@@ -92,9 +92,10 @@ class Download extends CI_Controller {
             $auth['name'] = $auth['fname'];
         }
 
+        $fname =  iconv("utf-8","gb2312//IGNORE",$auth['name']); 
 
         header('Content-type: '.$file['mimes']);
-        header('Content-Disposition: attachment; filename='.$auth['name']);
+        header('Content-Disposition: attachment; filename='.$fname);
         header('Content-Length: '.$file['size']);
         header('X-Accel-Redirect: /file/'.substr($file['md5'],0,2).'/'.substr($file['md5'],2,2).'/'.$file['md5']);
     }
@@ -202,8 +203,10 @@ class Download extends CI_Controller {
             if(file_exists($files[$i]['path'])){
                 if (empty($gid)) {
                     $realname = $auth[$i]['name'];
+                    $realname =  iconv("utf-8","gb2312//IGNORE",$realname); 
                 } else {
                     $realname = $auth[$i]['fname'];
+                    $realname =  iconv("utf-8","gb2312//IGNORE",$realname); 
                 }
                 $zip->addFile($files[$i]['path'], $realname);
             }

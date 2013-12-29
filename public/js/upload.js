@@ -60,8 +60,8 @@
         // Resize images on clientside if we can
         //resize : {width : 320, height : 240, quality : 90},
 
-        flash_swf_url : '../../js/moxie.swf',
-        silverlight_xap_url : '../../js/moxie.xap'
+        flash_swf_url : '../../js/lib/moxie.swf',
+        silverlight_xap_url : '../../js/lib/moxie.xap'
     };
 
     if (upload_chunk == 1) {

@@ -122,7 +122,7 @@
 				<ul>
 					<?foreach($flist as $item):?>
 						<li class="list-li">
-							<i class="glyphicon <?if(isset($item['child'])):?>glyphicon-plus<?endif?>" data-id="<?=$item['id']?>"></i><a title="<?=$item['name']?>" class="list-link" href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"> <?=$item['name']?></a>							
+							<i class="<?if(isset($item['child'])):?>plus<?endif?>" data-id="<?=$item['id']?>"></i><a title="<?=$item['name']?>" class="list-link" href="/home?fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>"> <?=$item['name']?></a>							
 						</li>						
 					<?endforeach?>
 				</ul>				
@@ -501,7 +501,7 @@
 					console.log(item);
 			%>
 			<li>
-				<i class="glyphicon <%if(item.child){%>glyphicon-plus<%}%>" data-id="<%=item.id%>"></i><a class="list-link" href="/home?fid=<%=item.id%>&od=<?=$od?>&on=<?=$on?>"> <%=item.name%></a>	
+				<i class="<%if(item.child){%>plus<%}%>" data-id="<%=item.id%>"></i><a class="list-link" href="/home?fid=<%=item.id%>&od=<?=$od?>&on=<?=$on?>"> <%=item.name%></a>	
 			</li>
 			<%}%>
 		</ul>
