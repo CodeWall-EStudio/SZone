@@ -96,6 +96,14 @@ class Fold_model extends CI_Model {
     	return $fold;
     }
 
+    function update_prep_byid($id,$name){
+    	$data = array(
+    		'name' => $name
+    	);
+
+        $this->db->update($this->utable, $data, array('prid' => $id,'pid' => 0));    	
+    }
+
     function get_child_prep($pid,$uid){
     	$this->db->where('pid',$pid);
     	$this->db->where('uid',$uid);

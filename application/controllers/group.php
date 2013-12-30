@@ -580,7 +580,7 @@ class Group extends SZone_Controller {
 		}
 
 		if($fdid){
-			$sql = 'select a.id,a.name,a.fid,a.mark,b.size,b.type from userfile a,files b where a.fdid='.$fdid.' and a.fid = b.id';
+			$sql = 'select a.id,a.name,a.fid,a.mark,b.size,b.type from userfile a,files b where a.del = 0 and a.fdid='.$fdid.' and a.fid = b.id';
 			if($key && $key != '' && $key != '搜索文件'){
 				$sql .= ' and a.name like "%'.$key.'%"';
 			}

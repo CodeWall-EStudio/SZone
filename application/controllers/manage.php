@@ -610,7 +610,7 @@ class Manage extends SZone_Controller {
 							}
 						}
 					}
-					echo json_encode($insertData);
+					//echo json_encode($insertData);
 					if(count($insertData)>0){
 						$sql = 'insert into groupuser (gid,uid,auth) value '.implode(',',$insertData);
 						$query = $this->db->query($sql);
@@ -636,6 +636,11 @@ class Manage extends SZone_Controller {
 
 					$str = $this->db->update_string('groups', $data, $where); 
 					$query = $this->db->query($str);
+
+					$this->load->model('Fold_model');
+
+					$this->Fold_model->update_prep_byid($id,$this->input->post('groupname'));
+
 					$num = $this->db->affected_rows();
 					if(!$num){
 						$this->data['ret'] = 1;
