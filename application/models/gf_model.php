@@ -33,4 +33,22 @@ class Gf_model extends CI_Model {
     	return $ids;
     }
 
+    function get_by_gid_ids($gid, $ids)
+    {
+        $this->db->where('gid',$gid);
+        $this->db->where_in('fid',$fid);
+        $query = $this->db->get($this->table);
+
+        $ids = array();
+        foreach($query->result() as $row){
+            array_push($ids,$row->fid);
+        }
+        return $ids;
+    }
+
+    function get_by_uid_ids($uid, $ids)
+    {
+        
+    }
+
 }

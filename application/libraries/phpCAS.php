@@ -22,7 +22,7 @@
  * Interface class of the phpCAS library
  * PHP Version 5
  *
- * @file     CAS/phpCAS.php
+ * @file     CAS/phpcas.php
  * @category Authentication
  * @package  PhpCAS
  * @author   Pascal Aubry <pascal.aubry@univ-rennes1.fr>
@@ -1912,7 +1912,7 @@ class phpCAS
  *  @ingroup internalConfig
  *
  * To add a new language:
- * - 1. define a new constant PHPCAS_LANG_XXXXXX in CAS/phpCAS.php
+ * - 1. define a new constant PHPCAS_LANG_XXXXXX in CAS/phpcas.php
  * - 2. copy any file from CAS/languages to CAS/languages/XXXXXX.php
  * - 3. Make the translations
  */
