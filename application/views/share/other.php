@@ -17,7 +17,7 @@
 			<i>
 				<?for($i = 0;$i<count($fl);$i++):?>
 				<?
-					array_push($idlist,$fl[$i]['id']);
+					array_push($idlist,$fl[$i]['fid']);
 				?>
 					<?if($i<8):?>
 						<?=$fl[$i]['name']?>

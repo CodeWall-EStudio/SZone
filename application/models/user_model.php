@@ -73,6 +73,14 @@ class User_model extends CI_Model {
         $this->db->update($this->table, array('used' => $used), array('id' => $id));
     }
 
+    function get_other($id)
+    {
+        $this->db->select('id, name');
+        $this->db->where_not_in('id', $id);
+        $query = $this->db->get($this->table);
+        return $query->row_array();
+    }
+
     function get_last_ten_entries()
     {
         $query = $this->db->get('entries', 10);

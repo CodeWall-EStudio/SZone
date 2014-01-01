@@ -50,63 +50,11 @@ class Test extends CI_Controller {
     {
         $this->load->library('phpCAS');
 
-///////////////////////////////////////
-// Basic Config of the phpCAS client //
-///////////////////////////////////////
-
-// Full Hostname of your CAS Server
-        $cas_host = 'dand.71xiaoxue.com';
-
-// Context of the CAS Server
-        $cas_context = '/sso.web';
-
-// Port of your CAS server. Normally for a https server it's 443
-        //$cas_port = 443;
-        $cas_port = 80;
-
-        $cas_server_ca_cert_path = '/path/to/cachain.pem';
-
-        $curbase = 'http://' . $_SERVER['SERVER_NAME'];
-
-        $curdir = dirname($_SERVER['REQUEST_URI']) . "/";
-
-// CAS client nodes for rebroadcasting pgtIou/pgtId and logoutRequest
-        $rebroadcast_node_1 = 'http://cas-client-1.example.com';
-        $rebroadcast_node_2 = 'http://cas-client-2.example.com';
-
-// access to a single service
-        $serviceUrl = $curbase . $curdir . 'example_service.php';
-// access to a second service
-        $serviceUrl2 = $curbase . $curdir . 'example_service_that_proxies.php';
-
-        $pgtBase = preg_quote(preg_replace('/^http:/', 'https:', $curbase . $curdir), '/');
-        $pgtUrlRegexp = '/^' . $pgtBase . '.*$/';
-
-        $cas_url = 'http://' . $cas_host;
-        if ($cas_port != '443' && $cas_port != '80') {
-            $cas_url = $cas_url . ':' . $cas_port;
-        }
-        $cas_url = $cas_url . $cas_context;
-
-// Set the session-name to be unique to the current script so that the client script
-// doesn't share its session with a proxied script.
-// This is just useful when running the example code, but not normally.
-        session_name(
-            'session_for:'
-            . preg_replace('/[^a-z0-9-]/i', '_', basename($_SERVER['SCRIPT_NAME']))
-        );
-// Set an UTF-8 encoding header for internation characters (User attributes)
-        header('Content-Type: text/html; charset=utf-8');
-
-        // Uncomment to enable debugging
+// Enable debugging
         phpCAS::setDebug();
 
-
-
 // Initialize phpCAS
-        phpCAS::proxy(CAS_VERSION_2_0, $cas_host, $cas_port, $cas_context);
-
-        phpCAS::setFixedServiceURL('http://szone.codewalle.com/test/cas');
+        phpCAS::client(CAS_VERSION_2_0, "dand.71xiaoxue.com", 8444, "sso.test");
 
 // For production use set the CA certificate that is the issuer of the cert
 // on the CAS server and uncomment the line below
@@ -116,15 +64,9 @@ class Test extends CI_Controller {
 // THIS SETTING IS NOT RECOMMENDED FOR PRODUCTION.
 // VALIDATING THE CAS SERVER IS CRUCIAL TO THE SECURITY OF THE CAS PROTOCOL!
         phpCAS::setNoCasServerValidation();
-        phpCAS::setCasServerCACert($cas_server_ca_cert_path, false);
 
 // force CAS authentication
-        try {
-
-            phpCAS::forceAuthentication();
-        } catch(Exception $e) {
-            var_dump($e);
-        }
+        phpCAS::forceAuthentication();
 
 // at this step, the user has been authenticated by the CAS server
 // and the user's login name can be read with phpCAS::getUser().
@@ -133,6 +75,11 @@ class Test extends CI_Controller {
         if (isset($_REQUEST['logout'])) {
             phpCAS::logout();
         }
+
+
+        var_dump(phpCAS::getUser());
+
+        var_dump(phpCAS::getAttributes());
 
 
     }
