@@ -12,6 +12,7 @@
 <body class="share-zone">
 	<i class="glyphicon glyphicon-chevron-down"></i>
 	<? $idlist = array();?>
+	<?if(count($fl)>0):?>
 	<div>
 		<div class="share-tit">
 			复制文件(<?=count($fl)?>)个到文件夹：
@@ -75,6 +76,9 @@
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/lib/jquery.ui.min.js"></script>
 	<script src="/js/lib/jQuery.tmp.js"></script>
-	<script src="/js/copyfile.js" ></script>	
+	<script src="/js/copyfile.js" ></script>
+	<?else:?>	
+		<div class="empty" style="padding:40px;width:200px;text-align:center;margin:0 auto;">您还没有选择文件!</div>
+	<?endif?>
 </body>
 </html>

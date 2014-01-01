@@ -51,8 +51,8 @@ class Manage extends SZone_Controller {
 				'name' => $row->name,
 				'nick' => $row->nick,
 				'auth' => $row->auth,
-				'size' => $row->size,
-				'used' => $row->used,
+				'size' => format_size($row->size),
+				'used' => format_size($row->used),
 			));
 		}
 		$this->data['data']['ulist'] = $ulist;

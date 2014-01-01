@@ -194,7 +194,7 @@ class Group extends SZone_Controller {
 			$sql .= ' LEFT JOIN user c ON c.id = a.uid';
 			$sql .= ' LEFT JOIN groups d ON d.id = a.fgid';
 			$sql .= ' left join usercollection f on f.fid = a.fid';
-			$sql .= ' WHERE a.del =0 and a.fid = b.id and gid='.$gid;
+			$sql .= ' WHERE a.del =0 and gid='.$gid;
 			$sql .= $wsql;
 			if($key){
 				$sql .= ' and a.fname like "%'.$key.'%"';
