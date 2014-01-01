@@ -38,12 +38,11 @@ class User_model extends CI_Model {
 
     function get_by_id($id)
     {
-        $result = array('uid' => $id);
+        $result = array();
         $query = $this->db->get_where($this->table, array('id' => $id));
         if ($query->num_rows() > 0)
         {
             $result = $query->row_array();
-            $result['uid'] = $id;
             $result['real_size'] = $result['size'];
             $result['real_used'] = $result['used'];
             $result['per'] = round($result['real_used']/$result['real_size']*100,2);
@@ -53,17 +52,13 @@ class User_model extends CI_Model {
         return $result;
     }
 
-    function get_by_openid($openid)
+    function get_by_name($name)
     {
         $result = array();
-        $query = $this->db->get_where($this->table, array('openid' => $openid));
+        $query = $this->db->get_where($this->table, array('name' => $name));
         if ($query->num_rows() > 0)
         {
-            $row = $query->row();
-            $user['uid'] = (int) $row->id;
-            $user['auth'] = (int) $row->auth;
-
-            $result[] = $user;
+            $result = $query->row_array();
         }
         return $result;
     }

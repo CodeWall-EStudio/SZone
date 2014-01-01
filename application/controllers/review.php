@@ -17,7 +17,7 @@ class Review extends SZone_Controller {
         }
 
         if (empty($gid)){
-                $auth = $this->File_model->get_by_uid($fid, $this->user['uid']);
+                $auth = $this->File_model->get_by_uid($fid, $this->user['id']);
                 if (empty($auth))
                 {
                     show_error('用户没有查看此文件的权限');
@@ -39,7 +39,7 @@ class Review extends SZone_Controller {
 
 		$sql = 'select a.id,a.fid,a.name,a.content,b.path,b.size,b.type,b.mimes from '.$tablename.' a, files b where a.fid = b.id and b.id = '.$fid;
 		if(!$gid){
-			$sql .= ' and a.uid='.(int) $this->user['uid'];
+			$sql .= ' and a.uid='.$this->user['id'];
 		}
 		// if($type == 1){
 		// 	$sql .= ' and a.id < '.$fid.' limit 0,1';
@@ -81,7 +81,7 @@ class Review extends SZone_Controller {
 		if($gid){
 			$wh .= ' and gid='.$gid.' order by id desc';
 		}else{
-			$wh .= ' and uid='.$this->user['uid'].' order by id desc';
+			$wh .= ' and uid='.$this->user['id'].' order by id desc';
 		}
 		$prev = 0;
 		$next = 0;

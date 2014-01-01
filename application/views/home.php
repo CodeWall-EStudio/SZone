@@ -18,8 +18,8 @@
 				<div class="btn-zone">
 <!-- 					<input type="file" class="upload-input" id="uploadFile" />  data-toggle="modal" data-target="#uploadFile"-->
 					<?if($key==''):?>
-					<button class="upload btn btn-primary btn-upload" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>上传</button>
-					<button class="btn btn-default" data-toggle="modal" data-target="#newFold" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>新建文件夹</button>
+					<button class="upload btn btn-primary btn-upload" <?if(!$nav['userinfo']['id']):?>disabled="disabled"<?endif?>>上传</button>
+					<button class="btn btn-default" data-toggle="modal" data-target="#newFold" <?if(!$nav['userinfo']['id']):?>disabled="disabled"<?endif?>>新建文件夹</button>
 					<?endif?>
 				</div>
 
@@ -306,7 +306,7 @@
 					<a id="myRecy" data-toggle="modal" data-target="#mailbox">回收站</a>
 				</li>
 			</ul>
-		<?if($nav['userinfo']['uid']):?>
+		<?if($nav['userinfo']['id']):?>
 			<?  $this->load->view('public/userinfo.php',$nav['userinfo']); ?>
 		<?endif?>			
 		</div>

@@ -21,13 +21,7 @@ class Home extends SZone_Controller {
 
 	public function index(){
 
-        if ($this->user['uid'] == 0)
-        {
-            $this->load->view('blank');
-            return;
-        }
-
-		$pagenum = $this->config->item('pagenum');
+        $pagenum = $this->config->item('pagenum');
 		$nowpage = (int) $this->input->get('page');
 
 		$od = (int) $this->input->get('od');
@@ -59,8 +53,6 @@ class Home extends SZone_Controller {
 				$odname = 'createtime';
 				break;			
 		}
-		// echo json_encode($this->user);
-		//var_dump($this->user);
 		$type = (int) $this->input->get('type');
 		$fid = (int) $this->input->get('fid');
 		$fname = '';
@@ -80,7 +72,7 @@ class Home extends SZone_Controller {
 			$fid = (int) $this->input->post('fid');
 		}
 
-		$sql = 'select id,name,mark,createtime,pid,tid,idpath from userfolds where prid=0 and uid = '.(int) $this->user['uid'];
+		$sql = 'select id,name,mark,createtime,pid,tid,idpath from userfolds where prid=0 and uid = '.$this->user['id'];
 		// if($key){
 		// 	$sql .= ' and name like "%'.$key.'%"';
 		// }
@@ -142,7 +134,7 @@ class Home extends SZone_Controller {
 		// 	}
 		// }
 
-		$sql = 'select count(a.id) as anum from userfile a left join files b on b.id = a.fid where a.del =0 and a.uid='.(int) $this->user['uid'];
+		$sql = 'select count(a.id) as anum from userfile a left join files b on b.id = a.fid where a.del =0 and a.uid='.$this->user['id'];
 		//if($fid){
 			$sql.=' and a.fdid='.$fid;
 		//}
@@ -159,9 +151,9 @@ class Home extends SZone_Controller {
 	
 
 		if($fid){
-			$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = '.$fid.' and a.del = 0 and a.uid='.(int) $this->user['uid'];
+			$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = '.$fid.' and a.del = 0 and a.uid='.$this->user['id'];
 		}else{
-			$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = 0 and a.del = 0  and a.uid='.(int) $this->user['uid'];
+			$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = 0 and a.del = 0  and a.uid='.$this->user['id'];
 		}
 		if($type){
 			$sql .= ' and b.type='.$type;
@@ -195,14 +187,14 @@ class Home extends SZone_Controller {
 			);
 		}
 
-		$sql = 'select fid from usercollection where uid='.(int) $this->user['uid'];
+		$sql = 'select fid from usercollection where uid='.$this->user['id'];
 		$query = $this->db->query($sql);
 
 		foreach($query->result() as $row){
 			array_push($idlist,$row->fid);
 		}
 
-		$sql = 'select id,name,mark,createtime,pid,tid,idpath from userfolds where prid=0 and uid = '.(int) $this->user['uid'];
+		$sql = 'select id,name,mark,createtime,pid,tid,idpath from userfolds where prid=0 and uid = '.$this->user['id'];
 		if($key){
 			$sql .= ' and name like "%'.$key.'%"';
 		}	
@@ -225,8 +217,8 @@ class Home extends SZone_Controller {
 
 
 		$this->load->model('Mail_model');
-		$newmail = $this->Mail_model->get_user_new_mail($this->user['uid']);
-		$postmail = $this->Mail_model->get_user_post_mail($this->user['uid']);
+		$newmail = $this->Mail_model->get_user_new_mail($this->user['id']);
+		$postmail = $this->Mail_model->get_user_post_mail($this->user['id']);
 
 
 		$data['allnum'] = $allnum;
@@ -269,7 +261,7 @@ class Home extends SZone_Controller {
 		}
 		$sql = 'select id,pid,name,tid,idpath from '.$tablename;
 		if(!$gid){
-			$sql .= ' where prid=0 and uid='.(int) $this->user['uid'];
+			$sql .= ' where prid=0 and uid='.$this->user['id'];
 		}else{
 			$sql .= ' where gid='.$gid.' and pid = 0';
 		}
@@ -352,8 +344,6 @@ class Home extends SZone_Controller {
 		$this->load->helper('util');
 		$m = (int) $this->input->get('m'); // m= 0 发件箱  m = 1 收件箱
 
-		//$this->user['uid'] = 1;
-
 		$this->load->model('Mail_model');
 
 		if($m){
@@ -398,9 +388,9 @@ class Home extends SZone_Controller {
 		}	
 
 		if($m){
-			$sql = 'SELECT a.id,a.fuid as uid,a.content,a.saved,a.createtime,a.fid,b.name AS uname,c.name AS fname,d.path,d.size,d.type FROM message a LEFT JOIN `user` b ON a.fuid = b.`id` LEFT JOIN `userfile` c ON c.fid = a.fid		LEFT JOIN `files` d ON d.id = a.fid	WHERE a.tuid = '.$this->user['uid'];
+			$sql = 'SELECT a.id,a.fuid as uid,a.content,a.saved,a.createtime,a.fid,b.name AS uname,c.name AS fname,d.path,d.size,d.type FROM message a LEFT JOIN `user` b ON a.fuid = b.`id` LEFT JOIN `userfile` c ON c.fid = a.fid		LEFT JOIN `files` d ON d.id = a.fid	WHERE a.tuid = '.$this->user['id'];
 		}else{
-			$sql = 'SELECT a.id,a.tuid as uid,a.content,a.saved,a.createtime,a.fid,b.name AS uname,c.name AS fname,d.path,d.size,d.type FROM message a LEFT JOIN `user` b ON a.tuid = b.`id` LEFT JOIN `userfile` c ON c.fid = a.fid		LEFT JOIN `files` d ON d.id = a.fid	WHERE a.fuid = '.$this->user['uid'];
+			$sql = 'SELECT a.id,a.tuid as uid,a.content,a.saved,a.createtime,a.fid,b.name AS uname,c.name AS fname,d.path,d.size,d.type FROM message a LEFT JOIN `user` b ON a.tuid = b.`id` LEFT JOIN `userfile` c ON c.fid = a.fid		LEFT JOIN `files` d ON d.id = a.fid	WHERE a.fuid = '.$this->user['id'];
 		}
 
 		if($key && $key != '搜索文件'){
@@ -446,7 +436,7 @@ class Home extends SZone_Controller {
 		}
 
 		if(!$m){
-			$sql = 'SELECT DISTINCT a.tuid as id,b.name FROM message a,user b WHERE b.id = a.tuid AND a.fuid = '.(int) $this->user['uid'];	
+			$sql = 'SELECT DISTINCT a.tuid as id,b.name FROM message a,user b WHERE b.id = a.tuid AND a.fuid = '.$this->user['id'];
 			$query = $this->db->query($sql);
 			if ($query->num_rows() > 0){
 				$tlist = array();
@@ -509,7 +499,7 @@ class Home extends SZone_Controller {
 				break;			
 		}	
 
-		$sql = 'SELECT a.id,a.fname,a.fid,a.createtime,a.gid,b.name AS gname,c.path,c.size,c.type,d.name AS fdname FROM groupfile a LEFT JOIN groups b ON b.id = a.gid	LEFT JOIN files c ON c.id = a.fid LEFT JOIN groupfolds d ON a.fdid = d.id WHERE a.uid ='.(int) $this->user['uid'];
+		$sql = 'SELECT a.id,a.fname,a.fid,a.createtime,a.gid,b.name AS gname,c.path,c.size,c.type,d.name AS fdname FROM groupfile a LEFT JOIN groups b ON b.id = a.gid	LEFT JOIN files c ON c.id = a.fid LEFT JOIN groupfolds d ON a.fdid = d.id WHERE a.uid ='.$this->user['id'];
 
 		if($key && $key != '搜索文件'){
 			$sql .= ' and a.fname like "%'.$key.'%"';
@@ -549,7 +539,7 @@ class Home extends SZone_Controller {
 		}
 
 		if($gid){
-			$sql = 'SELECT DISTINCT a.gid as id,b.name FROM groupfile a,groups b WHERE a.gid = b.id AND a.uid='.(int) $this->user['uid'];
+			$sql = 'SELECT DISTINCT a.gid as id,b.name FROM groupfile a,groups b WHERE a.gid = b.id AND a.uid='.$this->user['id'];
 			$query = $this->db->query($sql);
 			if ($query->num_rows() > 0){
 				$tlist = array();
@@ -587,7 +577,7 @@ class Home extends SZone_Controller {
 		$str = implode(' or ',$kl);
 
 		$this->load->model('Group_model');
-		$gidlist = $this->Group_model->get_prep_group_ids($this->user['uid']);
+		$gidlist = $this->Group_model->get_prep_group_ids($this->user['id']);
 
 		$sql = 'select id,name from userfile where '.$str;		
 		$query = $this->db->query($sql);
@@ -630,7 +620,7 @@ class Home extends SZone_Controller {
 						);
 					}
 				}else{
-					$child = $this->Fold_model->get_prep_fold($row->id,$this->user['uid']);
+					$child = $this->Fold_model->get_prep_fold($row->id,$this->user['id']);
 					if(isset($plist[$row->parent])){
 						$plist[$row->parent]['list'][$row->id]['id'] = $row->id;
 						$plist[$row->parent]['list'][$row->id]['name'] = $row->name;
@@ -713,7 +703,7 @@ class Home extends SZone_Controller {
 		$fdid = (int) $this->input->get('fdid');
 
 		$this->load->model('Group_model');
-		$gidlist = $this->Group_model->get_prep_group_ids($this->user['uid']);
+		$gidlist = $this->Group_model->get_prep_group_ids($this->user['id']);
 		
 		
 		$sql = 'select id,name,parent from groups where';  
@@ -779,7 +769,7 @@ class Home extends SZone_Controller {
 		if(count($plist)>0){
 			if(!$prid && !$fid){
 				//取对应的文件夹
-				$sql = 'select id,prid from userfolds where uid='.(int) $this->user['uid'].' and '.implode(' or ',$kp);
+				$sql = 'select id,prid from userfolds where uid='.(int) $this->user['id'].' and '.implode(' or ',$kp);
 				$query = $this->db->query($sql);
 
 				$kpf = array();
@@ -795,7 +785,7 @@ class Home extends SZone_Controller {
 				if($fid){
 					$wh .= ' and fdid='.$fid;
 				}else{
-					$sql = 'select id from userfolds where uid='.(int) $this->user['uid'].' and pid=0 and prid='.$prid;	
+					$sql = 'select id from userfolds where uid='.(int) $this->user['id'].' and pid=0 and prid='.$prid;
 					$query = $this->db->query($sql);
 
 					if($query->num_rows() > 0){
@@ -807,7 +797,7 @@ class Home extends SZone_Controller {
 						$data = array(
 							'pid' => 0,
 							'name' => $pfname,
-							'uid' => $this->user['uid'],
+							'uid' => $this->user['id'],
 							'mark' => '',
 							'createtime' => time(),
 							'type' => 0,
@@ -833,7 +823,7 @@ class Home extends SZone_Controller {
 			}		
 
 			if($fid){
-				$sql = 'select count(a.id) as allnum from userfile a,files b where a.del=0 and a.fid=b.id and uid='.(int) $this->user['uid'];
+				$sql = 'select count(a.id) as allnum from userfile a,files b where a.del=0 and a.fid=b.id and uid='.$this->user['id'];
 				$sql .= $wh;
 
 				$query = $this->db->query($sql);
@@ -842,7 +832,7 @@ class Home extends SZone_Controller {
 				$allnum = $row->allnum;
 
 				//选择文件
-				$sql = 'select a.id,a.fid,a.name,a.createtime,b.type,b.size from userfile a,files b where a.del = 0 and a.fid = b.id and uid = '.(int) $this->user['uid'];
+				$sql = 'select a.id,a.fid,a.name,a.createtime,b.type,b.size from userfile a,files b where a.del = 0 and a.fid = b.id and uid = '.$this->user['id'];
 				$sql .= $wh;
 				$page = get_page_status($nowpage,$pagenum,$allnum);
 
@@ -860,7 +850,7 @@ class Home extends SZone_Controller {
 					);
 				}
 
-				$sql = 'select a.id from userfile a,usercollection b where a.fid=b.fid and b.uid='.(int) $this->user['uid'];
+				$sql = 'select a.id from userfile a,usercollection b where a.fid=b.fid and b.uid='.$this->user['id'];
 				if(count($kfc)>0){
 				$sql .=' and ('.implode(' or ',$kfc).')';
 				}
@@ -874,9 +864,9 @@ class Home extends SZone_Controller {
 			}
 
 			if(!$prid && !$fid){
-				$sql = 'select id,name,mark,createtime,pid,tid,idpath,prid from userfolds where pid='.$fid.' and prid !=0 and uid='.(int) $this->user['uid'];
+				$sql = 'select id,name,mark,createtime,pid,tid,idpath,prid from userfolds where pid='.$fid.' and prid !=0 and uid='.$this->user['id'];
 			}else{
-				$sql = 'select id,name,mark,createtime,pid,tid,idpath,prid from userfolds where pid='.$fid.' and uid='.(int) $this->user['uid'];
+				$sql = 'select id,name,mark,createtime,pid,tid,idpath,prid from userfolds where pid='.$fid.' and uid='.$this->user['id'];
 			}
 			$query = $this->db->query($sql);
 			foreach($query->result() as $row){
@@ -987,7 +977,7 @@ class Home extends SZone_Controller {
 				break;			
 		}		
 
-		$sql = 'SELECT a.id,a.fid,a.remark,a.time,b.name,c.size,c.path,c.type FROM usercollection a LEFT JOIN userfile b ON a.fid = b.fid LEFT JOIN files c ON a.fid = c.id WHERE a.uid ='.$this->user['uid'];
+		$sql = 'SELECT a.id,a.fid,a.remark,a.time,b.name,c.size,c.path,c.type FROM usercollection a LEFT JOIN userfile b ON a.fid = b.fid LEFT JOIN files c ON a.fid = c.id WHERE a.uid ='.$this->user['id'];
 
 		if($od){
 			$sql .= ' order by '.$odname.' '.$desc;
@@ -1033,7 +1023,7 @@ class Home extends SZone_Controller {
 		$pagenum = $this->config->item('pagenum');
 		$nowpage = (int) $this->input->get('page');		
 
-		$sql = 'select count(a.id) as anum from userfile a,files b where a.fid = b.id and a.del = 1 and a.uid='.(int) $this->user['uid'];
+		$sql = 'select count(a.id) as anum from userfile a,files b where a.fid = b.id and a.del = 1 and a.uid='.$this->user['id'];
 		if($type){
 			$sql .= ' and b.type='.$type;
 		}
@@ -1046,7 +1036,7 @@ class Home extends SZone_Controller {
 
 		$page = get_page_status($nowpage,$pagenum,$allnum);
 
-		$sql = 'select a.id,a.fid,a.name,a.createtime,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.del = 1 and a.uid='.(int) $this->user['uid'];
+		$sql = 'select a.id,a.fid,a.name,a.createtime,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.del = 1 and a.uid='.$this->user['id'];
 		if($type){
 			$sql .= ' and b.type='.$type;
 		}

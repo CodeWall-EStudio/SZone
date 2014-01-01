@@ -60,9 +60,9 @@ class Group extends SZone_Controller {
 			);
 
 		$inGroup = true;
-        if ($this->user['uid'] != 0){
+        if ($this->user['id'] != 0){
             $this->load->model('User_model');
-           	$inGroup = $this->User_model->get_in_group($this->user['uid'],$gid);
+           	$inGroup = $this->User_model->get_in_group($this->user['id'],$gid);
         }		
 		$fold = array();
 		$file = array();
@@ -224,7 +224,7 @@ class Group extends SZone_Controller {
 							'type' => $row->type,
 							'uname' => $row->uname,
 							'gname' => $row->gname,
-							'cancopy' => (int) $row->uid==$this->user['uid']?0:1,
+							'cancopy' => (int) $row->uid==$this->user['id']?0:1,
 							'coll' => $row->cid?true:false,
 							'status' => $row->status//,
 							//'path' => 0,//$row->path
@@ -361,7 +361,7 @@ class Group extends SZone_Controller {
 
 	public function newgroup(){
 		$data['uinfo'] = $this->user;
-		$sql = 'select id,name from user where id !='.(int) $this->user['uid'];
+		$sql = 'select id,name from user where id !='.$this->user['id'];
 		$query = $this->db->query($sql);
 
 		$ul = array();

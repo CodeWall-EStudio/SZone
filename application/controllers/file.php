@@ -15,7 +15,7 @@
 				$foldtable = 'groupfolds';
 			}
 
-			$sql = 'select id,name,mark,createtime,pid from userfolds where uid = '.(int) $this->user['uid'];
+			$sql = 'select id,name,mark,createtime,pid from userfolds where uid = '.$this->user['id'];
 			$query = $this->db->query($sql);
 
 			$query = $this->db->query($sql);
@@ -50,9 +50,9 @@
 			}			
 
 			if($fid){
-				$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = '.$fid.' and a.del = 0 and a.uid='.(int) $this->user['uid'];
+				$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = '.$fid.' and a.del = 0 and a.uid='.$this->user['id'];
 			}else{
-				$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = 0 and a.del = 0  and a.uid='.(int) $this->user['uid'];
+				$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = 0 and a.del = 0  and a.uid='.$this->user['id'];
 			}
 
 			$query = $this->db->query($sql);
@@ -71,7 +71,7 @@
 				);
 			}
 
-			$sql = 'select fid from usercollection where uid='.(int) $this->user['uid'];
+			$sql = 'select fid from usercollection where uid='.$this->user['id'];
 			$query = $this->db->query($sql);
 			$clist = array();
 			foreach($query->result() as $row){
@@ -112,7 +112,7 @@
 			};
 			$wh = implode(' or ',$w);
 			//echo $wh;
-			$sql = 'select fid from usercollection where '.$wh .' and uid='.(int) $this->user['uid'];
+			$sql = 'select fid from usercollection where '.$wh .' and uid='.$this->user['id'];
 			$query = $this->db->query($sql);
 
 			//有已经收藏过的文件
@@ -126,12 +126,12 @@
 
 				foreach($idlist as $k){
 					if(!in_array($k,$fidlist)){
-						array_push($dlist,'('.(int) $this->user['uid'].','.(int) $k.','.time().')');
+						array_push($dlist,'('.$this->user['id'].','.(int) $k.','.time().')');
 					}				
 				}
 			}else{		
 				foreach($idlist as $k){
-					array_push($dlist,'('.(int) $this->user['uid'].','.(int) $k.','.time().')');
+					array_push($dlist,'('.$this->user['id'].','.(int) $k.','.time().')');
 				}
 			}
 
@@ -157,7 +157,7 @@
 			};
 
 			$wh = implode(' or ',$w);
-			$sql = 'delete from usercollection where uid='.(int) $this->user['uid'].' and '.$wh;
+			$sql = 'delete from usercollection where uid='.$this->user['id'].' and '.$wh;
 			$query = $this->db->query($sql);
 
 			if($this->db->affected_rows()>0){

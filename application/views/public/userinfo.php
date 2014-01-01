@@ -8,5 +8,5 @@
 			<div class="user-zone"> 
 				<div class="prog" style="width:<?=$pre?>%"></div><?=$used?>/<?=$size?>
 			</div>			
-			<div><a href="/login/quit">退出登录</a></div>
+			<div><a href="/logout">退出登录</a></div>
 		</div>

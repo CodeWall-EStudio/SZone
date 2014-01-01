@@ -30,7 +30,7 @@ class Cgi extends SZone_Controller {
 			$tablename = 'groupfolds';
 
             $this->load->model('User_model');
-           	if(!$this->User_model->get_in_group($this->user['uid'],$gid)){
+           	if(!$this->User_model->get_in_group($this->user['id'],$gid)){
 				$list = array(
 					'ret' => 2,
 					'msg' => '非小组成员!'
@@ -46,9 +46,9 @@ class Cgi extends SZone_Controller {
 
 		$sql = 'select id from '.$tablename.' where pid='.$pid.' and name ="'.$name.'"';
 		if($gid){
-			$sql .= ' and gid = '.(int) $this->user['uid'];
+			$sql .= ' and gid = '.$this->user['id'];
 		}else{
-			$sql .= ' and uid = '.(int) $this->user['uid'];
+			$sql .= ' and uid = '.$this->user['id'];
 		}
 		$query = $this->db->query($sql);
 		if($query->num_rows() == 0){
@@ -81,7 +81,7 @@ class Cgi extends SZone_Controller {
 				$data = array(
 					'pid' => $pid,
 					'name' => $name,
-					'uid' => $this->user['uid'],
+					'uid' => $this->user['id'],
 					'mark' => '',
 					'createtime' => time(),
 					'type' => 0,
@@ -129,7 +129,7 @@ class Cgi extends SZone_Controller {
         $nowdir = $this->getDir($md5);
 
         $this->load->model('User_model');
-       	if(!$this->User_model->get_in_group($this->user['uid'],$gid)){
+       	if(!$this->User_model->get_in_group($this->user['id'],$gid)){
 			$list = array(
 				'ret' => 2,
 				'msg' => '非小组成员!'
@@ -181,7 +181,7 @@ class Cgi extends SZone_Controller {
             //     ->set_output(json_encode($list));
         }else{
 
-            $sql = 'select size,used from user where id='.(int) $this->user['uid'];
+            $sql = 'select size,used from user where id='.$this->user['id'];
             $query = $this->db->query($sql);
             $size = 0;
             $used = 0;
@@ -251,7 +251,7 @@ class Cgi extends SZone_Controller {
                 'fname' => $filedata['raw_name'],
                 'createtime' => time(),
                 'del' => 0,
-                'uid' => (int) $this->user['uid'],
+                'uid' => $this->user['id'],
                 'status' => 0
             );
 
@@ -274,7 +274,7 @@ class Cgi extends SZone_Controller {
             }
 
 
-            $sql = 'select id from userfile where fid='.$fid.' and uid='.(int) $this->user['uid'];
+            $sql = 'select id from userfile where fid='.$fid.' and uid='.$this->user['id'];
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0){
                 $row = $query->row();
@@ -292,7 +292,7 @@ class Cgi extends SZone_Controller {
             $data = array(
                 'fid' => (int) $fid,
                 'name' => $filedata['raw_name'],
-                'uid' => (int) $this->user['uid'],
+                'uid' => $this->user['id'],
                 'del' => 0,
                 'fdid' => $fdid
             );
@@ -303,7 +303,7 @@ class Cgi extends SZone_Controller {
                 $data = array(
                     'used' => $used
                 );
-                $sql = $this->db->update_string('user',$data,' id='.(int) $this->user['uid']);
+                $sql = $this->db->update_string('user',$data,' id='.$this->user['id']);
                 $query = $this->db->query($sql);
                 if($this->db->affected_rows() > 0){
                     $ret = array(
@@ -399,7 +399,7 @@ class Cgi extends SZone_Controller {
 			//     ->set_output(json_encode($list));			
 		}else{
 
-            $sql = 'select size,used from user where id='.(int) $this->user['uid'];
+            $sql = 'select size,used from user where id='.$this->user['id'];
             $query = $this->db->query($sql);
             $size = 0;
             $used = 0;
@@ -465,7 +465,7 @@ class Cgi extends SZone_Controller {
 			// 	$tablename = 'preparefile';
 			// }
 
-			$sql = 'select id from '.$tablename.' where fid='.$fid.' and uid='.(int) $this->user['uid'];
+			$sql = 'select id from '.$tablename.' where fid='.$fid.' and uid='.$this->user['id'];
 			$query = $this->db->query($sql);
 			if ($query->num_rows() > 0){
 				$row = $query->row();
@@ -490,7 +490,7 @@ class Cgi extends SZone_Controller {
                     'fname' => $filedata['raw_name'],
                     'createtime' => time(),
                     'del' => 0,
-                    'uid' => (int) $this->user['uid'],
+                    'uid' => $this->user['id'],
                     'status' => 0
                 );
 
@@ -516,7 +516,7 @@ class Cgi extends SZone_Controller {
 			$data = array(
 				'fid' => (int) $fid,
 				'name' => $filedata['raw_name'],
-				'uid' => (int) $this->user['uid'],
+				'uid' => $this->user['id'],
 				'del' => 0,
 				'fdid' => $fdid
 			);
@@ -530,7 +530,7 @@ class Cgi extends SZone_Controller {
 				$data = array(
 					'used' => $used
 				);
-				$sql = $this->db->update_string('user',$data,' id='.(int) $this->user['uid']);
+				$sql = $this->db->update_string('user',$data,' id='.$this->user['id']);
 				$query = $this->db->query($sql);
 				if($this->db->affected_rows() > 0){
 					$ret = array(
@@ -605,7 +605,7 @@ class Cgi extends SZone_Controller {
 
 		if($gid){
             $this->load->model('User_model');
-           	if(!$this->User_model->get_in_group($this->user['uid'],$gid)){
+           	if(!$this->User_model->get_in_group($this->user['id'],$gid)){
 				$list = array(
 					'ret' => 2,
 					'msg' => '非小组成员!'
@@ -632,7 +632,7 @@ class Cgi extends SZone_Controller {
 				$fname = 'content';
 			};
 			$idname = 'uid';
-			$sid = (int) $this->user['uid'];
+			$sid = (int) $this->user['id'];
 		}
 
 
@@ -711,7 +711,7 @@ class Cgi extends SZone_Controller {
 		};
 		$wh = implode(' or ',$w);
 		//echo $wh;
-		$sql = 'select fid from usercollection where '.$wh .' and uid='.(int) $this->user['uid'];
+		$sql = 'select fid from usercollection where '.$wh .' and uid='.$this->user['id'];
 		$query = $this->db->query($sql);
 
 		//有已经收藏过的文件
@@ -725,12 +725,12 @@ class Cgi extends SZone_Controller {
 
 			foreach($idlist as $k){
 				if(!in_array($k,$fidlist)){
-					array_push($dlist,'('.(int) $this->user['uid'].','.(int) $k.','.time().')');
+					array_push($dlist,'('.$this->user['id'].','.(int) $k.','.time().')');
 				}				
 			}
 		}else{		
 			foreach($idlist as $k){
-				array_push($dlist,'('.(int) $this->user['uid'].','.(int) $k.','.time().')');
+				array_push($dlist,'('.$this->user['id'].','.(int) $k.','.time().')');
 			}
 		}
 
@@ -774,7 +774,7 @@ class Cgi extends SZone_Controller {
 		};
 
 		$wh = implode(' or ',$w);
-		$sql = 'delete from usercollection where uid='.(int) $this->user['uid'].' and '.$wh;
+		$sql = 'delete from usercollection where uid='.$this->user['id'].' and '.$wh;
 		$query = $this->db->query($sql);
 
 		if($this->db->affected_rows()>0){
@@ -864,7 +864,7 @@ class Cgi extends SZone_Controller {
 		//if($gid){
 		//	$sql = 'select a.id,a.name,a.nick from user a left join groupuser b on b.gid='.$gid.' where a.id != b.uid group by a.id';
 		//}else{
-			$sql = 'select id,name,nick from user where name like "%'.$key.'%" and id != '.$this->user['uid'];
+			$sql = 'select id,name,nick from user where name like "%'.$key.'%" and id != '.$this->user['id'];
 		//}
 
 		$query = $this->db->query($sql);
@@ -900,7 +900,7 @@ class Cgi extends SZone_Controller {
 		$content = $this->input->post('content');
 	
 
-		if($this->user['uid']==0){
+		if($this->user['id']==0){
 			$ret = array(
 				'ret' => 10001,
 				'msg' => '没有登录!'
@@ -921,7 +921,7 @@ class Cgi extends SZone_Controller {
 		}
 		$str = implode(' or ',$kl);
 
-		$nl = $this->Uf_model->get_file_byid($fid,$this->user['uid']);
+		$nl = $this->Uf_model->get_file_byid($fid,$this->user['id']);
 		$filelist = array();
 		if($nl){
 			foreach($nl as $row){
@@ -944,7 +944,7 @@ class Cgi extends SZone_Controller {
 				foreach($nl as $row){
 					echo in_array($row['fid'],$gfids);
 					if(!in_array($row['fid'],$gfids)){
-						array_push($key,'('.$row['fid'].','.$k.','.$time.',"'.$row['name'].'",'.'"'.$content.'",'.$this->user['uid'].','.$gid.',1)');
+						array_push($key,'('.$row['fid'].','.$k.','.$time.',"'.$row['name'].'",'.'"'.$content.'",'.$this->user['id'].','.$gid.',1)');
 					}
 				}
 			}
@@ -994,7 +994,7 @@ class Cgi extends SZone_Controller {
 		// return;
 
 
-	// 	$sql = 'select fid,gid from groupfile where uid='.$this->user['uid'];
+	// 	$sql = 'select fid,gid from groupfile where uid='.$this->user['id'];
 	// 	$query = $this->db->query($sql);
 
 	// 	foreach($query->result() as $row){
@@ -1007,7 +1007,7 @@ class Cgi extends SZone_Controller {
 	// 	foreach($id as $k){
 	// 		foreach($fid as $i){
 	// 			if(!in_array($i,$cache[$k])){
-	// array_push($key,'('.$nl[$i]['id'].','.$k.','.$time.',"'.$nl[$i]['name'].'",'.'"'.$content.'",'.$this->user['uid'].','.$gid.',1)');	
+	// array_push($key,'('.$nl[$i]['id'].','.$k.','.$time.',"'.$nl[$i]['name'].'",'.'"'.$content.'",'.$this->user['id'].','.$gid.',1)');
 	// 			}
 	// 		}
 	// 	}
@@ -1022,7 +1022,7 @@ class Cgi extends SZone_Controller {
 		$gid = (Int) $this->input->post('gid'); //用户发起还是在小组发起
 		$content = $this->input->post('content');
 
-		if($this->user['uid']==0){
+		if($this->user['id']==0){
 			$ret = array(
 				'ret' => 10001,
 				'msg' => '没有登录!'
@@ -1037,7 +1037,7 @@ class Cgi extends SZone_Controller {
 			$cache[$k] = array();
 		}
 
-		$sql = 'select fid,tuid from message where fuid='.$this->user['uid'];
+		$sql = 'select fid,tuid from message where fuid='.$this->user['id'];
 		$query = $this->db->query($sql);
 
 		foreach($query->result() as $row){
@@ -1052,7 +1052,7 @@ class Cgi extends SZone_Controller {
 		foreach($id as $k){
 			foreach($fid as $i){
 				if(!in_array($i,$cache[$k])){
-					array_push($key,'('.$this->user['uid'].','.$k.',"'.$content.'",'.$i.')');	
+					array_push($key,'('.$this->user['id'].','.$k.',"'.$content.'",'.$i.')');
 				}
 			}
 		}
@@ -1132,7 +1132,7 @@ class Cgi extends SZone_Controller {
 		if($gid){
 			$sql .= ' b.gid='.$gid;
 		}else{
-			$sql .= ' b.uid='.$this->user['uid'];
+			$sql .= ' b.uid='.$this->user['id'];
 		}
 		$sql .= ' and a.id = b.fid and a.id='.(int) $id;
 		$query = $this->db->query($sql);
@@ -1181,7 +1181,7 @@ class Cgi extends SZone_Controller {
 		if($gid){
 			$sql .= ' b.gid='.$gid;
 		}else{
-			$sql .= ' b.uid='.$this->user['uid'];
+			$sql .= ' b.uid='.$this->user['id'];
 		}
 		$sql .= ' and a.id = b.fid and a.id='.(int) $id;
 		$query = $this->db->query($sql);
@@ -1230,7 +1230,7 @@ class Cgi extends SZone_Controller {
 			$data = array(
 				'name' => $fname
 			);			
-			$str = $this->db->update_string('userfile',$data,'id='.(int) $fid.' and uid ='.(int) $this->user['uid']);
+			$str = $this->db->update_string('userfile',$data,'id='.(int) $fid.' and uid ='.(int) $this->user['id']);
 		}
 		$query = $this->db->query($str);
 
@@ -1264,7 +1264,7 @@ class Cgi extends SZone_Controller {
 			$str = $this->db->update_string('groupfolds',$data,'id='.(int) $fid.' and gid ='.$gid);
 		}else{
 			
-			$str = $this->db->update_string('userfolds',$data,'id='.(int) $fid.' and uid ='.(int) $this->user['uid']);
+			$str = $this->db->update_string('userfolds',$data,'id='.(int) $fid.' and uid ='.(int) $this->user['id']);
 		}
 		$query = $this->db->query($str);
 
@@ -1298,7 +1298,7 @@ class Cgi extends SZone_Controller {
 			'content' => $comment
 		);
 
-		$str = $this->db->update_string('userfile',$data,' fid='.(int) $fid.' and uid='.(int) $this->user['uid']);
+		$str = $this->db->update_string('userfile',$data,' fid='.(int) $fid.' and uid='.$this->user['id']);
 		$query = $this->db->query($str);
 		if ($this->db->affected_rows() > 0){
 			$ret = array(
@@ -1332,7 +1332,7 @@ class Cgi extends SZone_Controller {
 		if($gid){
 			$sql = 'update groupfile set del=1 where gid='.(int) $gid.' and '.$where;	
 		}else{
-			$sql = 'update userfile set del=1 where uid='.(int) $this->user['uid'].' and '.$where;	
+			$sql = 'update userfile set del=1 where uid='.$this->user['id'].' and '.$where;
 		}
 
 		$query = $this->db->query($sql);
@@ -1363,11 +1363,11 @@ class Cgi extends SZone_Controller {
 		$kv = array();
 
 		foreach($fl as $k){
-			array_push($kv,'('.(int) $pid.','.(int) $k.','.(int) $this->user['uid'].')');
+			array_push($kv,'('.(int) $pid.','.(int) $k.','.$this->user['id'].')');
 			array_push($fw,'id='.$k);
 		}
 
-		$sql = 'select id from userfolds where pid=0 and uid='.(int) $this->user['uid'].' and prid='.$pid;
+		$sql = 'select id from userfolds where pid=0 and uid='.$this->user['id'].' and prid='.$pid;
 		$query = $this->db->query($sql);
 		if($this->db->affected_rows() == 0){
 			$sql = 'select name from groups where id='.$pid;
@@ -1380,7 +1380,7 @@ class Cgi extends SZone_Controller {
 			$data = array(
 				'pid' => 0,
 				'name' => $fname,
-				'uid' => $this->user['uid'],
+				'uid' => $this->user['id'],
 				'mark' => '',
 				'createtime' => time(),
 				'type' => 0,
@@ -1418,7 +1418,7 @@ class Cgi extends SZone_Controller {
 				return;					
 		}			
 		// $wh = implode(' or ',$fw);
-		// $sql = 'select fid from preparefile where uid='.(int) $this->user['uid'].' and pid='.(int) $pid.' and ('.$wh.')';
+		// $sql = 'select fid from preparefile where uid='.$this->user['id'].' and pid='.(int) $pid.' and ('.$wh.')';
 		// $query = $this->db->query($sql);
 
 		// if ($this->db->affected_rows() > 0){
@@ -1435,7 +1435,7 @@ class Cgi extends SZone_Controller {
 		// 	}
 		// 	if(count($nfl) > 0){
 		// 		foreach($nfl as $k){
-		// 			array_push($kv,'('.(int) $pid.','.(int) $k.','.(int) $this->user['uid'].')');
+		// 			array_push($kv,'('.(int) $pid.','.(int) $k.','.$this->user['id'].')');
 		// 		}
 		// 	}
 
@@ -1474,9 +1474,9 @@ class Cgi extends SZone_Controller {
 
 		$this->load->model('Group_model');
 
-		//echo $this->Group_model->get_group_auth_byid($gid,$this->user['uid']);
+		//echo $this->Group_model->get_group_auth_byid($gid,$this->user['id']);
 
-		$sql = 'select auth from groupuser where uid='.(int) $this->user['uid'].' and gid='.$gid;
+		$sql = 'select auth from groupuser where uid='.$this->user['id'].' and gid='.$gid;
 		$query = $this->db->query($sql);
 		if($this->db->affected_rows()>0 || $this->user['auth'] > 10){
 			$data = array(
@@ -1518,7 +1518,7 @@ class Cgi extends SZone_Controller {
 
 		$data = array(
 			'content' => $desc,
-			'uid' => (int) $this->user['uid'],
+			'uid' => $this->user['id'],
 			'ctime' => time(),
 			'status' => 0,
 			'ttype' => $type,
@@ -1550,7 +1550,7 @@ class Cgi extends SZone_Controller {
 		$gid = (int) $this->input->post('gid');
 		$name = $this->input->post('d');
 
-		$sql = 'select auth from groupuser where uid='.(int) $this->user['uid'].' and gid='.$gid;
+		$sql = 'select auth from groupuser where uid='.$this->user['id'].' and gid='.$gid;
 		$query = $this->db->query($sql);
 		if($this->db->affected_rows()>0 || $this->user['auth'] > 10){
 			$data = array(
@@ -1594,7 +1594,7 @@ class Cgi extends SZone_Controller {
 			$il = array();
 		}
 
-		$sql = 'select auth from groupuser where uid='.(int) $this->user['uid'].' and gid='.$gid;
+		$sql = 'select auth from groupuser where uid='.$this->user['id'].' and gid='.$gid;
 		$query = $this->db->query($sql);
 		if($this->db->affected_rows()>0 || $this->user['auth'] > 10){
 			$data = array(
@@ -1674,7 +1674,7 @@ class Cgi extends SZone_Controller {
 			'content' => $desc,
 			'type' => 1,
 			'parent' => 0,
-			'create' => (int) $this->user['uid'],
+			'create' => $this->user['id'],
 			'status' => 1
 		);		
 
@@ -1683,7 +1683,7 @@ class Cgi extends SZone_Controller {
 
 		if($this->db->affected_rows()>0){
 			$gid = $this->db->insert_id();
-			$ul = array('('.$gid.','.(int) $this->user['uid'].',1)');
+			$ul = array('('.$gid.','.$this->user['id'].',1)');
 			if(isset($il)){
 				foreach($il as $row){
 					array_push($ul,'('.$gid.','.$row.',0)');
@@ -1808,7 +1808,7 @@ class Cgi extends SZone_Controller {
 
 		if($gid){
 			if($fid){
-				$sql = 'select id from userfile where fid='.$fid.' and uid='.$this->user['uid'];
+				$sql = 'select id from userfile where fid='.$fid.' and uid='.$this->user['id'];
 				$query = $this->db->query($sql);
 				if($this->db->affected_rows()==0){
 
@@ -1820,7 +1820,7 @@ class Cgi extends SZone_Controller {
 						$data = array(
 							'fid' => $fid,
 							'name' => $row->fname,
-							'uid' => $this->user['uid'],
+							'uid' => $this->user['id'],
 							'del' => 0,
 							'fdid' => 0
 						);
@@ -1896,7 +1896,7 @@ class Cgi extends SZone_Controller {
 					'gid' => 1,
 	                'createtime' => time(),
 	                'del' => 0,
-	                'uid' => (int) $this->user['uid'],
+	                'uid' => $this->user['id'],
 	                'status' => 0					
 				);
 
@@ -1953,7 +1953,7 @@ class Cgi extends SZone_Controller {
 
 		$data = array(
 			'ttime' => time(),
-			'ruid' => $this->user['uid']
+			'ruid' => $this->user['id']
 		);
 
 		$sql = $this->db->update_string('groupfile',$data,' id='.$id);
@@ -1984,7 +1984,7 @@ class Cgi extends SZone_Controller {
 			'tag' => $tag,
 			'rtag' => 1,
 			'ttime' => time(),
-			'ruid' => $this->user['uid']
+			'ruid' => $this->user['id']
 		);	
 
 		$sql = $this->db->update_string('groupfile',$data,' id='.$id);
@@ -2022,7 +2022,7 @@ class Cgi extends SZone_Controller {
 		if($gid){
 			$sql = 'update groupfile set del=1 where gid='.(int) $gid.' and '.$where;	
 		}else{
-			$sql = 'update userfile set del=1 where uid='.(int) $this->user['uid'].' and '.$where;	
+			$sql = 'update userfile set del=1 where uid='.$this->user['id'].' and '.$where;	
 		}
 
 		$query = $this->db->query($sql);
@@ -2040,7 +2040,7 @@ class Cgi extends SZone_Controller {
 		foreach($query->result() as $row){
 			array_push($kl1,'fid='.(int) $row->fid);
 		}
-		$sql = 'delete from usercollection where uid ='.(int) $this->user['uid'].' and ('.implode(' or ',$kl1).')';
+		$sql = 'delete from usercollection where uid ='.$this->user['id'].' and ('.implode(' or ',$kl1).')';
 		$query = $this->db->query($sql);
 
 
@@ -2069,13 +2069,13 @@ class Cgi extends SZone_Controller {
 			array_push($pl,' pid='.$r);
 		}
 
-		$sql = 'delete from userfile where ('. implode(' or ',$sl).') and uid='.$this->user['uid'];
+		$sql = 'delete from userfile where ('. implode(' or ',$sl).') and uid='.$this->user['id'];
 		$query = $this->db->query($sql);
 
-		$sql = 'delete from userfolds where ('. implode(' or ',$pl).') and uid='.$this->user['uid'];
+		$sql = 'delete from userfolds where ('. implode(' or ',$pl).') and uid='.$this->user['id'];
 		$query = $this->db->query($sql);
 
-		$sql = 'delete from userfolds where ('. implode(' or ',$kl).') and uid='.$this->user['uid'];
+		$sql = 'delete from userfolds where ('. implode(' or ',$kl).') and uid='.$this->user['id'];
 		$query = $this->db->query($sql);
 		if($this->db->affected_rows()>0){
 			$ret = array(
@@ -2107,7 +2107,7 @@ class Cgi extends SZone_Controller {
 		$row = $query->row();
 		$fname = $row->name;
 
-		$sql = 'select fid,name from userfile where uid='.$this->user['uid'].' and fid='.$fid;
+		$sql = 'select fid,name from userfile where uid='.$this->user['id'].' and fid='.$fid;
 		$query = $this->db->query($sql);
 		
 
@@ -2120,7 +2120,7 @@ class Cgi extends SZone_Controller {
 			$data = array(
 				'fid' => (int) $fid,
 				'name' => $fname,
-				'uid' => (int) $this->user['uid'],
+				'uid' => $this->user['id'],
 				'del' => 0,
 				'fdid' => 0,
 				'mark' => ''			

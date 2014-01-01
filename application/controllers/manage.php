@@ -78,7 +78,7 @@ class Manage extends SZone_Controller {
 						'name' => $name,
 						'parent' => 0,
 						'type' => 3,
-						'create' => $this->user['uid']
+						'create' => $this->user['id']
 					);
 					$str = $this->db->insert_string('groups', $data); 
 					//echo $str;
@@ -216,7 +216,7 @@ class Manage extends SZone_Controller {
 						'tag' => $type,
 						'grade' => $grade,
 						'type' => 3,
-						'create' => (int) $this->user['uid'],
+						'create' => $this->user['id'],
 						'content' => ''
 					);
 				}
@@ -232,7 +232,7 @@ class Manage extends SZone_Controller {
 						'name' => $group,
 						'type' => 3,
 						'parent' => 0,
-						'create' => (int) $this->user['uid'],
+						'create' => $this->user['id'],
 						'content' => ''
 					);
 				}
@@ -247,8 +247,8 @@ class Manage extends SZone_Controller {
 					foreach($ul as $k){
 						array_push($istr,'('.$ngid.','.$k.',0)');
 					}
-					if(!in_array($this->user['uid'],$ul)){
-						array_push($istr,'('.$ngid.','.$this->user['uid'].',0)');
+					if(!in_array($this->user['id'],$ul)){
+						array_push($istr,'('.$ngid.','.$this->user['id'].',0)');
 					}
 
 					$sql = 'insert into groupuser (gid,uid,auth) value '.implode(',',$istr);
@@ -391,7 +391,7 @@ class Manage extends SZone_Controller {
 				'parent' => $this->input->post('parent'),
 				'content' => '',
 				'type' => $type,
-				'create' => $this->user['uid']
+				'create' => $this->user['id']
 			);
 
 			$str = $this->db->insert_string('groups', $data); 

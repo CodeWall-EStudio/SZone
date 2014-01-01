@@ -94,7 +94,7 @@ class Upload extends SZone_Controller {
         } else {
             $file = $file_info;
 
-            $user_file = $this->File_model->get_by_uid($file['id'], $this->user['uid']);
+            $user_file = $this->File_model->get_by_uid($file['id'], $this->user['id']);
 
             if (!empty($user_file)) {
                 $ret = array(
@@ -117,13 +117,13 @@ class Upload extends SZone_Controller {
         $result = $this->File_model->insert_user_entry(array(
             'fid' => $file['id'],
             'name' => $file_name,
-            'uid' => $this->user['uid'],
+            'uid' => $this->user['id'],
             'fdid' => intval($this->input->get('fid'))
         ));
 
         if (intval($result) > 0) {
             $this->load->model('User_model');
-            $this->User_model->update_used($this->user['uid'], $used);
+            $this->User_model->update_used($this->user['id'], $used);
 
             if (!$file_isnew) {
                 $this->File_model->update_ref($file['id'], $file['ref']);
@@ -138,7 +138,7 @@ class Upload extends SZone_Controller {
                 'gid' => $gid,
                 'fname' => $file_name,
                 'createtime' => time(),
-                'uid' => $this->user['uid'],
+                'uid' => $this->user['id'],
                 'status' => 0
             ));
         }

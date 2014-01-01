@@ -25,17 +25,17 @@ class Download extends CI_Controller {
 
     protected function set_user()
     {
-        //$this->user['uid'] = $this->session->userdata('uid');
+        //$this->user['id'] = $this->session->userdata('uid');
         if(isset($_SESSION['uid'])){
-            $this->user['uid'] = (int) $_SESSION['uid'];//intval($this->session->userdata('uid'));
+            $this->user['id'] = (int) $_SESSION['uid'];//intval($this->session->userdata('uid'));
         }else{
-            $this->user['uid'] = 0;
+            $this->user['id'] = 0;
             redirect('/login/nologin');
         }        
-        if (!empty($this->user['uid']))
+        if (!empty($this->user['id']))
         {
             $this->load->model('User_model');
-            $this->user = $this->User_model->get_by_id($this->user['uid']);
+            $this->user = $this->User_model->get_by_id($this->user['id']);
         }
         else
         {
@@ -61,7 +61,7 @@ class Download extends CI_Controller {
         {
             if (empty($mid))
             {
-                $auth = $this->File_model->get_by_uid($id, $this->user['uid']);
+                $auth = $this->File_model->get_by_uid($id, $this->user['id']);
                 if (empty($auth))
                 {
                     show_error('用户没有查看此文件的权限');
@@ -70,7 +70,7 @@ class Download extends CI_Controller {
             else
             {
                 $this->load->model('Mail_model');
-                $auth = $this->Mail_model->check_auth($id, $this->user['uid'], $mid);
+                $auth = $this->Mail_model->check_auth($id, $this->user['id'], $mid);
                 if (empty($auth))
                 {
                     show_error('用户没有查看此文件的权限');
@@ -116,7 +116,7 @@ class Download extends CI_Controller {
         {
             if (empty($mid))
             {
-                $auth = $this->File_model->get_by_uid($id, $this->user['uid']);
+                $auth = $this->File_model->get_by_uid($id, $this->user['id']);
                 if (empty($auth))
                 {
                     show_error('用户没有查看此文件的权限');
@@ -125,7 +125,7 @@ class Download extends CI_Controller {
             else
             {
                 $this->load->model('Mail_model');
-                $auth = $this->Mail_model->check_auth($id, $this->user['uid'], $mid);
+                $auth = $this->Mail_model->check_auth($id, $this->user['id'], $mid);
                 if (empty($auth))
                 {
                     show_error('用户没有查看此文件的权限');
@@ -174,7 +174,7 @@ class Download extends CI_Controller {
 
         if (empty($gid))
         {
-            $auth = $this->File_model->get_by_uid_ids($ids, $this->user['uid']);
+            $auth = $this->File_model->get_by_uid_ids($ids, $this->user['id']);
             if (empty($auth))
             {
                 show_error('用户没有查看此文件的权限');

@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://szone.codewalle.com';
+$config['base_url']	= '';
 
 /*
 |--------------------------------------------------------------------------
@@ -476,6 +476,13 @@ $mime = array (
     'flv'   => 'video/x-flv',
     'mkv'   => 'video/x-matroska'
 );
+
+/*
+ * 登录系统设置
+ */
+$config['sso']['host'] = 'dand.71xiaoxue.com';
+$config['sso']['port'] = 80;
+$config['sso']['uri'] = 'sso.web';
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */

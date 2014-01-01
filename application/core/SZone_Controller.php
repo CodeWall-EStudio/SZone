@@ -30,120 +30,56 @@ class SZone_Controller extends CI_Controller {
 
     protected function set_user()
     {
-        if(isset($_SESSION['uid'])){
-            $this->user['uid'] = (int) $_SESSION['uid'];//intval($this->session->userdata('uid'));
-        }else{
-            $this->user['uid'] = 0;
-            redirect('/login/nologin');
-        }
-        if ($this->user['uid'] != 0)
-        {
+        // CAS Check
+        $this->load->library('phpCAS');
+        phpCAS::setDebug();
+        phpCAS::client(CAS_VERSION_2_0, "dand.71xiaoxue.com", 80, "sso.web");
+        phpCAS::setNoCasServerValidation();
+        if (phpCAS::isAuthenticated()) {
+            $this->user['name'] = phpCAS::getUser();
+
+            // 检查用户是否已经登录
             $this->load->model('User_model');
-            $this->user = $this->User_model->get_by_id($this->user['uid']);
+            $user = $this->User_model->get_by_name($this->user['name']);
+
+            if (empty($user)) {
+                $user = array(
+                    'name' => $this->user['name'],
+                    'size' => $this->config->item('storage-limit')
+                );
+                $user['id'] = $this->User_model->insert_entry($user);
+                $user['auth'] = 0;
+                $user['used'] = 0;
+                $user['lastgroup'] = 0;
+            }
+
+            $this->user = $user;
+            $this->user['real_size'] = $this->user['size'];
+            $this->user['real_used'] = $this->user['used'];
+            $this->user['per'] = round($this->user['real_used']/$this->user['real_size']*100,2);
+            $this->user['size'] = format_size($this->user['real_size']);
+            $this->user['used'] = format_size($this->user['real_used']);
+
+        } else {
+            if ($this->uri->uri_string() === '') {
+                phpCAS::forceAuthentication();
+            } else {
+                $this->user['id'] = '0';
+            }
         }
     }
 
     protected function set_group()
     {
-        if ($this->user['uid'] != 0)
-        {
-            $this->load->model('Group_model');
-            $gidlist = $this->Group_model->get_user_group_ids($this->user['uid']);
-            $authlist = $this->Group_model->get_user_group_auth($this->user['uid']);
-            $ret = $this->Group_model->get_group_info($gidlist,$authlist);
-            $this->grouplist = $ret['flist'];
-            $this->deplist = $ret['deplist'];
-            $this->depinfolist = $ret['depinfolist'];
-            $this->prelist = $ret['prelist'];
-            $this->school = $this->Group_model->get_school_info();//$ret['school'];
-            //$this->school = $ret['school'];
-            // echo json_encode($this->grouplist);
-        }
-    }
-
-    protected function set_group_bak(){
-
-        if ($this->user['uid'] != 0)
-        {
-            $this->load->model('Group_model');
-            $gidlist = $this->Group_model->get_user_group_ids($this->user['uid']);
-        }
-
-        $sql = 'select * from groups where status=0';
-        $query = $this->db->query($sql);
-
-        //gid列表
-        $flist = array();
-        $glist = array();
-        $idlist = array();
-        foreach($query->result() as $row){
-            if($row->type == 1){
-                if($row->parent == 0){
-                    $flist[$row->id] = array(
-                        'id' => $row->id,
-                        'name' => $row->name,
-                        'parent' => $row->parent,
-                        'content' => $row->content,
-                        'auth' => in_array($row->id,$gidlist),
-                        'list' => array()
-                    );
-                }else{
-                    $glist[$row->id] = array(
-                        'id' => $row->id,
-                        'name' => $row->name,
-                        'parent' => $row->parent,
-                        'content' => $row->content,
-                        'auth' => in_array($row->id,$gidlist)
-                    );
-                    $flist[$row->id] = array(
-                        'type' => 1,
-                        'id' => $row->id,
-                        'name' => $row->name,
-                        'parent' => $row->parent,
-                        'content' => $row->content,
-                        'auth' => in_array($row->id,$gidlist)
-                    );
-                    // array_push($glist,array(
-                    // 	'id' => $row->id,
-                    // 	'name' => $row->name,
-                    // 	'parent' => $row->parent,
-                    // 	'auth' => in_array($row->id,$gidlist)
-                    // ));
-                }
-            }elseif($row->type == 2){
-                array_push($this->deplist,array(
-                    'id' => $row->id,
-                    'name' => $row->name
-                ));
-                $this->depinfolist[$row->id] = array(
-                    'id' => $row->id,
-                    'name' => $row->name,
-                    'parent' => $row->parent,
-                    'content' => $row->content,
-                    'auth' => in_array($row->id,$gidlist)
-                );
-            }elseif($row->type == 3){
-                $this->prelist[$row->id] = $row->name;
-                // array_push($this->prelist,array(
-                // 	'id' => $row->id,
-                // 	'name' => $row->name
-                // ));
-            }elseif($row->type == 0){
-                $this->school = array(
-                    'id' => $row->id,
-                    'type' => $row->type,
-                    'name' => $row->name,
-                    'content' => $row->content
-                );//$row;
-            };;
-            //array_push($idlist,'gid="'.$row->id.'"');
-        };
-
-        foreach($glist as $k => $r){
-            array_push($flist[$r['parent']]['list'],$r);
-
-        }
-        $this->grouplist = $flist;
+        $this->load->model('Group_model');
+        $gidlist = $this->Group_model->get_user_group_ids($this->user['id']);
+        $authlist = $this->Group_model->get_user_group_auth($this->user['id']);
+        $ret = $this->Group_model->get_group_info($gidlist,$authlist);
+        $this->grouplist = $ret['flist'];
+        $this->deplist = $ret['deplist'];
+        $this->depinfolist = $ret['depinfolist'];
+        $this->prelist = $ret['prelist'];
+        $this->school = $this->Group_model->get_school_info();//$ret['school'];
     }
 
     /*

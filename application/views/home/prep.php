@@ -18,8 +18,8 @@
 			<div class="tool-zone fade-in">
 				<div class="btn-zone">
 					<?if($key=='' && ($prid != 0 || $fid != 0) ):?>
-					<button class="upload btn btn-primary btn-upload" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>上传</button>
-					<button class="btn btn-default" data-toggle="modal" data-target="#newFold" <?if(!$nav['userinfo']['uid']):?>disabled="disabled"<?endif?>>新建文件夹</button>
+					<button class="upload btn btn-primary btn-upload" <?if(!$nav['userinfo']['id']):?>disabled="disabled"<?endif?>>上传</button>
+					<button class="btn btn-default" data-toggle="modal" data-target="#newFold" <?if(!$nav['userinfo']['id']):?>disabled="disabled"<?endif?>>新建文件夹</button>
 					<?endif?>
 				</div>
 
@@ -242,7 +242,7 @@
 				<?endforeach?>
 				<?endif?>
 			</ul>
-			<?if($nav['userinfo']['uid']):?>
+			<?if($nav['userinfo']['id']):?>
 				<?  $this->load->view('public/userinfo.php',$nav['userinfo']); ?>
 			<?endif?>			
 		</div>

@@ -234,14 +234,9 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(40) NOT NULL COMMENT '用户名',
-  `nick` varchar(60) DEFAULT NULL COMMENT '昵称',
-  `auth` tinyint(2) unsigned zerofill NOT NULL COMMENT '权限 0x0 普通 0x1 小组管理员 0x2 部门管理员 0x4 管理员 0x8 系统管理员',
+  `auth` tinyint(2) unsigned zerofill NOT NULL DEFAULT '0' COMMENT '权限 0x0 普通 0x1 小组管理员 0x2 部门管理员 0x4 管理员 0x8 系统管理员',
   `size` float unsigned zerofill NOT NULL DEFAULT '00000003e+09' COMMENT '用户总空间',
   `used` float unsigned zerofill NOT NULL DEFAULT '000000000000' COMMENT '用户已用空间',
-  `pwd` varchar(60) DEFAULT NULL COMMENT '登录管理后台的密码',
-  `access` varchar(64) NOT NULL COMMENT 'access token',
-  `openid` varchar(64) DEFAULT NULL COMMENT 'openid',
-  `update-time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `lastgroup` int(8) DEFAULT NULL COMMENT '最后一次访问的小组名',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;

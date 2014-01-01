@@ -8,9 +8,9 @@ class Board extends SZone_Controller {
 		$key = $this->input->get('key');
 
 		$inGroup = false;
-        if ($this->user['uid'] != 0){
+        if ($this->user['id'] != 0){
             $this->load->model('User_model');
-           	$inGroup = $this->User_model->get_in_group($this->user['uid'],$gid);
+           	$inGroup = $this->User_model->get_in_group($this->user['id'],$gid);
         }	
 
 		$sql = 'select a.id,a.content,a.uid,a.ctime,b.name from board a,user b where a.uid = b.id and a.ttype = 1 and a.gid='.$gid;
