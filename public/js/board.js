@@ -12,6 +12,22 @@
 		});
 	});
 
+	$("#search").focus(function(e){
+		var t = $(e.target),
+			v = t.val(),
+			def = t.attr('data-def');
+		if(v == def){
+			t.val('');
+		}
+	}).blur(function(e){
+		var t = $(e.target),
+			v = t.val(),
+			def = t.attr('data-def');
+		if(v == ''){
+			t.val(def);
+		}			
+	});
+
 	$("#searchArea i").bind('click',function(){
 		var key = $("#search").val();
 		window.location = 'board?gid='+ginfo.id+'&key='+key;

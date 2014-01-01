@@ -625,6 +625,9 @@ a{
 	border-top:none;
 	margin:0;
 	padding:0;
+	height:320px;
+	overflow:auto;
+	width:100%;
 }
 .group-board-list li{
 	margin:0;
