@@ -234,6 +234,7 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(8) NOT NULL AUTO_INCREMENT,
   `name` varchar(40) NOT NULL COMMENT '用户名',
+  `nick` VARCHAR(40) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户名称',
   `auth` tinyint(2) unsigned zerofill NOT NULL DEFAULT '0' COMMENT '权限 0x0 普通 0x1 小组管理员 0x2 部门管理员 0x4 管理员 0x8 系统管理员',
   `size` float unsigned zerofill NOT NULL DEFAULT '00000003e+09' COMMENT '用户总空间',
   `used` float unsigned zerofill NOT NULL DEFAULT '000000000000' COMMENT '用户已用空间',

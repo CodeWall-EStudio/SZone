@@ -42,9 +42,13 @@ class SZone_Controller extends CI_Controller {
             $this->load->model('User_model');
             $user = $this->User_model->get_by_name($this->user['name']);
 
+            /*
+             * TODO: 获取用户姓名
+             */
             if (empty($user)) {
                 $user = array(
                     'name' => $this->user['name'],
+                    'nick' => $this->user['name'],
                     'size' => $this->config->item('storage-limit')
                 );
                 $user['id'] = $this->User_model->insert_entry($user);
