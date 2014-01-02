@@ -85,11 +85,6 @@ class SZone_Controller extends CI_Controller {
             // 检查用户是否已经登录
             $this->load->model('User_model');
             $user = $this->User_model->get_by_name($this->user['name']);
-
-
-            /*
-             * TODO: 获取用户姓名
-             */
             if (empty($user)) {
                 $user = array(
                     'name' => $this->user['name'],
@@ -101,6 +96,8 @@ class SZone_Controller extends CI_Controller {
                 $user['auth'] = 0;
                 $user['used'] = 0;
                 $user['lastgroup'] = 0;
+
+                //$this->szmongo->user_add($user);
             } else {
                 $user['nick'] = $user_data->userInfo->name;
             }

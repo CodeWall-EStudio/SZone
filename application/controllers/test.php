@@ -43,7 +43,7 @@ class Test extends CI_Controller {
     public function mongo()
     {
         $this->load->library('szmongo', array('db' => $this->config->item('mongodb')));
-        $this->szmongo->dump();
+        $this->szmongo->user_add(array());
     }
 
     public function cas1()

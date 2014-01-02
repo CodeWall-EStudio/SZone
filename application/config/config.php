@@ -489,7 +489,7 @@ $config['sso']['uri'] = 'sso.web';
  * MongoDB 设置
  */
 
-$config['mongodb'] = 'mongodb://szone:t8ecnVj6RAVMcCF8@localhost';
+$config['mongodb'] = 'mongodb://szone:x5ueUquSZaEzFmAQ@192.168.98.59/szone,szone:x5ueUquSZaEzFmAQ@192.168.98.59/szone/?replicaSet=myReplSetName';
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */

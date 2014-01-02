@@ -9,14 +9,12 @@
 
 class SZMongo {
 
-    protected $m;
+    protected $params;
 
-    public function __construct($params)
+    public function __construct()
     {
-        if (empty($this->m)) {
-            $this->m = new MongoClient($params['db']);
-            $this->m = $this->m->szone;
-        }
+        $ci = &get_instance();
+        $this->params = $ci->config->item('mongodb');
     }
 
     public function dump()
@@ -24,9 +22,15 @@ class SZMongo {
         var_dump($this->m);
     }
 
-    public function user_add($user)
+    public function user_add($data)
     {
-
+        $handler = new MongoClient($this->params);
+        $db = $handler->szone;
+        $collection = $db->user;
+        $data['size'] = new MongoInt64($data['size']);
+        $data['used'] = new MongoInt64($data['used']);
+        $collection->insert($data, array('safe'=>true));
+        $handler->close(true);
     }
 }
 

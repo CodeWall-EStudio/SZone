@@ -49,7 +49,7 @@ $active_group = ENVIRONMENT;
 $active_record = TRUE;
 
 //正式环境
-$db['production']['hostname'] = 'localhost';
+$db['production']['hostname'] = '192.168.98.59';
 $db['production']['username'] = 'szone';
 $db['production']['password'] = 'x5ueUquSZaEzFmAQ';
 $db['production']['database'] = 'szone';
