@@ -246,6 +246,7 @@
 			//console.log(d);
 			if(d.code == 0){
 				target.addClass('s');
+				target.attr('cmd','uncoll');
 			}
 		});
 	}
@@ -259,6 +260,7 @@
 			//console.log(d);
 			if(d.code == 0){
 				target.removeClass('s');
+				target.attr('cmd','coll');
 			}
 		});		
 	}
@@ -642,7 +644,7 @@
 					changeMailnum(1);
 					break;	
 				case 'share':
-					$("#mailbox h4").text('我的共享');	
+					$("#mailbox h4").text('我的贡献');	
 					$("#mailIframe").attr('src','/home/groupmail');
 					break;	
 			}

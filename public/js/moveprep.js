@@ -61,6 +61,7 @@
 				id = t.attr('data-fid'),
 				pid = t.attr('data-pid'),
 				nodata = t.attr('no-data');
+				$("#prepList a").removeClass('selected');
 			if(t.hasClass('a-click')){
 				if(t.hasClass("selected")){
 					t.removeClass('selected');

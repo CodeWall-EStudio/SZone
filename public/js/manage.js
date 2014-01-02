@@ -34,6 +34,26 @@
 		},40);
 	});
 
+	$("#manageList span").bind('click',function(e){
+		if(e.target.nodeName != 'INPUT'){
+			if($(e.target).find('input')[0].checked){
+				$(e.target).find('input')[0].checked = false;
+			}else{
+				$(e.target).find('input')[0].checked = true;
+			}
+		}
+	});
+
+	$("#userList span").bind('click',function(e){
+		if(e.target.nodeName != 'INPUT'){
+			if($(e.target).find('input')[0].checked){
+				$(e.target).find('input')[0].checked = false;
+			}else{
+				$(e.target).find('input')[0].checked = true;
+			}
+		}
+	});	
+
 	$("#searchManage").bind('keyup',function(e){
 		//if(e.keyCode == 13){
 			var v = $.trim($(this).val());

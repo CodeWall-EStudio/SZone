@@ -252,7 +252,7 @@ used as it is.
 
 					// Re-add drag message if there is no files
 					if (!uploader.files.length && uploader.features.dragdrop && uploader.settings.dragdrop) {
-						$('#' + id + '_filelist').append('<li class="plupload_droptext">' + _("拖拽文件到这里") + '</li>');
+						//$('#' + id + '_filelist').append('<li class="plupload_droptext">' + _("拖拽文件到这里") + '</li>');
 					}
 				}
 
@@ -357,7 +357,7 @@ used as it is.
 				uploader.bind("PostInit", function(up) {
 					// features are populated only after input components are fully instantiated
 					if (up.settings.dragdrop && up.features.dragdrop) {
-						$('#' + id + '_filelist').append('<li class="plupload_droptext">' + _("拖拽文件到这里") + '</li>');
+						//$('#' + id + '_filelist').append('<li class="plupload_droptext">' + _("拖拽文件到这里") + '</li>');
 					}
 				});
 

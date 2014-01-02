@@ -128,7 +128,7 @@
               <td><?=$row['size']?></td>
             </tr>
           <?endforeach?>    
-      <?else:?>
+      <?elseif($prid!=0):?>
         
           <tr><td colspan="3" align="center">还没有文件哦!</td></tr>
         
@@ -139,7 +139,6 @@
       <div class="aside">
         <h3 class="selected">备课检查</h3>
       </div>
-    
   </div>
 
   <div id="reviewFile" class="modal fade collection reviewWin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
