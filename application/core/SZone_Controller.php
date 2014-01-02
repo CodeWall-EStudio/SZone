@@ -37,7 +37,6 @@ class SZone_Controller extends CI_Controller {
         phpCAS::client(CAS_VERSION_2_0, "dand.71xiaoxue.com", 80, "sso.web");
         phpCAS::setNoCasServerValidation();
         if (phpCAS::isAuthenticated()) {
-
             // 处理登录，获取encodeKey和loginName
             $user_str = phpCAS::getUser();
             $user_data = json_decode($user_str);
@@ -87,6 +86,7 @@ class SZone_Controller extends CI_Controller {
             $this->load->model('User_model');
             $user = $this->User_model->get_by_name($this->user['name']);
 
+
             /*
              * TODO: 获取用户姓名
              */
@@ -95,7 +95,8 @@ class SZone_Controller extends CI_Controller {
                     'name' => $this->user['name'],
                     'nick' => $user_data->userInfo->name,
                     'size' => $this->config->item('storage-limit')
-                );
+                );              
+
                 $user['id'] = $this->User_model->insert_entry($user);
                 $user['auth'] = 0;
                 $user['used'] = 0;

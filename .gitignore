@@ -5,3 +5,4 @@ workspace.xml
 tasks.xml
 .DS_Store
 *.log
+public/*.log
