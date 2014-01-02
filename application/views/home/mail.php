@@ -82,21 +82,21 @@
 		<tr>
 			<!-- <div class="td1"><input type="checkbox" /></div> -->
 			<th>
-				<a href="/home/sendmail?on=1&od=<?if($on==1 && $od ==1):?>2<?else:?>1<?endif?>">
+				<a href="/home/sendmail?m=<?=$m?>&on=1&od=<?if($on==1 && $od ==1):?>2<?else:?>1<?endif?>">
 				<span>文件名</span>  
 				<?if($on==1 && $od ==1):?><i class="ad"></i><?elseif($on==1 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
 				</a>	
 			</th>
 			<th width="90"><?if((int) $m):?>来源<?else:?>目标<?endif?>用户</th>
 			<th width="90">
-				<a href="/home/sendmail?on=3&od=<?if($on==3 && $od ==1):?>2<?else:?>1<?endif?>">
+				<a href="/home/sendmail?m=<?=$m?>&on=3&od=<?if($on==3 && $od ==1):?>2<?else:?>1<?endif?>">
 				<span>大小</span>  
 				<?if($on==3 && $od ==1):?><i class="ad"></i><?elseif($on==3 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
 				</a>				
 
 			</th>
 			<th width="120">
-				<a href="/home/sendmail?on=4&od=<?if($on==4 && $od ==1):?>2<?else:?>1<?endif?>">
+				<a href="/home/sendmail?m=<?=$m?>&on=4&od=<?if($on==4 && $od ==1):?>2<?else:?>1<?endif?>">
 				<span>时间</span>  
 				<?if($on==4 && $od ==1):?><i class="ad"></i><?elseif($on==4 && $od ==2):?><i class="au"></i><?else:?><i class="ad"></i><?endif?>
 				</a>				

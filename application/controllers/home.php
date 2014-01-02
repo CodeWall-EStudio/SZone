@@ -268,7 +268,6 @@ class Home extends SZone_Controller {
 		if($fdid){
 			$sql .= ' and id !='.$fdid;
 		}
-
 		$query = $this->db->query($sql);
 
 		$folds = array();
@@ -321,7 +320,12 @@ class Home extends SZone_Controller {
 			array_push($kl,' id='.$k);
 		}		
 		$str = implode(' or ',$kl);
-		$sql = 'select id,name from userfile where '.$str;		
+
+		if($gid){
+			$sql = 'select id,fname as name from groupfile where '.$str;	
+		}else{
+			$sql = 'select id,name from userfile where '.$str;	
+		}		
 		$query = $this->db->query($sql);
 
 		$nl = array();
