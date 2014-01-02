@@ -44,7 +44,7 @@
 					</li>
 					<li class="downfile"><a cmd="downfile" id="donwFiles">下载</a></li>
 					<li class="renamefile" id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
-					<li class="copyfile"><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制到备课</a></li>
+					<li class="copyfile"><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">移动到备课</a></li>
 					<li class="copyfile"><a cmd="moveFile" data-toggle="modal" data-target="#shareWin">移动文件</a></li>
 					<li class="delfile"><a cmd="delFile" data-toggle="modal" data-target="#delFile">删除</a></li>
 					<li class="cancel"><a cmd="cancel">取消</a></li>
@@ -222,7 +222,7 @@
 												<li><a data-toggle="modal" data-target="#shareWin" cmd="toother" data-id="<?=$item['id']?>" data-name="<?=htmlspecialchars($item['name'])?>">发送给别人</a></li>
 												<li><a data-toggle="modal" data-target="#shareWin" cmd="togroup" data-id="<?=$item['id']?>" data-name="<?=htmlspecialchars($item['name'])?>">到小组空间</a></li>
 												<li><a data-toggle="modal" data-target="#shareWin" cmd="todep" data-id="<?=$item['id']?>" data-name="<?=htmlspecialchars($item['name'])?>">到部门空间</a></li>
-												<li><a cmd="toschool" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到学校空间</a></li>					
+												<!-- <li><a cmd="toschool" data-id="<?=$item['id']?>" data-name="<?=$item['name']?>">到学校空间</a></li>		 -->			
 											</ul>
 											</span>										
 											<span><a href="/download?id=<?=$item['fid']?>" data-id="1">下载</a></span>

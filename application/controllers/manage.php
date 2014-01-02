@@ -696,7 +696,7 @@ class Manage extends SZone_Controller {
 
 			if($this->db->affected_rows() > 0){
 				$this->data['ret'] =10010;
-				$this->data['msg'] = '改分组下还有其他分组!';	
+				$this->data['msg'] = '该年级下还有备课目录未删除!';	
 			}else{
 				$sql = 'delete from groups where id='.$id;
 				$query = $this->db->query($sql);

@@ -330,7 +330,8 @@
 				}
 			});
 		});
-		$('#groupEdit .sec').bind('click',function(){
+		$('#groupEdit .esc').bind('click',function(){
+
 			$("#groupDesc").show();
 			$("#groupEdit").addClass('hide');
 		});	
@@ -407,6 +408,7 @@
 				//console.log(d);
 				if(d.code == 0){
 					target.addClass('s');
+					target.attr('cmd','uncoll');
 				}
 			});
 		}
@@ -420,6 +422,7 @@
 				//console.log(d);
 				if(d.code == 0){
 					target.removeClass('s');
+					target.attr('cmd','coll');
 				}
 			});		
 		}
