@@ -13,6 +13,7 @@
 class SZone_Controller extends CI_Controller {
 
     protected $user = array();
+    protected $encodeKey = '';
     protected $grouplist = array();
     protected $deplist = array();
     protected $depinfolist = array();
@@ -36,7 +37,51 @@ class SZone_Controller extends CI_Controller {
         phpCAS::client(CAS_VERSION_2_0, "dand.71xiaoxue.com", 80, "sso.web");
         phpCAS::setNoCasServerValidation();
         if (phpCAS::isAuthenticated()) {
-            $this->user['name'] = phpCAS::getUser();
+
+            // 处理登录，获取encodeKey和loginName
+            $user_str = phpCAS::getUser();
+            $user_data = json_decode($user_str);
+            if (is_null($user_data)) {
+                log_message('error', 'CAS 登录返回字符串解析错误：'.$user_str);
+                if ($this->uri->uri_string() === '') {
+                    show_error('登录服务器不可用，请联系系统管理员', 503);
+                } else {
+                    $this->json_error('登录服务器不可用，请联系系统管理员', 503);
+                }
+            }
+            $this->user['name'] = $user_data->loginName;
+            $this->encodeKey = $user_data->encodeKey;
+            log_message('info', '用户'.$this->user['name'].'登录：'.$this->encodeKey);
+
+
+            // 使用encodeKey获取用户信息
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, 'http://mapp.71xiaoxue.com/components/getUserInfo.htm');
+            curl_setopt($ch, CURLOPT_HEADER, 1);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, 'encodeKey='.$this->encodeKey);
+            $user_str = curl_exec($ch);
+            curl_close($ch);
+
+            $user_data = json_decode(strstr($user_str, '{'));
+            if (is_null($user_data)) {
+                log_message('error', '获取用户信息返回字符串解析错误：'.$user_str);
+                if ($this->uri->uri_string() === '') {
+                    show_error('用户数据服务器不可用，请联系系统管理员', 503);
+                } else {
+                    $this->json_error('用户数据服务器不可用，请联系系统管理员', 503);
+                }
+            }
+
+            if ($user_data->resultMsg != 'ok' || !$user_data->success) {
+                log_message('error', '用户信息无法正确验证：'.$user_str);
+                if ($this->uri->uri_string() === '') {
+                    show_error('无法验证用户信息，请联系系统管理员', 403);
+                } else {
+                    $this->json_error('无法验证用户信息，请联系系统管理员', 403);
+                }
+            }
 
             // 检查用户是否已经登录
             $this->load->model('User_model');
@@ -48,13 +93,15 @@ class SZone_Controller extends CI_Controller {
             if (empty($user)) {
                 $user = array(
                     'name' => $this->user['name'],
-                    'nick' => $this->user['name'],
+                    'nick' => $user_data->userInfo->name,
                     'size' => $this->config->item('storage-limit')
                 );
                 $user['id'] = $this->User_model->insert_entry($user);
                 $user['auth'] = 0;
                 $user['used'] = 0;
                 $user['lastgroup'] = 0;
+            } else {
+                $user['nick'] = $user_data->userInfo->name;
             }
 
             $this->user = $user;
@@ -69,6 +116,7 @@ class SZone_Controller extends CI_Controller {
                 phpCAS::forceAuthentication();
             } else {
                 $this->user['id'] = '0';
+                return;
             }
         }
     }
@@ -89,7 +137,6 @@ class SZone_Controller extends CI_Controller {
     /*
      * 输出JSON格式的数据结果
      */
-
     protected function json($data = array(), $code = 200, $msg = 'ok')
     {
         $result = array(
@@ -111,6 +158,20 @@ class SZone_Controller extends CI_Controller {
         $this->output
             ->set_content_type('application/json')
             ->set_output($result);
+    }
+
+    /*
+     * 返回JSON类型的错误结果
+     */
+
+    protected function json_error($msg = 'ok', $code = 500)
+    {
+        $result = array(
+            'code' => $code,
+            'msg' => $msg
+        );
+        echo json_encode($result);
+        exit;
     }
 
 }

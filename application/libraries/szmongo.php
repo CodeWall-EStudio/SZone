@@ -13,12 +13,20 @@ class SZMongo {
 
     public function __construct($params)
     {
-        $this->m = new MongoClient("mongodb://szone:t8ecnVj6RAVMcCF8@localhost/szone");
+        if (empty($this->m)) {
+            $this->m = new MongoClient($params['db']);
+            $this->m = $this->m->szone;
+        }
     }
 
     public function dump()
     {
         var_dump($this->m);
+    }
+
+    public function user_add($user)
+    {
+
     }
 }
 

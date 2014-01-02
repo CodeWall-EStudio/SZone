@@ -42,7 +42,7 @@ class Test extends CI_Controller {
 
     public function mongo()
     {
-        $this->load->library('szmongo', array());
+        $this->load->library('szmongo', array('db' => $this->config->item('mongodb')));
         $this->szmongo->dump();
     }
 
@@ -106,11 +106,30 @@ class Test extends CI_Controller {
             phpCAS::logout();
         }
 
+        $s = phpCAS::getUser();
+        $user = json_decode($s);
 
-        var_dump(phpCAS::getUser());
+        var_dump($user);
 
-        var_dump(phpCAS::getAttributes());
+        var_dump($s);
 
+
+        $curlPost = 'encodeKey='.$user->encodeKey;
+        var_dump($curlPost);
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'http://mapp.71xiaoxue.com/components/getUserInfo.htm');
+        curl_setopt($ch, CURLOPT_HEADER, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $curlPost);
+        $data = curl_exec($ch);
+        curl_close($ch);
+
+        var_dump($data);
+
+        $st = strstr($data, "{");
+
+        var_dump(json_decode($st));
 
     }
 }

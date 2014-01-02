@@ -481,9 +481,15 @@ $mime = array (
 /*
  * 登录系统设置
  */
-$config['sso']['host'] = 'dand.71xiaoxue.com';
+$config['sso']['hostname'] = 'dand.71xiaoxue.com';
 $config['sso']['port'] = 80;
 $config['sso']['uri'] = 'sso.web';
+
+/*
+ * MongoDB 设置
+ */
+
+$config['mongodb'] = 'mongodb://szone:t8ecnVj6RAVMcCF8@localhost';
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */

@@ -58,7 +58,7 @@
 			<?if(!$userinfo['name']):?>
 				<a href="/login/connect">登录</a>
 			<?else:?>
-				<a><?=htmlspecialchars($userinfo['name'])?></a>
+				<a><?=htmlspecialchars($userinfo['nick'])?></a>
 			<?if($userinfo['auth']>0):?>
 				<a href="/manage/">管理</a>
 			<?endif?>

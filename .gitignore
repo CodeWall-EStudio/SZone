@@ -4,3 +4,4 @@ logs/*
 workspace.xml
 tasks.xml
 .DS_Store
+*.log
