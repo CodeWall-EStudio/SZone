@@ -21,10 +21,10 @@
  */
 if ( ! function_exists('db_escape_string')){
 	function db_escape_string($str){
-		if(function_exists('mysql_real_escape_string')){
-			return mysql_real_escape_string($str);
-		}else{
+		//if(function_exists('mysql_real_escape_string')){
+		//	return mysql_real_escape_string($str);
+		//}else{
 			return addslashes($str);
-		}
+		//}
 	}
 }
