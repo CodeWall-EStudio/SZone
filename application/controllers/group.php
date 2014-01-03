@@ -11,7 +11,7 @@ class Group extends SZone_Controller {
 		$gid = (int) $this->input->get('id');
 		$type = (int) $this->input->get('type');
 		$fid = (int) $this->input->get('fid');
-		$key = $this->input->get_post('key');
+		$key = db_escape_string($this->input->get_post('key'));
 		$st = (int) $this->input->get('st');
 		$ud = (int) $this->input->get('ud');
 
@@ -462,7 +462,7 @@ class Group extends SZone_Controller {
 		$ud = (int) $this->input->get('ud');
 		$fdid = (int) $this->input->get('fdid');
 
-		$key = $this->input->post('key');
+		$key = db_escape_string($this->input->post('key'));
 
 		$sql = 'select id from groups where pt=1';
 		$query = $this->db->query($sql);

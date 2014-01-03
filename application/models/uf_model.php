@@ -52,7 +52,17 @@ class Uf_model extends CI_Model {
         $this->db->where('uid',$uid);
         $this->db->where_in('id',$ids);
         $query = $this->db->get($this->table);
-        return $query->row_array();
+
+        $rl = array();
+
+        foreach($query->result() as $row){
+            array_push($rl,array(
+                'id' => $row->id,
+                'fid' => $row->fid,
+                'name' => $row->name
+            ));
+        }
+        return $rl;
     }
 
     function get_by_ids($ids)

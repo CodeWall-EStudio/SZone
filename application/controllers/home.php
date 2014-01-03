@@ -25,7 +25,7 @@ class Home extends SZone_Controller {
 		$nowpage = (int) $this->input->get('page');
 
 		$od = (int) $this->input->get('od');
-		$on = $this->input->get('on');
+		$on = (int) $this->input->get('on');
 
 		if(!$od){
 			$od = 2;
@@ -67,7 +67,7 @@ class Home extends SZone_Controller {
 			)
 		);
 
-		$key = $this->input->get_post('key');
+		$key = db_escape_string($this->input->get_post('key'));
 		if($key){
 			$fid = (int) $this->input->post('fid');
 		}
@@ -358,11 +358,11 @@ class Home extends SZone_Controller {
 
 		$type = (int) $this->input->get('type');
 		$uid = (int) $this->input->get('uid');
-		$key = $this->input->post('key');
+		$key = db_escape_string($this->input->post('key'));
 
 		
 		$od = (int) $this->input->get('od');
-		$on = $this->input->get('on');	
+		$on = db_escape_string($this->input->get('on'));	
 
 		if(!$od){
 			$od = 2;
@@ -469,7 +469,7 @@ class Home extends SZone_Controller {
 		$this->load->helper('util');
 		$type = (int) $this->input->get('type');
 		$gid = (int) $this->input->get('gid');
-		$key = $this->input->post('key');
+		$key = db_escape_string($this->input->post('key'));
 
 		
 		$od = (int) $this->input->get('od');
@@ -662,7 +662,7 @@ class Home extends SZone_Controller {
 	function prepare(){
 		$this->load->helper('util');
 
-		$key = $this->input->get_post('key');
+		$key = db_escape_string($this->input->get_post('key'));
 		$pagenum = $this->config->item('pagenum');
 		$nowpage = (int) $this->input->get('page');
 		$type = (int) $this->input->get('type');
@@ -948,8 +948,8 @@ class Home extends SZone_Controller {
 		$this->load->helper('util');
 
 		$page = $this->input->get('page');
-		$type = $this->input->get('type');
-		$key = $this->input->post('key');
+		$type = (int) $this->input->get('type');
+		$key = db_escape_string($this->input->post('key'));
 
 		$od = (int) $this->input->get('od');
 		$on = $this->input->get('on');		
@@ -1022,7 +1022,7 @@ class Home extends SZone_Controller {
 		$this->load->helper('util');
 
 		$type = (int) $this->input->get('type');
-		$key = $this->input->get_post('key');
+		$key = db_escape_string($this->input->get_post('key'));
 
 		$pagenum = $this->config->item('pagenum');
 		$nowpage = (int) $this->input->get('page');		

@@ -63,7 +63,7 @@ class Manage extends SZone_Controller {
 	public function addprepare(){
 		$this->load->library('form_validation');
 		$type = (int) $this->input->post('type');
-		$name = $this->input->post('name');
+		$name = db_escape_string($this->input->post('name'));
 
 		$this->form_validation->set_rules('name', 'name', 'required|min_length[2]|max_length[40]|callback_checkgroupname');
 
@@ -164,8 +164,8 @@ class Manage extends SZone_Controller {
 
 		$groupid = (int) $this->input->post('groupid');
 		$grade = (int) $this->input->post('grade');
-		$type = $this->input->post('type');
-		$group = $this->input->post('group');
+		$type = db_escape_string($this->input->post('type'));
+		$group = db_escape_string($this->input->post('group'));
 
 		$sql = 'select id,name,parent from groups where type =3';
 		$query = $this->db->query($sql);
@@ -339,7 +339,7 @@ class Manage extends SZone_Controller {
 
 		$auth = $this->user['auth'];
 
-		$act = $this->input->get('act');
+		$act = db_escape_string($this->input->get('act'));
 		if($act == ''){
 			$act = 'group';
 		}
@@ -387,10 +387,10 @@ class Manage extends SZone_Controller {
 			$this->data['data']['ret'] = 1;
 
 			$data = array(
-				'name' => $this->input->post('groupname'),
-				'parent' => $this->input->post('parent'),
+				'name' => db_escape_string($this->input->post('groupname')),
+				'parent' => (int) $this->input->post('parent'),
 				'content' => '',
-				'type' => $type,
+				'type' => (int) $type,
 				'create' => $this->user['id']
 			);
 
@@ -627,10 +627,10 @@ class Manage extends SZone_Controller {
 					}		
 			
 					$data = array(
-						'name' => $this->input->post('groupname')
+						'name' => db_escape_string($this->input->post('groupname'))
 					);
 					if((int) $this->input->post('parent')){
-						$data['parent'] = $this->input->post('parent');
+						$data['parent'] = (int) $this->input->post('parent');
 					}
 					$where = 'id = '.$id;					
 
@@ -639,7 +639,7 @@ class Manage extends SZone_Controller {
 
 					$this->load->model('Fold_model');
 
-					$this->Fold_model->update_prep_byid($id,$this->input->post('groupname'));
+					$this->Fold_model->update_prep_byid($id,db_escape_string($this->input->post('groupname')));
 
 					$num = $this->db->affected_rows();
 					if(!$num){
@@ -661,7 +661,7 @@ class Manage extends SZone_Controller {
 	}
 
 	public function delgroup(){
-		$id = $this->input->get('id');
+		$id = (int) $this->input->get('id');
 		$this->data['index'] = 'ret';
 		if($this->user['auth'] & 0x8){
 			$sql = 'DELETE g,gu FROM `groups` g,groupuser gu WHERE gu.gid = g.id AND g.id ='.$id;
