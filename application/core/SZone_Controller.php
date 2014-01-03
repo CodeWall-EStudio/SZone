@@ -21,9 +21,6 @@ class SZone_Controller extends CI_Controller {
 
     function __construct()
     {
-        if(!isset($_SESSION)){
-            session_start();
-        }        
         parent::__construct();
         $this->set_user();
         $this->set_group();
@@ -31,6 +28,7 @@ class SZone_Controller extends CI_Controller {
 
     protected function set_user()
     {
+        $encodeKey = $this->input->cookie('encode_key');
         // CAS Check
         $this->load->library('phpCAS');
         phpCAS::setDebug();

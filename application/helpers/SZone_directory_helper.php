@@ -169,3 +169,52 @@ if ( ! function_exists('directory_zip'))
         return $dirname;
     }
 }
+
+if ( ! function_exists('directory_time'))
+{
+    function directory_time($upload_dir, &$error)
+    {
+        if(!is_dir($upload_dir))
+        {
+            if(!mkdir($upload_dir, DIR_WRITE_MODE))
+            {
+                $error = 'upload_not_writable';
+                return FALSE;
+            };
+            chmod($upload_dir,DIR_WRITE_MODE);
+        }
+
+        //echo implode('|',$allowed);
+        $dirname = $upload_dir.date('Y').'/';
+        if (!is_dir($dirname)){
+            if(!mkdir($dirname, DIR_WRITE_MODE))
+            {
+                $error = 'upload_not_writable';
+                return FALSE;
+            };
+            chmod($dirname,DIR_WRITE_MODE);
+        }
+
+        $dirname = $dirname.date('m').'/';
+        if (!is_dir($dirname)){
+            if(!mkdir($dirname, DIR_WRITE_MODE))
+            {
+                $error = 'upload_not_writable';
+                return FALSE;
+            };
+            chmod($dirname,DIR_WRITE_MODE);
+        }
+
+        $dirname = $dirname.date('d').'/';
+        if (!is_dir($dirname)){
+            if(!mkdir($dirname, DIR_WRITE_MODE))
+            {
+                $error = 'upload_not_writable';
+                return FALSE;
+            };
+            chmod($dirname,DIR_WRITE_MODE);
+        }
+
+        return $dirname;
+    }
+}

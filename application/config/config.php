@@ -192,7 +192,7 @@ $config['log_threshold'] = 4;
 | application/logs/ folder. Use a full server path with trailing slash.
 |
 */
-$config['log_path'] = ROOTPATH.'logs/';
+$config['log_path'] = '/data/log/szone/';
 
 /*
 |--------------------------------------------------------------------------
@@ -375,7 +375,7 @@ $config['proxy_ips'] = '';
 $config['pagenum'] = 10;
 
 //文件上传相关配置
-$config['upload-path'] = ROOTPATH.'/file/';
+$config['upload-path'] = '/data/71xiaoxuedata/files/';
 $config['dir-file-num'] = 1023;
 $config['storage-limit'] = 3221225472; //3GB;
 $config['upload_url'] = '/upload';

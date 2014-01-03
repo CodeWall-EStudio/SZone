@@ -35,7 +35,7 @@ class Upload extends SZone_Controller {
             'size' => intval($this->input->post('file_size', TRUE))
         );
 
-        $file['path'] = directory_check($this->config->item('upload-path'), $file['md5'], $err);
+        $file['path'] = directory_time($this->config->item('upload-path'), $err);
 
         if (!$file['path']) {
             $ret = array(

@@ -38,7 +38,7 @@ if (defined('ENVIRONMENT'))
         case '':
             exit('The application environment is not set correctly.');
         case 'production':
-            error_reporting(0);
+            error_reporting(E_ALL);
             break;
         default:
             error_reporting(E_ALL);
