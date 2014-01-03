@@ -10,39 +10,7 @@
  * @author		Code Wall-E Studio
  * @link		http://codewalle.com
  */
-class Download extends CI_Controller {
-
-    protected $user = array();
-
-    function __construct()
-    {
-        if(!isset($_SESSION)){
-            session_start();
-        }          
-        parent::__construct();
-        $this->set_user();
-    }
-
-    protected function set_user()
-    {
-        //$this->user['id'] = $this->session->userdata('uid');
-        if(isset($_SESSION['uid'])){
-            $this->user['id'] = (int) $_SESSION['uid'];//intval($this->session->userdata('uid'));
-        }else{
-            $this->user['id'] = 0;
-            redirect('/login/nologin');
-        }        
-        if (!empty($this->user['id']))
-        {
-            $this->load->model('User_model');
-            $this->user = $this->User_model->get_by_id($this->user['id']);
-        }
-        else
-        {
-            $this->session->sess_destroy();
-            redirect('/');
-        }
-    }
+class Download extends SZone_Controller {
 
     public function index()
     {
@@ -97,7 +65,7 @@ class Download extends CI_Controller {
         header('Content-type: '.$file['mimes']);
         header('Content-Disposition: attachment; filename='.$fname);
         header('Content-Length: '.$file['size']);
-        header('X-Accel-Redirect: /file/'.substr($file['md5'],0,2).'/'.substr($file['md5'],2,2).'/'.$file['md5']);
+        header('X-Accel-Redirect: '.str_replace($this->config->item('upload-path'), '/file/', $auth['path']));
     }
 
     public function review(){
