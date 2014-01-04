@@ -258,7 +258,7 @@
 								</td>
 								<td><?=$item['size']?></td>	
 								<td>
-									<span><?=$item['time']?></span> <i <?if(in_array($item['fid'],$coll)):?>class="colls s" cmd="uncoll" title="取消收藏"<?else:?>cmd="coll" class="colls" title="收藏"<?endif?> data-type="file" data-id="<?=$item['fid']?>"></i>
+									<span><?=$item['time']?></span> <i <?if($item['coll']):?>class="colls s" cmd="uncoll" title="取消收藏"<?else:?>cmd="coll" class="colls" title="收藏"<?endif?> data-type="file" data-id="<?=$item['fid']?>"></i>
 								</td>
 						</tr>
 						<?endforeach?>	
