@@ -134,65 +134,75 @@ class Home extends SZone_Controller {
 		// 	}
 		// }
 
-		$sql = 'select count(a.id) as anum from userfile a left join files b on b.id = a.fid where a.del =0 and a.uid='.$this->user['id'];
-		//if($fid){
-			$sql.=' and a.fdid='.$fid;
-		//}
-		if($type){
-			$sql .= ' and b.type='.$type;
-		}
-		if($key){
-			$sql .= ' and a.name like "%'.$key.'%"';
-		}
+		// $sql = 'select count(a.id) as anum from userfile a left join files b on b.id = a.fid where a.del =0 and a.uid='.$this->user['id'];
+		// //if($fid){
+		// 	$sql.=' and a.fdid='.$fid;
+		// //}
+		// if($type){
+		// 	$sql .= ' and b.type='.$type;
+		// }
+		// if($key){
+		// 	$sql .= ' and a.name like "%'.$key.'%"';
+		// }
 
-		$query = $this->db->query($sql);
-		$row = $query->row();		
-		$allnum = $row->anum;
-	
+		// $query = $this->db->query($sql);
+		// $row = $query->row();		
+		// $allnum = $row->anum;
+		
+		// if($fid){
+		// 	$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = '.$fid.' and a.del = 0 and a.uid='.$this->user['id'];
+		// }else{
+		// 	$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = 0 and a.del = 0  and a.uid='.$this->user['id'];
+		// }
+		// if($type){
+		// 	$sql .= ' and b.type='.$type;
+		// }
+		// if($key){
+		// 	$sql .= ' and a.name like "%'.$key.'%"';
+		// }
+		// if($od){
+		// 	$sql .= ' order by '.$odname.' '.$desc;
+		// }
 
-		if($fid){
-			$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = '.$fid.' and a.del = 0 and a.uid='.$this->user['id'];
-		}else{
-			$sql = 'select a.id,a.fid,a.name,a.createtime,a.content,a.del,b.path,b.size,b.type from userfile a,files b where a.fid = b.id and a.fdid = 0 and a.del = 0  and a.uid='.$this->user['id'];
-		}
-		if($type){
-			$sql .= ' and b.type='.$type;
-		}
-		if($key){
-			$sql .= ' and a.name like "%'.$key.'%"';
-		}
-		if($od){
-			$sql .= ' order by '.$odname.' '.$desc;
-		}
+		// $page = get_page_status($nowpage,$pagenum,$allnum);
+		// $sql .= ' limit '.$page['start'].','.$pagenum;
+
+		// //$sql .= ' limit '.$page.','.($page+$pagenum);	
+		// //echo $sql;
+		// $query = $this->db->query($sql);
+		// $file = array();
+		// $idlist = array();
+
+		// foreach($query->result() as $row){
+		// 	$file[$row->id] = array(
+		// 		'id' => $row->id,
+		// 		'fid' => $row->fid,
+		// 		'name' => $row->name,
+		// 		'time' => substr($row->createtime,0,10),
+		// 		'content' => $row->content,
+		// 		'path' => $row->path,
+		// 		'size' => format_size($row->size),
+		// 		'type' => $row->type
+		// 	);
+		// }
+
+		$this->load->model('Uf_model');
+		$allnum = $this->Uf_model->get_all_filenum($this->user['id'],$fid,$key,$type);
 
 		$page = get_page_status($nowpage,$pagenum,$allnum);
-		$sql .= ' limit '.$page['start'].','.$pagenum;
 
-		//$sql .= ' limit '.$page.','.($page+$pagenum);	
-		//echo $sql;
-		$query = $this->db->query($sql);
-		$file = array();
-		$idlist = array();
-
-		foreach($query->result() as $row){
-			$file[$row->id] = array(
-				'id' => $row->id,
-				'fid' => $row->fid,
-				'name' => $row->name,
-				'time' => substr($row->createtime,0,10),
-				'content' => $row->content,
-				'path' => $row->path,
-				'size' => format_size($row->size),
-				'type' => $row->type
-			);
+		if($od){
+			$file = $this->Uf_model->get_fileinfo($this->user['id'],$fid,$key,$type,$odname,$desc,$page['start'],$pagenum);		
+		}else{
+			$file = $this->Uf_model->get_fileinfo($this->user['id'],$fid,$key,$type,0,0,$page['start'],$pagenum);
 		}
 
-		$sql = 'select fid from usercollection where uid='.$this->user['id'];
-		$query = $this->db->query($sql);
+		// $sql = 'select fid from usercollection where uid='.$this->user['id'];
+		// $query = $this->db->query($sql);
 
-		foreach($query->result() as $row){
-			array_push($idlist,$row->fid);
-		}
+		// foreach($query->result() as $row){
+		// 	array_push($idlist,$row->fid);
+		// }
 
 		$sql = 'select id,name,mark,createtime,pid,tid,idpath from userfolds where prid=0 and uid = '.$this->user['id'];
 		if($key){
@@ -216,6 +226,7 @@ class Home extends SZone_Controller {
 		}
 
 
+
 		$this->load->model('Mail_model');
 		$newmail = $this->Mail_model->get_user_new_mail($this->user['id']);
 		$postmail = $this->Mail_model->get_user_post_mail($this->user['id']);
@@ -230,7 +241,7 @@ class Home extends SZone_Controller {
 		$data['file'] = $file;
 		$data['type'] = $type;
 		$data['pid'] = $pid;
-		$data['coll'] = $idlist;
+		//$data['coll'] = $idlist;
 		$data['foldnum'] = $foldnum;
 		$data['page'] = $page;
 		$data['key'] = $key;
@@ -243,6 +254,8 @@ class Home extends SZone_Controller {
         // 文件上传
         $data['upload_url'] = $this->config->item('upload_url');
         $data['upload_chunk'] = $this->config->item('upload_chunk');
+
+        //echo json_encode($file);
 
 
 		$this->load->view('home',$data);	
