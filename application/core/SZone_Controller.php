@@ -23,7 +23,7 @@ class SZone_Controller extends CI_Controller {
     {
         parent::__construct();
         $this->set_user();
-        $this->set_group();
+        //$this->set_group();
     }
 
     protected function set_user()

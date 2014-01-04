@@ -21,6 +21,8 @@ class Home extends SZone_Controller {
 
 	public function index(){
 
+        $this->set_group();
+
         $pagenum = $this->config->item('pagenum');
 		$nowpage = (int) $this->input->get('page');
 
