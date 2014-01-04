@@ -3,6 +3,9 @@
 class Group extends SZone_Controller {
 
 	public function index(){
+
+        $this->set_group();
+
 		//$this->config->load('szone');
 		$this->load->library('pagination');
 

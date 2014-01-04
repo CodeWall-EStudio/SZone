@@ -23,7 +23,7 @@ class SZone_Controller extends CI_Controller {
     {
         parent::__construct();
         $this->set_user();
-        $this->set_group();
+        //$this->set_group();
     }
 
     protected function set_user()
@@ -87,7 +87,7 @@ class SZone_Controller extends CI_Controller {
                 $user = array(
                     'name' => $this->user['name'],
                     'nick' => $user_data->userInfo->name,
-                    'size' => $this->config->item('storage-limit')
+                    'size' => $this->config->item('limit', 'upload')
                 );              
 
                 $user['id'] = $this->User_model->insert_entry($user);

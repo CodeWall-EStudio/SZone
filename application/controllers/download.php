@@ -60,12 +60,12 @@ class Download extends SZone_Controller {
             $auth['name'] = $auth['fname'];
         }
 
-        $fname =  iconv("utf-8","gb2312//IGNORE",$auth['name']); 
+        $fname =  iconv("utf-8","gb2312//IGNORE",$auth['name']);
 
         header('Content-type: '.$file['mimes']);
         header('Content-Disposition: attachment; filename='.$fname);
         header('Content-Length: '.$file['size']);
-        header('X-Accel-Redirect: '.str_replace($this->config->item('upload-path'), '/file/', $auth['path']));
+        header('X-Accel-Redirect: '.str_replace($this->config->item('path','upload'), '/file/', $file['path']));
     }
 
     public function review(){
@@ -160,7 +160,7 @@ class Download extends SZone_Controller {
         //创建目录
         $filename = rand(100000, 999999).'.zip';
         $filepath = '/file/zip/'.date("Y-m-d").'/'.$filename;
-        $path = directory_zip($this->config->item('upload-path'), $err).$filename;
+        $path = directory_zip($this->config->item('path', 'upload'), $err).$filename;
 
         //开始zip
         $zip = new ZipArchive();

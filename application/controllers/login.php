@@ -66,7 +66,7 @@ class Login extends CI_Controller {
         		'name' => $name,
         		'nick' => $nick,
         		'auth' => 0,
-        		'size' => $this->config->item('storage-limit'),
+        		'size' => $this->config->item('limit', 'upload'),
         		'access' => $this->session->userdata('access_token'),
         		'openid' => $this->session->userdata('openid')
         	);

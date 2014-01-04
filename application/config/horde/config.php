@@ -375,11 +375,11 @@ $config['proxy_ips'] = '';
 $config['pagenum'] = 10;
 
 //文件上传相关配置
-$config['upload-path'] = ROOTPATH.'../file/';
-$config['dir-file-num'] = 1023;
-$config['storage-limit'] = 3221225472; //3GB;
-$config['upload_url'] = '/cgi/upload';
-$config['upload_chunk'] = 1;
+$config['upload']['path'] = ROOTPATH.'../file/';
+$config['upload']['limit'] = 3221225472; //3GB;
+$config['upload']['jodconverter'] = '/var/run/jodconverter/lib/jodconverter-core-3.0-beta-4.jar';
+$config['upload']['url'] = '/upload';
+$config['upload']['chunk'] = 0;
 
 //上传类型
 $config['filetype']['jpg'] = 1;   //图片
