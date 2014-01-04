@@ -160,7 +160,7 @@ class Upload extends SZone_Controller {
         $pdfs = array('application/pdf');
 
         //判断是否为文档，如果是则加入消息队列
-        if (ENVIRONMENT == 'testing') {
+        if (ENVIRONMENT == 'testing' || ENVIRONMENT == 'production') {
             if (in_array($file['mimes'],$docs))
             {
                 exec('java -jar '.$this->config->item('jodconverter', 'upload').' '.$file['path'].' '.$file['path'].'.pdf');
