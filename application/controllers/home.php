@@ -241,9 +241,8 @@ class Home extends SZone_Controller {
 		$data['postmail'] = $postmail;
 
         // 文件上传
-        $data['upload_url'] = $this->config->item('upload_url');
-        $data['upload_chunk'] = $this->config->item('upload_chunk');
-
+        $data['upload_url'] = $this->config->item('url','upload');
+        $data['upload_chunk'] = $this->config->item('chunk','upload');
 
 		$this->load->view('home',$data);	
 	}

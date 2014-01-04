@@ -35,7 +35,7 @@ class Upload extends SZone_Controller {
             'size' => intval($this->input->post('file_size', TRUE))
         );
 
-        $file['path'] = directory_time($this->config->item('upload-path'), $err);
+        $file['path'] = directory_time($this->config->item('path', 'upload'), $err);
 
         if (!$file['path']) {
             $ret = array(
@@ -163,7 +163,7 @@ class Upload extends SZone_Controller {
         if (ENVIRONMENT == 'testing') {
             if (in_array($file['mimes'],$docs))
             {
-                exec('java -jar /var/run/jodconverter/lib/jodconverter-core-3.0-beta-4.jar '.$file['path'].' '.$file['path'].'.pdf');
+                exec('java -jar '.$this->config->item('jodconverter', 'upload').' '.$file['path'].' '.$file['path'].'.pdf');
                 exec('pdf2swf '.$file['path'].'.pdf -s flashversion=9 -o '.$file['path'].'.swf');
             }
             if (in_array($file['mime'],$pdfs))

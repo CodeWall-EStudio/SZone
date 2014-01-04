@@ -574,7 +574,7 @@ class Cgi extends SZone_Controller {
 	protected function getDir($md5){
 		//$this->config->load('szone');
 
-        $uploadpath = $this->config->item('upload-path');
+        $uploadpath = $this->config->item('path', 'upload');
         if(!is_dir($uploadpath)){
             mkdir($uploadpath,DIR_WRITE_MODE);
             chmod($uploadpath,DIR_WRITE_MODE);
