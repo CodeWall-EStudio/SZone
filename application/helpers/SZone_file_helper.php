@@ -192,7 +192,6 @@ if ( ! function_exists('format_type'))
             case 'application/vnd.oasis.opendocument.text':
             case 'application/x-shockwave-flash':
             case 'application/vnd.openxmlformats-officedocument.wordprocessing':
-
             case 'application/doc':
             case 'application/macwriteii':
             case 'application/microsoft_word':
@@ -203,7 +202,7 @@ if ( ! function_exists('format_type'))
             case 'application/x-mswrite':
             case 'application/x-rtf':
             case 'application/x-soffice':
-            case 'application/x-wri'
+            case 'application/x-wri':
                 return 2;
             // texts
             case 'text/plain':
