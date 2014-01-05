@@ -78,7 +78,15 @@ class User_model extends CI_Model {
         $this->db->select('id, name');
         $this->db->where_not_in('id', $id);
         $query = $this->db->get($this->table);
-        return $query->row_array();
+
+        $rl = array();
+        foreach($query->result() as $row){
+            $rl[$row->id] = array(
+                'id' => $row->id,
+                'name' => $row->name
+            );
+        }
+        return $rl;
     }
 
     function get_last_ten_entries()

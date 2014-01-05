@@ -377,14 +377,15 @@ i.au{
 	width:11px;
 	height:5px;
 	vertical-align:middle;
-	background:url(imgs/arrow-up.png) no-repeat;
+	background:url(imgs/arrow-down2.png) no-repeat;
 }
 i.ad{
 	display:inline-block;
 	width:11px;
 	height:5px;
 	vertical-align:middle;
-	background:url(imgs/arrow-down2.png) no-repeat;
+	background:url(imgs/arrow-up.png) no-repeat;
+	
 }
 .dis-list-type .td_time i.au{
 	position:static;
