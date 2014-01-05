@@ -185,12 +185,25 @@ if ( ! function_exists('format_type'))
             case 'application/vnd.openxmlformats-officedocument.presentationml.presentation':
             case 'application/vnd.openxmlformats-officedocument.presentationml.template':
             case 'application/vnd.openxmlformats-officedocument.presentationml.slideshow':
+            case 'application/msword':
             case 'application/kswps':
             case 'application/pdf':
             case 'application/xml':
             case 'application/vnd.oasis.opendocument.text':
             case 'application/x-shockwave-flash':
             case 'application/vnd.openxmlformats-officedocument.wordprocessing':
+
+            case 'application/doc':
+            case 'application/macwriteii':
+            case 'application/microsoft_word':
+            case 'application/mswrite':
+            case 'application/rtf':
+            case 'application/wri':
+            case 'application/x-dos_ms_word':
+            case 'application/x-mswrite':
+            case 'application/x-rtf':
+            case 'application/x-soffice':
+            case 'application/x-wri'
                 return 2;
             // texts
             case 'text/plain':
