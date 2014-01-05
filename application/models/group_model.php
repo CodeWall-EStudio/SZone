@@ -21,6 +21,14 @@ class Group_model extends CI_Model {
         $this->load->database();
     }
 
+    function get_groupnum_byname($name){
+        $this->db->where('name',$name);
+        $this->db->where('type',1);
+        $query = $this->db->get($this->table);
+
+        return $query->num_rows();
+    }
+
     function get_user_group_ids($id)
     {
         $this->db->where('uid', $id);

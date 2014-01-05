@@ -1669,6 +1669,16 @@ class Cgi extends SZone_Controller {
 			$il = explode(',',$nl);
 		}
 
+		$this->load->model('Group_model');
+		if($this->Group_model->get_groupnum_byname($n)){
+			$ret = array(
+				'ret' => 100012,
+				'msg' => '已经有重名的小组了!'
+			);
+				$this->json($ret,100012,'已经有重名的小组了!');		
+			return;
+		}
+
 		$data = array(
 			'name' => $n,
 			'content' => $desc,

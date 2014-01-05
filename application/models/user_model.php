@@ -14,6 +14,7 @@ class User_model extends CI_Model {
 
     protected $table   = 'user';
     protected $gtable   = 'groupuser';
+    protected $gptable = 'groups';
 
     function __construct()
     {
@@ -32,6 +33,10 @@ class User_model extends CI_Model {
         if(in_array($gid,$result)){
             return true;
         }else{
+            $query = $this->db->get_where($this->gptable,array('create' => $id,'id'=>$gid));
+            if($query->num_rows()>0){
+                return true;
+            }
             return false;
         }
     }
