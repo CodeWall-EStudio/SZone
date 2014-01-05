@@ -400,6 +400,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary btn-post">发表</button>
 				</div>				
 			</div>
 		</div>
@@ -417,7 +418,6 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-					<button type="button" class="btn btn-primary btn-post">发表</button>
 				</div>				
 			</div>
 		</div>
@@ -610,7 +610,6 @@
     <script src="/js/common.js"></script>
     <!-- 	// <script type="text/javascript" src="/js/lib/moxie.js"></script>
         // <script type="text/javascript" src="/js/lib/plupload.dev.js"></script>	 -->
-
 	<script>
         var upload_url = '<?=$upload_url?>?fid=<?=$fid?>&gid=<?=$gid?>&csrf_test_name='+$.cookie('csrf_cookie_name'),
             upload_chunk = '<?=$upload_chunk?>';	

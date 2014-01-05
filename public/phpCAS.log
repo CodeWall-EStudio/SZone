@@ -3500,3 +3500,665 @@ C61B .|    |    <= true
 C61B .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
 C61B .|    <= true
 C61B .<= true
+AD3E .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+AD3E .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+AD3E .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+AD3E .|    |    Starting a new session [Client.php:800]
+AD3E .|    <= ''
+AD3E .<= ''
+AD3E .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+AD3E .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+AD3E .<= ''
+AD3E .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+AD3E .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+AD3E .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+AD3E .|    |    |    no user found [Client.php:1383]
+AD3E .|    |    <= false
+AD3E .|    |    no ticket found [Client.php:1266]
+AD3E .|    <= false
+AD3E .<= false
+AD3E .=> phpCAS::forceAuthentication() [SZone_Controller.php:77]
+AD3E .|    => CAS_Client::forceAuthentication() [phpcas.php:1101]
+AD3E .|    |    => CAS_Client::isAuthenticated() [Client.php:1091]
+AD3E .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+AD3E .|    |    |    |    no user found [Client.php:1383]
+AD3E .|    |    |    <= false
+AD3E .|    |    |    no ticket found [Client.php:1266]
+AD3E .|    |    <= false
+AD3E .|    |    => CAS_Client::redirectToCas(false) [Client.php:1100]
+AD3E .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1404]
+AD3E .|    |    |    |    => CAS_Client::getURL() [Client.php:336]
+AD3E .|    |    |    |    |    Final URI: http://szone.codewalle.com/ [Client.php:3079]
+AD3E .|    |    |    |    <= 'http://szone.codewalle.com/'
+AD3E .|    |    |    <= 'http://dand.71xiaoxue.com/sso.web/login?service=http%3A%2F%2Fszone.codewalle.com%2F'
+AD3E .|    |    |    Redirect to : http://dand.71xiaoxue.com/sso.web/login?service=http%3A%2F%2Fszone.codewalle.com%2F [Client.php:1410]
+AD3E .|    |    |    exit()
+AD3E .|    |    |    -
+AD3E .|    |    -
+AD3E .|    -
+C6D9 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+C6D9 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+C6D9 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+C6D9 .|    |    Starting a new session [Client.php:800]
+C6D9 .|    |    Ticket 'ST-342-YZQokW2PQZjdhetVjczj-cas' found [Client.php:878]
+C6D9 .|    <= ''
+C6D9 .<= ''
+C6D9 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+C6D9 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+C6D9 .<= ''
+C6D9 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+C6D9 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+C6D9 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+C6D9 .|    |    |    no user found [Client.php:1383]
+C6D9 .|    |    <= false
+C6D9 .|    |    CAS 2.0 ticket `ST-342-YZQokW2PQZjdhetVjczj-cas' is present [Client.php:1231]
+C6D9 .|    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1232]
+C6D9 .|    |    |     [Client.php:2755]
+C6D9 .|    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:2761]
+C6D9 .|    |    |    |    => CAS_Client::getURL() [Client.php:425]
+C6D9 .|    |    |    |    |    Final URI: http://szone.codewalle.com/ [Client.php:3079]
+C6D9 .|    |    |    |    <= 'http://szone.codewalle.com/'
+C6D9 .|    |    |    <= 'http://dand.71xiaoxue.com/sso.web/serviceValidate?service=http%3A%2F%2Fszone.codewalle.com%2F'
+C6D9 .|    |    |    => CAS_Client::_readURL('http://dand.71xiaoxue.com/sso.web/serviceValidate?service=http%3A%2F%2Fszone.codewalle.com%2F&ticket=ST-342-YZQokW2PQZjdhetVjczj-cas', NULL, NULL, NULL) [Client.php:2770]
+C6D9 .|    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:220]
+C6D9 .|    |    |    |    |    Response Body: 
+C6D9 .|    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+C6D9 .|    |    |    |    |    	<cas:authenticationSuccess>
+C6D9 .|    |    |    |    |    		<cas:user>{&#034;loginName&#034;:&#034;lijia&#034;,&#034;encodeKey&#034;:&#034;392453074A633ED84964BB618C1F3EC04F0B49B2547164E2016007DF2AFE63FA4A7116C9FAA3AFFD5C2912C6AEC7EE682CAABDD2578C0BCBC5D6FA4C834604898F6647A78F4EF107&#034;}</cas:user>
+C6D9 .|    |    |    |    |    
+C6D9 .|    |    |    |    |    
+C6D9 .|    |    |    |    |    	</cas:authenticationSuccess>
+C6D9 .|    |    |    |    |    </cas:serviceResponse>
+C6D9 .|    |    |    |    |     [CurlRequest.php:82]
+C6D9 .|    |    |    |    <= true
+C6D9 .|    |    |    <= true
+C6D9 .|    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:2821]
+C6D9 .|    |    |    |    Testing for rubycas style attributes [Client.php:2931]
+C6D9 .|    |    |    <= ''
+C6D9 .|    |    |    Storing Proxy List [Client.php:2830]
+C6D9 .|    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:2833]
+C6D9 .|    |    |    |    No proxies were found in the response [AllowedList.php:81]
+C6D9 .|    |    |    <= true
+C6D9 .|    |    |    => CAS_Client::_renameSession('ST-342-YZQokW2PQZjdhetVjczj-cas') [Client.php:2864]
+C6D9 .|    |    |    |    Session ID: ST-342-YZQokW2PQZjdhetVjczj-cas [Client.php:3188]
+C6D9 .|    |    |    |    Restoring old session vars [Client.php:3191]
+C6D9 .|    |    |    <= ''
+C6D9 .|    |    <= true
+C6D9 .|    |    CAS 2.0 ticket `ST-342-YZQokW2PQZjdhetVjczj-cas' was validated [Client.php:1233]
+C6D9 .|    |    => CAS_Client::getURL() [Client.php:1287]
+C6D9 .|    |    <= 'http://szone.codewalle.com/'
+C6D9 .|    |    Prepare redirect to : http://szone.codewalle.com/ [Client.php:1287]
+C6D9 .|    |    => CAS_Client::getURL() [Client.php:1288]
+C6D9 .|    |    <= 'http://szone.codewalle.com/'
+C6D9 .|    |    exit()
+C6D9 .|    |    -
+C6D9 .|    -
+E93F .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+E93F .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+E93F .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+E93F .|    |    Starting a new session [Client.php:800]
+E93F .|    <= ''
+E93F .<= ''
+E93F .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+E93F .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+E93F .<= ''
+E93F .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+E93F .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+E93F .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+E93F .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC04F0B49B2547164E2016007DF2AFE63FA4A7116C9FAA3AFFD5C2912C6AEC7EE682CAABDD2578C0BCBC5D6FA4C834604898F6647A78F4EF107"}' [Client.php:1373]
+E93F .|    |    <= true
+E93F .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+E93F .|    <= true
+E93F .<= true
+CCBC .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+CCBC .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+CCBC .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+CCBC .|    |    Starting a new session [Client.php:800]
+CCBC .|    <= ''
+CCBC .<= ''
+CCBC .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+CCBC .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+CCBC .<= ''
+CCBC .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+CCBC .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+CCBC .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+CCBC .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC04F0B49B2547164E2016007DF2AFE63FA4A7116C9FAA3AFFD5C2912C6AEC7EE682CAABDD2578C0BCBC5D6FA4C834604898F6647A78F4EF107"}' [Client.php:1373]
+CCBC .|    |    <= true
+CCBC .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+CCBC .|    <= true
+CCBC .<= true
+FB02 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+FB02 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+FB02 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+FB02 .|    |    Starting a new session [Client.php:800]
+FB02 .|    <= ''
+FB02 .<= ''
+FB02 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+FB02 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+FB02 .<= ''
+FB02 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+FB02 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+FB02 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+FB02 .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC04F0B49B2547164E2016007DF2AFE63FA4A7116C9FAA3AFFD5C2912C6AEC7EE682CAABDD2578C0BCBC5D6FA4C834604898F6647A78F4EF107"}' [Client.php:1373]
+FB02 .|    |    <= true
+FB02 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+FB02 .|    <= true
+FB02 .<= true
+9599 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+9599 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+9599 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+9599 .|    |    Starting a new session [Client.php:800]
+9599 .|    <= ''
+9599 .<= ''
+9599 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+9599 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+9599 .<= ''
+9599 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+9599 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+9599 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+9599 .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC04F0B49B2547164E2016007DF2AFE63FA4A7116C9FAA3AFFD5C2912C6AEC7EE682CAABDD2578C0BCBC5D6FA4C834604898F6647A78F4EF107"}' [Client.php:1373]
+9599 .|    |    <= true
+9599 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+9599 .|    <= true
+9599 .<= true
+A548 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+A548 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+A548 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+A548 .|    |    Starting a new session [Client.php:800]
+A548 .|    <= ''
+A548 .<= ''
+A548 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+A548 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+A548 .<= ''
+A548 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+A548 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+A548 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+A548 .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC04F0B49B2547164E2016007DF2AFE63FA4A7116C9FAA3AFFD5C2912C6AEC7EE682CAABDD2578C0BCBC5D6FA4C834604898F6647A78F4EF107"}' [Client.php:1373]
+A548 .|    |    <= true
+A548 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+A548 .|    <= true
+A548 .<= true
+8164 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+8164 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+8164 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+8164 .|    |    Starting a new session [Client.php:800]
+8164 .|    <= ''
+8164 .<= ''
+8164 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+8164 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+8164 .<= ''
+8164 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+8164 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+8164 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+8164 .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC04F0B49B2547164E2016007DF2AFE63FA4A7116C9FAA3AFFD5C2912C6AEC7EE682CAABDD2578C0BCBC5D6FA4C834604898F6647A78F4EF107"}' [Client.php:1373]
+8164 .|    |    <= true
+8164 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+8164 .|    <= true
+8164 .<= true
+1D42 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+1D42 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+1D42 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+1D42 .|    |    Starting a new session [Client.php:800]
+1D42 .|    <= ''
+1D42 .<= ''
+1D42 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+1D42 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+1D42 .<= ''
+1D42 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+1D42 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+1D42 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+1D42 .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC04F0B49B2547164E2016007DF2AFE63FA4A7116C9FAA3AFFD5C2912C6AEC7EE682CAABDD2578C0BCBC5D6FA4C834604898F6647A78F4EF107"}' [Client.php:1373]
+1D42 .|    |    <= true
+1D42 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+1D42 .|    <= true
+1D42 .<= true
+7DF6 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+7DF6 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+7DF6 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+7DF6 .|    |    Starting a new session [Client.php:800]
+7DF6 .|    <= ''
+7DF6 .<= ''
+7DF6 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+7DF6 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+7DF6 .<= ''
+7DF6 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+7DF6 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+7DF6 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+7DF6 .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC04F0B49B2547164E2016007DF2AFE63FA4A7116C9FAA3AFFD5C2912C6AEC7EE682CAABDD2578C0BCBC5D6FA4C834604898F6647A78F4EF107"}' [Client.php:1373]
+7DF6 .|    |    <= true
+7DF6 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+7DF6 .|    <= true
+7DF6 .<= true
+2B53 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+2B53 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+2B53 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+2B53 .|    |    Starting a new session [Client.php:800]
+2B53 .|    <= ''
+2B53 .<= ''
+2B53 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+2B53 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+2B53 .<= ''
+2B53 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+2B53 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+2B53 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+2B53 .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC04F0B49B2547164E2016007DF2AFE63FA4A7116C9FAA3AFFD5C2912C6AEC7EE682CAABDD2578C0BCBC5D6FA4C834604898F6647A78F4EF107"}' [Client.php:1373]
+2B53 .|    |    <= true
+2B53 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+2B53 .|    <= true
+2B53 .<= true
+6EB7 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+6EB7 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+6EB7 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+6EB7 .|    |    Starting a new session [Client.php:800]
+6EB7 .|    <= ''
+6EB7 .<= ''
+6EB7 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+6EB7 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+6EB7 .<= ''
+6EB7 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+6EB7 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+6EB7 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+6EB7 .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC04F0B49B2547164E2016007DF2AFE63FA4A7116C9FAA3AFFD5C2912C6AEC7EE682CAABDD2578C0BCBC5D6FA4C834604898F6647A78F4EF107"}' [Client.php:1373]
+6EB7 .|    |    <= true
+6EB7 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+6EB7 .|    <= true
+6EB7 .<= true
+67F4 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+67F4 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+67F4 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+67F4 .|    |    Starting a new session [Client.php:800]
+67F4 .|    <= ''
+67F4 .<= ''
+67F4 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+67F4 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+67F4 .<= ''
+67F4 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+67F4 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+67F4 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+67F4 .|    |    |    no user found [Client.php:1383]
+67F4 .|    |    <= false
+67F4 .|    |    no ticket found [Client.php:1266]
+67F4 .|    <= false
+67F4 .<= false
+7F4B .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+7F4B .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+7F4B .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+7F4B .|    |    Starting a new session [Client.php:800]
+7F4B .|    <= ''
+7F4B .<= ''
+7F4B .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+7F4B .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+7F4B .<= ''
+7F4B .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+7F4B .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+7F4B .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+7F4B .|    |    |    no user found [Client.php:1383]
+7F4B .|    |    <= false
+7F4B .|    |    no ticket found [Client.php:1266]
+7F4B .|    <= false
+7F4B .<= false
+202C .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+202C .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+202C .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+202C .|    |    Starting a new session [Client.php:800]
+202C .|    <= ''
+202C .<= ''
+202C .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+202C .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+202C .<= ''
+202C .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+202C .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+202C .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+202C .|    |    |    no user found [Client.php:1383]
+202C .|    |    <= false
+202C .|    |    no ticket found [Client.php:1266]
+202C .|    <= false
+202C .<= false
+202C .=> phpCAS::forceAuthentication() [SZone_Controller.php:77]
+202C .|    => CAS_Client::forceAuthentication() [phpcas.php:1101]
+202C .|    |    => CAS_Client::isAuthenticated() [Client.php:1091]
+202C .|    |    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+202C .|    |    |    |    no user found [Client.php:1383]
+202C .|    |    |    <= false
+202C .|    |    |    no ticket found [Client.php:1266]
+202C .|    |    <= false
+202C .|    |    => CAS_Client::redirectToCas(false) [Client.php:1100]
+202C .|    |    |    => CAS_Client::getServerLoginURL(false, false) [Client.php:1404]
+202C .|    |    |    |    => CAS_Client::getURL() [Client.php:336]
+202C .|    |    |    |    |    Final URI: http://szone.codewalle.com/ [Client.php:3079]
+202C .|    |    |    |    <= 'http://szone.codewalle.com/'
+202C .|    |    |    <= 'http://dand.71xiaoxue.com/sso.web/login?service=http%3A%2F%2Fszone.codewalle.com%2F'
+202C .|    |    |    Redirect to : http://dand.71xiaoxue.com/sso.web/login?service=http%3A%2F%2Fszone.codewalle.com%2F [Client.php:1410]
+202C .|    |    |    exit()
+202C .|    |    |    -
+202C .|    |    -
+202C .|    -
+2CE0 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+2CE0 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+2CE0 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+2CE0 .|    |    Starting a new session [Client.php:800]
+2CE0 .|    |    Ticket 'ST-426-KOntbnHFA7eT5D46VMQe-cas' found [Client.php:878]
+2CE0 .|    <= ''
+2CE0 .<= ''
+2CE0 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+2CE0 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+2CE0 .<= ''
+2CE0 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+2CE0 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+2CE0 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+2CE0 .|    |    |    no user found [Client.php:1383]
+2CE0 .|    |    <= false
+2CE0 .|    |    CAS 2.0 ticket `ST-426-KOntbnHFA7eT5D46VMQe-cas' is present [Client.php:1231]
+2CE0 .|    |    => CAS_Client::validateCAS20('', NULL, NULL) [Client.php:1232]
+2CE0 .|    |    |     [Client.php:2755]
+2CE0 .|    |    |    => CAS_Client::getServerServiceValidateURL() [Client.php:2761]
+2CE0 .|    |    |    |    => CAS_Client::getURL() [Client.php:425]
+2CE0 .|    |    |    |    |    Final URI: http://szone.codewalle.com/ [Client.php:3079]
+2CE0 .|    |    |    |    <= 'http://szone.codewalle.com/'
+2CE0 .|    |    |    <= 'http://dand.71xiaoxue.com/sso.web/serviceValidate?service=http%3A%2F%2Fszone.codewalle.com%2F'
+2CE0 .|    |    |    => CAS_Client::_readURL('http://dand.71xiaoxue.com/sso.web/serviceValidate?service=http%3A%2F%2Fszone.codewalle.com%2F&ticket=ST-426-KOntbnHFA7eT5D46VMQe-cas', NULL, NULL, NULL) [Client.php:2770]
+2CE0 .|    |    |    |    => CAS_Request_CurlRequest::sendRequest() [AbstractRequest.php:220]
+2CE0 .|    |    |    |    |    Response Body: 
+2CE0 .|    |    |    |    |    <cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+2CE0 .|    |    |    |    |    	<cas:authenticationSuccess>
+2CE0 .|    |    |    |    |    		<cas:user>{&#034;loginName&#034;:&#034;lijia&#034;,&#034;encodeKey&#034;:&#034;392453074A633ED84964BB618C1F3EC063B19097F8B9AB046E06A82BE690F95E2C649B2C48F884F7E028468D8BAE5CA82CAABDD2578C0BCB20C8BD3BC2CA4D340916BCCF995FFA4A&#034;}</cas:user>
+2CE0 .|    |    |    |    |    
+2CE0 .|    |    |    |    |    
+2CE0 .|    |    |    |    |    	</cas:authenticationSuccess>
+2CE0 .|    |    |    |    |    </cas:serviceResponse>
+2CE0 .|    |    |    |    |     [CurlRequest.php:82]
+2CE0 .|    |    |    |    <= true
+2CE0 .|    |    |    <= true
+2CE0 .|    |    |    => CAS_Client::_readExtraAttributesCas20(DOMNodeList) [Client.php:2821]
+2CE0 .|    |    |    |    Testing for rubycas style attributes [Client.php:2931]
+2CE0 .|    |    |    <= ''
+2CE0 .|    |    |    Storing Proxy List [Client.php:2830]
+2CE0 .|    |    |    => CAS_ProxyChain_AllowedList::isProxyListAllowed(array ()) [Client.php:2833]
+2CE0 .|    |    |    |    No proxies were found in the response [AllowedList.php:81]
+2CE0 .|    |    |    <= true
+2CE0 .|    |    |    => CAS_Client::_renameSession('ST-426-KOntbnHFA7eT5D46VMQe-cas') [Client.php:2864]
+2CE0 .|    |    |    |    Session ID: ST-426-KOntbnHFA7eT5D46VMQe-cas [Client.php:3188]
+2CE0 .|    |    |    |    Restoring old session vars [Client.php:3191]
+2CE0 .|    |    |    <= ''
+2CE0 .|    |    <= true
+2CE0 .|    |    CAS 2.0 ticket `ST-426-KOntbnHFA7eT5D46VMQe-cas' was validated [Client.php:1233]
+2CE0 .|    |    => CAS_Client::getURL() [Client.php:1287]
+2CE0 .|    |    <= 'http://szone.codewalle.com/'
+2CE0 .|    |    Prepare redirect to : http://szone.codewalle.com/ [Client.php:1287]
+2CE0 .|    |    => CAS_Client::getURL() [Client.php:1288]
+2CE0 .|    |    <= 'http://szone.codewalle.com/'
+2CE0 .|    |    exit()
+2CE0 .|    |    -
+2CE0 .|    -
+608E .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+608E .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+608E .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+608E .|    |    Starting a new session [Client.php:800]
+608E .|    <= ''
+608E .<= ''
+608E .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+608E .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+608E .<= ''
+608E .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+608E .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+608E .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+608E .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC063B19097F8B9AB046E06A82BE690F95E2C649B2C48F884F7E028468D8BAE5CA82CAABDD2578C0BCB20C8BD3BC2CA4D340916BCCF995FFA4A"}' [Client.php:1373]
+608E .|    |    <= true
+608E .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+608E .|    <= true
+608E .<= true
+A3D0 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+A3D0 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+A3D0 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+A3D0 .|    |    Starting a new session [Client.php:800]
+A3D0 .|    <= ''
+A3D0 .<= ''
+A3D0 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+A3D0 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+A3D0 .<= ''
+A3D0 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+A3D0 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+A3D0 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+A3D0 .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC063B19097F8B9AB046E06A82BE690F95E2C649B2C48F884F7E028468D8BAE5CA82CAABDD2578C0BCB20C8BD3BC2CA4D340916BCCF995FFA4A"}' [Client.php:1373]
+A3D0 .|    |    <= true
+A3D0 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+A3D0 .|    <= true
+A3D0 .<= true
+FEBF .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+FEBF .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+FEBF .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+FEBF .|    |    Starting a new session [Client.php:800]
+FEBF .|    <= ''
+FEBF .<= ''
+FEBF .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+FEBF .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+FEBF .<= ''
+FEBF .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+FEBF .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+FEBF .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+FEBF .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC063B19097F8B9AB046E06A82BE690F95E2C649B2C48F884F7E028468D8BAE5CA82CAABDD2578C0BCB20C8BD3BC2CA4D340916BCCF995FFA4A"}' [Client.php:1373]
+FEBF .|    |    <= true
+FEBF .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+FEBF .|    <= true
+FEBF .<= true
+BAC7 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+BAC7 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+BAC7 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+BAC7 .|    |    Starting a new session [Client.php:800]
+BAC7 .|    <= ''
+BAC7 .<= ''
+BAC7 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+BAC7 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+BAC7 .<= ''
+BAC7 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+BAC7 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+BAC7 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+BAC7 .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC063B19097F8B9AB046E06A82BE690F95E2C649B2C48F884F7E028468D8BAE5CA82CAABDD2578C0BCB20C8BD3BC2CA4D340916BCCF995FFA4A"}' [Client.php:1373]
+BAC7 .|    |    <= true
+BAC7 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+BAC7 .|    <= true
+BAC7 .<= true
+7BB3 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+7BB3 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+7BB3 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+7BB3 .|    |    Starting a new session [Client.php:800]
+7BB3 .|    <= ''
+7BB3 .<= ''
+7BB3 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+7BB3 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+7BB3 .<= ''
+7BB3 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+7BB3 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+7BB3 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+7BB3 .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC063B19097F8B9AB046E06A82BE690F95E2C649B2C48F884F7E028468D8BAE5CA82CAABDD2578C0BCB20C8BD3BC2CA4D340916BCCF995FFA4A"}' [Client.php:1373]
+7BB3 .|    |    <= true
+7BB3 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+7BB3 .|    <= true
+7BB3 .<= true
+71D4 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+71D4 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+71D4 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+71D4 .|    |    Starting a new session [Client.php:800]
+71D4 .|    <= ''
+71D4 .<= ''
+71D4 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+71D4 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+71D4 .<= ''
+71D4 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+71D4 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+71D4 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+71D4 .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC063B19097F8B9AB046E06A82BE690F95E2C649B2C48F884F7E028468D8BAE5CA82CAABDD2578C0BCB20C8BD3BC2CA4D340916BCCF995FFA4A"}' [Client.php:1373]
+71D4 .|    |    <= true
+71D4 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+71D4 .|    <= true
+71D4 .<= true
+E948 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+E948 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+E948 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+E948 .|    |    Starting a new session [Client.php:800]
+E948 .|    <= ''
+E948 .<= ''
+E948 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+E948 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+E948 .<= ''
+E948 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+E948 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+E948 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+E948 .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC063B19097F8B9AB046E06A82BE690F95E2C649B2C48F884F7E028468D8BAE5CA82CAABDD2578C0BCB20C8BD3BC2CA4D340916BCCF995FFA4A"}' [Client.php:1373]
+E948 .|    |    <= true
+E948 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+E948 .|    <= true
+E948 .<= true
+9AFE .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+9AFE .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+9AFE .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+9AFE .|    |    Starting a new session [Client.php:800]
+9AFE .|    <= ''
+9AFE .<= ''
+9AFE .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+9AFE .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+9AFE .<= ''
+9AFE .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+9AFE .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+9AFE .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+9AFE .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC063B19097F8B9AB046E06A82BE690F95E2C649B2C48F884F7E028468D8BAE5CA82CAABDD2578C0BCB20C8BD3BC2CA4D340916BCCF995FFA4A"}' [Client.php:1373]
+9AFE .|    |    <= true
+9AFE .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+9AFE .|    <= true
+9AFE .<= true
+839E .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+839E .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+839E .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+839E .|    |    Starting a new session [Client.php:800]
+839E .|    <= ''
+839E .<= ''
+839E .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+839E .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+839E .<= ''
+839E .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+839E .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+839E .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+839E .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC063B19097F8B9AB046E06A82BE690F95E2C649B2C48F884F7E028468D8BAE5CA82CAABDD2578C0BCB20C8BD3BC2CA4D340916BCCF995FFA4A"}' [Client.php:1373]
+839E .|    |    <= true
+839E .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+839E .|    <= true
+839E .<= true
+0DE1 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+0DE1 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+0DE1 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+0DE1 .|    |    Starting a new session [Client.php:800]
+0DE1 .|    <= ''
+0DE1 .<= ''
+0DE1 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+0DE1 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+0DE1 .<= ''
+0DE1 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+0DE1 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+0DE1 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+0DE1 .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC063B19097F8B9AB046E06A82BE690F95E2C649B2C48F884F7E028468D8BAE5CA82CAABDD2578C0BCB20C8BD3BC2CA4D340916BCCF995FFA4A"}' [Client.php:1373]
+0DE1 .|    |    <= true
+0DE1 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+0DE1 .|    <= true
+0DE1 .<= true
+EBFB .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+EBFB .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+EBFB .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+EBFB .|    |    Starting a new session [Client.php:800]
+EBFB .|    <= ''
+EBFB .<= ''
+EBFB .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+EBFB .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+EBFB .<= ''
+EBFB .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+EBFB .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+EBFB .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+EBFB .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC063B19097F8B9AB046E06A82BE690F95E2C649B2C48F884F7E028468D8BAE5CA82CAABDD2578C0BCB20C8BD3BC2CA4D340916BCCF995FFA4A"}' [Client.php:1373]
+EBFB .|    |    <= true
+EBFB .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+EBFB .|    <= true
+EBFB .<= true
+7C10 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+7C10 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+7C10 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+7C10 .|    |    Starting a new session [Client.php:800]
+7C10 .|    <= ''
+7C10 .<= ''
+7C10 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+7C10 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+7C10 .<= ''
+7C10 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+7C10 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+7C10 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+7C10 .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC063B19097F8B9AB046E06A82BE690F95E2C649B2C48F884F7E028468D8BAE5CA82CAABDD2578C0BCB20C8BD3BC2CA4D340916BCCF995FFA4A"}' [Client.php:1373]
+7C10 .|    |    <= true
+7C10 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+7C10 .|    <= true
+7C10 .<= true
+CB8A .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+CB8A .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+CB8A .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+CB8A .|    |    Starting a new session [Client.php:800]
+CB8A .|    <= ''
+CB8A .<= ''
+CB8A .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+CB8A .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+CB8A .<= ''
+CB8A .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+CB8A .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+CB8A .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+CB8A .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC063B19097F8B9AB046E06A82BE690F95E2C649B2C48F884F7E028468D8BAE5CA82CAABDD2578C0BCB20C8BD3BC2CA4D340916BCCF995FFA4A"}' [Client.php:1373]
+CB8A .|    |    <= true
+CB8A .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+CB8A .|    <= true
+CB8A .<= true
+EDC6 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+EDC6 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+EDC6 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+EDC6 .|    |    Starting a new session [Client.php:800]
+EDC6 .|    <= ''
+EDC6 .<= ''
+EDC6 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+EDC6 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+EDC6 .<= ''
+EDC6 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+EDC6 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+EDC6 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+EDC6 .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC063B19097F8B9AB046E06A82BE690F95E2C649B2C48F884F7E028468D8BAE5CA82CAABDD2578C0BCB20C8BD3BC2CA4D340916BCCF995FFA4A"}' [Client.php:1373]
+EDC6 .|    |    <= true
+EDC6 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+EDC6 .|    <= true
+EDC6 .<= true
+EAE0 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+EAE0 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+EAE0 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+EAE0 .|    |    Starting a new session [Client.php:800]
+EAE0 .|    <= ''
+EAE0 .<= ''
+EAE0 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+EAE0 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+EAE0 .<= ''
+EAE0 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+EAE0 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+EAE0 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+EAE0 .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC063B19097F8B9AB046E06A82BE690F95E2C649B2C48F884F7E028468D8BAE5CA82CAABDD2578C0BCB20C8BD3BC2CA4D340916BCCF995FFA4A"}' [Client.php:1373]
+EAE0 .|    |    <= true
+EAE0 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+EAE0 .|    <= true
+EAE0 .<= true
+3E84 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+3E84 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:48]
+3E84 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+3E84 .|    |    Starting a new session [Client.php:800]
+3E84 .|    <= ''
+3E84 .<= ''
+3E84 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:49]
+3E84 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+3E84 .<= ''
+3E84 .=> phpCAS::isAuthenticated() [SZone_Controller.php:50]
+3E84 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+3E84 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+3E84 .|    |    |    user = `{"loginName":"lijia","encodeKey":"392453074A633ED84964BB618C1F3EC063B19097F8B9AB046E06A82BE690F95E2C649B2C48F884F7E028468D8BAE5CA82CAABDD2578C0BCB20C8BD3BC2CA4D340916BCCF995FFA4A"}' [Client.php:1373]
+3E84 .|    |    <= true
+3E84 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+3E84 .|    <= true
+3E84 .<= true

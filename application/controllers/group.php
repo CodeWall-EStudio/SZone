@@ -305,8 +305,8 @@ class Group extends SZone_Controller {
 		$data['ulist'] = $ulist;
 		$data['thisfold'] = $thisfold;
 
-        $data['upload_url'] = $this->config->item('upload_url');
-        $data['upload_chunk'] = $this->config->item('upload_chunk');		
+        $data['upload_url'] = $this->config->item('url','upload');
+        $data['upload_chunk'] = $this->config->item('chunk','upload');
 
 		if(isset($this->grouplist[$gid])){
 			$data['ginfo'] = $this->grouplist[$gid];
