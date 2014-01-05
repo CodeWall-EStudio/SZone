@@ -673,6 +673,7 @@ class Home extends SZone_Controller {
 
 
         function prepare(){
+                $this->set_group();
                 $this->load->helper('util');
 
                 $key = db_escape_string($this->input->get_post('key'));
