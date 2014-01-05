@@ -952,8 +952,8 @@ class Home extends SZone_Controller {
                 $data['thisfold'] = $thisfold;
                 $data['fold'] = $fold;
 
-                $data['upload_url'] = $this->config->item('upload_url');
-        $data['upload_chunk'] = $this->config->item('upload_chunk');
+        $data['upload_url'] = $this->config->item('url','upload');
+        $data['upload_chunk'] = $this->config->item('chunk','upload');
 
                 $this->load->view('home/prep.php',$data);
         }
