@@ -120,6 +120,7 @@ class Upload extends SZone_Controller {
         $result = $this->File_model->insert_user_entry(array(
             'fid' => $file['id'],
             'name' => $file_name,
+            'mark' => '',
             'uid' => $this->user['id'],
             'fdid' => $fdid
         ));
