@@ -153,6 +153,7 @@ class Upload extends SZone_Controller {
         $this->convert($file['path'], $file['mimes']);
 
         $ret = array(
+            'fid' => $file['id'],
             'jsonrpc' => '2.0',
             'error' => array(
                 'code' => 0,
