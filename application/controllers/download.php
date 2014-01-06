@@ -150,7 +150,7 @@ class Download extends SZone_Controller {
         // force_download('review.swf', $data); 
 
 
-        header('Content-type: '.$file['mimes']);
+        header('Content-type: application/x-shockwave-flash');
         header('Content-Disposition: attachment; filename=review.swf');
         // header('Content-Length: '.$file['size']);
         header('X-Accel-Redirect: '.str_replace($this->config->item('path','upload'), '/file/', $file['path']));        
