@@ -39,6 +39,16 @@ class Group_model extends CI_Model {
         foreach($query->result() as $row){
             array_push($gidlist,$row->gid);
         }
+
+        $this->db->select('id');
+        $this->db->where('create',$id);
+        $this->db->where('status',0);
+        $query = $this->db->get($this->table);
+
+        foreach($query->result() as $row){
+            array_push($gidlist,$row->id);
+        }
+
         return $gidlist;
     }
 

@@ -116,14 +116,20 @@ class Download extends SZone_Controller {
         }  
         
         $path = $file['path'].'.swf';
-        $handle = fopen ($path, "r");
-        $data = "";
-        while (!feof($handle)) {
-          $data .= fread($handle, 8192);
-        }
-        fclose($handle);
-        $this->load->helper('download');
-        force_download('review.swf', $data); 
+        // $handle = fopen ($path, "r");
+        // $data = "";
+        // while (!feof($handle)) {
+        //   $data .= fread($handle, 8192);
+        // }
+        // fclose($handle);
+        // $this->load->helper('download');
+        // force_download('review.swf', $data); 
+
+
+        header('Content-type: '.$file['mimes']);
+        header('Content-Disposition: attachment; filename=review.swf');
+        // header('Content-Length: '.$file['size']);
+        header('X-Accel-Redirect: '.str_replace($this->config->item('path','upload'), '/file/', $file['path']));        
 
     }
 
