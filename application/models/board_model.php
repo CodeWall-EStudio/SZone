@@ -21,13 +21,28 @@ class Board_model extends CI_Model {
         $this->load->database();
     }
 
-    function get_boards($gid,$st=0,$num=10){
+    function get_all_nums($gid,$key=0){
+    	$this->db->select('count(id) as allnum');
+    	$this->db->where('gid',$gid);
+        if($key){
+            $this->db->like('content',$key);
+        }    	
+    	$query = $this->db->get($this->table);
+    	$row = $query->row();
+
+    	return $row->allnum;
+    }
+
+    function get_boards($gid,$st=0,$num=10,$key=0){
     	//$sql = 'SELECT a.id,a.content,a.ctime,b.name FROM board a,user b WHERE a.uid = b.id AND a.gid = '.$gid.' order by a.ctime desc limit 0,10 ';//AND a.status =1 
 
     	$this->db->select('board.id,board.content,board.ctime,user.name');
     	$this->db->from($this->table);
     	$this->db->join($this->utable,'user.id = board.uid');
     	$this->db->where('board.gid',$gid);
+        if($key){
+            $this->db->like('content',$key);
+        }     	
     	$this->db->limit($num,$st);
     	$this->db->order_by('board.ctime','desc');
 
