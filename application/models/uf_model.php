@@ -148,4 +148,10 @@ class Uf_model extends CI_Model {
 
         return $file;
     }
+
+    function get_user_file_by_group($uid, $fdid)
+    {
+        $query = $this->db->get_where($this->table, array('uid' => $uid, 'fdid' => $fdid));
+        return $query->result();
+    }
 }

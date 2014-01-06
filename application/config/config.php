@@ -491,5 +491,11 @@ $config['sso']['uri'] = 'sso.web';
 
 $config['mongodb'] = 'mongodb://szone:x5ueUquSZaEzFmAQ@192.168.98.59/szone,szone:x5ueUquSZaEzFmAQ@192.168.98.59/szone/?replicaSet=myReplSetName';
 
+/*
+ * 新媒体接口
+ */
+
+$config['media']['name'] = '新媒体资源';
+
 /* End of file config.php */
 /* Location: ./application/config/config.php */

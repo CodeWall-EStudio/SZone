@@ -68,6 +68,30 @@ class Download extends SZone_Controller {
         header('X-Accel-Redirect: '.str_replace($this->config->item('path','upload'), '/file/', $file['path']));
     }
 
+    public function media()
+    {
+        $id = $this->input->post('id');
+        $this->load->model('File_model');
+        $file = $this->File_model->get_by_id($id);
+        if (empty($file))
+        {
+            show_error('文件不存在');
+        }
+
+        $auth = $this->File_model->get_by_uid($id, $this->user['id']);
+        if (empty($auth))
+        {
+            show_error('用户没有查看此文件的权限');
+        }
+
+        $fname =  iconv("utf-8","gb2312//IGNORE",$auth['name']);
+
+        header('Content-type: '.$file['mimes']);
+        //header('Content-Disposition: attachment; filename='.$fname);
+        //header('Content-Length: '.$file['size']);
+        header('X-Accel-Redirect: '.str_replace($this->config->item('path','upload'), '/file/', $file['path']));
+    }
+
     public function review(){
         $id = $this->input->get('id');
         $this->load->model('File_model');
