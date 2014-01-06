@@ -390,7 +390,7 @@ used as it is.
 				uploader.bind('FileUploaded', function(up, file,msg) {
 					var t = msg.response;
 					t = $.parseJSON(t);
-					if(t.error.code !=0){
+					if(t.data.error.code !=0){
 						file.status = 4;
 					}
 					handleStatus(file);

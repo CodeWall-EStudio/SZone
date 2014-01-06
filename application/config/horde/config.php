@@ -492,5 +492,11 @@ $config['sso']['uri'] = 'sso.web';
 
 $config['mongodb'] = 'mongodb://szone:t8ecnVj6RAVMcCF8@localhost';
 
+/*
+ * 新媒体接口
+ */
+
+$config['media']['name'] = '新媒体资源';
+
 /* End of file config.php */
 /* Location: ./application/config/config.php */

@@ -21,13 +21,6 @@ class Upload extends SZone_Controller {
 
     public function index() {
 
-        //$fdid = (int) $this->input->get('fid');
-        //$file_type = $this->config->item('filetype');
-        //$allowed = array();
-        //foreach($ft as $k => $item){
-        //    array_push($allowed,$k);
-        //}
-
         $file = array(
             'md5' => $this->input->post('file_md5', TRUE),
             'tmp' => $this->input->post('file_path', TRUE),
@@ -38,28 +31,29 @@ class Upload extends SZone_Controller {
         $file['path'] = directory_time($this->config->item('path', 'upload'), $err);
 
         if (!$file['path']) {
+            $err = '服务器错误：无法创建文件';
             $ret = array(
                 'jsonrpc' => '2.0',
                 'error' => array(
-                    'code' => 100,
+                    'code' => 1,
                     'message' => $err
                 ),
             );
-            $this->json($ret,100,$err);
+            $this->json($ret, 503, $err);
             return;
         } else {
             $file['path'] .= $file['md5'];
         }
 
-        if ($this->user['id'] == 0) {
+        if (!$this->skey) {
             $ret = array(
                 'jsonrpc' => '2.0',
                 'error' => array(
-                    'code' => 100,
-                    'message' => $err
+                    'code' => 2,
+                    'message' => '登录失效，请重新登录'
                 ),
             );
-            $this->json($ret,100,'登录失效，请重新登录');
+            $this->json($ret, 403, '登录失效，请重新登录');
             return;
         }
 
@@ -75,10 +69,13 @@ class Upload extends SZone_Controller {
 
             if ($size < $used + $file['size']) {
                 $ret = array(
-                    'ret' => 103,
-                    'msg' => '空间已经用完!'
+                    'jsonrpc' => '2.0',
+                        'error' => array(
+                        'code' => 3,
+                        'message' => '空间已经用完!'
+                    )
                 );
-                $this->json($ret,103,'空间已经用完!');
+                $this->json($ret, 413, '空间已经用完!');
 
                 unlink($file['tmp']);
                 return;
@@ -100,11 +97,11 @@ class Upload extends SZone_Controller {
                 $ret = array(
                     'jsonrpc' => '2.0',
                     'error' => array(
-                        'code' => 101,
+                        'code' => 4,
                         'message' => '上传失败,已经有重名文件'
                     )
                 );
-                $this->json($ret,101,'上传失败,已经有重名文件!');
+                $this->json($ret, 409, '上传失败,已经有重名文件!');
                 return;
             } else {
                 $file['ref'] += 1;
@@ -113,28 +110,32 @@ class Upload extends SZone_Controller {
         }
 
         $file_name = $this->input->post('file_name', TRUE);
+        $fdid = $this->input->get('fid');
+        $is_media = $this->input->post('media');
 
+        // 判断是否是来自新媒体教学的上传请求
+        $fdid = $this->media($is_media, $fdid);
+
+        // 增加用户的文件记录
         $result = $this->File_model->insert_user_entry(array(
             'fid' => $file['id'],
             'name' => $file_name,
             'uid' => $this->user['id'],
-            'fdid' => intval($this->input->get('fid'))
+            'fdid' => $fdid
         ));
 
+        // 增加用户的空间使用
         if (intval($result) > 0) {
             $this->load->model('User_model');
             $this->User_model->update_used($this->user['id'], $used);
-
-            if (!$file_isnew) {
-                $this->File_model->update_ref($file['id'], $file['ref']);
-            }
         }
 
-        $gid = intval($this->input->get('gid'));
+        // 如果小组id不为空，则增加小组的文件记录
+        $gid = $this->input->get('gid');
         if ($gid > 0 ) {
             $this->File_model->insert_group_entry(array(
                 'fid' => $file['id'],
-                'fdid' => intval($this->input->get('fid')),
+                'fdid' => $fdid,
                 'gid' => $gid,
                 'fname' => $file_name,
                 'createtime' => time(),
@@ -143,6 +144,26 @@ class Upload extends SZone_Controller {
             ));
         }
 
+        // 如果文件不是新上传的，则增加一次引用
+        if (!$file_isnew) {
+            $this->File_model->update_ref($file['id'], $file['ref']);
+        }
+
+        // 进行预览处理
+        $this->convert($file['path'], $file['mimes']);
+
+        $ret = array(
+            'jsonrpc' => '2.0',
+            'error' => array(
+                'code' => 0,
+                'message' => '上传成功!'
+            )
+        );
+        $this->json($ret, 200, '上传成功!');
+    }
+
+    protected function convert($path, $mimes)
+    {
         $docs = array(
             'application/msword',
             'application/vnd.ms-word',
@@ -161,25 +182,46 @@ class Upload extends SZone_Controller {
 
         //判断是否为文档，如果是则加入消息队列
         if (ENVIRONMENT == 'testing' || ENVIRONMENT == 'production') {
-            if (in_array($file['mimes'],$docs))
+            // 转换文档为swf
+            if (in_array($mimes, $docs))
             {
-                exec('java -jar '.$this->config->item('jodconverter', 'upload').' '.$file['path'].' '.$file['path'].'.pdf');
-                exec('pdf2swf '.$file['path'].'.pdf -s flashversion=9 -o '.$file['path'].'.swf');
+                exec('java -jar '.$this->config->item('jodconverter', 'upload').' '.$path.' '.$path.'.pdf');
+                exec('pdf2swf '.$path.'.pdf -s flashversion=9 -o '.$path.'.swf');
             }
-            if (in_array($file['mime'],$pdfs))
+            // 转换pdf为swf
+            if (in_array($mime, $pdfs))
             {
-                exec('pdf2swf '.$file['path'].' -s flashversion=9 -o '.$file['path'].'.swf');
+                exec('pdf2swf '.$path.' -s flashversion=9 -o '.$path.'.swf');
             }
+            // 生成图片缩略图
         }
+    }
 
-        $ret = array(
-            'jsonrpc' => '2.0',
-            'error' => array(
-                'code' => 0,
-                'message' => '上传成功!'
-            )
-        );
-        $this->json($ret,101,'上传成功!');
+    protected function media($is_media, $fdid)
+    {
+        if ($is_media == 1)
+        {
+            $fold_name = $this->config->item('name', 'media');
+            $this->load->model('Fold_model');
+            $fold = $this->Fold_model->get_user_fold_by_name($this->user['id'], $fold_name);
+
+            if (count($fold) == 0) {
+                $fold = array(
+                    'pid' => 0,
+                    'name' => $fold_name,
+                    'uid' => $this->user['id'],
+                    'mark' => '特殊目录',
+                    'createtime' => time(),
+                    'type' => 1
+                );
+                $fold['id'] = $this->Fold_model->insert_user_fold($fold);
+            } else {
+                $fold = $fold[0];
+            }
+
+            return $fold['id'];
+        }
+        return $fdid;
     }
 }
 

@@ -128,4 +128,17 @@ class Fold_model extends CI_Model {
     		return false;
     	}
     }
+
+    function get_user_fold_by_name($uid, $name)
+    {
+        $query = $this->db->get_where($this->utable,array('uid' => $uid, 'name' => $name));
+        return $query->result();
+    }
+
+    function insert_user_fold($fold)
+    {
+        $str = $this->db->insert_string($this->utable, $fold);
+        $this->db->query($str);
+        return $this->db->insert_id();
+    }
 }
