@@ -75,7 +75,7 @@ class User_model extends CI_Model {
 
     function get_other($id)
     {
-        $this->db->select('id, name');
+        $this->db->select('id, name, nick');
         $this->db->where_not_in('id', $id);
         $query = $this->db->get($this->table);
 
@@ -83,7 +83,8 @@ class User_model extends CI_Model {
         foreach($query->result() as $row){
             $rl[$row->id] = array(
                 'id' => $row->id,
-                'name' => $row->name
+                'name' => $row->name,
+                'nick' => $row->nick
             );
         }
         return $rl;

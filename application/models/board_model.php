@@ -36,7 +36,7 @@ class Board_model extends CI_Model {
     function get_boards($gid,$st=0,$num=10,$key=0){
     	//$sql = 'SELECT a.id,a.content,a.ctime,b.name FROM board a,user b WHERE a.uid = b.id AND a.gid = '.$gid.' order by a.ctime desc limit 0,10 ';//AND a.status =1 
 
-    	$this->db->select('board.id,board.content,board.ctime,user.name');
+    	$this->db->select('board.id,board.content,board.ctime,user.nick');
     	$this->db->from($this->table);
     	$this->db->join($this->utable,'user.id = board.uid');
     	$this->db->where('board.gid',$gid);
@@ -53,7 +53,7 @@ class Board_model extends CI_Model {
 				'id' => $row->id,
 				'content' => $row->content,
 				'time' => $row->ctime,
-				'name' => $row->name
+				'name' => $row->nick
 			);
     	}
     	return $rl;
