@@ -129,6 +129,31 @@ class Fold_model extends CI_Model {
     	}
     }
 
+    function check_fold_limit($name){
+        $limit = $this->config->item('userfold');
+        if(in_array($name,$limit)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    function check_user_folds_limit($id,$uid){
+        $limit = $this->config->item('userfold');
+        $this->db->select('id,name');
+        $this->db->where('uid',$uid);
+        $this->db->where_in('id',$id);
+        $query = $this->db->get($this->utable);
+
+        $ids = array();
+        foreach($query->result() as $row){
+            if(!in_array($row->name,$limit)){
+                array_push($ids,$row->id);
+            }
+        }
+        return $ids;
+    }
+
     function get_user_fold_by_name($uid, $name)
     {
         $query = $this->db->get_where($this->utable,array('uid' => $uid, 'name' => $name));

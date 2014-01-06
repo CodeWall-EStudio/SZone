@@ -68,7 +68,7 @@ class Download extends SZone_Controller {
         header('X-Accel-Redirect: '.str_replace($this->config->item('path','upload'), '/file/', $file['path']));
     }
 
-    public function media()
+    public function test()
     {
         $id = $this->input->post('id');
         $this->load->model('File_model');
@@ -82,6 +82,61 @@ class Download extends SZone_Controller {
         if (empty($auth))
         {
             show_error('用户没有查看此文件的权限');
+        }
+
+        $fname =  iconv("utf-8","gb2312//IGNORE",$auth['name']);
+
+        header('Content-type: '.$file['mimes']);
+        //header('Content-Disposition: attachment; filename='.$fname);
+        //header('Content-Length: '.$file['size']);
+        header('X-Accel-Redirect: '.str_replace($this->config->item('path','upload'), '/file/', $file['path']));
+    }
+
+    public function media(){
+        $id = $this->input->get('id');
+        $this->load->model('File_model');
+        $file = $this->File_model->get_by_id($id);
+        if (empty($file))
+        {
+            show_error('文件不存在');
+        }
+
+        $gid = $this->input->get('gid');
+        $mid = $this->input->get('mid');
+
+        if (empty($gid))
+        {
+            if (empty($mid))
+            {
+                $auth = $this->File_model->get_by_uid($id, $this->user['id']);
+                if (empty($auth))
+                {
+                    show_error('用户没有查看此文件的权限');
+                }
+            }
+            else
+            {
+                $this->load->model('Mail_model');
+                $auth = $this->Mail_model->check_auth($id, $this->user['id'], $mid);
+                if (empty($auth))
+                {
+                    show_error('用户没有查看此文件的权限');
+                }
+                $auth = $this->File_model->get_by_uid($id, $mid);
+                if (empty($auth))
+                {
+                    show_error('用户没有查看此文件的权限');
+                }
+            }
+        }
+        else
+        {
+            $auth = $this->File_model->get_by_gid($id, $gid);
+            if (empty($auth))
+            {
+                show_error('用户没有查看此文件的权限');
+            }
+            $auth['name'] = $auth['fname'];
         }
 
         $fname =  iconv("utf-8","gb2312//IGNORE",$auth['name']);
@@ -140,14 +195,20 @@ class Download extends SZone_Controller {
         }  
         
         $path = $file['path'].'.swf';
-        $handle = fopen ($path, "r");
-        $data = "";
-        while (!feof($handle)) {
-          $data .= fread($handle, 8192);
-        }
-        fclose($handle);
-        $this->load->helper('download');
-        force_download('review.swf', $data); 
+        // $handle = fopen ($path, "r");
+        // $data = "";
+        // while (!feof($handle)) {
+        //   $data .= fread($handle, 8192);
+        // }
+        // fclose($handle);
+        // $this->load->helper('download');
+        // force_download('review.swf', $data); 
+
+
+        header('Content-type: application/x-shockwave-flash');
+        header('Content-Disposition: attachment; filename=review.swf');
+        // header('Content-Length: '.$file['size']);
+        header('X-Accel-Redirect: '.str_replace($this->config->item('path','upload'), '/file/', $file['path']));        
 
     }
 

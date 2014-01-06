@@ -412,6 +412,8 @@ $config['subs']['4'] = '体育';
 $config['subs']['5'] = '音乐';
 $config['subs']['6'] = '自然';
 
+$config['userfold'] = array('新媒体资源');
+
 $mime = array (
     //applications
     'ai'    => 'application/postscript',

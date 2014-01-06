@@ -8,6 +8,8 @@ class School extends SZone_Controller {
 			redirect('/');
 		}
 
+		$this->set_group();
+
 		$pagenum = $this->config->item('pagenum');
 		$nowpage = (int) $this->input->get('page');
 		$type = (int) $this->input->get('type');

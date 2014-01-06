@@ -166,7 +166,7 @@
 			$.post('/cgi/uncoll',data,function(d){
 				//console.log(d);
 				if(d.code == 0){
-					target.parents('li').remove();
+					target.parents('tr').remove();
 				}
 			});	
 			//copyFiletoMy(id);			

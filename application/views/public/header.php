@@ -50,7 +50,7 @@
 					<li>食堂</li> -->					
 				</ul>				
 			</li>
-			<?if(isset($school)):?>
+			<?if(isset($school1)):?>
 			<li class="nav"><a href="/school">学校空间</a></li>
 			<?endif?>
 		</ul>

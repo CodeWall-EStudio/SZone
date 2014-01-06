@@ -263,19 +263,22 @@ class Group extends SZone_Controller {
 			// 	array_push($idlist,$row->fid);
 			// }
 
+			$this->load->model('Board_model');
+			$blist = $this->Board_model->get_boards($gid);
+			// echo json_encode($rl);
 			
-			$sql = 'SELECT a.id,a.content,a.ctime,b.name FROM board a,user b WHERE a.uid = b.id AND a.gid = '.$gid.' order by a.ctime desc limit 0,10 ';//AND a.status =1 
-			$query = $this->db->query($sql);
-			if($this->db->affected_rows()>0){
-				foreach($query->result() as $row){
-					$blist[$row->id] = array(
-						'id' => $row->id,
-						'content' => $row->content,
-						'time' => $row->ctime,
-						'name' => $row->name
-					);
-				}
-			}
+			// $sql = 'SELECT a.id,a.content,a.ctime,b.name FROM board a,user b WHERE a.uid = b.id AND a.gid = '.$gid.' order by a.ctime desc limit 0,10 ';//AND a.status =1 
+			// $query = $this->db->query($sql);
+			// if($this->db->affected_rows()>0){
+			// 	foreach($query->result() as $row){
+			// 		$blist[$row->id] = array(
+			// 			'id' => $row->id,
+			// 			'content' => $row->content,
+			// 			'time' => $row->ctime,
+			// 			'name' => $row->name
+			// 		);
+			// 	}
+			// }
 
 			$sql = 'select a.uid,b.name from groupuser a,user b where gid='.$gid.' and a.uid = b.id';
 			$query = $this->db->query($sql);
@@ -458,6 +461,8 @@ class Group extends SZone_Controller {
 	}	
 
 	public function prep(){
+
+		$this->set_group();
 
 		$prid = (int) $this->input->get('prid');
 		$gr = (int) $this->input->get('gr');

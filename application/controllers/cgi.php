@@ -25,6 +25,7 @@ class Cgi extends SZone_Controller {
 		$gid = (int) $this->input->post('gid');
 		$prid = (int) $this->input->post('prid');
 
+
 		$tablename = 'userfolds';
 		if($gid){
 			$tablename = 'groupfolds';
@@ -38,7 +39,18 @@ class Cgi extends SZone_Controller {
 				$this->json($list,10001,'非小组成员!');           		
            		return;
            	};			
+		}else{
+			$this->load->model('Fold_model');
+			if($this->Fold_model->check_fold_limit($name)){
+				$list = array(
+					'ret' => 100021,
+					'msg' => '不能命名为系统保留名字!'
+				);				
+				$this->json($list,100021,'不能命名为系统保留名字!');
+				return;
+			};			
 		};
+
 
 		// $sql = 'select id,pid,tid,idpath from '.$tablename.' where id='.$pid;
 		// $query = $this->db->query($sql);
@@ -2069,7 +2081,26 @@ class Cgi extends SZone_Controller {
 
 	public function del_fold(){
 		$id = $this->input->post('id');
+		$gid = $this->input->post("gid");
 		$idlist = explode(',',$id);
+
+		$this->load->model('Fold_model');
+		if(!$gid){
+			$idlist = $this->Fold_model->check_user_folds_limit($idlist,$this->user['id']);
+			if(count($idlist) == 0){
+				$ret = array(
+					'msg' => '不能删除系统保留目录!'
+				);
+				$this->json($ret,10021,'error');	
+				return;			
+			}
+			$table = 'userfolds';
+			$ftable = 'userfile';
+		}else{
+			$table = 'groupfolds';
+			$ftable = 'groupfile';
+		}
+
 		$kl = array();
 		$sl = array();
 		$pl = array();

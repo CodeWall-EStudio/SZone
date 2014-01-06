@@ -52,7 +52,7 @@
 	<div class="modal-body">
 		<div class="file-review">
 			<?if($finfo['type'] == 1):?>
-				<img id="reviewImg" src="/download?id=<?=$finfo['fid']?>" onload="change(this)" />
+				<img id="reviewImg" src="/download/media?id=<?=$finfo['fid']?>" onload="change(this)" />
 			<?elseif($finfo['type']==2):?>
 				<div id="documentViewer" class="flexpaper_viewer" style="width:960px;height:700px">
 					

@@ -36,12 +36,17 @@
 			</ul>
 		</div>
 		<div class="clear"></div>
+		<div class="page-zone">
+			<?
+				$page['url'] = '/board?gid='.$gid.'&';
+				create_page($page);
+			?>
+		</div>			
 	</div>		
 	<script src="/js/lib/jq.js"></script>
 	<script src="/js/common.js" ></script>
 	<script>
-	var ginfo = '<?=json_encode($ginfo);?>';
-		ginfo = $.parseJSON(ginfo);
+		var gid = '<?=$gid?>';
 	</script>
 	<script src="/js/board.js" ></script>	
 	<?else:?>	

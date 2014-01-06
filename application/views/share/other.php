@@ -42,7 +42,7 @@
 			用户列表
 			<ul id="searchResult">
 				<?foreach($ul as $row):?>
-					<li><a data-id="<?=$row['id']?>"><?=htmlspecialchars($row['name'])?></a></li>
+					<li><a data-id="<?=$row['id']?>"><?=htmlspecialchars($row['nick'])?></a></li>
 				<?endforeach?>
 			</ul>						
 		</div>
@@ -58,7 +58,8 @@
 		<?foreach($ul as $row):?>
 			map[<?=$row['id']?>] = {
 				'id' : <?=$row['id']?>,
-				'name' : '<?=$row['name']?>'
+				'name' : '<?=$row['nick']?>',
+				'nick' : '<?=$row['name']?>'
 			}
 		<?endforeach?>
 	</script>
