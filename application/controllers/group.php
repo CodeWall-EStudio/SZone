@@ -462,6 +462,8 @@ class Group extends SZone_Controller {
 
 	public function prep(){
 
+		$this->set_group();
+
 		$prid = (int) $this->input->get('prid');
 		$gr = (int) $this->input->get('gr');
 		$tag = $this->input->get('tag');
