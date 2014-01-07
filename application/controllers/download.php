@@ -194,7 +194,7 @@ class Download extends SZone_Controller {
             $auth['name'] = $auth['fname'];
         }  
         
-        $path = $file['path'].'.swf';
+        //$path = $file['path'].'.swf';
         // $handle = fopen ($path, "r");
         // $data = "";
         // while (!feof($handle)) {
@@ -208,7 +208,7 @@ class Download extends SZone_Controller {
         header('Content-type: application/x-shockwave-flash');
         // header('Content-Disposition: attachment; filename=review.swf');
         // header('Content-Length: '.$file['size']);
-        header('X-Accel-Redirect: '.str_replace($this->config->item('path','upload'), '/file/', $file['path']));        
+        header('X-Accel-Redirect: '.str_replace($this->config->item('path','upload'), '/file/', $file['path']).'.swf');
 
     }
 
