@@ -60,7 +60,7 @@
           <select id="uList">
             <option value="0">所有</option>
             <?foreach($ulist as $row):?>
-            <option value="<?=$row['id']?>"  <?if($row['id']==$ud):?>selected<?endif?>><?=$row['name']?></option>
+            <option value="<?=$row['id']?>"  <?if($row['id']==$ud):?>selected<?endif?>><?=$row['nick']?></option>
             <?endforeach?>
           </select>           
           <?endif?>

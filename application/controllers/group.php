@@ -367,16 +367,20 @@ class Group extends SZone_Controller {
 
 	public function newgroup(){
 		$data['uinfo'] = $this->user;
-		$sql = 'select id,name from user where id !='.$this->user['id'];
-		$query = $this->db->query($sql);
 
-		$ul = array();
-		foreach($query->result() as $row){
-			$ul[$row->id] = array(
-				'id' => $row->id,
-				'name' => $row->name
-			);
-		}
+        $this->load->model('User_model');
+        $ul = $this->User_model->get_other($this->user['id']);
+
+		// $sql = 'select id,name from user where id !='.$this->user['id'];
+		// $query = $this->db->query($sql);
+
+		// $ul = array();
+		// foreach($query->result() as $row){
+		// 	$ul[$row->id] = array(
+		// 		'id' => $row->id,
+		// 		'name' => $row->name
+		// 	);
+		// }
 		$data['ul'] = $ul;
 
 		$this->load->view('group/newgroup',$data);	
@@ -520,7 +524,7 @@ class Group extends SZone_Controller {
 			array_push($pls,' a.prid='.$row->id);
 		}
 
-		$sql = 'select a.id,a.name,a.pid,a.prid,b.name as uname,b.id as uid from userfolds a,user b where ';
+		$sql = 'select a.id,a.name,a.pid,a.prid,b.nick as uname,b.id as uid from userfolds a,user b where ';
 		if($ud){
 			$sql .= ' b.id = '.$ud.' and';
 		}
@@ -571,7 +575,7 @@ class Group extends SZone_Controller {
 		$flist = array();
 		if($fdid && count($fold)>0 ){
 			$fold = array();
-			$sql = 'select a.id,a.name,a.pid,a.prid,b.name as uname,b.id as uid from userfolds a,user b where b.id='.$ud.' and a.pid='.$fdid;
+			$sql = 'select a.id,a.name,a.pid,a.prid,b.nick as uname,b.id as uid from userfolds a,user b where b.id='.$ud.' and a.pid='.$fdid;
 			$query = $this->db->query($sql);
 			// $this->db->where('pid',$fdid);
 			// $query = $this->db->get('userfolds');
@@ -606,7 +610,7 @@ class Group extends SZone_Controller {
 			}	
 		}	
 
-		$sql = 'select a.id,a.name from user a,groupuser b where a.id = b.uid  ';
+		$sql = 'select a.id,a.name,a.nick from user a,groupuser b where a.id = b.uid  ';
 		// echo json_encode($plist);
 		if($prid && $plist[$prid]['parent']){
 			$sql .= 'and b.gid='.$prid;	
@@ -622,7 +626,8 @@ class Group extends SZone_Controller {
 		foreach($query->result() as $row){
 			$ulist[$row->id] = array(
 				'id' => $row->id,
-				'name' => $row->name
+				'name' => $row->name,
+				'nick' => $row->nick
 			);
 		}		
 

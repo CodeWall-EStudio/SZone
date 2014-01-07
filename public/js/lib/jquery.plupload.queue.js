@@ -94,7 +94,7 @@ used as it is.
 			'<div class="plupload_wrapper plupload_scroll">' +
 				'<div id="' + id + '_container" class="plupload_container">' +
 					'<div class="plupload">' +
-						'<div class="plupload_header">' +
+						'<div class="plupload_header" style="display:none">' +
 							'<div class="plupload_header_content">' +
 								'<div class="plupload_header_title">' + _('选择文件') + '</div>' +
 								'<div class="plupload_header_text">' + _('选择文件然后按开始上传') + '</div>' +
