@@ -2084,8 +2084,33 @@ class Cgi extends SZone_Controller {
 		$gid = $this->input->post("gid");
 		$idlist = explode(',',$id);
 
-		$this->load->model('Fold_model');
-		if(!$gid){
+		if($gid){
+			$this->load->model('Fold_model');
+			$this->load->model('User_model');
+
+			if($this->User_model->check_auth_in_group($this->user['id'],$gid)){
+				if($this->Fold_model->del_group_fold($idlist,$gid)){
+					$ret = array(
+						'msg' => '删除成功!'
+					);
+					$this->json($ret,0,'ok');
+				}else{
+					$ret = array(
+						'msg' => '删除失败!'
+					);
+					$this->json($ret,100,'ok');
+				}
+			}else{
+				$ret = array(
+					'msg' => '你不是管理员,无法删除目录!'
+				);
+				$this->json($ret,10001,'error');	
+				return;	
+			}
+
+		}else{
+
+			$this->load->model('Fold_model');
 			$idlist = $this->Fold_model->check_user_folds_limit($idlist,$this->user['id']);
 			if(count($idlist) == 0){
 				$ret = array(
@@ -2094,41 +2119,38 @@ class Cgi extends SZone_Controller {
 				$this->json($ret,10021,'error');	
 				return;			
 			}
-			$table = 'userfolds';
-			$ftable = 'userfile';
-		}else{
-			$table = 'groupfolds';
-			$ftable = 'groupfile';
+
+
+			$kl = array();
+			$sl = array();
+			$pl = array();
+			foreach($idlist as $r){
+				array_push($kl,' id='.$r);
+				array_push($sl,' fdid='.$r);
+				array_push($pl,' pid='.$r);
+			}
+
+			$sql = 'delete from userfile where ('. implode(' or ',$sl).') and uid='.$this->user['id'];
+			$query = $this->db->query($sql);
+
+			$sql = 'delete from userfolds where ('. implode(' or ',$pl).') and uid='.$this->user['id'];
+			$query = $this->db->query($sql);
+
+			$sql = 'delete from userfolds where ('. implode(' or ',$kl).') and uid='.$this->user['id'];
+			$query = $this->db->query($sql);
+			if($this->db->affected_rows()>0){
+				$ret = array(
+					'msg' => 'ok'
+				);
+				$this->json($ret,0,'ok');
+			}else{
+				$ret = array(
+					'msg' => 'error'
+				);
+				$this->json($ret,100,'error');
+			}			
 		}
 
-		$kl = array();
-		$sl = array();
-		$pl = array();
-		foreach($idlist as $r){
-			array_push($kl,' id='.$r);
-			array_push($sl,' fdid='.$r);
-			array_push($pl,' pid='.$r);
-		}
-
-		$sql = 'delete from userfile where ('. implode(' or ',$sl).') and uid='.$this->user['id'];
-		$query = $this->db->query($sql);
-
-		$sql = 'delete from userfolds where ('. implode(' or ',$pl).') and uid='.$this->user['id'];
-		$query = $this->db->query($sql);
-
-		$sql = 'delete from userfolds where ('. implode(' or ',$kl).') and uid='.$this->user['id'];
-		$query = $this->db->query($sql);
-		if($this->db->affected_rows()>0){
-			$ret = array(
-				'msg' => 'ok'
-			);
-			$this->json($ret,0,'ok');
-		}else{
-			$ret = array(
-				'msg' => 'error'
-			);
-			$this->json($ret,100,'error');
-		}
 	}
 
 	public function copymsg_to_my(){

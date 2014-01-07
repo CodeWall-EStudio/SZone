@@ -13,6 +13,7 @@
 class Fold_model extends CI_Model {
 
     protected $utable = 'userfolds';
+    protected $ftable = 'groupfile';
     protected $gtable = 'groupfolds';
 
     function __construct()
@@ -20,6 +21,26 @@ class Fold_model extends CI_Model {
         parent::__construct();
         $this->load->database();
     }	
+
+    function del_group_fold($id,$gid){
+        if(!$id && !$gid){
+            return false;
+        }
+
+        $this->db->where('gid',$gid);
+        $this->db->where_in('fdid',$id);
+        $this->db->delete($this->ftable);    
+
+        $this->db->where_in('pid',$id);
+        $this->db->delete($this->gtable);
+
+        $this->db->where_in('id',$id);
+        $this->db->delete($this->gtable); 
+
+        return $this->db->affected_rows();
+        //return true;       
+
+    }    
 
     function get_user_normal_folds($uid,$fid,$key,$od,$on){
     	$fid = (int) $fid;
