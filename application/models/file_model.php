@@ -59,6 +59,19 @@ class File_model extends CI_Model {
         return $result;
     }
 
+    function check_filename_by_uid($fdid,$uid,$fn){
+        $this->db->select('id');
+        $this->db->where('uid',$uid);
+        $this->db->where('fdid',$fdid);
+        $this->db->where('name',$fn);
+        $query = $this->db->get($this->utable);
+
+        // echo $fn;
+        // echo $query->num_rows();
+
+        return $query->num_rows();
+    }
+
     function get_by_uid($fid, $uid)
     {
         $result = array();

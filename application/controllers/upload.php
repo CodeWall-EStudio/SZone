@@ -64,6 +64,10 @@ class Upload extends SZone_Controller {
         $this->load->model('File_model');
         $file_info = $this->File_model->get_by_md5($file['md5']);
 
+        $file_name = $this->input->post('file_name', TRUE);
+        $fdid = $this->input->get('fid');
+        $is_media = $this->input->post('media');
+
         $file_isnew = FALSE;
         if (empty($file_info)) {
 
@@ -91,9 +95,7 @@ class Upload extends SZone_Controller {
         } else {
             $file = $file_info;
 
-            $user_file = $this->File_model->get_by_uid($file['id'], $this->user['id']);
-
-            if (!empty($user_file)) {
+            if($this->File_model->check_filename_by_uid($fdid,$this->user['id'],$file_name)){
                 $ret = array(
                     'jsonrpc' => '2.0',
                     'error' => array(
@@ -103,15 +105,29 @@ class Upload extends SZone_Controller {
                 );
                 $this->json($ret, 409, '上传失败,已经有重名文件!');
                 return;
-            } else {
-                $file['ref'] += 1;
+            }else{
+                $file['ref'] += 1;  
             }
+
+            //$user_file = $this->File_model->get_by_uid($file['id'], $this->user['id']);
+
+            // if (!empty($user_file)) {
+            //     $ret = array(
+            //         'jsonrpc' => '2.0',
+            //         'error' => array(
+            //             'code' => 4,
+            //             'message' => '上传失败,已经有重名文件'
+            //         )
+            //     );
+            //     $this->json($ret, 409, '上传失败,已经有重名文件!');
+            //     return;
+            // } else {
+            //     $file['ref'] += 1;
+            // }
 
         }
 
-        $file_name = $this->input->post('file_name', TRUE);
-        $fdid = $this->input->get('fid');
-        $is_media = $this->input->post('media');
+
 
         // 判断是否是来自新媒体教学的上传请求
         $fdid = $this->media($is_media, $fdid);
