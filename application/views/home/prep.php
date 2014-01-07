@@ -143,6 +143,7 @@
 								</a>
 							</th>	
 						</tr>	
+						<?if($prid):?>
 					<?foreach($fold as $item):?>
 						<?if($item['pid'] == $fid):?>
 						<tr data-id="<?=$item['id']?>">
@@ -176,6 +177,7 @@
 						</tr>
 						<?endif?>
 						<?endforeach?>
+						<?endif?>
 					<?endif?>		
 					<?if(count($flist)>0):?>				
 						<?foreach($flist as $item):?>
