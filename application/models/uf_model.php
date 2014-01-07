@@ -67,12 +67,22 @@ class Uf_model extends CI_Model {
         return $rl;
     }
 
-    function get_by_ids($ids)
+    function get_by_ids($id,$ids)
     {
         $this->db->select('id, fid, name');
+        $this->db->where('uid',$id);
         $this->db->where_in('id',$ids);
         $query = $this->db->get($this->table);
-        return $query->row_array();
+        $result = array();
+        foreach($query->result() as $row){
+            array_push($result,array(
+                'id' => $row->id,
+                'fid' => $row->fid,
+                'name' => $row->name
+            ));
+        }
+
+        return $result;
     }
 
     function get_all_filenum($id,$fdid=0,$key=0,$type=0){
