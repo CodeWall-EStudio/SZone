@@ -119,7 +119,8 @@ class SZone_Controller extends CI_Controller {
             $user = array(
                 'name' => $this->user['name'],
                 'nick' => $user_data->userInfo->name,
-                'size' => $this->config->item('limit', 'upload')
+                'size' => $this->config->item('limit', 'upload'),
+                'auth' => 0
             );
 
             $user['id'] = $this->User_model->insert_entry($user);

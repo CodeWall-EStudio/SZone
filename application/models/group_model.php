@@ -32,7 +32,6 @@ class Group_model extends CI_Model {
     function get_user_group_ids($id)
     {
         $this->db->where('uid', $id);
-        //$this->db->where('auth >', 0);
         $query = $this->db->get($this->user_table);
         $gidlist = array();
 
@@ -112,10 +111,6 @@ class Group_model extends CI_Model {
     {
         $gidlist = $ids;
         $authlist = $authid;
-        if(count($ids)>0){
-            $this->db->where_in('id', $ids);
-        }
-        $query = $this->db->get($this->table);
 
         $result = array(
             'flist' => array(),
@@ -125,6 +120,15 @@ class Group_model extends CI_Model {
             'school' => array(),
             'prelist' => array()
         );
+
+        if(count($ids)>0){
+            $this->db->where_in('id', $ids);
+        }else{
+            return $result;
+        }
+
+        $query = $this->db->get($this->table);
+
         foreach($query->result() as $row){
             if($row->type == 1){
                 //if($row->parent == 0){

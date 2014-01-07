@@ -92,13 +92,14 @@ class Uf_model extends CI_Model {
     }
 
     function get_fileinfo($id,$fdid=0,$key=0,$type=0,$on=0,$desc=0,$start=0,$pagenum=10){
-        $this->db->select('userfile.id,userfile.fid,userfile.name,userfile.createtime,userfile.del,userfile.content,files.type,files.size');
+        $this->db->select('userfile.id,userfile.fid,userfile.name,userfile.createtime,userfile.content,files.type,files.size');
         $this->db->from($this->table);
         $this->db->join($this->ftable,'files.id=userfile.fid');
         $this->db->where('uid',$id);
-        if($fdid){
+        $this->db->where('userfile.del',0);
+        //if($fdid){
             $this->db->where('fdid',$fdid);
-        }
+        //}
         if($type){
             $this->db->where('files.type',$type);
         }

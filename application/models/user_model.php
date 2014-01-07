@@ -22,6 +22,27 @@ class User_model extends CI_Model {
         $this->load->database();
     }
 
+    function check_auth_in_group($id,$gid){
+        $this->db->select('id');
+        $this->db->where('uid',$id);
+        $this->db->where('auth >',0);
+
+        $query = $this->db->get($this->gtable);
+        if($query->num_rows() > 0){
+            return true;
+        }else{
+            $this->db->select('id');
+            $this->db->where('id',$gid);
+            $this->db->where('create',$id);
+
+            $query = $this->db->get($this->gptable);
+            if($query->num_rows() > 0){
+                return true;
+            }
+            return false;
+        }
+    }
+
     function get_in_group($id,$gid){
         $result = array();
         $query = $this->db->get_where($this->gtable,array('uid' => $id));
