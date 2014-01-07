@@ -331,6 +331,7 @@ used as it is.
 					if (file) {
 						message = err.message;
 
+
 						if (err.details) {
 							message += " (" + err.details + ")";
 						}
@@ -392,7 +393,9 @@ used as it is.
 					t = $.parseJSON(t);
 					if(t.data.error.code !=0){
 						file.status = 4;
+						file.hint = t.msg;
 					}
+					$('#'+file.id).attr('title',t.msg);
 					handleStatus(file);
 				});
 

@@ -67,6 +67,7 @@ class Upload extends SZone_Controller {
         $file_name = $this->input->post('file_name', TRUE);
         $fdid = $this->input->get('fid');
         $is_media = $this->input->post('media');
+        $gid = $this->input->get('gid');
 
         $file_isnew = FALSE;
         if (empty($file_info)) {
@@ -95,18 +96,34 @@ class Upload extends SZone_Controller {
         } else {
             $file = $file_info;
 
-            if($this->File_model->check_filename_by_uid($fdid,$this->user['id'],$file_name)){
-                $ret = array(
-                    'jsonrpc' => '2.0',
-                    'error' => array(
-                        'code' => 4,
-                        'message' => '上传失败,已经有重名文件'
-                    )
-                );
-                $this->json($ret, 409, '上传失败,已经有重名文件!');
-                return;
+            if($gid>0){
+                if($this->File_model->check_filename_by_gid($fdid,$gid,$file_name)){
+                    $ret = array(
+                        'jsonrpc' => '2.0',
+                        'error' => array(
+                            'code' => 4,
+                            'message' => '上传失败,已经有重名文件'
+                        )
+                    );
+                    $this->json($ret, 409, '上传失败,已经有重名文件!');
+                    return;
+                }else{
+                    $file['ref'] += 1;  
+                }
             }else{
-                $file['ref'] += 1;  
+                if($this->File_model->check_filename_by_uid($fdid,$this->user['id'],$file_name)){
+                    $ret = array(
+                        'jsonrpc' => '2.0',
+                        'error' => array(
+                            'code' => 4,
+                            'message' => '上传失败,已经有重名文件'
+                        )
+                    );
+                    $this->json($ret, 409, '上传失败,已经有重名文件!');
+                    return;
+                }else{
+                    $file['ref'] += 1;  
+                }
             }
 
             //$user_file = $this->File_model->get_by_uid($file['id'], $this->user['id']);
@@ -148,7 +165,7 @@ class Upload extends SZone_Controller {
         }
 
         // 如果小组id不为空，则增加小组的文件记录
-        $gid = $this->input->get('gid');
+        
         if ($gid > 0 ) {
             $this->File_model->insert_group_entry(array(
                 'fid' => $file['id'],

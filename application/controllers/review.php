@@ -17,7 +17,7 @@ class Review extends SZone_Controller {
         }
 
         if (empty($gid)){
-                $auth = $this->File_model->get_by_uid($fid, $this->user['id']);
+                $auth = $this->File_model->check_fileid_by_uid($fid, $this->user['id']);
                 if (empty($auth))
                 {
                     show_error('用户没有查看此文件的权限');

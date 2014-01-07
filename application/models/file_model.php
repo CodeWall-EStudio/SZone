@@ -15,6 +15,7 @@ class File_model extends CI_Model {
     protected $table   = 'files';
     protected $utable = 'userfile';
     protected $gtable = 'groupfile';
+    protected $mtable = 'message';
 
     function __construct()
     {
@@ -66,10 +67,42 @@ class File_model extends CI_Model {
         $this->db->where('name',$fn);
         $query = $this->db->get($this->utable);
 
-        // echo $fn;
-        // echo $query->num_rows();
+        return $query->num_rows();
+    }
+
+    function check_filename_by_gid($fdid,$gid,$fn){
+        $this->db->select('id');
+        $this->db->where('gid',$gid);
+        $this->db->where('fdid',$fdid);
+        $this->db->where('name',$fn);
+        $query = $this->db->get($this->gtable);
 
         return $query->num_rows();
+    }  
+
+    function check_fileid_by_uid($fid,$uid) {
+        $this->db->select('id');
+        $this->db->where('uid',$uid);
+        $this->db->where('fid',$fid);
+
+        $query = $this->db->get($this->utable);
+
+        if($query->num_rows() == 0){
+            $this->db->select('id');
+            $this->db->where('tuid',$uid);
+            $this->db->where('fid',$fid);
+
+            $query = $this->db->get($this->mtable);
+
+            if($query->num_rows() == 0){
+                return false;
+            }else{
+                return true;
+            }
+
+        }else{
+            return true;
+        }
     }
 
     function get_by_uid($fid, $uid)

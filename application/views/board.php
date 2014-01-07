@@ -18,7 +18,7 @@
 		<div class="share-act-zone">
 			<p id="searchArea"><input type="text" value="搜索留言" data-def="搜索留言" data-type="" id="search" /><i></i></p>
 			<div>
-				全部用户
+				
 			</div>
 		</div>
 		<div class="board-list">

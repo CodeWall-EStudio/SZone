@@ -41,7 +41,7 @@
 					用户列表
 					<ul id="searchResult">
 						<?foreach($ul as $row):?>
-							<li <?if(isset($ulist[$row['id']])):?>style="display:none"<?endif?>><a data-id="<?=$row['id']?>" <?if(isset($ulist[$row['id']])):?>data-group="1"<?endif?>><?=$row['name']?></a></li>
+							<li <?if(isset($ulist[$row['id']])):?>style="display:none"<?endif?>><a data-id="<?=$row['id']?>" <?if(isset($ulist[$row['id']])):?>data-group="1"<?endif?>><?=htmlspecialchars($row['name'])?></a></li>
 						<?endforeach?>
 					</ul>						
 				</div>
@@ -49,7 +49,7 @@
 					小组成员
 					<ul id="selectResult">
 						<?foreach($ulist as $row):?>
-							<li><a <?if($row['auth']==0):?>data-id="<?=$row['uid']?>"<?endif?>><?=$row['name']?></a></li>
+							<li><a <?if($row['auth']==0):?>data-id="<?=$row['uid']?>"<?endif?>><?=htmlspecialchars($row['name'])?></a></li>
 						<?endforeach?>
 					</ul>					
 				</div>	
@@ -63,19 +63,19 @@
 		<?foreach($ul as $row):?>
 			map[<?=$row['id']?>] = {
 				'id' : <?=$row['id']?>,
-				'name' : '<?=$row['name']?>'
+				'name' : '<?=htmlspecialchars($row['name'])?>'
 			}
 		<?endforeach?>
 		<?foreach($ulist as $row):?>
 			<?if($row['auth']==0):?>
 			map[<?=$row['uid']?>] = {
 				'id' : <?=$row['uid']?>,
-				'name' : '<?=$row['name']?>'
+				'name' : '<?=htmlspecialchars($row['name'])?>'
 			}		
 			<?endif?>
 			omap[<?=$row['uid']?>] = {
 				'id' : <?=$row['uid']?>,
-				'name' : '<?=$row['name']?>'
+				'name' : '<?=htmlspecialchars($row['name'])?>'
 			}
 		<?endforeach?>		
 	</script>	

@@ -656,6 +656,7 @@ function hideShare(){
 }
 function hideManage(){
 	$('#manageWin').modal('hide');
+	window.location.reload();
 }
 
 function sharealert(msg){
