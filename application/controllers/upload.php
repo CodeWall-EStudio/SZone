@@ -224,7 +224,7 @@ class Upload extends SZone_Controller {
                 exec('pdf2swf '.$path.'.pdf -s flashversion=9 -o '.$path.'.swf');
             }
             // 转换pdf为swf
-            if (in_array($mime, $pdfs))
+            if (in_array($mimes, $pdfs))
             {
                 exec('pdf2swf '.$path.' -s flashversion=9 -o '.$path.'.swf');
             }
