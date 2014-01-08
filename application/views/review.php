@@ -31,13 +31,31 @@
   		margin:0 auto;
   	}
   	.file-reivew-act span{
-  		border:1px solid #000;
+  		display:inline-block;
+  		width:24px;
+  		height:24px;  		
   		cursor:pointer;
   	}
   	.flexpaper_viewer{
   		width:500px;
   		margin:0 auto;
   	}
+  	.to-left{
+
+  		background:url(/css/imgs/ll.png) no-repeat;
+  	}
+  	.to-right{
+
+  		background:url(/css/imgs/rl.png) no-repeat; 		
+  	}
+  	.zoom-in{
+ 
+  		background:url(/css/imgs/jjj.png) no-repeat; 				
+  	}
+  	.zoom-out{
+  
+  		background:url(/css/imgs/jj.png) no-repeat;
+  	}  	
   </style>
   <script>
     
@@ -83,10 +101,10 @@
 		</div>
 		<?if($finfo['type']==1):?>
 		<div class="file-reivew-act">
-			<span class="glyphicon glyphicon-repeat rotate to-left"></span>
-			<span class="glyphicon glyphicon-repeat to-right"></span>
-			<span class="glyphicon glyphicon-zoom-in zoom-in"></span>
-			<span class="glyphicon glyphicon-zoom-out zoom-out"></span>
+			<span class="to-left"></span>
+			<span class="to-right"></span>
+			<span class="zoom-out"></span>
+			<span class="zoom-in"></span>
 		</div>
 		<?endif?>
 		<?if($prev):?>

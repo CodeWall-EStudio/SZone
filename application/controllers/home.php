@@ -841,44 +841,55 @@ class Home extends SZone_Controller {
                         }                
 
                         if($fid){
-                                $sql = 'select count(a.id) as allnum from userfile a,files b where a.del=0 and a.fid=b.id and uid='.$this->user['id'];
-                                $sql .= $wh;
 
-                                $query = $this->db->query($sql);
-                                $row = $query->row();
+                            $this->load->model('Uf_model');
+                            $allnum = $this->Uf_model->get_allprep_num($this->user['id'],$fid,$key,$type);
 
-                                $allnum = $row->allnum;
+                            $page = get_page_status($nowpage,$pagenum,$allnum);
 
-                                //选择文件
-                                $sql = 'select a.id,a.fid,a.name,a.createtime,b.type,b.size from userfile a,files b where a.del = 0 and a.fid = b.id and uid = '.$this->user['id'];
-                                $sql .= $wh;
-                                $page = get_page_status($nowpage,$pagenum,$allnum);
+                            if($od){
+                                $file = $this->Uf_model->get_prep_byid($this->user['id'],$fid,$key,$type,$odname,$desc,$page['start'],$pagenum);     
+                            }else{
+                                $file = $this->Uf_model->get_prep_byid($this->user['id'],$fid,$key,$type,0,0,$page['start'],$pagenum);
+                            }                            
+                                // $sql = 'select count(a.id) as allnum from userfile a,files b where a.del=0 and a.prid=b.id and uid='.$this->user['id'];
+                                // $sql .= $wh;
 
-                                $query = $this->db->query($sql);
+                                // $query = $this->db->query($sql);
+                                // $row = $query->row();
 
-                                foreach($query->result() as $row){
-                                        array_push($kfc,' a.fid='.$row->fid);
-                                        $flist[$row->id] = array(
-                                                'id' => $row->id,
-                                                'fid' => $row->fid,
-                                                'name' => $row->name,
-                                                'type' => $row->type,
-                                                'size' => format_size($row->size),
-                                                'time' => substr($row->createtime,0,10)
-                                        );
-                                }
+                                // $allnum = $row->allnum;
 
-                                $sql = 'select a.id from userfile a,usercollection b where a.fid=b.fid and b.uid='.$this->user['id'];
-                                if(count($kfc)>0){
-                                $sql .=' and ('.implode(' or ',$kfc).')';
-                                }
-                                $query = $this->db->query($sql);
+                                // //选择文件
+                                // $sql = 'select a.id,a.fid,a.name,a.createtime,b.type,b.size from userfile a,files b where a.del = 0 and a.prid = b.id and uid = '.$this->user['id'];
+                                // $sql .= $wh;
+                                // $page = get_page_status($nowpage,$pagenum,$allnum);
 
-                                foreach($query->result() as $row){
-                                        if(isset($flist[$row->id])){
-                                                $flist[$row->id]['iscoll'] = 1;
-                                        }
-                                }
+                                // $query = $this->db->query($sql);
+
+                                // foreach($query->result() as $row){
+                                //         array_push($kfc,' a.fid='.$row->fid);
+                                //         $flist[$row->id] = array(
+                                //                 'id' => $row->id,
+                                //                 'fid' => $row->fid,
+                                //                 'name' => $row->name,
+                                //                 'type' => $row->type,
+                                //                 'size' => format_size($row->size),
+                                //                 'time' => substr($row->createtime,0,10)
+                                //         );
+                                // }
+
+                                // $sql = 'select a.id from userfile a,usercollection b where a.prid=b.fid and b.uid='.$this->user['id'];
+                                // if(count($kfc)>0){
+                                // $sql .=' and ('.implode(' or ',$kfc).')';
+                                // }
+                                // $query = $this->db->query($sql);
+
+                                // foreach($query->result() as $row){
+                                //         if(isset($flist[$row->id])){
+                                //                 $flist[$row->id]['iscoll'] = 1;
+                                //         }
+                                // }
                         }
 
                         if(!$prid && !$fid){
@@ -944,7 +955,7 @@ class Home extends SZone_Controller {
                 $data['prid'] = $prid;
                 $data['pid'] = $pid;
                 $data['plist']  = $plist;
-                $data['flist'] = $flist;
+                $data['flist'] = $file;
                 $data['pname'] = $pname;
                 $data['on'] = $on;
                 $data['od'] = $od;

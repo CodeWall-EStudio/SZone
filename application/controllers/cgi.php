@@ -439,8 +439,8 @@ class Cgi extends SZone_Controller {
 					'size' => $filedata['file_size'],
 					'md5' => $md5,
 					//'type' => $filedata['is_image'],
-					'mimes' => $filedata['file_type'],
-					'del' => 0
+					'mimes' => $filedata['file_type']
+					//'del' => 0
 				);
 				if($filedata['is_image']){
 					$data['type'] = 1;
@@ -466,6 +466,7 @@ class Cgi extends SZone_Controller {
 				}
 
 				$sql = $this->db->insert_string('files',$data);
+				
 				//把文件写入数据库
 				$query = $this->db->query($sql);
 				$fid = $this->db->insert_id();
@@ -525,13 +526,20 @@ class Cgi extends SZone_Controller {
                 }
             }
 
+            $prep = (int) $this->input->get('prep');
+
 			$data = array(
 				'fid' => (int) $fid,
 				'name' => $filedata['raw_name'],
+				'mark' => '',
 				'uid' => $this->user['id'],
 				'del' => 0,
 				'fdid' => $fdid
 			);
+			if($prep){
+				$data['fdid'] = 0;
+				$data['prid'] = $fdid;
+			}
 			// if($pid){
 			// 	$data['pid'] = $pid;
 			// }

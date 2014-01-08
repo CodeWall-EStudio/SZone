@@ -378,7 +378,8 @@ $config['pagenum'] = 10;
 $config['upload']['path'] = ROOTPATH.'../file/';
 $config['upload']['limit'] = 3221225472; //3GB;
 $config['upload']['jodconverter'] = '/var/run/jodconverter/lib/jodconverter-core-3.0-beta-4.jar';
-$config['upload']['url'] = '/upload';
+// $config['upload']['url'] = '/upload';
+$config['upload']['url'] = '/cgi/upload';
 $config['upload']['chunk'] = 0;
 
 //上传类型

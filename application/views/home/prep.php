@@ -423,7 +423,7 @@
 			files = '<?=json_encode($flist);?>';
 		folds = $.parseJSON(folds);
 		files = $.parseJSON(files);		
-		var upload_url = '<?=$upload_url;?>?fid=<?=$fid?>&csrf_test_name='+$.cookie('csrf_cookie_name'),
+		var upload_url = '<?=$upload_url;?>?prep=1&fid=<?=$fid?>&csrf_test_name='+$.cookie('csrf_cookie_name'),
             upload_chunk = <?=$upload_chunk;?>;
 		//var nowPrepId = '<?=$pid?>';
 	</script>

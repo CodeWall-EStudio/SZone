@@ -160,6 +160,81 @@ class Uf_model extends CI_Model {
         return $file;
     }
 
+    function get_prep_byid($id,$fdid,$key=0,$type=0,$on=0,$desc=0,$start=0,$pagenum=10){
+        if(!$fdid){
+            return array();
+        }
+        //$sql = 'select a.id,a.fid,a.name,a.createtime,b.type,b.size from userfile a,files b where a.del = 0 and a.prid = b.id and uid = '.$this->user['id'];
+        $this->db->select('userfile.id, userfile.fid, userfile.name, userfile.createtime, userfile.content, files.type, files.size');
+        $this->db->from($this->table);
+        $this->db->join($this->ftable,'files.id=userfile.fid');        
+        $this->db->where('userfile.uid',$id);
+        $this->db->where('userfile.prid',$fdid);
+        $this->db->where('userfile.del',0);
+        if($type){
+            $this->db->where('files.type',$type);
+        }
+        if($key){
+            $this->db->like('userfile.name',$key);
+        }
+        $this->db->limit($pagenum,$start);
+        if($on){
+            $this->db->order_by($on,$desc);
+        }
+
+        $query = $this->db->get();
+
+        $file = array();
+        $ids = array();
+
+        foreach($query->result() as $row){
+            array_push($ids,$row->fid);
+            $file[$row->id] = array(
+                'id' => $row->id,
+                'fid' => $row->fid,
+                'name' => $row->name,
+                'time' => substr($row->createtime,0,10),
+                'content' => $row->content,
+                'size' => format_size($row->size),
+                'type' => $row->type,
+                'coll' => 0
+            );            
+        }
+
+        $this->db->select('fid');
+        $this->db->where_in($ids);
+        $query = $this->db->get($this->ctable);
+
+        $ids = array();
+        foreach($query->result() as $row){
+            array_push($ids,$row->fid);
+        }
+
+        //echo json_encode($ids);
+
+        foreach($file as &$row){
+            if(in_array($row['fid'],$ids)){
+                $row['coll'] = 1;
+            }
+        }
+
+        return $file;        
+    }
+
+    function get_allprep_num($id,$fdid=0,$key=0,$type=0){
+        $this->db->select('count(id) as allnum');
+        $this->db->where('uid',$id);
+        $this->db->where('prid',$fdid);
+        $query = $this->db->get($this->table);
+        $row = $query->row();
+
+        if($this->db->affected_rows() > 0){
+            return $row->allnum;
+        }else{
+            return 0;
+        }
+    }
+
     function get_user_file_by_group($uid, $fdid)
     {
         $query = $this->db->get_where($this->table, array('uid' => $uid, 'fdid' => $fdid));

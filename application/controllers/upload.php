@@ -66,6 +66,7 @@ class Upload extends SZone_Controller {
 
         $file_name = $this->input->post('file_name', TRUE);
         $fdid = $this->input->get('fid');
+        $prep = $this->input->get('prep');
         $is_media = $this->input->post('media');
         $gid = $this->input->get('gid');
 
@@ -149,14 +150,23 @@ class Upload extends SZone_Controller {
         // 判断是否是来自新媒体教学的上传请求
         $fdid = $this->media($is_media, $fdid);
 
-        // 增加用户的文件记录
-        $result = $this->File_model->insert_user_entry(array(
+        $fdata = array(
             'fid' => $file['id'],
             'name' => $file_name,
             'mark' => '',
-            'uid' => $this->user['id'],
-            'fdid' => $fdid
-        ));
+            'uid' => $this->user['id']
+        );
+
+        //判断是否是在备课中上传
+        if($prep > 0){
+            $fdata['fdid'] = 0;
+            $fdata['prid'] = $fdid;
+        }else{
+            $fdata['fdid'] = $fdid;
+        }
+
+        // 增加用户的文件记录
+        $result = $this->File_model->insert_user_entry($fdata);
 
         // 增加用户的空间使用
         if (intval($result) > 0) {
