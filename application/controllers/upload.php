@@ -159,7 +159,7 @@ class Upload extends SZone_Controller {
 
         //判断是否是在备课中上传
         if($prep > 0){
-            $fdata['fdid'] = 0;
+            $fdata['fdid'] = -1;
             $fdata['prid'] = $fdid;
         }else{
             $fdata['fdid'] = $fdid;

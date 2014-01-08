@@ -537,7 +537,7 @@ class Cgi extends SZone_Controller {
 				'fdid' => $fdid
 			);
 			if($prep){
-				$data['fdid'] = 0;
+				$data['fdid'] = -1;
 				$data['prid'] = $fdid;
 			}
 			// if($pid){
@@ -1419,7 +1419,7 @@ class Cgi extends SZone_Controller {
 			}
 		};
 
-		$sql = $this->db->update_string("userfile",array('fdid' => $pfdid),implode(' or ',$fw));
+		$sql = $this->db->update_string("userfile",array('prid' => $pfdid),implode(' or ',$fw));
 		$query = $this->db->query($sql);
 			
 		if ($this->db->affected_rows() > 0){

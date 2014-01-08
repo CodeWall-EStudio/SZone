@@ -88,16 +88,22 @@ class Uf_model extends CI_Model {
     function get_all_filenum($id,$fdid=0,$key=0,$type=0){
         $this->db->select('userfile.id');
         $this->db->from($this->table);
-        $this->db->where('uid',$id);
-        if($fdid){
-            $this->db->where('fdid',$fdid);
-        }
+        $this->db->where('userfile.uid',$id);
+        $this->db->join($this->ftable,'files.id=userfile.fid');
+        //if($fdid){
+            $this->db->where('userfile.fdid',$fdid);
+        //}
+        $this->db->where('userfile.del',0);
         if($type){
-            $this->db->join($this->ftable,'files.id=userfile.fid');
+            
             $this->db->where('files.type',$type);
+        } 
+        if($key){
+            $this->db->like('userfile.name',$key);
         }  
-        $query = $this->db->get();
 
+        $query = $this->db->get();
+        //echo  $query->num_rows();  
         return $query->num_rows();      
     }
 
@@ -107,6 +113,7 @@ class Uf_model extends CI_Model {
         $this->db->join($this->ftable,'files.id=userfile.fid');
         $this->db->where('uid',$id);
         $this->db->where('userfile.del',0);
+        // $this->db->where('userfile.prid',0);
         //if($fdid){
             $this->db->where('fdid',$fdid);
         //}
