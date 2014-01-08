@@ -1,4 +1,4 @@
-<?
+<?php
 if ( ! function_exists('get_file_size')){
 	function get_file_size($size){
 		if($size > 1000000){

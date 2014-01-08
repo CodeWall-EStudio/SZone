@@ -152,7 +152,7 @@ class Upload extends SZone_Controller {
 
         $fdata = array(
             'fid' => $file['id'],
-            'name' => $file_name,
+            'name' => $is_media ? $file['md5'].'.jpeg' : $file_name,
             'mark' => '',
             'uid' => $this->user['id']
         );
