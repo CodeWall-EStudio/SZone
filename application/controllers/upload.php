@@ -152,7 +152,7 @@ class Upload extends SZone_Controller {
         // 增加用户的文件记录
         $result = $this->File_model->insert_user_entry(array(
             'fid' => $file['id'],
-            'name' => $is_media ? $file['md5'].'jpeg' : $file_name,
+            'name' => $is_media ? $file['md5'].'.jpeg' : $file_name,
             'mark' => '',
             'uid' => $this->user['id'],
             'fdid' => $fdid
