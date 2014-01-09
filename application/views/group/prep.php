@@ -30,7 +30,7 @@
           <a href="javascript:history.go(-1)">返回上一页</a>
         <?endif?>&nbsp;
         <?if($fdid):?>
-          <a href="/group/prep?prid=<?=$prid?>&gr=<?=$gr?>&tag=<?=$tag?>&fdid=<?=$parent['id']?>&ud=<?=$ud?>"><?=$parent['name']?></a>
+          <a href="/group/prep?prid=<?=$prid?>&gr=<?=$gr?>&tag=<?=$tag?>&fdid=<?=$parent['id']?>&ud=<?=$ud?>"><?=htmlspecialchars($parent['name'])?></a>
         <?endif?>
         <div style="float:right">
           <select id="prepName">
@@ -65,7 +65,7 @@
           <select id="uList">
             <option value="0">所有</option>
             <?foreach($ulist as $row):?>
-            <option value="<?=$row['id']?>"  <?if($row['id']==$ud):?>selected<?endif?>><?=$row['nick']?></option>
+            <option value="<?=$row['id']?>"  <?if($row['id']==$ud):?>selected<?endif?>><?=htmlspecialchars($row['nick'])?></option>
             <?endforeach?>
           </select>           
           <?endif?>
@@ -82,7 +82,7 @@
         <?foreach($fold as $row):?>
           <tr>
             <td>
-             <a href="/group/prep?prid=<?=$row['gid']?>&ud=<?=$row['uid']?>&fdid=<?=$row['fdid']?>"><i class="fold"></i><?=$row['nick']?> <?=$row['name']?></a>
+             <a href="/group/prep?prid=<?=$row['gid']?>&ud=<?=$row['uid']?>&fdid=<?=$row['fdid']?>"><i class="fold"></i><?=htmlspecialchars($row['nick'])?> <?=htmlspecialchars($row['name'])?></a>
             </td>
             <td></td>
             <td></td>
@@ -100,7 +100,7 @@
                   <?endif?>  
                     <?=$row['name']?>
                   </a>  
-                  <p id="btn<?=$row['id']?>" class="r-mark"><a href="/download?id=<?=$row['fid']?>">下载</a>  <a class="mark" data-id="<?=$row['id']?>">评论</a> <span><?=$row['mark']?></span></p>  
+                  <p id="btn<?=$row['id']?>" class="r-mark"><a href="/download?id=<?=$row['fid']?>">下载</a>  <a class="mark" data-id="<?=$row['id']?>">评论</a> <span><?=htmlspecialchars($row['mark'])?></span></p>  
                   <p id="mark<?=$row['id']?>" class="mark-edit"><input id="input<?=$row['id']?>" type="text"  /> <a data-id="<?=$row['id']?>" class="save">保存</a> <a data-id="<?=$row['id']?>" class="esc">取消</a></p>
               </td>
               <td>
