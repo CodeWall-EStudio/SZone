@@ -546,6 +546,10 @@ class Group extends SZone_Controller {
 			$fold = $this->Prep_model->get_prep_user($gr,$tag);	
 		}	
 
+		$parent = array();
+		if($fdid){
+			$parent = $this->Prep_model->get_parent_gid_fid($prid,$fdid);
+		}
 
 		$sql = 'select a.id,a.name,a.nick from user a,groupuser b where a.id = b.uid  ';
 		// echo json_encode($plist);
@@ -585,7 +589,7 @@ class Group extends SZone_Controller {
 		$data['gr'] = $gr;
 		$data['tag'] = $tag;
 		$data['flist'] = $flist;
-		$data['thisfold'] = $thisfold;
+		$data['parent'] = $parent;
 
 		$this->load->view('group/prep.php',$data);	
 	}

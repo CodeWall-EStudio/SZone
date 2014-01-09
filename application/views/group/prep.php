@@ -25,8 +25,13 @@
       </div>      
 
       <div class="section-tit">
-        <a href="/group/prep" style="float:left">备课检查</a>
-
+        <a href="/group/prep" style="float:left">备课检查</a>&nbsp;
+        <?if($prid):?>
+          <a href="javascript:history.go(-1)">返回上一页</a>
+        <?endif?>&nbsp;
+        <?if($fdid):?>
+          <a href="/group/prep?prid=<?=$prid?>&gr=<?=$gr?>&tag=<?=$tag?>&fdid=<?=$parent['id']?>&ud=<?=$ud?>"><?=$parent['name']?></a>
+        <?endif?>
         <div style="float:right">
           <select id="prepName">
             <?foreach($plist as $row):?>

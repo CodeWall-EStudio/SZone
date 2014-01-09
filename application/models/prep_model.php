@@ -232,4 +232,32 @@ class Prep_model extends CI_Model {
         $this->db->where('gid',$gid);
         $this->db->where('uid',$uid);
     }
+
+    function get_parent_gid_fid($gid,$fdid){
+        $this->db->select('pid');
+        $this->db->where('gid',$gid);
+        $this->db->where('id',$fdid);
+
+        $query = $this->db->get($this->gotable);
+
+        $row = $query->row();
+        $pid = $row->pid;
+        
+        if($pid){
+            $this->db->select('name');
+            $this->db->where('gid',$gid);
+            $this->db->where('id',$pid);
+            $query = $this->db->get($this->gotable);         
+            $row = $query->row();
+            $name = $row->name;
+            return array(
+                'id' => $pid,
+                'name' => $name
+            );            
+        }else{
+            return false;
+        }
+
+
+    }
 }
