@@ -70,6 +70,9 @@ class Upload extends SZone_Controller {
         $is_media = $this->input->post('media');
         $gid = $this->input->get('gid');
 
+        // 判断是否是来自新媒体教学的上传请求
+        $fdid = $this->media($is_media, $fdid);
+
         $file_isnew = FALSE;
         if (empty($file_info)) {
 
@@ -127,32 +130,11 @@ class Upload extends SZone_Controller {
                 }
             }
 
-            //$user_file = $this->File_model->get_by_uid($file['id'], $this->user['id']);
-
-            // if (!empty($user_file)) {
-            //     $ret = array(
-            //         'jsonrpc' => '2.0',
-            //         'error' => array(
-            //             'code' => 4,
-            //             'message' => '上传失败,已经有重名文件'
-            //         )
-            //     );
-            //     $this->json($ret, 409, '上传失败,已经有重名文件!');
-            //     return;
-            // } else {
-            //     $file['ref'] += 1;
-            // }
-
         }
-
-
-
-        // 判断是否是来自新媒体教学的上传请求
-        $fdid = $this->media($is_media, $fdid);
 
         $fdata = array(
             'fid' => $file['id'],
-            'name' => $is_media ? $file['md5'].'.jpeg' : $file_name,
+            'name' => $is_media == 1 ? $file['md5'].'.jpeg' : $file_name,
             'mark' => '',
             'uid' => $this->user['id'],
             'fdid' => $fdid
@@ -245,7 +227,7 @@ class Upload extends SZone_Controller {
 
     protected function media($is_media, $fdid)
     {
-        if ($is_media == 1)
+        if ($is_media)
         {
             $fold_name = $this->config->item('name', 'media');
             $this->load->model('Fold_model');
@@ -261,11 +243,11 @@ class Upload extends SZone_Controller {
                     'type' => 1
                 );
                 $fold['id'] = $this->Fold_model->insert_user_fold($fold);
+                return $fold['id'];
             } else {
                 $fold = $fold[0];
+                return $fold->id;
             }
-
-            return $fold['id'];
         }
         return $fdid;
     }
