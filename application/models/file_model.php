@@ -123,6 +123,7 @@ class File_model extends CI_Model {
         $this->db->where_in('fid', $ids);
         $this->db->order_by("fid", "desc");
         $query = $this->db->get($this->utable);
+
         if ($query->num_rows() == count($ids))
         {
             $result = $query->result_array();
@@ -190,6 +191,20 @@ class File_model extends CI_Model {
         $this->db->update('entries', $this, array('id' => $_POST['id']));
     }
 
+    function get_fid_byid($ids,$id){
+        $this->db->select('fid');
+        $this->db->where_in('id',$ids);
+        $this->db->where('uid',$id);
+
+        $query = $this->db->get($this->utable);
+
+        $ids = array();
+        foreach($query->result() as $row){
+            array_push($ids,$row->fid);
+        }
+        return $ids;
+    }
+
     function check_groupfile_byid($ids,$gid,$uid){
         $this->db->select('fid');
         $this->db->where_in('fid',$ids);
@@ -202,6 +217,7 @@ class File_model extends CI_Model {
         foreach($query->result() as $row){
             array_push($rl,$row->fid);
         }
+
         return array_diff($ids,$rl);
     }
 

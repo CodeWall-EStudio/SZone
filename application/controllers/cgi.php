@@ -1381,7 +1381,8 @@ class Cgi extends SZone_Controller {
 		$fl = explode(',',$fid);
 		//$pl = explode(',',$pid);
 		$this->load->model('File_model');
-		$id = $this->File_model->check_groupfile_byid($fl,$gid,$this->user['id']);
+		$fids = $this->File_model->get_fid_byid($fl,$this->user['id']);
+		$id = $this->File_model->check_groupfile_byid($fids,$gid,$this->user['id']);
 
 		if(count($id) > 0){
 			$flist = $this->File_model->get_by_uid_ids($id,$this->user['id']);
