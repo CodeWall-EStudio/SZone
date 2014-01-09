@@ -132,6 +132,26 @@ class Test extends CI_Controller {
         var_dump(json_decode($st));
 
     }
+
+    public function decode()
+    {
+        $curlPost = 'encodeKey=80B23162BA5F16A23AE71B01DC86CC43663EC731117D448E3354FD9835F029CD0D4301CF6534849D72EB6EF4FCCBBECA132731482321EB6C5C51300D55C4228A599B3E75D233C08B9E826869DEA900AD';
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'http://mapp.71xiaoxue.com/components/getUserInfo.htm');
+        curl_setopt($ch, CURLOPT_HEADER, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $curlPost);
+        $data = curl_exec($ch);
+        curl_close($ch);
+
+        var_dump($data);
+
+        $st = strstr($data, "{");
+
+        var_dump(json_decode($st));
+
+    }
 }
 // END Controller class
 
