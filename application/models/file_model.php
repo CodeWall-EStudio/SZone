@@ -190,6 +190,21 @@ class File_model extends CI_Model {
         $this->db->update('entries', $this, array('id' => $_POST['id']));
     }
 
+    function check_groupfile_byid($ids,$gid,$uid){
+        $this->db->select('fid');
+        $this->db->where_in('fid',$ids);
+        $this->db->where('uid',$uid);
+        $this->db->where('gid',$gid);
+
+        $query = $this->db->get($this->gtable);
+
+        $rl = array();
+        foreach($query->result() as $row){
+            array_push($rl,$row->fid);
+        }
+        return array_diff($ids,$rl);
+    }
+
 }
 // END Model class
 

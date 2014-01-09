@@ -51,6 +51,45 @@ class Group_model extends CI_Model {
         return $gidlist;
     }
 
+    function get_prep_group_byid($id){
+        $this->db->select('id, name');
+        $this->db->where('type',3);
+        $this->db->where('parent',0);
+        $query = $this->db->get($this->table);
+
+        $pl = array();
+        foreach($query->result() as $row){
+            $pl[$row->id] = array(
+                'id' => $row->id,
+                'name' => $row->name
+            );
+        }
+
+        $this->db->select('groups.id,groups.name,groups.parent');
+        $this->db->from($this->table);
+        $this->db->join($this->user_table, $this->user_table.'.gid='.$this->table.'.id');
+        $this->db->where($this->user_table.'.uid',$id);
+        $this->db->where($this->table.'.type',3);
+
+        $query = $this->db->get();
+
+        $rl = array();
+        foreach($query->result() as $row){
+            if(!isset($rl[$row->parent])){
+                $rl[$row->parent] = array(
+                    'id' => $pl[$row->parent]['id'],
+                    'name' => $pl[$row->parent]['name'],
+                    'list' => array()
+                );
+            }
+            $rl[$row->parent]['list'][$row->id] = array(
+                'id' => $row->id,
+                'name' => $row->name
+            );            
+        }
+        return $rl;
+    }
+
     function get_prep_group_ids($id){
         $sql = 'select gid from groupuser a,groups b where b.type=3 and a.uid='.$id.' and a.gid = b.id ';
         $query = $this->db->query($sql);

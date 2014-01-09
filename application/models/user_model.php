@@ -133,6 +133,34 @@ class User_model extends CI_Model {
         $this->db->update('entries', $this, array('id' => $_POST['id']));
     }
 
+    function get_prep_user($gr = 0, $tag = 0){
+        $this->db->select('groups.id, groups.name, user.nick, user.id as uid');
+        $this->db->from($this->gptable);
+        $this->db->join($this->gtable,'groupuser.gid=groups.id');
+        $this->db->join($this->table,'user.id=groupuser.uid');
+        $this->db->where('groups.type',3);
+        if($gr){
+            $this->db->where('groups.grade',$gr);
+        }
+        if($tag){
+            $this->db->where('groups.tag',$tag);
+        }
+        $query = $this->db->get(); 
+
+        $rl = array();
+        foreach($query->result() as $row){
+            array_push($rl,array(
+                'gid' => $row->id,
+                'name' => $row->name,
+                'nick' => $row->nick,
+                'uid' => $row->uid,
+                'fdid' => 0
+            ));
+        }       
+
+        return $rl;
+    }
+
 }
 // END Model class
 

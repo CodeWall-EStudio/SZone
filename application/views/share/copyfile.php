@@ -51,8 +51,8 @@
 								<?foreach($row['list'] as $r):?>
 									<li>
 										<?if(isset($r['name'])):?>
-											<?if(isset($r['child']) && $r['child']['child']):?>
-												<i class="glyphicon glyphicon-plus" data-pid="<?=$r['id']?>" data-fid="<?=$r['child']['id']?>"></i>
+											<?if(isset($r['child'])):?>
+												<i class="glyphicon glyphicon-plus" data-pid="<?=$r['id']?>"></i>
 											<?else:?>
 												<i class="glyphicon"></i>
 											<?endif?> 
@@ -78,10 +78,12 @@
 			<%
 				for(var i in list){
 					var item = list[i];
+					if(item.gid){
 			%>
 			<li>
-				<i class="glyphicon <%if(item.child){%>glyphicon-plus<%}%>" data-fid="<%=item.id%>"></i><a  class="a-click" data-pid="<%=pid%>" data-id="<%=item['id']%>"> <%=item.name%></a>	
+				<i class="glyphicon <%if(item.child){%>glyphicon-plus<%}%>"  data-pid="<%=item.gid%>" data-fid="<%=item.id%>"></i><a  class="a-click" data-pid="<%=pid%>" data-id="<%=item['id']%>"> <%=item.name%></a>	
 			</li>
+			<%}%>
 			<%}%>
 		</ul>
 	</script>

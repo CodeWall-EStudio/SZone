@@ -77,7 +77,7 @@
         <?foreach($fold as $row):?>
           <tr>
             <td>
-             <a href="/group/prep?prid=<?=$row['prid']?>&ud=<?=$row['uid']?>&fdid=<?=$row['id']?>"><i class="fold"></i><?=$row['name']?></a>
+             <a href="/group/prep?prid=<?=$row['gid']?>&ud=<?=$row['uid']?>&fdid=<?=$row['fdid']?>"><i class="fold"></i><?=$row['nick']?> <?=$row['name']?></a>
             </td>
             <td></td>
             <td></td>
