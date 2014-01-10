@@ -817,11 +817,12 @@ class Home extends SZone_Controller {
 
                 if(count($fold)>0){
                     $tp = array_slice($fold,0,1);
-                    if(!isset($tp[0])){
-                        $thisfold = $this->Fold_model->get_prep_bypid($this->user['id'],$prid,$tp[0]['pid']);
-
-                        $thisfold = $thisfold[$tp[0]['pid']];
+                    $pid = $tp[0]['pid'];
+                    $parfold = $this->Fold_model->get_prep_bypid($this->user['id'],$prid,$pid);
+                    if(!empty($parfold)){
+                       $thisfold = $parfold[$pid];
                     }
+                    
                 }
 
 
