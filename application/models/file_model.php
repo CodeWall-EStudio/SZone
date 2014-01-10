@@ -74,11 +74,27 @@ class File_model extends CI_Model {
         $this->db->select('id');
         $this->db->where('gid',$gid);
         $this->db->where('fdid',$fdid);
-        $this->db->where('name',$fn);
+        $this->db->where('fname',$fn);
         $query = $this->db->get($this->gtable);
 
         return $query->num_rows();
     }  
+
+    function check_msgid_by_uid($id,$fid,$uid){
+            $this->db->select('tuid,fuid');
+            //$this->db->where('tuid',$uid);
+            $this->db->where('id',$id);
+            $this->db->where('fid',$fid);
+
+            $query = $this->db->get($this->mtable);
+            $row = $query->row();
+ 
+            if($uid == $row->fuid || $uid == $row->tuid){
+                return true;
+            }else{
+                return false;
+            }
+    }
 
     function check_fileid_by_uid($fid,$uid) {
         $this->db->select('id');
@@ -88,17 +104,7 @@ class File_model extends CI_Model {
         $query = $this->db->get($this->utable);
 
         if($query->num_rows() == 0){
-            $this->db->select('id');
-            $this->db->where('tuid',$uid);
-            $this->db->where('fid',$fid);
-
-            $query = $this->db->get($this->mtable);
-
-            if($query->num_rows() == 0){
-                return false;
-            }else{
-                return true;
-            }
+            return false;
 
         }else{
             return true;

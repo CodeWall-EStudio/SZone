@@ -107,17 +107,17 @@
 		<tr>
 			<!-- <div class="td1"><input type="checkbox" /></div> -->
 			<td>
-				<a class="file-name" data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>">
+				<a class="file-name" data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>" data-mail="1">
 				<?if($row['type'] < 7):?>
-					<i class="icon-type<?=(int) $row['type']?>" data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>" ></i>
+					<i class="icon-type<?=(int) $row['type']?>" data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>"  data-mail="1"></i>
 				<?else:?>
-					<i class="icon-type" data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>" ></i>
+					<i class="icon-type" data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>" data-mail="1" ></i>
 				<?endif?>					
 
 				</a>
 				<dl>
 					<dt>
-						<a class="file-name" data-review data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>"><?=$row['fname']?></a>&nbsp;
+						<a class="file-name" data-review data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>" data-mail="1"><?=$row['fname']?></a>&nbsp;
 						<span title="<?=$row['content']?>"><?=$row['content']?></span>
 					</dt>
 					<dd>

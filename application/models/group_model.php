@@ -29,7 +29,7 @@ class Group_model extends CI_Model {
         return $query->num_rows();
     }
 
-    function get_user_group_ids($id)
+    function get_user_group_ids($id,$auth)
     {
         $this->db->where('uid', $id);
         $query = $this->db->get($this->user_table);
@@ -50,6 +50,18 @@ class Group_model extends CI_Model {
 
         return $gidlist;
     }
+
+    function get_user_group_auth($id,$auth){
+        $this->db->where('uid', $id);
+        $this->db->where('auth >', 0);
+        $query = $this->db->get($this->user_table);
+        $gidlist = array();
+
+        foreach($query->result() as $row){
+            array_push($gidlist,$row->gid);
+        }
+        return $gidlist;
+    }    
 
     function get_prep_group_byid($id){
         $this->db->select('id, name');
@@ -116,17 +128,7 @@ class Group_model extends CI_Model {
         return $result;   
     }
 
-    function get_user_group_auth($id){
-        $this->db->where('uid', $id);
-        $this->db->where('auth >', 0);
-        $query = $this->db->get($this->user_table);
-        $gidlist = array();
 
-        foreach($query->result() as $row){
-            array_push($gidlist,$row->gid);
-        }
-        return $gidlist;
-    }
 
     function get_group_auth_byid($gid,$id){
         $this->db->where('uid', $id);

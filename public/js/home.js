@@ -710,8 +710,12 @@
 	init();
 })();
 
-function showReview(id,fid){
-	$("#reviewIframe").attr('src','/review?fid='+fid+'&id='+id);
+function showReview(id,fid,m){
+	if(m){
+		$("#reviewIframe").attr('src','/review?fid='+fid+'&id='+id+'&m=1');
+	}else{
+		$("#reviewIframe").attr('src','/review?fid='+fid+'&id='+id);
+	}
 	$('#reviewFile').modal('show');
 }
 function hideManage(){

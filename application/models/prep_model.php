@@ -76,11 +76,15 @@ class Prep_model extends CI_Model {
     }
 
     function get_prepfold_byid($id,$gid,$fdid=0){
-        $this->db->select('nick');
-        $this->db->where('id',$id);
-        $query = $this->db->get($this->table);
-        $row = $query->row();
-        $nick = $row->nick;
+        $nick = '';
+        if($id){
+            $this->db->select('nick');
+            $this->db->where('id',$id);
+            $query = $this->db->get($this->table);
+            $row = $query->row();
+            $nick = $row->nick;              
+        }
+
 
     	$this->db->select('groupfolds.id, groupfolds.name, groupfolds.createtime, groupfolds.pid');
     	$this->db->from($this->gotable);
