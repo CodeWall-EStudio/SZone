@@ -24,7 +24,7 @@ class Review extends SZone_Controller {
                 }        	
         }else{
                 //$auth = $this->File_model->get_by_gid($id, $gid);
-	     $this->load->model('User_model');
+	     $this->load->model('User_model'); 
 	     $in = $this->User_model->get_in_group($this->user['id'],$gid);
             //if (empty($auth))
 	    if(!$in)
