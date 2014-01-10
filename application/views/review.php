@@ -28,7 +28,7 @@
   	.file-reivew-act{
   		position:absolute;
   		top:500px;
-  		width:100%;
+  		width:1000px;
   		text-align : center;
   		margin:0 auto;
   	}
@@ -96,17 +96,18 @@
 			<?elseif($finfo['type']==6):?>
 				压缩文件
 			<?endif?>
-			<dl>
-				<dt>文件名:<?=$finfo['name']?></dt>
-				
-			</dl>
 		</div>
 		<?if($finfo['type']==1):?>
 		<div class="file-reivew-act">
-			<span class="to-left"></span>
-			<span class="to-right"></span>
-			<span class="zoom-out"></span>
-			<span class="zoom-in"></span>
+			<dl>
+				<dt>文件名:<?=$finfo['name']?></dt>
+			</dl>
+			<div>			
+				<span class="to-left"></span>
+				<span class="to-right"></span>
+				<span class="zoom-out"></span>
+				<span class="zoom-in"></span>
+			</div>
 		</div>
 		<?endif?>
 		<?if($prev):?>
