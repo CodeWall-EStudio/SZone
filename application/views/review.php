@@ -28,7 +28,7 @@
   	.file-reivew-act{
   		position:absolute;
   		top:500px;
-  		width:300px;
+  		width:100%;
   		text-align : center;
   		margin:0 auto;
   	}
