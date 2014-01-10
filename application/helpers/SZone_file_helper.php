@@ -247,6 +247,7 @@ if ( ! function_exists('format_type'))
             case 'video/x-matroska':
                 return 4;
             case 'application/octet-stream':
+            case 'application/x-msdownload':
                 return 5;
             default:
                 return 0;
