@@ -26,6 +26,8 @@
   		text-align:left;
   	}
   	.file-reivew-act{
+  		position:absolute;
+  		top:500px;
   		width:300px;
   		text-align : center;
   		margin:0 auto;
@@ -133,7 +135,7 @@
 		$('.to-right').bind('click',function(){
 			num--;
 			$('#reviewImg').rotate({
-				angle: 0-(num+1)*90,
+				angle: 0-(num-1)*90,
 	            animateTo: 0-num*90,
 			});
 		});	
