@@ -39,7 +39,7 @@ class Review extends SZone_Controller {
 		$fnames = 'a.name';
 		if($gid){
 			$fnames = 'a.fname as name';
-			$tablename = 'groupfile';
+			$tablename = 'groupfile'; 
 		}
 
 		$sql = 'select a.id,a.fid,'.$fnames.',a.content,b.path,b.size,b.type,b.mimes from '.$tablename.' a, files b where a.fid = b.id and b.id = '.$fid;
