@@ -583,92 +583,100 @@ class Home extends SZone_Controller {
 
         //复制文件到备课
         function copyfile(){
-                $id = $this->input->get('fid');
+            $id = $this->input->get('fid');
 
-                $il = explode(',',$id);
-                $kl = array();
+            $il = explode(',',$id);
+            $kl = array();
 
-                foreach($il as $k){
-                        array_push($kl,' id='.$k);
-                }                
-                $str = implode(' or ',$kl);
+            foreach($il as $k){
+                    array_push($kl,' id='.$k);
+            }                
+            $str = implode(' or ',$kl);
 
-                $this->load->model('Group_model');
-                $gidlist = $this->Group_model->get_prep_group_ids($this->user['id']);
+            // $this->load->model('Group_model');
+            // $gidlist = $this->Group_model->get_prep_group_ids($this->user['id']);    
+            
+            $this->load->model('Prep_model');
+            $plist = $this->Prep_model->get_prep_group_byid($this->user['id']);
 
-                $sql = 'select id,name from userfile where '.$str;                
-                $query = $this->db->query($sql);
+            $pids = array();
+            foreach($plist as $row){
+                array_push($pids,$row['id']);
+            }
 
-                $nl = array();
-                foreach($query->result() as $row){
-                                array_push($nl,array(
-                                                'id' => $row->id,
-                                                'name' => $row->name
-                                        ));
-                }        
-                $data = array('fl' => $nl);        
+            $sql = 'select id,name from userfile where '.$str;                
+            $query = $this->db->query($sql);
 
-                $sql = 'select id,name,parent from groups where type=3';
-                $query = $this->db->query($sql);
-                $plist = array();
-                $pplist = array();
-                $pids = array();
+            $nl = array();
+            foreach($query->result() as $row){
+                array_push($nl,array(
+                    'id' => $row->id,
+                    'name' => $row->name
+                ));
+            }        
+            $data = array('fl' => $nl);        
 
-                $this->load->model('Fold_model');
-                //选择备课目录
-                foreach($query->result() as $row){
-                        if($row->parent == 0){
-                                $pplist[$row->id] = array(
-                                        'id' => $row->id,
-                                        'name' => $row->name
-                                );
-                        }
+            // $sql = 'select id,name,parent from groups where type=3';
+            // $query = $this->db->query($sql);
+            //$plist = array();
+            // $pplist = array();
+            // $pids = array();
 
-                        if(in_array($row->id,$gidlist)){
-                                if($row->parent == 0){
-                                        if(isset($plist[$row->id])){
-                                                $plist[$row->id] = $row->id;
-                                                $plist[$row->id] = $row->name;
-                                        }else{
-                                                $plist[$row->id] = array(
-                                                        'id' => $row->id,
-                                                        'name' => $row->name,
-                                                        'list' => array()
-                                                );
-                                        }
-                                }else{
-                                        $child = $this->Fold_model->get_prep_fold($row->id,$this->user['id']);
-                                        if(isset($plist[$row->parent])){
-                                                $plist[$row->parent]['list'][$row->id]['id'] = $row->id;
-                                                $plist[$row->parent]['list'][$row->id]['name'] = $row->name;
-                                        }else{
-                                                $plist[$row->parent] = array(
-                                                        'id' => $row->parent,
-                                                        'list' => array()
-                                                );
-                                                $plist[$row->parent]['list'][$row->id] = array(
-                                                        'id' => $row->id,
-                                                        'name' => $row->name
-                                                );
-                                        }
-                                        if($child){
-                                                $plist[$row->parent]['list'][$row->id]['child'] = $child;
-                                        }                                        
-                                }
-                        }
-                }
+            // $this->load->model('Fold_model');
+            // //选择备课目录
+            // foreach($query->result() as $row){
+            //         if($row->parent == 0){
+            //                 $pplist[$row->id] = array(
+            //                         'id' => $row->id,
+            //                         'name' => $row->name
+            //                 );
+            //         }
 
-                //echo json_encode($plist);
+            //         if(in_array($row->id,$gidlist)){
+            //                 if($row->parent == 0){
+            //                         if(isset($plist[$row->id])){
+            //                                 $plist[$row->id] = $row->id;
+            //                                 $plist[$row->id] = $row->name;
+            //                         }else{
+            //                                 $plist[$row->id] = array(
+            //                                         'id' => $row->id,
+            //                                         'name' => $row->name,
+            //                                         'list' => array()
+            //                                 );
+            //                         }
+            //                 }else{
+            //                         $child = $this->Fold_model->get_prep_fold($row->id,$this->user['id']);
+            //                         if(isset($plist[$row->parent])){
+            //                                 $plist[$row->parent]['list'][$row->id]['id'] = $row->id;
+            //                                 $plist[$row->parent]['list'][$row->id]['name'] = $row->name;
+            //                         }else{
+            //                                 $plist[$row->parent] = array(
+            //                                         'id' => $row->parent,
+            //                                         'list' => array()
+            //                                 );
+            //                                 $plist[$row->parent]['list'][$row->id] = array(
+            //                                         'id' => $row->id,
+            //                                         'name' => $row->name
+            //                                 );
+            //                         }
+            //                         if($child){
+            //                                 $plist[$row->parent]['list'][$row->id]['child'] = $child;
+            //                         }                                        
+            //                 }
+            //         }
+            // }
 
-                foreach($plist as &$row){
-                        if(!isset($row['name'])){
-                                //echo json_encode($pplist[$row['id']]);
-                                $row['name'] = $pplist[$row['id']]['name'];
-                        }
-                }
-                $data['plist'] = $plist;
+            //echo json_encode($plist);
 
-                $this->load->view('share/copyfile.php',$data);
+            foreach($plist as &$row){
+                    if(!isset($row['name'])){
+                            //echo json_encode($pplist[$row['id']]);
+                            $row['name'] = $pplist[$row['id']]['name'];
+                    }
+            }
+            $data['plist'] = $plist;
+
+            $this->load->view('share/copyfile.php',$data);
         }        
 
 
@@ -720,223 +728,247 @@ class Home extends SZone_Controller {
                 $pid = (int) $this->input->get('pid');
                 $fdid = (int) $this->input->get('fdid');
 
-                $this->load->model('Group_model');
-                $gidlist = $this->Group_model->get_prep_group_ids($this->user['id']);
+                // $this->load->model('Group_model');
+                // $gidlist = $this->Group_model->get_prep_group_ids($this->user['id']);
                 
                 
-                $sql = 'select id,name,parent from groups where';  
-                if(count($gidlist)>0){
-                        $gidstr = '('.implode(',',$gidlist).')';        
-                        $sql .= '(id in '.$gidstr.' or parent = 0) and type=3 order by parent';
-                }else{
-                        $sql .= ' type=3 and parent<0 order by parent';
-                }
+                // $sql = 'select id,name,parent from groups where';  
+                // if(count($gidlist)>0){
+                //         $gidstr = '('.implode(',',$gidlist).')';        
+                //         $sql .= '(id in '.$gidstr.' or parent = 0) and type=3 order by parent';
+                // }else{
+                //         $sql .= ' type=3 and parent<0 order by parent';
+                // }
 
-                $query = $this->db->query($sql);
+                // $query = $this->db->query($sql);
 
-                $plist = array();
-                $kp = array();
+                // $plist = array();
+                // $kp = array();
 
-                $pfname = '';
-                $pname = '';
+                // $pfname = '';
+                // $pname = '';
                 //选择备课目录
-                foreach($query->result() as $row){
-                        array_push($kp,' prid='.$row->id);
-                        if($row->id == $prid){
-                                $pfname = $row->name;
-                                if($row->parent){
-                                        $pname = $plist[$row->parent]['name'];
-                                }
-                        }
-                        if($row->parent == 0){
-                                if(isset($plist[$row->id])){
-                                        $plist[$row->id] = $row->id;
-                                        $plist[$row->id] = $row->name;
-                                }else{
-                                        $plist[$row->id] = array(
-                                                'id' => $row->id,
-                                                'name' => $row->name,
-                                                'list' => array()
-                                        );
-                                }
-                        }else{
-                                if(isset($plist[$row->parent])){
-                                        $plist[$row->parent]['list'][$row->id]['id'] = $row->id;
-                                        $plist[$row->parent]['list'][$row->id]['name'] = $row->name;
-                                }else{
-                                        $plist[$row->parent] = array(
-                                                'list' => array()
-                                        );
-                                        $plist[$row->parent]['list'][$row->id] = array(
-                                                'id' => $row->id,
-                                                'name' => $row->name
-                                        );
-                                }
-                        }
-                };
+                // foreach($query->result() as $row){
+                //         array_push($kp,' prid='.$row->id);
+                //         if($row->id == $prid){
+                //                 $pfname = $row->name;
+                //                 if($row->parent){
+                //                         $pname = $plist[$row->parent]['name'];
+                //                 }
+                //         }
+                //         if($row->parent == 0){
+                //                 if(isset($plist[$row->id])){
+                //                         $plist[$row->id] = $row->id;
+                //                         $plist[$row->id] = $row->name;
+                //                 }else{
+                //                         $plist[$row->id] = array(
+                //                                 'id' => $row->id,
+                //                                 'name' => $row->name,
+                //                                 'list' => array()
+                //                         );
+                //                 }
+                //         }else{
+                //                 if(isset($plist[$row->parent])){
+                //                         $plist[$row->parent]['list'][$row->id]['id'] = $row->id;
+                //                         $plist[$row->parent]['list'][$row->id]['name'] = $row->name;
+                //                 }else{
+                //                         $plist[$row->parent] = array(
+                //                                 'list' => array()
+                //                         );
+                //                         $plist[$row->parent]['list'][$row->id] = array(
+                //                                 'id' => $row->id,
+                //                                 'name' => $row->name
+                //                         );
+                //                 }
+                //         }
+                // };
 
                 $file = array();
                 $kfc = array();
                 $fold = array();
                 $foldlist = array();        
                 $thisfold = array(
-                        'id' => 0,
-                        'pid' => 0
+                    'id' => 0,
+                    'pid' => 0
                 );
+                $pfname = '';
+                $pname = '';
+                $plist = array();
+
+                $this->load->model('Group_model');
+                $plist = $this->Group_model->get_prep_group_byid($this->user['id']);
 
                 if(count($plist)>0){
-                        if(!$prid && !$fid){
-                                //取对应的文件夹
-                                $sql = 'select id,prid from userfolds where uid='.(int) $this->user['id'].' and '.implode(' or ',$kp);
-                                $query = $this->db->query($sql);
-
-                                $kpf = array();
-                                foreach($query->result() as $row){
-                                        array_push($kpf,' fdid='.$row->id);
-                                }
-                                if(count($kpf) > 0){
-                                        $wh .= ' and ('.implode(' or ',$kpf).')';
-                                }else{
-                                        $fid = 0;
-                                }
-                        }else{
-                                if($fid){
-                                        $wh .= ' and fdid='.$fid;
-                                }else{
-                                        $sql = 'select id from userfolds where uid='.(int) $this->user['id'].' and pid=0 and prid='.$prid;
-                                        $query = $this->db->query($sql);
-
-                                        if($query->num_rows() > 0){
-                                                $row = $query->row();
-                                                $fid = $row->id;
-                                                $wh .= ' and fdid='.$fid;
-                                        //还没有目录,新建目录
-                                        }else{
-                                                $data = array(
-                                                        'pid' => 0,
-                                                        'name' => $pfname,
-                                                        'uid' => $this->user['id'],
-                                                        'mark' => '',
-                                                        'createtime' => time(),
-                                                        'type' => 0,
-                                                        'prid' => $prid
-                                                );
-                                                $sql = $this->db->insert_string('userfolds',$data);
-                                                $query = $this->db->query($sql);
-                                                $fid = $this->db->insert_id();
-
-                                        }
-                                        $wh .= ' and fdid='.$fid;
-                                }
-                        }
-
-                        if($type){
-                                $wh .= ' and b.type='.$type;
-                        }
-                        if($key){
-                                $wh .= ' and a.name like "%'.$key.'%"';
-                        }
-                        if($od){
-                                $wh .= ' order by '.$odname.' '.$desc;
-                        }                
-
-                        if($fid){
-
-                            $this->load->model('Uf_model');
-                            $allnum = $this->Uf_model->get_allprep_num($this->user['id'],$fid,$key,$type);
-
-                            $page = get_page_status($nowpage,$pagenum,$allnum);
-
-                            if($od){
-                                $file = $this->Uf_model->get_prep_byid($this->user['id'],$fid,$key,$type,$odname,$desc,$page['start'],$pagenum);     
-                            }else{
-                                $file = $this->Uf_model->get_prep_byid($this->user['id'],$fid,$key,$type,0,0,$page['start'],$pagenum);
-                            }                            
-                                // $sql = 'select count(a.id) as allnum from userfile a,files b where a.del=0 and a.prid=b.id and uid='.$this->user['id'];
-                                // $sql .= $wh;
-
-                                // $query = $this->db->query($sql);
-                                // $row = $query->row();
-
-                                // $allnum = $row->allnum;
-
-                                // //选择文件
-                                // $sql = 'select a.id,a.fid,a.name,a.createtime,b.type,b.size from userfile a,files b where a.del = 0 and a.prid = b.id and uid = '.$this->user['id'];
-                                // $sql .= $wh;
-                                // $page = get_page_status($nowpage,$pagenum,$allnum);
-
-                                // $query = $this->db->query($sql);
-
-                                // foreach($query->result() as $row){
-                                //         array_push($kfc,' a.fid='.$row->fid);
-                                //         $flist[$row->id] = array(
-                                //                 'id' => $row->id,
-                                //                 'fid' => $row->fid,
-                                //                 'name' => $row->name,
-                                //                 'type' => $row->type,
-                                //                 'size' => format_size($row->size),
-                                //                 'time' => substr($row->createtime,0,10)
-                                //         );
-                                // }
-
-                                // $sql = 'select a.id from userfile a,usercollection b where a.prid=b.fid and b.uid='.$this->user['id'];
-                                // if(count($kfc)>0){
-                                // $sql .=' and ('.implode(' or ',$kfc).')';
-                                // }
-                                // $query = $this->db->query($sql);
-
-                                // foreach($query->result() as $row){
-                                //         if(isset($flist[$row->id])){
-                                //                 $flist[$row->id]['iscoll'] = 1;
-                                //         }
-                                // }
-                        }
-
-                        if(!$prid && !$fid){
-                                $sql = 'select id,name,mark,createtime,pid,tid,idpath,prid from userfolds where pid='.$fid.' and prid !=0 and uid='.$this->user['id'];
-                        }else{
-                                $sql = 'select id,name,mark,createtime,pid,tid,idpath,prid from userfolds where pid='.$fid.' and uid='.$this->user['id'];
-                        }
-                        $query = $this->db->query($sql);
-                        foreach($query->result() as $row){
-                                if($row->id == $fid){
-                                        $thisfold = array(
-                                                'id' => $row->id,
-                                                'pid' => $row->pid,
-                                                'name' => $row->name,
-                                                'tid' => $row->tid,
-                                                'idpath' => explode(',',$row->idpath)
-                                        );
-                                        $fname = $row->name;
-                                        $pid = $row->pid;
-                                }
-                                $fold[$row->id] = array(
-                                        'id' => $row->id,
-                                        'name' => $row->name,
-                                        'mark' => $row->mark,
-                                        'pid' => (int) $row->pid,
-                                        'prid' => (int) $row->prid,
-                                        'tid' => (int) $row->tid,
-                                        'idpath' => $row->idpath,
-                                        'time' => date('Y-m-d',$row->createtime)
-                                );
-                                if($row->pid == 0){
-                                        $foldlist[$row->id] = array(
-                                                'id' => $row->id,
-                                                'name' => $row->name,
-                                                'mark' => $row->mark,
-                                                'pid' => (int) $row->pid,
-                                                'tid' => (int) $row->tid,
-                                                'prid' => (int) $row->prid,
-                                                'time' => date('Y-m-d',$row->createtime)
-                                        );                                
-                                }else{
-                                        if(isset($foldlist[$row->pid])){
-                                                $foldlist[$row->pid]['child'] = 1;
-                                        }
-                                }
-                        }                        
+                    $tp = array_slice($plist,0,1);
                 }
+
+                $this->load->model('Fold_model');
+                $fold = $this->Fold_model->get_prep_byid($this->user['id'],$prid,$fid);
+
+                $this->load->model('Uf_model');
+                $allnum = $this->Uf_model->get_allprep_num($this->user['id'],$prid,$fid,$key,$type);
+
+                $page = get_page_status($nowpage,$pagenum,$allnum);
+
+                if($od){
+                    $file = $this->Uf_model->get_prep_byid($this->user['id'],$prid,$fid,$key,$type,$odname,$desc,$page['start'],$pagenum);     
+                }else{
+                    $file = $this->Uf_model->get_prep_byid($this->user['id'],$prid,$fid,$key,$type,0,0,$page['start'],$pagenum);
+                }                 
+
+                // if(count($plist)>0){
+                //         if(!$prid && !$fid){
+                //                 //取对应的文件夹
+                //                 $sql = 'select id,prid from userfolds where uid='.(int) $this->user['id'].' and '.implode(' or ',$kp);
+                //                 $query = $this->db->query($sql);
+
+                //                 $kpf = array();
+                //                 foreach($query->result() as $row){
+                //                         array_push($kpf,' fdid='.$row->id);
+                //                 }
+                //                 if(count($kpf) > 0){
+                //                         $wh .= ' and ('.implode(' or ',$kpf).')';
+                //                 }else{
+                //                         $fid = 0;
+                //                 }
+                //         }else{
+                //                 if($fid){
+                //                         $wh .= ' and fdid='.$fid;
+                //                 }else{
+                //                         $sql = 'select id from userfolds where uid='.(int) $this->user['id'].' and pid=0 and prid='.$prid;
+                //                         $query = $this->db->query($sql);
+
+                //                         if($query->num_rows() > 0){
+                //                                 $row = $query->row();
+                //                                 $fid = $row->id;
+                //                                 $wh .= ' and fdid='.$fid;
+                //                         //还没有目录,新建目录
+                //                         }else{
+                //                                 $data = array(
+                //                                         'pid' => 0,
+                //                                         'name' => $pfname,
+                //                                         'uid' => $this->user['id'],
+                //                                         'mark' => '',
+                //                                         'createtime' => time(),
+                //                                         'type' => 0,
+                //                                         'prid' => $prid
+                //                                 );
+                //                                 $sql = $this->db->insert_string('userfolds',$data);
+                //                                 $query = $this->db->query($sql);
+                //                                 $fid = $this->db->insert_id();
+
+                //                         }
+                //                         $wh .= ' and fdid='.$fid;
+                //                 }
+                //         }
+
+                //         if($type){
+                //                 $wh .= ' and b.type='.$type;
+                //         }
+                //         if($key){
+                //                 $wh .= ' and a.name like "%'.$key.'%"';
+                //         }
+                //         if($od){
+                //                 $wh .= ' order by '.$odname.' '.$desc;
+                //         }                
+
+                //         if($fid){
+
+                //             $this->load->model('Uf_model');
+                //             $allnum = $this->Uf_model->get_allprep_num($this->user['id'],$fid,$key,$type);
+
+                //             $page = get_page_status($nowpage,$pagenum,$allnum);
+
+                //             if($od){
+                //                 $file = $this->Uf_model->get_prep_byid($this->user['id'],$fid,$key,$type,$odname,$desc,$page['start'],$pagenum);     
+                //             }else{
+                //                 $file = $this->Uf_model->get_prep_byid($this->user['id'],$fid,$key,$type,0,0,$page['start'],$pagenum);
+                //             }                            
+                //                 // $sql = 'select count(a.id) as allnum from userfile a,files b where a.del=0 and a.prid=b.id and uid='.$this->user['id'];
+                //                 // $sql .= $wh;
+
+                //                 // $query = $this->db->query($sql);
+                //                 // $row = $query->row();
+
+                //                 // $allnum = $row->allnum;
+
+                //                 // //选择文件
+                //                 // $sql = 'select a.id,a.fid,a.name,a.createtime,b.type,b.size from userfile a,files b where a.del = 0 and a.prid = b.id and uid = '.$this->user['id'];
+                //                 // $sql .= $wh;
+                //                 // $page = get_page_status($nowpage,$pagenum,$allnum);
+
+                //                 // $query = $this->db->query($sql);
+
+                //                 // foreach($query->result() as $row){
+                //                 //         array_push($kfc,' a.fid='.$row->fid);
+                //                 //         $flist[$row->id] = array(
+                //                 //                 'id' => $row->id,
+                //                 //                 'fid' => $row->fid,
+                //                 //                 'name' => $row->name,
+                //                 //                 'type' => $row->type,
+                //                 //                 'size' => format_size($row->size),
+                //                 //                 'time' => substr($row->createtime,0,10)
+                //                 //         );
+                //                 // }
+
+                //                 // $sql = 'select a.id from userfile a,usercollection b where a.prid=b.fid and b.uid='.$this->user['id'];
+                //                 // if(count($kfc)>0){
+                //                 // $sql .=' and ('.implode(' or ',$kfc).')';
+                //                 // }
+                //                 // $query = $this->db->query($sql);
+
+                //                 // foreach($query->result() as $row){
+                //                 //         if(isset($flist[$row->id])){
+                //                 //                 $flist[$row->id]['iscoll'] = 1;
+                //                 //         }
+                //                 // }
+                //         }
+
+                //         if(!$prid && !$fid){
+                //                 $sql = 'select id,name,mark,createtime,pid,tid,idpath,prid from userfolds where pid='.$fid.' and prid !=0 and uid='.$this->user['id'];
+                //         }else{
+                //                 $sql = 'select id,name,mark,createtime,pid,tid,idpath,prid from userfolds where pid='.$fid.' and uid='.$this->user['id'];
+                //         }
+                //         $query = $this->db->query($sql);
+                //         foreach($query->result() as $row){
+                //                 if($row->id == $fid){
+                //                         $thisfold = array(
+                //                                 'id' => $row->id,
+                //                                 'pid' => $row->pid,
+                //                                 'name' => $row->name,
+                //                                 'tid' => $row->tid,
+                //                                 'idpath' => explode(',',$row->idpath)
+                //                         );
+                //                         $fname = $row->name;
+                //                         $pid = $row->pid;
+                //                 }
+                //                 $fold[$row->id] = array(
+                //                         'id' => $row->id,
+                //                         'name' => $row->name,
+                //                         'mark' => $row->mark,
+                //                         'pid' => (int) $row->pid,
+                //                         'prid' => (int) $row->prid,
+                //                         'tid' => (int) $row->tid,
+                //                         'idpath' => $row->idpath,
+                //                         'time' => date('Y-m-d',$row->createtime)
+                //                 );
+                //                 if($row->pid == 0){
+                //                         $foldlist[$row->id] = array(
+                //                                 'id' => $row->id,
+                //                                 'name' => $row->name,
+                //                                 'mark' => $row->mark,
+                //                                 'pid' => (int) $row->pid,
+                //                                 'tid' => (int) $row->tid,
+                //                                 'prid' => (int) $row->prid,
+                //                                 'time' => date('Y-m-d',$row->createtime)
+                //                         );                                
+                //                 }else{
+                //                         if(isset($foldlist[$row->pid])){
+                //                                 $foldlist[$row->pid]['child'] = 1;
+                //                         }
+                //                 }
+                //         }                        
+                // }
 
 
                 $data = array(

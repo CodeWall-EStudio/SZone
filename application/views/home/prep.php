@@ -44,7 +44,7 @@
 					<li class="downfile"><a cmd="downfile" id="donwFiles">下载</a></li>
 					<li><a cmd="coll" id="collFiles">收藏</a></li>
 					<li id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
-					<li><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制</a></li>
+					<!-- <li><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制</a></li> -->
 					<li><a cmd="delFile" data-toggle="modal" data-target="#delFile">删除</a></li>
 					<!-- <li id="remarkAct"><a cmd="remark" data-toggle="modal" data-target="#commentFile">评论</a></li> -->
 				</ul>
@@ -100,13 +100,13 @@
 							?>
 						<b class="caret"></b></a>
 						<ul class="dropdown-menu section-tit-menu1" role="menu" aria-labelledby="dLabel">
-							<li><a data-type="0" href="/home/prepare?pid=<?=$prid?>&type=0">全部</a></li>
-							<li><a data-type="3" href="/home/prepare?pid=<?=$prid?>&type=4">视频</a></li>
-							<li><a data-type="1" href="/home/prepare?pid=<?=$prid?>&type=1">图片</a></li>
-							<li><a data-type="4" href="/home/prepare?pid=<?=$prid?>&type=3">音乐</a></li>
-							<li><a data-type="5" href="/home/prepare?pid=<?=$prid?>&type=2">文档</a></li>
-							<li><a data-type="6" href="/home/prepare?pid=<?=$prid?>&type=5">应用</a></li>
-							<li><a data-type="7" href="/home/prepare?pid=<?=$prid?>&type=6">压缩包</a></li>
+							<li><a data-type="0" href="/home/prepare?prid=<?=$prid?>&type=0">全部</a></li>
+							<li><a data-type="3" href="/home/prepare?prid=<?=$prid?>&type=4">视频</a></li>
+							<li><a data-type="1" href="/home/prepare?prid=<?=$prid?>&type=1">图片</a></li>
+							<li><a data-type="4" href="/home/prepare?prid=<?=$prid?>&type=3">音乐</a></li>
+							<li><a data-type="5" href="/home/prepare?prid=<?=$prid?>&type=2">文档</a></li>
+							<li><a data-type="6" href="/home/prepare?prid=<?=$prid?>&type=5">应用</a></li>
+							<li><a data-type="7" href="/home/prepare?prid=<?=$prid?>&type=6">压缩包</a></li>
 						</ul>						
 					</li>
 					<!--<li class="list-type" id="changeType"><i></i><span>图标</span></li>-->
@@ -115,7 +115,7 @@
 			</div>
 			<!--dis-list-type -->
 			<div id="fileList" class="dis-list-type">
-				<table width="100%" class="table table-striped table-hover">
+				<table width="100%" class="table table-striped table-hover" id="fileList">
 					<?if(isset($fold) && count($fold)>0):?>
 						<tr>
 							<th width="30"><input type="checkbox" id="selectAllFold" /></th>
@@ -149,10 +149,10 @@
 						<tr data-id="<?=$item['id']?>">
 							<td width="30"><input type="checkbox" name="file" class="fdclick liclick" value="<?=$item['id']?>" data-type="fold" /></td>
 							<td>
-								<a href="/home/prepare?prid=<?=$item['prid']?>&fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>" data-id="1"><i class="fold"></i></a>
+								<a href="/home/prepare?prid=<?=$prid?>&fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>" data-id="1"><i class="fold"></i></a>
 								
 								<dl>
-									<dt><a href="/home/prepare?prid=<?=$item['prid']?>&fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>" data-id="1"><?=$item['name']?></a>
+									<dt><a href="/home/prepare?prid=<?=$prid?>&fid=<?=$item['id']?>&od=<?=$od?>&on=<?=$on?>" data-id="1"><?=$item['name']?></a>
 										<span cmd="edit" data-id="<?=$item['id']?>">
 											<?if($item['mark']==''):?>
 												编辑备注
@@ -181,18 +181,18 @@
 					<?endif?>		
 					<?if(count($flist)>0):?>				
 						<?foreach($flist as $item):?>
-							<tr data-id="<?=$item['id']?>">
+							<tr class="file" data-id="<?=$item['id']?>">
 								<td><input type="checkbox" name="file" class="fclick liclick" value="<?=$item['id']?>" data-type="file" /></td>
 								<td>
 									<a class="file-name">
 									<?if($item['type'] < 7):?>
-										<i class="icon-type<?=(int) $item['type']?>" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>" ></i>
+										<i class="icon-type<?=(int) $item['type']?>" data-gid="<?=$prid?>" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>" ></i>
 									<?else:?>
 										<i class="icon-type" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>" ></i>
 									<?endif?>
 									</a>
 									<dl>
-										<dt><?=$item['name']?> 
+										<dt><a class="file-name"  data-gid="<?=$prid?>" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>"><?=htmlspecialchars($item['name'])?></a>
 											<span cmd="edit" data-id="<?=$item['id']?>"></span>
 											<span class="hide">
 
@@ -213,7 +213,7 @@
 								</td>
 							</tr>
 						<?endforeach?>
-					<?elseif($fid):?>									
+					<?elseif($prid):?>									
 						<tr>
 							<td colspan="5" align="center">还没有文件哦.</td>
 						</tr>
@@ -308,28 +308,15 @@
 		</div>
 	</div>
 
-	<div id="reviewFile" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
+	<div id="reviewFile" class="modal fade collection reviewWin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog review-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">预览文件</h4>
 				</div>
 				<div class="modal-body">
-					<div class="file-review">
-						<img  />
-					</div>
-					<div class="file-reivew-act">
-						<span class="glyphicon glyphicon-repeat rotate"></span>
-						<span class="glyphicon glyphicon-repeat"></span>
-						<span class="glyphicon glyphicon-zoom-in"></span>
-						<span class="glyphicon glyphicon-zoom-out"></span>
-					</div>
-					  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-					    <span class="glyphicon glyphicon-chevron-left"></span>
-					  </a>
-					  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-					    <span class="glyphicon glyphicon-chevron-right"></span>
-					  </a>					
+					<iframe id="reviewIframe" width="1040" height="820" border="0" frameborder="0" scroll="false" ></iframe>
 				</div>
 			</div>
 		</div>
@@ -346,6 +333,8 @@
 				<div class="modal-body">
 					<label>文件名称：</label><input class="foldname"  maxlength="20"  name="fname" type="text" style="width:80%" />
 					<input type="hidden" class="fid" />
+					<input type="hidden" class="type" value="0" />
+					<input type="hidden" class="gid" value="<?=$prid?>" />
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -417,13 +406,14 @@
 	// <script type="text/javascript" src="/js/lib/plupload.dev.js"></script>	 -->
 
 	<script>
-		var fid = '<?=$fid?>';
+		var fid = '<?=$fid?>',
+			gid = <?=$prid?>;
 
 		var folds = '<?=json_encode($fold);?>',
 			files = '<?=json_encode($flist);?>';
 		folds = $.parseJSON(folds);
 		files = $.parseJSON(files);		
-		var upload_url = '<?=$upload_url;?>?prep=1&fid=<?=$fid?>&csrf_test_name='+$.cookie('csrf_cookie_name'),
+		var upload_url = '<?=$upload_url;?>?gid=<?=$prid?>&fid=<?=$fid?>&csrf_test_name='+$.cookie('csrf_cookie_name'),
             upload_chunk = <?=$upload_chunk;?>;
 		//var nowPrepId = '<?=$pid?>';
 	</script>

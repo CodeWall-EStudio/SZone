@@ -78,8 +78,9 @@
 			var target = $(e.target);
 			var fid = target.attr('data-fid');
 			var id= target.attr('data-id');
+			var gid = target.attr('data-gid');
 			//review?fid=24&t=2&gid=0&id=18
-			$("#reviewIframe").attr('src','/review?fid='+fid+'&id='+id);
+			$("#reviewIframe").attr('src','/review?gid='+gid+'&fid='+fid+'&id='+id);
 			$('#reviewFile').modal('show');
 		});	
 

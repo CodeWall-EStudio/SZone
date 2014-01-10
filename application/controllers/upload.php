@@ -138,16 +138,17 @@ class Upload extends SZone_Controller {
             'fid' => $file['id'],
             'name' => $is_media == 1 ? $file['md5'].'.jpeg' : $file_name,
             'mark' => '',
-            'uid' => $this->user['id']
+            'uid' => $this->user['id'],
+            'fdid' => $fdid
         );
 
         //判断是否是在备课中上传
-        if($prep > 0){
-            $fdata['fdid'] = -1;
-            $fdata['prid'] = $fdid;
-        }else{
-            $fdata['fdid'] = $fdid;
-        }
+        // if($prep > 0){
+        //     $fdata['fdid'] = -1;
+        //     $fdata['prid'] = $fdid;
+        // }else{
+        //     $fdata['fdid'] = $fdid;
+        // }
 
         // 增加用户的文件记录
         $result = $this->File_model->insert_user_entry($fdata);

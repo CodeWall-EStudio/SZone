@@ -524,91 +524,32 @@ class Group extends SZone_Controller {
 			array_push($pls,' a.prid='.$row->id);
 		}
 
-		$sql = 'select a.id,a.name,a.pid,a.prid,b.nick as uname,b.id as uid from userfolds a,user b where ';
-		if($ud){
-			$sql .= ' b.id = '.$ud.' and';
-		}
-		if($first){
-			if(count($pls)>0){
-				$sql .= ' ('.implode(' or ',$pls).') and a.uid = b.id';
-			}else{
-				$sql .= ' a.prid =-1 and a.uid = b.id';
-			}
-		}else{
-			if($prid){
-				$sql .= ' a.pid > 0 and a.prid = '.$prid.' and a.uid = b.id';
-			}else{
-				if(count($pls)>0){
-					$sql .= ' a.pid =0 and ('.implode(' or ',$pls).') and a.uid = b.id';	
-				}else{
-					$sql .= ' a.prid =-1 and a.uid = b.id';
-				}
-			}		
-		}
-		$query = $this->db->query($sql);
 		$fold = array();
-		foreach($query->result() as $row){
-			if($fdid){
-				$fold[$row->id] = array(
-					'id' => $row->id,
-					'name' => $row->uname .' '.$row->name,
-					'fname' => $row->name,
-					'uid' => $row->uid,
-					'prid' => $row->prid,
-					'uname' => $row->uname
-				);
-			}else{
-				if($row->pid == 0){
-					$fold[$row->id] = array(
-						'id' => $row->id,
-						'name' => $row->uname .' '.$row->name,
-						'fname' => $row->name,
-						'uid' => $row->uid,
-						'prid' => $row->prid,
-						'uname' => $row->uname
-					);					
-				}
-			}
-		}
-
-
 		$flist = array();
-		if($fdid && count($fold)>0 ){
-			$fold = array();
-			$sql = 'select a.id,a.name,a.pid,a.prid,b.nick as uname,b.id as uid from userfolds a,user b where b.id='.$ud.' and a.pid='.$fdid;
-			$query = $this->db->query($sql);
-			// $this->db->where('pid',$fdid);
-			// $query = $this->db->get('userfolds');
-			foreach($query->result() as $row){
-				$fold[$row->id] = array(
-					'id' => $row->id,
-					'name' => $row->uname .' '.$row->name,
-					'fname' => $row->name,
-					'uid' => $row->uid,
-					'prid' => $row->prid,
-					'uname' => $row->uname
-				);
-			}
-		}
+		$this->load->model('Prep_model');
 
-		if($fdid){
-			$sql = 'select a.id,a.name,a.fid,a.mark,b.size,b.type from userfile a,files b where a.del = 0 and a.prid='.$fdid.' and a.fid = b.id';
-			if($key && $key != '' && $key != '搜索文件'){
-				$sql .= ' and a.name like "%'.$key.'%"';
-			}
-			$query = $this->db->query($sql);
+		$thisfold = array(
+			'id' => 0,
+			'pid' => 0
+		);	
 
-			foreach($query->result() as $row){
-				$flist[$row->id] = array(
-					'id' => $row->id,
-					'fid' => $row->fid,
-					'name' => $row->name,
-					'mark' => $row->mark,
-					'size' => format_size($row->size),
-					'type' => $row->type
-				);
-			}	
+		if($prid){
+			$ids = $this->Prep_model->get_prepinfo_byid($prid, $gr, $tag);
+			if($ids){
+				$fold = $this->Prep_model->get_prep_bypid($ids,$gr, $tag, $ud);
+			}else{
+				$fold = $this->Prep_model->get_prepfold_byid($ud,$prid,$fdid);	
+				$flist = $this->Prep_model->get_prepfile_byid($ud,$prid,$fdid, $key);
+			}
+			
+		}else{
+			$fold = $this->Prep_model->get_prep_user($gr,$tag);	
 		}	
+
+		$parent = array();
+		if($fdid){
+			$parent = $this->Prep_model->get_parent_gid_fid($prid,$fdid);
+		}
 
 		$sql = 'select a.id,a.name,a.nick from user a,groupuser b where a.id = b.uid  ';
 		// echo json_encode($plist);
@@ -648,6 +589,7 @@ class Group extends SZone_Controller {
 		$data['gr'] = $gr;
 		$data['tag'] = $tag;
 		$data['flist'] = $flist;
+		$data['parent'] = $parent;
 
 		$this->load->view('group/prep.php',$data);	
 	}

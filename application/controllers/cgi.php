@@ -83,6 +83,7 @@ class Cgi extends SZone_Controller {
 					'pid' => $pid,
 					'name' => $name,
 					'gid' => $gid,
+					'uid' => $this->user['id'],
 					'mark' => '',
 					'createtime' => time(),
 					'type' => 0,
@@ -305,6 +306,7 @@ class Cgi extends SZone_Controller {
                 'fid' => (int) $fid,
                 'name' => $filedata['raw_name'],
                 'uid' => $this->user['id'],
+                'mark' => '',
                 'del' => 0,
                 'fdid' => $fdid
             );
@@ -1374,69 +1376,102 @@ class Cgi extends SZone_Controller {
 
 	public function add_prep(){
 		$fid = $this->input->post('fid');
-		$pid = (int) $this->input->post('pid');
+		$gid = (int) $this->input->post('pid');
 		$fdid = (int) $this->input->post('fdid');
 		$fl = explode(',',$fid);
 		//$pl = explode(',',$pid);
+		$this->load->model('File_model');
+		$fids = $this->File_model->get_fid_byid($fl,$this->user['id']);
+		$id = $this->File_model->check_groupfile_byid($fids,$gid,$this->user['id']);
 
-		$fw = array();
-		$kv = array();
+		if(count($id) > 0){
+			$flist = $this->File_model->get_by_uid_ids($id,$this->user['id']);
 
-		foreach($fl as $k){
-			array_push($kv,'('.(int) $pid.','.(int) $k.','.$this->user['id'].')');
-			array_push($fw,'id='.$k);
-		}
+			foreach($flist as $row){
+	            $this->File_model->insert_group_entry(array(
+	                'fid' => $row['fid'],
+	                'fdid' => $fdid,
+	                'gid' => $gid,
+	                'fname' => $row['name'],
+	                'createtime' => time(),
+	                'uid' => $this->user['id'],
+	                'status' => 0
+	            ));		
+	        }
 
-		$sql = 'select id from userfolds where pid=0 and uid='.$this->user['id'].' and prid='.$pid;
-		$query = $this->db->query($sql);
-		if($this->db->affected_rows() == 0){
-			$sql = 'select name from groups where id='.$pid;
-			$query = $this->db->query($sql);
-
-			$row = $query->row();
-
-			$fname = $row->name;
-
-			$data = array(
-				'pid' => 0,
-				'name' => $fname,
-				'uid' => $this->user['id'],
-				'mark' => '',
-				'createtime' => time(),
-				'type' => 0,
-				'prid' => $pid
-			);
-			$sql = $this->db->insert_string('userfolds',$data);
-			$query = $this->db->query($sql);
-
-			$pfdid = $this->insert_id();
-		}else{
-			$row = $query->row();
-			if(!$fdid){
-				$pfdid = $row->id;
-			}else{
-				$pfdid = $fdid;	
-			}
-		};
-
-		$sql = $this->db->update_string("userfile",array('prid' => $pfdid),implode(' or ',$fw));
-		$query = $this->db->query($sql);
-			
-		if ($this->db->affected_rows() > 0){
 			$ret = array(
 				'ret' => 0,
 				'msg' => '复制成功!'
 			);
 				$this->json($ret,0,'复制成功!');
-				return;					
-		}else{
+				return;	 	        
+    	}else{
 			$ret = array(
 				'ret' => 100,
-				'msg' => '复制失败!'
+				'msg' => '复制失败,已经有重名的文件了!'
 			);
 				$this->json($ret,100,'复制失败!');
-				return;					
-		}			
+				return;	    		
+    	}
+		//echo json_encode($id);
+		// $fw = array();
+		// $kv = array();
+
+		// foreach($fl as $k){
+		// 	array_push($kv,'('.(int) $pid.','.(int) $k.','.$this->user['id'].')');
+		// 	array_push($fw,'id='.$k);
+		// }
+
+		// $sql = 'select id from userfolds where pid=0 and uid='.$this->user['id'].' and prid='.$pid;
+		// $query = $this->db->query($sql);
+		// if($this->db->affected_rows() == 0){
+		// 	$sql = 'select name from groups where id='.$pid;
+		// 	$query = $this->db->query($sql);
+
+		// 	$row = $query->row();
+
+		// 	$fname = $row->name;
+
+		// 	$data = array(
+		// 		'pid' => 0,
+		// 		'name' => $fname,
+		// 		'uid' => $this->user['id'],
+		// 		'mark' => '',
+		// 		'createtime' => time(),
+		// 		'type' => 0,
+		// 		'prid' => $pid
+		// 	);
+		// 	$sql = $this->db->insert_string('userfolds',$data);
+		// 	$query = $this->db->query($sql);
+
+		// 	$pfdid = $this->insert_id();
+		// }else{
+		// 	$row = $query->row();
+		// 	if(!$fdid){
+		// 		$pfdid = $row->id;
+		// 	}else{
+		// 		$pfdid = $fdid;	
+		// 	}
+		// };
+
+		// $sql = $this->db->update_string("userfile",array('prid' => $pfdid),implode(' or ',$fw));
+		// $query = $this->db->query($sql);
+			
+		// if ($this->db->affected_rows() > 0){
+		// 	$ret = array(
+		// 		'ret' => 0,
+		// 		'msg' => '复制成功!'
+		// 	);
+		// 		$this->json($ret,0,'复制成功!');
+		// 		return;					
+		// }else{
+		// 	$ret = array(
+		// 		'ret' => 100,
+		// 		'msg' => '复制失败!'
+		// 	);
+		// 		$this->json($ret,100,'复制失败!');
+		// 		return;					
+		// }			
 		// $wh = implode(' or ',$fw);
 		// $sql = 'select fid from preparefile where uid='.$this->user['id'].' and pid='.(int) $pid.' and ('.$wh.')';
 		// $query = $this->db->query($sql);
@@ -2281,6 +2316,30 @@ class Cgi extends SZone_Controller {
 			);
 			$this->json($ret,100,'操作失败!');			
 		}
+	}
+
+	public function get_prep_fold_lev(){
+		$fid = (int) $this->input->get('fid');
+		$gid = (int) $this->input->get('gid');	
+		
+		$this->load->model('User_model');
+		if($this->User_model->check_auth_in_group($this->user['id'],$gid)){
+			$this->load->model('Fold_model');
+			$fl = $this->Fold_model->get_groupfold_byid($this->user['id'],$gid,$fid);
+
+			$ret = array(
+				'list' => $fl
+			);
+			$this->json($ret,0,'操作成功!');	
+
+		}else{
+			$ret = array(
+				'msg' => '没有权限'
+			);
+			$this->json($ret,10001,'没有权限!');				
+		}
+		
+
 	}
 
 	public function mark_file(){

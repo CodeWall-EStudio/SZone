@@ -26,7 +26,7 @@
 
 			 	if(value != ''){
 			 		////console.log(value);
-			 		var data = {name: value,pid: pid,prid : prid,csrf_test_name:$.cookie('csrf_cookie_name')};
+			 		var data = {name: value,pid: pid,gid : prid,csrf_test_name:$.cookie('csrf_cookie_name')};
 			 		
 			 		$.post('/cgi/addfold',data,function(d){
 			 			if(d.code==0){
@@ -62,6 +62,7 @@
         	var data = {
         		fname : $('#reName .foldname').val(),
         		fid : $('#reName .fid').val(),
+        		gid : parseInt($('#reName .gid').val()),
         		csrf_test_name:$.cookie('csrf_cookie_name')
         	}
         	if(type){
@@ -517,8 +518,13 @@
 			var target = $(e.target);
 			var fid = target.attr('data-fid');
 			var id= target.attr('data-id');
+			var gid = target.attr('data-gid');
 			//review?fid=24&t=2&gid=0&id=18
-			$("#reviewIframe").attr('src','/review?fid='+fid+'&id='+id);
+			if(gid){
+				$("#reviewIframe").attr('src','/review?gid='+gid+'&fid='+fid+'&id='+id);
+			}else{
+				$("#reviewIframe").attr('src','/review?fid='+fid+'&id='+id);
+			}
 			$('#reviewFile').modal('show');
 		});
 
@@ -704,8 +710,12 @@
 	init();
 })();
 
-function showReview(id,fid){
-	$("#reviewIframe").attr('src','/review?fid='+fid+'&id='+id);
+function showReview(id,fid,m){
+	if(m){
+		$("#reviewIframe").attr('src','/review?fid='+fid+'&id='+id+'&m=1');
+	}else{
+		$("#reviewIframe").attr('src','/review?fid='+fid+'&id='+id);
+	}
 	$('#reviewFile').modal('show');
 }
 function hideManage(){

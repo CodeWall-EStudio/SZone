@@ -7,6 +7,7 @@ class Review extends SZone_Controller {
 		$fdid = (int) $this->input->get('fdid');
 		$fid = (int) $this->input->get('fid');
 		$id = (int) $this->input->get('id');
+		$mail = (int) $this->input->get('m');
 		$type = (int) $this->input->get('t');  //1 上一条 2 下一条
 
         $this->load->model('File_model');
@@ -17,30 +18,57 @@ class Review extends SZone_Controller {
         }
 
         if (empty($gid)){
-                $auth = $this->File_model->check_fileid_by_uid($fid, $this->user['id']);
-                if (empty($auth))
-                {
-                    show_error('用户没有查看此文件的权限');
-                }        	
+        		if($mail){
+        			$auth = $this->File_model->check_msgid_by_uid($id,$fid, $this->user['id']);
+
+	                if (empty($auth))
+	                {
+	                    show_error('用户没有查看此文件的权限');
+	                }
+        		}else{
+        			$auth = $this->File_model->check_fileid_by_uid($fid, $this->user['id']);
+
+	                if (empty($auth))
+	                {
+	                    show_error('用户没有查看此文件的权限');
+	                }
+        		}
+        	
         }else{
-        	$auth = $this->File_model->get_by_gid($id, $gid);
-            if (empty($auth))
+                //$auth = $this->File_model->get_by_gid($id, $gid);
+	     	$this->load->model('User_model'); 
+	     	$in = $this->User_model->get_in_group($this->user['id'],$gid);
+            //if (empty($auth))
+	    	if(!$in)
             {
                 show_error('用户没有查看此文件的权限');
             }
-            $auth['name'] = $auth['fname'];
+            //$auth['name'] = $auth['fname'];
         }
 
+        if($mail){
+        	$this->db->select('message.fid,userfile.id,userfile.name, userfile.content,files.type, files.mimes, files.path');
+        	$this->db->from('message');
+        	$this->db->join('userfile','message.fuid=userfile.uid');
+        	$this->db->join('files','message.fid = files.id');
+        	$query = $this->db->get();
+        	$tablename = 'userfile';
+        }else{
+			$tablename = 'userfile';
+			$fnames = 'a.name';
+			if($gid){
+				$fnames = 'a.fname as name';
+				$tablename = 'groupfile'; 
+			}
 
-		$tablename = 'userfile';
-		if($gid){
-			$tablename = 'groupfile';
+			$sql = 'select a.id,a.fid,'.$fnames.',a.content,b.path,b.size,b.type,b.mimes from '.$tablename.' a, files b where a.fid = b.id and b.id = '.$fid;
+			if(!$gid){
+				$sql .= ' and a.uid='.$this->user['id'];
+			}	
+			$query = $this->db->query($sql);		
 		}
 
-		$sql = 'select a.id,a.fid,a.name,a.content,b.path,b.size,b.type,b.mimes from '.$tablename.' a, files b where a.fid = b.id and b.id = '.$fid;
-		if(!$gid){
-			$sql .= ' and a.uid='.$this->user['id'];
-		}
+
 		// if($type == 1){
 		// 	$sql .= ' and a.id < '.$fid.' limit 0,1';
 		// }elseif($type ==2){
@@ -52,8 +80,8 @@ class Review extends SZone_Controller {
 
 		//$docs = array('application/vnd.ms-word','application/vnd.ms-excel','application/vnd.ms-powerpoint','application/msword');
 
-
-		$query = $this->db->query($sql);
+		//echo $this->db->affected_rows();
+		
 		$finfo = 0;
 		if($this->db->affected_rows()>0){
 			$row = $query->row();
@@ -67,6 +95,7 @@ class Review extends SZone_Controller {
 				'type' => (int) $row->type,
 				'mimes' => $row->mimes
 			);
+
 
 			if($finfo['type']==2 && $finfo['mimes'] == 'text/plain'){
 				$txt =  file_get_contents($finfo['path']);

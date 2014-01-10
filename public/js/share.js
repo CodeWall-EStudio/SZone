@@ -151,7 +151,8 @@
 			var target = $(e.target);
 			var id = target.attr('data-id');
 			var fid = target.attr('data-fid');
-			top.showReview(id,fid);
+			var mail = target.attr('data-mail');
+			top.showReview(id,fid,mail);
 			//copyFiletoMy(id);			
 		});		
 

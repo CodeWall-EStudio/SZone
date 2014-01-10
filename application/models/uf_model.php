@@ -14,6 +14,7 @@ class Uf_model extends CI_Model {
 
     protected $table = 'userfile';
     protected $ftable = 'files';
+    protected $gtable = 'groupfile';
     protected $ctable = 'usercollection';
 
     function __construct()
@@ -108,7 +109,7 @@ class Uf_model extends CI_Model {
     }
 
     function get_fileinfo($id,$fdid=0,$key=0,$type=0,$on=0,$desc=0,$start=0,$pagenum=10){
-        $this->db->select('userfile.id,userfile.fid,userfile.name,userfile.createtime,userfile.content,files.type,files.size');
+        $this->db->select('userfile.id, userfile.fid, userfile.name, userfile.createtime, userfile.content, userfile.fdid, files.type,files.size');
         $this->db->from($this->table);
         $this->db->join($this->ftable,'files.id=userfile.fid');
         $this->db->where('uid',$id);
@@ -138,6 +139,7 @@ class Uf_model extends CI_Model {
             $file[$row->id] = array(
                 'id' => $row->id,
                 'fid' => $row->fid,
+                'fdid' => $row->fdid,
                 'name' => $row->name,
                 'time' => substr($row->createtime,0,10),
                 'content' => $row->content,
@@ -167,22 +169,23 @@ class Uf_model extends CI_Model {
         return $file;
     }
 
-    function get_prep_byid($id,$fdid,$key=0,$type=0,$on=0,$desc=0,$start=0,$pagenum=10){
-        if(!$fdid){
+    function get_prep_byid($id,$prid,$fdid=0,$key=0,$type=0,$on=0,$desc=0,$start=0,$pagenum=10){
+        if(!$prid){
             return array();
         }
         //$sql = 'select a.id,a.fid,a.name,a.createtime,b.type,b.size from userfile a,files b where a.del = 0 and a.prid = b.id and uid = '.$this->user['id'];
-        $this->db->select('userfile.id, userfile.fid, userfile.name, userfile.createtime, userfile.content, files.type, files.size');
-        $this->db->from($this->table);
-        $this->db->join($this->ftable,'files.id=userfile.fid');        
-        $this->db->where('userfile.uid',$id);
-        $this->db->where('userfile.prid',$fdid);
-        $this->db->where('userfile.del',0);
+        $this->db->select('groupfile.id, groupfile.fid, groupfile.fname, groupfile.createtime, groupfile.content, files.type, files.size');
+        $this->db->from($this->gtable);
+        $this->db->join($this->ftable,'files.id=groupfile.fid');        
+        $this->db->where('groupfile.uid',$id);
+        $this->db->where('groupfile.gid',$prid);
+        $this->db->where('groupfile.fdid',$fdid);
+        $this->db->where('groupfile.del',0);
         if($type){
             $this->db->where('files.type',$type);
         }
         if($key){
-            $this->db->like('userfile.name',$key);
+            $this->db->like('groupfile.fname',$key);
         }
         $this->db->limit($pagenum,$start);
         if($on){
@@ -199,7 +202,7 @@ class Uf_model extends CI_Model {
             $file[$row->id] = array(
                 'id' => $row->id,
                 'fid' => $row->fid,
-                'name' => $row->name,
+                'name' => $row->fname,
                 'time' => substr($row->createtime,0,10),
                 'content' => $row->content,
                 'size' => format_size($row->size),
@@ -228,11 +231,12 @@ class Uf_model extends CI_Model {
         return $file;        
     }
 
-    function get_allprep_num($id,$fdid=0,$key=0,$type=0){
+    function get_allprep_num($id,$prid,$fdid=0,$key=0,$type=0){
         $this->db->select('count(id) as allnum');
         $this->db->where('uid',$id);
-        $this->db->where('prid',$fdid);
-        $query = $this->db->get($this->table);
+        $this->db->where('gid',$prid);
+        $this->db->where('fdid',$fdid);
+        $query = $this->db->get($this->gtable);
         $row = $query->row();
 
         if($this->db->affected_rows() > 0){

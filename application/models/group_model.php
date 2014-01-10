@@ -29,7 +29,7 @@ class Group_model extends CI_Model {
         return $query->num_rows();
     }
 
-    function get_user_group_ids($id)
+    function get_user_group_ids($id,$auth)
     {
         $this->db->where('uid', $id);
         $query = $this->db->get($this->user_table);
@@ -49,6 +49,57 @@ class Group_model extends CI_Model {
         }
 
         return $gidlist;
+    }
+
+    function get_user_group_auth($id,$auth){
+        $this->db->where('uid', $id);
+        $this->db->where('auth >', 0);
+        $query = $this->db->get($this->user_table);
+        $gidlist = array();
+
+        foreach($query->result() as $row){
+            array_push($gidlist,$row->gid);
+        }
+        return $gidlist;
+    }    
+
+    function get_prep_group_byid($id){
+        $this->db->select('id, name');
+        $this->db->where('type',3);
+        $this->db->where('parent',0);
+        $query = $this->db->get($this->table);
+
+        $pl = array();
+        foreach($query->result() as $row){
+            $pl[$row->id] = array(
+                'id' => $row->id,
+                'name' => $row->name
+            );
+        }
+
+        $this->db->select('groups.id,groups.name,groups.parent');
+        $this->db->from($this->table);
+        $this->db->join($this->user_table, $this->user_table.'.gid='.$this->table.'.id');
+        $this->db->where($this->user_table.'.uid',$id);
+        $this->db->where($this->table.'.type',3);
+
+        $query = $this->db->get();
+
+        $rl = array();
+        foreach($query->result() as $row){
+            if(!isset($rl[$row->parent])){
+                $rl[$row->parent] = array(
+                    'id' => $pl[$row->parent]['id'],
+                    'name' => $pl[$row->parent]['name'],
+                    'list' => array()
+                );
+            }
+            $rl[$row->parent]['list'][$row->id] = array(
+                'id' => $row->id,
+                'name' => $row->name
+            );            
+        }
+        return $rl;
     }
 
     function get_prep_group_ids($id){
@@ -77,17 +128,7 @@ class Group_model extends CI_Model {
         return $result;   
     }
 
-    function get_user_group_auth($id){
-        $this->db->where('uid', $id);
-        $this->db->where('auth >', 0);
-        $query = $this->db->get($this->user_table);
-        $gidlist = array();
 
-        foreach($query->result() as $row){
-            array_push($gidlist,$row->gid);
-        }
-        return $gidlist;
-    }
 
     function get_group_auth_byid($gid,$id){
         $this->db->where('uid', $id);

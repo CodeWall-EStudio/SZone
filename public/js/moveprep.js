@@ -23,6 +23,7 @@
 			fdid : fdid,
 			pid : pid
 		}
+
 		$.post('/cgi/add_prep',data,function(d){
 			if(d.code == 0){
 				top.hideShare();
@@ -70,7 +71,7 @@
 				}
 				check();
 			}
-			if(!id || nodata){
+			if(!pid || nodata){
 				return;
 			}
 			var p = t.parent('li');
@@ -85,7 +86,7 @@
 				return;
 			}
 			//glyphicon-minus
-			$.get('/cgi/get_fold_lev',{fid: id},function(d){
+			$.get('/cgi/get_prep_fold_lev',{fid: id,gid:pid},function(d){
 				if(d.code == 0){
 					var tmp = $("#fold-list-tmp").html();
 					var obj = {

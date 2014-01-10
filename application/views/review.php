@@ -70,7 +70,7 @@
 	<div class="modal-body">
 		<div class="file-review">
 			<?if($finfo['type'] == 1):?>
-				<img id="reviewImg" src="/download/media?id=<?=$finfo['fid']?>" onload="change(this)" />
+				<img id="reviewImg" src="/download/media?id=<?=$finfo['fid']?>&gid=<?=$gid?>" onload="change(this)" />
 			<?elseif($finfo['type']==2):?>
 				<div id="documentViewer" class="flexpaper_viewer" style="width:960px;height:700px">
 					
@@ -161,7 +161,7 @@
             { config : {
 
                 //SWFFile : encodeURIComponent('/download?id=<?=$finfo['fid']?>&rv=1'),
-                SWFFile : encodeURIComponent('/download/review?id=<?=$finfo['fid']?>&rv=1'),
+                SWFFile : encodeURIComponent('/download/review?id=<?=$finfo['fid']?>&rv=1&gid=<?=$gid?>'),
                 jsDirectory : '/js/lib/flex/',
                 Scale : 0.8,
                 ZoomTransition : 'easeOut',

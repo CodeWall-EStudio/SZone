@@ -142,8 +142,9 @@ class SZone_Controller extends CI_Controller {
     protected function set_group()
     {
         $this->load->model('Group_model');
-        $gidlist = $this->Group_model->get_user_group_ids($this->user['id']);
-        $authlist = $this->Group_model->get_user_group_auth($this->user['id']);
+        $gidlist = $this->Group_model->get_user_group_ids($this->user['id'],$this->user['auth']);
+        $authlist = $this->Group_model->get_user_group_auth($this->user['id'],$this->user['auth']);
+
         $ret = $this->Group_model->get_group_info($gidlist,$authlist);
         $this->grouplist = $ret['flist'];
         $this->deplist = $ret['deplist'];

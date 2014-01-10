@@ -117,6 +117,28 @@ class Fold_model extends CI_Model {
     	return $fold;
     }
 
+    function get_prep_byid($id,$gid,$fdid = 0){
+        $this->db->select('id, name, mark, createtime, pid, tid, idpath');
+        $this->db->where('uid',$id);
+        $this->db->where('gid',$gid);
+        $this->db->where('pid',$fdid);
+
+        $query = $this->db->get($this->gtable);
+
+        $fl = array();
+        foreach($query->result() as $row){
+            $fl[$row->id] = array(
+                'id' => $row->id,
+                'name' => $row->name,
+                'mark' => $row->mark,
+                'pid' => (int) $row->pid,
+                'tid' => (int) $row->tid,
+                'time' => date('Y-m-d',$row->createtime)                
+            );
+        }
+        return $fl;
+    }
+
     function update_prep_byid($id,$name){
     	$data = array(
     		'name' => $name
@@ -186,5 +208,43 @@ class Fold_model extends CI_Model {
         $str = $this->db->insert_string($this->utable, $fold);
         $this->db->query($str);
         return $this->db->insert_id();
+    }
+
+    function get_prepfold_user($prid, $ud = 0, $fdid=0, $gr = 0,$tag = 0){
+        
+    }
+
+    function get_groupfold_byid($id,$gid,$fdid=0){
+        $this->db->select('id,name,gid,pid');
+        $this->db->where('uid',$id);
+        $this->db->where('gid',$gid);
+        $query = $this->db->get($this->gtable);
+
+        $rl = array();
+
+        foreach($query->result() as $row){
+            if($fdid == $row->pid){
+                if(!isset($rl[$row->id])){
+                    $rl[$row->id] = array(
+                        'id' => $row->id,
+                        'name' => $row->name,
+                        'gid' => $row->gid
+                    );           
+                }else{
+                    $rl[$row->id]['id'] = $row->id;
+                    $rl[$row->id]['name'] = $row->name;
+                    $rl[$row->id]['gid'] = $row->gid;
+                }
+            }else{
+                if(!isset($rl[$row->pid])){
+                    $rl[$row->pid] = array(
+                        'child' => 1
+                    );
+                }else{
+                    $rl[$row->pid]['child'] = 1;
+                }
+            }
+        }
+        return $rl;
     }
 }
