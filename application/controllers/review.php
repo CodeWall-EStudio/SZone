@@ -36,11 +36,13 @@ class Review extends SZone_Controller {
 
 
 		$tablename = 'userfile';
+		$fnames = 'a.name';
 		if($gid){
+			$fnames = 'a.fname';
 			$tablename = 'groupfile';
 		}
 
-		$sql = 'select a.id,a.fid,a.name,a.content,b.path,b.size,b.type,b.mimes from '.$tablename.' a, files b where a.fid = b.id and b.id = '.$fid;
+		$sql = 'select a.id,a.fid,'.$fnames.',a.content,b.path,b.size,b.type,b.mimes from '.$tablename.' a, files b where a.fid = b.id and b.id = '.$fid;
 		if(!$gid){
 			$sql .= ' and a.uid='.$this->user['id'];
 		}
