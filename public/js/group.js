@@ -594,7 +594,7 @@
 			var fid = target.attr('data-fid');
 			var id= target.attr('data-id');
 			//review?fid=24&t=2&gid=0&id=18
-			$("#reviewIframe").attr('src','/review?'+ginfo.id+'&fid='+fid+'&id='+id);
+			$("#reviewIframe").attr('src','/review?gid='+ginfo.id+'&fid='+fid+'&id='+id);
 			$('#reviewFile').modal('show');
 		});	
 
