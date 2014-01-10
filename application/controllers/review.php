@@ -24,10 +24,10 @@ class Review extends SZone_Controller {
                 }        	
         }else{
                 //$auth = $this->File_model->get_by_gid($id, $gid);
-	     $this->load->model('File_model');
-	     $in = $this->File_model->get_in_group($this->user['id'],$gid);
+	     $this->load->model('User_model');
+	     $in = $this->User_model->get_in_group($this->user['id'],$gid);
             //if (empty($auth))
-	    if(!$in);
+	    if(!$in)
             {
                 show_error('用户没有查看此文件的权限');
             }
@@ -38,7 +38,7 @@ class Review extends SZone_Controller {
 		$tablename = 'userfile';
 		$fnames = 'a.name';
 		if($gid){
-			$fnames = 'a.fname';
+			$fnames = 'a.fname as name';
 			$tablename = 'groupfile';
 		}
 
