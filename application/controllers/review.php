@@ -23,21 +23,26 @@ class Review extends SZone_Controller {
                     show_error('用户没有查看此文件的权限');
                 }        	
         }else{
-        	$auth = $this->File_model->get_by_gid($id, $gid);
-            if (empty($auth))
+                //$auth = $this->File_model->get_by_gid($id, $gid);
+	     $this->load->model('User_model'); 
+	     $in = $this->User_model->get_in_group($this->user['id'],$gid);
+            //if (empty($auth))
+	    if(!$in)
             {
                 show_error('用户没有查看此文件的权限');
             }
-            $auth['name'] = $auth['fname'];
+            //$auth['name'] = $auth['fname'];
         }
 
 
 		$tablename = 'userfile';
+		$fnames = 'a.name';
 		if($gid){
-			$tablename = 'groupfile';
+			$fnames = 'a.fname as name';
+			$tablename = 'groupfile'; 
 		}
 
-		$sql = 'select a.id,a.fid,a.name,a.content,b.path,b.size,b.type,b.mimes from '.$tablename.' a, files b where a.fid = b.id and b.id = '.$fid;
+		$sql = 'select a.id,a.fid,'.$fnames.',a.content,b.path,b.size,b.type,b.mimes from '.$tablename.' a, files b where a.fid = b.id and b.id = '.$fid;
 		if(!$gid){
 			$sql .= ' and a.uid='.$this->user['id'];
 		}

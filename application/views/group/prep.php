@@ -92,11 +92,11 @@
           <?foreach($flist as $row):?>
             <tr>
               <td>
-                  <a class="file-name" data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>">
+                  <a class="file-name" data-gid="<?=$prid?>" data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>">
                   <?if($row['type'] < 7):?>
-                    <i class="icon-type<?=(int) $row['type']?>" data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>" ></i>
+                    <i class="icon-type<?=(int) $row['type']?>" data-gid="<?=$prid?>" data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>" ></i>
                   <?else:?>
-                    <i class="icon-type" data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>" ></i>
+                    <i class="icon-type" data-gid="<?=$prid?>" data-fid="<?=$row['fid']?>" data-id="<?=$row['id']?>" ></i>
                   <?endif?>  
                     <?=$row['name']?>
                   </a>  
