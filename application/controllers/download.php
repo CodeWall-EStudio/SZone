@@ -101,7 +101,7 @@ class Download extends SZone_Controller {
             show_error('文件不存在');
         }
 
-        $gid = $this->input->get('gid');
+        /*$gid = $this->input->get('gid');
         $mid = $this->input->get('mid');
 
         if (empty($gid))
@@ -137,13 +137,9 @@ class Download extends SZone_Controller {
                 show_error('用户没有查看此文件的权限');
             }
             $auth['name'] = $auth['fname'];
-        }
-
-        $fname =  iconv("utf-8","gb2312//IGNORE",$auth['name']);
+        }*/
 
         header('Content-type: '.$file['mimes']);
-        //header('Content-Disposition: attachment; filename='.$fname);
-        //header('Content-Length: '.$file['size']);
         header('X-Accel-Redirect: '.str_replace($this->config->item('path','upload'), '/file/', $file['path']));
     }
 

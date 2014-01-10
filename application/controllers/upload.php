@@ -73,6 +73,8 @@ class Upload extends SZone_Controller {
         // 判断是否是来自新媒体教学的上传请求
         $fdid = $this->media($is_media, $fdid);
 
+        log_message('DEBUG', 'File upload info － mimes: '. $file['mimes'].' name: '.$file_name);
+
         $file_isnew = FALSE;
         if (empty($file_info)) {
 
