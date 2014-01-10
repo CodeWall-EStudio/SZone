@@ -51,10 +51,11 @@ class Gf_model extends CI_Model {
         return $result;
     }
 
-    function get_by_ids($ids)
+    function get_by_ids($ids,$gid)
     {
         $this->db->select('id, fid, fname');
         $this->db->where_in('id',$ids);
+        $this->db->where('gid',$gid);
         $query = $this->db->get($this->table);
 
         $result = array();

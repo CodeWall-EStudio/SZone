@@ -179,12 +179,12 @@ class Manage extends SZone_Controller {
 			}	
 		}
 
-		$sql = 'select id,name from user';
+		$sql = 'select id,name,nick from user';
 		$query = $this->db->query($sql);
 		foreach($query->result() as $row){
 			$ulist[$row->id] = array(
 				'id' => $row->id,
-				'name' => $row->name
+				'name' => $row->nick
 			);
 		}
 
@@ -290,7 +290,7 @@ class Manage extends SZone_Controller {
 		$this->data['index'] = 'group';
 		//$this->data['data'] = array();
 
-		$sql = 'SELECT a.id,a.name,b.name AS uname,b.id AS uid FROM groups AS a,user AS b WHERE a.create = b.id AND type=1';
+		$sql = 'SELECT a.id,a.name,b.nick AS uname,b.id AS uid FROM groups AS a,user AS b WHERE a.create = b.id AND type=1';
 		$query = $this->db->query($sql);
 		$group = array();
 		foreach ($query->result() as $row){
@@ -309,7 +309,7 @@ class Manage extends SZone_Controller {
 	public function dep(){
 		$this->data['index'] = 'dep';
 
-		$sql = 'SELECT a.id,a.name,b.name AS uname,b.id AS uid FROM groups AS a,user AS b WHERE a.create = b.id AND type=2';
+		$sql = 'SELECT a.id,a.name,b.nick AS uname,b.id AS uid FROM groups AS a,user AS b WHERE a.create = b.id AND type=2';
 		$query = $this->db->query($sql);
 		$group = array();
 		foreach ($query->result() as $row){
@@ -364,12 +364,12 @@ class Manage extends SZone_Controller {
 		}
 
 		$ulist = array();
-		$sql = 'select id,name from user';
+		$sql = 'select id,nick from user';
 		$query = $this->db->query($sql);
 		foreach ($query->result() as $row){
 			$ulist[$row->id] = array(
 				'id' => $row->id,
-				'name' => $row->name
+				'name' => $row->nick
 			);
 		}
 
@@ -447,12 +447,12 @@ class Manage extends SZone_Controller {
 
 
 			$ulist = array();
-			$sql = 'select id,name from user';
+			$sql = 'select id,nick from user';
 			$query = $this->db->query($sql);
 			foreach($query->result() as $row){
 				$ulist[$row->id] = array(
 					'id' => $row->id,
-					'name' => $row->name
+					'name' => $row->nick
 				);
 			}	
 

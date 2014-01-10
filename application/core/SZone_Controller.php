@@ -77,6 +77,7 @@ class SZone_Controller extends CI_Controller {
                 phpCAS::forceAuthentication();
             } else {
                 $this->user['id'] = '0';
+                $this->user['auth'] = '0';
                 $this->skey = FALSE;
                 return;
             }

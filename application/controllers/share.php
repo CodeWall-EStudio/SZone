@@ -43,13 +43,13 @@ class Share extends SZone_Controller {
 
         if($gid){
             $this->load->model('Gf_model');
-            $nl = $this->Gf_model->get_by_ids($gid, $kl);
+            $nl = $this->Gf_model->get_by_ids($kl,$gid);
         }else{
             $this->load->model('Uf_model');
             $nl = $this->Uf_model->get_by_ids($this->user['id'], $kl);
         }
 
-        $sql = 'select a.id,a.name from groups a,groupuser b where a.id = b.gid and a.type = 1 and b.uid='.$this->user['id'];
+        $sql = 'select a.id,a.name from groups a,groupuser b where a.id = b.gid and a.type = 1 and a.id != '.$gid.' and b.uid='.$this->user['id'];
         $query = $this->db->query($sql);
         $gl = array();
         foreach($query->result() as $row){
@@ -77,14 +77,14 @@ class Share extends SZone_Controller {
 
         if($gid){
             $this->load->model('Gf_model');
-            $nl = $this->Gf_model->get_by_ids($gid, $kl);
+            $nl = $this->Gf_model->get_by_ids($kl,$gid);
         }else{
             $this->load->model('Uf_model');
             $nl = $this->Uf_model->get_by_ids($this->user['id'], $kl);
         }
 
 
-        $sql = 'select a.id,a.name from groups a,groupuser b where a.id = b.gid and a.type = 2 and a.pt=0 and b.uid='.$this->user['id'];
+        $sql = 'select a.id,a.name from groups a,groupuser b where a.id = b.gid and a.type = 2 and a.id != '.$gid.'  and a.pt=0 and b.uid='.$this->user['id'];
         $query = $this->db->query($sql);
         $gl = array();
         foreach($query->result() as $row){

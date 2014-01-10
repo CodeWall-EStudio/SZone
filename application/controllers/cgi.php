@@ -942,8 +942,12 @@ class Cgi extends SZone_Controller {
 			array_push($kl,' id='.$k);			
 		}
 		$str = implode(' or ',$kl);
+		if($gid){
+			$nl = $this->Gf_model->get_by_ids($fid,$gid);
+		}else{
+			$nl = $this->Uf_model->get_file_byid($fid,$this->user['id']);
+		}
 
-		$nl = $this->Uf_model->get_file_byid($fid,$this->user['id']);
 		$filelist = array();
 		if($nl){
 			foreach($nl as $row){

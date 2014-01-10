@@ -192,7 +192,7 @@ class Group extends SZone_Controller {
 			$allnum = $row->anum;
 
 			
-			$sql = 'SELECT a.id,a.uid,a.fgid,a.fid,a.fname,a.content,a.createtime,a.status,b.size,b.path,b.type,c.name as uname,d.name AS gname,f.id as cid FROM groupfile a';
+			$sql = 'SELECT a.id,a.uid,a.fgid,a.fid,a.fname,a.content,a.createtime,a.status,b.size,b.path,b.type,c.nick as uname,d.name AS gname,f.id as cid FROM groupfile a';
 			$sql .= ' LEFT JOIN files b ON b.id = a.fid';
 			$sql .= ' LEFT JOIN user c ON c.id = a.uid';
 			$sql .= ' LEFT JOIN groups d ON d.id = a.fgid';
