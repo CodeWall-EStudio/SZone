@@ -23,12 +23,15 @@ class Review extends SZone_Controller {
                     show_error('用户没有查看此文件的权限');
                 }        	
         }else{
-        	$auth = $this->File_model->get_by_gid($id, $gid);
-            if (empty($auth))
+                //$auth = $this->File_model->get_by_gid($id, $gid);
+	     $this->load->model('File_model');
+	     $in = $this->File_model->get_in_group($this->user['id'],$gid);
+            //if (empty($auth))
+	    if(!$in);
             {
                 show_error('用户没有查看此文件的权限');
             }
-            $auth['name'] = $auth['fname'];
+            //$auth['name'] = $auth['fname'];
         }
 
 
