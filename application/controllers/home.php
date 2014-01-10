@@ -800,10 +800,30 @@ class Home extends SZone_Controller {
 
                 if(count($plist)>0){
                     $tp = array_slice($plist,0,1);
+                    foreach($plist as $row){
+                        if(isset($row['list'])){
+                            foreach($row['list'] as $r){
+                                if($r['id'] == $prid){
+                                    $pname = $row['name'];
+                                    $pfname = $r['name'];
+                                }
+                            }
+                        }
+                    }
                 }
 
                 $this->load->model('Fold_model');
                 $fold = $this->Fold_model->get_prep_byid($this->user['id'],$prid,$fid);
+
+                if(count($fold)>0){
+                    $tp = array_slice($fold,0,1);
+                    if(!isset($tp[0])){
+                        $thisfold = $this->Fold_model->get_prep_bypid($this->user['id'],$prid,$tp[0]['pid']);
+
+                        $thisfold = $thisfold[$tp[0]['pid']];
+                    }
+                }
+
 
                 $this->load->model('Uf_model');
                 $allnum = $this->Uf_model->get_allprep_num($this->user['id'],$prid,$fid,$key,$type);

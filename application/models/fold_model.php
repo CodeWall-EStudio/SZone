@@ -139,6 +139,29 @@ class Fold_model extends CI_Model {
         return $fl;
     }
 
+    function get_prep_bypid($id,$gid,$fdid = 0){
+        $this->db->select('id, name, mark, createtime, pid, tid, idpath');
+        $this->db->where('uid',$id);
+        $this->db->where('gid',$gid);
+        $this->db->where('id',$fdid);
+
+        $query = $this->db->get($this->gtable);
+
+        $fl = array();
+        foreach($query->result() as $row){
+            $fl[$row->id] = array(
+                'id' => $row->id,
+                'name' => $row->name,
+                'mark' => $row->mark,
+                'pid' => (int) $row->pid,
+                'tid' => (int) $row->tid,
+                'idpath' => $row->idpath,
+                'time' => date('Y-m-d',$row->createtime)                
+            );
+        }
+        return $fl;
+    }    
+
     function update_prep_byid($id,$name){
     	$data = array(
     		'name' => $name

@@ -289,13 +289,13 @@
 				</li>
 				<li id="shareHis">
 					共享历史
-					<p>
+					<p class="mailbox">
 						<a cmd="get" data-toggle="modal" data-target="#mailbox">收件箱</a><?if($newmail>0):?><span>(<span id="newMailnum" class="mailnum"><?=$newmail?></span>)</span><?endif?>
 					</p>
-					<P>
+					<P class="mailbox">
 						<a cmd="send" data-toggle="modal" data-target="#mailbox">发件箱</a><?if($postmail>0):?><span>(<span id="postMailnum" class="mailnum"><?=$postmail?></span>)</span><?endif?>
 					</p>						
-					<p>					
+					<p class="mailbox">					
 						<a cmd="share" data-toggle="modal" data-target="#mailbox">我的贡献</a>
 					</p>
 				</li>

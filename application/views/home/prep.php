@@ -59,11 +59,8 @@
 							<?if(count($thisfold['idpath'])>1):?>
 								<a>......</a>
 							<?endif?>					
-						<?if($thisfold['pid']):?>
-							<a href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>"><?= $fold[$thisfold['pid']]['name'] ?></a>
-						<?endif?>
 						<a class="section-tit-a-second"><?= $thisfold['name'] ?></a>
-						<a class="section-tit-a-can" href="/home?fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>">返回上级</a>
+						<a class="section-tit-a-can" href="/home/prepare?prid=<?=$prid?>&fid=<?=$thisfold['pid']?>&od=<?=$od?>&on=<?=$on?>">返回上级</a>
 					<?else:?>
 						
 					<?endif?>					

@@ -281,6 +281,10 @@ a{
 	line-height:1.3em;
 	font-size:14px;
 }
+.aside ul p.mailbox{
+	text-indent:1em;
+	line-height:2em;
+}
 /*侧边栏*/
 
 /*主要内容*/
