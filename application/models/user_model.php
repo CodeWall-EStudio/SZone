@@ -44,7 +44,7 @@ class User_model extends CI_Model {
     }
 
     function get_in_group($id,$gid){
-        $result = array();
+        $result = array(); 
         $query = $this->db->get_where($this->gtable,array('uid' => $id));
         if ($query->num_rows() > 0){
             foreach($query->result() as $row){
