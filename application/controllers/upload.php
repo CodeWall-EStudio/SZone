@@ -142,6 +142,11 @@ class Upload extends SZone_Controller {
             'fdid' => $fdid
         );
 
+        //如果是在小组或者备课中上传文件.把个人文件中的文件夹设为-1;
+        if($gid>0){
+            $fdata['fdid'] = -1;
+        }
+
         //判断是否是在备课中上传
         // if($prep > 0){
         //     $fdata['fdid'] = -1;
