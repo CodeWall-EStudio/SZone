@@ -69,4 +69,14 @@ class Gf_model extends CI_Model {
         return $result;
     }
 
+    function check_auth_byid($fid,$gid,$uid){
+        $this->db->select('id');
+        $this->db->select('uid',$uid);
+        $this->db->select('gid',$gid);
+        $this->db->select('id',$fid);
+
+        $query = $this->db->get($this->table);
+        return $query->num_rows();
+    }
+
 }

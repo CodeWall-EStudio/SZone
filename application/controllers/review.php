@@ -135,6 +135,7 @@ class Review extends SZone_Controller {
 
 		$data['finfo'] = $finfo;
 		$data['gid'] = $gid;
+		$data['m'] = $mail;
 		$data['id'] = $id;
 		$data['prev'] = $prev;
 		$data['next'] = $next;
