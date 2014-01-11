@@ -39,7 +39,8 @@
   		cursor:pointer;
   	}
   	.flexpaper_viewer{
-  		width:500px;
+  		width:960px;height:700px;
+  		padding-top:10px;
   		margin:0 auto;
   	}
   	.to-left{
@@ -74,7 +75,7 @@
 			<?if($finfo['type'] == 1):?>
 				<img id="reviewImg" src="/download/media?id=<?=$finfo['fid']?>&gid=<?=$gid?><?if($m):?>&mid=<?=$id?><?endif?>" onload="change(this)" />
 			<?elseif($finfo['type']==2):?>
-				<div id="documentViewer" class="flexpaper_viewer" style="width:960px;height:700px">
+				<div id="documentViewer" class="flexpaper_viewer" style="">
 					
 				</div>
 			<?elseif($finfo['type']==3):?>
