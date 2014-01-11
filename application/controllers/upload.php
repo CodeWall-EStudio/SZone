@@ -92,7 +92,7 @@ class Upload extends SZone_Controller {
         if (empty($file_info)) {
 
             // 判断用户是否有足够上传空间
-            if ($size < $used + $file['size']) {
+            if ($size < $used) {
                 $err = '空间已经用完!';
                 $ret = array(
                     'jsonrpc' => '2.0',
