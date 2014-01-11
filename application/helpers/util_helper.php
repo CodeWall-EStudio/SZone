@@ -151,12 +151,7 @@ if(! function_exists('cr_file_type_li')){
 	}
 }
 
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> origin
 if(! function_exists('create_page')){
 	function create_page($config){
 		if($config['prev']){
