@@ -171,7 +171,7 @@
 
 		id = il.join(',');
 		$('#shareWin h4').text('移动文件');
-		iframeEl.attr('src','/home/movefile?fid='+id);		
+		iframeEl.attr('src','/home/movefile?fdid='+fid+'&fid='+id);		
 	};		
 
 	var copyFile = function(){

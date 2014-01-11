@@ -350,6 +350,7 @@ class Home extends SZone_Controller {
                 }        
                 $data = array(
                         'fl' => $nl,
+                        'fdid' => $fdid,
                         'flist' => $folds,
                         'gid' => $gid
                         );        
