@@ -43,6 +43,13 @@
 		<div class="move-target">
 			我的文件夹
 			<ul id="prepList" class="perplist">
+				<?if($fdid):?>
+				<li>
+						<i class="glyphicon" data-fid="0"></i><a class="a-click" data-id="0">
+							根目录
+						</a>
+				</li>
+				<?endif?>
 				<?if(count($flist)>0):?>
 				<?foreach($flist as $row):?>
 					<?if(isset($row['id'])):?>
@@ -53,7 +60,7 @@
 					</li>
 					<?endif?>
 				<?endforeach?>
-				<?else:?>
+				<?elseif(!$fdid):?>
 					<li>您还没有创建文件夹</li>
 				<?endif?>
 			</ul>

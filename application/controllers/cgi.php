@@ -1247,11 +1247,15 @@ class Cgi extends SZone_Controller {
 		$gid = (int) $this->input->post('gid');
 
 
-		if($gid && $this->user['auth']>1){
-			$data = array(
-				'fname' => $fname,
-			);			
-			$str = $this->db->update_string('groupfile',$data,'id='.(int) $fid.' and gid ='.$gid);
+		if($gid){
+			$this->load->model('Gf_model');
+			if($this->Gf_model->check_auth_byid($fid,$gid,$this->user['id']) || $this->user['auth']>1){
+				$data = array(
+					'fname' => $fname,
+				);			
+				$str = $this->db->update_string('groupfile',$data,'id='.(int) $fid.' and gid ='.$gid);
+			}
+
 		}else{
 			$data = array(
 				'name' => $fname
@@ -1285,9 +1289,11 @@ class Cgi extends SZone_Controller {
 		$data = array(
 			'name' => $fname
 		);
-		if($gid && $this->user['auth']>1){
-	
-			$str = $this->db->update_string('groupfolds',$data,'id='.(int) $fid.' and gid ='.$gid);
+		if($gid){
+			$this->load->model('Fold_model');
+			if($this->Fold_model->check_gfold_byid($fid,$gid,$this->user['id']) || $this->user['auth']>1){
+				$str = $this->db->update_string('groupfolds',$data,'id='.(int) $fid.' and gid ='.$gid);
+			}
 		}else{
 			
 			$str = $this->db->update_string('userfolds',$data,'id='.(int) $fid.' and uid ='.(int) $this->user['id']);

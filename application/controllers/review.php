@@ -51,6 +51,7 @@ class Review extends SZone_Controller {
         	$this->db->from('message');
         	$this->db->join('userfile','message.fuid=userfile.uid');
         	$this->db->join('files','message.fid = files.id');
+        	$this->db->where('files.id',$fid);
         	$query = $this->db->get();
         	$tablename = 'userfile';
         }else{
@@ -96,7 +97,6 @@ class Review extends SZone_Controller {
 				'mimes' => $row->mimes
 			);
 
-
 			if($finfo['type']==2 && $finfo['mimes'] == 'text/plain'){
 				$txt =  file_get_contents($finfo['path']);
 				$order = array("\r\n", "\n", "\r");
@@ -133,10 +133,9 @@ class Review extends SZone_Controller {
 			$nextfid = $row->fid;
 		}
 
-
-
 		$data['finfo'] = $finfo;
 		$data['gid'] = $gid;
+		$data['m'] = $mail;
 		$data['id'] = $id;
 		$data['prev'] = $prev;
 		$data['next'] = $next;

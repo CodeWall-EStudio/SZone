@@ -396,6 +396,9 @@ $config['subs']['5'] = '音乐';
 $config['subs']['6'] = '自然';
 
 $config['userfold'] = array('新媒体资源');
+$config['filetype'] = array(
+    '全部','图片','文档','音频','视频','应用','压缩包','其它'
+);
 
 /*
  * 登录系统设置

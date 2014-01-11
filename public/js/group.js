@@ -125,7 +125,7 @@
 
 		id = il.join(',');
 		$('#shareWin h4').text('移动文件');
-		iframeEl.attr('src','/home/movefile?fid='+id+'&gid='+ginfo.id);		
+		iframeEl.attr('src','/home/movefile?fdid='+fid+'&fid='+id+'&gid='+ginfo.id);		
 	};	    
 
     //复制文件
@@ -651,14 +651,4 @@
 	init();	
 })()
 
-function hideShare(){
-	$('#shareWin').modal('hide');
-}
-function hideManage(){
-	$('#manageWin').modal('hide');
-	window.location.reload();
-}
 
-function sharealert(msg){
-	alert(msg);
-}

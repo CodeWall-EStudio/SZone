@@ -50,7 +50,7 @@ if ( ! function_exists('get_ext_type')){
     function get_ext_type($mimes){
         echo $mimes;
         switch($mimes)
-        {        
+        {
             case 'application/x-gzip':
                 return 'gz';
             case 'application/x-bzip2':
@@ -106,7 +106,7 @@ if ( ! function_exists('get_ext_type')){
                 return 'pl';
             case 'text/x-sql':
                 return 'sql';
-                // images
+            // images
             case 'image/x-ms-bmp':
                 return 'bmp';
             case 'image/jpeg':
@@ -121,7 +121,7 @@ if ( ! function_exists('get_ext_type')){
                 return 'tga';
             case 'image/vnd.adobe.photoshop':
                 return 'psd';
-                //audio
+            //audio
             case 'audio/mpeg':
                 return 'mp3';
             case 'audio/midi':
@@ -134,7 +134,7 @@ if ( ! function_exists('get_ext_type')){
                 return 'wav';
             case 'audio/x-ms-wma':
                 return 'wma';
-                // video
+            // video
             case 'video/x-msvideo':
                 return 'avi';
             case 'video/x-dv':
@@ -154,7 +154,7 @@ if ( ! function_exists('get_ext_type')){
             case 'application/octet-stream':
                 return 'exe';
             default:
-                return '';        
+                return '';
         }
     }
 }
@@ -196,7 +196,7 @@ if ( ! function_exists('format_type'))
                 return 6;
             } else {
                 $ext = false;
-                return 5;
+                return 7;
             }
         }
     }

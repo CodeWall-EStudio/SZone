@@ -100,35 +100,9 @@
                   <?endif?>  
                     <?=$row['name']?>
                   </a>  
-                  <p id="btn<?=$row['id']?>" class="r-mark"><a href="/download?id=<?=$row['fid']?>">下载</a>  <a class="mark" data-id="<?=$row['id']?>">评论</a> <span><?=htmlspecialchars($row['mark'])?></span></p>  
-                  <p id="mark<?=$row['id']?>" class="mark-edit"><input id="input<?=$row['id']?>" type="text"  /> <a data-id="<?=$row['id']?>" class="save">保存</a> <a data-id="<?=$row['id']?>" class="esc">取消</a></p>
               </td>
               <td>
-                <?
-                  switch($row['type']){
-                    case 0:
-                      echo '全部类型';
-                      break;
-                    case 1:
-                      echo '图片';
-                      break;
-                    case 2:
-                      echo '文档';
-                      break;
-                    case 3:
-                      echo '音乐';
-                      break;
-                    case 4:
-                      echo '视频';
-                      break;
-                    case 5:
-                      echo '应用';
-                      break;
-                    case 6:
-                      echo '压缩包';
-                      break;
-                  }
-                ?>                
+                <?=get_file_type($row['type'])?>               
               </td>
               <td><?=$row['size']?></td>
             </tr>
@@ -147,14 +121,14 @@
   </div>
 
   <div id="reviewFile" class="modal fade collection reviewWin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog review-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4 class="modal-title">预览文件</h4>
         </div>
         <div class="modal-body">
-          <iframe id="reviewIframe" width="750" height="640" border="0" frameborder="0" scroll="false" ></iframe>
+          <iframe id="reviewIframe" width="1040" height="820" border="0" frameborder="0" scroll="false" ></iframe>
         </div>
       </div>
     </div>

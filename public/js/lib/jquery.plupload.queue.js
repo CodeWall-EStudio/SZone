@@ -183,7 +183,7 @@ used as it is.
 
 					var icon = $('#' + file.id).attr('class', actionClass).find('a').css('display', 'block');
 					if (file.hint) {
-						icon.attr('title', file.hint);	
+						$('#' + file.id).find('.plupload_file_action').html(file.hint).attr('title',file.hint);
 					}
 				}
 

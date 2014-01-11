@@ -122,21 +122,38 @@ class Fold_model extends CI_Model {
         $this->db->where('uid',$id);
         $this->db->where('gid',$gid);
         $this->db->where('pid',$fdid);
+        $this->db->or_where('id',$fdid);
 
         $query = $this->db->get($this->gtable);
 
         $fl = array();
+        $tf = array(
+            'id' => 0,
+            'pid' => 0            
+        );
         foreach($query->result() as $row){
-            $fl[$row->id] = array(
-                'id' => $row->id,
-                'name' => $row->name,
-                'mark' => $row->mark,
-                'pid' => (int) $row->pid,
-                'tid' => (int) $row->tid,
-                'time' => date('Y-m-d',$row->createtime)                
-            );
+            if($row->id == $fdid){
+                $tf = array(
+                    'id' => $row->id,
+                    'name' => $row->name,
+                    'mark' => $row->mark,
+                    'pid' => (int) $row->pid,
+                    'tid' => (int) $row->tid,
+                    'idpath' => $row->idpath,
+                    'time' => date('Y-m-d',$row->createtime)                
+                );
+            }else{
+                $fl[$row->id] = array(
+                    'id' => $row->id,
+                    'name' => $row->name,
+                    'mark' => $row->mark,
+                    'pid' => (int) $row->pid,
+                    'tid' => (int) $row->tid,
+                    'time' => date('Y-m-d',$row->createtime)                
+                );
+            }
         }
-        return $fl;
+        return array('this' => $tf,'list' => $fl);
     }
 
     function get_prep_bypid($id,$gid,$fdid = 0){
@@ -236,6 +253,18 @@ class Fold_model extends CI_Model {
     function get_prepfold_user($prid, $ud = 0, $fdid=0, $gr = 0,$tag = 0){
         
     }
+
+
+    function check_gfold_byid($fid,$gid,$uid){
+        $this->db->select('id');
+        $this->db->select('uid',$uid);
+        $this->db->select('gid',$gid);
+        $this->db->select('id',$fid);
+
+        $query = $this->db->get($this->gtable);
+
+        return $query->num_rows();
+    }    
 
     function get_groupfold_byid($id,$gid,$fdid=0){
         $this->db->select('id,name,gid,pid');

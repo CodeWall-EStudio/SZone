@@ -171,7 +171,7 @@
 
 		id = il.join(',');
 		$('#shareWin h4').text('移动文件');
-		iframeEl.attr('src','/home/movefile?fid='+id);		
+		iframeEl.attr('src','/home/movefile?fdid='+fid+'&fid='+id);		
 	};		
 
 	var copyFile = function(){
@@ -190,6 +190,7 @@
 			id : id,
 			info : mark,
 			t : type,
+			gid : gid,
 			csrf_test_name:$.cookie('csrf_cookie_name')
 		}
 
@@ -717,13 +718,4 @@ function showReview(id,fid,m){
 		$("#reviewIframe").attr('src','/review?fid='+fid+'&id='+id);
 	}
 	$('#reviewFile').modal('show');
-}
-function hideManage(){
-	$('#manageWin').modal('hide');
-}
-function hideShare(){
-	$('#shareWin').modal('hide');
-}
-function sharealert(msg){
-	alert(msg);
 }
