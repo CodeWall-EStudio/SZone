@@ -72,7 +72,7 @@
 	<div class="modal-body">
 		<div class="file-review">
 			<?if($finfo['type'] == 1):?>
-				<img id="reviewImg" src="/download/media?id=<?=$finfo['fid']?>&gid=<?=$gid?>" onload="change(this)" />
+				<img id="reviewImg" src="/download/media?id=<?=$finfo['fid']?>&gid=<?=$gid?>&mid=<?=$id?>" onload="change(this)" />
 			<?elseif($finfo['type']==2):?>
 				<div id="documentViewer" class="flexpaper_viewer" style="width:960px;height:700px">
 					
@@ -82,9 +82,9 @@
 				  <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"
 				      poster="http://video-js.zencoder.com/oceans-clip.png"
 				      data-setup="{}">
-				    <source src="/cgi/getfile?fid=<?=$finfo['fid']?>" type='video/mp4' />
-				    <source src="/cgi/getfile?fid=<?=$finfo['fid']?>" type='video/webm' />
-				    <source src="/cgi/getfile?fid=<?=$finfo['fid']?>" type='video/ogg' />
+				    <source src="/download/media?id=<?=$finfo['fid']?>&gid=<?=$gid?>&m=<?=$id?>" type='video/mp4' />
+				    <source src="/download/media?id=<?=$finfo['fid']?>&gid=<?=$gid?>&m=<?=$id?>" type='video/webm' />
+				    <source src="/download/media?id=<?=$finfo['fid']?>&gid=<?=$gid?>&m=<?=$id?>" type='video/ogg' />
 				    <track kind="captions" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
 				    <track kind="subtitles" src="demo.captions.vtt" srclang="en" label="English"></track><!-- Tracks need an ending tag thanks to IE9 -->
 				  </video>
@@ -164,7 +164,7 @@
             { config : {
 
                 //SWFFile : encodeURIComponent('/download?id=<?=$finfo['fid']?>&rv=1'),
-                SWFFile : encodeURIComponent('/download/review?id=<?=$finfo['fid']?>&rv=1&gid=<?=$gid?>'),
+                SWFFile : encodeURIComponent('/download/review?id=<?=$finfo['fid']?>&rv=1&gid=<?=$gid?>&mid=<?=$id?>'),
                 jsDirectory : '/js/lib/flex/',
                 Scale : 0.8,
                 ZoomTransition : 'easeOut',

@@ -51,14 +51,18 @@ class Mail_model extends CI_Model {
         $this->db->update($this->table, array('saved' => 1), array('id' => $id));     
     }
 
-    function check_auth($fid, $tuid, $fuid)
+    function check_auth($fid, $mid, $uid)
     {
         $result = array();
-        $query = $this->db->get_where($this->table, array('fid' => $fid, 'tuid' => $tuid, 'fuid' => $fuid));
+        $query = $this->db->get_where($this->table, array('fid' => $fid, 'id' => $mid));
         if ($query->num_rows() > 0)
         {
-            $result = $query->row_array();
+            $row = $query->row();
+            if($row->tuid == $uid || $row->fuid == $uid){
+                return true;
+            }
         }
-        return $result;
+        return false;
+        //return $result;
     }
 }
