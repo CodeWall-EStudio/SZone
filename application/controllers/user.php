@@ -29,6 +29,13 @@ class User extends SZone_Controller {
         echo $this->session->userdata('state');
         //$this->json($this->user);
     }
+
+    public function mix()
+    {
+        $this->config->load('filetypes', TRUE);
+        $filetype = $this->config->item('filetypes');
+        $this->json($filetype);
+    }
 }
 // END Controller class
 

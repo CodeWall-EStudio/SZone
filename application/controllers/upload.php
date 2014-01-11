@@ -21,6 +21,11 @@ class Upload extends SZone_Controller {
 
     public function index() {
 
+        // 获取文件类型信息
+        $this->config->load('filetypes', TRUE);
+        $filetypes = $this->config->item('filetypes');
+
+        // 收集文件信息
         $file = array(
             'md5' => $this->input->post('file_md5', TRUE),
             'tmp' => $this->input->post('file_path', TRUE),
@@ -30,8 +35,9 @@ class Upload extends SZone_Controller {
 
         $file['path'] = directory_time($this->config->item('path', 'upload'), $err);
 
+        // 尝试检查文件路径
         if (!$file['path']) {
-            $err = '服务器错误：无法创建文件';
+            $err = '无法创建文件，请联系管理员';
             $ret = array(
                 'jsonrpc' => '2.0',
                 'error' => array(
@@ -39,24 +45,29 @@ class Upload extends SZone_Controller {
                     'message' => $err
                 ),
             );
+            log_message('ERROR', '503: [Server] '.$err);
             $this->json($ret, 503, $err);
             return;
         } else {
             $file['path'] .= $file['md5'];
         }
 
+        // 判断用户是否登录
         if (!$this->skey) {
+            $err = '登录失效，请重新登录';
             $ret = array(
                 'jsonrpc' => '2.0',
                 'error' => array(
                     'code' => 2,
-                    'message' => '登录失效，请重新登录'
+                    'message' => $err
                 ),
             );
-            $this->json($ret, 403, '登录失效，请重新登录');
+            log_message('ERROR', '403: [User] '.$err);
+            $this->json($ret, 403, $err);
             return;
         }
 
+        // 判断用户空间容量
         $size = $this->user['real_size'];
         $used = $this->user['real_used'] + $file['size'];
 
@@ -64,9 +75,10 @@ class Upload extends SZone_Controller {
         $this->load->model('File_model');
         $file_info = $this->File_model->get_by_md5($file['md5']);
 
+        // 获取文件相关信息
         $file_name = $this->input->post('file_name', TRUE);
         $fdid = $this->input->get('fid');
-        $prep = $this->input->get('prep');
+        //$prep = $this->input->get('prep');
         $is_media = $this->input->post('media');
         $gid = $this->input->get('gid');
 
@@ -75,23 +87,34 @@ class Upload extends SZone_Controller {
 
         log_message('DEBUG', 'File upload info － mimes: '. $file['mimes'].' name: '.$file_name);
 
+        // 尝试上传文件
         $file_isnew = FALSE;
         if (empty($file_info)) {
 
-            if ($size < $used + $file['size']) {
+            // 判断用户是否有足够上传空间
+            if ($size < $used) {
+                $err = '空间已经用完!';
                 $ret = array(
                     'jsonrpc' => '2.0',
                         'error' => array(
                         'code' => 3,
-                        'message' => '空间已经用完!'
+                        'message' => $err
                     )
                 );
-                $this->json($ret, 413, '空间已经用完!');
+                log_message('ERROR', '413: [User] '.$err);
+                $this->json($ret, 413, $err);
 
                 unlink($file['tmp']);
                 return;
             }
-            $file['type'] = format_type($file['mimes']);
+
+            // 判断文件类型
+            $file['type'] = format_type($file['mimes'], $file_name, $filetypes, $ext);
+            if (!$ext) {
+                log_message('INFO', '[Alarm] new file found: file md5 - '.$file['md5'].' file name - '.$file_name.' file mimes - '.$file['mimes']);
+            }
+
+            // 文件引用计数
             $file['ref'] = 1;
 
             rename($file['tmp'], $file['path']);
@@ -101,17 +124,18 @@ class Upload extends SZone_Controller {
 
         } else {
             $file = $file_info;
-
+            $err = '上传失败,已经有重名文件';
             if($gid>0){
                 if($this->File_model->check_filename_by_gid($fdid,$gid,$file_name)){
                     $ret = array(
                         'jsonrpc' => '2.0',
                         'error' => array(
                             'code' => 4,
-                            'message' => '上传失败,已经有重名文件'
+                            'message' => $err
                         )
                     );
-                    $this->json($ret, 409, '上传失败,已经有重名文件!');
+                    log_message('ERROR', '409: [User] '.$err);
+                    $this->json($ret, 409, $err);
                     return;
                 }else{
                     $file['ref'] += 1;  
@@ -122,10 +146,11 @@ class Upload extends SZone_Controller {
                         'jsonrpc' => '2.0',
                         'error' => array(
                             'code' => 4,
-                            'message' => '上传失败,已经有重名文件'
+                            'message' => $err
                         )
                     );
-                    $this->json($ret, 409, '上传失败,已经有重名文件!');
+                    log_message('ERROR', '409: [User] '.$err);
+                    $this->json($ret, 409, $err);
                     return;
                 }else{
                     $file['ref'] += 1;  
@@ -165,7 +190,6 @@ class Upload extends SZone_Controller {
         }
 
         // 如果小组id不为空，则增加小组的文件记录
-        
         if ($gid > 0 ) {
             $this->File_model->insert_group_entry(array(
                 'fid' => $file['id'],
@@ -184,7 +208,7 @@ class Upload extends SZone_Controller {
         }
 
         // 进行预览处理
-        $this->convert($file['path'], $file['mimes']);
+        $this->convert($file['path'], $file['mimes'], $file_name, $filetypes);
 
         $ret = array(
             'fid' => $file['id'],
@@ -197,34 +221,19 @@ class Upload extends SZone_Controller {
         $this->json($ret, 200, '上传成功!');
     }
 
-    protected function convert($path, $mimes)
+    protected function convert($path, $mimes, $name, $types)
     {
-        $docs = array(
-            'application/msword',
-            'application/vnd.ms-word',
-            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-            'application/vnd.openxmlformats-officedocument.wordprocessingml.template',
-            'application/vnd.ms-excel',
-            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-            'application/vnd.openxmlformats-officedocument.spreadsheetml.template',
-            'application/vnd.ms-powerpoint',
-            'application/vnd.openxmlformats-officedocument.presentationml.presentation',
-            'application/vnd.openxmlformats-officedocument.presentationml.template',
-            'application/vnd.openxmlformats-officedocument.presentationml.slideshow',
-            'application/kswps'
-        );
-        $pdfs = array('application/pdf');
-
         //判断是否为文档，如果是则加入消息队列
         if (ENVIRONMENT == 'testing' || ENVIRONMENT == 'production') {
+            $ext = pathinfo($name, PATHINFO_EXTENSION);
             // 转换文档为swf
-            if (in_array($mimes, $docs))
+            if (in_array($mimes, $types['mimes']['document']) || in_array($ext, $types['suffix']['document']))
             {
                 exec('java -jar '.$this->config->item('jodconverter', 'upload').' '.$path.' '.$path.'.pdf');
                 exec('pdf2swf '.$path.'.pdf -s flashversion=9 -o '.$path.'.swf');
             }
             // 转换pdf为swf
-            if (in_array($mimes, $pdfs))
+            if (in_array($mimes, $types['mimes']['pdf']) || in_array($ext, $types['suffix']['pdf']))
             {
                 exec('pdf2swf '.$path.' -s flashversion=9 -o '.$path.'.swf');
             }

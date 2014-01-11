@@ -10,7 +10,7 @@
  * @author		Code Wall-E Studio
  * @link		http://codewalle.com
  */
-class Test extends CI_Controller {
+class Test extends SZone_Controller {
 
     function __construct()
     {
@@ -19,18 +19,9 @@ class Test extends CI_Controller {
 
     public function index()
     {
-        $err = '';
-        directory_acquire(
-            $this->config->item('upload-path'),
-            md5($this->config->item('upload-path')),
-            $this->config->item('dir-file-num'),
-            $err
-        );
-
-        $this->load->model('User_model');
-        $query = $this->User_model->get_where();
-        //var_dump($query->results());
-
+        $this->config->load('filetypes', TRUE);
+        $filetype = $this->config->item('filetypes');
+        $this->json($filetype);
     }
 
     public function redis()
