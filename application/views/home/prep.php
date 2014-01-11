@@ -68,42 +68,10 @@
 				<ul class="act-zone">
 					<li class="all-file file-type dropdown" id="changeFileType">
 						<a role="button" data-toggle="dropdown" href="#">
-							<?
-							if(isset($type)){
-								switch($type){
-									case 0:
-										echo '全部类型';
-										break;
-									case 1:
-										echo '图片';
-										break;
-									case 2:
-										echo '文档';
-										break;
-									case 3:
-										echo '音乐';
-										break;
-									case 4:
-										echo '视频';
-										break;
-									case 5:
-										echo '应用';
-										break;
-									case 6:
-										echo '压缩包';
-										break;
-								}
-							}
-							?>
+							<?=get_file_type($type)?>
 						<b class="caret"></b></a>
 						<ul class="dropdown-menu section-tit-menu1" role="menu" aria-labelledby="dLabel">
-							<li><a data-type="0" href="/home/prepare?prid=<?=$prid?>&type=0">全部</a></li>
-							<li><a data-type="3" href="/home/prepare?prid=<?=$prid?>&type=4">视频</a></li>
-							<li><a data-type="1" href="/home/prepare?prid=<?=$prid?>&type=1">图片</a></li>
-							<li><a data-type="4" href="/home/prepare?prid=<?=$prid?>&type=3">音乐</a></li>
-							<li><a data-type="5" href="/home/prepare?prid=<?=$prid?>&type=2">文档</a></li>
-							<li><a data-type="6" href="/home/prepare?prid=<?=$prid?>&type=5">应用</a></li>
-							<li><a data-type="7" href="/home/prepare?prid=<?=$prid?>&type=6">压缩包</a></li>
+							<?cr_file_type_li("/home/prepare?prid=$prid");?>
 						</ul>						
 					</li>
 					<!--<li class="list-type" id="changeType"><i></i><span>图标</span></li>-->

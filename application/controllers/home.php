@@ -55,7 +55,9 @@ class Home extends SZone_Controller {
                                 $odname = 'createtime';
                                 break;                        
                 }
-                $type = (int) $this->input->get('type');
+
+                $type = $this->input->get('type');
+
                 $fid = (int) $this->input->get('fid');
                 $fname = '';
                 $pid = 0;
@@ -406,9 +408,9 @@ class Home extends SZone_Controller {
                 }        
 
                 if($m){
-                        $sql = 'SELECT a.id,a.fuid as uid,a.content,a.saved,a.createtime,a.fid,b.name AS uname,c.name AS fname,d.path,d.size,d.type FROM message a LEFT JOIN `user` b ON a.fuid = b.`id` LEFT JOIN `userfile` c ON c.fid = a.fid                LEFT JOIN `files` d ON d.id = a.fid        WHERE a.tuid = '.$this->user['id'];
+                        $sql = 'SELECT a.id,a.fuid as uid,a.content,a.saved,a.createtime,a.fid,b.nick AS uname,c.name AS fname,d.path,d.size,d.type FROM message a LEFT JOIN `user` b ON a.fuid = b.`id` LEFT JOIN `userfile` c ON c.fid = a.fid                LEFT JOIN `files` d ON d.id = a.fid        WHERE a.tuid = '.$this->user['id'];
                 }else{
-                        $sql = 'SELECT a.id,a.tuid as uid,a.content,a.saved,a.createtime,a.fid,b.name AS uname,c.name AS fname,d.path,d.size,d.type FROM message a LEFT JOIN `user` b ON a.tuid = b.`id` LEFT JOIN `userfile` c ON c.fid = a.fid                LEFT JOIN `files` d ON d.id = a.fid        WHERE a.fuid = '.$this->user['id'];
+                        $sql = 'SELECT a.id,a.tuid as uid,a.content,a.saved,a.createtime,a.fid,b.nick AS uname,c.name AS fname,d.path,d.size,d.type FROM message a LEFT JOIN `user` b ON a.tuid = b.`id` LEFT JOIN `userfile` c ON c.fid = a.fid                LEFT JOIN `files` d ON d.id = a.fid        WHERE a.fuid = '.$this->user['id'];
                 }
 
                 if($key && $key != '搜索文件'){
@@ -454,7 +456,7 @@ class Home extends SZone_Controller {
                 }
 
                 if(!$m){
-                        $sql = 'SELECT DISTINCT a.tuid as id,b.name FROM message a,user b WHERE b.id = a.tuid AND a.fuid = '.$this->user['id'];
+                        $sql = 'SELECT DISTINCT a.tuid as id,b.nick as name FROM message a,user b WHERE b.id = a.tuid AND a.fuid = '.$this->user['id'];
                         $query = $this->db->query($sql);
                         if ($query->num_rows() > 0){
                                 $tlist = array();
@@ -1062,9 +1064,7 @@ class Home extends SZone_Controller {
 
                 $sql = 'SELECT a.id,a.fid,a.remark,a.time,b.name,c.size,c.path,c.type FROM usercollection a LEFT JOIN userfile b ON a.fid = b.fid LEFT JOIN files c ON a.fid = c.id WHERE a.uid ='.$this->user['id'];
 
-                if($od){
-                        $sql .= ' order by '.$odname.' '.$desc;
-                }
+
 
                 if($type){
                         $sql .= ' and c.type='.$type;
@@ -1072,6 +1072,9 @@ class Home extends SZone_Controller {
                 if($key){
                         $sql .= ' and b.name like "%'.$key.'%"';
                 }
+                if($od){
+                        $sql .= ' order by '.$odname.' '.$desc;
+                }                
 
                 $query = $this->db->query($sql);
 

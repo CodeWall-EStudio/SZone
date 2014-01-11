@@ -104,31 +104,7 @@
                   <p id="mark<?=$row['id']?>" class="mark-edit"><input id="input<?=$row['id']?>" type="text"  /> <a data-id="<?=$row['id']?>" class="save">保存</a> <a data-id="<?=$row['id']?>" class="esc">取消</a></p>
               </td>
               <td>
-                <?
-                  switch($row['type']){
-                    case 0:
-                      echo '全部类型';
-                      break;
-                    case 1:
-                      echo '图片';
-                      break;
-                    case 2:
-                      echo '文档';
-                      break;
-                    case 3:
-                      echo '音乐';
-                      break;
-                    case 4:
-                      echo '视频';
-                      break;
-                    case 5:
-                      echo '应用';
-                      break;
-                    case 6:
-                      echo '压缩包';
-                      break;
-                  }
-                ?>                
+                <?=get_file_type($row['type'])?>               
               </td>
               <td><?=$row['size']?></td>
             </tr>

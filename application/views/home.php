@@ -44,7 +44,7 @@
 					</li>
 					<li class="downfile"><a cmd="downfile" id="donwFiles">下载</a></li>
 					<li class="renamefile" id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
-					<li class="copyfile"><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">移动到备课</a></li>
+					<li class="copyfile"><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制到备课</a></li>
 					<li class="copyfile"><a cmd="moveFile" data-toggle="modal" data-target="#shareWin">移动文件</a></li>
 					<li class="delfile"><a cmd="delFile" data-toggle="modal" data-target="#delFile">删除</a></li>
 					<li class="cancel"><a cmd="cancel">取消</a></li>
@@ -78,40 +78,10 @@
 				<ul class="act-zone">
 					<li class="all-file file-type dropdown" id="changeFileType">
 						<a id="drop-type" "button" data-toggle="dropdown" href="#">
-							<?
-								switch($type){
-									case 0:
-										echo '全部类型';
-										break;
-									case 1:
-										echo '图片';
-										break;
-									case 2:
-										echo '文档';
-										break;
-									case 3:
-										echo '音乐';
-										break;
-									case 4:
-										echo '视频';
-										break;
-									case 5:
-										echo '应用';
-										break;
-									case 6:
-										echo '压缩包';
-										break;
-								}
-							?>
+							<?=get_file_type($type)?>
 						<b class="caret"></b></a>
 						<ul class="dropdown-menu section-tit-menu1" aria-labelledby="drop-type">
-							<li><a data-type="0" href="/?fid=<?=$fid?>&type=0">全部</a></li>
-							<li><a data-type="3" href="/?fid=<?=$fid?>&type=4">视频</a></li>
-							<li><a data-type="1" href="/?fid=<?=$fid?>&type=1">图片</a></li>
-							<li><a data-type="4" href="/?fid=<?=$fid?>&type=3">音乐</a></li>
-							<li><a data-type="5" href="/?fid=<?=$fid?>&type=2">文档</a></li>
-							<li><a data-type="6" href="/?fid=<?=$fid?>&type=5">应用</a></li>
-							<li><a data-type="7" href="/?fid=<?=$fid?>&type=6">压缩包</a></li>
+							<?cr_file_type_li("/?fid=$fid");?>
 						</ul>						
 					</li>
 					<!--<li class="list-type" id="changeType"><i></i><span>图标</span></li>-->
@@ -230,31 +200,7 @@
 									</dl>
 								</td>
 								<td>
-								<?
-									switch($item['type']){
-										case 0:
-											echo '全部类型';
-											break;
-										case 1:
-											echo '图片';
-											break;
-										case 2:
-											echo '文档';
-											break;
-										case 3:
-											echo '音乐';
-											break;
-										case 4:
-											echo '视频';
-											break;
-										case 5:
-											echo '应用';
-											break;
-										case 6:
-											echo '压缩包';
-											break;
-									}
-								?>
+									<?=get_file_type($item['type'])?>
 								</td>
 								<td><?=$item['size']?></td>	
 								<td>

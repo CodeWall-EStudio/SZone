@@ -30,7 +30,7 @@ if(! function_exists('get_page_status')){
 
 if(! function_exists('get_file_type')){
 	function get_file_type($type){
-		$ret = '未知类型';
+		$ret = '其他';
 		switch($type){
 			case 0:
 				$ret = '全部类型';
@@ -52,9 +52,24 @@ if(! function_exists('get_file_type')){
 				break;
 			case 6:
 				$ret = '压缩包';
+			case 7:
+				$ret = '其它';
 				break;
 		}
 		return $ret;
+	}
+}
+
+if(! function_exists('cr_file_type_li')){
+	function cr_file_type_li($url){
+		echo '<li><a data-type="0" href="'.$url.'&type=0">全部</a></li>';
+		echo '<li><a data-type="1" href="'.$url.'&type=1">图片</a></li>';
+		echo '<li><a data-type="2" href="'.$url.'&type=2">文档</a></li>';
+		echo '<li><a data-type="3" href="'.$url.'&type=3">音乐</a></li>';
+		echo '<li><a data-type="4" href="'.$url.'&type=4">视频</a></li>';
+		echo '<li><a data-type="5" href="'.$url.'&type=5">应用</a></li>';
+		echo '<li><a data-type="6" href="'.$url.'&type=6">压缩包</a></li>';
+		echo '<li><a data-type="7" href="'.$url.'&type=7">其它</a></li>';		
 	}
 }
 

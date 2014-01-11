@@ -250,7 +250,7 @@ if ( ! function_exists('format_type'))
             case 'application/x-msdownload':
                 return 5;
             default:
-                return 0;
+                return 7;
         }
     }
 
