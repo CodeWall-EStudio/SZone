@@ -265,7 +265,6 @@
 
 				<form method="post" action="/cgi/upload">	
 					<div id="uploader">
-						<p>Your browser doesn't have Flash, Silverlight or HTML5 support.</p>
 					</div>
 				</form>	
 				</div>
