@@ -148,6 +148,7 @@
 }
 
 .dis-list-type dd{
+	position:relative;
 	color:#c5c5c5;
 }
 .dis-list-type .td2 dd span{
