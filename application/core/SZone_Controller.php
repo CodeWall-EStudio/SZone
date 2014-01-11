@@ -45,14 +45,19 @@ class SZone_Controller extends CI_Controller {
         // CAS Check
         $this->load->library('phpCAS');
         phpCAS::setDebug();
-        phpCAS::client(CAS_VERSION_2_0, "dand.71xiaoxue.com", 80, "sso.web");
+        phpCAS::client(
+            CAS_VERSION_2_0,
+            $this->config->item('hostname', 'sso'),
+            $this->config->item('port', 'sso'),
+            $this->config->item('uri', 'sso')
+        );
         phpCAS::setNoCasServerValidation();
         if (phpCAS::isAuthenticated()) {
             // 处理登录，获取encodeKey和loginName
             $user_str = phpCAS::getUser();
             $user_data = json_decode($user_str);
             if (is_null($user_data)) {
-                log_message('ERROR', 'CAS 登录返回字符串解析错误：'.$user_str);
+                log_message('ERROR', '503: [SSO] 登录返回字符串解析错误：'.$user_str);
                 $this->show_error('登录服务器不可用，请联系系统管理员', 503);
             }
             $this->user['name'] = $user_data->loginName;
@@ -88,7 +93,7 @@ class SZone_Controller extends CI_Controller {
     {
         // 使用encodeKey获取用户信息
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'http://mapp.71xiaoxue.com/components/getUserInfo.htm');
+        curl_setopt($ch, CURLOPT_URL, $this->config->item('verify', 'sso'));
         curl_setopt($ch, CURLOPT_HEADER, 1);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
@@ -98,12 +103,12 @@ class SZone_Controller extends CI_Controller {
 
         $user_data = json_decode(strstr($user_str, '{'));
         if (is_null($user_data)) {
-            log_message('ERROR', '获取用户信息返回字符串解析错误：'.$user_str.' KEY:'.$this->skey);
+            log_message('ERROR', '503: [SSO] 获取用户信息返回字符串解析错误：'.$user_str.' KEY:'.$this->skey);
             $this->show_error('用户数据服务器不可用，请联系系统管理员', 503);
         }
 
         if ($user_data->resultMsg != 'ok' || !$user_data->success) {
-            log_message('ERROR', '用户信息无法正确验证：'.$user_str.' KEY:'.$this->skey);
+            log_message('ERROR', '403: [SSO] 用户信息无法正确验证：'.$user_str.' KEY:'.$this->skey);
             $this->show_error('无法验证用户信息，请联系系统管理员', 403);
         }
 

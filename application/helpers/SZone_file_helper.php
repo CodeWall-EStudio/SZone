@@ -161,97 +161,73 @@ if ( ! function_exists('get_ext_type')){
 
 if ( ! function_exists('format_type'))
 {
-    function format_type($mimes)
+    function format_type($mimes, $name, $types, &$ext)
     {
-        switch($mimes)
-        {
-            // archives
-            case 'application/x-gzip':
-            case 'application/x-bzip2':
-            case 'application/zip':
-            case 'application/x-rar':
-            case 'application/x-7z-compressed':
-                return 6;
-            // documents
-            case 'application/postscript':
-            case 'application/vnd.msword':
-            case 'application/vnd.ms-word':
-            case 'application/vnd.ms-excel':
-            case 'application/vnd.ms-powerpoint':
-            case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
-            case 'application/vnd.openxmlformats-officedocument.wordprocessingml.template':
-            case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
-            case 'application/vnd.openxmlformats-officedocument.spreadsheetml.template':
-            case 'application/vnd.openxmlformats-officedocument.presentationml.presentation':
-            case 'application/vnd.openxmlformats-officedocument.presentationml.template':
-            case 'application/vnd.openxmlformats-officedocument.presentationml.slideshow':
-            case 'application/msword':
-            case 'application/kswps':
-            case 'application/pdf':
-            case 'application/xml':
-            case 'application/vnd.oasis.opendocument.text':
-            case 'application/x-shockwave-flash':
-            case 'application/vnd.openxmlformats-officedocument.wordprocessing':
-            case 'application/doc':
-            case 'application/macwriteii':
-            case 'application/microsoft_word':
-            case 'application/mswrite':
-            case 'application/rtf':
-            case 'application/wri':
-            case 'application/x-dos_ms_word':
-            case 'application/x-mswrite':
-            case 'application/x-rtf':
-            case 'application/x-soffice':
-            case 'application/x-wri':
-                return 2;
-            // texts
-            case 'text/plain':
-            case 'text/x-php':
-            case 'text/html':
-            case 'text/javascript':
-            case 'text/css':
-            case 'text/rtf':
-            case 'text/rtfd':
-            case 'text/x-python':
-            case 'text/x-java-source':
-            case 'text/x-ruby':
-            case 'text/x-shellscript':
-            case 'text/x-perl':
-            case 'text/x-sql':
-                return 2;
-                // images
-            case 'image/x-ms-bmp':
-            case 'image/jpeg':
-            case 'image/gif':
-            case 'image/png':
-            case 'image/tiff':
-            case 'image/x-targa':
-            case 'image/vnd.adobe.photoshop':
+        $ext = false;
+        if (in_array($mimes, $types['mimes']['image'])) {
+            return 1;
+        } else if (in_array($mimes, $types['mimes']['document'])) {
+            return 2;
+        } else if (in_array($mimes, $types['mimes']['pdf'])) {
+            return 2;
+        } else if (in_array($mimes, $types['mimes']['audio'])) {
+            return 3;
+        } else if (in_array($mimes, $types['mimes']['video'])) {
+            return 4;
+        } else if (in_array($mimes, $types['mimes']['application'])) {
+            return 5;
+        } else if (in_array($mimes, $types['mimes']['archive'])) {
+            return 6;
+        } else {
+            $ext = pathinfo($name, PATHINFO_EXTENSION);
+            if (in_array($ext, $types['suffix']['image'])) {
                 return 1;
-                //audio
-            case 'audio/mpeg':
-            case 'audio/midi':
-            case 'audio/ogg':
-            case 'audio/mp4':
-            case 'audio/wav':
-            case 'audio/x-ms-wma':
+            } else if (in_array($ext, $types['suffix']['document'])) {
+                return 2;
+            } else if (in_array($ext, $types['suffix']['pdf'])) {
+                return 2;
+            } else if (in_array($ext, $types['suffix']['audio'])) {
                 return 3;
-                // video
-            case 'video/x-msvideo':
-            case 'video/x-dv':
-            case 'video/mp4':
-            case 'video/mpeg':
-            case 'video/quicktime':
-            case 'video/x-ms-wmv':
-            case 'video/x-flv':
-            case 'video/x-matroska':
+            } else if (in_array($ext, $types['suffix']['video'])) {
                 return 4;
-            case 'application/octet-stream':
-            case 'application/x-msdownload':
+            } else if (in_array($ext, $types['suffix']['application'])) {
                 return 5;
-            default:
-                return 0;
+            } else if (in_array($ext, $types['suffix']['archive'])) {
+                return 6;
+            } else {
+                $ext = false;
+                return 5;
+            }
         }
     }
+}
 
+if(! function_exists('get_file_type')){
+    function get_file_type($type){
+        $ret = '未知类型';
+        switch($type){
+            case 0:
+                $ret = '全部类型';
+                break;
+            case 1:
+                $ret = '图片';
+                break;
+            case 2:
+                $ret = '文档';
+                break;
+            case 3:
+                $ret = '音乐';
+                break;
+            case 4:
+                $ret = '视频';
+                break;
+            case 5:
+                $ret = '应用';
+                break;
+            case 6:
+                $ret = '压缩包';
+                break;
+        }
+        return $ret;
+    }
 }
