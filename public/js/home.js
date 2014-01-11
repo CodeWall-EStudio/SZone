@@ -135,15 +135,15 @@
 			case 'toother':
 				$('#shareWin h4').text('共享 发送给别人');
 				//console.log('/share/other?id='+id);
-				iframeEl.attr('src','/share/other?id='+id);
+				iframeEl.attr('src','/share/other?gid='+gid+'&id='+id);
 				break;
 			case 'togroup':
 				$('#shareWin h4').text('共享 到小组空间');
-				iframeEl.attr('src','/share/group?id='+id);
+				iframeEl.attr('src','/share/group?gid='+gid+'&id='+id);
 				break;
 			case 'todep':
 				$('#shareWin h4').text('共享 到部门空间');
-				iframeEl.attr('src','/share/dep?id='+id);
+				iframeEl.attr('src','/share/dep?gid='+gid+'&id='+id);
 				break;
 		}
 	}

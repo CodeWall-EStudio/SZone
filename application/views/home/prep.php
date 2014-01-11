@@ -42,7 +42,7 @@
 						</ul>						
 					</li>
 					<li class="downfile"><a cmd="downfile" id="donwFiles">下载</a></li>
-					<li><a cmd="coll" id="collFiles">收藏</a></li>
+					<!-- <li><a cmd="coll" id="collFiles">收藏</a></li> -->
 					<li id="renameAct"><a cmd="rename" data-toggle="modal" data-target="#renameFile">重命名</a></li>
 					<!-- <li><a cmd="copyFile" data-toggle="modal" data-target="#shareWin">复制</a></li> -->
 					<li><a cmd="delFile" data-toggle="modal" data-target="#delFile">删除</a></li>
