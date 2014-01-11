@@ -203,7 +203,7 @@ class Uf_model extends CI_Model {
                 'id' => $row->id,
                 'fid' => $row->fid,
                 'name' => $row->fname,
-                'time' => substr($row->createtime,0,10),
+                'time' => date('Y-m-d',$row->createtime),
                 'content' => $row->content,
                 'size' => format_size($row->size),
                 'type' => $row->type,
