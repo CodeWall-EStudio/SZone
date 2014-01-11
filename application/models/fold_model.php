@@ -254,6 +254,18 @@ class Fold_model extends CI_Model {
         
     }
 
+
+    function check_gfold_byid($fid,$gid,$uid){
+        $this->db->select('id');
+        $this->db->select('uid',$uid);
+        $this->db->select('gid',$gid);
+        $this->db->select('id',$fid);
+
+        $query = $this->db->get($this->gtable);
+
+        return $query->num_rows();
+    }    
+
     function get_groupfold_byid($id,$gid,$fdid=0){
         $this->db->select('id,name,gid,pid');
         $this->db->where('uid',$id);

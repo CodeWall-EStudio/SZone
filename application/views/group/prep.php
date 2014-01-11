@@ -100,8 +100,6 @@
                   <?endif?>  
                     <?=$row['name']?>
                   </a>  
-                  <p id="btn<?=$row['id']?>" class="r-mark"><a href="/download?id=<?=$row['fid']?>">下载</a>  <a class="mark" data-id="<?=$row['id']?>">评论</a> <span><?=htmlspecialchars($row['mark'])?></span></p>  
-                  <p id="mark<?=$row['id']?>" class="mark-edit"><input id="input<?=$row['id']?>" type="text"  /> <a data-id="<?=$row['id']?>" class="save">保存</a> <a data-id="<?=$row['id']?>" class="esc">取消</a></p>
               </td>
               <td>
                 <?=get_file_type($row['type'])?>               
