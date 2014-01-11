@@ -75,7 +75,7 @@
 			<?if($finfo['type'] == 1):?>
 				<img id="reviewImg" src="/download/media?id=<?=$finfo['fid']?>&gid=<?=$gid?><?if($m):?>&mid=<?=$id?><?endif?>" onload="change(this)" />
 			<?elseif($finfo['type']==2):?>
-				<div id="documentViewer" class="flexpaper_viewer" style="">
+				<div id="documentViewer" class="flexpaper_viewer">
 					
 				</div>
 			<?elseif($finfo['type']==3):?>
@@ -110,17 +110,7 @@
 				<span class="zoom-in"></span>
 			</div>
 		</div>
-		<?endif?>
-		<?if($prev):?>
-		  <a class="left carousel-control" href="/review?fid=<?=$prevfid?>&gid=<?=$gid?>&id=<?=$prev?>" data-slide="prev">
-		    <span class="glyphicon glyphicon-chevron-left"></span>
-		  </a>
-		<?endif?>
-		<?if($next):?>
-		  <a class="right carousel-control" href="/review?fid=<?=$nextfid?>&t=2&gid=<?=$gid?>&id=<?=$next?>" data-slide="next">
-		    <span class="glyphicon glyphicon-chevron-right"></span>
-		  </a>	
-		<?endif?>				
+		<?endif?>			
 	</div>	
 <?if($finfo['type']==1):?>
 	<script type="text/javascript" src="/js/lib/jq.js" charset="utf-8"></script>	

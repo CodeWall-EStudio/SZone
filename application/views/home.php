@@ -178,7 +178,7 @@
 									<?endif?>
 									</a>
 									<dl>
-										<dt><a class="file-name" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>"><?=htmlspecialchars($item['name'])?></a>
+										<dt><a class="file-name" data-fid="<?=$item['fid']?>" data-id="<?=$item['id']?>" title="<?=htmlspecialchars($item['name'])?>"><?=htmlspecialchars(sub_string_length($item['name'],20))?></a>
 											<span cmd="edit" data-id="<?=$item['id']?>"><?=htmlspecialchars($item['content'])?></span>
 											<span class="hide">
 												<input class="name-edit" type="text" value="<?=$item['content']?>" />
