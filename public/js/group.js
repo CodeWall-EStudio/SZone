@@ -651,14 +651,4 @@
 	init();	
 })()
 
-function hideShare(){
-	$('#shareWin').modal('hide');
-}
-function hideManage(){
-	$('#manageWin').modal('hide');
-	window.location.reload();
-}
 
-function sharealert(msg){
-	alert(msg);
-}

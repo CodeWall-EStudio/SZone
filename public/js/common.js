@@ -210,3 +210,15 @@ windowdom.bind('resize',function(){
 		$('#header').css("width",'100%');
 	}
 });
+
+function hideShare(){
+	$('#shareWin').modal('hide');
+}
+function hideManage(){
+	$('#manageWin').modal('hide');
+	window.location.reload();
+}
+
+function sharealert(msg){
+	alert(msg);
+}

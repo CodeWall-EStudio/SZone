@@ -718,12 +718,3 @@ function showReview(id,fid,m){
 	}
 	$('#reviewFile').modal('show');
 }
-function hideManage(){
-	$('#manageWin').modal('hide');
-}
-function hideShare(){
-	$('#shareWin').modal('hide');
-}
-function sharealert(msg){
-	alert(msg);
-}
