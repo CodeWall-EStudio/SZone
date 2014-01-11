@@ -474,6 +474,7 @@
 		// var folds = '<?=json_encode($fold);?>',
 		// 	files = '<?=json_encode($file);?>';
 		var fid = '<?=$fid?>';
+		var gid = 0;
 		var folds = {},
 			files = {};
 		<?foreach($fold as $row):?>

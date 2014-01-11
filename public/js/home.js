@@ -190,6 +190,7 @@
 			id : id,
 			info : mark,
 			t : type,
+			gid : gid,
 			csrf_test_name:$.cookie('csrf_cookie_name')
 		}
 
