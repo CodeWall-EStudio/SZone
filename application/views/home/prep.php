@@ -147,7 +147,7 @@
 					<?if(count($flist)>0):?>				
 						<?foreach($flist as $item):?>
 							<tr class="file" data-id="<?=$item['id']?>">
-								<td><input type="checkbox" name="file" class="fclick liclick" value="<?=$item['id']?>" data-type="file" /></td>
+								<td><input type="checkbox" name="file" class="fclick liclick" data-fid="<?=$item['fid']?>" value="<?=$item['id']?>" data-type="file" /></td>
 								<td>
 									<a class="file-name">
 									<?if($item['type'] < 7):?>

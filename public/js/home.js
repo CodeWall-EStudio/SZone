@@ -232,10 +232,11 @@
 			//window.open('/cgi/downfile?fid='+files[$(this).val()].fid);
 		});	
 		if(ids.length>1){
+			$('#downloadForm').append('<input name="gid" type="checkbox" checked value="'+gid+'" />');
 			$('#downloadForm').submit();
 		}else{
 			if(ids[0]){
-				window.open('/download?id='+ids[0]);	
+				window.open('/download?gid='+gid+'&id='+ids[0]);	
 			}
 		}
     }
@@ -457,6 +458,7 @@
 			}else{
 				url = '/cgi/del_fold?type=0'
 			}
+			url += '&gid='+gid;
 
 			$.post(url,{id: id,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 				$("#delFile .close").click();

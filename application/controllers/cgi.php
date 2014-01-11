@@ -2086,7 +2086,7 @@ class Cgi extends SZone_Controller {
 
 		$type = $this->input->get('type');
 		$id = $this->input->post('id');
-		$gid = (int) $this->input->post('gid');
+		$gid = (int) $this->input->get_post('gid');
 
 		$idlist = explode(',',$id);
 		$kl = array();
@@ -2115,20 +2115,22 @@ class Cgi extends SZone_Controller {
 		foreach($query->result() as $row){
 			array_push($kl1,'fid='.(int) $row->fid);
 		}
-		$sql = 'delete from usercollection where uid ='.$this->user['id'].' and ('.implode(' or ',$kl1).')';
-		$query = $this->db->query($sql);
+		if(count($kl1)>0){
+			$sql = 'delete from usercollection where uid ='.$this->user['id'].' and ('.implode(' or ',$kl1).')';
+			$query = $this->db->query($sql);
+		}
 
 
 		if($right){
 			$ret = array(
-				'msg' => 'ok'
+				'msg' => '删除成功'
 			);
-			$this->json($ret,0,'ok');
+			$this->json($ret,0,'删除成功');
 		}else{
 			$ret = array(
-				'msg' => 'error'
+				'msg' => '操作失败'
 			);
-			$this->json($ret,100,'error');
+			$this->json($ret,100,'操作失败');
 		}
 	}
 
