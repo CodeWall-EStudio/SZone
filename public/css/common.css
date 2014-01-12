@@ -118,7 +118,7 @@ a{
 	background-color:#fff;
 	border:1px solid #c3c5cb;
 	border-top:none;
-	z-index:10;
+	z-index:101;
 }
 .header .menu li{
 	position:relative;

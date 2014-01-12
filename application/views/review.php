@@ -86,7 +86,7 @@
 				<img id="reviewImg" src="/download/media?id=<?=$finfo['fid']?>&gid=<?=$gid?><?if($m):?>&mid=<?=$id?><?endif?>" onload="change(this)" align="absmiddle" />
 			<?elseif($finfo['type']==2):?>
         <?if(isset($finfo['text'])):?>
-          <?=$finfo['text']?>
+          <div style="text-align:left:"><?=$finfo['text']?></div>
         <?else:?>
 				<div id="documentViewer" class="flexpaper_viewer">
 					
