@@ -106,14 +106,29 @@ class Review extends SZone_Controller {
 				while(! feof($file))//当文件不结束
 				{
 					$txt .= fgets($file);//读一行到$line变量
-					$txt .= "<br />";
+					$txt .= "\r\n";
 					//echo $line;
 				} 
 				fclose($file);
 					
+
+				//$txt = mb_convert_encoding($txt, 'UTF-8','UCS-2,GBK');				
 				if(mb_check_encoding($txt,'GBK')){
 					$txt =  iconv('GBK','utf-8',$txt);
 				}
+				if(mb_check_encoding($txt,'UCS-2')){
+					$txt =  iconv('UCS-2','utf-8',$txt);
+				}
+				if(mb_check_encoding($txt,'UCS-2LE')){
+					$txt =  iconv('UCS-2LE','utf-8',$txt);
+				}
+				if(mb_check_encoding($txt,'UCS-2BE')){
+					$txt =  iconv('UCS-2BE','utf-8',$txt);
+				}
+				$order = array("\r\n", "\n", "\r");
+				$txt = htmlspecialchars($txt);
+				$txt = str_replace($order,'<br>',$txt);
+
 				$finfo['text'] = $txt;
 				$finfo['type'] = 2;				
 				//$finfo->text = file_get_contents($finfo->path);

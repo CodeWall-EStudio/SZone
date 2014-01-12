@@ -98,9 +98,9 @@
     	var ids = [];
     	$('#downloadForm').html('');
 		$('#fileList .fclick:checked').each(function(){
-			var fid = $(this).attr('data-fid');
-			ids.push(fid);
-			$('#downloadForm').append('<input name="ids[]" type="checkbox" checked value="'+fid+'" />');
+			var flid = $(this).attr('data-fid');
+			ids.push(flid);
+			$('#downloadForm').append('<input name="ids[]" type="checkbox" checked value="'+flid+'" />');
 			//window.open('/cgi/downfile?fid='+files[$(this).val()].fid);
 		});	
 		if(ids.length>1){
@@ -109,7 +109,7 @@
 			$('#downloadForm').submit();
 		}else{
 			if(ids[0]){
-				window.open('/download?id='+ids[0]+'&gid='+ginfo.id);	
+				window.open('/download?fdid='+fid+'&id='+ids[0]+'&gid='+ginfo.id);	
 			}
 		}    	
 		// $('#fileList .fclick:checked').each(function(){
