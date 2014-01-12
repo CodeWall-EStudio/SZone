@@ -10,7 +10,6 @@
 
 </head>
 <body class="share-zone">
-	<i class="glyphicon glyphicon-chevron-down"></i>
 	<? $idlist = array();?>
 	<div>
 		<div class="share-tit">
