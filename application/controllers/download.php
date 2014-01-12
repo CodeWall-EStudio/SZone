@@ -46,7 +46,7 @@ class Download extends SZone_Controller {
                 $auth = $this->File_model->get_by_uid($id, $muid);
                 if (empty($auth))
                 {
-                    log_message('ERROR', '发件人已经删除该文件'.$muid. ' mid:'.$mid.' fid:'.$fid);
+                    log_message('ERROR', '发件人已经删除该文件'.$muid. ' mid:'.$mid.' id:'.$id);
                     show_error('发件人已经删除该文件!');
                 }
             }
