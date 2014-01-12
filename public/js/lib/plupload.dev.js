@@ -1277,7 +1277,7 @@ plupload.Uploader = function(settings) {
 
 						up.trigger('Error', {
 							code : plupload.HTTP_ERROR,
-							message : plupload.translate('HTTP Error.'),
+							message : plupload.translate('网络错误,状态码:'+xhr.status),
 							file : file,
 							response : xhr.responseText,
 							status : xhr.status,

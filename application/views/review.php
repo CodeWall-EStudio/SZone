@@ -9,6 +9,7 @@
   <style>
   	.file-review{
   		text-align:center;
+      height:640px;
   	}
   	.playerZone{
   		margin:10px auto;
@@ -63,9 +64,18 @@
   <script>
     
 	function change(obj){
-		if(obj.width>640){
-			obj.width= 640;
-		}
+    if(obj.width >= obj.height){
+      if(obj.width>640){
+        obj.width= 640;
+      }     
+      obj.style.marginTop = (640-obj.width)/2;
+    }else{
+      if(obj.height>640){
+        obj.height= 640;
+      }   
+      obj.style.marginTop = (640-obj.height)/2;   
+    }
+
 	}    
   </script>  
 </head>
@@ -73,7 +83,7 @@
 	<div class="modal-body">
 		<div class="file-review">
 			<?if($finfo['type'] == 1):?>
-				<img id="reviewImg" src="/download/media?id=<?=$finfo['fid']?>&gid=<?=$gid?><?if($m):?>&mid=<?=$id?><?endif?>" onload="change(this)" />
+				<img id="reviewImg" src="/download/media?id=<?=$finfo['fid']?>&gid=<?=$gid?><?if($m):?>&mid=<?=$id?><?endif?>" onload="change(this)" align="absmiddle" />
 			<?elseif($finfo['type']==2):?>
 				<div id="documentViewer" class="flexpaper_viewer">
 					

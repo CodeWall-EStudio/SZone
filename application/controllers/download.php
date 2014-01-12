@@ -261,6 +261,7 @@ class Download extends SZone_Controller {
             }
         }
         $zip->close();//关闭
+
         if(!file_exists($path)){
             show_error('无法找到文件');           //即使创建，仍有可能失败
         }
