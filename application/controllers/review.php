@@ -115,14 +115,11 @@ class Review extends SZone_Controller {
 				//$txt = mb_convert_encoding($txt, 'UTF-8','UCS-2,GBK');				
 				if(mb_check_encoding($txt,'GBK')){
 					$txt =  iconv('GBK','utf-8',$txt);
-				}
-				if(mb_check_encoding($txt,'UCS-2')){
+				}elseif(mb_check_encoding($txt,'UCS-2')){
 					$txt =  iconv('UCS-2','utf-8',$txt);
-				}
-				if(mb_check_encoding($txt,'UCS-2LE')){
+				}elseif(mb_check_encoding($txt,'UCS-2LE')){
 					$txt =  iconv('UCS-2LE','utf-8',$txt);
-				}
-				if(mb_check_encoding($txt,'UCS-2BE')){
+				}elseif(mb_check_encoding($txt,'UCS-2BE')){
 					$txt =  iconv('UCS-2BE','utf-8',$txt);
 				}
 				$order = array("\r\n", "\n", "\r");
