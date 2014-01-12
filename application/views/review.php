@@ -68,12 +68,12 @@
       if(obj.width>640){
         obj.width= 640;
       }     
-      obj.style.marginTop = (640-obj.width)/2;
+      obj.style.marginTop = (640-obj.height)/2;
     }else{
       if(obj.height>640){
         obj.height= 640;
       }   
-      obj.style.marginTop = (640-obj.height)/2;   
+      obj.style.marginTop = (640-obj.width)/2;   
     }
 
 	}    
