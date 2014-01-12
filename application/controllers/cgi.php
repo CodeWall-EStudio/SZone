@@ -2136,7 +2136,7 @@ class Cgi extends SZone_Controller {
 
 	public function del_fold(){
 		$id = $this->input->post('id');
-		$gid = $this->input->post("gid");
+		$gid = $this->input->get_post("gid");
 		$idlist = explode(',',$id);
 
 		if($gid){
