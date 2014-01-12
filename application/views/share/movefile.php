@@ -10,7 +10,6 @@
 
 </head>
 <body class="share-zone">
-	<i class="glyphicon glyphicon-chevron-down"></i>
 	<? $idlist = array();?>
 	<?if(count($fl)>0):?>
 	<div>
