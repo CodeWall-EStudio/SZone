@@ -85,6 +85,10 @@
 				}
 				return;
 			}
+			if(!t.hasClass('glyphicon')){
+				return;
+			}
+
 			//glyphicon-minus
 			$.get('/cgi/get_prep_fold_lev',{fid: id,gid:pid},function(d){
 				if(d.code == 0){

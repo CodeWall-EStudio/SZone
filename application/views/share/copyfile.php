@@ -81,7 +81,7 @@
 					if(item.gid){
 			%>
 			<li>
-				<i class="glyphicon <%if(item.child){%>glyphicon-plus<%}%>"  data-pid="<%=item.gid%>" data-fid="<%=item.id%>"></i><a  class="a-click" data-pid="<%=pid%>" data-id="<%=item['id']%>"> <%=item.name%></a>	
+				<i class="glyphicon <%if(item.child){%>glyphicon-plus<%}%>"  data-pid="<%=item.gid%>" data-fid="<%=item.id%>"></i><a class="a-click" data-pid="<%=pid%>" data-id="<%=item['id']%>"> <%=item.name%></a>	
 			</li>
 			<%}%>
 			<%}%>
