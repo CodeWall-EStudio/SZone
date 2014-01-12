@@ -224,15 +224,17 @@
 
     function downFiles(){
     	var ids = [];
+
     	$('#downloadForm').html('');
 		$('#fileList .fclick:checked').each(function(){
-			var fid = $(this).attr('data-fid');
+			var flid = $(this).attr('data-fid');
 			ids.push(fid);
-			$('#downloadForm').append('<input name="ids[]" type="checkbox" checked value="'+fid+'" />');
+			$('#downloadForm').append('<input name="ids[]" type="checkbox" checked value="'+flid+'" />');
 			//window.open('/cgi/downfile?fid='+files[$(this).val()].fid);
 		});	
 		if(ids.length>1){
 			$('#downloadForm').append('<input name="gid" type="checkbox" checked value="'+gid+'" />');
+			$('#downloadForm').append('<input name="fdid" type="checkbox" checked value="'+fid+'" />');
 			$('#downloadForm').submit();
 		}else{
 			if(ids[0]){

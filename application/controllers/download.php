@@ -214,16 +214,17 @@ class Download extends SZone_Controller {
 
         $this->load->model('File_model');
         $files = $this->File_model->get_by_ids($ids);
+
         if (empty($files))
         {
             show_error('文件不存在');
         }
 
         $gid = $this->input->post('gid');
-
+        $fdid = $this->input->post('fdid');
         if (empty($gid))
         {
-            $auth = $this->File_model->get_by_uid_ids($ids, $this->user['id']);
+            $auth = $this->File_model->get_by_uid_ids($ids, $this->user['id'],$fdid);
             if (empty($auth))
             {
                 show_error('用户没有查看此文件的权限');
@@ -231,7 +232,7 @@ class Download extends SZone_Controller {
         }
         else
         {
-            $auth = $this->File_model->get_by_gid_ids($ids, $gid);
+            $auth = $this->File_model->get_by_gid_ids($ids, $gid,$fdid);
             if (empty($auth))
             {
                 show_error('用户没有查看此文件的权限');

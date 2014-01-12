@@ -105,6 +105,7 @@
 		});	
 		if(ids.length>1){
 			$('#downloadForm').append('<input name="gid" type="checkbox" checked value="'+ginfo.id+'" />');
+			$('#downloadForm').append('<input name="fdid" type="checkbox" checked value="'+fid+'" />');
 			$('#downloadForm').submit();
 		}else{
 			if(ids[0]){

@@ -122,11 +122,12 @@ class File_model extends CI_Model {
         return $result;
     }
 
-    function get_by_uid_ids($ids, $uid)
+    function get_by_uid_ids($ids, $uid,$fdid=0)
     {
         $result = array();
         $this->db->where('uid', $uid);
         $this->db->where_in('fid', $ids);
+        $this->db->where('fdid', $fdid);
         $this->db->order_by("fid", "desc");
         $query = $this->db->get($this->utable);
 
