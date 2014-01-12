@@ -24,9 +24,9 @@
 				</div>
 
 				<div class="search-zone">
-					<form action="/home/prepare" method="post" accept-charset="utf-8">
-					<input type="text" name="key" value="搜索文件" />
-					<button type="submit"></button>
+					<form action="/home/prepare?prid=<?=$prid?>&fid=<?=$fid?>" method="post" accept-charset="utf-8">
+						<input type="text" name="key" value="搜索文件" data-def="搜索文件" id="searchKey" />
+						<button type="submit"></button>
 					</form>
 				</div>
 			</div>
