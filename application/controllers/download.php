@@ -38,15 +38,16 @@ class Download extends SZone_Controller {
             else
             {
                 $this->load->model('Mail_model');
-                $auth = $this->Mail_model->check_auth($id, $mid,$this->user['id']);
-                if (empty($auth))
+                $muid = $this->Mail_model->check_auth($id, $mid,$this->user['id']);
+                if (empty($muid))
                 {
                     show_error('用户没有查看此文件的权限');
                 }
-                $auth = $this->File_model->get_by_uid($id, $auth);
+                $auth = $this->File_model->get_by_uid($id, $muid);
                 if (empty($auth))
                 {
-                    show_error('用户没有查看此文件的权限');
+                    log_message('ERROR', '发件人已经删除该文件'.$muid. ' mid:'.$mid.' fid:'.$fid);
+                    show_error('发件人已经删除该文件!');
                 }
             }
         }
@@ -262,6 +263,7 @@ class Download extends SZone_Controller {
         $zip->close();//关闭
 
         if(!file_exists($path)){
+            log_message('ERROR', '打包下载文件不存在：'.$path);
             show_error('无法找到文件');           //即使创建，仍有可能失败
         }
 
