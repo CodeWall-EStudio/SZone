@@ -43,12 +43,11 @@ class Download extends SZone_Controller {
                 {
                     show_error('用户没有查看此文件的权限');
                 }
-
-                // $auth = $this->File_model->get_by_uid($id, $mid);
-                // if (empty($auth))
-                // {
-                //     show_error('用户没有查看此文件的权限');
-                // }
+                $auth = $this->File_model->get_by_uid($id, $auth);
+                if (empty($auth))
+                {
+                    show_error('用户没有查看此文件的权限');
+                }
             }
         }
         else
@@ -60,7 +59,6 @@ class Download extends SZone_Controller {
             }
             $auth['name'] = $auth['fname'];
         }
-
         $fname =  iconv("utf-8","gb2312//IGNORE",$auth['name']);
 
         header('Content-type: '.$file['mimes']);

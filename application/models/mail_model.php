@@ -59,8 +59,10 @@ class Mail_model extends CI_Model {
         if ($query->num_rows() > 0)
         {
             $row = $query->row();
-            if($row->tuid == $uid || $row->fuid == $uid){
-                return true;
+            if($row->tuid == $uid){
+                return $row->fuid;
+            }else{
+                return $row->tuid;
             }
         }
         return false;
