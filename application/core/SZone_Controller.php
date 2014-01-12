@@ -72,7 +72,7 @@ class SZone_Controller extends CI_Controller {
                 'name'   => 'skey',
                 'value'  => $this->skey,
                 'expire' => '86500',
-                'domain' => '.71xiaoxue.com',
+                'domain' => 'szone.71xiaoxue.com',
                 'path'   => '/',
                 'secure' => TRUE
             );
