@@ -178,7 +178,7 @@
 								</td>
 							</tr>
 						<?endforeach?>
-					<?elseif($prid):?>									
+					<?elseif($prid && count($fold)==0):?>									
 						<tr>
 							<td colspan="5" align="center">还没有文件哦.</td>
 						</tr>

@@ -107,7 +107,7 @@
               <td><?=$row['size']?></td>
             </tr>
           <?endforeach?>    
-      <?elseif($prid!=0):?>
+      <?elseif($prid!=0 && count($fold)==0):?>
         
           <tr><td colspan="3" align="center">还没有文件哦!</td></tr>
         

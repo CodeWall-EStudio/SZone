@@ -157,8 +157,10 @@
 								</a>								
 						</th>						
 					</tr>
+					<? $notempty = 0;?>
 					<?foreach($fold as $item):?>
 						<?if($item['pid'] == $fid):?>
+						<? $notempty = 1;?>
 						<tr class="fold" data-id="<?=$item['id']?>">
 							<td><input type="checkbox" name="fold" class="fdclick liclick" value="<?=$item['id']?>" data-type="fold" /></td>
 							<td>
@@ -250,7 +252,7 @@
 								</td>
 							</tr>
 						<?endforeach?>
-					<?else:?>
+					<?elseif(!$notempty):?>		
 						<tr>
 							<td colspan="8" align="center">还没有文件哦.</td>
 						</tr>
