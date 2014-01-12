@@ -72,8 +72,16 @@ class Home extends SZone_Controller {
                 );
 
                 $key = db_escape_string($this->input->get_post('key'));
+                $this->load->model('Fold_model');
+                $cfold = array();
                 if($key){
-                        $fid = (int) $this->input->post('fid');
+                    $fid = (int) $this->input->post('fid');
+                    
+                    if($fid){
+                        $cfold = $this->Fold_model->get_userfold_child_byid($fid,$this->user['id']);
+                    }
+                }else{
+                    $cfold = array($fid);    
                 }
 
                 $sql = 'select id,name,mark,createtime,pid,tid,idpath from userfolds where prid=0 and uid = '.$this->user['id'];
@@ -128,14 +136,14 @@ class Home extends SZone_Controller {
                 $foldnum = count($fold);
 
 				$this->load->model('Uf_model');
-				$allnum = $this->Uf_model->get_all_filenum($this->user['id'],$fid,$key,$type);
+				$allnum = $this->Uf_model->get_all_filenum($this->user['id'],$cfold,$key,$type);
 
 				$page = get_page_status($nowpage,$pagenum,$allnum);
 
 				if($od){
-					$file = $this->Uf_model->get_fileinfo($this->user['id'],$fid,$key,$type,$odname,$desc,$page['start'],$pagenum);		
+					$file = $this->Uf_model->get_fileinfo($this->user['id'],$cfold,$key,$type,$odname,$desc,$page['start'],$pagenum);		
 				}else{
-					$file = $this->Uf_model->get_fileinfo($this->user['id'],$fid,$key,$type,0,0,$page['start'],$pagenum);
+					$file = $this->Uf_model->get_fileinfo($this->user['id'],$cfold,$key,$type,0,0,$page['start'],$pagenum);
 				}                
 
                 $sql = 'select id,name,mark,createtime,pid,tid,idpath from userfolds where prid=0 and uid = '.$this->user['id'];
@@ -184,9 +192,9 @@ class Home extends SZone_Controller {
                 $data['newmail'] = $newmail;
                 $data['postmail'] = $postmail;
 
-        // 文件上传
-        $data['upload_url'] = $this->config->item('url','upload');
-        $data['upload_chunk'] = $this->config->item('chunk','upload');
+                // 文件上传
+                $data['upload_url'] = $this->config->item('url','upload');
+                $data['upload_chunk'] = $this->config->item('chunk','upload');
 
                 $this->load->view('home',$data);        
         }
@@ -206,7 +214,7 @@ class Home extends SZone_Controller {
                 if(!$gid){
                         $sql .= ' where prid=0 and uid='.$this->user['id'];
                 }else{
-                        $sql .= ' where gid='.$gid.' and pid = 0';
+                        $sql .= ' where gid='.$gid;//.' and pid = 0';
                 }
                 if($fdid){
                         $sql .= ' and id !='.$fdid;

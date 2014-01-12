@@ -56,6 +56,7 @@ class SZone_Controller extends CI_Controller {
             // 处理登录，获取encodeKey和loginName
             $user_str = phpCAS::getUser();
             $user_data = json_decode($user_str);
+
             if (is_null($user_data)) {
                 log_message('ERROR', '503: [SSO] 登录返回字符串解析错误：'.$user_str);
                 $this->show_error('登录服务器不可用，请联系系统管理员', 503);
@@ -78,14 +79,18 @@ class SZone_Controller extends CI_Controller {
             $this->input->set_cookie($cookie);
 
         } else {
-            if ($this->uri->uri_string() === '') {
-                phpCAS::forceAuthentication();
-            } else {
-                $this->user['id'] = '0';
-                $this->user['auth'] = '0';
-                $this->skey = FALSE;
-                return;
-            }
+            phpCAS::forceAuthentication();
+
+            // if ($this->uri->uri_string() === '') {
+            //     phpCAS::forceAuthentication();
+            // } else {
+            //     $this->user['id'] = '0';
+            //     $this->user['name'] = '';
+            //     $this->user['nick'] = '';
+            //     $this->user['auth'] = '0';
+            //     $this->skey = FALSE;
+            //     return;
+            // }
         }
     }
 

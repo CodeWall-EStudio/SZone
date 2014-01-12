@@ -56,6 +56,7 @@
 		$("#prepList").bind('click',function(e){
 			var t = $(e.target),
 				id = t.attr('data-fid'),
+				gid = t.attr('data-gid'),
 				nodata = t.attr('no-data');
 			$("#prepList a").removeClass('selected');
 			if(t.hasClass('a-click')){
@@ -80,8 +81,11 @@
 				}
 				return;
 			}
+			if(!t.hasClass('glyphicon')){
+				return;
+			}			
 			//glyphicon-minus
-			$.get('/cgi/get_fold_lev',{fid: id},function(d){
+			$.get('/cgi/get_fold_lev',{fid: id,gid:gid},function(d){
 				if(d.code == 0){
 					var tmp = $("#fold-list-tmp").html();
 					var obj = {

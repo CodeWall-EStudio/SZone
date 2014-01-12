@@ -54,7 +54,7 @@
 				<?foreach($flist as $row):?>
 					<?if(isset($row['id'])):?>
 					<li>
-						<i class="glyphicon <?if(isset($row['child'])):?>glyphicon-plus<?endif?>" data-fid="<?=$row['id']?>"></i><a class="a-click" data-id="<?=$row['id']?>">
+						<i class="glyphicon <?if(isset($row['child'])):?>glyphicon-plus<?endif?>" data-gid="<?=$gid?>" data-fid="<?=$row['id']?>"></i><a class="a-click" data-id="<?=$row['id']?>">
 							<?=$row['name']?>
 						</a>
 					</li>
@@ -74,7 +74,7 @@
 					var item = list[i];
 			%>
 			<li>
-				<i class="glyphicon <%if(item.child){%>glyphicon-plus<%}%>" data-fid="<%=item.id%>"></i><a  class="a-click" data-id="<%=item['id']%>"> <%=item.name%></a>	
+				<i class="glyphicon <%if(item.child){%>glyphicon-plus<%}%>"  data-gid="<?=$gid?>"  data-fid="<%=item.id%>"></i><a  class="a-click" data-id="<%=item['id']%>"> <%=item.name%></a>	
 			</li>
 			<%}%>
 		</ul>

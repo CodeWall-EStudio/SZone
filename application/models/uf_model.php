@@ -86,14 +86,15 @@ class Uf_model extends CI_Model {
         return $result;
     }
 
-    function get_all_filenum($id,$fdid=0,$key=0,$type=0){
+    function get_all_filenum($id,$fdid=array(),$key=0,$type=0){
         $this->db->select('userfile.id');
         $this->db->from($this->table);
         $this->db->where('userfile.uid',$id);
         $this->db->join($this->ftable,'files.id=userfile.fid');
-        //if($fdid){
-            $this->db->where('userfile.fdid',$fdid);
-        //}
+        //if($fdid){.
+        if(count($fdid)>0){
+            $this->db->where_in('userfile.fdid',$fdid);
+        }
         $this->db->where('userfile.del',0);
         if($type){
             
@@ -108,16 +109,16 @@ class Uf_model extends CI_Model {
         return $query->num_rows();      
     }
 
-    function get_fileinfo($id,$fdid=0,$key=0,$type=0,$on=0,$desc=0,$start=0,$pagenum=10){
+    function get_fileinfo($id,$fdid=array(),$key=0,$type=0,$on=0,$desc=0,$start=0,$pagenum=10){
         $this->db->select('userfile.id, userfile.fid, userfile.name, userfile.createtime, userfile.content, userfile.fdid, files.type,files.size');
         $this->db->from($this->table);
         $this->db->join($this->ftable,'files.id=userfile.fid');
         $this->db->where('uid',$id);
         $this->db->where('userfile.del',0);
         // $this->db->where('userfile.prid',0);
-        //if($fdid){
-            $this->db->where('fdid',$fdid);
-        //}
+        if(count($fdid)>0){
+            $this->db->where_in('fdid',$fdid);
+        }
         if($type){
             $this->db->where('files.type',$type);
         }

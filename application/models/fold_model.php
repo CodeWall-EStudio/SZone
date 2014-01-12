@@ -40,7 +40,37 @@ class Fold_model extends CI_Model {
         return $this->db->affected_rows();
         //return true;       
 
-    }    
+    } 
+
+    function get_groupfold_child_byid($id,$gid){
+        $this->db->select('idpath,id');
+        $this->db->where('gid',$gid);
+        $query = $this->db->get($this->gtable);
+
+        $result = array($id);
+        foreach($query->result() as $row){
+            $tr = explode(',',$row->idpath);
+            if(in_array($id,$tr)){
+                array_push($result,$row->id);
+            }
+        }
+        return $result;
+    }
+
+    function get_userfold_child_byid($id,$uid){
+        $this->db->select('idpath,id');
+        $this->db->where('uid',$uid);
+        $query = $this->db->get($this->utable);
+
+        $result = array();
+        foreach($query->result() as $row){
+            $tr = explode(',',$row->idpath);
+            if(in_array($id,$tr)){
+                array_push($result,$row->id);
+            }
+        }
+        return $result;
+    }
 
     function get_user_normal_folds($uid,$fid,$key,$od,$on){
     	$fid = (int) $fid;
