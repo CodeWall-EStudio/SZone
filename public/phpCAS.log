@@ -47447,3 +47447,37 @@ AA75 .|    |    <= true
 AA75 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
 AA75 .|    <= true
 AA75 .<= true
+FD3D .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+FD3D .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:53]
+FD3D .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+FD3D .|    |    Starting a new session [Client.php:800]
+FD3D .|    <= ''
+FD3D .<= ''
+FD3D .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:54]
+FD3D .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+FD3D .<= ''
+FD3D .=> phpCAS::isAuthenticated() [SZone_Controller.php:55]
+FD3D .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+FD3D .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+FD3D .|    |    |    user = `{"loginName":"zhouwenjie","encodeKey":"3E4367206D767A9CE8C188C9C04E1846187B3AA9C704A86F742011880029BBE821AF28682543E5E84B0175901C8CAEA89D81426604DC5E4AD977829E04171C9F044AD908D09CC28EFBC0FCEDC40330A5"}' [Client.php:1373]
+FD3D .|    |    <= true
+FD3D .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+FD3D .|    <= true
+FD3D .<= true
+1C72 .START phpCAS-1.3.2 ****************** [phpcas.php:450]
+1C72 .=> phpCAS::client('2.0', 'dand.71xiaoxue.com', 80, 'sso.web') [SZone_Controller.php:53]
+1C72 .|    => CAS_Client::__construct('2.0', false, 'dand.71xiaoxue.com', 80, 'sso.web', true) [phpcas.php:347]
+1C72 .|    |    Starting a new session [Client.php:800]
+1C72 .|    <= ''
+1C72 .<= ''
+1C72 .=> phpCAS::setNoCasServerValidation() [SZone_Controller.php:54]
+1C72 .|    You have configured no validation of the legitimacy of the cas server. This is not recommended for production use. [phpcas.php:1669]
+1C72 .<= ''
+1C72 .=> phpCAS::isAuthenticated() [SZone_Controller.php:55]
+1C72 .|    => CAS_Client::isAuthenticated() [phpcas.php:1151]
+1C72 .|    |    => CAS_Client::_wasPreviouslyAuthenticated() [Client.php:1197]
+1C72 .|    |    |    user = `{"loginName":"zhouwenjie","encodeKey":"3E4367206D767A9CE8C188C9C04E1846187B3AA9C704A86F742011880029BBE821AF28682543E5E84B0175901C8CAEA89D81426604DC5E4AD977829E04171C9F044AD908D09CC28EFBC0FCEDC40330A5"}' [Client.php:1373]
+1C72 .|    |    <= true
+1C72 .|    |    user was already authenticated, no need to look for tickets [Client.php:1214]
+1C72 .|    <= true
+1C72 .<= true
