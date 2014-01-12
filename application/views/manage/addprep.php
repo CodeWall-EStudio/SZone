@@ -11,7 +11,7 @@
 
 </head>
 <body>
-	<?php  $this->load->view('public/header.php',$nav); ?>
+	<?php  $this->load->view('public/header_manage.php',$nav); ?>
 	<div class="container">
 		<div class="main-section">
 			<div class="from">

@@ -85,9 +85,13 @@
 			<?if($finfo['type'] == 1):?>
 				<img id="reviewImg" src="/download/media?id=<?=$finfo['fid']?>&gid=<?=$gid?><?if($m):?>&mid=<?=$id?><?endif?>" onload="change(this)" align="absmiddle" />
 			<?elseif($finfo['type']==2):?>
+        <?if(isset($finfo['text'])):?>
+          <?=htmlspecialchars($finfo['text'])?>
+        <?else:?>
 				<div id="documentViewer" class="flexpaper_viewer">
 					
 				</div>
+        <?endif?>
 			<?elseif($finfo['type']==3):?>
 				<div class="playerZone">
 				  <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"
@@ -155,7 +159,7 @@
 		});	
 	</script>
 <?endif?>
-<?if($finfo['type']==2):?>
+<?if($finfo['type']==2 && !isset($finfo['text'])):?>
     <script type="text/javascript" src="/js/lib/jq.js" charset="utf-8"></script>	
     <script type="text/javascript" src="/js/lib/flex/flexpaper.js"></script>
     <script type="text/javascript" src="/js/lib/flex/flexpaper_handlers.js"></script>

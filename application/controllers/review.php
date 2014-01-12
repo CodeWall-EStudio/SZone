@@ -97,11 +97,25 @@ class Review extends SZone_Controller {
 				'mimes' => $row->mimes
 			);
 
-			if($finfo['type']==2 && $finfo['mimes'] == 'text/plain'){
-				$txt =  file_get_contents($finfo['path']);
-				$order = array("\r\n", "\n", "\r");
-				$txt = str_replace($order,'<br>',$txt);
+
+			if($finfo['mimes'] == 'text/plain'){
+
+				$txt = '';
+				$file = fopen($finfo['path'],"r");//只读方式打开文本文件
+				
+				while(! feof($file))//当文件不结束
+				{
+					$txt .= fgets($file);//读一行到$line变量
+					$txt .= "<br />";
+					//echo $line;
+				} 
+				fclose($file);
+					
+				if(mb_check_encoding($txt,'GBK')){
+					$txt =  iconv('GBK','utf-8',$txt);
+				}
 				$finfo['text'] = $txt;
+				$finfo['type'] = 2;				
 				//$finfo->text = file_get_contents($finfo->path);
 			}
 		}
