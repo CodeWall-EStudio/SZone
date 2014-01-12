@@ -149,13 +149,18 @@ class File_model extends CI_Model {
         return $result;
     }
 
-    function get_by_gid_ids($ids, $gid)
+    function get_by_gid_ids($ids, $gid,$fdid,$uid)
     {
         $result = array();
         $this->db->where('gid', $gid);
+        $this->db->where('fdid', $fdid);
         $this->db->where_in('fid', $ids);
+        if(!empty($uid)){
+            $this->db->where('uid', $uid);
+        }
         $this->db->order_by("fid", "desc");
         $query = $this->db->get($this->gtable);
+
         if ($query->num_rows() == count($ids))
         {
             $result = $query->result_array();

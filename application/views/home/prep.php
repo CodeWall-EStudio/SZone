@@ -372,6 +372,7 @@
 	<script>
 		var fid = '<?=$fid?>',
 			gid = <?=$prid?>;
+		var isprep = 1;
 
 		var folds = '<?=json_encode($fold);?>',
 			files = '<?=json_encode($flist);?>';

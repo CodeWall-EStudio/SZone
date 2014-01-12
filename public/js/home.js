@@ -233,6 +233,7 @@
 			//window.open('/cgi/downfile?fid='+files[$(this).val()].fid);
 		});	
 		if(ids.length>1){
+			$('#downloadForm').append('<input name="isprep" type="checkbox" checked value="'+isprep+'" />');
 			$('#downloadForm').append('<input name="gid" type="checkbox" checked value="'+gid+'" />');
 			$('#downloadForm').append('<input name="fdid" type="checkbox" checked value="'+fid+'" />');
 			$('#downloadForm').submit();

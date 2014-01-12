@@ -232,7 +232,12 @@ class Download extends SZone_Controller {
         }
         else
         {
-            $auth = $this->File_model->get_by_gid_ids($ids, $gid,$fdid);
+            $isprep = $this->input->post('isprep');
+            if($isprep){
+                $auth = $this->File_model->get_by_gid_ids($ids, $gid,$fdid,$this->user['id']);
+            }else{
+                $auth = $this->File_model->get_by_gid_ids($ids, $gid,$fdid,0);
+            }
             if (empty($auth))
             {
                 show_error('用户没有查看此文件的权限');
