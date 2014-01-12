@@ -28,7 +28,7 @@
   	}
   	.file-reivew-act{
   		position:absolute;
-  		top:500px;
+  		top:640px;
   		width:1000px;
   		text-align : center;
   		margin:0 auto;
@@ -68,12 +68,12 @@
       if(obj.width>640){
         obj.width= 640;
       }     
-      obj.style.marginTop = (640-obj.height)/2;
+      obj.style.marginTop = (640-obj.height)/2+'px';
     }else{
       if(obj.height>640){
         obj.height= 640;
       }   
-      obj.style.marginTop = (640-obj.width)/2;   
+      obj.style.marginTop = (640-obj.width)/2+'px';
     }
 
 	}    

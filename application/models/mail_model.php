@@ -55,6 +55,7 @@ class Mail_model extends CI_Model {
     {
         $result = array();
         $query = $this->db->get_where($this->table, array('fid' => $fid, 'id' => $mid));
+        $row = $query->row();
         if ($query->num_rows() > 0)
         {
             $row = $query->row();

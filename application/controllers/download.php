@@ -38,16 +38,17 @@ class Download extends SZone_Controller {
             else
             {
                 $this->load->model('Mail_model');
-                $auth = $this->Mail_model->check_auth($id, $this->user['id'], $mid);
+                $auth = $this->Mail_model->check_auth($id, $mid,$this->user['id']);
                 if (empty($auth))
                 {
                     show_error('用户没有查看此文件的权限');
                 }
-                $auth = $this->File_model->get_by_uid($id, $mid);
-                if (empty($auth))
-                {
-                    show_error('用户没有查看此文件的权限');
-                }
+
+                // $auth = $this->File_model->get_by_uid($id, $mid);
+                // if (empty($auth))
+                // {
+                //     show_error('用户没有查看此文件的权限');
+                // }
             }
         }
         else
