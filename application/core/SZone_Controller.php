@@ -79,18 +79,12 @@ class SZone_Controller extends CI_Controller {
             $this->input->set_cookie($cookie);
 
         } else {
-            phpCAS::forceAuthentication();
-
-            // if ($this->uri->uri_string() === '') {
-            //     phpCAS::forceAuthentication();
-            // } else {
-            //     $this->user['id'] = '0';
-            //     $this->user['name'] = '';
-            //     $this->user['nick'] = '';
-            //     $this->user['auth'] = '0';
-            //     $this->skey = FALSE;
-            //     return;
-            // }
+            $us = $this->uri->rsegment_array();
+            if ($us[1] === 'download') {
+                $this->skey = FALSE;
+            } else {
+                phpCAS::forceAuthentication();
+            }
         }
     }
 
