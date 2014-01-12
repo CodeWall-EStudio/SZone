@@ -1896,6 +1896,7 @@ class Cgi extends SZone_Controller {
 							'fid' => $fid,
 							'name' => $row->fname,
 							'uid' => $this->user['id'],
+							'mark' => '',
 							'del' => 0,
 							'fdid' => 0
 						);

@@ -561,11 +561,12 @@
             upload_chunk = '<?=$upload_chunk?>';	
 		// var folds = '<?=json_encode($fold);?>',
 		// 	files = '<?=json_encode($file);?>';
-		var ginfo = '<?=json_encode($ginfo);?>';
+		// var ginfo = '<?=json_encode($ginfo);?>';
+		var gid = '<?=$gid?>';
 		var fid = '<?=$fid?>';
 		//folds = $.parseJSON(folds);
 		//files = JSON.parse(files);//$.parseJSON(files);
-		ginfo = $.parseJSON(ginfo);
+		// ginfo = $.parseJSON(ginfo);
 		var folds = {},
 			files = {};
 		<?foreach($fold as $row):?>

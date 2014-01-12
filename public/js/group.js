@@ -59,7 +59,7 @@
         	var data = {
         		fname : $('#reName .foldname').val(),
         		fid : $('#reName .fid').val(),
-        		gid : ginfo.id,
+        		gid : gid,
         		csrf_test_name:$.cookie('csrf_cookie_name')
         	}
         	if(type){
@@ -104,16 +104,16 @@
 			//window.open('/cgi/downfile?fid='+files[$(this).val()].fid);
 		});	
 		if(ids.length>1){
-			$('#downloadForm').append('<input name="gid" type="checkbox" checked value="'+ginfo.id+'" />');
+			$('#downloadForm').append('<input name="gid" type="checkbox" checked value="'+gid+'" />');
 			$('#downloadForm').append('<input name="fdid" type="checkbox" checked value="'+fid+'" />');
 			$('#downloadForm').submit();
 		}else{
 			if(ids[0]){
-				window.open('/download?fdid='+fid+'&id='+ids[0]+'&gid='+ginfo.id);	
+				window.open('/download?fdid='+fid+'&id='+ids[0]+'&gid='+gid);	
 			}
 		}    	
 		// $('#fileList .fclick:checked').each(function(){
-		// 	window.open('/cgi/downfile?fid='+files[$(this).val()].fid+'&gid='+ginfo.id);
+		// 	window.open('/cgi/downfile?fid='+files[$(this).val()].fid+'&gid='+gid);
 		// });	
 		
     }
@@ -126,13 +126,13 @@
 
 		id = il.join(',');
 		$('#shareWin h4').text('移动文件');
-		iframeEl.attr('src','/home/movefile?fdid='+fid+'&fid='+id+'&gid='+ginfo.id);		
+		iframeEl.attr('src','/home/movefile?fdid='+fid+'&fid='+id+'&gid='+gid);		
 	};	    
 
     //复制文件
     function copyFiletoMy(fid){
 
-    	$.post('/cgi/copy_to_my',{fid:fid,gid:ginfo.id},function(d){
+    	$.post('/cgi/copy_to_my',{fid:fid,gid:gid},function(d){
     		if(d.code == 0){
     			$('#copy'+fid).remove();
     			alert('保存成功');
@@ -147,7 +147,7 @@
 			id : id,
 			info : mark,
 			t : type,
-			gid : ginfo.id,
+			gid : gid,
 			csrf_test_name:$.cookie('csrf_cookie_name')
 		}
 
@@ -295,7 +295,7 @@
 				url = '/cgi/del_fold?type=0'
 			}
 
-			$.post(url,{gid: ginfo.id,id: id,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
+			$.post(url,{gid: gid,id: id,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 				$("#delFile .close").click();
 	 			if(d.code==0){
 	 				window.location.reload();
@@ -321,7 +321,7 @@
 
 		$('#groupEdit .save').bind('click',function(){
 			var c = $('#groupEdit textarea').val();
-			$.post('/cgi/group_edit_desc',{d:c,gid:ginfo.id,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
+			$.post('/cgi/group_edit_desc',{d:c,gid:gid,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 				if(d.code == 0){
 					$("#groupDesc p").text(c);
 					$("#groupDesc").show();
@@ -339,7 +339,7 @@
 
 		$("#postWin .btn-post").bind('click',function(){
 			var c = $("#postWin textarea").val(); 
-			$.post('/cgi/add_board',{d:c,gid:ginfo.id,type:1,pid:0,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
+			$.post('/cgi/add_board',{d:c,gid:gid,type:1,pid:0,csrf_test_name:$.cookie('csrf_cookie_name')},function(d){
 				if(d.code == 0){
 					//$('#postWin').modal('hide');
 					window.location.reload();
@@ -368,15 +368,15 @@
 				case 'toother':
 					$('#shareWin h4').text('共享 发送给别人');
 					//console.log(12345);
-					iframeEl.attr('src','/share/other?id='+id+'&gid='+ginfo.id);
+					iframeEl.attr('src','/share/other?id='+id+'&gid='+gid);
 					break;
 				case 'togroup':
 					$('#shareWin h4').text('共享 到小组空间');
-					iframeEl.attr('src','/share/group?id='+id+'&gid='+ginfo.id);
+					iframeEl.attr('src','/share/group?id='+id+'&gid='+gid);
 					break;
 				case 'todep':
 					$('#shareWin h4').text('共享 到部门空间');
-					iframeEl.attr('src','/share/dep?id='+id+'&gid='+ginfo.id);
+					iframeEl.attr('src','/share/dep?id='+id+'&gid='+gid);
 					break;
 			}
 		}	
@@ -595,7 +595,7 @@
 			var fid = target.attr('data-fid');
 			var id= target.attr('data-id');
 			//review?fid=24&t=2&gid=0&id=18
-			$("#reviewIframe").attr('src','/review?gid='+ginfo.id+'&fid='+fid+'&id='+id);
+			$("#reviewIframe").attr('src','/review?gid='+gid+'&fid='+fid+'&id='+id);
 			$('#reviewFile').modal('show');
 		});	
 
@@ -628,7 +628,7 @@
 				return;
 			}
 			//glyphicon-minus
-			$.get('/cgi/get_fold_lev',{fid: id,gid:ginfo.id},function(d){
+			$.get('/cgi/get_fold_lev',{fid: id,gid:gid},function(d){
 				if(d.code == 0){
 					var tmp = $("#fold-list-tmp").html();
 					var obj = {
